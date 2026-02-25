@@ -226,6 +226,13 @@ function applyFrozenColumns() {
     const mergedTable = mergedRoot ? mergedRoot.querySelector('table') : null;
     if (mergedTable) applyFrozenColumnsToTable(mergedTable);
   } catch (e) { /* ignore */ }
+
+  // Production unit View
+  try {
+    const puRoot = document.getElementById('production-unit-table');
+    const puTable = puRoot ? puRoot.querySelector('table') : null;
+    if (puTable) applyFrozenColumnsToTable(puTable);
+  } catch (e) { /* ignore */ }
 }
 
 function toDomIdToken(text) {
@@ -716,7 +723,7 @@ function renderMergedColumnsMenu() {
       }
       saveMergedColumnVisibility();
       renderMergedColumnsMenu();
-      if (currentView === 'merged') applyFacetFilters();
+      if (currentView === 'merged' || currentView === 'production-units') applyFacetFilters();
     });
   });
 
@@ -734,7 +741,7 @@ function renderMergedColumnsMenu() {
 
       sanitizeMergedColumnVisibility();
       saveMergedColumnVisibility();
-      if (currentView === 'merged') applyFacetFilters();
+      if (currentView === 'merged' || currentView === 'production-units') applyFacetFilters();
     });
   });
 }
@@ -2552,22 +2559,263 @@ function renderMergedView(manuscripts, metaInfo = null) {
   }
 }
 
+function renderProductionUnitView(manuscripts, metaInfo = null) {
+  const puRoot = document.getElementById('production-unit-table');
+  const meta = document.getElementById('production-unit-view-meta');
+  if (!puRoot) return;
+
+  const columnsFull = (DISPLAY_COLUMNS && Array.isArray(DISPLAY_COLUMNS))
+    ? DISPLAY_COLUMNS.slice()
+    : ((DATA_HEADERS && Array.isArray(DATA_HEADERS)) ? DATA_HEADERS.slice() : COLUMN_ORDER.slice());
+  const columns = getMergedVisibleColumnsArray(columnsFull);
+
+  const totalManuscripts = (metaInfo && typeof metaInfo.totalManuscripts === 'number')
+    ? metaInfo.totalManuscripts
+    : manuscripts.length;
+  const page = (metaInfo && typeof metaInfo.page === 'number') ? metaInfo.page : 1;
+  const totalPages = (metaInfo && typeof metaInfo.totalPages === 'number') ? metaInfo.totalPages : 1;
+
+  // Count production-unit blocks on the current page.
+  let pageBlocks = 0;
+  for (const ms of manuscripts) {
+    const rawBlock = RAW_BY_MANUSCRIPT_KEY.get(ms.key);
+    const msRows = (rawBlock && rawBlock.rows && rawBlock.rows.length > 0) ? rawBlock.rows : ms.rows;
+    if (!msRows || msRows.length === 0) continue;
+
+    let lastPU = '';
+    let blocks = 0;
+    for (let i = 0; i < msRows.length; i++) {
+      const v = normalizeForCompare(msRows[i] && msRows[i]['Production Unit']);
+      const pu = v || lastPU;
+      if (i === 0) {
+        lastPU = pu;
+        blocks = 1;
+      } else if (pu !== lastPU) {
+        blocks++;
+        lastPU = pu;
+      }
+    }
+    pageBlocks += blocks;
+  }
+
+  if (meta) {
+    let note = '';
+    if (!RAW_EXCEL_LOADED && !RAW_EXCEL_FAILED) note = ' (loading raw Excel merges…)';
+    if (RAW_EXCEL_FAILED) note = ' (raw Excel files not found; showing fallback view)';
+    meta.textContent = `${pageBlocks} production-unit block(s) on this page${note}`;
+  }
+  updateMergedPagerUI(page, totalPages, manuscripts.length, totalManuscripts);
+
+  function productionUnitLabelFromRaw(raw) {
+    if (isExplicitUnknownValue(raw)) return 'Unknown';
+    const tokens = parseProductionUnitsCell(raw);
+    if (tokens && tokens.length > 0) return tokens.join(', ');
+    return 'Empty';
+  }
+
+  let html = '<table class="table table-bordered merged-table"><thead><tr>';
+  for (const col of columns) {
+    html += `<th data-field="${escapeHtml(col)}">${escapeHtml(getColumnTitle(col))}</th>`;
+  }
+  html += '</tr></thead><tbody>';
+
+  manuscripts.forEach((ms, msIndex) => {
+    const msClass = (msIndex % 2 === 0) ? 'ms-a' : 'ms-b';
+    const rawBlock = RAW_BY_MANUSCRIPT_KEY.get(ms.key);
+    const msRows = (rawBlock && rawBlock.rows && rawBlock.rows.length > 0) ? rawBlock.rows : ms.rows;
+    const sourceId = (rawBlock && rawBlock.sourceId) ? rawBlock.sourceId : (ms.sourceId || '');
+    const msKeyAttr = escapeHtml(ms.key || '');
+    const sourceIdAttr = escapeHtml(sourceId || '');
+
+    const msRowCount = Array.isArray(msRows) ? msRows.length : 0;
+    if (msRowCount <= 0) return;
+
+    // Build contiguous Production Unit runs (same logic as Manuscript View).
+    const runs = [];
+    let lastPUKey = '';
+    let lastPURaw = '';
+    let runStart = 0;
+    for (let i = 0; i < msRowCount; i++) {
+      const raw = msRows[i] ? msRows[i]['Production Unit'] : '';
+      const v = normalizeForCompare(raw);
+      const puKey = v || lastPUKey;
+      const puRaw = v ? raw : lastPURaw;
+
+      if (i === 0) {
+        lastPUKey = puKey;
+        lastPURaw = puRaw;
+        runStart = 0;
+      } else if (puKey !== lastPUKey) {
+        runs.push({ start: runStart, end: i - 1, key: lastPUKey, raw: lastPURaw });
+        runStart = i;
+        lastPUKey = puKey;
+        lastPURaw = puRaw;
+      }
+    }
+    runs.push({ start: runStart, end: msRowCount - 1, key: lastPUKey, raw: lastPURaw });
+
+    // Pull display strings from the first non-empty row if possible.
+    let depository = '';
+    let shelfmark = '';
+    for (let i = 0; i < msRowCount; i++) {
+      if (!depository && msRows[i] && msRows[i]['Depository']) depository = String(msRows[i]['Depository']);
+      if (!shelfmark && msRows[i] && msRows[i]['Shelf mark']) shelfmark = String(msRows[i]['Shelf mark']);
+      if (depository && shelfmark) break;
+    }
+    const shelfHtml = (msKeyAttr && sourceIdAttr && shelfmark)
+      ? `<a href="#" class="ms-open-details" data-ms-key="${msKeyAttr}" data-source-id="${sourceIdAttr}">${escapeHtml(shelfmark)}</a>`
+      : escapeHtml(shelfmark || '');
+    const depoHtml = escapeHtml(depository || '');
+
+    runs.forEach((run, runIndex) => {
+      const label = productionUnitLabelFromRaw(run.raw);
+      const runRows = msRows.slice(run.start, run.end + 1);
+      const runRowCount = runRows.length;
+      const puClass = (runIndex % 2 === 0) ? 'pu-a' : 'pu-b';
+
+      // Manuscript-level merged fields (reuse Manuscript View behavior, but apply within each run block).
+      const mergedLinksToDatabase = aggregateFieldValues(msRows, 'Links to Database', '; ');
+      const literatureAllEmpty = allFieldValuesEmpty(msRows, 'Literature');
+
+      // Use raw Excel merge map when available, but restrict to merges fully contained within this run.
+      const mergeLookup = (rawBlock && RAW_MERGES_BY_SOURCE.has(rawBlock.sourceId))
+        ? buildLocalMergeLookup(runRows, rawBlock.sourceId, columnsFull, columns)
+        : null;
+
+      // Heuristic mode: merge constant fields within the run.
+      const runConst = mergeLookup ? null : getConstantFields(runRows, columns, ['Production Unit']);
+
+      // Group header row.
+      const headerClasses = [msClass, 'table-secondary'];
+      if (runIndex === 0) headerClasses.push('ms-sep');
+      html += `<tr class="${headerClasses.join(' ')}" data-ms-key="${msKeyAttr}" data-source-id="${sourceIdAttr}">`;
+      html += `<td colspan="${columns.length}"><span class="fw-semibold">${depoHtml}${depoHtml && shelfHtml ? ' — ' : ''}${shelfHtml}</span>`;
+      html += ` <span class="text-secondary">•</span> <span class="fw-semibold">Production unit:</span> ${escapeHtml(label)}`;
+      html += ` <span class="text-secondary">(${runRowCount} row${runRowCount === 1 ? '' : 's'})</span>`;
+      html += `</td></tr>`;
+
+      for (let localRowIndex = 0; localRowIndex < runRowCount; localRowIndex++) {
+        const globalRowIndex = run.start + localRowIndex;
+        const row = runRows[localRowIndex];
+        const isFirstRunRow = (localRowIndex === 0);
+
+        html += `<tr class="${msClass}" data-ms-key="${msKeyAttr}" data-source-id="${sourceIdAttr}">`;
+
+        for (let c = 0; c < columns.length; c++) {
+          const col = columns[c];
+
+          // Always merge Links to Database at the manuscript level (combine URLs across rows), but apply within this run block.
+          if (col === 'Links to Database') {
+            if (!isFirstRunRow) continue;
+            html += `<td class="${msClass}" data-field="${escapeHtml(col)}" rowspan="${runRowCount}">${renderMergedCell(col, mergedLinksToDatabase, { msKey: ms.key, sourceId: sourceId || null, row, msRows, rowIndex: globalRowIndex })}</td>`;
+            continue;
+          }
+
+          // If Literature is empty for all rows in the manuscript, merge it into a single blank cell within this run.
+          if (col === 'Literature' && literatureAllEmpty) {
+            if (!isFirstRunRow) continue;
+            html += `<td class="${msClass}" data-field="${escapeHtml(col)}" rowspan="${runRowCount}">${renderMergedCell(col, '', { msKey: ms.key, sourceId: sourceId || null, row, msRows, rowIndex: globalRowIndex })}</td>`;
+            continue;
+          }
+
+          if (mergeLookup) {
+            // The raw Excel files don't have a Language column; we inject it.
+            // Merge it within the run so duplicates don't repeat visually.
+            if (col === 'Language') {
+              if (!isFirstRunRow) continue;
+              html += `<td class="${msClass}" data-field="${escapeHtml(col)}" rowspan="${runRowCount}">${renderMergedCell(col, row ? row[col] : '', { msKey: ms.key, sourceId: sourceId || null, row, msRows, rowIndex: globalRowIndex })}</td>`;
+              continue;
+            }
+
+            const key = `${localRowIndex},${c}`;
+            if (mergeLookup.covered.has(key)) continue;
+            const span = mergeLookup.topLeft.get(key);
+            const attrs = span ? ` rowspan="${span.rowSpan}" colspan="${span.colSpan}"` : '';
+            html += `<td class="${(col === 'Production Unit') ? puClass : msClass}" data-field="${escapeHtml(col)}"${attrs}>${renderMergedCell(col, row ? row[col] : '', { msKey: ms.key, sourceId: sourceId || null, row, msRows, rowIndex: globalRowIndex })}</td>`;
+            continue;
+          }
+
+          // Heuristic merged constant fields within the run.
+          if (runConst && runConst.has(col)) {
+            if (!isFirstRunRow) continue;
+            html += `<td class="${puClass}" data-field="${escapeHtml(col)}" rowspan="${runRowCount}">${renderMergedCell(col, row ? row[col] : '', { msKey: ms.key, sourceId: sourceId || null, row, msRows, rowIndex: globalRowIndex })}</td>`;
+            continue;
+          }
+
+          if (col === 'Production Unit') {
+            // In this view, each block is a single production-unit run; merge it across the run.
+            if (!isFirstRunRow) continue;
+            html += `<td class="${puClass}" data-field="${escapeHtml(col)}" rowspan="${runRowCount}">${renderMergedCell(col, row ? row[col] : '', { msKey: ms.key, sourceId: sourceId || null, row, msRows, rowIndex: globalRowIndex })}</td>`;
+            continue;
+          }
+
+          html += `<td data-field="${escapeHtml(col)}">${renderMergedCell(col, row ? row[col] : '', { msKey: ms.key, sourceId: sourceId || null, row, msRows, rowIndex: globalRowIndex })}</td>`;
+        }
+
+        html += `</tr>`;
+      }
+    });
+  });
+
+  html += '</tbody></table>';
+  puRoot.innerHTML = html;
+
+  // Re-apply frozen columns after every render.
+  try { applyFrozenColumns(); } catch (e) {}
+
+  // Click-to-open manuscript modal (event delegation).
+  try {
+    if (!renderProductionUnitView._msClickBound) {
+      renderProductionUnitView._msClickBound = true;
+      puRoot.addEventListener('click', function (ev) {
+        const target = ev && ev.target ? ev.target : null;
+        if (!target || !target.closest) return;
+
+        const link = target.closest('a.ms-open-details');
+        if (link) {
+          ev.preventDefault();
+          const msKey = link.getAttribute('data-ms-key') || '';
+          const sourceId = link.getAttribute('data-source-id') || '';
+          if (msKey && msKey !== '||' && sourceId) {
+            openManuscriptDetailsModalByKey({ sourceId, msKey });
+          }
+          return;
+        }
+
+        const tr = target.closest('tr[data-ms-key]');
+        if (!tr) return;
+        const msKey = tr.getAttribute('data-ms-key') || '';
+        const sourceId = tr.getAttribute('data-source-id') || '';
+        if (!msKey || msKey === '||' || !sourceId) return;
+        openManuscriptDetailsModalByKey({ sourceId, msKey });
+      });
+    }
+  } catch (e) {
+    // ignore
+  }
+}
+
 function applyViewUI() {
   try {
     document.body.classList.toggle('view-merged', currentView === 'merged');
     document.body.classList.toggle('view-table', currentView === 'table');
+    document.body.classList.toggle('view-production-units', currentView === 'production-units');
   } catch (e) {
     // ignore
   }
 
   const tableView = document.getElementById("table-view");
   const mergedView = document.getElementById("merged-view");
+  const productionUnitView = document.getElementById('production-unit-view');
   if (tableView) tableView.style.display = (currentView === "table") ? "block" : "none";
   if (mergedView) mergedView.style.display = (currentView === "merged") ? "block" : "none";
+  if (productionUnitView) productionUnitView.style.display = (currentView === "production-units") ? "block" : "none";
 
-  // Column selector lives in the top control bar; only show it for Manuscript View.
+  const isGroupedView = (currentView === 'merged' || currentView === 'production-units');
+
+  // Column selector lives in the top control bar; show it for grouped views.
   const mergedColsControl = document.getElementById("merged-columns-control");
-  if (mergedColsControl) mergedColsControl.style.display = (currentView === "merged") ? "" : "none";
+  if (mergedColsControl) mergedColsControl.style.display = isGroupedView ? "" : "none";
 
   // Column selector for Text View.
   const tableColsControl = document.getElementById("table-columns-control");
@@ -2594,8 +2842,8 @@ function applyViewUI() {
   if (paginationLabelControl) paginationLabelControl.style.display = "";
   if (paginationSelectControl) paginationSelectControl.style.display = "";
 
-  // Keep merged column menu in sync
-  if (currentView === "merged") {
+  // Keep grouped-view column menu in sync
+  if (isGroupedView) {
     renderMergedColumnsMenu();
   }
 
@@ -2605,8 +2853,8 @@ function applyViewUI() {
     updateTextViewColumnsFromVisibility();
   }
 
-  // Hide Manuscript pager UI when not in Manuscript View.
-  if (currentView !== 'merged') {
+  // Hide Manuscript pager UI when not in grouped view.
+  if (!isGroupedView) {
     const pager = document.getElementById('merged-pager');
     if (pager) pager.style.display = 'none';
     const indicator = document.getElementById('merged-page-indicator');
@@ -2627,21 +2875,24 @@ function applyViewUI() {
 }
 
 function setView(view) {
-  currentView = (view === "merged") ? "merged" : "table";
+  currentView = (view === 'merged' || view === 'table' || view === 'production-units') ? view : 'table';
   const viewSelect = document.getElementById("view-select");
   if (viewSelect) viewSelect.value = currentView;
 
   try { localStorage.setItem(VIEW_STORAGE_KEY, currentView); } catch (e) {}
   applyViewUI();
 
-  if (currentView === "merged") {
+  const isGroupedView = (currentView === 'merged' || currentView === 'production-units');
+  if (isGroupedView) {
     // Kick off raw Excel + merge JSON loading (if available) and re-render when ready.
-    const meta = document.getElementById("merged-view-meta");
+    const meta = (currentView === 'merged')
+      ? document.getElementById('merged-view-meta')
+      : document.getElementById('production-unit-view-meta');
     if (meta && !RAW_EXCEL_LOADED && !RAW_EXCEL_FAILED) {
       meta.textContent = "Loading raw Excel layout (if available)…";
     }
     ensureRawExcelLoaded().then(() => {
-      if (currentView === "merged") applyFacetFilters();
+      if (currentView === 'merged' || currentView === 'production-units') applyFacetFilters();
     });
   }
 
@@ -3887,7 +4138,7 @@ function applyFacetFilters() {
   const searchInput = document.getElementById('search');
   const query = searchInput ? searchInput.value.toLowerCase() : "";
 
-  if (currentView === "merged") {
+  if (currentView === "merged" || currentView === 'production-units') {
     const sortMode = getMergedSortMode();
     const manuscripts = groupByPreserveOrder(allRows || [], getManuscriptKey)
       .map(g => ({ key: g.key, rows: g.rows }))
@@ -4043,12 +4294,18 @@ function applyFacetFilters() {
       pageItems = filtered.slice(start, end);
     }
 
-    renderMergedView(pageItems, {
+    const metaInfo = {
       totalManuscripts: filtered.length,
       totalRows,
       page: MERGED_PAGE,
       totalPages,
-    });
+    };
+
+    if (currentView === 'merged') {
+      renderMergedView(pageItems, metaInfo);
+    } else {
+      renderProductionUnitView(pageItems, metaInfo);
+    }
 
     // Keep the Text View table internally in sync (even though hidden)
     if (table) {
@@ -4664,14 +4921,14 @@ function setupControls() {
   const mergedNextBtn = document.getElementById('merged-next-page');
   if (mergedPrevBtn) {
     mergedPrevBtn.addEventListener('click', function () {
-      if (currentView !== 'merged') return;
+      if (currentView !== 'merged' && currentView !== 'production-units') return;
       MERGED_PAGE = Math.max(1, MERGED_PAGE - 1);
       applyFacetFilters();
     });
   }
   if (mergedNextBtn) {
     mergedNextBtn.addEventListener('click', function () {
-      if (currentView !== 'merged') return;
+      if (currentView !== 'merged' && currentView !== 'production-units') return;
       MERGED_PAGE = MERGED_PAGE + 1;
       applyFacetFilters();
     });
@@ -4691,7 +4948,7 @@ function setupControls() {
       MERGED_SORT_MODE = (this.value === "dating") ? "dating" : "shelfmark";
       try { localStorage.setItem(MERGED_SORT_STORAGE_KEY, MERGED_SORT_MODE); } catch (e) {}
       applyTableSort(MERGED_SORT_MODE);
-      if (currentView === "merged") applyFacetFilters();
+      if (currentView === 'merged' || currentView === 'production-units') applyFacetFilters();
     });
   }
 
@@ -4705,7 +4962,7 @@ function setupControls() {
   if (viewSelect) {
     try {
       const saved = localStorage.getItem(VIEW_STORAGE_KEY);
-      if (saved === "merged" || saved === "table") {
+      if (saved === 'merged' || saved === 'table' || saved === 'production-units') {
         viewSelect.value = saved;
       }
     } catch (e) {
@@ -4728,7 +4985,7 @@ function setupControls() {
   // Handle pagination size change
   paginationSizeSelect.addEventListener("change", function () {
     const value = this.value;
-    if (currentView === 'merged') {
+    if (currentView === 'merged' || currentView === 'production-units') {
       MERGED_PAGE = 1;
       applyFacetFilters();
       return;

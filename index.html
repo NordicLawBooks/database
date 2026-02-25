@@ -83,6 +83,18 @@
       min-height: 0;
     }
 
+    #production-unit-view {
+      flex-grow: 1;
+      height: 100%;
+      overflow: hidden;
+      padding: 0 8px 8px;
+      background: #fff;
+      min-width: 0;
+      display: flex;
+      flex-direction: column;
+      min-height: 0;
+    }
+
     /* Manuscript View scroll container (mirrors SimpleTable's .simple-table-scroll) */
     .merged-view-scroll {
       flex: 1 1 auto;
@@ -192,16 +204,28 @@
     /* Force view visibility (robust to Live Server reload quirks) */
     body.view-merged #table-view { display: none !important; }
     body.view-merged #merged-view { display: flex !important; }
+    body.view-merged #production-unit-view { display: none !important; }
     body.view-table #table-view { display: block !important; }
     body.view-table #merged-view { display: none !important; }
+    body.view-table #production-unit-view { display: none !important; }
+    body.view-production-units #table-view { display: none !important; }
+    body.view-production-units #merged-view { display: none !important; }
+    body.view-production-units #production-unit-view { display: flex !important; }
 
     /* Text View heading visibility */
     body.view-merged #table-view-header { display: none !important; }
     body.view-table #table-view-header { display: flex !important; }
+    body.view-production-units #table-view-header { display: none !important; }
 
     /* Manuscript View heading visibility (match Text View behavior) */
     body.view-table #merged-view-header { display: none !important; }
     body.view-merged #merged-view-header { display: flex !important; }
+    body.view-production-units #merged-view-header { display: none !important; }
+
+    /* Production unit View heading visibility */
+    body.view-production-units #production-unit-view-header { display: flex !important; }
+    body.view-merged #production-unit-view-header { display: none !important; }
+    body.view-table #production-unit-view-header { display: none !important; }
 
     /* Match heading alignment with Manuscript View (whose heading sits inside #merged-view padding) */
     #table-view-header {
@@ -261,6 +285,7 @@
     <div class="col-auto">
       <select id="view-select" class="form-select">
         <option value="merged" selected>Manuscript View</option>
+        <option value="production-units">Production unit View</option>
         <option value="table">Text View</option>
       </select>
     </div>
@@ -484,6 +509,20 @@
         </div>
         <div class="merged-view-scroll">
           <div id="merged-table"></div>
+        </div>
+      </div>
+
+      <div id="production-unit-view" style="display:none;">
+        <div id="production-unit-view-header" class="d-flex justify-content-between align-items-center mb-2" style="display:none;">
+          <div class="d-flex align-items-center gap-2">
+            <div class="fw-bold">Production unit view</div>
+          </div>
+          <div class="d-flex align-items-center gap-2">
+            <div class="text-secondary small" id="production-unit-view-meta"></div>
+          </div>
+        </div>
+        <div class="merged-view-scroll">
+          <div id="production-unit-table"></div>
         </div>
       </div>
     </div>
