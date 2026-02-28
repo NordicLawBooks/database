@@ -72,6 +72,14 @@ function escapeHtml(text) {
     .replace(/'/g, '&#39;');
 }
 
+function debounce(fn, delay) {
+  let timer = null;
+  return function(...args) {
+    if (timer) clearTimeout(timer);
+    timer = setTimeout(() => { timer = null; fn.apply(this, args); }, delay);
+  };
+}
+
 const FROZEN_COLUMNS = ["Depository", "Shelf mark"];
 
 const _CSS_RGBA_RE = /^rgba?\(\s*([0-9.]+)\s*,\s*([0-9.]+)\s*,\s*([0-9.]+)\s*(?:,\s*([0-9.]+)\s*)?\)$/;
@@ -2827,33 +2835,41 @@ function stripCaPrefix(value) {
   return s.replace(/^\s*(?:ca\.?|c\.)\s*/i, "").trim();
 }
 
+const _parseLinesRangeCache = new Map();
+
 function parseLinesRange(value) {
   // Returns {min:number, max:number} if a numeric value or range can be parsed.
   // Otherwise returns null (text-only values are intentionally kept as-is).
   if (value === null || value === undefined) return null;
-  let s = String(value);
-  s = stripParenComments(s);
-  s = stripCaPrefix(s);
-  if (!s) return null;
+  const key = String(value);
+  if (_parseLinesRangeCache.has(key)) return _parseLinesRangeCache.get(key);
 
-  // Range: e.g. "20-25", "20 – 25"
-  let m = s.match(/(\d{1,3})\s*[-–]\s*(\d{1,3})/);
-  if (m) {
-    const a = parseInt(m[1], 10);
-    const b = parseInt(m[2], 10);
-    if (Number.isFinite(a) && Number.isFinite(b)) {
-      return { min: Math.min(a, b), max: Math.max(a, b) };
+  let result = null;
+  let s = stripParenComments(key);
+  s = stripCaPrefix(s);
+  if (s) {
+    // Range: e.g. "20-25", "20 – 25"
+    let m = s.match(/(\d{1,3})\s*[-–]\s*(\d{1,3})/);
+    if (m) {
+      const a = parseInt(m[1], 10);
+      const b = parseInt(m[2], 10);
+      if (Number.isFinite(a) && Number.isFinite(b)) {
+        result = { min: Math.min(a, b), max: Math.max(a, b) };
+      }
+    }
+
+    if (!result) {
+      // Single value: take the first integer found.
+      m = s.match(/(\d{1,3})/);
+      if (m) {
+        const n = parseInt(m[1], 10);
+        if (Number.isFinite(n)) result = { min: n, max: n };
+      }
     }
   }
 
-  // Single value: take the first integer found.
-  m = s.match(/(\d{1,3})/);
-  if (m) {
-    const n = parseInt(m[1], 10);
-    if (Number.isFinite(n)) return { min: n, max: n };
-  }
-
-  return null;
+  _parseLinesRangeCache.set(key, result);
+  return result;
 }
 
 function normalizeLinesFacetValue(value) {
@@ -2877,9 +2893,15 @@ function normalizeFacetSearchText(value) {
   }
 }
 
+const _parseMinorTextTokensCache = new Map();
+
 function parseMinorTextTokens(value) {
   const raw = (value === null || value === undefined) ? '' : String(value);
-  if (!raw) return [];
+  if (_parseMinorTextTokensCache.has(raw)) return _parseMinorTextTokensCache.get(raw);
+  if (!raw) {
+    _parseMinorTextTokensCache.set(raw, []);
+    return [];
+  }
 
   // Normalize multi-line exports to semicolon lists.
   const normalized = raw.replace(/\r/g, '').replace(/\n/g, ';');
@@ -2897,6 +2919,7 @@ function parseMinorTextTokens(value) {
     seen.add(k);
     out.push(p);
   }
+  _parseMinorTextTokensCache.set(raw, out);
   return out;
 }
 
@@ -3301,6 +3324,8 @@ function updateFacetAllCheckbox(field) {
 }
 
 function setupFacetEvents() {
+  const debouncedApply = debounce(applyFacetFilters, 200);
+
   FACET_FIELDS.forEach(field => {
     const facetDiv = document.getElementById(`facet-${field}`);
     if (!facetDiv) return;
@@ -3309,7 +3334,7 @@ function setupFacetEvents() {
       // Range inputs
       facetDiv.addEventListener('input', (e) => {
         if (e.target && e.target.matches('input[data-dating-range]')) {
-          applyFacetFilters();
+          debouncedApply();
         }
       });
       facetDiv.addEventListener('click', (e) => {
@@ -3327,7 +3352,7 @@ function setupFacetEvents() {
     if (field === "Lines") {
       facetDiv.addEventListener('input', (e) => {
         if (e.target && e.target.matches('input[data-lines-range]')) {
-          applyFacetFilters();
+          debouncedApply();
         }
       });
       facetDiv.addEventListener('click', (e) => {
@@ -4721,9 +4746,7 @@ function setupControls() {
   loadDataFromRawExcelSources();
 
   // Global search across all fields
-  searchInput.addEventListener("keyup", function () {
-    applyFacetFilters();
-  });
+  searchInput.addEventListener("keyup", debounce(applyFacetFilters, 200));
 
   // Handle pagination size change
   paginationSizeSelect.addEventListener("change", function () {
