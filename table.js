@@ -1179,9 +1179,9 @@ let RAW_ROWS_BY_SOURCE = new Map();    // sourceId -> RawRow[] (in source-row or
 let RAW_EXCEL_HEADERS = null;          // string[] including inserted Language
 
 const RAW_EXCEL_SOURCES = [
-  { id: "dan", lang: "da", tsv: "data/1.0_Metadata_Dan_raw.tsv", merges: "data/1.0_Metadata_Dan_raw_merges.json", segments: "data/1.0_Metadata_Dan_segments.json" },
-  { id: "isl", lang: "is", tsv: "data/1.1_Metadata_Isl_raw.tsv", merges: "data/1.1_Metadata_Isl_raw_merges.json", segments: "data/1.1_Metadata_Isl_segments.json" },
-  { id: "norw", lang: "no", tsv: "data/1.2_Metadata_Norw_raw.tsv", merges: "data/1.2_Metadata_Norw_raw_merges.json", segments: "data/1.2_Metadata_Norw_segments.json" },
+  { id: "dan", lang: "da", tsv: "data/1.0_Metadata_Dan_raw.tsv", merges: "data/1.1_Metadata_Dan_raw_merges.json", segments: "data/1.1_Metadata_Dan_segments.json" },
+  { id: "isl", lang: "is", tsv: "data/1.1_Metadata_Isl_raw.tsv", merges: "data/1.2_Metadata_Isl_raw_merges.json", segments: "data/1.2_Metadata_Isl_segments.json" },
+  { id: "norw", lang: "no", tsv: "data/1.2_Metadata_Norw_raw.tsv", merges: "data/1.3_Metadata_Norw_raw_merges.json", segments: "data/1.3_Metadata_Norw_segments.json" },
   { id: "swe", lang: "sv", tsv: "data/1.1_Metadata_Swe_raw.tsv", merges: "data/1.1_Metadata_Swe_raw_merges.json", segments: "data/1.1_Metadata_Swe_segments.json" },
 ];
 
