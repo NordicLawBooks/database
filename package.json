@@ -1,0 +1,10 @@
+{
+  "name": "nordiclaw-frontend",
+  "version": "0.0.0",
+  "private": true,
+  "type": "module",
+  "description": "Dev tooling (tests) for the NordicLaw Manuscripts frontend. The site itself is build-free static files; this is not shipped.",
+  "scripts": {
+    "test": "node --test tests/"
+  }
+}

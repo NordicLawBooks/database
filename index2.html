@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>NordicLaw Manuscripts (rewrite preview)</title>
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body { padding: 16px; }
+    #controls { position: sticky; top: 0; z-index: 1000; background: #fff; padding-bottom: 8px; }
+    #layout { display: flex; gap: 16px; align-items: flex-start; }
+    #facet-sidebar { flex: 0 0 320px; max-height: calc(100vh - 140px); overflow-y: auto; }
+    #results { flex: 1 1 auto; min-width: 0; }
+    .table-responsive { max-height: calc(100vh - 180px); overflow: auto; }
+    .facet-count { font-size: 0.85em; }
+    .facet-zero { opacity: 0.45; }
+    .accordion-button { padding: 0.5rem 0.75rem; }
+
+    /* Manuscript View merged table */
+    .merged-table { border-collapse: collapse; font-size: 0.88rem; }
+    .merged-table th, .merged-table td {
+      border: 1px solid #dee2e6; padding: 4px 6px; vertical-align: top;
+    }
+    .merged-table thead th {
+      position: sticky; top: 0; z-index: 5; background: #fff;
+    }
+    .merged-table tr.ms-a > td { background: #ffffff; }
+    .merged-table tr.ms-b > td { background: #f6f8fa; }
+    .merged-table td.pu-b { box-shadow: inset 0 0 0 9999px rgba(0,0,0,0.035); }
+    .merged-table tr.ms-sep > td { border-top: 2px solid #adb5bd; }
+
+    /* Frozen (sticky-left) columns; left + background are set inline by JS. */
+    .merged-table td.frozen-col, .merged-table th.frozen-col { position: sticky; z-index: 6; }
+    .merged-table thead th.frozen-col { z-index: 12; }
+    .merged-table .frozen-col-edge { border-right: 2px solid #adb5bd; }
+  </style>
+</head>
+<body>
+  <h1 class="h4 mb-1">NordicLaw Manuscripts <span class="badge bg-secondary align-middle">rewrite preview</span></h1>
+  <div id="status" class="text-secondary small mb-2"></div>
+
+  <div id="controls" class="row g-2 align-items-center mb-2">
+    <div class="col-12 col-md">
+      <input type="text" id="search" class="form-control" placeholder="Search all fields…" autocomplete="off">
+    </div>
+    <div class="col-auto">
+      <select id="view-select" class="form-select" aria-label="View">
+        <option value="merged">Manuscript View</option>
+        <option value="table">Text View</option>
+      </select>
+    </div>
+    <div class="col-auto">
+      <select id="sort-select" class="form-select" aria-label="Sort">
+        <option value="shelfmark">Sort: Shelfmark</option>
+        <option value="dating">Sort: Dating</option>
+      </select>
+    </div>
+    <div class="col-auto">
+      <select id="page-size-select" class="form-select" aria-label="Page size">
+        <option value="20">20 / page</option>
+        <option value="50">50 / page</option>
+        <option value="100">100 / page</option>
+        <option value="all">All</option>
+      </select>
+    </div>
+    <div class="col-auto dropdown">
+      <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Columns</button>
+      <div class="dropdown-menu dropdown-menu-end p-2" id="columns-menu" style="max-height:70vh; overflow-y:auto; min-width:280px;"></div>
+    </div>
+    <div class="col-auto">
+      <button id="clear-filters" class="btn btn-outline-secondary" type="button">Clear</button>
+    </div>
+  </div>
+
+  <div class="d-flex justify-content-between align-items-center mb-2">
+    <div id="result-meta" class="text-secondary small"></div>
+    <div id="pager" data-total-pages="1"></div>
+  </div>
+
+  <div id="layout">
+    <aside id="facet-sidebar" class="border rounded"></aside>
+    <section id="results">
+      <div id="table-view"></div>
+      <div id="merged-view" style="display:none;"></div>
+    </section>
+  </div>
+
+  <!-- Manuscript details modal -->
+  <div class="modal fade" id="msDetailsModal" tabindex="-1" aria-labelledby="msDetailsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="msDetailsModalLabel">Manuscript</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body" id="ms-details-content"></div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-primary" id="download-ms-pdf-btn">Download PDF</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Text View row-details modal -->
+  <div class="modal fade" id="rowDetailsModal" tabindex="-1" aria-labelledby="rowDetailsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="rowDetailsModalLabel">Text Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body"><div id="row-details-content"></div></div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-outline-primary" id="download-pdf-btn">Download PDF</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="module" src="js/main.js"></script>
+</body>
+</html>
