@@ -4,15 +4,9 @@
 // filenames with prefixes that disagreed within a single source (e.g. a `1.2_` TSV
 // paired with a `1.3_` merges file). Because rows and merge geometry are joined by
 // `__sourceRowIndex`, a TSV/merges pair from different pipeline versions silently
-// mis-merges cells. This manifest fixes that: tsv + merges are derived from one
-// coherent, unversioned stem (matching current pipeline output), so a source can
-// never reference a mismatched pair.
-//
-// Open item — segments: the pipeline does not yet emit unversioned
-// `Metadata_<Lang>_segments.json`; only versioned files exist on disk. Until the
-// pipeline is updated, each source pins `segmentsFile` to the version that exists.
-// When unversioned segments are produced, drop `segmentsFile` and derive it from
-// the stem like tsv/merges. See docs/SEARCH_REWRITE_PLAN.md (Open questions).
+// mis-merges cells. This manifest fixes that: all three artifacts (tsv, merges,
+// segments) are derived from one unversioned stem, so a source can never reference
+// a mismatched pair.
 
 export const DATA_DIR = "data";
 
@@ -28,16 +22,15 @@ export const DATA_DIR = "data";
 
 /** @type {Source[]} */
 export const SOURCES = [
-  // `segmentsFile` is the *existing* (versioned) segments artifact per language.
-  { id: "dan", lang: "da", stem: "Metadata_Dan", segmentsFile: "1.0_Metadata_Dan_segments.json" },
-  { id: "isl", lang: "is", stem: "Metadata_Isl", segmentsFile: "1.1_Metadata_Isl_segments.json" },
-  { id: "norw", lang: "no", stem: "Metadata_Norw", segmentsFile: "1.2_Metadata_Norw_segments.json" },
-  { id: "swe", lang: "sv", stem: "Metadata_Swe", segmentsFile: "1.1_Metadata_Swe_segments.json" },
-].map(({ segmentsFile, ...s }) => ({
+  { id: "dan", lang: "da", stem: "Metadata_Dan" },
+  { id: "isl", lang: "is", stem: "Metadata_Isl" },
+  { id: "norw", lang: "no", stem: "Metadata_Norw" },
+  { id: "swe", lang: "sv", stem: "Metadata_Swe" },
+].map((s) => ({
   ...s,
-  tsv: `${DATA_DIR}/${s.stem}_raw.tsv`,
-  merges: `${DATA_DIR}/${s.stem}_raw_merges.json`,
-  segments: `${DATA_DIR}/${segmentsFile}`,
+  tsv:      `${DATA_DIR}/${s.stem}_raw.tsv`,
+  merges:   `${DATA_DIR}/${s.stem}_raw_merges.json`,
+  segments: `${DATA_DIR}/${s.stem}_segments.json`,
 }));
 
 /** Combined all-languages TSV; the fallback when raw sources can't be loaded. */
