@@ -17,7 +17,7 @@ import { renderTextTable, displayColumns } from "./render/text-table.js";
 import { renderManuscriptView } from "./render/manuscript-view.js";
 import { buildColumnsMenu, syncColumnsMenu, bindColumnsMenu, visibleColumns } from "./render/columns.js";
 import { bindControls, renderControls } from "./render/controls.js";
-import { makeQueryMatcher } from "./search/simple.js";
+import { buildSearchIndex, makeIndexMatcher } from "./search/index.js";
 import { loadPrefs, savePrefs } from "./prefs.js";
 
 async function main() {
@@ -96,6 +96,9 @@ async function main() {
     loadDepositoryMap(),
     loadExpansionMaps(),
   ]);
+
+  // Row-level search index (built after maps so expansions are searchable too).
+  const searchIndex = buildSearchIndex(model.rows, maps);
   if (refs.mergedView) {
     refs.mergedView.addEventListener("click", (e) => {
       const link = e.target.closest && e.target.closest("a.ms-open-details");
@@ -118,7 +121,7 @@ async function main() {
   }
 
   function renderAll(state) {
-    const matchesQuery = makeQueryMatcher(state.query);
+    const matchesQuery = makeIndexMatcher(searchIndex, state.query);
     const result = selectResults(model, state, { matchesQuery });
 
     syncFacetSidebar(refs.sidebar, state, result.counts);
