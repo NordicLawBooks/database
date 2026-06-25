@@ -3,6 +3,7 @@
 
 import { escapeHtml } from "../util/text.js";
 import { expandMainText, expandMinorText, mainCandidatesFrom } from "../model/expand.js";
+import { renderLinksHtml } from "./links.js";
 import { COLUMN_ORDER, HIDDEN_FIELDS } from "../config.js";
 
 /** Visible columns in canonical order, hiding internal/derived fields. */
@@ -34,6 +35,7 @@ export function renderTextTable(host, rows, state, columns, maps = null) {
   const cellHtml = (row, c) => {
     if (maps && c === "Main text") return escapeHtml(expandMainText(row[c], maps));
     if (maps && c === "Minor text") return escapeHtml(expandMinorText(row[c], mainCandidatesFrom(row["Main text"]), maps));
+    if (c === "Links to Database") return renderLinksHtml(row[c]) || "";
     return escapeHtml(row[c] == null ? "" : row[c]);
   };
   const body = slice
