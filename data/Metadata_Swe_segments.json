@@ -1,7 +1,7 @@
 {
   "source": {
-    "rawTsv": "data/Metadata_Swe_raw.tsv",
-    "mergesJson": "data/Metadata_Swe_raw_merges.json",
+    "rawTsv": "/home/patgra/github/nordiclawbooks/database/data/Metadata_Swe_raw.tsv",
+    "mergesJson": "/home/patgra/github/nordiclawbooks/database/data/Metadata_Swe_raw_merges.json",
     "excel": "https://docs.google.com/spreadsheets/d/1Lnj7V-c05Z0gPLxJF74I0e1C4HdPp3RJRl6xFlT6wps",
     "sheet": "Swedish"
   },

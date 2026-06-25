@@ -1,7 +1,7 @@
 {
   "source": {
-    "rawTsv": "data/Metadata_Isl_raw.tsv",
-    "mergesJson": "data/Metadata_Isl_raw_merges.json",
+    "rawTsv": "/home/patgra/github/nordiclawbooks/database/data/Metadata_Isl_raw.tsv",
+    "mergesJson": "/home/patgra/github/nordiclawbooks/database/data/Metadata_Isl_raw_merges.json",
     "excel": "https://docs.google.com/spreadsheets/d/1Lnj7V-c05Z0gPLxJF74I0e1C4HdPp3RJRl6xFlT6wps",
     "sheet": "Icelandic"
   },
@@ -4154,7 +4154,7 @@
           },
           {
             "column": "Minor text",
-            "label": ".",
+            "label": "",
             "startRow": 1,
             "endRow": 11,
             "startRowAbs": 12,
@@ -4175,7 +4175,7 @@
           },
           {
             "column": "Minor text",
-            "label": ".",
+            "label": "",
             "startRow": 12,
             "endRow": 14,
             "startRowAbs": 23,
@@ -4388,7 +4388,7 @@
         "Related Shelfmarks": [
           {
             "column": "Related Shelfmarks",
-            "label": ".",
+            "label": "",
             "startRow": 0,
             "endRow": 14,
             "startRowAbs": 11,
@@ -5053,7 +5053,7 @@
         "Minor text": [
           {
             "column": "Minor text",
-            "label": ".",
+            "label": "",
             "startRow": 0,
             "endRow": 2,
             "startRowAbs": 26,
@@ -5923,7 +5923,7 @@
           },
           {
             "column": "Main text",
-            "label": ".",
+            "label": "",
             "startRow": 3,
             "endRow": 5,
             "startRowAbs": 32,
@@ -5967,27 +5967,6 @@
           },
           {
             "column": "Main text",
-            "label": ".",
-            "startRow": 7,
-            "endRow": 7,
-            "startRowAbs": 36,
-            "endRowAbs": 36,
-            "source": "cell",
-            "locus": {
-              "kind": "f",
-              "from": "61v",
-              "to": "63r",
-              "prefix": "ff.",
-              "rendered": "ff. 61v-63r",
-              "evidence": {
-                "leavesPages": [
-                  "ff. 61va34-63ra32"
-                ]
-              }
-            }
-          },
-          {
-            "column": "Main text",
             "label": "KAB",
             "startRow": 8,
             "endRow": 8,
@@ -6009,7 +5988,7 @@
           },
           {
             "column": "Main text",
-            "label": ".",
+            "label": "",
             "startRow": 9,
             "endRow": 13,
             "startRowAbs": 38,
@@ -6305,7 +6284,7 @@
         "Name": [
           {
             "column": "Name",
-            "label": ".",
+            "label": "",
             "startRow": 0,
             "endRow": 13,
             "startRowAbs": 29,
@@ -67715,7 +67694,7 @@
         "Related Shelfmarks": [
           {
             "column": "Related Shelfmarks",
-            "label": "II.29 (Ólafur Halldórsson, 1094); AM 173 a 1 4to",
+            "label": "\"II.29\" (Ólafur Halldórsson, 1094); AM 173 a 1 4to",
             "startRow": 0,
             "endRow": 0,
             "startRowAbs": 695,
@@ -68324,7 +68303,7 @@
         "Related Shelfmarks": [
           {
             "column": "Related Shelfmarks",
-            "label": "II.29 (Ólafur Halldórsson, 1094); AM 173 a 2 4to",
+            "label": "\"II.29\" (Ólafur Halldórsson, 1094); AM 173 a 2 4to",
             "startRow": 0,
             "endRow": 0,
             "startRowAbs": 696,
@@ -68933,7 +68912,7 @@
         "Related Shelfmarks": [
           {
             "column": "Related Shelfmarks",
-            "label": "II.29 (Ólafur Halldórsson, 1094); AM 173 a 3 4to",
+            "label": "\"II.29\" (Ólafur Halldórsson, 1094); AM 173 a 3 4to",
             "startRow": 0,
             "endRow": 0,
             "startRowAbs": 697,
@@ -69542,7 +69521,7 @@
         "Related Shelfmarks": [
           {
             "column": "Related Shelfmarks",
-            "label": "II.29 (Ólafur Halldórsson, 1094); AM 173 a 4 4to",
+            "label": "\"II.29\" (Ólafur Halldórsson, 1094); AM 173 a 4 4to",
             "startRow": 0,
             "endRow": 0,
             "startRowAbs": 698,
@@ -70151,7 +70130,7 @@
         "Related Shelfmarks": [
           {
             "column": "Related Shelfmarks",
-            "label": "II.29 (Ólafur Halldórsson, 1094); AM 173 a 5 4to",
+            "label": "\"II.29\" (Ólafur Halldórsson, 1094); AM 173 a 5 4to",
             "startRow": 0,
             "endRow": 0,
             "startRowAbs": 699,
@@ -71459,7 +71438,7 @@
         "Related Shelfmarks": [
           {
             "column": "Related Shelfmarks",
-            "label": "II.29 (Ólafur Halldórsson, 1094); AM 173 a 7 4to",
+            "label": "\"II.29\" (Ólafur Halldórsson, 1094); AM 173 a 7 4to",
             "startRow": 0,
             "endRow": 0,
             "startRowAbs": 702,
@@ -72068,7 +72047,7 @@
         "Related Shelfmarks": [
           {
             "column": "Related Shelfmarks",
-            "label": "II.29 (Ólafur Halldórsson, 1094); AM 173 a 8 4to",
+            "label": "\"II.29\" (Ólafur Halldórsson, 1094); AM 173 a 8 4to",
             "startRow": 0,
             "endRow": 0,
             "startRowAbs": 703,
@@ -72677,7 +72656,7 @@
         "Related Shelfmarks": [
           {
             "column": "Related Shelfmarks",
-            "label": "II.29 (Ólafur Halldórsson, 1094); AM 173 a 9 4to",
+            "label": "\"II.29\" (Ólafur Halldórsson, 1094); AM 173 a 9 4to",
             "startRow": 0,
             "endRow": 0,
             "startRowAbs": 704,
@@ -73286,7 +73265,7 @@
         "Related Shelfmarks": [
           {
             "column": "Related Shelfmarks",
-            "label": "II.12 / II d (Ólafur Halldórsson, 1094)",
+            "label": "\"II.12 / II d\" (Ólafur Halldórsson, 1094)",
             "startRow": 0,
             "endRow": 0,
             "startRowAbs": 705,
@@ -108235,7 +108214,7 @@
         "Related Shelfmarks": [
           {
             "column": "Related Shelfmarks",
-            "label": "I.14 / u2 (Ólafur Halldórsson, 1904) / Stock MS. Island 3b, 4to III / Holm Perg 36 III 4to",
+            "label": "\"I.14 / u2\" (Ólafur Halldórsson, 1904) / Stock MS. Island 3b, 4to III / Holm Perg 36 III 4to",
             "startRow": 0,
             "endRow": 0,
             "startRowAbs": 897,
@@ -113497,7 +113476,7 @@
         "Related Shelfmarks": [
           {
             "column": "Related Shelfmarks",
-            "label": "II.11 / II c (Ólafur Halldórsson, 1904)",
+            "label": "\"II.11 / II c\" (Ólafur Halldórsson, 1904)",
             "startRow": 0,
             "endRow": 0,
             "startRowAbs": 961,
@@ -114106,7 +114085,7 @@
         "Related Shelfmarks": [
           {
             "column": "Related Shelfmarks",
-            "label": "I.11 / i 4 (Ólafur Halldórsson, 1904) / JS frg 1",
+            "label": "\"I.11 / i 4\" (Ólafur Halldórsson, 1904) / JS frg 1",
             "startRow": 0,
             "endRow": 0,
             "startRowAbs": 962,
@@ -114715,7 +114694,7 @@
         "Related Shelfmarks": [
           {
             "column": "Related Shelfmarks",
-            "label": "I.12 / c 2 (Ólafur Halldórsson, 1904) / AM 173 d A 22 4to / Þjskjs Varia I 10",
+            "label": "\"I.12 / c 2\" (Ólafur Halldórsson, 1904) / AM 173 d A 22 4to / Þjskjs Varia I 10",
             "startRow": 0,
             "endRow": 0,
             "startRowAbs": 963,
@@ -115347,7 +115326,7 @@
         "Related Shelfmarks": [
           {
             "column": "Related Shelfmarks",
-            "label": "I.25 / h 2 (Ólafur Halldórsson, 1904)",
+            "label": "\"I.25 / h 2\" (Ólafur Halldórsson, 1904)",
             "startRow": 0,
             "endRow": 0,
             "startRowAbs": 964,
@@ -156041,7 +156020,7 @@
         "Related Shelfmarks": [
           {
             "column": "Related Shelfmarks",
-            "label": "II.40 (Ólafur Halldórsson, 1904)",
+            "label": "\"II.40\" (Ólafur Halldórsson, 1904)",
             "startRow": 0,
             "endRow": 0,
             "startRowAbs": 1289,
@@ -166211,9 +166190,9 @@
       "Depository": "DKB",
       "rowRangeAbs": {
         "start": 1349,
-        "end": 1370
+        "end": 1349
       },
-      "rowCount": 22,
+      "rowCount": 1,
       "segmentsByColumn": {
         "Columns": [
           {

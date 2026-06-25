@@ -36,7 +36,7 @@
     "Literature",
     "Links to Database"
   ],
-  "rowCount": 1371,
+  "rowCount": 1350,
   "merges": [
     {
       "minRow": 180,
@@ -225,7 +225,7 @@
       "maxColIndex": 1,
       "minCol": "Name",
       "maxCol": "Name",
-      "value": "."
+      "value": ""
     },
     {
       "minRow": 29,
@@ -6264,7 +6264,7 @@
       "maxColIndex": 9,
       "minCol": "Minor text",
       "maxCol": "Minor text",
-      "value": "."
+      "value": ""
     },
     {
       "minRow": 11,
@@ -6291,7 +6291,7 @@
       "maxColIndex": 2,
       "minCol": "Related Shelfmarks",
       "maxCol": "Related Shelfmarks",
-      "value": "."
+      "value": ""
     },
     {
       "minRow": 11,
@@ -6543,7 +6543,7 @@
       "maxColIndex": 9,
       "minCol": "Minor text",
       "maxCol": "Minor text",
-      "value": "."
+      "value": ""
     },
     {
       "minRow": 23,
@@ -7740,7 +7740,7 @@
       "maxColIndex": 9,
       "minCol": "Minor text",
       "maxCol": "Minor text",
-      "value": "."
+      "value": ""
     },
     {
       "minRow": 26,
@@ -7929,7 +7929,7 @@
       "maxColIndex": 8,
       "minCol": "Main text",
       "maxCol": "Main text",
-      "value": "."
+      "value": ""
     },
     {
       "minRow": 38,
@@ -7938,7 +7938,7 @@
       "maxColIndex": 8,
       "minCol": "Main text",
       "maxCol": "Main text",
-      "value": "."
+      "value": ""
     },
     {
       "minRow": 47,

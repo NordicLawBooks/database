@@ -1,7 +1,7 @@
 {
   "source": {
-    "rawTsv": "data/Metadata_Dan_raw.tsv",
-    "mergesJson": "data/Metadata_Dan_raw_merges.json",
+    "rawTsv": "/home/patgra/github/nordiclawbooks/database/data/Metadata_Dan_raw.tsv",
+    "mergesJson": "/home/patgra/github/nordiclawbooks/database/data/Metadata_Dan_raw_merges.json",
     "excel": "https://docs.google.com/spreadsheets/d/1Lnj7V-c05Z0gPLxJF74I0e1C4HdPp3RJRl6xFlT6wps",
     "sheet": "Danish"
   },
@@ -7403,7 +7403,7 @@
         "Columns": [
           {
             "column": "Columns",
-            "label": "I",
+            "label": "1",
             "startRow": 0,
             "endRow": 5,
             "startRowAbs": 56,
@@ -32844,7 +32844,7 @@
           },
           {
             "column": "Minor text",
-            "label": "Rigens rett",
+            "label": "\"Rigens rett\"",
             "startRow": 4,
             "endRow": 4,
             "startRowAbs": 294,
@@ -51614,7 +51614,7 @@
         "Links to Database": [
           {
             "column": "Links to Database",
-            "label": "[AV](https://www.manuscripta.se/ms/100248)",
+            "label": "[MS](https://www.manuscripta.se/ms/100248)",
             "startRow": 0,
             "endRow": 0,
             "startRowAbs": 382,
@@ -54423,7 +54423,7 @@
         "Links to Database": [
           {
             "column": "Links to Database",
-            "label": "Unavaible",
+            "label": "Unavailable",
             "startRow": 0,
             "endRow": 2,
             "startRowAbs": 390,
@@ -58214,7 +58214,7 @@
           },
           {
             "column": "Minor text",
-            "label": "Then rett",
+            "label": "\"Then rett\"",
             "startRow": 12,
             "endRow": 12,
             "startRowAbs": 414,
@@ -58235,7 +58235,7 @@
           },
           {
             "column": "Minor text",
-            "label": "Water rett (in Low German)",
+            "label": "\"Water rett\" (in Low German)",
             "startRow": 14,
             "endRow": 14,
             "startRowAbs": 416,
@@ -65731,7 +65731,7 @@
     },
     {
       "Shelfmark": "Mh 23 4to",
-      "Depository": "LU UB",
+      "Depository": "LUB",
       "rowRangeAbs": {
         "start": 496,
         "end": 509
@@ -72432,7 +72432,7 @@
           },
           {
             "column": "Minor text",
-            "label": "The right of the realm",
+            "label": "\"The right of the realm\"",
             "startRow": 3,
             "endRow": 3,
             "startRowAbs": 545,
@@ -79923,7 +79923,7 @@
         "Links to Database": [
           {
             "column": "Links to Database",
-            "label": "[HS](https://handrit.is/manuscript/view/da/AM08-0011/7#page/Fylgig%C3%B6gn+3v/mode/2up)",
+            "label": "[HR](https://handrit.is/manuscript/view/da/AM08-0011/7#page/Fylgig%C3%B6gn+3v/mode/2up)",
             "startRow": 0,
             "endRow": 3,
             "startRowAbs": 595,
@@ -133062,7 +133062,7 @@
         "Main text": [
           {
             "column": "Main text",
-            "label": "Loubog, indholdandis atskillige [?] louger",
+            "label": "\"Loubog, indholdandis atskillige [?] louger\"",
             "startRow": 0,
             "endRow": 0,
             "startRowAbs": 851,
@@ -134591,7 +134591,7 @@
       }
     },
     {
-      "Shelfmark": "Huseby MS",
+      "Shelfmark": "\"Huseby MS\"",
       "Depository": "DKB",
       "rowRangeAbs": {
         "start": 867,
@@ -134642,7 +134642,7 @@
       }
     },
     {
-      "Shelfmark": "Ribe MS",
+      "Shelfmark": "\"Ribe MS\"",
       "Depository": "DKB",
       "rowRangeAbs": {
         "start": 868,
