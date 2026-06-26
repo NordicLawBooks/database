@@ -1536,7 +1536,11 @@ function expandDepositoryLabel(rawDepository) {
 function buildManuscriptModalHtml(ms, sourceId, msKey = null) {
   const shelfmark = ms && ms.Shelfmark ? String(ms.Shelfmark) : '';
   const depository = expandDepositoryLabel(ms && ms.Depository ? String(ms.Depository) : '');
-  const language = pickFirstNonEmptySegmentLabel(ms, 'Language');
+  let language = pickFirstNonEmptySegmentLabel(ms, 'Language');
+  if (!language && sourceId) {
+    const src = RAW_EXCEL_SOURCES.find(s => s.id === sourceId);
+    if (src && src.lang) language = LANGUAGE_MAP[src.lang] || src.lang;
+  }
   const name = pickFirstNonEmptySegmentLabel(ms, 'Name');
   const object = pickFirstNonEmptySegmentLabel(ms, 'Object');
   const size = pickFirstNonEmptySegmentLabel(ms, 'Size');
