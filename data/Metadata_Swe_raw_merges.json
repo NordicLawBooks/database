@@ -45,7 +45,7 @@
       "maxColIndex": 31,
       "minCol": "Links to Database",
       "maxCol": "Links to Database",
-      "value": "[MS (not digitalised)](https://www.manuscripta.se/ms/100253)"
+      "value": "[MS (not digitised)](https://www.manuscripta.se/ms/100253)"
     },
     {
       "minRow": 0,
@@ -180,7 +180,7 @@
       "maxColIndex": 31,
       "minCol": "Links to Database",
       "maxCol": "Links to Database",
-      "value": "[AV](https://www.alvin-portal.org/alvin/view.jsf?aq=%5B%5B%7B%22A_FQ%22%3A%22b5%22%7D%5D%5D&c=5&aqe=%5B%5D&af=%5B%22ARCHIVE_ORG_ID_facet%3A23%22%2C%22CRP_facet%3A1400%22%5D&searchType=TEXT&pid=alvin-record%3A472885&dswid=-5738#alvin-record%3A472885)"
+      "value": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-472885)"
     },
     {
       "minRow": 0,
@@ -504,7 +504,7 @@
       "maxColIndex": 31,
       "minCol": "Links to Database",
       "maxCol": "Links to Database",
-      "value": "[MS (Not digitalised)](https://manuscripta.se/ms/100256)"
+      "value": "[MS (Not digitised)](https://manuscripta.se/ms/100256)"
     },
     {
       "minRow": 22,
@@ -552,15 +552,6 @@
       "value": "Schlyter (1834:XXI-XXII; 1838:XL-XLI; 1862:XL; 1865:XIX-XX); Klemming (1868-1881:57); Åström (2003; 2013); Beckman (1917:54); Wiktorsson (1985:118-134); Geete (1900-1916:243-259)"
     },
     {
-      "minRow": 23,
-      "maxRow": 40,
-      "minColIndex": 31,
-      "maxColIndex": 31,
-      "minCol": "Links to Database",
-      "maxCol": "Links to Database",
-      "value": "Av"
-    },
-    {
       "minRow": 29,
       "maxRow": 40,
       "minColIndex": 29,
@@ -568,6 +559,15 @@
       "minCol": "Place",
       "maxCol": "Place",
       "value": "Unknown"
+    },
+    {
+      "minRow": 23,
+      "maxRow": 40,
+      "minColIndex": 31,
+      "maxColIndex": 31,
+      "minCol": "Links to Database",
+      "maxCol": "Links to Database",
+      "value": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-472903)"
     },
     {
       "minRow": 41,
@@ -2511,7 +2511,7 @@
       "maxColIndex": 31,
       "minCol": "Links to Database",
       "maxCol": "Links to Database",
-      "value": "[Av](https://www.alvin-portal.org/alvin/view.jsf?dswid=8148&searchType=TEXT&query=&aq=%5B%5B%7B%22A_FQ%22%3A%22b5%22%7D%5D%5D&aqe=%5B%5D&af=%5B%22ARCHIVE_ORG_ID_facet%3A23%22%2C%22CRP_facet%3A1400%22%5D&pid=alvin-record%3A472910&c=19#alvin-record%3A472910)"
+      "value": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-472910)"
     },
     {
       "minRow": 61,
@@ -2673,7 +2673,7 @@
       "maxColIndex": 31,
       "minCol": "Links to Database",
       "maxCol": "Links to Database",
-      "value": "[Av](https://www.alvin-portal.org/alvin/view.jsf?dswid=8148&searchType=TEXT&query=&aq=%5B%5B%7B%22A_FQ%22%3A%22b5%22%7D%5D%5D&aqe=%5B%5D&af=%5B%22ARCHIVE_ORG_ID_facet%3A23%22%2C%22CRP_facet%3A1300%22%5D&pid=alvin-record%3A472863&c=3#alvin-record%3A472863)"
+      "value": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-472863)"
     },
     {
       "minRow": 105,
@@ -2700,7 +2700,7 @@
       "maxColIndex": 31,
       "minCol": "Links to Database",
       "maxCol": "Links to Database",
-      "value": "[Av](https://www.alvin-portal.org/alvin/view.jsf?dswid=8148&searchType=TEXT&query=&aq=%5B%5B%7B%22A_FQ%22%3A%22b5%22%7D%5D%5D&aqe=%5B%5D&af=%5B%22ARCHIVE_ORG_ID_facet%3A23%22%2C%22CRP_facet%3A1300%22%5D&pid=alvin-record%3A472906&c=17#alvin-record%3A472906)"
+      "value": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-472906)"
     },
     {
       "minRow": 133,
@@ -2763,7 +2763,7 @@
       "maxColIndex": 31,
       "minCol": "Links to Database",
       "maxCol": "Links to Database",
-      "value": "[MS (Not digitalised)](https://manuscripta.se/ms/100260)"
+      "value": "[MS (Not digitised)](https://manuscripta.se/ms/100260)"
     },
     {
       "minRow": 133,
@@ -2781,7 +2781,7 @@
       "maxColIndex": 31,
       "minCol": "Links to Database",
       "maxCol": "Links to Database",
-      "value": "[Av](https://www.alvin-portal.org/alvin/view.jsf?dswid=8148&searchType=TEXT&query=&aq=%5B%5B%7B%22A_FQ%22%3A%22b5%22%7D%5D%5D&aqe=%5B%5D&af=%5B%22ARCHIVE_ORG_ID_facet%3A23%22%2C%22CRP_facet%3A1300%22%5D&pid=alvin-record%3A472902&c=4#alvin-record%3A472902)"
+      "value": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-472902)"
     },
     {
       "minRow": 136,
@@ -3501,7 +3501,7 @@
       "maxColIndex": 31,
       "minCol": "Links to Database",
       "maxCol": "Links to Database",
-      "value": "[MS (Not digitalised)](https://manuscripta.se/ms/100262)"
+      "value": "[MS (Not digitised)](https://manuscripta.se/ms/100262)"
     },
     {
       "minRow": 130,
@@ -3618,7 +3618,7 @@
       "maxColIndex": 31,
       "minCol": "Links to Database",
       "maxCol": "Links to Database",
-      "value": "[MS (Not digitalised)](https://manuscripta.se/ms/100261)"
+      "value": "[MS (Not digitised)](https://manuscripta.se/ms/100261)"
     },
     {
       "minRow": 128,
@@ -4194,7 +4194,7 @@
       "maxColIndex": 31,
       "minCol": "Links to Database",
       "maxCol": "Links to Database",
-      "value": "[MS (Not digitalised)](https://manuscripta.se/ms/100272)"
+      "value": "[MS (Not digitised)](https://manuscripta.se/ms/100272)"
     },
     {
       "minRow": 205,
@@ -6831,7 +6831,7 @@
       "maxColIndex": 31,
       "minCol": "Links to Database",
       "maxCol": "Links to Database",
-      "value": "[MS (Not digitalised)](https://manuscripta.se/ms/100301)"
+      "value": "[MS (Not digitised)](https://manuscripta.se/ms/100301)"
     },
     {
       "minRow": 409,
@@ -7398,7 +7398,7 @@
       "maxColIndex": 31,
       "minCol": "Links to Database",
       "maxCol": "Links to Database",
-      "value": "[MS (Not digitalised)](https://manuscripta.se/ms/100291)"
+      "value": "[MS (Not digitised)](https://manuscripta.se/ms/100291)"
     },
     {
       "minRow": 338,
@@ -10332,7 +10332,7 @@
       "maxColIndex": 31,
       "minCol": "Links to Database",
       "maxCol": "Links to Database",
-      "value": "[MS (Not digitalised)](https://www.manuscripta.se/ms/100289)"
+      "value": "[MS (Not digitised)](https://www.manuscripta.se/ms/100289)"
     },
     {
       "minRow": 336,
@@ -10845,7 +10845,7 @@
       "maxColIndex": 31,
       "minCol": "Links to Database",
       "maxCol": "Links to Database",
-      "value": "[MS (Not digitalised)](https://manuscripta.se/ms/100302)"
+      "value": "[MS (Not digitised)](https://manuscripta.se/ms/100302)"
     },
     {
       "minRow": 413,
@@ -11358,7 +11358,7 @@
       "maxColIndex": 31,
       "minCol": "Links to Database",
       "maxCol": "Links to Database",
-      "value": "[MS (Not digitalised)](https://manuscripta.se/ms/100304)"
+      "value": "[MS (Not digitised)](https://manuscripta.se/ms/100304)"
     },
     {
       "minRow": 420,
@@ -12033,7 +12033,7 @@
       "maxColIndex": 31,
       "minCol": "Links to Database",
       "maxCol": "Links to Database",
-      "value": "[MS (Not digitalised)](https://manuscripta.se/ms/100309)"
+      "value": "[MS (Not digitised)](https://manuscripta.se/ms/100309)"
     },
     {
       "minRow": 446,
@@ -12240,7 +12240,7 @@
       "maxColIndex": 31,
       "minCol": "Links to Database",
       "maxCol": "Links to Database",
-      "value": "[MS (Not digitalised)](https://manuscripta.se/ms/100273)"
+      "value": "[MS (Not digitised)](https://manuscripta.se/ms/100273)"
     },
     {
       "minRow": 211,
@@ -14085,7 +14085,7 @@
       "maxColIndex": 31,
       "minCol": "Links to Database",
       "maxCol": "Links to Database",
-      "value": "[MS (Not digitalised)](https://manuscripta.se/ms/100276)"
+      "value": "[MS (Not digitised)](https://manuscripta.se/ms/100276)"
     },
     {
       "minRow": 234,
@@ -14337,7 +14337,7 @@
       "maxColIndex": 31,
       "minCol": "Links to Database",
       "maxCol": "Links to Database",
-      "value": "[MS (Not digitalised)](https://manuscripta.se/ms/100274)"
+      "value": "[MS (Not digitised)](https://manuscripta.se/ms/100274)"
     },
     {
       "minRow": 247,
@@ -14598,7 +14598,7 @@
       "maxColIndex": 31,
       "minCol": "Links to Database",
       "maxCol": "Links to Database",
-      "value": "[MS (Not digitalised)](https://manuscripta.se/ms/100284)"
+      "value": "[MS (Not digitised)](https://manuscripta.se/ms/100284)"
     },
     {
       "minRow": 308,
@@ -14616,7 +14616,7 @@
       "maxColIndex": 31,
       "minCol": "Links to Database",
       "maxCol": "Links to Database",
-      "value": "[MS (Not digitalised)](https://manuscripta.se/ms/100286)"
+      "value": "[MS (Not digitised)](https://manuscripta.se/ms/100286)"
     },
     {
       "minRow": 309,
@@ -14778,7 +14778,7 @@
       "maxColIndex": 31,
       "minCol": "Links to Database",
       "maxCol": "Links to Database",
-      "value": "[MS (Not digitalised)](https://manuscripta.se/ms/100285)"
+      "value": "[MS (Not digitised)](https://manuscripta.se/ms/100285)"
     },
     {
       "minRow": 306,
@@ -16461,7 +16461,7 @@
       "maxColIndex": 31,
       "minCol": "Links to Database",
       "maxCol": "Links to Database",
-      "value": "[MS (Not digitalised)](https://manuscripta.se/ms/100307)"
+      "value": "[MS (Not digitised)](https://manuscripta.se/ms/100307)"
     },
     {
       "minRow": 435,
@@ -16524,7 +16524,7 @@
       "maxColIndex": 31,
       "minCol": "Links to Database",
       "maxCol": "Links to Database",
-      "value": "[MS (Not digitalised)](https://manuscripta.se/ms/100306)"
+      "value": "[MS (Not digitised)](https://manuscripta.se/ms/100306)"
     },
     {
       "minRow": 465,

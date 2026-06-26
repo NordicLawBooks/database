@@ -489,7 +489,7 @@
         "Links to Database": [
           {
             "column": "Links to Database",
-            "label": "[MS (not digitalised)](https://www.manuscripta.se/ms/100253)",
+            "label": "[MS (not digitised)](https://www.manuscripta.se/ms/100253)",
             "startRow": 0,
             "endRow": 1,
             "startRowAbs": 0,
@@ -511,7 +511,7 @@
           },
           {
             "column": "Links to Database",
-            "label": "[AV](https://www.alvin-portal.org/alvin/view.jsf?aq=%5B%5B%7B%22A_FQ%22%3A%22b5%22%7D%5D%5D&c=5&aqe=%5B%5D&af=%5B%22ARCHIVE_ORG_ID_facet%3A23%22%2C%22CRP_facet%3A1400%22%5D&searchType=TEXT&pid=alvin-record%3A472885&dswid=-5738#alvin-record%3A472885)",
+            "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-472885)",
             "startRow": 2,
             "endRow": 21,
             "startRowAbs": 2,
@@ -2418,7 +2418,7 @@
         "Links to Database": [
           {
             "column": "Links to Database",
-            "label": "MS (not digitalised)",
+            "label": "MS (not digitised)",
             "startRow": 0,
             "endRow": 0,
             "startRowAbs": 22,
@@ -2439,7 +2439,7 @@
           },
           {
             "column": "Links to Database",
-            "label": "Av",
+            "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-472903)",
             "startRow": 1,
             "endRow": 18,
             "startRowAbs": 23,
@@ -5711,7 +5711,7 @@
         "Links to Database": [
           {
             "column": "Links to Database",
-            "label": "[MS (Not digitalised)](https://manuscripta.se/ms/100256)",
+            "label": "[MS (Not digitised)](https://manuscripta.se/ms/100256)",
             "startRow": 0,
             "endRow": 1,
             "startRowAbs": 45,
@@ -5733,7 +5733,7 @@
           },
           {
             "column": "Links to Database",
-            "label": "[Av](https://www.alvin-portal.org/alvin/view.jsf?dswid=8148&searchType=TEXT&query=&aq=%5B%5B%7B%22A_FQ%22%3A%22b5%22%7D%5D%5D&aqe=%5B%5D&af=%5B%22ARCHIVE_ORG_ID_facet%3A23%22%2C%22CRP_facet%3A1400%22%5D&pid=alvin-record%3A472910&c=19#alvin-record%3A472910)",
+            "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-472910)",
             "startRow": 2,
             "endRow": 37,
             "startRowAbs": 47,
@@ -10137,7 +10137,7 @@
           },
           {
             "column": "Links to Database",
-            "label": "[Av](https://www.alvin-portal.org/alvin/view.jsf?dswid=8148&searchType=TEXT&query=&aq=%5B%5B%7B%22A_FQ%22%3A%22b5%22%7D%5D%5D&aqe=%5B%5D&af=%5B%22ARCHIVE_ORG_ID_facet%3A23%22%2C%22CRP_facet%3A1300%22%5D&pid=alvin-record%3A472863&c=3#alvin-record%3A472863)",
+            "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-472863)",
             "startRow": 1,
             "endRow": 19,
             "startRowAbs": 90,
@@ -12864,7 +12864,7 @@
           },
           {
             "column": "Links to Database",
-            "label": "[Av](https://www.alvin-portal.org/alvin/view.jsf?dswid=8148&searchType=TEXT&query=&aq=%5B%5B%7B%22A_FQ%22%3A%22b5%22%7D%5D%5D&aqe=%5B%5D&af=%5B%22ARCHIVE_ORG_ID_facet%3A23%22%2C%22CRP_facet%3A1300%22%5D&pid=alvin-record%3A472906&c=17#alvin-record%3A472906)",
+            "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-472906)",
             "startRow": 1,
             "endRow": 11,
             "startRowAbs": 110,
@@ -14586,7 +14586,7 @@
         "Links to Database": [
           {
             "column": "Links to Database",
-            "label": "[MS (Not digitalised)](https://manuscripta.se/ms/100260)",
+            "label": "[MS (Not digitised)](https://manuscripta.se/ms/100260)",
             "startRow": 0,
             "endRow": 6,
             "startRowAbs": 121,
@@ -15546,7 +15546,7 @@
         "Links to Database": [
           {
             "column": "Links to Database",
-            "label": "[MS (Not digitalised)](https://manuscripta.se/ms/100261)",
+            "label": "[MS (Not digitised)](https://manuscripta.se/ms/100261)",
             "startRow": 0,
             "endRow": 1,
             "startRowAbs": 128,
@@ -16262,7 +16262,7 @@
         "Links to Database": [
           {
             "column": "Links to Database",
-            "label": "[MS (Not digitalised)](https://manuscripta.se/ms/100262)",
+            "label": "[MS (Not digitised)](https://manuscripta.se/ms/100262)",
             "startRow": 0,
             "endRow": 2,
             "startRowAbs": 130,
@@ -17347,7 +17347,7 @@
         "Links to Database": [
           {
             "column": "Links to Database",
-            "label": "[MS (Not digitalised)](https://manuscripta.se/ms/100263)",
+            "label": "[MS (Not digitised)](https://manuscripta.se/ms/100263)",
             "startRow": 0,
             "endRow": 0,
             "startRowAbs": 133,
@@ -17368,7 +17368,7 @@
           },
           {
             "column": "Links to Database",
-            "label": "[Av](https://www.alvin-portal.org/alvin/view.jsf?dswid=8148&searchType=TEXT&query=&aq=%5B%5B%7B%22A_FQ%22%3A%22b5%22%7D%5D%5D&aqe=%5B%5D&af=%5B%22ARCHIVE_ORG_ID_facet%3A23%22%2C%22CRP_facet%3A1300%22%5D&pid=alvin-record%3A472902&c=4#alvin-record%3A472902)",
+            "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-472902)",
             "startRow": 1,
             "endRow": 15,
             "startRowAbs": 134,
@@ -18979,7 +18979,7 @@
         "Links to Database": [
           {
             "column": "Links to Database",
-            "label": "[MS (Not digitalised)](https://manuscripta.se/ms/100264)",
+            "label": "[MS (Not digitised)](https://manuscripta.se/ms/100264)",
             "startRow": 0,
             "endRow": 0,
             "startRowAbs": 149,
@@ -19000,7 +19000,7 @@
           },
           {
             "column": "Links to Database",
-            "label": "[Av](https://www.alvin-portal.org/alvin/view.jsf?dswid=9154&searchType=TEXT&query=B&aq=%5B%5B%7B%22A_FQ%22%3A%22B%22%7D%5D%5D&aqe=%5B%5D&af=%5B%22ARCHIVE_ORG_ID_facet%3A23%22%5D&pid=alvin-record%3A472907&c=75#alvin-record%3A472907)",
+            "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-472907)",
             "startRow": 1,
             "endRow": 1,
             "startRowAbs": 150,
@@ -19735,7 +19735,7 @@
         "Links to Database": [
           {
             "column": "Links to Database",
-            "label": "[MS (Not digitalised)](https://manuscripta.se/ms/100265)",
+            "label": "MS (Not digitised); AV",
             "startRow": 0,
             "endRow": 0,
             "startRowAbs": 151,
@@ -21967,7 +21967,7 @@
         "Links to Database": [
           {
             "column": "Links to Database",
-            "label": "[MS (Not digitalised)](https://manuscripta.se/ms/100268)",
+            "label": "[MS (Not digitised)](https://manuscripta.se/ms/100268)",
             "startRow": 0,
             "endRow": 0,
             "startRowAbs": 163,
@@ -26321,7 +26321,7 @@
         "Links to Database": [
           {
             "column": "Links to Database",
-            "label": "[MS (Not digitalised)](https://manuscripta.se/ms/100272)",
+            "label": "[MS (Not digitised)](https://manuscripta.se/ms/100272)",
             "startRow": 0,
             "endRow": 5,
             "startRowAbs": 205,
@@ -27262,7 +27262,7 @@
         "Links to Database": [
           {
             "column": "Links to Database",
-            "label": "[MS (Not digitalised)](https://manuscripta.se/ms/100273)",
+            "label": "[MS (Not digitised)](https://manuscripta.se/ms/100273)",
             "startRow": 0,
             "endRow": 5,
             "startRowAbs": 211,
@@ -28244,7 +28244,7 @@
         "Links to Database": [
           {
             "column": "Links to Database",
-            "label": "[MS (Not digitalised)](https://manuscripta.se/ms/100274)",
+            "label": "[MS (Not digitised)](https://manuscripta.se/ms/100274)",
             "startRow": 0,
             "endRow": 14,
             "startRowAbs": 217,
@@ -29419,7 +29419,7 @@
         "Links to Database": [
           {
             "column": "Links to Database",
-            "label": "[MS (Not digitalised)](https://manuscripta.se/ms/100275)",
+            "label": "[MS (Not digitised)](https://manuscripta.se/ms/100275)",
             "startRow": 0,
             "endRow": 0,
             "startRowAbs": 232,
@@ -30155,7 +30155,7 @@
         "Links to Database": [
           {
             "column": "Links to Database",
-            "label": "[MS (Not digitalised)](https://manuscripta.se/ms/100276)",
+            "label": "[MS (Not digitised)](https://manuscripta.se/ms/100276)",
             "startRow": 0,
             "endRow": 4,
             "startRowAbs": 234,
@@ -32344,7 +32344,7 @@
         "Links to Database": [
           {
             "column": "Links to Database",
-            "label": "[MS (Not digitalised)](https://manuscripta.se/ms/100278)",
+            "label": "[MS (Not digitised)](https://manuscripta.se/ms/100278)",
             "startRow": 0,
             "endRow": 0,
             "startRowAbs": 247,
@@ -40135,7 +40135,7 @@
         "Links to Database": [
           {
             "column": "Links to Database",
-            "label": "[MS (Not digitalised)](https://manuscripta.se/ms/100284)",
+            "label": "[MS (Not digitised)](https://manuscripta.se/ms/100284)",
             "startRow": 0,
             "endRow": 4,
             "startRowAbs": 301,
@@ -41037,7 +41037,7 @@
         "Links to Database": [
           {
             "column": "Links to Database",
-            "label": "[MS (Not digitalised)](https://manuscripta.se/ms/100285)",
+            "label": "[MS (Not digitised)](https://manuscripta.se/ms/100285)",
             "startRow": 0,
             "endRow": 1,
             "startRowAbs": 306,
@@ -41944,7 +41944,7 @@
         "Links to Database": [
           {
             "column": "Links to Database",
-            "label": "[MS (Not digitalised)](https://manuscripta.se/ms/100286)",
+            "label": "[MS (Not digitised)](https://manuscripta.se/ms/100286)",
             "startRow": 0,
             "endRow": 7,
             "startRowAbs": 308,
@@ -45313,7 +45313,7 @@
         "Links to Database": [
           {
             "column": "Links to Database",
-            "label": "[MS (Not digitalised)](https://www.manuscripta.se/ms/100289)",
+            "label": "[MS (Not digitised)](https://www.manuscripta.se/ms/100289)",
             "startRow": 0,
             "endRow": 1,
             "startRowAbs": 334,
@@ -46029,7 +46029,7 @@
           },
           {
             "column": "Links to Database",
-            "label": "[MS (Not digitalised)](https://www.manuscripta.se/ms/100290)",
+            "label": "[MS (Not digitised)](https://www.manuscripta.se/ms/100290)",
             "startRow": 1,
             "endRow": 1,
             "startRowAbs": 337,
@@ -46714,7 +46714,7 @@
         "Links to Database": [
           {
             "column": "Links to Database",
-            "label": "[MS (Not digitalised)](https://manuscripta.se/ms/100291)",
+            "label": "[MS (Not digitised)](https://manuscripta.se/ms/100291)",
             "startRow": 0,
             "endRow": 1,
             "startRowAbs": 338,
@@ -47479,7 +47479,7 @@
         "Links to Database": [
           {
             "column": "Links to Database",
-            "label": "[MS (Not digitalised)](https://manuscripta.se/ms/100292)",
+            "label": "[MS (Not digitised)](https://manuscripta.se/ms/100292)",
             "startRow": 0,
             "endRow": 0,
             "startRowAbs": 340,
@@ -48455,7 +48455,7 @@
         "Links to Database": [
           {
             "column": "Links to Database",
-            "label": "[MS (Not digitalised)](https://manuscripta.se/ms/100293)",
+            "label": "[MS (Not digitised)](https://manuscripta.se/ms/100293)",
             "startRow": 0,
             "endRow": 0,
             "startRowAbs": 343,
@@ -49547,7 +49547,7 @@
         "Links to Database": [
           {
             "column": "Links to Database",
-            "label": "[MS (Not digitalised)](https://manuscripta.se/ms/100294)",
+            "label": "[MS (Not digitised)](https://manuscripta.se/ms/100294)",
             "startRow": 0,
             "endRow": 0,
             "startRowAbs": 348,
@@ -51169,7 +51169,7 @@
         "Links to Database": [
           {
             "column": "Links to Database",
-            "label": "[MS (Not digitalised)](https://manuscripta.se/ms/100296)",
+            "label": "[MS (Not digitised)](https://manuscripta.se/ms/100296)",
             "startRow": 0,
             "endRow": 0,
             "startRowAbs": 354,
@@ -51983,7 +51983,7 @@
         "Links to Database": [
           {
             "column": "Links to Database",
-            "label": "[MS (Not digitalised)](https://www.manuscripta.se/ms/100297)",
+            "label": "[MS (Not digitised)](https://www.manuscripta.se/ms/100297)",
             "startRow": 0,
             "endRow": 0,
             "startRowAbs": 357,
@@ -56680,7 +56680,7 @@
         "Links to Database": [
           {
             "column": "Links to Database",
-            "label": "[MS (Not digitalised)](https://www.manuscripta.se/ms/100299)",
+            "label": "[MS (Not digitised)](https://www.manuscripta.se/ms/100299)",
             "startRow": 0,
             "endRow": 0,
             "startRowAbs": 403,
@@ -58626,7 +58626,7 @@
         "Links to Database": [
           {
             "column": "Links to Database",
-            "label": "[MS (Not digitalised)](https://manuscripta.se/ms/100301)",
+            "label": "[MS (Not digitised)](https://manuscripta.se/ms/100301)",
             "startRow": 0,
             "endRow": 3,
             "startRowAbs": 409,
@@ -59468,7 +59468,7 @@
         "Links to Database": [
           {
             "column": "Links to Database",
-            "label": "[MS (Not digitalised)](https://manuscripta.se/ms/100302)",
+            "label": "[MS (Not digitised)](https://manuscripta.se/ms/100302)",
             "startRow": 0,
             "endRow": 1,
             "startRowAbs": 413,
@@ -61278,7 +61278,7 @@
         "Links to Database": [
           {
             "column": "Links to Database",
-            "label": "[MS (Not digitalised)](https://manuscripta.se/ms/100304)",
+            "label": "[MS (Not digitised)](https://manuscripta.se/ms/100304)",
             "startRow": 0,
             "endRow": 6,
             "startRowAbs": 420,
@@ -63566,7 +63566,7 @@
         "Links to Database": [
           {
             "column": "Links to Database",
-            "label": "[MS (Not digitalised)](https://manuscripta.se/ms/100306)",
+            "label": "[MS (Not digitised)](https://manuscripta.se/ms/100306)",
             "startRow": 0,
             "endRow": 2,
             "startRowAbs": 435,
@@ -64329,7 +64329,7 @@
         "Links to Database": [
           {
             "column": "Links to Database",
-            "label": "[MS (Not digitalised)](https://manuscripta.se/ms/100307)",
+            "label": "[MS (Not digitised)](https://manuscripta.se/ms/100307)",
             "startRow": 0,
             "endRow": 3,
             "startRowAbs": 438,
@@ -66044,7 +66044,7 @@
         "Links to Database": [
           {
             "column": "Links to Database",
-            "label": "[MS (Not digitalised)](https://manuscripta.se/ms/100309)",
+            "label": "[MS (Not digitised)](https://manuscripta.se/ms/100309)",
             "startRow": 0,
             "endRow": 2,
             "startRowAbs": 446,

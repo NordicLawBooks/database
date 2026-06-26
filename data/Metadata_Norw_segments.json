@@ -45285,7 +45285,7 @@
           },
           {
             "column": "Links to Database",
-            "label": "[AV](https://www.alvin-portal.org/alvin/view.jsf?dswid=-7498&searchType=EXTENDED&query=DG+8&aq=%5B%5B%7B%22A_FQ%22%3A%22DG+8%22%7D%5D%5D&aqe=%5B%5D&af=%5B%5D&pid=alvin-record%3A54183&c=3)",
+            "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-54183)",
             "startRow": 1,
             "endRow": 1,
             "startRowAbs": 273,
@@ -59138,7 +59138,7 @@
         "Links to Database": [
           {
             "column": "Links to Database",
-            "label": "[AV](https://www.alvin-portal.org/alvin/view.jsf?aq=%5B%5B%7B%22A_FQ%22%3A%22Codex+Reenhielmianus%22%7D%5D%5D&c=1&aqe=%5B%5D&af=%5B%5D&searchType=EXTENDED&query=Codex+Reenhielmianus&pid=alvin-record%3A14709&dswid=179)",
+            "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-14709)",
             "startRow": 0,
             "endRow": 0,
             "startRowAbs": 329,
@@ -59153,6 +59153,27 @@
               "evidence": {
                 "leavesPages": [
                   "ff. 1ra-23ra"
+                ]
+              }
+            }
+          },
+          {
+            "column": "Links to Database",
+            "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-472696)",
+            "startRow": 1,
+            "endRow": 1,
+            "startRowAbs": 330,
+            "endRowAbs": 330,
+            "source": "cell",
+            "locus": {
+              "kind": "f",
+              "from": "24r",
+              "to": "38r",
+              "prefix": "ff.",
+              "rendered": "ff. 24r-38r",
+              "evidence": {
+                "leavesPages": [
+                  "Ff. 24ra–38ra"
                 ]
               }
             }

@@ -1800,7 +1800,7 @@
       "maxColIndex": 31,
       "minCol": "Links to Database",
       "maxCol": "Links to Database",
-      "value": "[AV (Not digitalised)](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-403080)"
+      "value": "[AV (Not digitised)](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-403080)"
     },
     {
       "minRow": 380,
@@ -7221,13 +7221,13 @@
       "value": "Schlyter (1859:lviii); Brøndum-Nielsen & Aakjær (1933:xxix; lxxxi)"
     },
     {
-      "minRow": 790,
+      "minRow": 791,
       "maxRow": 795,
       "minColIndex": 31,
       "maxColIndex": 31,
       "minCol": "Links to Database",
       "maxCol": "Links to Database",
-      "value": "[AV](https://www.alvin-portal.org/alvin/view.jsf?dswid=-5165&searchType=TEXT&query=law+manuscript&aq=%5B%5B%7B%22A_FQ%22%3A%22law+manuscript%22%7D%5D%5D&aqe=%5B%5D&af=%5B%5D&pid=alvin-record%3A14446&c=13#alvin-record%3A14446)"
+      "value": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-14446)"
     },
     {
       "minRow": 790,
@@ -7452,7 +7452,7 @@
       "maxColIndex": 31,
       "minCol": "Links to Database",
       "maxCol": "Links to Database",
-      "value": "[Av](https://www.alvin-portal.org/alvin/view.jsf?dswid=8148&searchType=TEXT&query=&aq=%5B%5B%7B%22A_FQ%22%3A%22b5%22%7D%5D%5D&aqe=%5B%5D&af=%5B%22ARCHIVE_ORG_ID_facet%3A23%22%2C%22CRP_facet%3A1200%22%5D&pid=alvin-record%3A472974&c=4#alvin-record%3A472974)"
+      "value": "[Av](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-472974)"
     },
     {
       "minRow": 781,
@@ -7506,7 +7506,7 @@
       "maxColIndex": 31,
       "minCol": "Links to Database",
       "maxCol": "Links to Database",
-      "value": "[AV](https://www.alvin-portal.org/alvin/view.jsf?aq=%5B%5B%7B%22A_FQ%22%3A%22KB+B%22%7D%5D%5D&c=149&aqe=%5B%5D&af=%5B%5D&searchType=TEXT&query=KB+B&pid=alvin-record%3A472982&dswid=5218#alvin-record%3A472982)"
+      "value": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-472965)"
     },
     {
       "minRow": 781,
@@ -19710,7 +19710,7 @@
       "maxColIndex": 31,
       "minCol": "Links to Database",
       "maxCol": "Links to Database",
-      "value": "[AV (Not digitalised)](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-76209)"
+      "value": "[AV (Not digitised)](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-76209)"
     },
     {
       "minRow": 380,

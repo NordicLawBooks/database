@@ -113055,7 +113055,7 @@
           },
           {
             "column": "Links to Database",
-            "label": "[AV](https://www.alvin-portal.org/alvin/view.jsf?dswid=-320&searchType=EXTENDED&query=DG+9&aq=%5B%5B%7B%22A_FQ%22%3A%22DG+9%22%7D%5D%5D&aqe=%5B%5D&af=%5B%5D&pid=alvin-record%3A75497&c=1#alvin-record%3A75497)",
+            "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-75497)",
             "startRow": 1,
             "endRow": 58,
             "startRowAbs": 900,
