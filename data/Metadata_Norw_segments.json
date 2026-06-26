@@ -3802,7 +3802,7 @@
       }
     },
     {
-      "Shelfmark": "E DonVar 137 4to",
+      "Shelfmark": "E Don Var 137 4to",
       "Depository": "DKB",
       "rowRangeAbs": {
         "start": 8,
@@ -4956,7 +4956,7 @@
         "Pricking": [
           {
             "column": "Pricking",
-            "label": "267 x 200",
+            "label": "Unknown",
             "startRow": 0,
             "endRow": 1,
             "startRowAbs": 27,
@@ -16904,7 +16904,7 @@
     },
     {
       "Shelfmark": "NKS 1640 4to",
-      "Depository": "KB",
+      "Depository": "DKB",
       "rowRangeAbs": {
         "start": 110,
         "end": 127
@@ -18959,7 +18959,7 @@
         "Links to Database": [
           {
             "column": "Links to Database",
-            "label": "[AV](https://media.digitalarkivet.no/view/58516/170)",
+            "label": "[NRA](https://media.digitalarkivet.no/view/58516/170)",
             "startRow": 0,
             "endRow": 0,
             "startRowAbs": 129,
@@ -20236,7 +20236,7 @@
         "Links to Database": [
           {
             "column": "Links to Database",
-            "label": "[AV](https://media.digitalarkivet.no/view/58516/104)",
+            "label": "[NRA](https://media.digitalarkivet.no/view/58516/104)",
             "startRow": 0,
             "endRow": 0,
             "startRowAbs": 133,
@@ -20822,7 +20822,7 @@
         "Links to Database": [
           {
             "column": "Links to Database",
-            "label": "[AV](https://media.digitalarkivet.no/view/58517/102)",
+            "label": "[NRA](https://media.digitalarkivet.no/view/58517/102)",
             "startRow": 0,
             "endRow": 0,
             "startRowAbs": 134,
@@ -21385,7 +21385,7 @@
         "Links to Database": [
           {
             "column": "Links to Database",
-            "label": "[AV](https://media.digitalarkivet.no/view/58517/116)",
+            "label": "[NRA](https://media.digitalarkivet.no/view/58517/116)",
             "startRow": 0,
             "endRow": 0,
             "startRowAbs": 135,
@@ -21971,7 +21971,7 @@
         "Links to Database": [
           {
             "column": "Links to Database",
-            "label": "[AV](https://media.digitalarkivet.no/view/58517/123)",
+            "label": "[NRA](https://media.digitalarkivet.no/view/58517/123)",
             "startRow": 0,
             "endRow": 0,
             "startRowAbs": 136,
@@ -35516,6 +35516,27 @@
                 ]
               }
             }
+          },
+          {
+            "column": "Links to Database",
+            "label": "[MS](https://www.manuscripta.se/ms/101293)",
+            "startRow": 1,
+            "endRow": 1,
+            "startRowAbs": 217,
+            "endRowAbs": 217,
+            "source": "cell",
+            "locus": {
+              "kind": "f",
+              "from": "11v",
+              "to": "11v",
+              "prefix": "f.",
+              "rendered": "f. 11v-11v",
+              "evidence": {
+                "leavesPages": [
+                  "F. 11va"
+                ]
+              }
+            }
           }
         ],
         "Main text": [
@@ -38755,21 +38776,24 @@
         "Links to Database": [
           {
             "column": "Links to Database",
-            "label": "[HR](https://handrit.is/manuscript/view/da/AM04-0114-a/0?iabr=on)",
+            "label": "[HR](https://handrit.is/manuscript/view/da/AM04-0114-a)",
             "startRow": 0,
-            "endRow": 0,
+            "endRow": 4,
             "startRowAbs": 230,
-            "endRowAbs": 230,
-            "source": "cell",
+            "endRowAbs": 234,
+            "source": "merge",
             "locus": {
               "kind": "f",
               "from": "1v",
-              "to": "3r",
+              "to": "10v",
               "prefix": "ff.",
-              "rendered": "ff. 1v-3r",
+              "rendered": "ff. 1v-10v",
               "evidence": {
                 "leavesPages": [
-                  "Ff. 1va–3rb"
+                  "Ff. 1va–3rb",
+                  "Ff. 3va–9rb",
+                  "F. 9va",
+                  "Ff. 9va–10vb"
                 ]
               }
             }
@@ -44952,7 +44976,7 @@
     },
     {
       "Shelfmark": "DG 8",
-      "Depository": "Uppsala Universitetsbibliotek; Uppsala",
+      "Depository": "UUB",
       "rowRangeAbs": {
         "start": 272,
         "end": 275

@@ -2516,7 +2516,7 @@
         "Links to Database": [
           {
             "column": "Links to Database",
-            "label": "[HR](https://handrit.is/manuscript/view/is/AM02-0315d/1?iabr=on#page/1v/mode/2up)",
+            "label": "[HR](https://handrit.is/manuscript/view/is/AM02-0315d)",
             "startRow": 0,
             "endRow": 0,
             "startRowAbs": 7,
@@ -112014,7 +112014,7 @@
     },
     {
       "Shelfmark": "DG 9",
-      "Depository": "UBB",
+      "Depository": "UUB",
       "rowRangeAbs": {
         "start": 899,
         "end": 957
@@ -117251,7 +117251,7 @@
         "Links to Database": [
           {
             "column": "Links to Database",
-            "label": "[HR](https://handrit.is/manuscript/view/is/JSFragm-0001/0#mode/2up)",
+            "label": "[HR](https://hdl.handle.net/2027/coo.31924126438096)",
             "startRow": 0,
             "endRow": 0,
             "startRowAbs": 962,
@@ -158712,7 +158712,7 @@
           },
           {
             "column": "Dating",
-            "label": "16000-1700",
+            "label": "1600-1700",
             "startRow": 1,
             "endRow": 1,
             "startRowAbs": 1282,
@@ -160079,7 +160079,7 @@
     },
     {
       "Shelfmark": "Engeström 97",
-      "Depository": "DKB",
+      "Depository": "KB",
       "rowRangeAbs": {
         "start": 1286,
         "end": 1286
@@ -160182,6 +160182,29 @@
           {
             "column": "Leaf size",
             "label": "125x100",
+            "startRow": 0,
+            "endRow": 0,
+            "startRowAbs": 1286,
+            "endRowAbs": 1286,
+            "source": "cell",
+            "locus": {
+              "kind": "f",
+              "from": "1",
+              "to": "141",
+              "prefix": "ff.",
+              "rendered": "ff. 1-141",
+              "evidence": {
+                "leavesPages": [
+                  "ff. 1-141"
+                ]
+              }
+            }
+          }
+        ],
+        "Links to Database": [
+          {
+            "column": "Links to Database",
+            "label": "[MS](https://www.manuscripta.se/ms/101568)",
             "startRow": 0,
             "endRow": 0,
             "startRowAbs": 1286,
@@ -162417,6 +162440,29 @@
             }
           }
         ],
+        "Links to Database": [
+          {
+            "column": "Links to Database",
+            "label": "[MS](https://www.manuscripta.se/ms/101270)",
+            "startRow": 0,
+            "endRow": 0,
+            "startRowAbs": 1302,
+            "endRowAbs": 1302,
+            "source": "cell",
+            "locus": {
+              "kind": "f",
+              "from": "63",
+              "to": "63",
+              "prefix": "ff.",
+              "rendered": "ff. 63-63",
+              "evidence": {
+                "leavesPages": [
+                  "63"
+                ]
+              }
+            }
+          }
+        ],
         "Main text": [
           {
             "column": "Main text",
@@ -163878,6 +163924,29 @@
           {
             "column": "Lines",
             "label": "30",
+            "startRow": 0,
+            "endRow": 0,
+            "startRowAbs": 1309,
+            "endRowAbs": 1309,
+            "source": "cell",
+            "locus": {
+              "kind": "f",
+              "from": "1",
+              "to": "1",
+              "prefix": "ff.",
+              "rendered": "ff. 1-1",
+              "evidence": {
+                "leavesPages": [
+                  "1"
+                ]
+              }
+            }
+          }
+        ],
+        "Links to Database": [
+          {
+            "column": "Links to Database",
+            "label": "[MS](https://www.manuscripta.se/ms/101298)",
             "startRow": 0,
             "endRow": 0,
             "startRowAbs": 1309,
@@ -167626,6 +167695,29 @@
             }
           }
         ],
+        "Links to Database": [
+          {
+            "column": "Links to Database",
+            "label": "[MS](https://www.manuscripta.se/ms/101285)",
+            "startRow": 0,
+            "endRow": 0,
+            "startRowAbs": 1326,
+            "endRowAbs": 1326,
+            "source": "cell",
+            "locus": {
+              "kind": "f",
+              "from": "119",
+              "to": "119",
+              "prefix": "ff.",
+              "rendered": "ff. 119-119",
+              "evidence": {
+                "leavesPages": [
+                  "119"
+                ]
+              }
+            }
+          }
+        ],
         "Main text": [
           {
             "column": "Main text",
@@ -168284,6 +168376,29 @@
           {
             "column": "Lines",
             "label": "21",
+            "startRow": 0,
+            "endRow": 0,
+            "startRowAbs": 1329,
+            "endRowAbs": 1329,
+            "source": "cell",
+            "locus": {
+              "kind": "f",
+              "from": "125",
+              "to": "125",
+              "prefix": "ff.",
+              "rendered": "ff. 125-125",
+              "evidence": {
+                "leavesPages": [
+                  "125"
+                ]
+              }
+            }
+          }
+        ],
+        "Links to Database": [
+          {
+            "column": "Links to Database",
+            "label": "[MS](https://www.manuscripta.se/ms/101287)",
             "startRow": 0,
             "endRow": 0,
             "startRowAbs": 1329,

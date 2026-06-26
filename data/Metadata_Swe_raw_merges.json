@@ -26334,7 +26334,7 @@
       "maxColIndex": 3,
       "minCol": "Depository",
       "maxCol": "Depository",
-      "value": "UBB"
+      "value": "UUB"
     },
     {
       "minRow": 1231,
@@ -26523,7 +26523,7 @@
       "maxColIndex": 3,
       "minCol": "Depository",
       "maxCol": "Depository",
-      "value": "UBB"
+      "value": "UUB"
     },
     {
       "minRow": 1255,
@@ -26649,7 +26649,7 @@
       "maxColIndex": 3,
       "minCol": "Depository",
       "maxCol": "Depository",
-      "value": "UBB"
+      "value": "UUB"
     },
     {
       "minRow": 1260,
@@ -36288,7 +36288,7 @@
       "maxColIndex": 30,
       "minCol": "Literature",
       "maxCol": "Literature",
-      "value": "Cornell (1943); Schlyter (1834:XXV–XXVI; 1862:XXXIII); Åström (2003; \n2013); SGL 3; s. XXVI"
+      "value": "Cornell (1943); Schlyter (1834:XXV–XXVI; 1862:XXXIII); Åström (2003; 2013); SGL 3; s. XXVI"
     },
     {
       "minRow": 806,
