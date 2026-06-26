@@ -489,42 +489,22 @@
         "Links to Database": [
           {
             "column": "Links to Database",
-            "label": "[MS (not digitised)](https://www.manuscripta.se/ms/100253)",
+            "label": "[MS (not digitised)](https://www.manuscripta.se/ms/100253); [AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-472885)",
             "startRow": 0,
-            "endRow": 1,
-            "startRowAbs": 0,
-            "endRowAbs": 1,
-            "source": "merge",
-            "locus": {
-              "kind": "f",
-              "from": "1",
-              "to": "10v",
-              "prefix": "ff.",
-              "rendered": "ff. 1-10v",
-              "evidence": {
-                "leavesPages": [
-                  "ff. 1-10",
-                  "f. 10r-v"
-                ]
-              }
-            }
-          },
-          {
-            "column": "Links to Database",
-            "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-472885)",
-            "startRow": 2,
             "endRow": 21,
-            "startRowAbs": 2,
+            "startRowAbs": 0,
             "endRowAbs": 21,
             "source": "merge",
             "locus": {
               "kind": "f",
-              "from": "10v",
+              "from": "1",
               "to": "132",
               "prefix": "ff.",
-              "rendered": "ff. 10v-132",
+              "rendered": "ff. 1-132",
               "evidence": {
                 "leavesPages": [
+                  "ff. 1-10",
+                  "f. 10r-v",
                   "ff. 10v-12v",
                   "f.13r-71v",
                   "ff. 18v-19v",
@@ -2418,41 +2398,21 @@
         "Links to Database": [
           {
             "column": "Links to Database",
-            "label": "MS (not digitised)",
+            "label": "[MS (not digitised)](https://www.manuscripta.se/ms/100254); [AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-472903)",
             "startRow": 0,
-            "endRow": 0,
-            "startRowAbs": 22,
-            "endRowAbs": 22,
-            "source": "cell",
-            "locus": {
-              "kind": "f",
-              "from": "1",
-              "to": "11v",
-              "prefix": "ff.",
-              "rendered": "ff. 1-11v",
-              "evidence": {
-                "leavesPages": [
-                  "ff. 1-11v"
-                ]
-              }
-            }
-          },
-          {
-            "column": "Links to Database",
-            "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-472903)",
-            "startRow": 1,
             "endRow": 18,
-            "startRowAbs": 23,
+            "startRowAbs": 22,
             "endRowAbs": 40,
             "source": "merge",
             "locus": {
               "kind": "f",
-              "from": "12r",
+              "from": "1",
               "to": "164v",
               "prefix": "ff.",
-              "rendered": "ff. 12r-164v",
+              "rendered": "ff. 1-164v",
               "evidence": {
                 "leavesPages": [
+                  "ff. 1-11v",
                   "ff. 12r-77r",
                   "f. 77v",
                   "f. 78r-v",
@@ -19735,7 +19695,7 @@
         "Links to Database": [
           {
             "column": "Links to Database",
-            "label": "MS (Not digitised); AV",
+            "label": "[MS (Not digitised)](https://manuscripta.se/ms/100265); [AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-472889)",
             "startRow": 0,
             "endRow": 0,
             "startRowAbs": 151,
@@ -21098,7 +21058,7 @@
         "Links to Database": [
           {
             "column": "Links to Database",
-            "label": "MS (Not digitized)",
+            "label": "[MS (Not digitized)](https://www.manuscripta.se/ms/100267)",
             "startRow": 0,
             "endRow": 6,
             "startRowAbs": 156,
@@ -21988,7 +21948,7 @@
           },
           {
             "column": "Links to Database",
-            "label": "[Av](https://www.alvin-portal.org/alvin/view.jsf?dswid=8148&searchType=TEXT&query=&aq=%5B%5B%7B%22A_FQ%22%3A%22b5%22%7D%5D%5D&aqe=%5B%5D&af=%5B%22ARCHIVE_ORG_ID_facet%3A23%22%2C%22CRP_facet%3A1400%22%5D&pid=alvin-record%3A472875&c=2#alvin-record%3A472875)",
+            "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-472875)",
             "startRow": 1,
             "endRow": 1,
             "startRowAbs": 164,
@@ -29440,7 +29400,7 @@
           },
           {
             "column": "Links to Database",
-            "label": "[Av](https://www.alvin-portal.org/alvin/view.jsf?dswid=8148&searchType=TEXT&query=&aq=%5B%5B%7B%22A_FQ%22%3A%22b5%22%7D%5D%5D&aqe=%5B%5D&af=%5B%22ARCHIVE_ORG_ID_facet%3A23%22%2C%22CRP_facet%3A1400%22%5D&pid=alvin-record%3A472884&c=4#alvin-record%3A472884)",
+            "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-472884)",
             "startRow": 1,
             "endRow": 1,
             "startRowAbs": 233,
@@ -32365,7 +32325,7 @@
           },
           {
             "column": "Links to Database",
-            "label": "[Av](https://www.alvin-portal.org/alvin/view.jsf?dswid=8148&searchType=TEXT&query=&aq=%5B%5B%7B%22A_FQ%22%3A%22b5%22%7D%5D%5D&aqe=%5B%5D&af=%5B%22ARCHIVE_ORG_ID_facet%3A23%22%2C%22CRP_facet%3A1400%22%5D&pid=alvin-record%3A472894&c=10#alvin-record%3A472894)",
+            "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-472894)",
             "startRow": 1,
             "endRow": 2,
             "startRowAbs": 248,
@@ -33240,7 +33200,7 @@
           },
           {
             "column": "Links to Database",
-            "label": "[AV](https://www.alvin-portal.org/alvin/view.jsf?aq=%5B%5B%7B%22A_FQ%22%3A%22KB+B%22%7D%5D%5D&c=155&aqe=%5B%5D&af=%5B%5D&searchType=TEXT&query=KB+B&pid=alvin-record%3A472947&dswid=-3678#alvin-record%3A472947)",
+            "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-472878)",
             "startRow": 1,
             "endRow": 2,
             "startRowAbs": 251,
@@ -34335,7 +34295,7 @@
           },
           {
             "column": "Links to Database",
-            "label": "[Av](https://www.alvin-portal.org/alvin/view.jsf?dswid=8148&searchType=TEXT&query=&aq=%5B%5B%7B%22A_FQ%22%3A%22b5%22%7D%5D%5D&aqe=%5B%5D&af=%5B%22ARCHIVE_ORG_ID_facet%3A23%22%2C%22CRP_facet%3A1400%22%5D&pid=alvin-record%3A472864&c=1#alvin-record%3A472864)",
+            "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-472864)",
             "startRow": 1,
             "endRow": 24,
             "startRowAbs": 254,
@@ -38553,7 +38513,7 @@
           },
           {
             "column": "Links to Database",
-            "label": "[AV](https://www.alvin-portal.org/alvin/view.jsf?aq=%5B%5B%7B%22A_FQ%22%3A%22KB+B%22%7D%5D%5D&c=146&aqe=%5B%5D&af=%5B%5D&searchType=TEXT&query=KB+B&pid=alvin-record%3A472905&dswid=2277#alvin-record%3A472905)",
+            "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-472905)",
             "startRow": 1,
             "endRow": 13,
             "startRowAbs": 288,
@@ -46008,7 +45968,7 @@
         "Links to Database": [
           {
             "column": "Links to Database",
-            "label": "[Av](https://www.alvin-portal.org/alvin/view.jsf?dswid=8148&searchType=TEXT&query=&aq=%5B%5B%7B%22A_FQ%22%3A%22b5%22%7D%5D%5D&aqe=%5B%5D&af=%5B%22ARCHIVE_ORG_ID_facet%3A23%22%2C%22CRP_facet%3A1300%22%5D&pid=alvin-record%3A472873&c=18#alvin-record%3A472873)",
+            "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-472873)",
             "startRow": 0,
             "endRow": 0,
             "startRowAbs": 336,
@@ -47500,7 +47460,7 @@
           },
           {
             "column": "Links to Database",
-            "label": "[Av](https://www.alvin-portal.org/alvin/view.jsf?dswid=8148&searchType=TEXT&query=&aq=%5B%5B%7B%22A_FQ%22%3A%22b5%22%7D%5D%5D&aqe=%5B%5D&af=%5B%22ARCHIVE_ORG_ID_facet%3A23%22%2C%22CRP_facet%3A1300%22%5D&pid=alvin-record%3A472895&c=2#alvin-record%3A472895)",
+            "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-472895)",
             "startRow": 1,
             "endRow": 2,
             "startRowAbs": 341,
@@ -48476,7 +48436,7 @@
           },
           {
             "column": "Links to Database",
-            "label": "[AV](https://www.alvin-portal.org/alvin/view.jsf?aq=%5B%5B%7B%22A_FQ%22%3A%22KB+B%22%7D%5D%5D&c=139&aqe=%5B%5D&af=%5B%5D&searchType=TEXT&query=KB+B&pid=alvin-record%3A472877&dswid=9395#alvin-record%3A472877)",
+            "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-472877)",
             "startRow": 1,
             "endRow": 4,
             "startRowAbs": 344,
@@ -49568,7 +49528,7 @@
           },
           {
             "column": "Links to Database",
-            "label": "[Av](https://www.alvin-portal.org/alvin/view.jsf?dswid=8148&searchType=TEXT&query=&aq=%5B%5B%7B%22A_FQ%22%3A%22b5%22%7D%5D%5D&aqe=%5B%5D&af=%5B%22ARCHIVE_ORG_ID_facet%3A23%22%2C%22CRP_facet%3A1400%22%5D&pid=alvin-record%3A472896&c=18#alvin-record%3A472896)",
+            "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-472896)",
             "startRow": 1,
             "endRow": 2,
             "startRowAbs": 349,
@@ -50421,7 +50381,7 @@
           },
           {
             "column": "Links to Database",
-            "label": "[AV](https://www.alvin-portal.org/alvin/view.jsf?aq=%5B%5B%7B%22A_FQ%22%3A%22KB+B%22%7D%5D%5D&c=155&aqe=%5B%5D&af=%5B%5D&searchType=TEXT&query=KB+B&pid=alvin-record%3A472947&dswid=-3678#alvin-record%3A472947)",
+            "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-472947)",
             "startRow": 1,
             "endRow": 2,
             "startRowAbs": 352,
@@ -51190,7 +51150,7 @@
           },
           {
             "column": "Links to Database",
-            "label": "[Av](https://www.alvin-portal.org/alvin/view.jsf?aq=%5B%5B%7B%22A_FQ%22%3A%22KB+B%22%7D%5D%5D&c=137&aqe=%5B%5D&af=%5B%5D&searchType=TEXT&query=KB+B&pid=alvin-record%3A472981&dswid=-8142#alvin-record%3A472981)",
+            "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-472981)",
             "startRow": 1,
             "endRow": 2,
             "startRowAbs": 355,
@@ -52004,7 +51964,7 @@
           },
           {
             "column": "Links to Database",
-            "label": "[Av](https://www.alvin-portal.org/alvin/view.jsf?dswid=8148&searchType=TEXT&query=&aq=%5B%5B%7B%22A_FQ%22%3A%22b5%22%7D%5D%5D&aqe=%5B%5D&af=%5B%22ARCHIVE_ORG_ID_facet%3A23%22%2C%22CRP_facet%3A1400%22%5D&pid=alvin-record%3A472964&c=11#alvin-record%3A472964)",
+            "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-472964)",
             "startRow": 1,
             "endRow": 4,
             "startRowAbs": 358,
@@ -53365,7 +53325,7 @@
           },
           {
             "column": "Links to Database",
-            "label": "[Av](https://www.alvin-portal.org/alvin/view.jsf?dswid=8148&searchType=TEXT&query=b5&aq=%5B%5B%7B%22A_FQ%22%3A%22b5%22%7D%5D%5D&aqe=%5B%5D&af=%5B%22ARCHIVE_ORG_ID_facet%3A23%22%2C%22CRP_facet%3A1200%22%5D&pid=alvin-record%3A472977&c=1#alvin-record%3A472977)",
+            "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-472977)",
             "startRow": 1,
             "endRow": 37,
             "startRowAbs": 363,
@@ -56037,7 +55997,7 @@
           },
           {
             "column": "Links to Database",
-            "label": "[Av](https://www.alvin-portal.org/alvin/view.jsf?dswid=8148&searchType=TEXT&query=&aq=%5B%5B%7B%22A_FQ%22%3A%22b5%22%7D%5D%5D&aqe=%5B%5D&af=%5B%22ARCHIVE_ORG_ID_facet%3A23%22%2C%22CRP_facet%3A1300%22%5D&pid=alvin-record%3A472938&c=11#alvin-record%3A472938)",
+            "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-472938)",
             "startRow": 1,
             "endRow": 2,
             "startRowAbs": 401,
@@ -57763,39 +57723,19 @@
             "column": "Links to Database",
             "label": "[MS](https://manuscripta.se/ms/100300)",
             "startRow": 0,
-            "endRow": 0,
-            "startRowAbs": 406,
-            "endRowAbs": 406,
-            "source": "cell",
-            "locus": {
-              "kind": "f",
-              "from": "1r",
-              "to": "88r",
-              "prefix": "ff.",
-              "rendered": "ff. 1r-88r",
-              "evidence": {
-                "leavesPages": [
-                  "ff.1r-88r"
-                ]
-              }
-            }
-          },
-          {
-            "column": "Links to Database",
-            "label": "[AV](https://www.alvin-portal.org/alvin/view.jsf?aq=%5B%5B%7B%22A_FQ%22%3A%22KB+B%22%7D%5D%5D&c=125&aqe=%5B%5D&af=%5B%5D&searchType=TEXT&query=KB+B&pid=alvin-record%3A472980&dswid=1288#alvin-record%3A472980)",
-            "startRow": 1,
             "endRow": 2,
-            "startRowAbs": 407,
+            "startRowAbs": 406,
             "endRowAbs": 408,
             "source": "merge",
             "locus": {
               "kind": "f",
-              "from": "88r",
+              "from": "1r",
               "to": "88v",
-              "prefix": "f.",
-              "rendered": "f. 88r-88v",
+              "prefix": "ff.",
+              "rendered": "ff. 1r-88v",
               "evidence": {
                 "leavesPages": [
+                  "ff.1r-88r",
                   "f.88r",
                   "f.88r-v"
                 ]
@@ -72133,7 +72073,7 @@
           },
           {
             "column": "Links to Database",
-            "label": "[Av](https://www.alvin-portal.org/alvin/view.jsf?dswid=8148&searchType=TEXT&query=&aq=%5B%5B%7B%22A_FQ%22%3A%22b5%22%7D%5D%5D&aqe=%5B%5D&af=%5B%22ARCHIVE_ORG_ID_facet%3A23%22%2C%22CRP_facet%3A1400%22%5D&pid=alvin-record%3A472979&c=24#alvin-record%3A472979)",
+            "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-472979)",
             "startRow": 1,
             "endRow": 2,
             "startRowAbs": 486,
@@ -73267,7 +73207,7 @@
           },
           {
             "column": "Links to Database",
-            "label": "[Av](https://www.alvin-portal.org/alvin/view.jsf?dswid=8148&searchType=TEXT&query=&aq=%5B%5B%7B%22A_FQ%22%3A%22b5%22%7D%5D%5D&aqe=%5B%5D&af=%5B%22ARCHIVE_ORG_ID_facet%3A23%22%2C%22CRP_facet%3A1400%22%5D&pid=alvin-record%3A472956&c=16#alvin-record%3A472956)",
+            "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-472956)",
             "startRow": 4,
             "endRow": 26,
             "startRowAbs": 492,
@@ -78373,7 +78313,7 @@
         "Links to Database": [
           {
             "column": "Links to Database",
-            "label": "[MS](https://manuscripta.se/ms/100320)",
+            "label": "[MS](https://manuscripta.se/ms/100320); [AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-472980)",
             "startRow": 0,
             "endRow": 6,
             "startRowAbs": 537,
@@ -79579,7 +79519,7 @@
           },
           {
             "column": "Links to Database",
-            "label": "[Av](https://www.alvin-portal.org/alvin/view.jsf?dswid=8148&searchType=TEXT&query=&aq=%5B%5B%7B%22A_FQ%22%3A%22b5%22%7D%5D%5D&aqe=%5B%5D&af=%5B%22ARCHIVE_ORG_ID_facet%3A23%22%2C%22CRP_facet%3A1400%22%5D&pid=alvin-record%3A472949&c=22#alvin-record%3A472949)",
+            "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-472949)",
             "startRow": 4,
             "endRow": 19,
             "startRowAbs": 548,
@@ -89804,7 +89744,7 @@
           },
           {
             "column": "Links to Database",
-            "label": "[Av](https://www.alvin-portal.org/alvin/view.jsf?dswid=-5942&searchType=EXTENDED&query=stockholm&aq=%5B%5B%7B%22A_FQ%22%3A%22stockholm%22%7D%5D%5D&aqe=%5B%5D&af=%5B%22ARCHIVE_ORG_ID_facet%3A23%22%2C%22alpha3_facet%3Aswe%22%2C%22CRP_facet%3A1300%22%5D&pid=alvin-record%3A472939&c=2#alvin-record%3A472939)",
+            "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-472939)",
             "startRow": 1,
             "endRow": 1,
             "startRowAbs": 602,
@@ -96939,7 +96879,7 @@
           },
           {
             "column": "Links to Database",
-            "label": "[Av](https://www.alvin-portal.org/alvin/imageViewer.jsf?dsId=ATTACHMENT-0001&pid=alvin-record%3A472975&dswid=7791)",
+            "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-472975)",
             "startRow": 1,
             "endRow": 3,
             "startRowAbs": 623,
@@ -100873,7 +100813,7 @@
           },
           {
             "column": "Links to Database",
-            "label": "[AV](https://www.alvin-portal.org/alvin/imageViewer.jsf?dsId=ATTACHMENT-0001&pid=alvin-record%3A473756&dswid=5514)",
+            "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-473756)",
             "startRow": 1,
             "endRow": 20,
             "startRowAbs": 659,
@@ -100913,7 +100853,7 @@
           },
           {
             "column": "Links to Database",
-            "label": "[AV](https://www.alvin-portal.org/alvin/view.jsf?aq=%5B%5B%7B%22A_FQ%22%3A%22landslag%22%7D%5D%5D&c=2&aqe=%5B%5D&af=%5B%5D&searchType=EXTENDED&query=landslag&pid=alvin-record%3A430351&dswid=7268#alvin-record%3A430351)",
+            "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-430351)",
             "startRow": 21,
             "endRow": 21,
             "startRowAbs": 679,
@@ -104952,7 +104892,7 @@
           },
           {
             "column": "Links to Database",
-            "label": "[AV](https://www.alvin-portal.org/alvin/view.jsf?aq=%5B%5B%7B%22A_FQ%22%3A%22landslag%22%7D%5D%5D&c=1&aqe=%5B%5D&af=%5B%5D&searchType=EXTENDED&query=landslag&pid=alvin-record%3A90664&dswid=-4055#alvin-record%3A90664)",
+            "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-90664)",
             "startRow": 1,
             "endRow": 12,
             "startRowAbs": 701,
@@ -106117,7 +106057,7 @@
           },
           {
             "column": "Links to Database",
-            "label": "[AV](https://www.alvin-portal.org/alvin/view.jsf?aq=%5B%5B%7B%22A_FQ%22%3A%22KB+B%22%7D%5D%5D&c=157&aqe=%5B%5D&af=%5B%5D&searchType=TEXT&query=KB+B&pid=alvin-record%3A473763&dswid=-1475#alvin-record%3A473763)",
+            "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-473763)",
             "startRow": 1,
             "endRow": 1,
             "startRowAbs": 714,
@@ -120515,7 +120455,7 @@
           },
           {
             "column": "Links to Database",
-            "label": "[AV](https://www.alvin-portal.org/alvin/view.jsf?dswid=6245&searchType=TEXT&query=&aq=%5B%5B%5D%5D&aqe=%5B%5D&af=%5B%22COUalpha2_facet%3ASE%22%2C%22alpha3_facet%3A9fs%22%5D&pid=alvin-record%3A433922&c=7#alvin-record%3A433922)",
+            "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-433922)",
             "startRow": 1,
             "endRow": 3,
             "startRowAbs": 801,
@@ -121428,7 +121368,7 @@
           },
           {
             "column": "Links to Database",
-            "label": "[AV](https://www.alvin-portal.org/alvin/view.jsf?aq=%5B%5B%5D%5D&c=25&aqe=%5B%5D&af=%5B%22COUalpha2_facet%3ASE%22%2C%22alpha3_facet%3A9fs%22%5D&searchType=TEXT&pid=alvin-record%3A84302&dswid=2310#alvin-record%3A84302)",
+            "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-84302)",
             "startRow": 1,
             "endRow": 1,
             "startRowAbs": 805,
@@ -134430,7 +134370,7 @@
           },
           {
             "column": "Links to Database",
-            "label": "[AV](https://www.alvin-portal.org/alvin/view.jsf?aq=%5B%5B%5D%5D&c=13&aqe=%5B%5D&af=%5B%22COUalpha2_facet%3ASE%22%2C%22alpha3_facet%3A9fs%22%5D&searchType=TEXT&pid=alvin-record%3A104126&dswid=167#alvin-record%3A104126)",
+            "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-104126)",
             "startRow": 1,
             "endRow": 4,
             "startRowAbs": 915,
@@ -139726,7 +139666,7 @@
         "Links to Database": [
           {
             "column": "Links to Database",
-            "label": "[AV](https://www.alvin-portal.org/alvin/view.jsf?aq=%5B%5B%7B%22A_FQ%22%3A%22LAW%22%7D%5D%5D&c=128&aqe=%5B%5D&af=%5B%5D&searchType=TEXT&pid=alvin-record%3A167083&dswid=6416#alvin-record%3A167083)",
+            "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-167083)",
             "startRow": 0,
             "endRow": 0,
             "startRowAbs": 1060,
@@ -145259,21 +145199,24 @@
         "Links to Database": [
           {
             "column": "Links to Database",
-            "label": "[AV](https://www.alvin-portal.org/alvin/view.jsf?aq=%5B%5B%7B%22A_FQ%22%3A%22landslag%22%7D%5D%5D&c=76&aqe=%5B%5D&af=%5B%5D&searchType=EXTENDED&query=landslag&pid=alvin-record%3A458157&dswid=1346#alvin-record%3A458157)",
+            "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-458157)",
             "startRow": 0,
-            "endRow": 0,
+            "endRow": 3,
             "startRowAbs": 1263,
-            "endRowAbs": 1263,
-            "source": "cell",
+            "endRowAbs": 1266,
+            "source": "merge",
             "locus": {
               "kind": "f",
               "from": "1",
-              "to": "6",
+              "to": "151",
               "prefix": "ff.",
-              "rendered": "ff. 1-6",
+              "rendered": "ff. 1-151",
               "evidence": {
                 "leavesPages": [
-                  "ff.1-6"
+                  "ff.1-6",
+                  "ff.7-78",
+                  "ff.79-150",
+                  "ff.150-151"
                 ]
               }
             }
@@ -147368,12 +147311,12 @@
         "Links to Database": [
           {
             "column": "Links to Database",
-            "label": "[AV](https://www.alvin-portal.org/alvin/view.jsf?dswid=8706&searchType=TEXT&query=KB+B&aq=%5B%5B%7B%22A_FQ%22%3A%22KB+B%22%7D%5D%5D&aqe=%5B%5D&af=%5B%5D&pid=alvin-record%3A473676&c=236#alvin-record%3A473676)",
+            "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-473676)",
             "startRow": 0,
-            "endRow": 0,
+            "endRow": 1,
             "startRowAbs": 1275,
-            "endRowAbs": 1275,
-            "source": "cell",
+            "endRowAbs": 1276,
+            "source": "merge",
             "locus": {
               "kind": null,
               "from": null,

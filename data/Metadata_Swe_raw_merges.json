@@ -40,15 +40,6 @@
   "merges": [
     {
       "minRow": 0,
-      "maxRow": 1,
-      "minColIndex": 31,
-      "maxColIndex": 31,
-      "minCol": "Links to Database",
-      "maxCol": "Links to Database",
-      "value": "[MS (not digitised)](https://www.manuscripta.se/ms/100253)"
-    },
-    {
-      "minRow": 0,
       "maxRow": 21,
       "minColIndex": 10,
       "maxColIndex": 10,
@@ -174,13 +165,13 @@
       "value": "Klemming (1881-1882:516-517); Beckman (1919:28-35); Klemming (1868-1881: 63-8); Beckman (1917:219-20); Beckman (1917:219-20); Beckman (1917:120)"
     },
     {
-      "minRow": 2,
+      "minRow": 0,
       "maxRow": 21,
       "minColIndex": 31,
       "maxColIndex": 31,
       "minCol": "Links to Database",
       "maxCol": "Links to Database",
-      "value": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-472885)"
+      "value": "[MS (not digitised)](https://www.manuscripta.se/ms/100253); [AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-472885)"
     },
     {
       "minRow": 0,
@@ -561,13 +552,13 @@
       "value": "Unknown"
     },
     {
-      "minRow": 23,
+      "minRow": 22,
       "maxRow": 40,
       "minColIndex": 31,
       "maxColIndex": 31,
       "minCol": "Links to Database",
       "maxCol": "Links to Database",
-      "value": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-472903)"
+      "value": "[MS (not digitised)](https://www.manuscripta.se/ms/100254); [AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-472903)"
     },
     {
       "minRow": 41,
@@ -5175,7 +5166,7 @@
       "maxColIndex": 31,
       "minCol": "Links to Database",
       "maxCol": "Links to Database",
-      "value": "MS (Not digitized)"
+      "value": "[MS (Not digitized)](https://www.manuscripta.se/ms/100267)"
     },
     {
       "minRow": 156,
@@ -6543,7 +6534,7 @@
       "maxColIndex": 31,
       "minCol": "Links to Database",
       "maxCol": "Links to Database",
-      "value": "[Av](https://www.alvin-portal.org/alvin/view.jsf?dswid=8148&searchType=TEXT&query=&aq=%5B%5B%7B%22A_FQ%22%3A%22b5%22%7D%5D%5D&aqe=%5B%5D&af=%5B%22ARCHIVE_ORG_ID_facet%3A23%22%2C%22CRP_facet%3A1400%22%5D&pid=alvin-record%3A472964&c=11#alvin-record%3A472964)"
+      "value": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-472964)"
     },
     {
       "minRow": 362,
@@ -6561,7 +6552,7 @@
       "maxColIndex": 31,
       "minCol": "Links to Database",
       "maxCol": "Links to Database",
-      "value": "[Av](https://www.alvin-portal.org/alvin/view.jsf?dswid=8148&searchType=TEXT&query=b5&aq=%5B%5B%7B%22A_FQ%22%3A%22b5%22%7D%5D%5D&aqe=%5B%5D&af=%5B%22ARCHIVE_ORG_ID_facet%3A23%22%2C%22CRP_facet%3A1200%22%5D&pid=alvin-record%3A472977&c=1#alvin-record%3A472977)"
+      "value": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-472977)"
     },
     {
       "minRow": 357,
@@ -6832,6 +6823,15 @@
       "minCol": "Links to Database",
       "maxCol": "Links to Database",
       "value": "[MS (Not digitised)](https://manuscripta.se/ms/100301)"
+    },
+    {
+      "minRow": 406,
+      "maxRow": 408,
+      "minColIndex": 31,
+      "maxColIndex": 31,
+      "minCol": "Links to Database",
+      "maxCol": "Links to Database",
+      "value": "[MS](https://manuscripta.se/ms/100300)"
     },
     {
       "minRow": 409,
@@ -7614,7 +7614,7 @@
       "maxColIndex": 31,
       "minCol": "Links to Database",
       "maxCol": "Links to Database",
-      "value": "[Av](https://www.alvin-portal.org/alvin/view.jsf?dswid=8148&searchType=TEXT&query=&aq=%5B%5B%7B%22A_FQ%22%3A%22b5%22%7D%5D%5D&aqe=%5B%5D&af=%5B%22ARCHIVE_ORG_ID_facet%3A23%22%2C%22CRP_facet%3A1300%22%5D&pid=alvin-record%3A472895&c=2#alvin-record%3A472895)"
+      "value": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-472895)"
     },
     {
       "minRow": 340,
@@ -7812,7 +7812,7 @@
       "maxColIndex": 31,
       "minCol": "Links to Database",
       "maxCol": "Links to Database",
-      "value": "[AV](https://www.alvin-portal.org/alvin/view.jsf?aq=%5B%5B%7B%22A_FQ%22%3A%22KB+B%22%7D%5D%5D&c=139&aqe=%5B%5D&af=%5B%5D&searchType=TEXT&query=KB+B&pid=alvin-record%3A472877&dswid=9395#alvin-record%3A472877)"
+      "value": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-472877)"
     },
     {
       "minRow": 340,
@@ -7947,7 +7947,7 @@
       "maxColIndex": 31,
       "minCol": "Links to Database",
       "maxCol": "Links to Database",
-      "value": "[Av](https://www.alvin-portal.org/alvin/view.jsf?dswid=8148&searchType=TEXT&query=&aq=%5B%5B%7B%22A_FQ%22%3A%22b5%22%7D%5D%5D&aqe=%5B%5D&af=%5B%22ARCHIVE_ORG_ID_facet%3A23%22%2C%22CRP_facet%3A1400%22%5D&pid=alvin-record%3A472896&c=18#alvin-record%3A472896)"
+      "value": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-472896)"
     },
     {
       "minRow": 348,
@@ -8325,7 +8325,7 @@
       "maxColIndex": 31,
       "minCol": "Links to Database",
       "maxCol": "Links to Database",
-      "value": "[Av](https://www.alvin-portal.org/alvin/view.jsf?aq=%5B%5B%7B%22A_FQ%22%3A%22KB+B%22%7D%5D%5D&c=137&aqe=%5B%5D&af=%5B%5D&searchType=TEXT&query=KB+B&pid=alvin-record%3A472981&dswid=-8142#alvin-record%3A472981)"
+      "value": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-472981)"
     },
     {
       "minRow": 351,
@@ -8388,7 +8388,7 @@
       "maxColIndex": 31,
       "minCol": "Links to Database",
       "maxCol": "Links to Database",
-      "value": "[AV](https://www.alvin-portal.org/alvin/view.jsf?aq=%5B%5B%7B%22A_FQ%22%3A%22KB+B%22%7D%5D%5D&c=155&aqe=%5B%5D&af=%5B%5D&searchType=TEXT&query=KB+B&pid=alvin-record%3A472947&dswid=-3678#alvin-record%3A472947)"
+      "value": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-472947)"
     },
     {
       "minRow": 362,
@@ -8586,7 +8586,7 @@
       "maxColIndex": 31,
       "minCol": "Links to Database",
       "maxCol": "Links to Database",
-      "value": "[Av](https://www.alvin-portal.org/alvin/view.jsf?dswid=8148&searchType=TEXT&query=&aq=%5B%5B%7B%22A_FQ%22%3A%22b5%22%7D%5D%5D&aqe=%5B%5D&af=%5B%22ARCHIVE_ORG_ID_facet%3A23%22%2C%22CRP_facet%3A1300%22%5D&pid=alvin-record%3A472938&c=11#alvin-record%3A472938)"
+      "value": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-472938)"
     },
     {
       "minRow": 400,
@@ -8758,15 +8758,6 @@
       "minCol": "Literature",
       "maxCol": "Literature",
       "value": "Beckman (1917:217-220; 1919:6-9; 28-35); Klemming (1868-1881: 63-68); Schlyter (1862: xviii-xix); Hedlund (1980: 14); Brøndum-Nielen (1944: 113-114); Åström (2003)"
-    },
-    {
-      "minRow": 407,
-      "maxRow": 408,
-      "minColIndex": 31,
-      "maxColIndex": 31,
-      "minCol": "Links to Database",
-      "maxCol": "Links to Database",
-      "value": "[AV](https://www.alvin-portal.org/alvin/view.jsf?aq=%5B%5B%7B%22A_FQ%22%3A%22KB+B%22%7D%5D%5D&c=125&aqe=%5B%5D&af=%5B%5D&searchType=TEXT&query=KB+B&pid=alvin-record%3A472980&dswid=1288#alvin-record%3A472980)"
     },
     {
       "minRow": 406,
@@ -12771,7 +12762,7 @@
       "maxColIndex": 31,
       "minCol": "Links to Database",
       "maxCol": "Links to Database",
-      "value": "[Av](https://www.alvin-portal.org/alvin/view.jsf?dswid=8148&searchType=TEXT&query=&aq=%5B%5B%7B%22A_FQ%22%3A%22b5%22%7D%5D%5D&aqe=%5B%5D&af=%5B%22ARCHIVE_ORG_ID_facet%3A23%22%2C%22CRP_facet%3A1400%22%5D&pid=alvin-record%3A472894&c=10#alvin-record%3A472894)"
+      "value": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-472894)"
     },
     {
       "minRow": 251,
@@ -12780,7 +12771,7 @@
       "maxColIndex": 31,
       "minCol": "Links to Database",
       "maxCol": "Links to Database",
-      "value": "[AV](https://www.alvin-portal.org/alvin/view.jsf?aq=%5B%5B%7B%22A_FQ%22%3A%22KB+B%22%7D%5D%5D&c=155&aqe=%5B%5D&af=%5B%5D&searchType=TEXT&query=KB+B&pid=alvin-record%3A472947&dswid=-3678#alvin-record%3A472947)"
+      "value": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-472878)"
     },
     {
       "minRow": 239,
@@ -13023,7 +13014,7 @@
       "maxColIndex": 31,
       "minCol": "Links to Database",
       "maxCol": "Links to Database",
-      "value": "[Av](https://www.alvin-portal.org/alvin/view.jsf?dswid=8148&searchType=TEXT&query=&aq=%5B%5B%7B%22A_FQ%22%3A%22b5%22%7D%5D%5D&aqe=%5B%5D&af=%5B%22ARCHIVE_ORG_ID_facet%3A23%22%2C%22CRP_facet%3A1400%22%5D&pid=alvin-record%3A472864&c=1#alvin-record%3A472864)"
+      "value": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-472864)"
     },
     {
       "minRow": 222,
@@ -14571,7 +14562,7 @@
       "maxColIndex": 31,
       "minCol": "Links to Database",
       "maxCol": "Links to Database",
-      "value": "[AV](https://www.alvin-portal.org/alvin/view.jsf?aq=%5B%5B%7B%22A_FQ%22%3A%22KB+B%22%7D%5D%5D&c=146&aqe=%5B%5D&af=%5B%5D&searchType=TEXT&query=KB+B&pid=alvin-record%3A472905&dswid=2277#alvin-record%3A472905)"
+      "value": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-472905)"
     },
     {
       "minRow": 299,
@@ -17676,7 +17667,7 @@
       "maxColIndex": 31,
       "minCol": "Links to Database",
       "maxCol": "Links to Database",
-      "value": "[AV](https://www.alvin-portal.org/alvin/imageViewer.jsf?dsId=ATTACHMENT-0001&pid=alvin-record%3A473756&dswid=5514)"
+      "value": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-473756)"
     },
     {
       "minRow": 681,
@@ -18423,7 +18414,7 @@
       "maxColIndex": 31,
       "minCol": "Links to Database",
       "maxCol": "Links to Database",
-      "value": "[Av](https://www.alvin-portal.org/alvin/imageViewer.jsf?dsId=ATTACHMENT-0001&pid=alvin-record%3A472975&dswid=7791)"
+      "value": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-472975)"
     },
     {
       "minRow": 622,
@@ -20988,7 +20979,7 @@
       "maxColIndex": 31,
       "minCol": "Links to Database",
       "maxCol": "Links to Database",
-      "value": "[AV](https://www.alvin-portal.org/alvin/view.jsf?aq=%5B%5B%7B%22A_FQ%22%3A%22landslag%22%7D%5D%5D&c=1&aqe=%5B%5D&af=%5B%5D&searchType=EXTENDED&query=landslag&pid=alvin-record%3A90664&dswid=-4055#alvin-record%3A90664)"
+      "value": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-90664)"
     },
     {
       "minRow": 700,
@@ -25902,7 +25893,7 @@
       "maxColIndex": 31,
       "minCol": "Links to Database",
       "maxCol": "Links to Database",
-      "value": "[AV](https://www.alvin-portal.org/alvin/view.jsf?aq=%5B%5B%5D%5D&c=13&aqe=%5B%5D&af=%5B%22COUalpha2_facet%3ASE%22%2C%22alpha3_facet%3A9fs%22%5D&searchType=TEXT&pid=alvin-record%3A104126&dswid=167#alvin-record%3A104126)"
+      "value": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-104126)"
     },
     {
       "minRow": 919,
@@ -29496,6 +29487,24 @@
       "value": "Throughout"
     },
     {
+      "minRow": 1263,
+      "maxRow": 1266,
+      "minColIndex": 31,
+      "maxColIndex": 31,
+      "minCol": "Links to Database",
+      "maxCol": "Links to Database",
+      "value": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-458157)"
+    },
+    {
+      "minRow": 1275,
+      "maxRow": 1276,
+      "minColIndex": 31,
+      "maxColIndex": 31,
+      "minCol": "Links to Database",
+      "maxCol": "Links to Database",
+      "value": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-473676)"
+    },
+    {
       "minRow": 1272,
       "maxRow": 1273,
       "minColIndex": 21,
@@ -29907,7 +29916,7 @@
       "maxColIndex": 31,
       "minCol": "Links to Database",
       "maxCol": "Links to Database",
-      "value": "[Av](https://www.alvin-portal.org/alvin/view.jsf?dswid=8148&searchType=TEXT&query=&aq=%5B%5B%7B%22A_FQ%22%3A%22b5%22%7D%5D%5D&aqe=%5B%5D&af=%5B%22ARCHIVE_ORG_ID_facet%3A23%22%2C%22CRP_facet%3A1400%22%5D&pid=alvin-record%3A472979&c=24#alvin-record%3A472979)"
+      "value": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-472979)"
     },
     {
       "minRow": 488,
@@ -30321,7 +30330,7 @@
       "maxColIndex": 31,
       "minCol": "Links to Database",
       "maxCol": "Links to Database",
-      "value": "[Av](https://www.alvin-portal.org/alvin/view.jsf?dswid=8148&searchType=TEXT&query=&aq=%5B%5B%7B%22A_FQ%22%3A%22b5%22%7D%5D%5D&aqe=%5B%5D&af=%5B%22ARCHIVE_ORG_ID_facet%3A23%22%2C%22CRP_facet%3A1400%22%5D&pid=alvin-record%3A472956&c=16#alvin-record%3A472956)"
+      "value": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-472956)"
     },
     {
       "minRow": 507,
@@ -32431,78 +32440,6 @@
     },
     {
       "minRow": 537,
-      "maxRow": 538,
-      "minColIndex": 8,
-      "maxColIndex": 8,
-      "minCol": "Main text",
-      "maxCol": "Main text",
-      "value": "MEStL"
-    },
-    {
-      "minRow": 537,
-      "maxRow": 542,
-      "minColIndex": 10,
-      "maxColIndex": 10,
-      "minCol": "Gatherings",
-      "maxCol": "Gatherings",
-      "value": "I:1 (1b; mirror-1); II:10 (5b; ff. 2-11); III:10 (5b; ff. 12-21); IV:10 (5b; ff. 22-31); V:7 (3b; 1f; ff. 32-39); VI:11 (5b; 1f; ff. 40-50); VII:10 (5b; ff. 51-60); VIII:5 (1b; 3f; ff. 61-65); IX:2 (2f; ff. 66-67)"
-    },
-    {
-      "minRow": 537,
-      "maxRow": 543,
-      "minColIndex": 11,
-      "maxColIndex": 11,
-      "minCol": "Full size",
-      "maxCol": "Full size",
-      "value": "330x230x55"
-    },
-    {
-      "minRow": 537,
-      "maxRow": 543,
-      "minColIndex": 12,
-      "maxColIndex": 12,
-      "minCol": "Leaf size",
-      "maxCol": "Leaf size",
-      "value": "330x225"
-    },
-    {
-      "minRow": 537,
-      "maxRow": 543,
-      "minColIndex": 13,
-      "maxColIndex": 13,
-      "minCol": "Catch Words and Gatherings",
-      "maxCol": "Catch Words and Gatherings",
-      "value": "Yes. Custods on f. 11v; f. 39v; f. 50v; f. 60v."
-    },
-    {
-      "minRow": 537,
-      "maxRow": 543,
-      "minColIndex": 14,
-      "maxColIndex": 14,
-      "minCol": "Production Unit",
-      "maxCol": "Production Unit",
-      "value": ""
-    },
-    {
-      "minRow": 537,
-      "maxRow": 543,
-      "minColIndex": 15,
-      "maxColIndex": 15,
-      "minCol": "Pricking",
-      "maxCol": "Pricking",
-      "value": "Yes"
-    },
-    {
-      "minRow": 539,
-      "maxRow": 543,
-      "minColIndex": 8,
-      "maxColIndex": 8,
-      "minCol": "Main text",
-      "maxCol": "Main text",
-      "value": ""
-    },
-    {
-      "minRow": 537,
       "maxRow": 543,
       "minColIndex": 1,
       "maxColIndex": 1,
@@ -32563,6 +32500,87 @@
       "minCol": "Dating",
       "maxCol": "Dating",
       "value": "1591-"
+    },
+    {
+      "minRow": 537,
+      "maxRow": 543,
+      "minColIndex": 15,
+      "maxColIndex": 15,
+      "minCol": "Pricking",
+      "maxCol": "Pricking",
+      "value": "Yes"
+    },
+    {
+      "minRow": 537,
+      "maxRow": 543,
+      "minColIndex": 31,
+      "maxColIndex": 31,
+      "minCol": "Links to Database",
+      "maxCol": "Links to Database",
+      "value": "[MS](https://manuscripta.se/ms/100320); [AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-472980)"
+    },
+    {
+      "minRow": 537,
+      "maxRow": 538,
+      "minColIndex": 8,
+      "maxColIndex": 8,
+      "minCol": "Main text",
+      "maxCol": "Main text",
+      "value": "MEStL"
+    },
+    {
+      "minRow": 537,
+      "maxRow": 542,
+      "minColIndex": 10,
+      "maxColIndex": 10,
+      "minCol": "Gatherings",
+      "maxCol": "Gatherings",
+      "value": "I:1 (1b; mirror-1); II:10 (5b; ff. 2-11); III:10 (5b; ff. 12-21); IV:10 (5b; ff. 22-31); V:7 (3b; 1f; ff. 32-39); VI:11 (5b; 1f; ff. 40-50); VII:10 (5b; ff. 51-60); VIII:5 (1b; 3f; ff. 61-65); IX:2 (2f; ff. 66-67)"
+    },
+    {
+      "minRow": 537,
+      "maxRow": 543,
+      "minColIndex": 11,
+      "maxColIndex": 11,
+      "minCol": "Full size",
+      "maxCol": "Full size",
+      "value": "330x230x55"
+    },
+    {
+      "minRow": 537,
+      "maxRow": 543,
+      "minColIndex": 12,
+      "maxColIndex": 12,
+      "minCol": "Leaf size",
+      "maxCol": "Leaf size",
+      "value": "330x225"
+    },
+    {
+      "minRow": 537,
+      "maxRow": 543,
+      "minColIndex": 13,
+      "maxColIndex": 13,
+      "minCol": "Catch Words and Gatherings",
+      "maxCol": "Catch Words and Gatherings",
+      "value": "Yes. Custods on f. 11v; f. 39v; f. 50v; f. 60v."
+    },
+    {
+      "minRow": 537,
+      "maxRow": 543,
+      "minColIndex": 14,
+      "maxColIndex": 14,
+      "minCol": "Production Unit",
+      "maxCol": "Production Unit",
+      "value": ""
+    },
+    {
+      "minRow": 539,
+      "maxRow": 543,
+      "minColIndex": 8,
+      "maxColIndex": 8,
+      "minCol": "Main text",
+      "maxCol": "Main text",
+      "value": ""
     },
     {
       "minRow": 564,
@@ -34347,15 +34365,6 @@
       "value": "Ahnlund (1944); Beckman (1917:120; 194-203); Ejder (1974:9–10); Hedlund (1980:14); Holmbäck (1966:XXIV–LIV); Schlyter (1865:III–V); Wessén (1971); Åström (2003)"
     },
     {
-      "minRow": 537,
-      "maxRow": 543,
-      "minColIndex": 31,
-      "maxColIndex": 31,
-      "minCol": "Links to Database",
-      "maxCol": "Links to Database",
-      "value": "[MS](https://manuscripta.se/ms/100320)"
-    },
-    {
       "minRow": 544,
       "maxRow": 547,
       "minColIndex": 31,
@@ -34605,7 +34614,7 @@
       "maxColIndex": 31,
       "minCol": "Links to Database",
       "maxCol": "Links to Database",
-      "value": "[Av](https://www.alvin-portal.org/alvin/view.jsf?dswid=8148&searchType=TEXT&query=&aq=%5B%5B%7B%22A_FQ%22%3A%22b5%22%7D%5D%5D&aqe=%5B%5D&af=%5B%22ARCHIVE_ORG_ID_facet%3A23%22%2C%22CRP_facet%3A1400%22%5D&pid=alvin-record%3A472949&c=22#alvin-record%3A472949)"
+      "value": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-472949)"
     },
     {
       "minRow": 575,
@@ -36360,7 +36369,7 @@
       "maxColIndex": 31,
       "minCol": "Links to Database",
       "maxCol": "Links to Database",
-      "value": "[AV](https://www.alvin-portal.org/alvin/view.jsf?dswid=6245&searchType=TEXT&query=&aq=%5B%5B%5D%5D&aqe=%5B%5D&af=%5B%22COUalpha2_facet%3ASE%22%2C%22alpha3_facet%3A9fs%22%5D&pid=alvin-record%3A433922&c=7#alvin-record%3A433922)"
+      "value": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-433922)"
     },
     {
       "minRow": 805,
