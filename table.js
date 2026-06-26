@@ -1854,6 +1854,7 @@ const LINKS_TO_DATABASE_LABEL_MAP = {
   HR: "Handrit.is",
   MS: "manuscripta.se",
   AV: "Alvin",
+  CF: "Codices Fennici",
 };
 
 function formatLinksToDatabaseLabel(label) {
