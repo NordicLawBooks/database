@@ -5410,7 +5410,7 @@
         "Style": [
           {
             "column": "Style",
-            "label": "Roamensque; Gothic",
+            "label": "Romanesque; Gothic",
             "startRow": 0,
             "endRow": 2,
             "startRowAbs": 26,
@@ -6915,16 +6915,16 @@
             "column": "Dating",
             "label": "1340-1360",
             "startRow": 0,
-            "endRow": 8,
+            "endRow": 7,
             "startRowAbs": 43,
-            "endRowAbs": 51,
+            "endRowAbs": 50,
             "source": "merge",
             "locus": {
               "kind": "f",
               "from": "1r",
-              "to": "85r",
+              "to": "84r",
               "prefix": "f.",
-              "rendered": "f. 1r-85r",
+              "rendered": "f. 1r-84r",
               "evidence": {
                 "leavesPages": [
                   "f.1r",
@@ -6934,7 +6934,27 @@
                   "ff.80v-82r",
                   "f. 82r-v",
                   "ff. 82v-84r",
-                  "f. 84r",
+                  "f. 84r"
+                ]
+              }
+            }
+          },
+          {
+            "column": "Dating",
+            "label": "1500-1525",
+            "startRow": 8,
+            "endRow": 8,
+            "startRowAbs": 51,
+            "endRowAbs": 51,
+            "source": "cell",
+            "locus": {
+              "kind": "f",
+              "from": "85r",
+              "to": "85r",
+              "prefix": "f.",
+              "rendered": "f. 85r-85r",
+              "evidence": {
+                "leavesPages": [
                   "f.85r"
                 ]
               }
@@ -7167,7 +7187,7 @@
           },
           {
             "column": "Lines",
-            "label": "Unknown",
+            "label": "34",
             "startRow": 8,
             "endRow": 8,
             "startRowAbs": 51,
@@ -19534,7 +19554,8 @@
               "rendered": "ff. 1r-93v",
               "evidence": {
                 "leavesPages": [
-                  "Ff. 1ra-93vb"
+                  "ff. 1ra-13rb",
+                  "ff. 14-93vb"
                 ]
               }
             }
@@ -19557,7 +19578,8 @@
               "rendered": "ff. 1r-93v",
               "evidence": {
                 "leavesPages": [
-                  "Ff. 1ra-93vb"
+                  "ff. 1ra-13rb",
+                  "ff. 14-93vb"
                 ]
               }
             }
@@ -19580,7 +19602,8 @@
               "rendered": "ff. 1r-93v",
               "evidence": {
                 "leavesPages": [
-                  "Ff. 1ra-93vb"
+                  "ff. 1ra-13rb",
+                  "ff. 14-93vb"
                 ]
               }
             }
@@ -19589,7 +19612,7 @@
         "Dating": [
           {
             "column": "Dating",
-            "label": "1300 (ff.1-13)",
+            "label": "1300",
             "startRow": 0,
             "endRow": 3,
             "startRowAbs": 203,
@@ -19598,31 +19621,34 @@
             "locus": {
               "kind": "f",
               "from": "1r",
-              "to": "93v",
+              "to": "13r",
               "prefix": "ff.",
-              "rendered": "ff. 1r-93v",
+              "rendered": "ff. 1r-13r",
               "evidence": {
                 "leavesPages": [
-                  "Ff. 1ra-93vb"
+                  "ff. 1ra-13rb"
                 ]
               }
             }
           },
           {
             "column": "Dating",
-            "label": "1250 (ff. 14-93)",
+            "label": "1250",
             "startRow": 4,
             "endRow": 16,
             "startRowAbs": 207,
             "endRowAbs": 219,
             "source": "merge",
             "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
+              "kind": "f",
+              "from": "14",
+              "to": "93v",
+              "prefix": "ff.",
+              "rendered": "ff. 14-93v",
               "evidence": {
-                "leavesPages": []
+                "leavesPages": [
+                  "ff. 14-93vb"
+                ]
               }
             }
           }
@@ -19644,7 +19670,8 @@
               "rendered": "ff. 1r-93v",
               "evidence": {
                 "leavesPages": [
-                  "Ff. 1ra-93vb"
+                  "ff. 1ra-13rb",
+                  "ff. 14-93vb"
                 ]
               }
             }
@@ -19667,7 +19694,8 @@
               "rendered": "ff. 1r-93v",
               "evidence": {
                 "leavesPages": [
-                  "Ff. 1ra-93vb"
+                  "ff. 1ra-13rb",
+                  "ff. 14-93vb"
                 ]
               }
             }
@@ -19685,12 +19713,12 @@
             "locus": {
               "kind": "f",
               "from": "1r",
-              "to": "93v",
+              "to": "13r",
               "prefix": "ff.",
-              "rendered": "ff. 1r-93v",
+              "rendered": "ff. 1r-13r",
               "evidence": {
                 "leavesPages": [
-                  "Ff. 1ra-93vb"
+                  "ff. 1ra-13rb"
                 ]
               }
             }
@@ -19704,12 +19732,15 @@
             "endRowAbs": 219,
             "source": "merge",
             "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
+              "kind": "f",
+              "from": "14",
+              "to": "93v",
+              "prefix": "ff.",
+              "rendered": "ff. 14-93v",
               "evidence": {
-                "leavesPages": []
+                "leavesPages": [
+                  "ff. 14-93vb"
+                ]
               }
             }
           }
@@ -19731,7 +19762,8 @@
               "rendered": "ff. 1r-93v",
               "evidence": {
                 "leavesPages": [
-                  "Ff. 1ra-93vb"
+                  "ff. 1ra-13rb",
+                  "ff. 14-93vb"
                 ]
               }
             }
@@ -19754,7 +19786,8 @@
               "rendered": "ff. 1r-93v",
               "evidence": {
                 "leavesPages": [
-                  "Ff. 1ra-93vb"
+                  "ff. 1ra-13rb",
+                  "ff. 14-93vb"
                 ]
               }
             }
@@ -19777,7 +19810,8 @@
               "rendered": "ff. 1r-93v",
               "evidence": {
                 "leavesPages": [
-                  "Ff. 1ra-93vb"
+                  "ff. 1ra-13rb",
+                  "ff. 14-93vb"
                 ]
               }
             }
@@ -19795,12 +19829,12 @@
             "locus": {
               "kind": "f",
               "from": "1r",
-              "to": "93v",
+              "to": "13r",
               "prefix": "ff.",
-              "rendered": "ff. 1r-93v",
+              "rendered": "ff. 1r-13r",
               "evidence": {
                 "leavesPages": [
-                  "Ff. 1ra-93vb"
+                  "ff. 1ra-13rb"
                 ]
               }
             }
@@ -19814,12 +19848,15 @@
             "endRowAbs": 219,
             "source": "merge",
             "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
+              "kind": "f",
+              "from": "14",
+              "to": "93v",
+              "prefix": "ff.",
+              "rendered": "ff. 14-93v",
               "evidence": {
-                "leavesPages": []
+                "leavesPages": [
+                  "ff. 14-93vb"
+                ]
               }
             }
           }
@@ -19841,7 +19878,8 @@
               "rendered": "ff. 1r-93v",
               "evidence": {
                 "leavesPages": [
-                  "Ff. 1ra-93vb"
+                  "ff. 1ra-13rb",
+                  "ff. 14-93vb"
                 ]
               }
             }
@@ -19864,7 +19902,8 @@
               "rendered": "ff. 1r-93v",
               "evidence": {
                 "leavesPages": [
-                  "Ff. 1ra-93vb"
+                  "ff. 1ra-13rb",
+                  "ff. 14-93vb"
                 ]
               }
             }
@@ -19887,7 +19926,8 @@
               "rendered": "ff. 1r-93v",
               "evidence": {
                 "leavesPages": [
-                  "Ff. 1ra-93vb"
+                  "ff. 1ra-13rb",
+                  "ff. 14-93vb"
                 ]
               }
             }
@@ -19910,7 +19950,8 @@
               "rendered": "ff. 1r-93v",
               "evidence": {
                 "leavesPages": [
-                  "Ff. 1ra-93vb"
+                  "ff. 1ra-13rb",
+                  "ff. 14-93vb"
                 ]
               }
             }
@@ -19933,7 +19974,8 @@
               "rendered": "ff. 1r-93v",
               "evidence": {
                 "leavesPages": [
-                  "Ff. 1ra-93vb"
+                  "ff. 1ra-13rb",
+                  "ff. 14-93vb"
                 ]
               }
             }
@@ -19956,7 +19998,8 @@
               "rendered": "ff. 1r-93v",
               "evidence": {
                 "leavesPages": [
-                  "Ff. 1ra-93vb"
+                  "ff. 1ra-13rb",
+                  "ff. 14-93vb"
                 ]
               }
             }
@@ -19979,7 +20022,8 @@
               "rendered": "ff. 1r-93v",
               "evidence": {
                 "leavesPages": [
-                  "Ff. 1ra-93vb"
+                  "ff. 1ra-13rb",
+                  "ff. 14-93vb"
                 ]
               }
             }
@@ -20002,7 +20046,8 @@
               "rendered": "ff. 1r-93v",
               "evidence": {
                 "leavesPages": [
-                  "Ff. 1ra-93vb"
+                  "ff. 1ra-13rb",
+                  "ff. 14-93vb"
                 ]
               }
             }
@@ -20025,7 +20070,8 @@
               "rendered": "ff. 1r-93v",
               "evidence": {
                 "leavesPages": [
-                  "Ff. 1ra-93vb"
+                  "ff. 1ra-13rb",
+                  "ff. 14-93vb"
                 ]
               }
             }
@@ -20048,7 +20094,8 @@
               "rendered": "ff. 1r-93v",
               "evidence": {
                 "leavesPages": [
-                  "Ff. 1ra-93vb"
+                  "ff. 1ra-13rb",
+                  "ff. 14-93vb"
                 ]
               }
             }
@@ -20071,7 +20118,8 @@
               "rendered": "ff. 1r-93v",
               "evidence": {
                 "leavesPages": [
-                  "Ff. 1ra-93vb"
+                  "ff. 1ra-13rb",
+                  "ff. 14-93vb"
                 ]
               }
             }
@@ -20094,7 +20142,8 @@
               "rendered": "ff. 1r-93v",
               "evidence": {
                 "leavesPages": [
-                  "Ff. 1ra-93vb"
+                  "ff. 1ra-13rb",
+                  "ff. 14-93vb"
                 ]
               }
             }
@@ -20117,7 +20166,8 @@
               "rendered": "ff. 1r-93v",
               "evidence": {
                 "leavesPages": [
-                  "Ff. 1ra-93vb"
+                  "ff. 1ra-13rb",
+                  "ff. 14-93vb"
                 ]
               }
             }
@@ -20126,7 +20176,7 @@
         "Scribe": [
           {
             "column": "Scribe",
-            "label": "Hand a (ff. 1-13)",
+            "label": "Hand a",
             "startRow": 0,
             "endRow": 3,
             "startRowAbs": 203,
@@ -20135,31 +20185,34 @@
             "locus": {
               "kind": "f",
               "from": "1r",
-              "to": "93v",
+              "to": "13r",
               "prefix": "ff.",
-              "rendered": "ff. 1r-93v",
+              "rendered": "ff. 1r-13r",
               "evidence": {
                 "leavesPages": [
-                  "Ff. 1ra-93vb"
+                  "ff. 1ra-13rb"
                 ]
               }
             }
           },
           {
             "column": "Scribe",
-            "label": "Hand b (ff. 14-93)",
+            "label": "Hand b",
             "startRow": 4,
             "endRow": 16,
             "startRowAbs": 207,
             "endRowAbs": 219,
             "source": "merge",
             "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
+              "kind": "f",
+              "from": "14",
+              "to": "93v",
+              "prefix": "ff.",
+              "rendered": "ff. 14-93v",
               "evidence": {
-                "leavesPages": []
+                "leavesPages": [
+                  "ff. 14-93vb"
+                ]
               }
             }
           }
@@ -20181,7 +20234,8 @@
               "rendered": "ff. 1r-93v",
               "evidence": {
                 "leavesPages": [
-                  "Ff. 1ra-93vb"
+                  "ff. 1ra-13rb",
+                  "ff. 14-93vb"
                 ]
               }
             }
@@ -20204,7 +20258,8 @@
               "rendered": "ff. 1r-93v",
               "evidence": {
                 "leavesPages": [
-                  "Ff. 1ra-93vb"
+                  "ff. 1ra-13rb",
+                  "ff. 14-93vb"
                 ]
               }
             }
@@ -20227,7 +20282,8 @@
               "rendered": "ff. 1r-93v",
               "evidence": {
                 "leavesPages": [
-                  "Ff. 1ra-93vb"
+                  "ff. 1ra-13rb",
+                  "ff. 14-93vb"
                 ]
               }
             }
@@ -20250,7 +20306,8 @@
               "rendered": "ff. 1r-93v",
               "evidence": {
                 "leavesPages": [
-                  "Ff. 1ra-93vb"
+                  "ff. 1ra-13rb",
+                  "ff. 14-93vb"
                 ]
               }
             }
@@ -24839,7 +24896,7 @@
           },
           {
             "column": "Dating",
-            "label": "\"Younger hands\"",
+            "label": "After 1500",
             "startRow": 37,
             "endRow": 40,
             "startRowAbs": 284,
@@ -42257,7 +42314,7 @@
           },
           {
             "column": "Minor text",
-            "label": "On the fees for candles",
+            "label": "On the fees for lighting",
             "startRow": 45,
             "endRow": 45,
             "startRowAbs": 466,
@@ -164257,6 +164314,29 @@
           {
             "column": "Lines",
             "label": "32",
+            "startRow": 0,
+            "endRow": 0,
+            "startRowAbs": 1311,
+            "endRowAbs": 1311,
+            "source": "cell",
+            "locus": {
+              "kind": "f",
+              "from": "92",
+              "to": "92",
+              "prefix": "ff.",
+              "rendered": "ff. 92-92",
+              "evidence": {
+                "leavesPages": [
+                  "92"
+                ]
+              }
+            }
+          }
+        ],
+        "Links to Database": [
+          {
+            "column": "Links to Database",
+            "label": "[HR](https://handrit.is/manuscript/view/is/AM02-0345)",
             "startRow": 0,
             "endRow": 0,
             "startRowAbs": 1311,
