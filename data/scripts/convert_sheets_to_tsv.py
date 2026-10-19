@@ -222,6 +222,10 @@ def merges_to_json(merges: list[dict], df: pd.DataFrame, sheet_id: str, sheet_na
             "value": str(value) if value else "",
         })
 
+    # The Sheets API returns merges in no guaranteed order; sort them (reading order)
+    # so re-importing an unchanged sheet produces a byte-identical file.
+    out.sort(key=lambda m: (m["minRow"], m["minColIndex"], m["maxRow"], m["maxColIndex"]))
+
     return {
         "source": f"https://docs.google.com/spreadsheets/d/{sheet_id}",
         "sheet": sheet_name,
