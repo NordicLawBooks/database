@@ -33,9 +33,6 @@ export const SOURCES = [
   segments: `${DATA_DIR}/${s.stem}_segments.json`,
 }));
 
-/** Combined all-languages TSV; the fallback when raw sources can't be loaded. */
-export const FALLBACK_TSV = `${DATA_DIR}/NordicLaw_data.tsv`;
-
 const BY_LANG = new Map(SOURCES.map((s) => [s.lang, s]));
 const BY_ID = new Map(SOURCES.map((s) => [s.id, s]));
 

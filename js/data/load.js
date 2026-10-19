@@ -1,12 +1,7 @@
-// Dataset loading for the browser.
-//
-// This step loads the combined `NordicLaw_data.tsv` (the fallback source from
-// the legacy app). The raw per-language TSV + merge-geometry path that powers
-// Manuscript View's merged cells is added in a later step; the model shape it
-// produces is identical, so views/pipeline don't change.
+// Dataset loading for the browser: the raw per-language TSVs (blank cells
+// preserved) + their merge geometry, assembled into the filtering model.
 
-import { parseTSV } from "./tsv.js";
-import { FALLBACK_TSV, SOURCES } from "./manifest.js";
+import { SOURCES } from "./manifest.js";
 import { loadDepositoryMap } from "./lookups.js";
 import { buildModel, enrichRow } from "../model/manuscript.js";
 import { normalizeLeavesPages, normalizeGatherings, normalizeScribe } from "../model/fields.js";
@@ -14,37 +9,9 @@ import { normalizeForCompare } from "../util/text.js";
 import { applyMergeAwareFillDown } from "../render/merge-geometry.js";
 
 /**
- * Fetch + parse the combined dataset and build the in-memory model.
- * @returns {Promise<{rows, manuscripts, puByKey, headers}>}
- */
-export async function loadDataset() {
-  const depositoryMap = await loadDepositoryMap();
-
-  const resp = await fetch(FALLBACK_TSV);
-  if (!resp.ok) throw new Error(`Failed to fetch ${FALLBACK_TSV}: ${resp.status}`);
-  const { headers, rows } = parseTSV(await resp.text());
-
-  // Field-level fixups that depend on lookup maps (the rest of the enrichment —
-  // Main text group, Dating years, language — happens in buildModel).
-  for (const row of rows) {
-    if ("Leaves/Pages" in row) row["Leaves/Pages"] = normalizeLeavesPages(row["Leaves/Pages"]);
-    if ("Main text" in row) row["Main text"] = String(row["Main text"] || "").trim();
-    if ("Depository" in row) {
-      const abbr = row["Depository"];
-      row["Depository_abbr"] = abbr;
-      if (abbr in depositoryMap) row["Depository"] = depositoryMap[abbr];
-    }
-  }
-
-  const model = buildModel(rows);
-  model.headers = headers;
-  return model;
-}
-
-/**
  * Load the raw per-language TSVs (blank cells preserved) + their merge geometry,
  * for Manuscript View's merged-cell rendering. Rows are grouped by the filled-down
- * `__msKey` (Depository abbr + Shelf mark), which matches the combined model's keys.
+ * `__msKey` (Depository abbr + Shelf mark).
  *
  * @returns {Promise<{rawByKey: Map<string,{rows,sourceId}>, mergesBySource: Map<string,object>, loaded: number}>}
  */
@@ -194,18 +161,13 @@ function mergeLinksPerManuscript(rows) {
 }
 
 /**
- * Load the filtering model, preferring the raw per-language sources (so its keys
- * align with Manuscript View's merge data) and falling back to the combined TSV.
+ * Load the filtering model from the raw per-language sources, so its keys align
+ * with Manuscript View's merge data. Throws if no source could be loaded.
  * The returned model carries `rawByKey` + `mergesBySource` for merged rendering.
  */
 export async function loadModel() {
   const raw = await loadRawSources();
-  if (!raw.loaded) {
-    const model = await loadDataset();
-    model.rawByKey = new Map();
-    model.mergesBySource = new Map();
-    return model;
-  }
+  if (!raw.loaded) throw new Error("No data sources could be loaded (see warnings above).");
 
   const headers = raw.headers;
   const filled = [];
