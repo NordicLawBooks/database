@@ -25,6 +25,7 @@ export const columnTitle = (field) => COLUMN_TITLE_OVERRIDES[field] || field;
 //   "range+terms"   numeric {min,max} plus free-text checkbox values (Lines)
 // emptyOption: blanks become a selectable "Empty" option.
 // searchable: the sidebar shows a box that filters the (long) option list.
+// help: one-line hint shown above a facet's range inputs.
 export const FACET_DEFS = [
   { field: "Language", type: "term" },
   { field: "Depository", type: "term", emptyOption: true },
@@ -34,12 +35,14 @@ export const FACET_DEFS = [
   { field: "Production units", type: "term", scope: "manuscript" },
   { field: "Main text group", type: "hierarchical", childField: "Main text group-variant" },
   { field: "Minor text", type: "multi", searchable: true },
-  { field: "Dating", type: "range", minField: "DatingMinYear", maxField: "DatingMaxYear" },
+  { field: "Dating", type: "range", minField: "DatingMinYear", maxField: "DatingMaxYear",
+    help: "Filter by year range (uses parsed year from Dating)" },
   { field: "Script", type: "term", emptyOption: true },
   { field: "Pricking", type: "term", emptyOption: true },
   { field: "Ruling", type: "term", emptyOption: true },
   { field: "Columns", type: "term", emptyOption: true },
-  { field: "Lines", type: "range+terms", emptyOption: true },
+  { field: "Lines", type: "range+terms", emptyOption: true,
+    help: "Filter by line count range (parses numbers/ranges; ignores parentheses and ca.)" },
   { field: "Rubric", type: "term", emptyOption: true },
   { field: "Style", type: "term", emptyOption: true },
 ];

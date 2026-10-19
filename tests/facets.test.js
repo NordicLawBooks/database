@@ -5,6 +5,7 @@ import {
   manuscriptMatchesFacets,
   rowMatchesFacets,
   computeCounts,
+  rangeExtent,
 } from "../js/facets/engine.js";
 import { FACET_DEFS } from "../js/config.js";
 import { makeInitialState } from "../js/store.js";
@@ -161,4 +162,17 @@ test("matchesOptionSearch: folded substring, empty query matches all", () => {
   assert.equal(matchesOptionSearch("Kristinn réttr", "RETT"), true);
   assert.equal(matchesOptionSearch("Kristinn réttr", "bergen"), false);
   assert.equal(matchesOptionSearch("anything", "  "), true);
+});
+
+test("rangeExtent: Dating spans min/max years; Lines parses ranges; unknown -> null", () => {
+  const dating = FACET_DEFS.find((d) => d.field === "Dating");
+  const lines = FACET_DEFS.find((d) => d.field === "Lines");
+  const rows = [
+    { DatingMinYear: 1300, DatingMaxYear: 1350, Lines: "20-25" },
+    { DatingMinYear: 1250, DatingMaxYear: 1499, Lines: "ca. 31" },
+    { Lines: "varies" },
+  ];
+  assert.deepEqual(rangeExtent(rows, dating), { min: 1250, max: 1499 });
+  assert.deepEqual(rangeExtent(rows, lines), { min: 20, max: 31 });
+  assert.deepEqual(rangeExtent([], dating), { min: null, max: null });
 });

@@ -4,6 +4,7 @@
 
 import { escapeHtml, toDomIdToken, compareValues, fold } from "../util/text.js";
 import { FACET_DEFS } from "../config.js";
+import { formatAbbrExpansion } from "../model/expand.js";
 
 const VARIANT_KEY = "Main text group-variant";
 const sorted = (map) => [...map.keys()].sort(compareValues);
@@ -66,15 +67,22 @@ function checkbox(field, value, label) {
   );
 }
 
-function rangeInputs(field) {
-  const f = escapeHtml(field);
+/** From/To inputs with the data's extent as placeholders, a help line, and a Clear button. */
+function rangeInputs(def, extent) {
+  const f = escapeHtml(def.field);
+  const ph = (v) => (v == null ? "" : escapeHtml(String(v)));
+  const box = (bound, label, v) =>
+    `<div class="flex-fill">` +
+    `<label class="form-label mb-1 range-label">${label}</label>` +
+    `<input type="number" inputmode="numeric" class="form-control form-control-sm" placeholder="${ph(v)}" ` +
+    `data-range-field="${f}" data-range-bound="${bound}" aria-label="${f} ${label.toLowerCase()}">` +
+    `</div>`;
   return (
-    `<div class="d-flex gap-2 align-items-center mb-1">` +
-    `<input type="number" inputmode="numeric" class="form-control form-control-sm" placeholder="from" ` +
-    `data-range-field="${f}" data-range-bound="min" aria-label="${f} from">` +
-    `<span class="text-secondary">–</span>` +
-    `<input type="number" inputmode="numeric" class="form-control form-control-sm" placeholder="to" ` +
-    `data-range-field="${f}" data-range-bound="max" aria-label="${f} to">` +
+    (def.help ? `<div class="small text-secondary mb-2">${escapeHtml(def.help)}</div>` : "") +
+    `<div class="d-flex gap-2 align-items-end mb-2">` +
+    box("min", "From", extent && extent.min) +
+    box("max", "To", extent && extent.max) +
+    `<button class="btn btn-sm btn-outline-secondary" type="button" data-range-clear="${f}">Clear</button>` +
     `</div>`
   );
 }
@@ -82,11 +90,18 @@ function rangeInputs(field) {
 /** "All" box: ticked while the facet is unfiltered; ticking it clears the facet. */
 function allCheckbox(field) {
   const id = `facet_${toDomIdToken(field)}__all`;
+  const f = escapeHtml(field);
   return (
     `<div class="form-check mb-1">` +
-    `<input class="form-check-input" type="checkbox" id="${id}" data-facet-all="${escapeHtml(field)}">` +
-    `<label class="form-check-label" for="${id}">All</label></div>`
+    `<input class="form-check-input" type="checkbox" id="${id}" data-facet-all="${f}">` +
+    `<label class="form-check-label" for="${id}">All ` +
+    `<span class="facet-count text-secondary" data-count-all="${f}"></span></label></div>`
   );
+}
+
+/** Main text group / variant label: spelled out when texts.tsv knows the code (legacy). */
+function mainTextLabel(code, maps) {
+  return maps && maps.main && maps.main[code] ? formatAbbrExpansion(maps, code) : code;
 }
 
 function optionSearch(field) {
@@ -101,8 +116,8 @@ function optionSearch(field) {
   );
 }
 
-function bodyHtml(def, universe) {
-  if (def.type === "range") return rangeInputs(def.field);
+function bodyHtml(def, universe, { maps, extents }) {
+  if (def.type === "range") return rangeInputs(def, extents[def.field]);
 
   let options;
   if (def.type === "hierarchical") {
@@ -110,16 +125,24 @@ function bodyHtml(def, universe) {
     options = groups
       .map((g) => {
         const variants = (byGroup[g] || [])
-          .map((key) => `<div class="ms-3">${checkbox(def.childField, key, key.slice(key.indexOf("|") + 1) || "—")}</div>`)
+          .map((key) => {
+            const variant = key.slice(key.indexOf("|") + 1);
+            return `<div class="ms-3">${checkbox(def.childField, key, variant ? mainTextLabel(variant, maps) : "—")}</div>`;
+          })
           .join("");
-        return checkbox(def.field, g, g) + variants;
+        return checkbox(def.field, g, mainTextLabel(g, maps)) + variants;
       })
       .join("");
   } else {
     options = (universe[def.field] || []).map((v) => checkbox(def.field, v, v)).join("");
   }
 
-  let html = def.type === "range+terms" ? rangeInputs(def.field) : "";
+  let html = "";
+  if (def.type === "range+terms") {
+    html += rangeInputs(def, extents[def.field]);
+    if (!options) return html; // no text values: range only, no All box (legacy)
+    html += `<div class="small text-secondary mb-1">Text values</div>`;
+  }
   if (def.searchable) html += optionSearch(def.field);
   html += allCheckbox(def.field);
   html += def.searchable
@@ -145,8 +168,12 @@ function applyOptionSearch(host, field) {
   if (status) status.textContent = `${shown} of ${opts.length} shown`;
 }
 
-/** Build the accordion once. `counts` is the unfiltered universe of options. */
-export function buildFacetSidebar(host, counts) {
+/**
+ * Build the accordion once. `counts` is the unfiltered universe of options;
+ * `maps` (expansion maps) spells out Main text group labels; `extents` holds each
+ * range facet's data {min, max}, shown as input placeholders.
+ */
+export function buildFacetSidebar(host, counts, { maps = null, extents = {} } = {}) {
   const universe = optionUniverse(counts);
   const items = FACET_DEFS.map((def, i) => {
     const id = `facetAcc_${toDomIdToken(def.field)}`;
@@ -158,7 +185,7 @@ export function buildFacetSidebar(host, counts) {
       `data-bs-toggle="collapse" data-bs-target="#${id}">${escapeHtml(label)}</button>` +
       `</h2>` +
       `<div id="${id}" class="accordion-collapse collapse ${i === 1 ? "show" : ""}">` +
-      `<div class="accordion-body py-2">${bodyHtml(def, universe)}</div>` +
+      `<div class="accordion-body py-2">${bodyHtml(def, universe, { maps, extents })}</div>` +
       `</div></div>`
     );
   });
@@ -173,6 +200,10 @@ export function syncFacetSidebar(host, state, counts) {
   }
   for (const cb of host.querySelectorAll("input[type=checkbox][data-facet-all]")) {
     cb.checked = isFacetUnfiltered(state.facets, cb.dataset.facetAll);
+  }
+  for (const span of host.querySelectorAll(".facet-count[data-count-all]")) {
+    const c = counts[span.dataset.countAll];
+    span.textContent = `(${(c && c.baseTotal) || 0})`;
   }
   for (const span of host.querySelectorAll(".facet-count[data-count-field]")) {
     const { countField, countValue } = span.dataset;
@@ -210,6 +241,13 @@ export function bindFacetEvents(host, store) {
   });
 
   host.addEventListener("click", (e) => {
+    const clear = e.target.closest && e.target.closest("button[data-range-clear]");
+    if (clear) {
+      const field = clear.dataset.rangeClear;
+      const state = store.get();
+      store.set({ page: 1, ranges: { ...state.ranges, [field]: { min: null, max: null } } }, { history: "push" });
+      return;
+    }
     const btn = e.target.closest && e.target.closest("button[data-option-search-clear]");
     if (!btn) return;
     const field = btn.dataset.optionSearchClear;

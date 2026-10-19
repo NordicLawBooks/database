@@ -10,12 +10,13 @@ import { loadDepositoryMap, loadExpansionMaps } from "./data/lookups.js";
 import { openManuscriptModal } from "./render/ms-modal.js";
 import { openRowModal } from "./render/row-modal.js";
 import { exportManuscriptPdf, exportRowDetailsPdf } from "./pdf/export.js";
-import { computeCounts } from "./facets/engine.js";
+import { computeCounts, rangeExtent } from "./facets/engine.js";
 import { selectResults } from "./filter/pipeline.js";
 import { buildFacetSidebar, syncFacetSidebar, bindFacetEvents } from "./facets/render.js";
 import { renderTextTable, displayColumns } from "./render/text-table.js";
 import { renderManuscriptView } from "./render/manuscript-view.js";
 import { refreezeOnResize } from "./render/frozen-columns.js";
+import { bindSidebar, syncSidebar } from "./render/sidebar.js";
 import { buildColumnsMenu, syncColumnsMenu, bindColumnsMenu, visibleColumns } from "./render/columns.js";
 import { bindControls, renderControls } from "./render/controls.js";
 import { buildSearchIndex, makeIndexQuery } from "./search/index.js";
@@ -31,6 +32,8 @@ async function main() {
     meta: document.getElementById("result-meta"),
     pager: document.getElementById("pager"),
     sidebar: document.getElementById("facet-sidebar"),
+    sidebarToggle: document.getElementById("toggle-facets"),
+    sidebarResizer: document.getElementById("facet-resizer"),
     tableView: document.getElementById("table-view"),
     mergedView: document.getElementById("merged-view"),
     columnsMenu: document.getElementById("columns-menu"),
@@ -82,14 +85,10 @@ async function main() {
     rowPdfBtn.addEventListener("click", () => exportRowDetailsPdf(document.getElementById("rowDetailsModal")));
   }
 
-  // Build the facet sidebar once from the unfiltered option universe.
-  const universe = computeCounts(model.manuscripts, makeInitialState(), FACET_DEFS, {
-    scope: "manuscript",
-    puByKey: model.puByKey,
-  });
-  buildFacetSidebar(refs.sidebar, universe);
-  bindFacetEvents(refs.sidebar, store);
   bindControls(store, refs);
+  const sidebarRefs = { toggle: refs.sidebarToggle, sidebar: refs.sidebar, resizer: refs.sidebarResizer };
+  bindSidebar(store, sidebarRefs);
+  syncSidebar(sidebarRefs, store.get().ui);
 
   // Manuscript details modal: load segments lazily, then open on row/shelfmark click.
   const [segments, depositoryMap, maps] = await Promise.all([
@@ -100,6 +99,19 @@ async function main() {
 
   // Row-level search index (built after maps so expansions are searchable too).
   const searchIndex = buildSearchIndex(model.rows, maps);
+
+  // Build the facet sidebar once from the unfiltered option universe (after the
+  // expansion maps load, so Main text group labels can be spelled out).
+  const universe = computeCounts(model.manuscripts, makeInitialState(), FACET_DEFS, {
+    scope: "manuscript",
+    puByKey: model.puByKey,
+  });
+  const extents = {};
+  for (const def of FACET_DEFS) {
+    if (def.type === "range" || def.type === "range+terms") extents[def.field] = rangeExtent(model.rows, def);
+  }
+  buildFacetSidebar(refs.sidebar, universe, { maps, extents });
+  bindFacetEvents(refs.sidebar, store);
   refreezeOnResize(document);
   if (refs.mergedView) {
     refs.mergedView.addEventListener("click", (e) => {
@@ -123,6 +135,7 @@ async function main() {
   }
 
   function renderAll(state) {
+    syncSidebar(sidebarRefs, state.ui);
     const q = makeIndexQuery(searchIndex, state.query);
     const result = selectResults(model, state, { matchesQuery: q && q.matches, scoreOf: q && q.score });
 

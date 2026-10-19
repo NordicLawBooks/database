@@ -312,3 +312,27 @@ export function computeCounts(records, state, defs, { scope, puByKey = null, mat
 
   return out;
 }
+
+/**
+ * The data's overall {min, max} for a range facet (null where unknown), used as
+ * input hints: Dating spans DatingMinYear..DatingMaxYear; Lines parses each value.
+ */
+export function rangeExtent(rows, def) {
+  let min = Infinity;
+  let max = -Infinity;
+  for (const row of rows || []) {
+    let lo, hi;
+    if (def.type === "range") {
+      lo = row[def.minField];
+      hi = row[def.maxField];
+    } else {
+      const p = parseLinesRange(row[def.field]);
+      if (!p) continue;
+      lo = p.min;
+      hi = p.max;
+    }
+    if (typeof lo === "number" && !Number.isNaN(lo)) min = Math.min(min, lo);
+    if (typeof hi === "number" && !Number.isNaN(hi)) max = Math.max(max, hi);
+  }
+  return { min: Number.isFinite(min) ? min : null, max: Number.isFinite(max) ? max : null };
+}
