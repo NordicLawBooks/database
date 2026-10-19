@@ -116,13 +116,34 @@ def cell_str(cell: dict) -> str:
     return cell.get("formattedValue", "")
 
 
-def cell_hyperlink(cell: dict) -> tuple[str, str] | tuple[None, None]:
-    """Return (display_text, url) if the cell has a hyperlink, else (None, None)."""
-    url = cell.get("hyperlink")
-    if url:
-        text = cell_str(cell)
-        return text or url, url
-    return None, None
+def cell_hyperlinks(cell: dict) -> list[tuple[str, str]]:
+    """Return a list of (display_text, url) pairs for all hyperlinks in the cell.
+
+    Handles both single-hyperlink cells (via cell["hyperlink"]) and cells with
+    multiple hyperlinks encoded in textFormatRuns (each run carries its own link).
+    """
+    formatted = cell.get("formattedValue", "") or ""
+    runs = cell.get("textFormatRuns", [])
+
+    result: list[tuple[str, str]] = []
+    if runs:
+        for i, run in enumerate(runs):
+            url = run.get("format", {}).get("link", {}).get("uri")
+            if not url:
+                continue
+            start = run.get("startIndex", 0)
+            end = runs[i + 1].get("startIndex") if i + 1 < len(runs) else len(formatted)
+            text = formatted[start:end].strip().strip(";").strip()
+            result.append((text or url, url))
+
+    if not result:
+        # Fall back to the cell-level single hyperlink.
+        url = cell.get("hyperlink")
+        if url:
+            text = cell_str(cell)
+            result.append((text or url, url))
+
+    return result
 
 
 def sheet_to_dataframe(sheet: dict) -> tuple[pd.DataFrame, list[dict]]:
@@ -135,8 +156,10 @@ def sheet_to_dataframe(sheet: dict) -> tuple[pd.DataFrame, list[dict]]:
     data_rows = row_data[HEADER_ROWS_IN_SHEET:]
 
     n_cols = len(TARGET_HEADERS)
+    links_ci = TARGET_HEADERS.index("Links to Database")
     records: list[list[str]] = []
-    hyperlinks: list[tuple[int, int, str, str]] = []  # (row_idx, col_idx, text, url)
+    # Maps (row_idx, col_idx) → list of Markdown link strings for that cell.
+    cell_links: dict[tuple[int, int], list[str]] = {}
 
     for ri, row in enumerate(data_rows):
         cells = row.get("values", [])
@@ -144,20 +167,16 @@ def sheet_to_dataframe(sheet: dict) -> tuple[pd.DataFrame, list[dict]]:
         for ci in range(n_cols):
             cell = cells[ci] if ci < len(cells) else {}
             row_vals.append(cell_str(cell))
-            if ci == n_cols - 1 or TARGET_HEADERS[ci] == "Links to Database":
-                # Capture hyperlinks for "Links to Database" column.
-                links_ci = TARGET_HEADERS.index("Links to Database")
-                if ci == links_ci:
-                    text, url = cell_hyperlink(cell)
-                    if text and url:
-                        hyperlinks.append((ri, ci, text, url))
+            if ci == links_ci:
+                for text, url in cell_hyperlinks(cell):
+                    cell_links.setdefault((ri, ci), []).append(f"[{text}]({url})")
         records.append(row_vals)
 
     df = pd.DataFrame(records, columns=TARGET_HEADERS[:n_cols])
 
-    # Re-apply hyperlinks as Markdown (collected above).
-    for ri, ci, text, url in hyperlinks:
-        df.iat[ri, ci] = f"[{text}]({url})"
+    # Re-apply hyperlinks as Markdown, joining multiple links with "; ".
+    for (ri, ci), md_links in cell_links.items():
+        df.iat[ri, ci] = "; ".join(md_links)
 
     merges = sheet.get("merges", [])
     return df, merges

@@ -1179,10 +1179,10 @@ let RAW_ROWS_BY_SOURCE = new Map();    // sourceId -> RawRow[] (in source-row or
 let RAW_EXCEL_HEADERS = null;          // string[] including inserted Language
 
 const RAW_EXCEL_SOURCES = [
-  { id: "dan", lang: "da", tsv: "data/1.0_Metadata_Dan_raw.tsv", merges: "data/1.1_Metadata_Dan_raw_merges.json", segments: "data/1.1_Metadata_Dan_segments.json" },
-  { id: "isl", lang: "is", tsv: "data/1.1_Metadata_Isl_raw.tsv", merges: "data/1.2_Metadata_Isl_raw_merges.json", segments: "data/1.2_Metadata_Isl_segments.json" },
-  { id: "norw", lang: "no", tsv: "data/1.2_Metadata_Norw_raw.tsv", merges: "data/1.3_Metadata_Norw_raw_merges.json", segments: "data/1.3_Metadata_Norw_segments.json" },
-  { id: "swe", lang: "sv", tsv: "data/1.1_Metadata_Swe_raw.tsv", merges: "data/1.1_Metadata_Swe_raw_merges.json", segments: "data/1.1_Metadata_Swe_segments.json" },
+  { id: "dan", lang: "da", tsv: "data/Metadata_Dan_raw.tsv", merges: "data/Metadata_Dan_raw_merges.json", segments: "data/Metadata_Dan_segments.json" },
+  { id: "isl", lang: "is", tsv: "data/Metadata_Isl_raw.tsv", merges: "data/Metadata_Isl_raw_merges.json", segments: "data/Metadata_Isl_segments.json" },
+  { id: "norw", lang: "no", tsv: "data/Metadata_Norw_raw.tsv", merges: "data/Metadata_Norw_raw_merges.json", segments: "data/Metadata_Norw_segments.json" },
+  { id: "swe", lang: "sv", tsv: "data/Metadata_Swe_raw.tsv", merges: "data/Metadata_Swe_raw_merges.json", segments: "data/Metadata_Swe_segments.json" },
 ];
 
 // Segments JSON (manuscript-level description extracted from raw TSV + merges).
@@ -1536,7 +1536,11 @@ function expandDepositoryLabel(rawDepository) {
 function buildManuscriptModalHtml(ms, sourceId, msKey = null) {
   const shelfmark = ms && ms.Shelfmark ? String(ms.Shelfmark) : '';
   const depository = expandDepositoryLabel(ms && ms.Depository ? String(ms.Depository) : '');
-  const language = pickFirstNonEmptySegmentLabel(ms, 'Language');
+  let language = pickFirstNonEmptySegmentLabel(ms, 'Language');
+  if (!language && sourceId) {
+    const src = RAW_EXCEL_SOURCES.find(s => s.id === sourceId);
+    if (src && src.lang) language = LANGUAGE_MAP[src.lang] || src.lang;
+  }
   const name = pickFirstNonEmptySegmentLabel(ms, 'Name');
   const object = pickFirstNonEmptySegmentLabel(ms, 'Object');
   const size = pickFirstNonEmptySegmentLabel(ms, 'Size');
@@ -1850,6 +1854,7 @@ const LINKS_TO_DATABASE_LABEL_MAP = {
   HR: "Handrit.is",
   MS: "manuscripta.se",
   AV: "Alvin",
+  CF: "Codices Fennici",
 };
 
 function formatLinksToDatabaseLabel(label) {

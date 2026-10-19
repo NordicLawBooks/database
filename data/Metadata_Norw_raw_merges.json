@@ -882,7 +882,7 @@
       "maxColIndex": 15,
       "minCol": "Pricking",
       "maxCol": "Pricking",
-      "value": "267 x 200"
+      "value": "Unknown"
     },
     {
       "minRow": 27,
@@ -1800,7 +1800,7 @@
       "maxColIndex": 3,
       "minCol": "Depository",
       "maxCol": "Depository",
-      "value": "KB"
+      "value": "DKB"
     },
     {
       "minRow": 110,
@@ -3564,7 +3564,7 @@
       "maxColIndex": 0,
       "minCol": "Shelf mark",
       "maxCol": "Shelf mark",
-      "value": "E DonVar 137 4to"
+      "value": "E Don Var 137 4to"
     },
     {
       "minRow": 8,
@@ -5770,6 +5770,15 @@
       "minCol": "Lines",
       "maxCol": "Lines",
       "value": "Various"
+    },
+    {
+      "minRow": 230,
+      "maxRow": 234,
+      "minColIndex": 31,
+      "maxColIndex": 31,
+      "minCol": "Links to Database",
+      "maxCol": "Links to Database",
+      "value": "[HR](https://handrit.is/manuscript/view/da/AM04-0114-a)"
     },
     {
       "minRow": 230,
@@ -15750,7 +15759,7 @@
       "maxColIndex": 3,
       "minCol": "Depository",
       "maxCol": "Depository",
-      "value": "Uppsala Universitetsbibliotek; Uppsala"
+      "value": "UUB"
     },
     {
       "minRow": 272,
