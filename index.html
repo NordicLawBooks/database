@@ -2,249 +2,84 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>NordicLaw Manuscripts</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
-    html, body {
-      height: 100%;
-      margin: 0;
-      display: flex;
-      flex-direction: column;
-    }
-    body {
-      margin: 0;
-      padding: 20px;
-      box-sizing: border-box;
-      overflow: hidden;
-      background: #fff;
-    }
-
-    /* Keep the main controls visible while scrolling */
-    #controls {
-      position: sticky;
-      top: 0;
-      z-index: 1000;
-      background: #fff;
-    }
-
-    #main-layout {
-      display: flex;
-      flex-direction: row;
-      flex: 1 1 auto;
-      min-height: 0;
-    }
-    #facet-sidebar {
-      width: 340px;
-      min-width: 180px;
-      max-width: 600px;
-      background: #f8f8f8;
-      border-right: 1px solid #ddd;
-      padding: 16px 12px 12px 8px;
-      box-sizing: border-box;
-      overflow-y: auto;
-      height: 100%;
-      position: relative;
-      flex-shrink: 0;
-      transition: width 0.1s;
-    }
+    body { padding: 16px; }
+    #controls { position: sticky; top: 0; z-index: 1000; background: #fff; padding-bottom: 8px; }
+    #layout { display: flex; align-items: flex-start; }
+    #facet-sidebar { flex: 0 0 340px; max-height: calc(100vh - 140px); overflow-y: auto; }
     #facet-resizer {
-      position: absolute;
-      top: 0;
-      right: -2px;
-      width: 16px;
-      height: 100%;
-      cursor: ew-resize;
-      background: linear-gradient(to right, #e0e0e0 60%, #cccccc 100%);
-      z-index: 10;
-      opacity: 0.7;
+      flex: 0 0 8px; align-self: stretch; margin: 0 4px; cursor: ew-resize; border-radius: 4px;
+      background: linear-gradient(to right, transparent 3px, #ced4da 3px, #ced4da 5px, transparent 5px);
     }
+    #facet-resizer:hover, body.sidebar-resizing #facet-resizer { background-color: #e9ecef; }
+    body.sidebar-resizing { cursor: ew-resize; user-select: none; }
+    body.facets-hidden #facet-sidebar, body.facets-hidden #facet-resizer { display: none; }
+    .range-label { font-size: 0.75rem; text-transform: uppercase; }
+    #results { flex: 1 1 auto; min-width: 0; }
+    .table-responsive { max-height: calc(100vh - 180px); overflow: auto; }
+    .facet-count { font-size: 0.85em; }
+    .facet-zero { opacity: 0.45; }
+    .accordion-button { padding: 0.5rem 0.75rem; }
 
-    /* Facet sidebar toggle */
-    body.facets-hidden #facet-sidebar { display: none !important; }
-    body.facets-hidden #facet-resizer { display: none !important; }
-    #table-view {
-      flex-grow: 1;
-      height: 100%;
-      /* Match Manuscript View container padding */
-      padding: 0 8px 8px;
-      background: #fff;
-      min-width: 0;
+    /* Manuscript View merged table */
+    .merged-table { border-collapse: collapse; font-size: 0.88rem; }
+    .merged-table th, .merged-table td {
+      border: 1px solid #dee2e6; padding: 4px 6px; vertical-align: top;
     }
-    #merged-view {
-      flex-grow: 1;
-      height: 100%;
-      overflow: hidden;
-      /* Put the gutter outside the scroll container to avoid bleed-through while scrolling */
-      padding: 0 8px 8px;
-      background: #fff;
-      min-width: 0;
-      display: flex;
-      flex-direction: column;
-      min-height: 0;
+    .merged-table thead th {
+      position: sticky; top: 0; z-index: 5; background: #f8f9fa; background-clip: padding-box;
+      box-shadow: 0 1px 0 rgba(0,0,0,0.15); /* no sub-pixel bleed-through while scrolling */
     }
-
-    /* Manuscript View scroll container (mirrors SimpleTable's .simple-table-scroll) */
-    .merged-view-scroll {
-      flex: 1 1 auto;
-      min-height: 0;
-      overflow: auto;
-      padding: 0;
-      background: #fff;
-    }
-    .merged-table {
-      width: 100%;
-      border-collapse: collapse;
-      font-size: 0.9rem;
-    }
-
-    /*
-      Manuscript View: keep Bootstrap-style borders for merged (rowspan/colspan) cells.
-      We handle sticky-column seams via the ::before seam cover + pixel rounding.
-    */
-    #merged-table .merged-table {
-      border-collapse: collapse;
-      background: #fff;
-    }
-    .merged-table th {
-      position: sticky;
-      top: 0;
-      z-index: 5;
-      background: #f8f9fa;
-      background-clip: padding-box;
-      /* Prevent occasional sub-pixel bleed-through while scrolling */
-      box-shadow: 0 1px 0 rgba(0,0,0,0.15);
-    }
-
-    /* Frozen (sticky-left) columns: Depository + Shelfmark */
-    .merged-table th.frozen-col,
-    .merged-table td.frozen-col {
-      position: sticky;
-      /* Paint background under borders too (prevents 1px gutter bleed) */
-      background-clip: border-box;
-    }
-
-    /* Keep frozen cells above scrolled cells */
-    .merged-table td.frozen-col { z-index: 6; }
-    .merged-table th.frozen-col { z-index: 12; }
-
-    /* Background colors for frozen cells are set inline by JS (opaque + matches row striping). */
-
-    /*
-      Chrome/Firefox can show a 1px transparent seam on sticky table cells
-      (especially with collapsed borders). Cover it by painting a tiny strip
-      of the cell's own background color on the left edge.
-    */
-    .merged-table th.frozen-col::before,
-    .merged-table td.frozen-col::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      left: -1px;
-      width: 1px;
-      background-color: inherit;
-      pointer-events: none;
-    }
-    .merged-table th.frozen-col-first::before,
-    .merged-table td.frozen-col-first::before {
-      left: -3px;
-      width: 3px;
-    }
-
-    /*
-      Text View: the 1px seam cover on non-first frozen columns can visually
-      replace the vertical cell border (making it look white). Force it to
-      use the Bootstrap border color so the Depository↔Shelfmark divider stays gray.
-    */
-    .simple-table-scroll .merged-table th.frozen-col:not(.frozen-col-first)::before,
-    .simple-table-scroll .merged-table td.frozen-col:not(.frozen-col-first)::before {
-      background-color: var(--bs-border-color, #dee2e6);
-    }
-
-    /* Manuscript View: same issue for the internal frozen-column divider. */
-    .merged-view-scroll .merged-table th.frozen-col:not(.frozen-col-first)::before,
-    .merged-view-scroll .merged-table td.frozen-col:not(.frozen-col-first)::before {
-      background-color: var(--bs-border-color, #dee2e6);
-    }
-
-    /* Right-edge divider without overriding Bootstrap striping (box-shadow) */
-    .merged-table th.frozen-col-edge::after,
-    .merged-table td.frozen-col-edge::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      right: -1px;
-      width: 2px;
-      background: rgba(0,0,0,0.12);
-      pointer-events: none;
-    }
-    .ms-sep {
-      border-top: 3px solid rgba(0,0,0,0.15);
-    }
-    /* Manuscript striping: match Bootstrap table striping tone */
-    .merged-table tbody tr.ms-a td { background: var(--bs-table-striped-bg, rgba(0,0,0,0.05)); }
-    .merged-table tbody tr.ms-b td { background: transparent; }
-
-    /* Production-unit indicator: keep a subtle stripe without overriding manuscript striping */
+    /* Manuscript striping: match Bootstrap's table striping tone (as legacy). */
+    .merged-table tbody tr.ms-a > td { background: var(--bs-table-striped-bg, rgba(0,0,0,0.05)); }
+    .merged-table tbody tr.ms-b > td { background: transparent; }
+    /* Production-unit indicator: a coloured bar on the left of the cell. */
     .merged-table td.pu-a { box-shadow: inset 4px 0 0 rgba(255,193,7,0.65); }
     .merged-table td.pu-b { box-shadow: inset 4px 0 0 rgba(220,53,69,0.55); }
-    /* Force view visibility (robust to Live Server reload quirks) */
-    body.view-merged #table-view { display: none !important; }
-    body.view-merged #merged-view { display: flex !important; }
-    body.view-table #table-view { display: block !important; }
-    body.view-table #merged-view { display: none !important; }
+    .merged-table tr.ms-sep { border-top: 3px solid rgba(0,0,0,0.15); }
 
-    /* Text View heading visibility */
-    body.view-merged #table-view-header { display: none !important; }
-    body.view-table #table-view-header { display: flex !important; }
-
-    /* Manuscript View heading visibility (match Text View behavior) */
-    body.view-table #merged-view-header { display: none !important; }
-    body.view-merged #merged-view-header { display: flex !important; }
-
-    /* Match heading alignment with Manuscript View (whose heading sits inside #merged-view padding) */
-    #table-view-header {
-      padding: 0 8px;
+    /*
+      Frozen (sticky-left) Depository + Shelfmark columns, both views; left + an opaque
+      background are set inline by JS. With collapsed borders a sticky cell doesn't carry
+      its borders (they stay in the scrolling grid), so the seams and the right-edge
+      divider are drawn with pseudo-elements that move with the cell (as legacy).
+    */
+    .merged-table th.frozen-col,
+    .merged-table td.frozen-col { position: sticky; background-clip: border-box; }
+    .merged-table td.frozen-col { z-index: 6; }
+    .merged-table th.frozen-col { z-index: 12; }
+    /* Cover the 1px seam left of each frozen cell (3px before the first). */
+    .merged-table th.frozen-col::before,
+    .merged-table td.frozen-col::before {
+      content: ""; position: absolute; top: 0; bottom: 0; left: -1px; width: 1px;
+      background-color: inherit; pointer-events: none;
     }
-
-    /* Match heading alignment with Text View */
-    #merged-view-header {
-      padding: 0;
+    .merged-table th.frozen-col-first::before,
+    .merged-table td.frozen-col-first::before { left: -3px; width: 3px; }
+    /* The Depository|Shelfmark divider: grey, and 2px so it also covers the sub-pixel
+       seam the denser table leaves at fractional column offsets. */
+    .merged-table th.frozen-col:not(.frozen-col-first)::before,
+    .merged-table td.frozen-col:not(.frozen-col-first)::before {
+      left: -2px; width: 2px; background-color: var(--bs-border-color, #dee2e6);
     }
-
-    /* SimpleTable (Text View) layout + sticky header */
-    .simple-table-root {
-      display: flex;
-      flex-direction: column;
-      height: 100%;
-      min-height: 0;
-    }
-    /* Ensure SimpleTable layout wins over view-toggle display rules */
-    body.view-table #table-view.simple-table-root { display: flex !important; }
-    .simple-table-scroll {
-      flex: 1 1 auto;
-      min-height: 0;
-      overflow: auto;
-    }
-    .simple-table-root thead th {
-      position: sticky;
-      top: 0;
-      z-index: 5;
-      background: #f8f9fa;
-      background-clip: padding-box;
-      box-shadow: 0 1px 0 rgba(0,0,0,0.15);
+    /* Right-edge divider that stays with the frozen columns. */
+    .merged-table th.frozen-col-edge::after,
+    .merged-table td.frozen-col-edge::after {
+      content: ""; position: absolute; top: 0; bottom: 0; right: -1px; width: 2px;
+      background: rgba(0,0,0,0.12); pointer-events: none;
     }
   </style>
 </head>
 <body>
+  <h1 class="h4 mb-1">NordicLaw Manuscripts (Beta)</h1>
+  <div id="status" class="text-secondary small mb-2"></div>
 
-  <h1 class="mb-4">NordicLaw Manuscripts (Beta)</h1>
-
-  <div id="controls" class="row g-3 align-items-center mb-3">
-    <!-- Dataset select removed: always using combined file -->
-    <div class="col-auto">
-      <input type="text" id="search" class="form-control" placeholder="Search all fields...">
+  <div id="controls" class="row g-2 align-items-center mb-2">
+    <div class="col" style="min-width: 220px;">
+      <input type="text" id="search" class="form-control" placeholder="Search all fields…" autocomplete="off">
     </div>
     <div class="col-auto">
       <button id="search-btn" class="btn btn-primary" type="button">Search</button>
@@ -256,259 +91,50 @@
       <button id="toggle-facets" class="btn btn-outline-secondary" type="button">Hide facets</button>
     </div>
     <div class="col-auto">
-      <!--<label for="view-select" class="col-form-label fw-bold">View:</label>-->
-    </div>
-    <div class="col-auto">
-      <select id="view-select" class="form-select">
-        <option value="merged" selected>Manuscript View</option>
+      <select id="view-select" class="form-select" aria-label="View">
+        <option value="merged">Manuscript View</option>
         <option value="table">Text View</option>
       </select>
     </div>
-    <div class="col-auto d-flex align-items-center gap-2" id="merged-sort-control" style="display:none;">
-      <!--<label for="merged-sort" class="fw-bold mb-0">Sort:</label>-->
-      <select id="merged-sort" class="form-select">
-        <option value="shelfmark" selected>Sort by Shelfmark</option>
-        <option value="dating">Sort by Dating</option>
+    <div class="col-auto">
+      <select id="sort-select" class="form-select" aria-label="Sort">
+        <option value="shelfmark">Sort: Shelfmark</option>
+        <option value="dating">Sort: Dating</option>
+        <option value="relevance">Sort: Relevance</option>
       </select>
     </div>
-    <div class="col-auto" id="merged-columns-control" style="display:none;">
-      <div class="dropdown">
-        <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="merged-columns-btn" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Columns</button>
-        <div class="dropdown-menu p-2" id="merged-columns-menu" style="max-height:60vh; overflow:auto; min-width:260px;"></div>
-      </div>
-    </div>
-    <div class="col-auto" id="table-columns-control" style="display:none;">
-      <div class="dropdown">
-        <button class="btn btn-outline-secondary dropdown-toggle" type="button" id="table-columns-btn" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Columns</button>
-        <div class="dropdown-menu p-2" id="table-columns-menu" style="max-height:60vh; overflow:auto; min-width:260px;"></div>
-      </div>
-    </div>
-    <div class="col-auto" id="pagination-label-control">
-      <label for="pagination-size" id="pagination-size-label" class="col-form-label fw-bold">Results per page:</label>
-    </div>
-    <div class="col-auto" id="pagination-select-control">
-      <select id="pagination-size" class="form-select">
-        <option value="20" selected>20</option>
-        <option value="50">50</option>
-        <option value="100">100</option>
+    <div class="col-auto">
+      <select id="page-size-select" class="form-select" aria-label="Page size">
+        <option value="20">20 / page</option>
+        <option value="50">50 / page</option>
+        <option value="100">100 / page</option>
         <option value="all">All</option>
       </select>
     </div>
-
-    <!-- Manuscript View pager (only shown in Manuscript View) -->
-    <div class="col-auto" id="merged-page-control" style="display:none;">
-      <div class="d-flex align-items-center gap-2">
-        <div class="btn-group btn-group-sm" id="merged-pager" role="group" aria-label="Manuscript view pagination">
-          <button type="button" class="btn btn-outline-secondary" id="merged-prev-page">Prev</button>
-          <button type="button" class="btn btn-outline-secondary" id="merged-next-page">Next</button>
-        </div>
-        <div class="text-secondary small" id="merged-page-indicator"></div>
-      </div>
-    </div>
-
-    <!-- Text View pager (only shown in Text View) -->
-    <div class="col-auto" id="table-page-control" style="display:none;">
-      <div id="table-pager-host"></div>
+    <div class="col-auto dropdown">
+      <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Columns</button>
+      <div class="dropdown-menu dropdown-menu-end p-2" id="columns-menu" style="max-height:70vh; overflow-y:auto; min-width:280px;"></div>
     </div>
   </div>
 
-  <div id="main-layout" class="row flex-nowrap">
-    <div id="facet-sidebar" class="col-auto bg-light border-end">
-      <div id="facet-resizer" title="Drag to resize sidebar"></div>
-      <h3 class="mt-2 mb-3">Facet Search</h3>
-      <div class="accordion" id="facetAccordion" style="--bs-accordion-bg: transparent;">
-                <div class="accordion-item mb-2">
-                  <h2 class="accordion-header" id="headingLanguage">
-                    <button class="accordion-button collapsed py-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLanguage" aria-expanded="false" aria-controls="collapseLanguage">Language</button>
-                  </h2>
-                  <div id="collapseLanguage" class="accordion-collapse collapse" aria-labelledby="headingLanguage">
-                    <div class="accordion-body p-2" id="facet-Language"></div>
-                  </div>
-                </div>
-        <div class="accordion-item mb-2">
-          <h2 class="accordion-header" id="headingDepository">
-            <button class="accordion-button py-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDepository" aria-expanded="true" aria-controls="collapseDepository">Depository</button>
-          </h2>
-          <div id="collapseDepository" class="accordion-collapse collapse show" aria-labelledby="headingDepository">
-            <div class="accordion-body p-2" id="facet-Depository"></div>
-          </div>
-        </div>
-        
-        <div class="accordion-item mb-2">
-          <h2 class="accordion-header" id="headingObject">
-            <button class="accordion-button collapsed py-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseObject" aria-expanded="false" aria-controls="collapseObject">Object</button>
-          </h2>
-          <div id="collapseObject" class="accordion-collapse collapse" aria-labelledby="headingObject">
-            <div class="accordion-body p-2" id="facet-Object"></div>
-          </div>
-        </div>
-        
-        <div class="accordion-item mb-2">
-          <h2 class="accordion-header" id="headingMaterial">
-            <button class="accordion-button collapsed py-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMaterial" aria-expanded="false" aria-controls="collapseMaterial">Material</button>
-          </h2>
-          <div id="collapseMaterial" class="accordion-collapse collapse" aria-labelledby="headingMaterial">
-            <div class="accordion-body p-2" id="facet-Material"></div>
-          </div>
-        </div>
-        
-        <div class="accordion-item mb-2">
-          <h2 class="accordion-header" id="headingSize">
-            <button class="accordion-button collapsed py-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseSize" aria-expanded="false" aria-controls="collapseSize">Size</button>
-          </h2>
-          <div id="collapseSize" class="accordion-collapse collapse" aria-labelledby="headingSize">
-            <div class="accordion-body p-2" id="facet-Size"></div>
-          </div>
-        </div>
-
-        <div class="accordion-item mb-2">
-          <h2 class="accordion-header" id="headingProductionUnits">
-            <button class="accordion-button collapsed py-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseProductionUnits" aria-expanded="false" aria-controls="collapseProductionUnits">Production units</button>
-          </h2>
-          <div id="collapseProductionUnits" class="accordion-collapse collapse" aria-labelledby="headingProductionUnits">
-            <div class="accordion-body p-2" id="facet-Production units"></div>
-          </div>
-        </div>
-
-        <div class="accordion-item mb-2">
-          <h2 class="accordion-header" id="headingMainTextGroup">
-            <button class="accordion-button collapsed py-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMainTextGroup" aria-expanded="false" aria-controls="collapseMainTextGroup">Main text group</button>
-          </h2>
-          <div id="collapseMainTextGroup" class="accordion-collapse collapse" aria-labelledby="headingMainTextGroup">
-            <div class="accordion-body p-2" id="facet-Main text group"></div>
-          </div>
-        </div>
-
-        <div class="accordion-item mb-2">
-          <h2 class="accordion-header" id="headingMinorText">
-            <button class="accordion-button collapsed py-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseMinorText" aria-expanded="false" aria-controls="collapseMinorText">Minor text</button>
-          </h2>
-          <div id="collapseMinorText" class="accordion-collapse collapse" aria-labelledby="headingMinorText">
-            <div class="accordion-body p-2" id="facet-Minor text"></div>
-          </div>
-        </div>
-        <div class="accordion-item mb-2">
-          <h2 class="accordion-header" id="headingDating">
-            <button class="accordion-button collapsed py-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseDating" aria-expanded="false" aria-controls="collapseDating">Dating</button>
-          </h2>
-          <div id="collapseDating" class="accordion-collapse collapse" aria-labelledby="headingDating">
-            <div class="accordion-body p-2" id="facet-Dating"></div>
-          </div>
-        </div>
-
-        <div class="accordion-item mb-2">
-          <h2 class="accordion-header" id="headingScript">
-            <button class="accordion-button collapsed py-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseScript" aria-expanded="false" aria-controls="collapseScript">Script</button>
-          </h2>
-          <div id="collapseScript" class="accordion-collapse collapse" aria-labelledby="headingScript">
-            <div class="accordion-body p-2" id="facet-Script"></div>
-          </div>
-        </div>
-
-        <div class="accordion-item mb-2">
-          <h2 class="accordion-header" id="headingPricking">
-            <button class="accordion-button collapsed py-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapsePricking" aria-expanded="false" aria-controls="collapsePricking">Pricking</button>
-          </h2>
-          <div id="collapsePricking" class="accordion-collapse collapse" aria-labelledby="headingPricking">
-            <div class="accordion-body p-2" id="facet-Pricking"></div>
-          </div>
-        </div>
-
-        <div class="accordion-item mb-2">
-          <h2 class="accordion-header" id="headingRuling">
-            <button class="accordion-button collapsed py-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRuling" aria-expanded="false" aria-controls="collapseRuling">Ruling</button>
-          </h2>
-          <div id="collapseRuling" class="accordion-collapse collapse" aria-labelledby="headingRuling">
-            <div class="accordion-body p-2" id="facet-Ruling"></div>
-          </div>
-        </div>
-
-        <div class="accordion-item mb-2">
-          <h2 class="accordion-header" id="headingColumns">
-            <button class="accordion-button collapsed py-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseColumns" aria-expanded="false" aria-controls="collapseColumns">Columns</button>
-          </h2>
-          <div id="collapseColumns" class="accordion-collapse collapse" aria-labelledby="headingColumns">
-            <div class="accordion-body p-2" id="facet-Columns"></div>
-          </div>
-        </div>
-
-        <div class="accordion-item mb-2">
-          <h2 class="accordion-header" id="headingLines">
-            <button class="accordion-button collapsed py-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseLines" aria-expanded="false" aria-controls="collapseLines">Lines</button>
-          </h2>
-          <div id="collapseLines" class="accordion-collapse collapse" aria-labelledby="headingLines">
-            <div class="accordion-body p-2" id="facet-Lines"></div>
-          </div>
-        </div>
-
-        <div class="accordion-item mb-2">
-          <h2 class="accordion-header" id="headingRubric">
-            <button class="accordion-button collapsed py-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseRubric" aria-expanded="false" aria-controls="collapseRubric">Rubric</button>
-          </h2>
-          <div id="collapseRubric" class="accordion-collapse collapse" aria-labelledby="headingRubric">
-            <div class="accordion-body p-2" id="facet-Rubric"></div>
-          </div>
-        </div>
-
-        <div class="accordion-item mb-2">
-          <h2 class="accordion-header" id="headingStyle">
-            <button class="accordion-button collapsed py-2" type="button" data-bs-toggle="collapse" data-bs-target="#collapseStyle" aria-expanded="false" aria-controls="collapseStyle">Decoration style</button>
-          </h2>
-          <div id="collapseStyle" class="accordion-collapse collapse" aria-labelledby="headingStyle">
-            <div class="accordion-body p-2" id="facet-Style"></div>
-          </div>
-        </div>
-
-        
-      </div>
-    </div>
-    <div class="col p-0" style="min-width:0;">
-      <div id="table-view-header" class="d-flex justify-content-between align-items-center mb-2" style="display:none;">
-        <div class="d-flex align-items-center gap-2">
-          <div class="fw-bold">Text view</div>
-        </div>
-        <div class="d-flex align-items-center gap-2">
-          <div id="table-view-count-host"></div>
-          <div class="text-secondary small" id="table-view-meta"></div>
-        </div>
-      </div>
-      <div id="table-view" style="display:none;"></div>
-      <div id="merged-view">
-        <div id="merged-view-header" class="d-flex justify-content-between align-items-center mb-2" style="display:none;">
-          <div class="d-flex align-items-center gap-2">
-            <div class="fw-bold">Manuscript view</div>
-          </div>
-          <div class="d-flex align-items-center gap-2">
-            <div class="text-secondary small" id="merged-view-meta"></div>
-          </div>
-        </div>
-        <div class="merged-view-scroll">
-          <div id="merged-table"></div>
-        </div>
-      </div>
-    </div>
+  <div class="d-flex justify-content-between align-items-center mb-2">
+    <div id="result-meta" class="text-secondary small"></div>
+    <div id="pager" data-total-pages="1"></div>
   </div>
 
-  <!-- Row Details Modal -->
-  <div class="modal fade" id="rowDetailsModal" tabindex="-1" aria-labelledby="rowDetailsModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-scrollable">
-      <div class="modal-content">
-        <div class="modal-header">
-          <h5 class="modal-title" id="rowDetailsModalLabel">Text Details</h5>
-          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-        </div>
-        <div class="modal-body">
-          <div id="row-details-content"></div>
-        </div>
-        <div class="modal-footer">
-          <button type="button" class="btn btn-primary" id="download-pdf-btn">Download as PDF</button>
-          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-        </div>
-      </div>
-    </div>
+  <div id="layout">
+    <aside id="facet-sidebar" class="border rounded">
+      <h3 class="mt-2 mb-3 px-2">Facet Search</h3>
+      <div id="facet-accordion"></div>
+    </aside>
+    <div id="facet-resizer" role="separator" aria-orientation="vertical" title="Drag to resize sidebar"></div>
+    <section id="results">
+      <div id="table-view"></div>
+      <div id="merged-view" style="display:none;"></div>
+    </section>
   </div>
 
-  <!-- Manuscript Details Modal (segments.json) -->
+  <!-- Manuscript details modal -->
   <div class="modal fade" id="msDetailsModal" tabindex="-1" aria-labelledby="msDetailsModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl modal-dialog-scrollable">
       <div class="modal-content">
@@ -516,9 +142,7 @@
           <h5 class="modal-title" id="msDetailsModalLabel">Manuscript</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
-        <div class="modal-body">
-          <div id="ms-details-content"></div>
-        </div>
+        <div class="modal-body" id="ms-details-content"></div>
         <div class="modal-footer">
           <button type="button" class="btn btn-primary" id="download-ms-pdf-btn">Download as PDF</button>
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
@@ -527,46 +151,24 @@
     </div>
   </div>
 
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.5.1/jspdf.umd.min.js"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
-  <script src="table.js"></script>
+  <!-- Text View row-details modal -->
+  <div class="modal fade" id="rowDetailsModal" tabindex="-1" aria-labelledby="rowDetailsModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="rowDetailsModalLabel">Text Details</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body"><div id="row-details-content"></div></div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-primary" id="download-pdf-btn">Download as PDF</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
 
-  <script>
-    // Facet sidebar resizer logic
-    (function() {
-      const sidebar = document.getElementById('facet-sidebar');
-      const resizer = document.getElementById('facet-resizer');
-      let dragging = false;
-      let startX = 0;
-      let startWidth = 0;
-      const minWidth = 180;
-      const maxWidth = 600;
-      resizer.addEventListener('mousedown', function(e) {
-        dragging = true;
-        startX = e.clientX;
-        startWidth = sidebar.offsetWidth;
-        document.body.style.cursor = 'ew-resize';
-        document.body.style.userSelect = 'none';
-      });
-      document.addEventListener('mousemove', function(e) {
-        if (!dragging) return;
-        let newWidth = startWidth + (e.clientX - startX);
-        newWidth = Math.max(minWidth, Math.min(maxWidth, newWidth));
-        sidebar.style.width = newWidth + 'px';
-        // Trigger redraw if the table adapter supports it
-        if (window.table && typeof window.table.redraw === 'function') {
-          window.table.redraw(true);
-        }
-      });
-      document.addEventListener('mouseup', function() {
-        if (dragging) {
-          dragging = false;
-          document.body.style.cursor = '';
-          document.body.style.userSelect = '';
-        }
-      });
-    })();
-  </script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+  <script type="module" src="js/main.js"></script>
 </body>
 </html>
