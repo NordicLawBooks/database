@@ -10,7 +10,7 @@ import {
   RANGE_KEYS,
   URL_ALIASES,
   DEFAULT_VIEW,
-  DEFAULT_SORT,
+  defaultSortFor,
   DEFAULT_PAGE,
   DEFAULT_PAGE_SIZE,
 } from "./config.js";
@@ -76,7 +76,9 @@ export function encodeState(state) {
 
   if (state.query) p.set("q", state.query);
   if (state.view && state.view !== DEFAULT_VIEW) p.set("v", VIEW_TO_CODE[state.view] || state.view);
-  if (state.sort && state.sort !== DEFAULT_SORT) p.set("sort", state.sort);
+  // The default sort depends on the query (Relevance while searching), so a plain
+  // "?q=…" link opens ranked, and an explicit Shelfmark during a search is written out.
+  if (state.sort && state.sort !== defaultSortFor(state.query)) p.set("sort", state.sort);
   if (state.page && state.page !== DEFAULT_PAGE) p.set("page", String(state.page));
   if (state.pageSize !== undefined && state.pageSize !== DEFAULT_PAGE_SIZE) {
     p.set("ps", String(state.pageSize));
@@ -114,7 +116,7 @@ export function decodeState(input) {
   const out = {
     query: p.get("q") || "",
     view: CODE_TO_VIEW[p.get("v")] || DEFAULT_VIEW,
-    sort: p.get("sort") || DEFAULT_SORT,
+    sort: p.get("sort") || defaultSortFor(p.get("q")),
     page: parsePage(p.get("page")),
     pageSize: p.has("ps") ? parsePageSize(p.get("ps")) : DEFAULT_PAGE_SIZE,
     facets: emptyFacets(),

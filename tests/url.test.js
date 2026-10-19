@@ -48,6 +48,7 @@ test("round-trips open-ended ranges in both directions", () => {
 test("only non-default values appear in the URL", () => {
   const s = makeInitialState();
   s.query = "x";
+  s.sort = "relevance"; // the default while searching
   s.facets.Script = ["Gothic"];
   const qs = encodeState(s);
   assert.match(qs, /(^|[?&])q=x(&|$)/);
@@ -138,4 +139,16 @@ test("history sync: popstate pushes decoded location into the store silently", a
   // The silent set must not have written back to history.
   assert.equal(win.calls.length, 0);
   stop();
+});
+
+test("sort default depends on the query: Relevance while searching, else Shelfmark", () => {
+  assert.equal(decodeState("?q=bergen").sort, "relevance"); // plain search link opens ranked
+  assert.equal(decodeState("").sort, "shelfmark");
+  assert.equal(decodeState("?q=bergen&sort=dating").sort, "dating");
+  // An explicit Shelfmark during a search is written out, so it survives a round-trip.
+  const s = makeInitialState();
+  s.query = "bergen";
+  s.sort = "shelfmark";
+  assert.match(encodeState(s), /(^|[?&])sort=shelfmark(&|$)/);
+  assert.equal(decodeState(encodeState(s)).sort, "shelfmark");
 });

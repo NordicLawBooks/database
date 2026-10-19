@@ -2,6 +2,7 @@ import { test } from "node:test";
 import assert from "node:assert/strict";
 import { loadPrefs, savePrefs, migrateLegacyPrefs, withRememberedViewSort } from "../js/prefs.js";
 import { pagerLabel } from "../js/render/controls.js";
+import { decodeState } from "../js/url.js";
 
 const fakeStorage = (entries = {}) => {
   const m = new Map(Object.entries(entries));
@@ -54,4 +55,11 @@ test("pagerLabel matches the legacy wording", () => {
   assert.equal(pagerLabel({ page: 1, totalPages: 1, shown: 7, total: 7 }, "texts"), "Showing 7 of 7 texts");
   assert.equal(pagerLabel({ page: 1, totalPages: 1, shown: 0, total: 0 }, "texts"), "");
   assert.equal(pagerLabel(null, "texts"), "");
+});
+
+test("withRememberedViewSort during a search: remembered Shelfmark yields Relevance, Dating is kept", () => {
+  const decoded = decodeState("?q=bergen");
+  assert.equal(withRememberedViewSort(decoded, "?q=bergen", { sort: "shelfmark" }).sort, "relevance");
+  assert.equal(withRememberedViewSort(decoded, "?q=bergen", { sort: "dating" }).sort, "dating");
+  assert.equal(withRememberedViewSort(decoded, "?q=bergen", {}).sort, "relevance");
 });

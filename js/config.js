@@ -6,6 +6,8 @@
 
 export const DEFAULT_VIEW = "merged";
 export const DEFAULT_SORT = "shelfmark";
+/** The sort a state has when none is named: Relevance during a search, else Shelfmark. */
+export const defaultSortFor = (query) => (String(query || "").trim() ? "relevance" : DEFAULT_SORT);
 export const DEFAULT_PAGE = 1;
 export const DEFAULT_PAGE_SIZE = 20;
 

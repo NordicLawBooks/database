@@ -2,7 +2,7 @@
 // and the last-used view + sort. Column visibility and UI are never part of the
 // shareable URL; view/sort are, and a URL that names them always wins.
 
-import { DEFAULT_SORT } from "./config.js";
+import { DEFAULT_SORT, defaultSortFor } from "./config.js";
 
 const KEY = "nordiclaw.prefs";
 const VIEWS = new Set(["merged", "table"]);
@@ -84,11 +84,16 @@ export function savePrefs(state, storage = defaultStorage()) {
   }
 }
 
-/** Apply the remembered view/sort to URL-decoded state, unless the URL names them. */
+/**
+ * Apply the remembered view/sort to URL-decoded state, unless the URL names them.
+ * During a search a remembered default (Shelfmark) gives way to Relevance, while an
+ * explicit choice such as Dating is kept — the same rule as typing in the search box.
+ */
 export function withRememberedViewSort(decoded, search, prefs) {
   const params = new URLSearchParams(String(search || "").replace(/^\?/, ""));
   const out = { ...decoded };
   if (!params.has("v") && prefs.view) out.view = prefs.view;
-  if (!params.has("sort") && prefs.sort) out.sort = prefs.sort;
+  if (!params.has("sort") && prefs.sort && prefs.sort !== DEFAULT_SORT) out.sort = prefs.sort;
+  else if (!params.has("sort")) out.sort = defaultSortFor(decoded.query);
   return out;
 }
