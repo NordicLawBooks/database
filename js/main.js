@@ -25,6 +25,7 @@ import { loadPrefs, savePrefs, withRememberedViewSort } from "./prefs.js";
 async function main() {
   const refs = {
     search: document.getElementById("search"),
+    searchButton: document.getElementById("search-btn"),
     viewSelect: document.getElementById("view-select"),
     sortSelect: document.getElementById("sort-select"),
     pageSizeSelect: document.getElementById("page-size-select"),

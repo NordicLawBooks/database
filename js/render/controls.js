@@ -19,12 +19,20 @@ export function sortAfterQueryChange(prevQuery, nextQuery, sort) {
 
 /** Wire the toolbar and pager to the store. `refs` holds the DOM elements. */
 export function bindControls(store, refs) {
-  const onSearch = debounce((value) => {
+  const applySearch = (value, history) => {
     const cur = store.get();
+    if (value === cur.query) return;
     const sort = sortAfterQueryChange(cur.query, value, cur.sort);
-    store.set({ query: value, sort, page: 1 }, { history: "replace" });
-  }, 150);
+    store.set({ query: value, sort, page: 1 }, { history });
+  };
+  // Typing searches as you go (debounced); the Search button and Enter apply
+  // immediately and commit a history entry.
+  const onSearch = debounce((value) => applySearch(value, "replace"), 150);
   refs.search?.addEventListener("input", (e) => onSearch(e.target.value));
+  refs.search?.addEventListener("keydown", (e) => {
+    if (e.key === "Enter") applySearch(refs.search.value, "push");
+  });
+  refs.searchButton?.addEventListener("click", () => applySearch(refs.search?.value ?? "", "push"));
 
   refs.viewSelect?.addEventListener("change", (e) => {
     store.set({ view: e.target.value, page: 1 }, { history: "push" });

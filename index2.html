@@ -52,8 +52,17 @@
   <div id="status" class="text-secondary small mb-2"></div>
 
   <div id="controls" class="row g-2 align-items-center mb-2">
-    <div class="col-12 col-md">
+    <div class="col" style="min-width: 220px;">
       <input type="text" id="search" class="form-control" placeholder="Search all fields…" autocomplete="off">
+    </div>
+    <div class="col-auto">
+      <button id="search-btn" class="btn btn-primary" type="button">Search</button>
+    </div>
+    <div class="col-auto">
+      <button id="clear-filters" class="btn btn-outline-secondary" type="button">Clear search/facets</button>
+    </div>
+    <div class="col-auto">
+      <button id="toggle-facets" class="btn btn-outline-secondary" type="button">Hide facets</button>
     </div>
     <div class="col-auto">
       <select id="view-select" class="form-select" aria-label="View">
@@ -79,12 +88,6 @@
     <div class="col-auto dropdown">
       <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" data-bs-auto-close="outside" aria-expanded="false">Columns</button>
       <div class="dropdown-menu dropdown-menu-end p-2" id="columns-menu" style="max-height:70vh; overflow-y:auto; min-width:280px;"></div>
-    </div>
-    <div class="col-auto">
-      <button id="clear-filters" class="btn btn-outline-secondary" type="button">Clear</button>
-    </div>
-    <div class="col-auto">
-      <button id="toggle-facets" class="btn btn-outline-secondary" type="button">Hide facets</button>
     </div>
   </div>
 
