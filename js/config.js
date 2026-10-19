@@ -20,6 +20,7 @@ export const DEFAULT_PAGE_SIZE = 20;
 //   "range"         numeric {min,max} only, no checkboxes (Dating)
 //   "range+terms"   numeric {min,max} plus free-text checkbox values (Lines)
 // emptyOption: blanks become a selectable "Empty" option.
+// searchable: the sidebar shows a box that filters the (long) option list.
 export const FACET_DEFS = [
   { field: "Language", type: "term" },
   { field: "Depository", type: "term", emptyOption: true },
@@ -28,7 +29,7 @@ export const FACET_DEFS = [
   { field: "Size", type: "term", emptyOption: true },
   { field: "Production units", type: "term", scope: "manuscript" },
   { field: "Main text group", type: "hierarchical", childField: "Main text group-variant" },
-  { field: "Minor text", type: "multi" },
+  { field: "Minor text", type: "multi", searchable: true },
   { field: "Dating", type: "range", minField: "DatingMinYear", maxField: "DatingMaxYear" },
   { field: "Script", type: "term", emptyOption: true },
   { field: "Pricking", type: "term", emptyOption: true },

@@ -8,6 +8,7 @@ import {
 } from "../js/facets/engine.js";
 import { FACET_DEFS } from "../js/config.js";
 import { makeInitialState } from "../js/store.js";
+import { isFacetUnfiltered, clearFacetSelection, matchesOptionSearch } from "../js/facets/render.js";
 
 // MS "AM||1": r1 Gothic/Code(E)/Prayer;Charm/1300/20, r2 Caroline/Code(W)/Note/1350/variable
 // MS "AM||2": r3 Gothic/Other/-/1450/25
@@ -136,4 +137,28 @@ test("computeCounts (row scope): Production units counts unique manuscripts", ()
   assert.equal(counts.Script.counts.get("Gothic"), 2);
   // PU still bucketed per unique manuscript: "2" (MS1) once.
   assert.equal(counts["Production units"].counts.get("2"), 1);
+});
+
+
+test("All box: unfiltered iff the facet (and a hierarchical facet's children) has no selection", () => {
+  const facets = { Script: [], "Main text group": [], "Main text group-variant": ["Code|E"] };
+  assert.equal(isFacetUnfiltered(facets, "Script"), true);
+  assert.equal(isFacetUnfiltered({ Script: ["Gothic"] }, "Script"), false);
+  assert.equal(isFacetUnfiltered(facets, "Main text group"), false); // a variant is selected
+});
+
+test("clearFacetSelection clears only that facet (both keys for hierarchical)", () => {
+  const facets = { Script: ["Gothic"], "Main text group": ["Code"], "Main text group-variant": ["Code|E"] };
+  assert.deepEqual(clearFacetSelection(facets, "Main text group"), {
+    Script: ["Gothic"], "Main text group": [], "Main text group-variant": [],
+  });
+  assert.deepEqual(clearFacetSelection(facets, "Script").Script, []);
+  assert.deepEqual(facets.Script, ["Gothic"]); // not mutated
+});
+
+test("matchesOptionSearch: folded substring, empty query matches all", () => {
+  assert.equal(matchesOptionSearch("Þingfararbálkr", "thingfarar"), true);
+  assert.equal(matchesOptionSearch("Kristinn réttr", "RETT"), true);
+  assert.equal(matchesOptionSearch("Kristinn réttr", "bergen"), false);
+  assert.equal(matchesOptionSearch("anything", "  "), true);
 });
