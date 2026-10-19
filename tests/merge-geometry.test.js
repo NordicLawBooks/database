@@ -30,6 +30,68 @@ test("applyMergeAwareFillDown is a no-op without merges", () => {
   assert.equal(rs[1].B, "");
 });
 
+test("applyMergeAwareFillDown never overwrites a non-blank cell inside a merge", () => {
+  const rs = rows();
+  rs[1].B = "own value";
+  applyMergeAwareFillDown(rs, merges);
+  assert.equal(rs[1].B, "own value");
+});
+
+test("applyMergeAwareFillDown treats whitespace-only cells as blank", () => {
+  const rs = rows();
+  rs[1].B = "  \t ";
+  applyMergeAwareFillDown(rs, merges);
+  assert.equal(rs[1].B, "X");
+});
+
+test("applyMergeAwareFillDown does nothing when the merge's top cell is blank", () => {
+  const rs = rows();
+  rs[0].B = "";
+  rs[1].B = "";
+  applyMergeAwareFillDown(rs, merges);
+  assert.equal(rs[0].B, "");
+  assert.equal(rs[1].B, "");
+});
+
+test("applyMergeAwareFillDown fills every column of a multi-column merge (via columns)", () => {
+  const rs = [
+    { A: "a0", B: "b0", C: "c0", __sourceRowIndex: 0 },
+    { A: "", B: "", C: "", __sourceRowIndex: 1 },
+  ];
+  const wide = { columns: ["A", "B", "C"], merges: [{ minRow: 0, maxRow: 1, minColIndex: 0, maxColIndex: 1 }] };
+  applyMergeAwareFillDown(rs, wide);
+  assert.deepEqual([rs[1].A, rs[1].B, rs[1].C], ["a0", "b0", ""]); // C is outside the merge
+});
+
+test("applyMergeAwareFillDown falls back to minCol when the column list is missing", () => {
+  const rs = rows();
+  applyMergeAwareFillDown(rs, { merges: [{ minRow: 0, maxRow: 1, minCol: "B" }] });
+  assert.equal(rs[1].B, "X");
+});
+
+test("applyMergeAwareFillDown matches rows by __sourceRowIndex, not array position", () => {
+  const rs = rows().reverse(); // array order no longer matches source order
+  applyMergeAwareFillDown(rs, merges);
+  assert.equal(rs.find((r) => r.__sourceRowIndex === 1).B, "X");
+});
+
+test("applyMergeAwareFillDown only fills the rows it is given (a merge crossing the block edge)", () => {
+  // load.js fills one manuscript at a time. A merge reaching past the block fills
+  // only the rows present; if the top row is absent, nothing is filled.
+  const block = rows().slice(1); // rows 1-2 only; the merge's top (row 0) is missing
+  applyMergeAwareFillDown(block, merges);
+  assert.equal(block[0].B, "");
+  const top = rows().slice(0, 1); // just row 0: nothing below to fill, no error
+  applyMergeAwareFillDown(top, merges);
+  assert.equal(top[0].B, "X");
+});
+
+test("applyMergeAwareFillDown skips malformed merges", () => {
+  const rs = rows();
+  applyMergeAwareFillDown(rs, { columns: ["A", "B", "C"], merges: [null, { minRow: "0", maxRow: 1, minCol: "B" }, {}] });
+  assert.equal(rs[1].B, "");
+});
+
 test("buildLocalMergeLookup marks the top-left span and covered cells", () => {
   const cols = ["A", "B", "C"];
   const lookup = buildLocalMergeLookup(rows(), merges, cols, cols);
