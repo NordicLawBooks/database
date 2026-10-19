@@ -9,7 +9,7 @@ import {
 } from "../js/facets/engine.js";
 import { FACET_DEFS } from "../js/config.js";
 import { makeInitialState } from "../js/store.js";
-import { isFacetUnfiltered, clearFacetSelection, matchesOptionSearch } from "../js/facets/render.js";
+import { isFacetUnfiltered, clearFacetSelection, matchesOptionSearch, groupSearchVisibility } from "../js/facets/render.js";
 
 // MS "AM||1": r1 Gothic/Code(E)/Prayer;Charm/1300/20, r2 Caroline/Code(W)/Note/1350/variable
 // MS "AM||2": r3 Gothic/Other/-/1450/25
@@ -175,4 +175,16 @@ test("rangeExtent: Dating spans min/max years; Lines parses ranges; unknown -> n
   assert.deepEqual(rangeExtent(rows, dating), { min: 1250, max: 1499 });
   assert.deepEqual(rangeExtent(rows, lines), { min: 20, max: 31 });
   assert.deepEqual(rangeExtent([], dating), { min: null, max: null });
+});
+
+test("groupSearchVisibility: group hit shows all variants; variant hit shows its group", () => {
+  const g = { label: "GuL – Gulatingsloven", checked: false };
+  const vars = [{ label: "BGO – Bergen", checked: false }, { label: "Other", checked: false }];
+  assert.deepEqual(groupSearchVisibility(g, vars, "gula"), { group: true, variants: [true, true] });
+  assert.deepEqual(groupSearchVisibility(g, vars, "bergen"), { group: true, variants: [true, false] });
+  assert.deepEqual(groupSearchVisibility(g, vars, "zzz"), { group: false, variants: [false, false] });
+  // A checked variant stays visible (with its group) even when nothing matches.
+  const checkedVar = [{ label: "Other", checked: true }];
+  assert.deepEqual(groupSearchVisibility(g, checkedVar, "zzz"), { group: true, variants: [true] });
+  assert.deepEqual(groupSearchVisibility(g, vars, ""), { group: true, variants: [true, true] });
 });

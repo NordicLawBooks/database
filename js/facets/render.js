@@ -35,6 +35,18 @@ export function matchesOptionSearch(value, query) {
   return !q || fold(value).includes(q);
 }
 
+/**
+ * Search visibility for one hierarchical group. Options are `{label, checked}`.
+ * A group that matches (or is checked) shows all its variants; a matching or
+ * checked variant also shows its group, so it never appears orphaned.
+ */
+export function groupSearchVisibility(group, variants, query) {
+  const hit = (o) => o.checked || matchesOptionSearch(o.label, query);
+  const groupHit = hit(group);
+  const vars = variants.map((v) => groupHit || hit(v));
+  return { group: groupHit || vars.some(Boolean), variants: vars };
+}
+
 /** Derive the stable option universe for each facet from unfiltered counts. */
 function optionUniverse(counts) {
   const u = {};
@@ -105,11 +117,11 @@ function mainTextLabel(code, maps) {
   return maps && maps.main && maps.main[code] ? formatAbbrExpansion(maps, code) : code;
 }
 
-function optionSearch(field) {
+function optionSearch(field, label) {
   const f = escapeHtml(field);
   return (
     `<div class="input-group input-group-sm mb-1">` +
-    `<input type="search" class="form-control" placeholder="Search ${escapeHtml(field.toLowerCase())}s…" ` +
+    `<input type="search" class="form-control" placeholder="Search ${escapeHtml(label.toLowerCase())}s…" ` +
     `data-option-search="${f}" aria-label="Search ${f} options">` +
     `<button class="btn btn-outline-secondary" type="button" data-option-search-clear="${f}">Clear</button>` +
     `</div>` +
@@ -128,10 +140,10 @@ function bodyHtml(def, universe, { maps, extents }) {
         const variants = (byGroup[g] || [])
           .map((key) => {
             const variant = key.slice(key.indexOf("|") + 1);
-            return `<div class="ms-3">${checkbox(def.childField, key, variant ? mainTextLabel(variant, maps) : "—")}</div>`;
+            return `<div class="ms-3" data-option-variant>${checkbox(def.childField, key, variant ? mainTextLabel(variant, maps) : "—")}</div>`;
           })
           .join("");
-        return checkbox(def.field, g, mainTextLabel(g, maps)) + variants;
+        return `<div data-option-group>${checkbox(def.field, g, mainTextLabel(g, maps))}${variants}</div>`;
       })
       .join("");
   } else {
@@ -144,7 +156,7 @@ function bodyHtml(def, universe, { maps, extents }) {
     if (!options) return html; // no text values: range only, no All box (legacy)
     html += `<div class="small text-secondary mb-1">Text values</div>`;
   }
-  if (def.searchable) html += optionSearch(def.field);
+  if (def.searchable) html += optionSearch(def.field, def.label || def.field);
   html += allCheckbox(def.field);
   html += def.searchable
     ? `<div data-option-list="${escapeHtml(def.field)}" style="max-height: 320px; overflow: auto;">${options}</div>`
@@ -157,16 +169,31 @@ function applyOptionSearch(host, field) {
   const input = host.querySelector(`input[data-option-search="${CSS.escape(field)}"]`);
   const list = host.querySelector(`[data-option-list="${CSS.escape(field)}"]`);
   if (!input || !list) return;
-  const opts = list.querySelectorAll(".form-check[data-option-label]");
+  const opt = (div) => ({ label: div.dataset.optionLabel, checked: !!div.querySelector("input")?.checked });
+  const show = (el, visible) => {
+    el.style.display = visible ? "" : "none";
+    return visible ? 1 : 0;
+  };
   let shown = 0;
-  for (const div of opts) {
-    const checked = div.querySelector("input")?.checked;
-    const visible = checked || matchesOptionSearch(div.dataset.optionLabel, input.value);
-    div.style.display = visible ? "" : "none";
-    if (visible) shown += 1;
+  let total = 0;
+  const groups = list.querySelectorAll(":scope > [data-option-group]");
+  if (groups.length) {
+    // Hierarchical: a group's row plus its variant rows (each wrapped in [data-option-variant]).
+    for (const g of groups) {
+      const [head, ...vars] = g.querySelectorAll(".form-check[data-option-label]");
+      const vis = groupSearchVisibility(opt(head), vars.map(opt), input.value);
+      vars.forEach((v, i) => (shown += show(v.closest("[data-option-variant]"), vis.variants[i])));
+      shown += show(g, vis.group);
+      total += 1 + vars.length;
+    }
+  } else {
+    for (const div of list.querySelectorAll(".form-check[data-option-label]")) {
+      shown += show(div, opt(div).checked || matchesOptionSearch(div.dataset.optionLabel, input.value));
+      total += 1;
+    }
   }
   const status = host.querySelector(`[data-option-search-status="${CSS.escape(field)}"]`);
-  if (status) status.textContent = `${shown} of ${opts.length} shown`;
+  if (status) status.textContent = `${shown} of ${total} shown`;
 }
 
 /**
