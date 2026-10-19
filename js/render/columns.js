@@ -3,10 +3,8 @@
 // table}); null means "all columns".
 
 import { escapeHtml, toDomIdToken } from "../util/text.js";
-import { COLUMN_PRESET_BUTTONS, DEFAULT_COLUMN_PRESET, getPreset } from "../config.js";
+import { COLUMN_PRESET_BUTTONS, DEFAULT_COLUMN_PRESET, getPreset, columnTitle as colTitle } from "../config.js";
 
-const TITLE_OVERRIDES = { "Shelf mark": "Shelfmark" };
-const colTitle = (c) => TITLE_OVERRIDES[c] || c;
 const viewKey = (state) => (state.view === "table" ? "table" : "merged");
 
 /** The visible columns for the active view (in `allColumns` order). */

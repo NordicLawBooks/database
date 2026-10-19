@@ -1,8 +1,7 @@
 // Manuscript details modal, built from the *_segments.json data. Grouped into
 // Header / Content / Physical Description / History / Bibliography sections.
 //
-// NOTE: like Manuscript View, Main/Minor text are shown raw for now; abbreviation
-// expansion is the shared text-expansion step.
+// Main/Minor text are expanded via the shared model/expand.js.
 
 import { escapeHtml, normalizeForCompare } from "../util/text.js";
 import { aggregateFieldValues } from "../model/manuscript.js";
@@ -10,9 +9,8 @@ import { expandMainText, expandMinorText, mainCandidatesFrom } from "../model/ex
 import { renderLinksHtml } from "./links.js";
 import { LANGUAGE_MAP } from "../model/fields.js";
 import { sourceById } from "../data/manifest.js";
+import { columnTitle as colTitle } from "../config.js";
 
-const TITLE_OVERRIDES = { "Shelf mark": "Shelfmark" };
-const colTitle = (c) => TITLE_OVERRIDES[c] || c;
 
 const CONTENT_COLS = ["Main text", "Minor text"];
 const PHYSICAL_COLS = [

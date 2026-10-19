@@ -15,6 +15,7 @@ import { selectResults } from "./filter/pipeline.js";
 import { buildFacetSidebar, syncFacetSidebar, bindFacetEvents } from "./facets/render.js";
 import { renderTextTable, displayColumns } from "./render/text-table.js";
 import { renderManuscriptView } from "./render/manuscript-view.js";
+import { refreezeOnResize } from "./render/frozen-columns.js";
 import { buildColumnsMenu, syncColumnsMenu, bindColumnsMenu, visibleColumns } from "./render/columns.js";
 import { bindControls, renderControls } from "./render/controls.js";
 import { buildSearchIndex, makeIndexQuery } from "./search/index.js";
@@ -99,6 +100,7 @@ async function main() {
 
   // Row-level search index (built after maps so expansions are searchable too).
   const searchIndex = buildSearchIndex(model.rows, maps);
+  refreezeOnResize(document);
   if (refs.mergedView) {
     refs.mergedView.addEventListener("click", (e) => {
       const link = e.target.closest && e.target.closest("a.ms-open-details");

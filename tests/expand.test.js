@@ -46,3 +46,9 @@ test("expandMinorText: ambiguous candidates only resolve on a unique hit", () =>
 test("mainCandidatesFrom strips suffixes and de-dupes", () => {
   assert.deepEqual(mainCandidatesFrom("K (BGO); K; KJE"), ["K", "KJE"]);
 });
+
+test("expandMinorText fallback uses abbreviations.tsv only, never the main-text map", () => {
+  // "K" is a main-text code; an unresolved Minor text "K" must stay raw (legacy parity).
+  assert.equal(expandMinorText("K", [], maps), "K");
+  assert.equal(expandMinorText("BGO", [], maps), `BGO${EN_DASH}Bergen`);
+});

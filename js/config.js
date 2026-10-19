@@ -9,6 +9,10 @@ export const DEFAULT_SORT = "shelfmark";
 export const DEFAULT_PAGE = 1;
 export const DEFAULT_PAGE_SIZE = 20;
 
+const COLUMN_TITLE_OVERRIDES = { "Shelf mark": "Shelfmark" };
+/** Display title for a field name (column headers, column menu, modals). */
+export const columnTitle = (field) => COLUMN_TITLE_OVERRIDES[field] || field;
+
 // Declarative facet definitions — the single source of truth for the facet
 // engine, the sidebar renderer (Step 5), and the lists derived below.
 //

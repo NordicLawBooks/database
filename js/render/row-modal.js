@@ -6,9 +6,8 @@ import { escapeHtml } from "../util/text.js";
 import { renderLinksHtml } from "./links.js";
 import { expandMainText, expandMinorText, mainCandidatesFrom } from "../model/expand.js";
 import { HIDDEN_FIELDS } from "../config.js";
+import { columnTitle as colTitle } from "../config.js";
 
-const TITLE_OVERRIDES = { "Shelf mark": "Shelfmark" };
-const colTitle = (c) => TITLE_OVERRIDES[c] || c;
 const safe = (s) => String(s || "").replace(/[\\/:*?"<>|]+/g, "-").replace(/\s+/g, " ").trim();
 
 /** Build the two-column details HTML for a single row. */

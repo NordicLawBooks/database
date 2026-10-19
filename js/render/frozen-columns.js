@@ -64,6 +64,37 @@ const cssEscape =
     ? CSS.escape
     : (s) => String(s).replace(/[^A-Za-z0-9_-]/g, (ch) => `\\${ch}`);
 
+/**
+ * Re-apply frozen columns to every visible table under `root` whenever the window
+ * is resized (debounced), since column widths — and so the left offsets — change.
+ */
+/**
+ * Freeze columns and let the offsets settle: adding the frozen classes reflows the
+ * table (column widths shift by a few px), and a scrollbar may appear on the next
+ * frame, so measure again after each. Never throws.
+ */
+export function freezeColumns(tableEl) {
+  const apply = () => {
+    try { applyFrozenColumnsToTable(tableEl); } catch (e) { /* layout measurement can fail in odd states */ }
+  };
+  apply();
+  apply();
+  if (typeof requestAnimationFrame === "function") requestAnimationFrame(apply);
+}
+
+export function refreezeOnResize(root, delayMs = 80) {
+  let timer = null;
+  window.addEventListener("resize", () => {
+    clearTimeout(timer);
+    timer = setTimeout(() => {
+      for (const t of root.querySelectorAll("table.merged-table")) {
+        if (t.offsetParent === null) continue; // hidden view
+        freezeColumns(t);
+      }
+    }, delayMs);
+  });
+}
+
 /** Apply sticky-left positioning + opaque backgrounds to the frozen columns. */
 export function applyFrozenColumnsToTable(tableEl, fields = FROZEN_COLUMNS) {
   if (!tableEl || !(tableEl instanceof Element)) return;

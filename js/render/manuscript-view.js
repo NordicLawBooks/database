@@ -2,19 +2,17 @@
 // merges, with frozen Depository+Shelf mark columns, production-unit striping, and
 // manuscript pagination. Ported faithfully from the legacy renderMergedView.
 //
-// NOTE: Main/Minor text abbreviation expansion (and rich Links rendering) is
-// deferred to the later text-expansion step; cells show the raw values for now.
+// Main/Minor text are expanded via model/expand.js; links via render/links.js.
 
 import { escapeHtml, normalizeForCompare } from "../util/text.js";
 import { normalizeLeavesPages } from "../model/fields.js";
 import { aggregateFieldValues, allFieldValuesEmpty, getConstantFields, getEffectiveValue } from "../model/manuscript.js";
 import { expandMainText, expandMinorText, mainCandidatesFrom } from "../model/expand.js";
 import { buildLocalMergeLookup } from "./merge-geometry.js";
-import { applyFrozenColumnsToTable } from "./frozen-columns.js";
+import { freezeColumns } from "./frozen-columns.js";
 import { renderLinksHtml } from "./links.js";
+import { columnTitle as colTitle } from "../config.js";
 
-const TITLE_OVERRIDES = { "Shelf mark": "Shelfmark" };
-const colTitle = (c) => TITLE_OVERRIDES[c] || c;
 
 function renderCell(field, value, ctx) {
   const v = normalizeForCompare(value);
@@ -171,13 +169,7 @@ export function renderManuscriptView(host, manuscripts, state, opts) {
   host.innerHTML = `<div class="table-responsive">${html}</div>`;
 
   const tableEl = host.querySelector("table.merged-table");
-  if (tableEl) {
-    try {
-      applyFrozenColumnsToTable(tableEl);
-    } catch (e) {
-      /* layout measurement can fail in odd states; non-fatal */
-    }
-  }
+  if (tableEl) freezeColumns(tableEl);
 
   return { page, totalPages, total, shown: pageItems.length };
 }
