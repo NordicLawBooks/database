@@ -15,12 +15,16 @@ import { applyMergeAwareFillDown } from "../render/merge-geometry.js";
  * Depository_abbr). Each row gets hidden keys: `__msKey` (Depository abbr + Shelf
  * mark, both carried down from the last non-blank row), `__sourceId`, and
  * `__sourceRowIndex` (0-based data-row index, aligned with the merges JSON — blank
- * lines are kept for that). Rows before the first manuscript (key "||") are dropped.
+ * lines are kept for that). The empty "line" after the file's final newline is not
+ * a data row. Rows before the first manuscript (key "||") are dropped.
  *
  * @returns {{headers: string[], rows: object[]}}
  */
 export function parseRawSource(tsvText, src, depositoryMap = {}) {
   const lines = String(tsvText ?? "").split(/\r?\n/);
+  // A trailing newline ends the last row; it doesn't start a new one. Without this,
+  // the last manuscript of every source rendered with an extra empty row.
+  if (lines.length > 1 && lines[lines.length - 1] === "") lines.pop();
   const rawHeaders = (lines[0] || "").split("\t");
   const shelfIdx = rawHeaders.indexOf("Shelf mark");
   const injectLang = shelfIdx !== -1 && !rawHeaders.includes("Language");
