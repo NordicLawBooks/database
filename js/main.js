@@ -20,7 +20,7 @@ import { bindSidebar, syncSidebar } from "./render/sidebar.js";
 import { buildColumnsMenu, syncColumnsMenu, bindColumnsMenu, visibleColumns } from "./render/columns.js";
 import { bindControls, renderControls } from "./render/controls.js";
 import { buildSearchIndex, makeIndexQuery } from "./search/index.js";
-import { loadPrefs, savePrefs } from "./prefs.js";
+import { loadPrefs, savePrefs, withRememberedViewSort } from "./prefs.js";
 
 async function main() {
   const refs = {
@@ -32,6 +32,7 @@ async function main() {
     meta: document.getElementById("result-meta"),
     pager: document.getElementById("pager"),
     sidebar: document.getElementById("facet-sidebar"),
+    facets: document.getElementById("facet-accordion"),
     sidebarToggle: document.getElementById("toggle-facets"),
     sidebarResizer: document.getElementById("facet-resizer"),
     tableView: document.getElementById("table-view"),
@@ -52,14 +53,22 @@ async function main() {
   if (refs.status) refs.status.textContent = "";
 
   const allColumns = displayColumns(model.headers);
-  // Seed: defaults <- device prefs (columns/ui) <- URL (shareable state).
+  // Seed: defaults <- device prefs (columns, ui, last view/sort) <- URL (shareable
+  // state; a view/sort named in the URL beats the remembered one).
   const prefs = loadPrefs();
-  const initial = { ...makeInitialState(), ...prefs, ...decodeState(location) };
-  // First load (no saved columns) defaults both views to the "textual" preset.
-  if (!prefs.columns) {
-    const def = getPreset(DEFAULT_COLUMN_PRESET, allColumns);
-    initial.columns = { merged: def, table: def };
-  }
+  const base = makeInitialState();
+  const initial = {
+    ...base,
+    ...withRememberedViewSort(decodeState(location), location.search, prefs),
+    ui: { ...base.ui, ...prefs.ui },
+  };
+  // A view with no saved column choice defaults to the "textual" preset (null = all).
+  const def = getPreset(DEFAULT_COLUMN_PRESET, allColumns);
+  const saved = prefs.columns || {};
+  initial.columns = {
+    merged: saved.merged === undefined ? def : saved.merged,
+    table: saved.table === undefined ? def : saved.table,
+  };
   const store = createStore(initial);
   store.subscribe((state) => savePrefs(state));
 
@@ -110,8 +119,8 @@ async function main() {
   for (const def of FACET_DEFS) {
     if (def.type === "range" || def.type === "range+terms") extents[def.field] = rangeExtent(model.rows, def);
   }
-  buildFacetSidebar(refs.sidebar, universe, { maps, extents });
-  bindFacetEvents(refs.sidebar, store);
+  buildFacetSidebar(refs.facets, universe, { maps, extents });
+  bindFacetEvents(refs.facets, store);
   refreezeOnResize(document);
   if (refs.mergedView) {
     refs.mergedView.addEventListener("click", (e) => {
@@ -139,7 +148,7 @@ async function main() {
     const q = makeIndexQuery(searchIndex, state.query);
     const result = selectResults(model, state, { matchesQuery: q && q.matches, scoreOf: q && q.score });
 
-    syncFacetSidebar(refs.sidebar, state, result.counts);
+    syncFacetSidebar(refs.facets, state, result.counts);
     if (refs.columnsMenu) syncColumnsMenu(refs.columnsMenu, allColumns, state);
 
     const cols = visibleColumns(allColumns, state);

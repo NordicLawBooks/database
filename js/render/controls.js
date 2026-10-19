@@ -69,6 +69,14 @@ export function bindControls(store, refs) {
   });
 }
 
+/** Pager text, as in the legacy app: "Page 2 / 5 — showing 20 of 87 manuscripts". */
+export function pagerLabel(pageInfo, unit) {
+  if (!pageInfo || !pageInfo.total) return "";
+  const { page, totalPages, shown, total } = pageInfo;
+  const showing = `showing ${shown} of ${total} ${unit}`;
+  return totalPages > 1 ? `Page ${page} / ${totalPages} — ${showing}` : `S${showing.slice(1)}`;
+}
+
 /** Reflect current state + result metadata back into the toolbar and pager. */
 export function renderControls(refs, state, result, pageInfo) {
   if (refs.search && document.activeElement !== refs.search && refs.search.value !== state.query) {
@@ -83,15 +91,16 @@ export function renderControls(refs, state, result, pageInfo) {
   }
 
   if (refs.pager) {
+    const label = pagerLabel(pageInfo, state.view === "table" ? "texts" : "manuscripts");
     if (pageInfo && pageInfo.totalPages > 1) {
       refs.pager.dataset.totalPages = String(pageInfo.totalPages);
       const { page, totalPages } = pageInfo;
       refs.pager.innerHTML =
         `<button class="btn btn-sm btn-outline-secondary" data-page="prev" ${page <= 1 ? "disabled" : ""}>‹ Prev</button>` +
-        `<span class="mx-2 small text-secondary">Page ${page} / ${totalPages}</span>` +
+        `<span class="mx-2 small text-secondary">${label}</span>` +
         `<button class="btn btn-sm btn-outline-secondary" data-page="next" ${page >= totalPages ? "disabled" : ""}>Next ›</button>`;
     } else {
-      refs.pager.innerHTML = "";
+      refs.pager.innerHTML = label ? `<span class="small text-secondary">${label}</span>` : "";
     }
   }
 }

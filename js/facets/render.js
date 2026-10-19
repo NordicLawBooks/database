@@ -5,6 +5,7 @@
 import { escapeHtml, toDomIdToken, compareValues, fold } from "../util/text.js";
 import { FACET_DEFS } from "../config.js";
 import { formatAbbrExpansion } from "../model/expand.js";
+import { debounce } from "../util/debounce.js";
 
 const VARIANT_KEY = "Main text group-variant";
 const sorted = (map) => [...map.keys()].sort(compareValues);
@@ -222,6 +223,18 @@ export function syncFacetSidebar(host, state, counts) {
 
 /** Wire delegated change/input handlers that push updates into the store. */
 export function bindFacetEvents(host, store) {
+  // Range typing is applied 200ms after the last keystroke (legacy); edits to
+  // several inputs in that window are collected so none is lost.
+  let pendingRanges = {};
+  const flushRanges = debounce(() => {
+    const pending = pendingRanges;
+    pendingRanges = {};
+    const state = store.get();
+    const ranges = { ...state.ranges };
+    for (const [field, bounds] of Object.entries(pending)) ranges[field] = { ...ranges[field], ...bounds };
+    store.set({ page: 1, ranges }, { history: "replace" });
+  }, 200);
+
   host.addEventListener("change", (e) => {
     const t = e.target;
     if (t.matches("input[type=checkbox][data-facet-all]")) {
@@ -244,6 +257,7 @@ export function bindFacetEvents(host, store) {
     const clear = e.target.closest && e.target.closest("button[data-range-clear]");
     if (clear) {
       const field = clear.dataset.rangeClear;
+      delete pendingRanges[field];
       const state = store.get();
       store.set({ page: 1, ranges: { ...state.ranges, [field]: { min: null, max: null } } }, { history: "push" });
       return;
@@ -267,10 +281,7 @@ export function bindFacetEvents(host, store) {
     const raw = t.value.trim();
     let val = raw === "" ? null : Number(raw);
     if (val !== null && !Number.isFinite(val)) val = null;
-    const state = store.get();
-    store.set(
-      { page: 1, ranges: { ...state.ranges, [rangeField]: { ...state.ranges[rangeField], [rangeBound]: val } } },
-      { history: "replace" }
-    );
+    pendingRanges[rangeField] = { ...pendingRanges[rangeField], [rangeBound]: val };
+    flushRanges();
   });
 }

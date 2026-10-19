@@ -44,7 +44,7 @@ export const FACET_DEFS = [
   { field: "Lines", type: "range+terms", emptyOption: true,
     help: "Filter by line count range (parses numbers/ranges; ignores parentheses and ca.)" },
   { field: "Rubric", type: "term", emptyOption: true },
-  { field: "Style", type: "term", emptyOption: true },
+  { field: "Style", type: "term", emptyOption: true, label: "Decoration style" },
 ];
 
 // Fields that carry array selections in state.facets (everything except a

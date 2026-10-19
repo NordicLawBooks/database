@@ -191,8 +191,9 @@ export function openManuscriptModal(target, deps) {
   if (titleEl) titleEl.textContent = dep && shelfmark ? `${dep} — ${shelfmark}` : "Manuscript";
 
   contentDiv.innerHTML = buildManuscriptModalHtml(ms, { msKey, sourceId, rawByKey, depositoryMap, maps });
-  // Filename for the PDF export (wired in the next step).
-  modalEl.dataset.filename = `${(dep || "").replace(/[\\/:*?"<>|]+/g, "-").trim()}_${(shelfmark || "").replace(/[\\/:*?"<>|]+/g, "-").trim()}.pdf`;
+  // Filename for the PDF export: {Depository}_{Shelfmark}.pdf, filesystem-safe.
+  const safe = (s) => String(s || "").replace(/[\\/:*?"<>|]+/g, "-").replace(/\s+/g, " ").trim();
+  modalEl.dataset.filename = `${safe(dep)}_${safe(shelfmark)}.pdf`;
   showModal(modalEl);
   return true;
 }

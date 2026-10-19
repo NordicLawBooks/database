@@ -30,14 +30,16 @@
       border: 1px solid #dee2e6; padding: 4px 6px; vertical-align: top;
     }
     .merged-table thead th {
-      position: sticky; top: 0; z-index: 5; background: #fff;
+      position: sticky; top: 0; z-index: 5; background: #f8f9fa; background-clip: padding-box;
+      box-shadow: 0 1px 0 rgba(0,0,0,0.15); /* no sub-pixel bleed-through while scrolling */
     }
-    .merged-table tr.ms-a > td { background: #ffffff; }
-    .merged-table tr.ms-b > td { background: #f6f8fa; }
+    /* Manuscript striping: match Bootstrap's table striping tone (as legacy). */
+    .merged-table tbody tr.ms-a > td { background: var(--bs-table-striped-bg, rgba(0,0,0,0.05)); }
+    .merged-table tbody tr.ms-b > td { background: transparent; }
     /* Production-unit indicator: a coloured bar on the left of the cell. */
     .merged-table td.pu-a { box-shadow: inset 4px 0 0 rgba(255,193,7,0.65); }
     .merged-table td.pu-b { box-shadow: inset 4px 0 0 rgba(220,53,69,0.55); }
-    .merged-table tr.ms-sep > td { border-top: 2px solid #adb5bd; }
+    .merged-table tr.ms-sep { border-top: 3px solid rgba(0,0,0,0.15); }
 
     /* Frozen (sticky-left) columns; left + background are set inline by JS. */
     .merged-table td.frozen-col, .merged-table th.frozen-col { position: sticky; z-index: 6; }
@@ -92,7 +94,10 @@
   </div>
 
   <div id="layout">
-    <aside id="facet-sidebar" class="border rounded"></aside>
+    <aside id="facet-sidebar" class="border rounded">
+      <h3 class="mt-2 mb-3 px-2">Facet Search</h3>
+      <div id="facet-accordion"></div>
+    </aside>
     <div id="facet-resizer" role="separator" aria-orientation="vertical" title="Drag to resize sidebar"></div>
     <section id="results">
       <div id="table-view"></div>
@@ -102,7 +107,7 @@
 
   <!-- Manuscript details modal -->
   <div class="modal fade" id="msDetailsModal" tabindex="-1" aria-labelledby="msDetailsModalLabel" aria-hidden="true">
-    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+    <div class="modal-dialog modal-xl modal-dialog-scrollable">
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="msDetailsModalLabel">Manuscript</h5>
@@ -110,7 +115,7 @@
         </div>
         <div class="modal-body" id="ms-details-content"></div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-outline-primary" id="download-ms-pdf-btn">Download PDF</button>
+          <button type="button" class="btn btn-primary" id="download-ms-pdf-btn">Download as PDF</button>
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
@@ -127,7 +132,7 @@
         </div>
         <div class="modal-body"><div id="row-details-content"></div></div>
         <div class="modal-footer">
-          <button type="button" class="btn btn-outline-primary" id="download-pdf-btn">Download PDF</button>
+          <button type="button" class="btn btn-primary" id="download-pdf-btn">Download as PDF</button>
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
