@@ -69,3 +69,25 @@ test("counts ride along with the result for the sidebar", () => {
   const res = selectResults(m, makeInitialState());
   assert.equal(res.counts.Script.counts.get("Gothic"), 2);
 });
+
+test("relevance sort: orders by score (manuscript = best row), ties by shelfmark", () => {
+  const m = model();
+  const rowScore = (r) => (r["Script"] === "Caroline" ? 5 : r["Shelf mark"] === "2" ? 3 : 1);
+  const opts = { matchesQuery: () => true, scoreOf: rowScore };
+
+  const merged = makeInitialState();
+  merged.sort = "relevance";
+  assert.deepEqual(selectResults(m, merged, opts).manuscripts.map((ms) => ms.key), ["AM||1", "AM||2"]); // MS1 best row = 5
+
+  const table = { ...merged, view: "table" };
+  assert.deepEqual(selectResults(m, table, opts).rows.map((r) => r.Script), ["Caroline", "Gothic", "Gothic"]);
+  // Equal scores keep shelfmark order.
+  const flat = { matchesQuery: () => true, scoreOf: () => 1 };
+  assert.deepEqual(selectResults(m, table, flat).rows.map((r) => r["Shelf mark"]), ["1", "1", "2"]);
+});
+
+test("relevance sort without an active query falls back to shelfmark order", () => {
+  const s = makeInitialState();
+  s.sort = "relevance";
+  assert.deepEqual(selectResults(model(), s).manuscripts.map((ms) => ms.key), ["AM||1", "AM||2"]);
+});

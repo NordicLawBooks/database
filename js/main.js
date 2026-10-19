@@ -17,7 +17,7 @@ import { renderTextTable, displayColumns } from "./render/text-table.js";
 import { renderManuscriptView } from "./render/manuscript-view.js";
 import { buildColumnsMenu, syncColumnsMenu, bindColumnsMenu, visibleColumns } from "./render/columns.js";
 import { bindControls, renderControls } from "./render/controls.js";
-import { buildSearchIndex, makeIndexMatcher } from "./search/index.js";
+import { buildSearchIndex, makeIndexQuery } from "./search/index.js";
 import { loadPrefs, savePrefs } from "./prefs.js";
 
 async function main() {
@@ -121,8 +121,8 @@ async function main() {
   }
 
   function renderAll(state) {
-    const matchesQuery = makeIndexMatcher(searchIndex, state.query);
-    const result = selectResults(model, state, { matchesQuery });
+    const q = makeIndexQuery(searchIndex, state.query);
+    const result = selectResults(model, state, { matchesQuery: q && q.matches, scoreOf: q && q.score });
 
     syncFacetSidebar(refs.sidebar, state, result.counts);
     if (refs.columnsMenu) syncColumnsMenu(refs.columnsMenu, allColumns, state);

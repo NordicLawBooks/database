@@ -2,11 +2,27 @@
 
 import { debounce } from "../util/debounce.js";
 import { makeInitialState } from "../store.js";
+import { DEFAULT_SORT } from "../config.js";
+
+/**
+ * Sort to use after the query changes: starting a search on the default sort
+ * switches to "relevance"; clearing it switches "relevance" back to the default.
+ * Any other explicit choice (e.g. "dating") is kept.
+ */
+export function sortAfterQueryChange(prevQuery, nextQuery, sort) {
+  const had = String(prevQuery || "").trim() !== "";
+  const has = String(nextQuery || "").trim() !== "";
+  if (!had && has && sort === DEFAULT_SORT) return "relevance";
+  if (had && !has && sort === "relevance") return DEFAULT_SORT;
+  return sort;
+}
 
 /** Wire the toolbar and pager to the store. `refs` holds the DOM elements. */
 export function bindControls(store, refs) {
   const onSearch = debounce((value) => {
-    store.set({ query: value, page: 1 }, { history: "replace" });
+    const cur = store.get();
+    const sort = sortAfterQueryChange(cur.query, value, cur.sort);
+    store.set({ query: value, sort, page: 1 }, { history: "replace" });
   }, 150);
   refs.search?.addEventListener("input", (e) => onSearch(e.target.value));
 
@@ -33,7 +49,7 @@ export function bindControls(store, refs) {
         facets: fresh.facets,
         ranges: fresh.ranges,
         view: cur.view,
-        sort: cur.sort,
+        sort: sortAfterQueryChange(cur.query, "", cur.sort),
         pageSize: cur.pageSize,
       },
       { history: "push" }

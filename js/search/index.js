@@ -62,12 +62,17 @@ export function buildSearchIndex(rows, maps = null) {
 }
 
 /**
- * Build a row predicate for the current query, or null when the query is empty.
- * @returns {((row: object) => boolean) | null}
+ * Run the current query against the index, or return null when the query is empty.
+ * `matches` is the row predicate; `score` is the row's MiniSearch relevance (0 if
+ * it didn't match), used for "relevance" ordering.
+ * @returns {{matches: (row: object) => boolean, score: (row: object) => number} | null}
  */
-export function makeIndexMatcher(index, query) {
+export function makeIndexQuery(index, query) {
   const q = String(query || "").trim();
   if (!q) return null;
-  const ids = new Set(index.search(q).map((r) => r.id));
-  return (row) => ids.has(row.__id);
+  const scores = new Map(index.search(q).map((r) => [r.id, r.score]));
+  return {
+    matches: (row) => scores.has(row.__id),
+    score: (row) => scores.get(row.__id) || 0,
+  };
 }
