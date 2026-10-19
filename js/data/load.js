@@ -9,20 +9,73 @@ import { normalizeForCompare } from "../util/text.js";
 import { applyMergeAwareFillDown } from "../render/merge-geometry.js";
 
 /**
+ * Parse one source's raw TSV text into row objects (pure; no fetch). Blank cells
+ * stay blank; a Language column is injected after "Shelf mark" when absent, and
+ * Depository is expanded via `depositoryMap` (the abbreviation kept in
+ * Depository_abbr). Each row gets hidden keys: `__msKey` (Depository abbr + Shelf
+ * mark, both carried down from the last non-blank row), `__sourceId`, and
+ * `__sourceRowIndex` (0-based data-row index, aligned with the merges JSON — blank
+ * lines are kept for that). Rows before the first manuscript (key "||") are dropped.
+ *
+ * @returns {{headers: string[], rows: object[]}}
+ */
+export function parseRawSource(tsvText, src, depositoryMap = {}) {
+  const lines = String(tsvText ?? "").split(/\r?\n/);
+  const rawHeaders = (lines[0] || "").split("\t");
+  const shelfIdx = rawHeaders.indexOf("Shelf mark");
+  const injectLang = shelfIdx !== -1 && !rawHeaders.includes("Language");
+  const headers = rawHeaders.slice();
+  if (injectLang) headers.splice(shelfIdx + 1, 0, "Language");
+
+  const rows = [];
+  let currentShelf = "";
+  let currentDepAbbr = "";
+
+  for (let i = 1; i < lines.length; i++) {
+    // Keep blank lines: __sourceRowIndex must align with the merges JSON.
+    const values = lines[i].split("\t");
+    if (injectLang) values.splice(shelfIdx + 1, 0, src.lang);
+
+    const obj = {};
+    headers.forEach((h, c) => {
+      let val = values[c] !== undefined ? values[c] : "";
+      if (h === "Main text") val = String(val || "").trim();
+      if (h === "Depository") {
+        obj["Depository_abbr"] = val;
+        if (val in depositoryMap) val = depositoryMap[val];
+      }
+      obj[h] = val;
+    });
+
+    // Hidden key fill (does NOT change the visible blank cells).
+    const shelfVal = normalizeForCompare(obj["Shelf mark"]);
+    const depAbbrVal = normalizeForCompare(obj["Depository_abbr"]);
+    if (shelfVal) currentShelf = shelfVal;
+    if (depAbbrVal) currentDepAbbr = depAbbrVal;
+    obj["Depository_abbr"] = obj["Depository_abbr"] || currentDepAbbr;
+    obj["__msKey"] = (currentDepAbbr || "") + "||" + (currentShelf || "");
+    obj["__sourceId"] = src.id;
+    obj["__sourceRowIndex"] = i - 1;
+    enrichRow(obj);
+
+    if (obj["__msKey"] === "||") continue;
+    rows.push(obj);
+  }
+
+  return { headers, rows };
+}
+
+/**
  * Load the raw per-language TSVs (blank cells preserved) + their merge geometry,
  * for Manuscript View's merged-cell rendering. Rows are grouped by the filled-down
  * `__msKey` (Depository abbr + Shelf mark).
  *
- * @returns {Promise<{rawByKey: Map<string,{rows,sourceId}>, mergesBySource: Map<string,object>, loaded: number}>}
+ * @returns {Promise<{rawByKey: Map<string,{rows,sourceId}>, mergesBySource: Map<string,object>, headers: string[]|null, loaded: number}>}
  */
 export async function loadRawSources() {
   const depositoryMap = await loadDepositoryMap();
-  const rawByKey = new Map();
-  const mergesBySource = new Map();
-  let headers = null;
-  let loaded = 0;
 
-  await Promise.all(
+  const fetched = await Promise.all(
     SOURCES.map(async (src) => {
       let tsvText;
       try {
@@ -31,65 +84,38 @@ export async function loadRawSources() {
         tsvText = await resp.text();
       } catch (e) {
         console.warn(`Raw TSV unavailable for ${src.id}:`, e);
-        return;
+        return null;
       }
-
+      let merges = null;
       try {
         const mResp = await fetch(src.merges);
-        if (mResp.ok) mergesBySource.set(src.id, await mResp.json());
+        if (mResp.ok) merges = await mResp.json();
         else console.warn(`Missing merge JSON for ${src.id}: ${src.merges} (${mResp.status})`);
       } catch (e) {
         console.warn(`Merge JSON unavailable for ${src.id}:`, e);
       }
-
-      const lines = tsvText.split(/\r?\n/);
-      if (!lines.length) return;
-      const rawHeaders = (lines[0] || "").split("\t");
-      const shelfIdx = rawHeaders.indexOf("Shelf mark");
-      const injectLang = shelfIdx !== -1 && !rawHeaders.includes("Language");
-      const srcHeaders = rawHeaders.slice();
-      if (injectLang) srcHeaders.splice(shelfIdx + 1, 0, "Language");
-      if (!headers) headers = srcHeaders;
-
-      let currentShelf = "";
-      let currentDepAbbr = "";
-
-      for (let i = 1; i < lines.length; i++) {
-        // Keep blank lines: __sourceRowIndex must align with the merges JSON.
-        const values = (lines[i] !== undefined ? lines[i].split("\t") : []).slice();
-        if (injectLang) values.splice(shelfIdx + 1, 0, src.lang);
-
-        const obj = {};
-        srcHeaders.forEach((h, c) => {
-          let val = values[c] !== undefined ? values[c] : "";
-          if (h === "Main text") val = String(val || "").trim();
-          if (h === "Depository") {
-            obj["Depository_abbr"] = val;
-            if (val in depositoryMap) val = depositoryMap[val];
-          }
-          obj[h] = val;
-        });
-
-        // Hidden key fill (does NOT change the visible blank cells).
-        const shelfVal = normalizeForCompare(obj["Shelf mark"]);
-        const depAbbrVal = normalizeForCompare(obj["Depository_abbr"]);
-        if (shelfVal) currentShelf = shelfVal;
-        if (depAbbrVal) currentDepAbbr = depAbbrVal;
-        obj["Depository_abbr"] = obj["Depository_abbr"] || currentDepAbbr;
-        obj["__msKey"] = (currentDepAbbr || "") + "||" + (currentShelf || "");
-        obj["__sourceId"] = src.id;
-        obj["__sourceRowIndex"] = i - 1;
-        enrichRow(obj);
-
-        const msKey = obj["__msKey"];
-        if (!msKey || msKey === "||") continue;
-        if (!rawByKey.has(msKey)) rawByKey.set(msKey, { rows: [], sourceId: src.id });
-        rawByKey.get(msKey).rows.push(obj);
-      }
-
-      loaded += 1;
+      return { src, tsvText, merges };
     })
   );
+
+  // Parse in SOURCES order (not fetch-completion order) so row order and the
+  // header list are deterministic.
+  const rawByKey = new Map();
+  const mergesBySource = new Map();
+  let headers = null;
+  let loaded = 0;
+  for (const f of fetched) {
+    if (!f) continue;
+    if (f.merges) mergesBySource.set(f.src.id, f.merges);
+    const parsed = parseRawSource(f.tsvText, f.src, depositoryMap);
+    if (!headers) headers = parsed.headers;
+    for (const row of parsed.rows) {
+      const msKey = row["__msKey"];
+      if (!rawByKey.has(msKey)) rawByKey.set(msKey, { rows: [], sourceId: f.src.id });
+      rawByKey.get(msKey).rows.push(row);
+    }
+    loaded += 1;
+  }
 
   return { rawByKey, mergesBySource, headers, loaded };
 }
@@ -161,14 +187,15 @@ function mergeLinksPerManuscript(rows) {
 }
 
 /**
- * Load the filtering model from the raw per-language sources, so its keys align
- * with Manuscript View's merge data. Throws if no source could be loaded.
- * The returned model carries `rawByKey` + `mergesBySource` for merged rendering.
+ * Build the filtering model from parsed raw sources (pure; no fetch): per
+ * manuscript, merge-aware fill-down → "Unavailable" → "" → Gatherings/Scribe
+ * normalisation; then drop completely empty rows → merge Links to Database per
+ * manuscript → deduplicate → normalise Leaves/Pages → buildModel. The raw rows
+ * are not modified (fill-down works on clones).
+ *
+ * @param {{rawByKey: Map, mergesBySource: Map, headers: string[]}} raw
  */
-export async function loadModel() {
-  const raw = await loadRawSources();
-  if (!raw.loaded) throw new Error("No data sources could be loaded (see warnings above).");
-
+export function assembleModel(raw) {
   const headers = raw.headers;
   const filled = [];
   for (const [, block] of raw.rawByKey) {
@@ -200,4 +227,15 @@ export async function loadModel() {
   model.rawByKey = raw.rawByKey;
   model.mergesBySource = raw.mergesBySource;
   return model;
+}
+
+/**
+ * Load the filtering model from the raw per-language sources, so its keys align
+ * with Manuscript View's merge data. Throws if no source could be loaded.
+ * The returned model carries `rawByKey` + `mergesBySource` for merged rendering.
+ */
+export async function loadModel() {
+  const raw = await loadRawSources();
+  if (!raw.loaded) throw new Error("No data sources could be loaded (see warnings above).");
+  return assembleModel(raw);
 }
