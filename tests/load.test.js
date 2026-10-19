@@ -50,8 +50,17 @@ test("parseRawSource injects Language after Shelf mark, from the source's code (
 
 test("parseRawSource keeps blank lines so __sourceRowIndex stays aligned with the merges", () => {
   const { rows } = parse();
-  // Data rows 0-4 plus the blank line produced by the trailing newline.
-  assert.deepEqual(rows.map((r) => r.__sourceRowIndex), [0, 1, 2, 3, 4, 5]);
+  assert.deepEqual(rows.map((r) => r.__sourceRowIndex), [0, 1, 2, 3, 4]); // incl. the blank line (2)
+});
+
+test("parseRawSource does not turn the file's trailing newline into an extra row", () => {
+  // Regression: the last manuscript of each source rendered with an extra empty row.
+  const withNl = parseRawSource(TSV, SRC, DEPOSITORIES).rows;
+  const withoutNl = parseRawSource(TSV.replace(/\n$/, ""), SRC, DEPOSITORIES).rows;
+  assert.equal(withNl.length, 5);
+  assert.deepEqual(withNl, withoutNl);
+  const lastMs = withNl.filter((r) => r.__msKey === withNl[withNl.length - 1].__msKey);
+  assert.equal(lastMs.length, 2); // B 2 and its duplicate — no phantom third row
 });
 
 test("parseRawSource carries Depository + Shelf mark down into the hidden __msKey only", () => {
@@ -97,7 +106,7 @@ test("assembleModel fills merged cells down, but not unmerged blanks", () => {
 
 test("assembleModel drops completely empty rows and exact duplicates", () => {
   const model = assembleModel(rawFrom(parse()));
-  assert.equal(model.rows.length, 3); // 6 parsed - blank line - trailing blank - duplicate
+  assert.equal(model.rows.length, 3); // 5 parsed - blank line - duplicate
   assert.deepEqual(model.manuscripts.map((m) => m.rows.length), [2, 1]);
 });
 
