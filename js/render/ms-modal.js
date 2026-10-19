@@ -8,6 +8,8 @@ import { escapeHtml, normalizeForCompare } from "../util/text.js";
 import { aggregateFieldValues } from "../model/manuscript.js";
 import { expandMainText, expandMinorText, mainCandidatesFrom } from "../model/expand.js";
 import { renderLinksHtml } from "./links.js";
+import { LANGUAGE_MAP } from "../model/fields.js";
+import { sourceById } from "../data/manifest.js";
 
 const TITLE_OVERRIDES = { "Shelf mark": "Shelfmark" };
 const colTitle = (c) => TITLE_OVERRIDES[c] || c;
@@ -137,7 +139,12 @@ export function buildManuscriptModalHtml(ms, ctx) {
     ["Shelfmark", escapeHtml(shelfmark || "—")],
   ];
   for (const [label, col] of [["Language", "Language"], ["Name", "Name"], ["Object", "Object"], ["Size", "Size"]]) {
-    const v = pickFirstNonEmptySegmentLabel(ms, col);
+    let v = pickFirstNonEmptySegmentLabel(ms, col);
+    // Segments rarely carry a Language column; fall back to the source's language.
+    if (!v && col === "Language") {
+      const src = ctx.sourceId ? sourceById(ctx.sourceId) : null;
+      if (src) v = LANGUAGE_MAP[src.lang] || src.lang;
+    }
     if (v) headerRows.push([label, escapeHtml(v)]);
   }
   const headerTable =
@@ -185,7 +192,7 @@ export function openManuscriptModal(target, deps) {
   const dep = expandDepositoryLabel(ms.Depository ? String(ms.Depository) : "", depositoryMap);
   if (titleEl) titleEl.textContent = dep && shelfmark ? `${dep} — ${shelfmark}` : "Manuscript";
 
-  contentDiv.innerHTML = buildManuscriptModalHtml(ms, { msKey, rawByKey, depositoryMap, maps });
+  contentDiv.innerHTML = buildManuscriptModalHtml(ms, { msKey, sourceId, rawByKey, depositoryMap, maps });
   // Filename for the PDF export (wired in the next step).
   modalEl.dataset.filename = `${(dep || "").replace(/[\\/:*?"<>|]+/g, "-").trim()}_${(shelfmark || "").replace(/[\\/:*?"<>|]+/g, "-").trim()}.pdf`;
   showModal(modalEl);

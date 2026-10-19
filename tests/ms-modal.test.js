@@ -41,3 +41,11 @@ test("collapses an equal-endpoint locus (Main text always shows locus)", () => {
   assert.match(html, /f\. 5r/);
   assert.doesNotMatch(html, /5r-5r/);
 });
+
+test("Language falls back to the source language when segments lack it", () => {
+  const html = buildManuscriptModalHtml(ms, { msKey: "AM||1", sourceId: "isl", rawByKey: new Map(), depositoryMap: {} });
+  assert.match(html, />Language<\/th><td[^>]*>Icelandic</);
+  const withLang = { ...ms, segmentsByColumn: { ...ms.segmentsByColumn, Language: [{ label: "Latin" }] } };
+  assert.match(buildManuscriptModalHtml(withLang, { msKey: "AM||1", sourceId: "isl", rawByKey: new Map(), depositoryMap: {} }), />Latin</);
+  assert.doesNotMatch(buildManuscriptModalHtml(ms, { msKey: "AM||1", rawByKey: new Map(), depositoryMap: {} }), />Language</);
+});
