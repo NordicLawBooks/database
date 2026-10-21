@@ -10,7 +10,8 @@ import {
   productionUnitRuns,
   productionUnitLabel,
   productionUnitsWithDating,
-  listUnits,
+  buildUnits,
+  compareUnits,
 } from "../js/model/manuscript.js";
 
 function rows() {
@@ -86,21 +87,24 @@ test("productionUnitsWithDating gives each run its earliest year (null if undate
   assert.deepEqual(productionUnitsWithDating(rs).map((u) => u.minYear), [1400, null]);
 });
 
-test("listUnits: dating sorts units on their own year; other sorts keep manuscript order", () => {
-  const ms = (key, ...units) => ({
-    key,
-    rows: units.map(([pu, dating]) => ({ "Production Unit": pu, Dating: dating })),
+test("buildUnits gives each unit its rows and its manuscript's Production units value", () => {
+  const { manuscripts } = buildModel(rows());
+  const units = buildUnits(manuscripts);
+  assert.deepEqual(units.map((u) => [u.key, u.run.raw, u.rows.length, u.puValue]), [
+    ["AM||1", "I", 1, "2"],
+    ["AM||1", "II", 1, "2"],
+    ["AM||2", "", 1, "Empty"],
+  ]);
+});
+
+test("compareUnits: dating sorts units on their own year; shelfmark keeps manuscript order", () => {
+  const ms = (shelf, ...units) => ({
+    rows: units.map(([pu, dating]) => ({ Depository: "AM", "Shelf mark": shelf, "Production Unit": pu, Dating: dating })),
   });
   // A's unit III is late; B is undated; C's single unit sits between A's units.
-  const list = [
-    ms("A", ["III", "1500-1600"], ["I", "1200"]),
-    ms("B", ["I", ""]),
-    ms("C", ["I", "1300"]),
-  ];
-  const label = (u) => `${u.ms.key}:${u.run.raw}`;
-  assert.deepEqual(listUnits(list, null, "shelfmark").map(label), ["A:III", "A:I", "B:I", "C:I"]);
-  assert.deepEqual(listUnits(list, null, "dating").map(label), ["A:I", "C:I", "A:III", "B:I"]);
-  // Precomputed runs win over the manuscript's own rows.
-  const pre = new Map([["B", [{ start: 0, end: 0, raw: "I", minYear: 1100 }]]]);
-  assert.equal(label(listUnits(list, pre, "dating")[0]), "B:I");
+  const units = buildUnits([ms("C", ["I", "1300"]), ms("B", ["I", ""]), ms("A", ["III", "1500-1600"], ["I", "1200"])]);
+  const label = (u) => `${u.rows[0]["Shelf mark"]}:${u.run.raw}`;
+  const sorted = (mode) => units.slice().sort((a, b) => compareUnits(a, b, mode)).map(label);
+  assert.deepEqual(sorted("shelfmark"), ["A:III", "A:I", "B:I", "C:I"]);
+  assert.deepEqual(sorted("dating"), ["A:I", "C:I", "A:III", "B:I"]);
 });

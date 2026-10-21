@@ -92,11 +92,31 @@ test("relevance sort without an active query falls back to shelfmark order", () 
   assert.deepEqual(selectResults(model(), s).manuscripts.map((ms) => ms.key), ["AM||1", "AM||2"]);
 });
 
-test("units view lists production units; other views leave units empty", () => {
-  const s = makeInitialState();
-  s.view = "units";
-  const res = selectResults(model(), s);
-  assert.deepEqual(res.units.map((u) => u.ms.key), ["AM||1", "AM||2"]); // no PU column: one unit each
-  assert.equal(res.manuscripts.length, 2);
-  assert.deepEqual(selectResults(model(), makeInitialState()).units, []);
+test("units view filters, counts and dates each production unit on its own rows", () => {
+  const m = buildModel([
+    { Depository: "AM", "Shelf mark": "1", "Production Unit": "I", Script: "Gothic", Dating: "1400" },
+    { Depository: "AM", "Shelf mark": "1", "Production Unit": "II", Script: "Caroline", Dating: "1200" },
+    { Depository: "AM", "Shelf mark": "2", "Production Unit": "I", Script: "Gothic", Dating: "1300" },
+  ]);
+  const label = (u) => `${u.key}:${u.run.raw}`;
+
+  const s = withScript("units", ["Gothic"]);
+  const res = selectResults(m, s);
+  assert.deepEqual(res.units.map(label), ["AM||1:I", "AM||2:I"]); // AM 1's Caroline unit is out
+  assert.deepEqual(res.totals, { manuscripts: 2, rows: 2, units: 2 });
+  assert.equal(res.counts.Script.counts.get("Caroline"), 1); // counts are units, not manuscripts
+
+  // A dating range keeps only the units inside it.
+  const r = makeInitialState();
+  r.view = "units";
+  r.ranges.Dating = { min: 1150, max: 1250 };
+  assert.deepEqual(selectResults(m, r).units.map(label), ["AM||1:II"]);
+
+  // Dating sort orders units by their own year.
+  const d = makeInitialState();
+  d.view = "units";
+  d.sort = "dating";
+  assert.deepEqual(selectResults(m, d).units.map(label), ["AM||1:II", "AM||2:I", "AM||1:I"]);
+
+  assert.deepEqual(selectResults(m, makeInitialState()).units, []);
 });

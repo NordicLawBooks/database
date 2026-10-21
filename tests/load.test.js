@@ -138,7 +138,7 @@ test("assembleModel without merge data leaves covered rows as their own (keyless
   assert.equal(model.manuscripts.length, 3);
 });
 
-test("assembleModel dates each production unit from filled-down cells", () => {
+test("assembleModel builds units over the raw rows, dated from filled-down cells", () => {
   // Dating is merged over rows 0-2, crossing from unit I into unit II; raw rows 1-2 are blank.
   const headers = ["Shelf mark", "Depository", "Production Unit", "Dating"];
   const tsv = [headers, ["AM 9", "AM", "I", "1300"], ["", "", "", ""], ["", "", "II", ""], ["", "", "", "1450"]]
@@ -152,9 +152,11 @@ test("assembleModel dates each production unit from filled-down cells", () => {
     ],
   };
   const model = assembleModel(rawFrom(parseRawSource(tsv, SRC, DEPOSITORIES), merges));
-  const units = model.unitsByKey.get("AM||AM 9");
-  assert.deepEqual(units.map((u) => [u.start, u.end, u.raw, u.minYear]), [
-    [0, 1, "I", 1300],
-    [2, 3, "II", 1300], // row 2 inherits 1300 from the merge
+  assert.deepEqual(model.units.map((u) => [u.key, u.run.start, u.run.end, u.run.raw, u.run.minYear]), [
+    ["AM||AM 9", 0, 1, "I", 1300],
+    ["AM||AM 9", 2, 3, "II", 1300], // row 2 inherits 1300 from the merge
   ]);
+  // Each unit carries its (filled-down) model rows.
+  assert.deepEqual(model.units.map((u) => u.rows.map((r) => r.Dating)), [["1300", "1300"], ["1300", "1450"]]);
+  assert.ok(model.units.every((u) => u.rows.every((r) => model.rows.includes(r))));
 });

@@ -103,7 +103,7 @@ export function getProductionUnitsFacetValueForManuscript(ms) {
 /**
  * Build the in-memory model from parsed rows: enrich rows, group into
  * manuscripts, and attach each manuscript's Production units value.
- * @returns {{rows: object[], manuscripts: Array<{key,rows,puValue}>, puByKey: Map<string,string>}}
+ * @returns {{rows: object[], manuscripts: Array<{key,rows,puValue}>, puByKey: Map<string,string>, units: object[]}}
  */
 export function buildModel(rows) {
   const enriched = (rows || []).map(enrichRow);
@@ -113,7 +113,7 @@ export function buildModel(rows) {
     ms.puValue = getProductionUnitsFacetValueForManuscript(ms);
     puByKey.set(ms.key, ms.puValue);
   }
-  return { rows: enriched, manuscripts, puByKey };
+  return { rows: enriched, manuscripts, puByKey, units: buildUnits(manuscripts) };
 }
 
 // ---------------------------------------------------------------------------
@@ -170,22 +170,32 @@ export function productionUnitsWithDating(rows) {
 }
 
 /**
- * The Production Unit View's items: one {ms, run} per unit of the (already
- * ordered) manuscripts. Sort "dating" orders units by their own earliest year,
- * undated last; ties and other sorts keep manuscript order, then unit order.
- * @param {Map<string, object[]>|null} unitsByKey  precomputed runs (see assembleModel)
+ * A Production Unit View record. Shaped like a manuscript ({key, rows, puValue})
+ * so the facet engine matches and counts units exactly as it does manuscripts.
+ * `run` indexes the rows the view renders; `rows` are the unit's model rows.
  */
-export function listUnits(manuscripts, unitsByKey, sortMode) {
-  const units = [];
-  for (const ms of manuscripts) {
-    const runs = (unitsByKey && unitsByKey.get(ms.key)) || productionUnitsWithDating(ms.rows);
-    for (const run of runs) units.push({ ms, run });
-  }
+export function makeUnit(ms, run, rows) {
+  return { key: ms.key, ms, run, rows, puValue: ms.puValue };
+}
+
+/** Units built straight from model rows (used when no raw rows exist, e.g. in tests). */
+export function buildUnits(manuscripts) {
+  return manuscripts.flatMap((ms) =>
+    productionUnitsWithDating(ms.rows).map((run) => makeUnit(ms, run, ms.rows.slice(run.start, run.end + 1)))
+  );
+}
+
+/**
+ * Order units: by their own earliest year (undated last) when sortMode is
+ * "dating"; then by manuscript shelfmark order, then position in the manuscript.
+ */
+export function compareUnits(a, b, sortMode) {
   if (sortMode === "dating") {
-    const year = (u) => (u.run.minYear === null ? Number.POSITIVE_INFINITY : u.run.minYear);
-    units.sort((a, b) => (year(a) === year(b) ? 0 : year(a) - year(b))); // stable
+    const ya = a.run.minYear === null ? Number.POSITIVE_INFINITY : a.run.minYear;
+    const yb = b.run.minYear === null ? Number.POSITIVE_INFINITY : b.run.minYear;
+    if (ya !== yb) return ya - yb;
   }
-  return units;
+  return compareManuscripts(a.ms, b.ms, "shelfmark") || a.run.start - b.run.start;
 }
 
 /** Display label for a Production Unit cell: "I, II", "Unknown", or "Empty". */
