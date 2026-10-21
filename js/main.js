@@ -20,6 +20,7 @@ import { refreezeOnResize } from "./render/frozen-columns.js";
 import { bindSidebar, syncSidebar } from "./render/sidebar.js";
 import { bindIntro, syncIntro } from "./render/intro.js";
 import { bindAbbreviationsModal } from "./render/abbr-modal.js";
+import { trackStickyHeight } from "./render/sticky.js";
 import { buildColumnsMenu, syncColumnsMenu, bindColumnsMenu, visibleColumns } from "./render/columns.js";
 import { bindControls, renderControls } from "./render/controls.js";
 import { buildSearchIndex, makeIndexQuery } from "./search/index.js";
@@ -51,6 +52,7 @@ async function main() {
   const introRefs = { toggle: document.getElementById("intro-toggle"), body: document.getElementById("intro-body") };
   syncIntro(introRefs, { ...makeInitialState().ui, ...prefs.ui });
   bindAbbreviationsModal(document.getElementById("abbrModal"));
+  trackStickyHeight(document.getElementById("controls"), document.getElementById("layout"));
 
   if (refs.status) refs.status.textContent = "Loading data…";
   let model;
