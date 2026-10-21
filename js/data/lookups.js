@@ -44,39 +44,58 @@ export async function loadAbbreviationsMap() {
   return abbrMap;
 }
 
+/**
+ * Parse texts.tsv into rows `{ main, section, full }` in file order. Each line is
+ * `mainAbbr \t sectionAbbr \t expansion`; an empty section is a main text,
+ * otherwise a section of it. A 2-column legacy line is a main text.
+ */
+export function parseTextsTsv(text) {
+  const rows = [];
+  for (const line of String(text ?? "").split(/\r?\n/)) {
+    if (line.trim() === "") continue;
+    const cols = line.replace(/^\uFEFF/, "").split("\t");
+    if (cols.length >= 3) {
+      const main = (cols[0] || "").trim();
+      const section = (cols[1] || "").trim();
+      const full = (cols[2] || "").trim();
+      if (main && full) rows.push({ main, section, full });
+    } else if (cols.length === 2) {
+      const main = (cols[0] || "").trim();
+      const full = (cols[1] || "").trim();
+      if (main && full) rows.push({ main, section: "", full });
+    }
+  }
+  return rows;
+}
+
+let textsRows = null;
+
+/** texts.tsv as parsed rows (see parseTextsTsv). */
+export async function loadTextsRows() {
+  if (textsRows) return textsRows;
+  try {
+    const resp = await fetch(`${DATA_DIR}/texts.tsv`);
+    textsRows = parseTextsTsv(await resp.text());
+  } catch (e) {
+    console.error("Failed to load texts.tsv:", e);
+    textsRows = [];
+  }
+  return textsRows;
+}
+
 let textsMaps = null;
 
 /**
- * Parse texts.tsv into { main, minor }. Each line is
- * `mainAbbr \t sectionAbbr \t expansion`; an empty section populates `main`,
- * otherwise `minor` (keyed by minorTextKey(main, section)). A 2-column legacy
- * line falls back to `main`.
+ * texts.tsv as { main, minor }: main texts keyed by abbreviation, sections keyed
+ * by minorTextKey(main, section).
  */
 export async function loadTextsMaps() {
   if (textsMaps) return textsMaps;
   const main = {};
   const minor = {};
-  try {
-    const resp = await fetch(`${DATA_DIR}/texts.tsv`);
-    const text = await resp.text();
-    for (const line of text.split(/\r?\n/)) {
-      if (line.trim() === "") continue;
-      const cols = line.replace(/^﻿/, "").split("\t");
-      if (cols.length >= 3) {
-        const mainAbbr = (cols[0] || "").trim();
-        const section = (cols[1] || "").trim();
-        const full = (cols[2] || "").trim();
-        if (!mainAbbr || !full) continue;
-        if (!section) main[mainAbbr] = full;
-        else minor[minorTextKey(mainAbbr, section)] = full;
-      } else if (cols.length === 2) {
-        const a = (cols[0] || "").trim();
-        const f = (cols[1] || "").trim();
-        if (a && f) main[a] = f;
-      }
-    }
-  } catch (e) {
-    console.error("Failed to load texts.tsv:", e);
+  for (const r of await loadTextsRows()) {
+    if (!r.section) main[r.main] = r.full;
+    else minor[minorTextKey(r.main, r.section)] = r.full;
   }
   textsMaps = { main, minor };
   return textsMaps;

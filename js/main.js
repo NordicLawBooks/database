@@ -18,6 +18,8 @@ import { renderManuscriptView } from "./render/manuscript-view.js";
 import { renderUnitView } from "./render/unit-view.js";
 import { refreezeOnResize } from "./render/frozen-columns.js";
 import { bindSidebar, syncSidebar } from "./render/sidebar.js";
+import { bindIntro, syncIntro } from "./render/intro.js";
+import { bindAbbreviationsModal } from "./render/abbr-modal.js";
 import { buildColumnsMenu, syncColumnsMenu, bindColumnsMenu, visibleColumns } from "./render/columns.js";
 import { bindControls, renderControls } from "./render/controls.js";
 import { buildSearchIndex, makeIndexQuery } from "./search/index.js";
@@ -43,6 +45,13 @@ async function main() {
     status: document.getElementById("status"),
   };
 
+  // The intro panel and the abbreviations modal don't need the dataset; set them up
+  // before loading it so a returning visitor's collapsed intro stays collapsed.
+  const prefs = loadPrefs();
+  const introRefs = { toggle: document.getElementById("intro-toggle"), body: document.getElementById("intro-body") };
+  syncIntro(introRefs, { ...makeInitialState().ui, ...prefs.ui });
+  bindAbbreviationsModal(document.getElementById("abbrModal"));
+
   if (refs.status) refs.status.textContent = "Loading data…";
   let model;
   try {
@@ -57,7 +66,6 @@ async function main() {
   const allColumns = displayColumns(model.headers);
   // Seed: defaults <- device prefs (columns, ui, last view/sort) <- URL (shareable
   // state; a view/sort named in the URL beats the remembered one).
-  const prefs = loadPrefs();
   const base = makeInitialState();
   const initial = {
     ...base,
@@ -100,6 +108,7 @@ async function main() {
   const sidebarRefs = { toggle: refs.sidebarToggle, sidebar: refs.sidebar, resizer: refs.sidebarResizer };
   bindSidebar(store, sidebarRefs);
   syncSidebar(sidebarRefs, store.get().ui);
+  bindIntro(store, introRefs);
 
   // Manuscript details modal: load segments lazily, then open on row/shelfmark click.
   const [segments, depositoryMap, maps] = await Promise.all([
@@ -147,6 +156,7 @@ async function main() {
 
   function renderAll(state) {
     syncSidebar(sidebarRefs, state.ui);
+    syncIntro(introRefs, state.ui);
     const q = makeIndexQuery(searchIndex, state.query);
     const result = selectResults(model, state, { matchesQuery: q && q.matches, scoreOf: q && q.score });
 
