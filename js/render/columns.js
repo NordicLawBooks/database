@@ -8,13 +8,17 @@ import { COLUMN_PRESET_BUTTONS, DEFAULT_COLUMN_PRESET, getPreset, columnTitle as
 
 const viewKey = (state) => (state.view === "table" ? "table" : "merged");
 
+/** Columns that can't be hidden: the Shelfmark link is how a row's details open. */
+export const ALWAYS_VISIBLE = new Set(["Shelf mark"]);
+
 /** The visible columns for the active view (in `allColumns` order). */
 export function visibleColumns(allColumns, state) {
   const sel = state.columns && state.columns[viewKey(state)];
   if (!Array.isArray(sel)) return allColumns; // null => all
   const set = new Set(sel);
-  const vis = allColumns.filter((c) => set.has(c));
-  return vis.length ? vis : allColumns; // never hide everything
+  if (!sel.length) return allColumns; // never hide everything
+  for (const c of ALWAYS_VISIBLE) set.add(c);
+  return allColumns.filter((c) => set.has(c));
 }
 
 /** Build the menu (preset buttons + filter + checkbox list) once. */
@@ -25,7 +29,8 @@ export function buildColumnsMenu(host, allColumns) {
   const list = allColumns
     .map((c) => {
       const id = `col_${toDomIdToken(c)}`;
-      return `<div class="form-check" data-col-item><input type="checkbox" class="form-check-input" data-col="${escapeHtml(c)}" id="${id}"><label class="form-check-label" for="${id}">${escapeHtml(colTitle(c))}</label></div>`;
+      const fixed = ALWAYS_VISIBLE.has(c) ? ` disabled title="Always shown"` : "";
+      return `<div class="form-check" data-col-item><input type="checkbox" class="form-check-input" data-col="${escapeHtml(c)}" id="${id}"${fixed}><label class="form-check-label" for="${id}">${escapeHtml(colTitle(c))}</label></div>`;
     })
     .join("");
   host.innerHTML =

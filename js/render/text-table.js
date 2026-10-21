@@ -1,5 +1,6 @@
 // Text View: a flat, paginated table of rows, sharing Manuscript View's table
-// styling (sticky header) and frozen Depository + Shelf mark columns.
+// styling (sticky header) and frozen Depository + Shelf mark columns. The Shelf
+// mark is a link that opens the row's details modal.
 
 import { escapeHtml } from "../util/text.js";
 import { expandMainText, expandMinorText, mainCandidatesFrom } from "../model/expand.js";
@@ -37,12 +38,13 @@ export function renderTextTable(host, rows, state, columns, maps = null) {
     if (maps && c === "Main text") return escapeHtml(expandMainText(row[c], maps));
     if (maps && c === "Minor text") return escapeHtml(expandMinorText(row[c], mainCandidatesFrom(row["Main text"]), maps));
     if (c === "Links to Database") return renderLinksHtml(row[c]) || "";
+    if (c === "Shelf mark" && row[c]) return `<a href="#" class="row-open-details">${escapeHtml(row[c])}</a>`;
     return escapeHtml(row[c] == null ? "" : row[c]);
   };
   const body = slice
     .map((row, i) => {
       const tds = columns.map((c) => `<td data-field="${escapeHtml(c)}">${cellHtml(row, c)}</td>`).join("");
-      return `<tr role="button" data-row-idx="${start + i}">${tds}</tr>`;
+      return `<tr data-row-idx="${start + i}">${tds}</tr>`;
     })
     .join("");
 
