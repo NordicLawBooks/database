@@ -1,4 +1,4 @@
-// Lazy, cached loaders for the hand-maintained lookup tables. Each returns a
+// Lazy, cached loaders for the lookup tables (exported from the sheet). Each returns a
 // plain object map and caches the result (and the failure) so it is fetched once.
 
 import { DATA_DIR } from "./manifest.js";

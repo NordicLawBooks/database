@@ -21,8 +21,8 @@ Add --dry-run to any subcommand to print what would be run without executing:
 
 SUBCOMMANDS
 -----------
-  sheets    Fetch all four language tabs from Google Sheets: filled TSVs, raw
-            TSVs + merge JSON, segments JSON, combined TSV (--skip-* per stage)
+  sheets    Fetch from Google Sheets: lookup tables, filled TSVs, raw TSVs +
+            merge JSON, segments JSON, combined TSV (--skip-* per stage)
   segments  Per-manuscript segments JSON from the raw TSVs + merge JSON
   combine   Merge the four filled TSVs into data/NordicLaw_data.tsv
 
@@ -33,6 +33,8 @@ OUTPUT FILES
   data/Metadata_Dan_segments.json    Per-manuscript modal data (from extract_segments.py)
   data/Metadata_Dan.tsv              Filled/deduplicated rows (not used by the site)
   data/NordicLaw_data.tsv            All four languages combined (not used by the site)
+  data/abbreviations.tsv, depositories.tsv, texts.tsv
+                                     Lookup tables (Abbreviations/Depositories/Texts tabs)
 """
 from __future__ import annotations
 
@@ -92,6 +94,7 @@ def run_convert_sheets_to_tsv(
     raw: bool,
     export_merges: bool,
     dry_run: bool,
+    lookups: bool = False,
 ) -> None:
     script = (repo_root / "data/scripts/convert_sheets_to_tsv.py").resolve()
     if not script.exists():
@@ -100,7 +103,7 @@ def run_convert_sheets_to_tsv(
     cmd: list[str] = [
         sys.executable, str(script),
         "--sheet-id", sheet_id,
-        "--all-sheets",
+        "--lookups" if lookups else "--all-sheets",
         "--out-dir", str(repo_root / "data"),
     ]
     if credentials:
@@ -179,6 +182,7 @@ def main(argv: list[str]) -> int:
     )
     p_sheets.add_argument("--sheet-id", required=True, help="Google Sheets spreadsheet ID (from the URL)")
     p_sheets.add_argument("--credentials", default=None, help="Path to service account JSON key")
+    p_sheets.add_argument("--skip-lookups", action="store_true", help="Skip exporting the lookup tables (abbreviations/depositories/texts.tsv).")
     p_sheets.add_argument("--skip-filled", action="store_true", help="Skip generating filled TSVs.")
     p_sheets.add_argument("--skip-raw", action="store_true", help="Skip generating *_raw.tsv + *_raw_merges.json.")
     p_sheets.add_argument("--skip-segments", action="store_true", help="Skip generating *_segments.json files.")
@@ -209,6 +213,16 @@ def main(argv: list[str]) -> int:
         return 0
 
     if args.command == "sheets":
+        if not args.skip_lookups:
+            run_convert_sheets_to_tsv(
+                repo_root=repo_root,
+                sheet_id=args.sheet_id,
+                credentials=args.credentials,
+                raw=False,
+                export_merges=False,
+                dry_run=bool(args.dry_run),
+                lookups=True,
+            )
         if not args.skip_filled:
             run_convert_sheets_to_tsv(
                 repo_root=repo_root,

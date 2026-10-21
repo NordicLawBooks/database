@@ -1,6 +1,8 @@
 """Convert NordicLaw Google Sheets tabs to TSV + merges JSON.
 
-One spreadsheet, four language tabs (Danish / Icelandic / Norwegian / Swedish).
+One spreadsheet, four language tabs (Danish / Icelandic / Norwegian / Swedish),
+plus the lookup tabs (Abbreviations / Depositories / Texts) exported with
+--lookups to abbreviations.tsv / depositories.tsv / texts.tsv.
 Raw mode writes the grid as-is plus its merge geometry; the default (filled)
 mode also fills merged cells, resolves hyperlinks, merges links per manuscript,
 dedups and normalizes.
@@ -25,6 +27,12 @@ Usage
     --all-sheets \
     --credentials path/to/service_account.json \
     --raw --export-merges
+
+  # The lookup tables:
+  python data/scripts/convert_sheets_to_tsv.py \
+    --sheet-id  1BxiMVs0XRA5nFMdKvBdBZjgmUUqptlbs74OgVE2upms \
+    --lookups \
+    --credentials path/to/service_account.json
 """
 
 from __future__ import annotations
@@ -53,6 +61,14 @@ SHEET_LANGUAGE_MAP: dict[str, tuple[str, str]] = {
     "Icelandic": ("is", "Metadata_Isl"),
     "Norwegian": ("no", "Metadata_Norw"),
     "Swedish":   ("sv", "Metadata_Swe"),
+}
+
+# Lookup tabs → (output file, column count). No header row; texts.tsv is
+# main abbreviation | section abbreviation (blank for a main text) | expansion.
+LOOKUP_TABS: dict[str, tuple[str, int]] = {
+    "Abbreviations": ("abbreviations.tsv", 2),
+    "Depositories":  ("depositories.tsv", 2),
+    "Texts":         ("texts.tsv", 3),
 }
 
 DEDUPLICATE_ROWS   = True
@@ -362,6 +378,28 @@ def process_one_sheet(
     print(f"  Wrote {out_tsv}")
 
 
+def export_lookup_tab(service, sheet_id: str, tab: str, out_dir: Path) -> None:
+    """Write one lookup tab as a headerless TSV: cells trimmed, rows padded or cut
+    to the tab's column count, rows without a key dropped."""
+    filename, n_cols = LOOKUP_TABS[tab]
+    values = (
+        service.spreadsheets().values()
+        .get(spreadsheetId=sheet_id, range=f"'{tab}'")
+        .execute()
+        .get("values", [])
+    )
+    lines = []
+    for row in values:
+        cells = [normalize_newlines_to_space(c).strip() for c in row[:n_cols]]
+        cells += [""] * (n_cols - len(cells))
+        if cells[0]:
+            lines.append("\t".join(cells))
+    out = out_dir / filename
+    with open(out, "w", encoding="utf-8", newline="") as f:
+        f.write("\n".join(lines) + "\n")
+    print(f"  Wrote {out} ({len(lines)} rows from tab '{tab}')")
+
+
 def main(argv: list[str]) -> int:
     parser = argparse.ArgumentParser(
         description=__doc__, formatter_class=argparse.RawDescriptionHelpFormatter
@@ -380,16 +418,23 @@ def main(argv: list[str]) -> int:
     parser.add_argument("--credentials", default=None, help="Path to service account JSON key (or set GOOGLE_APPLICATION_CREDENTIALS)")
     parser.add_argument("--raw", action="store_true", help="Raw mode: no fill/normalize/dedup; always exports merges JSON")
     parser.add_argument("--export-merges", action="store_true", help="Write *_merges.json sidecar alongside the TSV")
+    parser.add_argument("--lookups", action="store_true", help="Export the lookup tabs (Abbreviations, Depositories, Texts)")
     args = parser.parse_args(argv)
 
-    if not args.sheet_name and not args.all_sheets:
-        parser.error("Specify --sheet-name <name> or --all-sheets")
+    if not args.sheet_name and not args.all_sheets and not args.lookups:
+        parser.error("Specify --sheet-name <name>, --all-sheets or --lookups")
 
-    sheet_names = list(SHEET_LANGUAGE_MAP) if args.all_sheets else [args.sheet_name]
+    if args.all_sheets:
+        sheet_names = list(SHEET_LANGUAGE_MAP)
+    else:
+        sheet_names = [args.sheet_name] if args.sheet_name else []
     out_dir = Path(args.out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
 
     service = build_service(args.credentials)
+    if args.lookups:
+        for tab in LOOKUP_TABS:
+            export_lookup_tab(service, args.sheet_id, tab, out_dir)
     for name in sheet_names:
         process_one_sheet(
             service,
