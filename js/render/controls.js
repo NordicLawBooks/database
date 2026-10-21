@@ -95,7 +95,8 @@ export function renderControls(refs, state, result, pageInfo) {
   if (refs.pageSizeSelect) refs.pageSizeSelect.value = String(state.pageSize);
 
   if (refs.meta) {
-    refs.meta.textContent = `${result.totals.manuscripts} manuscripts · ${result.totals.rows} texts`;
+    const units = state.view === "units" ? `${result.totals.units} production units · ` : "";
+    refs.meta.textContent = `${units}${result.totals.manuscripts} manuscripts · ${result.totals.rows} texts`;
   }
 
   if (refs.pager) {

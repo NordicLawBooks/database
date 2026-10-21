@@ -3,7 +3,7 @@
 
 import { SOURCES } from "./manifest.js";
 import { loadDepositoryMap } from "./lookups.js";
-import { buildModel, enrichRow, productionUnitsWithDating } from "../model/manuscript.js";
+import { buildModel, enrichRow, makeUnit, productionUnitsWithDating } from "../model/manuscript.js";
 import { normalizeLeavesPages, normalizeGatherings, normalizeScribe } from "../model/fields.js";
 import { normalizeForCompare } from "../util/text.js";
 import { applyMergeAwareFillDown } from "../render/merge-geometry.js";
@@ -202,7 +202,7 @@ function mergeLinksPerManuscript(rows) {
 export function assembleModel(raw) {
   const headers = raw.headers;
   const filled = [];
-  const unitsByKey = new Map();
+  const unitRuns = [];
   for (const [key, block] of raw.rawByKey) {
     // Clone (drop internal keys but keep __sourceRowIndex for fill-down).
     const clone = block.rows.map((r) => {
@@ -213,7 +213,9 @@ export function assembleModel(raw) {
     });
     applyMergeAwareFillDown(clone, raw.mergesBySource.get(block.sourceId));
     // Clone indices match block.rows, so these runs index the raw rows too.
-    unitsByKey.set(key, productionUnitsWithDating(clone));
+    for (const run of productionUnitsWithDating(clone)) {
+      unitRuns.push({ key, run, clones: clone.slice(run.start, run.end + 1) });
+    }
     for (const r of clone) {
       delete r.__sourceRowIndex;
       for (const k of Object.keys(r)) if (r[k] === "Unavailable") r[k] = "";
@@ -233,7 +235,15 @@ export function assembleModel(raw) {
   model.headers = headers;
   model.rawByKey = raw.rawByKey;
   model.mergesBySource = raw.mergesBySource;
-  model.unitsByKey = unitsByKey;
+  // Units index the raw rows (which Production Unit View renders) and carry the
+  // model rows that survived dropping and dedup (which facets and search test).
+  const kept = new Set(rows);
+  const msByKey = new Map(model.manuscripts.map((ms) => [ms.key, ms]));
+  model.units = [];
+  for (const u of unitRuns) {
+    const ms = msByKey.get(u.key);
+    if (ms) model.units.push(makeUnit(ms, u.run, u.clones.filter((r) => kept.has(r))));
+  }
   return model;
 }
 
