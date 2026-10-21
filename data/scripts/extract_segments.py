@@ -3,7 +3,7 @@
 
 Goal
 ----
-Turn Excel-like merged-cell regions (and unmerged single cells) into per-manuscript
+Turn spreadsheet merged-cell regions (and unmerged single cells) into per-manuscript
 "segments" with computed locus spans derived from the Leaves/Pages column.
 
 This is intended as an intermediate representation suitable for:
@@ -11,8 +11,8 @@ This is intended as an intermediate representation suitable for:
 - PDF export
 - Later TEI generation (e.g., handNote + locus)
 
-Input conventions (as produced by convert_excel_to_tsv.py)
---------------------------------------------------------
+Input conventions (as produced by convert_sheets_to_tsv.py --raw)
+-----------------------------------------------------------------
 - *_raw.tsv contains the sheet grid (blank cells preserved).
 - *_raw_merges.json contains merge ranges as row/col intervals with a merge value.
 
@@ -25,9 +25,9 @@ immediately after the TSV header.
 Usage
 -----
   python data/scripts/extract_segments.py \
-    --raw-tsv data/1.0_Metadata_Dan_raw.tsv \
-    --merges-json data/1.0_Metadata_Dan_raw_merges.json \
-    --out data/1.0_Metadata_Dan_segments.json
+    --raw-tsv data/Metadata_Dan_raw.tsv \
+    --merges-json data/Metadata_Dan_raw_merges.json \
+    --out data/Metadata_Dan_segments.json
 
 """
 
@@ -514,6 +514,7 @@ def main() -> int:
             # Repo-relative, so the output doesn't depend on whose machine ran it.
             "rawTsv": _repo_relative(raw_tsv),
             "mergesJson": _repo_relative(merges_json_path),
+            # Historical key name: holds the source Google Sheets URL.
             "excel": merges_json.get("source"),
             "sheet": merges_json.get("sheet"),
         },
