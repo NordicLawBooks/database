@@ -29,7 +29,7 @@ export function makeInitialState() {
     facets,
     ranges,
     columns: { merged: null, table: null }, // localStorage-backed; not in URL
-    ui: { facetsHidden: false, sidebarWidth: 340 }, // localStorage-backed; not in URL
+    ui: { facetsHidden: false, sidebarWidth: 340, introHidden: false }, // localStorage-backed; not in URL
   };
 }
 

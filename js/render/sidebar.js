@@ -7,7 +7,8 @@ export const SIDEBAR_MAX = 600;
 export const clampSidebarWidth = (w) =>
   Math.max(SIDEBAR_MIN, Math.min(SIDEBAR_MAX, Math.round(Number(w) || 0)));
 
-function setUi(store, patch) {
+/** Merge `patch` into state.ui (device prefs; no URL history entry). */
+export function setUi(store, patch) {
   const state = store.get();
   store.set({ ui: { ...state.ui, ...patch } }, { history: "silent" });
 }

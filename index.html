@@ -3,10 +3,24 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>NordicLaw Manuscripts</title>
+  <title>NordicLaw Database</title>
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
   <style>
     body { padding: 16px; }
+    #site-banner {
+      display: flex; align-items: flex-end; height: clamp(96px, 13vw, 190px);
+      padding: 0.75rem 1.25rem; margin-bottom: 0.5rem; border-radius: var(--bs-border-radius);
+      background: linear-gradient(to right, rgba(33,22,14,0.78), rgba(33,22,14,0.15) 65%),
+                  #4a3424 url("img/banner.jpg") center / cover no-repeat;
+    }
+    #site-banner h1 { color: #fff; margin: 0; text-shadow: 0 1px 3px rgba(0,0,0,0.6); }
+    #intro-toggle { text-decoration: none; font-weight: 500; }
+    #intro-toggle::before { content: "\25B8"; display: inline-block; width: 1em; transition: transform 0.15s; }
+    #intro-toggle[aria-expanded="true"]::before { transform: rotate(90deg); }
+    #intro-body { max-width: 75em; }
+    #intro-body p { margin-bottom: 0.5rem; }
+    .abbr-table th { width: 9em; white-space: nowrap; font-weight: 600; }
+    .abbr-table tr.abbr-section th { padding-left: 1.5rem; font-weight: 400; }
     #controls { position: sticky; top: 0; z-index: 1000; background: #fff; padding-bottom: 8px; }
     #layout { display: flex; align-items: flex-start; }
     #facet-sidebar { flex: 0 0 340px; max-height: calc(100vh - 140px); overflow-y: auto; }
@@ -77,7 +91,18 @@
   </style>
 </head>
 <body>
-  <h1 class="h4 mb-1">NordicLaw Manuscripts (Beta)</h1>
+  <header id="site-banner">
+    <h1 class="h3">NordicLaw Database <span class="badge text-bg-light align-middle fs-6">Beta</span></h1>
+  </header>
+
+  <section id="intro" class="mb-2">
+    <button id="intro-toggle" class="btn btn-link px-0" type="button" aria-expanded="true" aria-controls="intro-body">About the database</button>
+    <div id="intro-body" class="small">
+      <p><strong>NordicLaw Database</strong> is a searchable catalogue of Icelandic, Norwegian, Danish, and Swedish vernacular law manuscripts and fragments from the Nordic Middle Ages (ca. 1100–1600).</p>
+      <p>The database was created by the <a href="https://www4.uib.no/en/research/research-projects/nordic-law-books-the-production-and-use-of-vernacular-law-manuscripts-in-the-north-from-1100-to-1600-nordiclaw" target="_blank">NordicLaw Project</a> at the University of Bergen and funded by <strong>NordForsk</strong> (<a href="https://www.nordforsk.org/projects/nordic-law-books-production-and-use-vernacular-law-manuscripts-north-1100-1600-nordiclaw" target="_blank">grant no. 152607</a>). For more information, see the NordicLaw Database User Guide, the <a href="#" data-bs-toggle="modal" data-bs-target="#abbrModal">List of Abbreviations</a>, and the Bibliography. The database was designed and developed by <strong>Patrik Granholm</strong> (The National Library of Sweden).</p>
+      <p>Main Editor: <strong>Stefan Drechsler</strong> (University of Bergen). Editors: <strong>Tonje Waldersnes</strong>, <strong>Már Jónsson</strong> (University of Iceland), <strong>Anne Mette Hansen</strong> (University of Copenhagen), <strong>Seán Vrieland</strong> (University of Copenhagen), <strong>Anna Catharina Horn</strong> (University of Oslo).</p>
+    </div>
+  </section>
   <div id="status" class="text-secondary small mb-2"></div>
 
   <div id="controls" class="row g-2 align-items-center mb-2">
@@ -166,6 +191,22 @@
         <div class="modal-body"><div id="row-details-content"></div></div>
         <div class="modal-footer">
           <button type="button" class="btn btn-primary" id="download-pdf-btn">Download as PDF</button>
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- List of Abbreviations modal (filled from the lookup tables on first open) -->
+  <div class="modal fade" id="abbrModal" tabindex="-1" aria-labelledby="abbrModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="abbrModalLabel">List of Abbreviations</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">Loading…</div>
+        <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         </div>
       </div>
