@@ -132,6 +132,69 @@ export function getConstantFields(rows, columns, excluded = []) {
   return constant;
 }
 
+/**
+ * Split a manuscript's rows into contiguous Production Unit runs. A blank cell
+ * continues the run above it (the raw export leaves merged cells blank).
+ * @returns {Array<{start:number, end:number, raw:string}>} inclusive row ranges;
+ *   `raw` is the cell text that opened the run ("" if the first rows are blank).
+ */
+export function productionUnitRuns(rows) {
+  const runs = [];
+  let lastKey = "";
+  for (let i = 0; i < (rows || []).length; i++) {
+    const raw = rows[i] ? rows[i]["Production Unit"] : "";
+    const key = normalizeForCompare(raw);
+    if (i === 0 || (key && key !== lastKey)) {
+      if (runs.length) runs[runs.length - 1].end = i - 1;
+      runs.push({ start: i, end: i, raw: key ? String(raw) : "" });
+      lastKey = key;
+    }
+  }
+  if (runs.length) runs[runs.length - 1].end = rows.length - 1;
+  return runs;
+}
+
+/**
+ * productionUnitRuns plus each run's earliest Dating year (null if undated).
+ * `rows` must have merged cells filled down, so every row carries its Dating.
+ */
+export function productionUnitsWithDating(rows) {
+  return productionUnitRuns(rows).map((run) => {
+    const years = [];
+    for (let i = run.start; i <= run.end; i++) {
+      const dr = parseDatingRange(rows[i]["Dating"]);
+      if (dr && typeof dr.min === "number") years.push(dr.min);
+    }
+    return { ...run, minYear: years.length ? Math.min(...years) : null };
+  });
+}
+
+/**
+ * The Production Unit View's items: one {ms, run} per unit of the (already
+ * ordered) manuscripts. Sort "dating" orders units by their own earliest year,
+ * undated last; ties and other sorts keep manuscript order, then unit order.
+ * @param {Map<string, object[]>|null} unitsByKey  precomputed runs (see assembleModel)
+ */
+export function listUnits(manuscripts, unitsByKey, sortMode) {
+  const units = [];
+  for (const ms of manuscripts) {
+    const runs = (unitsByKey && unitsByKey.get(ms.key)) || productionUnitsWithDating(ms.rows);
+    for (const run of runs) units.push({ ms, run });
+  }
+  if (sortMode === "dating") {
+    const year = (u) => (u.run.minYear === null ? Number.POSITIVE_INFINITY : u.run.minYear);
+    units.sort((a, b) => (year(a) === year(b) ? 0 : year(a) - year(b))); // stable
+  }
+  return units;
+}
+
+/** Display label for a Production Unit cell: "I, II", "Unknown", or "Empty". */
+export function productionUnitLabel(raw) {
+  if (isExplicitUnknownValue(raw)) return "Unknown";
+  const tokens = parseProductionUnitsCell(raw);
+  return tokens.length ? tokens.join(", ") : "Empty";
+}
+
 /** Join the non-empty values of `field` across rows. */
 export function aggregateFieldValues(rows, field, separator = "; ") {
   const parts = [];

@@ -1,6 +1,6 @@
 import { test } from "node:test";
 import assert from "node:assert/strict";
-import { applyMergeAwareFillDown, buildLocalMergeLookup } from "../js/render/merge-geometry.js";
+import { applyMergeAwareFillDown, buildLocalMergeLookup, clipMergeLookup } from "../js/render/merge-geometry.js";
 
 // Columns A,B,C; three rows. Merge region: column B spans rows 0-1 (a rowspan).
 function rows() {
@@ -95,7 +95,7 @@ test("applyMergeAwareFillDown skips malformed merges", () => {
 test("buildLocalMergeLookup marks the top-left span and covered cells", () => {
   const cols = ["A", "B", "C"];
   const lookup = buildLocalMergeLookup(rows(), merges, cols, cols);
-  assert.deepEqual(lookup.topLeft.get("0,1"), { rowSpan: 2, colSpan: 1 });
+  assert.deepEqual(lookup.topLeft.get("0,1"), { rowSpan: 2, colSpan: 1, row: 0 });
   assert.ok(lookup.covered.has("1,1")); // the covered cell is skipped during render
   assert.equal(lookup.covered.has("0,1"), false); // top-left is not "covered"
 });
@@ -103,7 +103,7 @@ test("buildLocalMergeLookup marks the top-left span and covered cells", () => {
 test("buildLocalMergeLookup remaps spans onto the visible-column subset", () => {
   // Hide column A: visible grid is [B, C], so B's merge lands at visible col 0.
   const lookup = buildLocalMergeLookup(rows(), merges, ["A", "B", "C"], ["B", "C"]);
-  assert.deepEqual(lookup.topLeft.get("0,0"), { rowSpan: 2, colSpan: 1 });
+  assert.deepEqual(lookup.topLeft.get("0,0"), { rowSpan: 2, colSpan: 1, row: 0 });
   assert.ok(lookup.covered.has("1,0"));
 });
 
@@ -111,4 +111,28 @@ test("buildLocalMergeLookup ignores merges not fully contained in the rows", () 
   const partial = { columns: ["A", "B", "C"], merges: [{ minRow: 1, maxRow: 5, minCol: "B", maxCol: "B" }] };
   const lookup = buildLocalMergeLookup(rows(), partial, ["A", "B", "C"], ["A", "B", "C"]);
   assert.equal(lookup.topLeft.size, 0);
+});
+
+test("clipMergeLookup cuts a merge at the range edge, keeping its value row", () => {
+  // B spans rows 0-2 and C rows 0-1; clip to rows 1-2 (a run starting mid-merge).
+  const tall = {
+    columns: ["A", "B", "C"],
+    merges: [
+      { minRow: 0, maxRow: 2, minCol: "B", maxCol: "B" },
+      { minRow: 0, maxRow: 1, minCol: "C", maxCol: "C" },
+    ],
+  };
+  const cols = ["A", "B", "C"];
+  const clipped = clipMergeLookup(buildLocalMergeLookup(rows(), tall, cols, cols), 1, 2);
+  assert.deepEqual(clipped.topLeft.get("0,1"), { rowSpan: 2, colSpan: 1, row: 0 }); // value from row 0
+  assert.ok(clipped.covered.has("1,1"));
+  assert.deepEqual(clipped.topLeft.get("0,2"), { rowSpan: 1, colSpan: 1, row: 0 }); // one-row stub
+  assert.equal(clipped.covered.has("1,2"), false); // row 2 of C is outside the merge
+});
+
+test("clipMergeLookup drops merges outside the range", () => {
+  const cols = ["A", "B", "C"];
+  const clipped = clipMergeLookup(buildLocalMergeLookup(rows(), merges, cols, cols), 2, 2);
+  assert.equal(clipped.topLeft.size, 0);
+  assert.equal(clipped.covered.size, 0);
 });

@@ -18,6 +18,7 @@ import {
   getManuscriptKey,
   compareManuscripts,
   sortRowsForTextView,
+  listUnits,
 } from "../model/manuscript.js";
 
 /**
@@ -28,7 +29,8 @@ import {
  *   Text View filters rows by it directly; Manuscript View keeps a manuscript
  *   when any of its rows match.
  *   scoreOf: row relevance score, used when state.sort is "relevance".
- * @returns {{manuscripts:object[], rows:object[], counts:object, totals:{manuscripts:number,rows:number}}}
+ * @returns {{manuscripts:object[], units:object[], rows:object[], counts:object, totals:{manuscripts:number,rows:number}}}
+ *   units: Production Unit View's {ms, run} items (only filled for that view).
  */
 export function selectResults(model, state, { matchesQuery = null, scoreOf = null } = {}) {
   const defs = FACET_DEFS;
@@ -50,13 +52,14 @@ export function selectResults(model, state, { matchesQuery = null, scoreOf = nul
 
     return {
       manuscripts: [],
+      units: [],
       rows,
       counts,
       totals: { manuscripts: new Set(rows.map(getManuscriptKey)).size, rows: rows.length },
     };
   }
 
-  // Manuscript ("merged") view.
+  // Manuscript ("merged") and Production Unit ("units") views.
   let manuscripts = model.manuscripts.filter(
     (ms) => manuscriptMatchesFacets(ms, state, defs) && (!matchesQuery || ms.rows.some(matchesQuery))
   );
@@ -75,6 +78,7 @@ export function selectResults(model, state, { matchesQuery = null, scoreOf = nul
 
   return {
     manuscripts,
+    units: state.view === "units" ? listUnits(manuscripts, model.unitsByKey, state.sort) : [],
     rows,
     counts,
     totals: { manuscripts: manuscripts.length, rows: rows.length },

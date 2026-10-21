@@ -1,6 +1,7 @@
 // Column-visibility selector: preset buttons, a filter box, and per-column
 // checkboxes. The visible set is stored per view in state.columns ({merged,
-// table}); null means "all columns".
+// table}); null means "all columns". Production Unit View shares Manuscript
+// View's set, as both are grouped views of the same rows.
 
 import { escapeHtml, toDomIdToken } from "../util/text.js";
 import { COLUMN_PRESET_BUTTONS, DEFAULT_COLUMN_PRESET, getPreset, columnTitle as colTitle } from "../config.js";

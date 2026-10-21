@@ -33,6 +33,11 @@ test("new prefs win over legacy keys; invalid view/sort are dropped", () => {
   assert.deepEqual(loadPrefs(s), { ui: { facetsHidden: false } });
 });
 
+test("the remembered view may be Production Unit View", () => {
+  const s = fakeStorage({ "nordiclaw.prefs": JSON.stringify({ view: "units" }) });
+  assert.equal(loadPrefs(s).view, "units");
+});
+
 test("savePrefs stores view + sort, with relevance saved as the default sort", () => {
   const s = fakeStorage();
   const state = { columns: { merged: null, table: null }, ui: {}, view: "table", sort: "relevance" };

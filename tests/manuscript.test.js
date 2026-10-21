@@ -7,6 +7,10 @@ import {
   mainTextVariant,
   mainTextGroupVariantKey,
   compareManuscripts,
+  productionUnitRuns,
+  productionUnitLabel,
+  productionUnitsWithDating,
+  listUnits,
 } from "../js/model/manuscript.js";
 
 function rows() {
@@ -50,4 +54,53 @@ test("compareManuscripts: shelfmark default, dating mode by earliest year", () =
   const [ms1, ms2] = model.manuscripts;
   assert.ok(compareManuscripts(ms1, ms2, "shelfmark") < 0); // "1" before "2"
   assert.ok(compareManuscripts(ms1, ms2, "dating") < 0); // 1300 before 1450
+});
+
+test("productionUnitRuns splits on unit changes; blanks continue the run above", () => {
+  const pu = (...vals) => vals.map((v) => ({ "Production Unit": v }));
+  assert.deepEqual(productionUnitRuns(pu("I", "", "II", "II", "")), [
+    { start: 0, end: 1, raw: "I" },
+    { start: 2, end: 4, raw: "II" },
+  ]);
+  // Leading blanks form their own run; a single row is a single run.
+  assert.deepEqual(productionUnitRuns(pu("", "I")), [
+    { start: 0, end: 0, raw: "" },
+    { start: 1, end: 1, raw: "I" },
+  ]);
+  assert.deepEqual(productionUnitRuns(pu("III")), [{ start: 0, end: 0, raw: "III" }]);
+  assert.deepEqual(productionUnitRuns([]), []);
+});
+
+test("productionUnitLabel: roman numerals, Unknown, or Empty", () => {
+  assert.equal(productionUnitLabel("I; ii"), "I, II");
+  assert.equal(productionUnitLabel(" unknown "), "Unknown");
+  assert.equal(productionUnitLabel(""), "Empty");
+});
+
+test("productionUnitsWithDating gives each run its earliest year (null if undated)", () => {
+  const rs = [
+    { "Production Unit": "I", Dating: "1460" },
+    { "Production Unit": "", Dating: "1400-1500" },
+    { "Production Unit": "II", Dating: "" },
+  ];
+  assert.deepEqual(productionUnitsWithDating(rs).map((u) => u.minYear), [1400, null]);
+});
+
+test("listUnits: dating sorts units on their own year; other sorts keep manuscript order", () => {
+  const ms = (key, ...units) => ({
+    key,
+    rows: units.map(([pu, dating]) => ({ "Production Unit": pu, Dating: dating })),
+  });
+  // A's unit III is late; B is undated; C's single unit sits between A's units.
+  const list = [
+    ms("A", ["III", "1500-1600"], ["I", "1200"]),
+    ms("B", ["I", ""]),
+    ms("C", ["I", "1300"]),
+  ];
+  const label = (u) => `${u.ms.key}:${u.run.raw}`;
+  assert.deepEqual(listUnits(list, null, "shelfmark").map(label), ["A:III", "A:I", "B:I", "C:I"]);
+  assert.deepEqual(listUnits(list, null, "dating").map(label), ["A:I", "C:I", "A:III", "B:I"]);
+  // Precomputed runs win over the manuscript's own rows.
+  const pre = new Map([["B", [{ start: 0, end: 0, raw: "I", minYear: 1100 }]]]);
+  assert.equal(label(listUnits(list, pre, "dating")[0]), "B:I");
 });

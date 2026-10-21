@@ -91,3 +91,12 @@ test("relevance sort without an active query falls back to shelfmark order", () 
   s.sort = "relevance";
   assert.deepEqual(selectResults(model(), s).manuscripts.map((ms) => ms.key), ["AM||1", "AM||2"]);
 });
+
+test("units view lists production units; other views leave units empty", () => {
+  const s = makeInitialState();
+  s.view = "units";
+  const res = selectResults(model(), s);
+  assert.deepEqual(res.units.map((u) => u.ms.key), ["AM||1", "AM||2"]); // no PU column: one unit each
+  assert.equal(res.manuscripts.length, 2);
+  assert.deepEqual(selectResults(model(), makeInitialState()).units, []);
+});
