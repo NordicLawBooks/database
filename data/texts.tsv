@@ -1,6 +1,6 @@
-KJE		Kristinréttr Jóns Erkibiskups
-KSS		Kristinréttr Sverris Sigurdarsonar
-KMh		Kristenréttr Magnús konungs
+KJE		Kristinréttr Jóns erkibiskups
+KSS		Kristinréttr Sverris Sigurðarsonar
+KMh		Kristenréttr Magnúss konungs
 KAB		Kristinréttr Árna biskups
 K		Kristinréttr
 K (BorgL-e)		Kristenréttr Borgarþings
@@ -23,24 +23,24 @@ GuL	Kpb	Kjøpsbolk
 GuL	Kvb	Kvinnebolk
 GuL	Løb	Løysingslov
 GuL	Llb	Landsleiebolk
-GuL	Arb	Arvebolk 
+GuL	Arb	Arvebolk
 GuL	Va	Blandet innhold
 GuL	Mhb	Mannhelgebolk
 GuL	Tjb	Tjuvbolk
 GuL	Jsb	Jordskiftebolk
-GuL	Sab	Saktall 
-GuL	Kvr	Kvalretten 
-GuL	Leb	Leidangsbolken 
-GuL	Reb	Rettarbøter 
-GuL	Tfb	Tingfarebolken 
-GuL	Trm	Trygdemålet 
+GuL	Sab	Saktall
+GuL	Kvr	Kvalretten
+GuL	Leb	Leidangsbolken
+GuL	Reb	Rettarbøter
+GuL	Tfb	Tingfarebolken
+GuL	Trm	Trygdemålet
 GuL	Olb	Odelsløysingsbolken
 FrL		Frostatingsloven
 FrL	Intr	Innledning
 FrL	Tfb	Tingfarebolk
 FrL	KrbA	Kristendomsbolk I
 FrL	KrbB	Kristendomsbolk II
-FrL	Mhb	Mannhelgebolk 
+FrL	Mhb	Mannhelgebolk
 FrL	Var	Bolk om ymse emne
 FrL	Sab	Sakøyrebolk
 FrL	Leb	Leidangsbolk
@@ -53,7 +53,7 @@ FrL	LlbA	Landsleiebolk 1
 FrL	LlbB	Landsleiebolk 2 + Tjuvbolk
 FrL	Bvb	Brotsverkbolk
 FrL	R	Retterbøter
-Js		Járnsi∂a
+Js		Járnsíða
 Js	þfb	Þingfararbálkr
 Js	Kdb	Kristindómsbálkr
 Js	Mah	Mannhelgi
@@ -89,32 +89,32 @@ ByL	Tjb	Tjuvbolk
 ByL	Fmb	Farmannsbolk
 ByL	Epi	Epilog
 Jó		Jónsbók
-Jó	þfb	Þingfararbálkr
-Jó	Mah	Mannhelgi 
+Jó	Þfb	Þingfararbálkr
+Jó	Mah	Mannhelgi
 Jó	Kge	Kvenna giptingar með erðum
 Jó	Llb	Landsleigubálkr (with Rekabálkr)
 Jó	Kab	Kaupabálkr
 Jó	Fml	Farmannalög
-Jó	þjb	Þjófabálkr 
+Jó	þjb	Þjófabálkr
 Jó	HT	Um helga trú
 Jó	Lbb	Landsbrigðabálkr
 Jó	Olb	Odelsbolk
 MagBref		Bréf Magnúss konungs
 Sg		Um skatt greizlu
-KF		Kristinréttr hinn Forni
-KN		Kristinréttr hinn Nyi
+KF		Kristinréttr hinn forni
+KN		Kristinréttr hinn nyi
 FrLE		Frostatingsloven den Eldre
 GuLE		Gulatingsloven den Eldre
 Hrðs		Hirðskrá
-RB		Réttarbøtar
-RBHS		Réttarbót Hákonar Sverrissonar
-RBHH		Réttarbøtar Hákon Hákonsson
-RBMH		Réttarbøtar Magnúss Hákonsson
-RBHM		Réttarbøtar Hákon Magnússon
-RBEM		Réttarbøtar Eirik Magnússon
-RBME		Réttarbøtar Magnúss Eiriksson
-RBMV		Margrétar Valdemarsdóttur
-NGL		Norges gamle Love
+RB		Réttarbót
+RBHS		Réttarbót Hákon Sverrisson
+RBHH		Réttarbót Hákon Hákonarson
+RBMH		Réttarbót Magnús Hákonarson
+RBHM		Réttarbót Hákon Magnússon
+RBEM		Réttarbót Eiríkr Magnússon
+RBME		Réttarbót Magnús Eiríksson
+RBMV		Réttarbót Margrét Valdemarsdóttir
+NgL		Norges gamle Love
 MEL		Magnus Erikssons Landslag
 MEL	Kgb	Konungabalken
 MEL	Eb	Edsörebalken
@@ -123,7 +123,7 @@ MEL	Hmb	Högmålsbalken
 MEL	Tb	Tjuvabalken
 MEL	Äb	Ärvdabalken
 MEL	Tmb	Tingmålsbalken
-MEStL		Magnus Erikssons Stadslag 		Magnus Erikssons Gårdsrätt
+MEStL		Magnus Erikssons Stadslag
 MEStL	Bb	Byggningabalken
 MEStL	Kgb	Konungabalken
 MEStL	Eb	Edsörebalken
@@ -142,7 +142,7 @@ UL	Jb	Jordabalken
 UL	Kgb	Konungabalken
 UL	Kkb	Kyrkobalken
 UL	Kmb	Köpmålabalken
-UL	Mb-Manhelgdsbalken	
+UL	Mb	Manhelgdsbalken
 UL	Rb	Rättegångsbalken
 UL	StfBM	Konung Birger Magnussons stadfästelsebrev
 UL	Äb	Ärvdabalken
@@ -243,27 +243,27 @@ KrL	Kgb	Konungabalken
 KrL	Kmb	Köpmålabalken
 KrL	Tb	Tjuvabalken
 KrL	Tmb	Tingmålsbalken
-BS		Bagarnas skrå i Stockholm (c. 1506-10)
-DS		Dragarnas (vindragarnas) skrå i Stockholm (1502 or 1503)
+BS		Bagarnas skrå i Stockholm (c. 1506-1510)
+DS		Dragarnas (vindragarnas) skrå i Stockholm (1502/1503)
 GsS		Guldsmedernas skrå i Stockholm (1501?)
 Grg		Grágás
-Arþ		Arfa þáttr
-Bat		Baugatal
-Feþ		Festa þáttr
-Fjl		Fjárleigur
-Hrs		Hreppaskil
-Klb		Kristinna laga þáttr
-Lbþ		Landbrigða þáttr
-Lbþ	Lrþ	Lögréttuþáttar
-Lbþ	Lsþ	Lögsögumannsþáttar
-Lbþ	Misc	Miscellaneous articles
-Lbþ	Ómb	Ómaga bálkr
-Lbþ	Rsþ	Rannsókna þáttr
-Þsþ		Þingskapaþáttar
-Vl		Vígslóða
+Grg	Arþ	Arfa þáttr
+Grg	Bat	Baugatal
+Grg	Feþ	Festa þáttr
+Grg	Fjl	Fjárleigur
+Grg	Hrs	Hreppaskil
+Grg	Klb	Kristinna laga þáttr
+Grg	Lbþ	Landbrigða þáttr
+Grg	Lrþ	Lögréttuþáttar
+Grg	Lsþ	Lögsögumannsþáttar
+Grg	Misc	Miscellaneous articles
+Grg	Ómb	Ómaga bálkr
+Grg	Rsþ	Rannsókna þáttr
+Grg	Þsþ	Þingskapaþáttar
+Grg	Vl	Vígslóða
 JyL		Jyske lov
 JyL	För	Praefatio
-ESjL		Erik’s Law of Zealand (Dan Eriks sjællandske lov)
+ESjL		Eriks sjællandske lov
 KrSt		Kristoffers Stadslag
 SjKL		Sjællandske kirkelov
 SkL		Skånske lov

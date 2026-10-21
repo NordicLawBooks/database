@@ -52,3 +52,25 @@ test("expandMinorText fallback uses abbreviations.tsv only, never the main-text 
   assert.equal(expandMinorText("K", [], maps), "K");
   assert.equal(expandMinorText("BGO", [], maps), `BGO${EN_DASH}Bergen`);
 });
+
+test("Réttarbót codes resolve from texts.tsv in Minor text, ignoring case, by their leading word", () => {
+  const maps = {
+    abbr: {},
+    main: { RBHM: "Réttarbót Hákon Magnússon", RB: "Réttarbót", Kab: "Kristinréttr Árna biskups" },
+    minor: {},
+  };
+  assert.equal(expandMinorText("RBHM 1305", [], maps), "RBHM – Réttarbót Hákon Magnússon 1305");
+  assert.equal(expandMinorText("RbHM (undated)", [], maps), "RbHM – Réttarbót Hákon Magnússon (undated)");
+  assert.equal(expandMinorText("Rb; RBHM", [], maps), "Rb – Réttarbót; RBHM – Réttarbót Hákon Magnússon");
+  // Other main-text codes still never resolve from Minor text.
+  assert.equal(expandMinorText("Kab ch. 16", [], maps), "Kab ch. 16");
+  // Joined codes and unknown RB codes are left alone.
+  assert.equal(expandMinorText("RBEM&HM 14.5.1290", [], maps), "RBEM&HM 14.5.1290");
+  assert.equal(expandMinorText("RBHK 1300", [], maps), "RBHK 1300");
+});
+
+test("Réttarbót codes in Main text also ignore case", () => {
+  const maps = { abbr: {}, main: { RB: "Réttarbót" }, minor: {} };
+  assert.equal(expandMainText("Rb", maps), "Rb – Réttarbót");
+  assert.equal(expandMainText("RB", maps), "RB – Réttarbót");
+});

@@ -1,4 +1,4 @@
-// List of Abbreviations modal, built from the hand-maintained lookup tables:
+// List of Abbreviations modal, built from the lookup tables:
 // depositories.tsv, texts.tsv (main texts with their sections) and abbreviations.tsv.
 
 import { escapeHtml } from "../util/text.js";
