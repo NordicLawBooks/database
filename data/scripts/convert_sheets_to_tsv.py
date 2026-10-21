@@ -1,9 +1,9 @@
 """Convert NordicLaw Google Sheets tabs to TSV + merges JSON.
 
-Replaces convert_excel_to_tsv.py for a Sheets-first workflow.
 One spreadsheet, four language tabs (Danish / Icelandic / Norwegian / Swedish).
-All post-processing (fill, hyperlinks, link-merge, dedup, normalize) is
-identical to the Excel version; only the data-loading layer changes.
+Raw mode writes the grid as-is plus its merge geometry; the default (filled)
+mode also fills merged cells, resolves hyperlinks, merges links per manuscript,
+dedups and normalizes.
 
 Auth
 ----
@@ -42,7 +42,7 @@ from google.oauth2 import service_account
 from googleapiclient.discovery import build
 
 # ---------------------------------------------------------------------------
-# CONFIG  (mirrors convert_excel_to_tsv.py)
+# CONFIG
 # ---------------------------------------------------------------------------
 
 HEADER_ROWS_IN_SHEET = 6   # rows to skip before data starts (0-based: rows 0-5)
@@ -184,11 +184,11 @@ def sheet_to_dataframe(sheet: dict) -> tuple[pd.DataFrame, list[dict]]:
 
 def merges_to_json(merges: list[dict], df: pd.DataFrame, sheet_id: str, sheet_name: str) -> dict:
     """
-    Convert Sheets API merge ranges to the same JSON format produced by
-    convert_excel_to_tsv.py --export-merges.
+    Convert Sheets API merge ranges to the *_merges.json format read by
+    extract_segments.py and the frontend.
 
     Sheets API uses 0-based, exclusive-end indexing.
-    We translate to 0-based, inclusive-end df row indices (same as the Excel version).
+    We translate to 0-based, inclusive-end df row indices.
     """
     n_cols = len(df.columns)
     out: list[dict] = []
@@ -236,7 +236,7 @@ def merges_to_json(merges: list[dict], df: pd.DataFrame, sheet_id: str, sheet_na
     }
 
 # ---------------------------------------------------------------------------
-# Post-processing  (unchanged from convert_excel_to_tsv.py)
+# Post-processing
 # ---------------------------------------------------------------------------
 
 def fill_merged_cells(df: pd.DataFrame, merges: list[dict]) -> pd.DataFrame:

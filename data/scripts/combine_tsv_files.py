@@ -7,33 +7,21 @@ import csv
 # This script lives in data/scripts; the data folder is one level up.
 data_folder = Path(__file__).resolve().parents[1]
 
-# Each tuple lists candidate filenames in preference order.
-# First match wins: Sheets pipeline output, then Excel pipeline, then legacy _ffill.
-sources = [
-    ("Metadata_Dan.tsv",  "1.0_Metadata_Dan.tsv",  "1.0_Metadata_Dan_ffill.tsv"),
-    ("Metadata_Isl.tsv",  "1.1_Metadata_Isl.tsv",  "1.1_Metadata_Isl_ffill.tsv"),
-    ("Metadata_Norw.tsv", "1.2_Metadata_Norw.tsv", "1.2_Metadata_Norw_ffill.tsv"),
-    ("Metadata_Swe.tsv",  "1.1_Metadata_Swe.tsv",  "1.1_Metadata_Swe_ffill.tsv"),
-]
+# The per-language filled TSVs written by convert_sheets_to_tsv.py.
+sources = ["Metadata_Dan.tsv", "Metadata_Isl.tsv", "Metadata_Norw.tsv", "Metadata_Swe.tsv"]
 
-tsv_files = []
-missing = []
-for candidates in sources:
-    found = next((c for c in candidates if (data_folder / c).exists()), None)
-    if found:
-        tsv_files.append(found)
-    else:
-        missing.append(candidates)
+tsv_files = [f for f in sources if (data_folder / f).exists()]
+missing = [f for f in sources if f not in tsv_files]
 
 if not tsv_files:
     raise FileNotFoundError(
-        f"No TSV files found in {data_folder}. Expected per-language one of: {sources}"
+        f"No TSV files found in {data_folder}. Expected: {sources}"
     )
 
 if missing:
     print("Warning: missing TSV sources for some languages:")
-    for candidates in missing:
-        print(f"  - {' / '.join(candidates)}")
+    for f in missing:
+        print(f"  - {f}")
 
 dfs = []
 for fname in tsv_files:
