@@ -37,7 +37,15 @@ test("visibleColumns: null shows all; an explicit list filters and orders by all
   assert.deepEqual(visibleColumns(all, s), all); // default null
 
   s.columns.table = ["Lines", "Script"]; // out of order -> reordered by `all`
-  assert.deepEqual(visibleColumns(all, s), ["Script", "Lines"]);
+  assert.deepEqual(visibleColumns(all, s), ["Shelf mark", "Script", "Lines"]);
+});
+
+test("visibleColumns: Shelf mark can't be hidden (its link opens the details modal)", () => {
+  const all = ["Depository", "Shelf mark", "Script"];
+  const s = makeInitialState();
+  s.view = "merged";
+  s.columns.merged = ["Script"];
+  assert.deepEqual(visibleColumns(all, s), ["Shelf mark", "Script"]);
 });
 
 test("visibleColumns: never hides everything (empty selection falls back to all)", () => {

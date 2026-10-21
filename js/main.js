@@ -90,12 +90,17 @@ async function main() {
     bindColumnsMenu(refs.columnsMenu, store, allColumns);
   }
 
-  // Text View rows are clickable -> details modal. `currentTextRows` mirrors the
-  // latest rendered result so a click can resolve its record by index.
+  // Details modals open from the Shelfmark link only, so the rest of a row stays
+  // free for selecting text and following external links.
+  // Text View: `currentTextRows` mirrors the latest rendered result so a click can
+  // resolve its record by index.
   let currentTextRows = [];
   if (refs.tableView) {
     refs.tableView.addEventListener("click", (e) => {
-      const tr = e.target.closest && e.target.closest("tr[data-row-idx]");
+      const link = e.target.closest && e.target.closest("a.row-open-details");
+      if (!link) return;
+      e.preventDefault();
+      const tr = link.closest("tr[data-row-idx]");
       if (!tr) return;
       const row = currentTextRows[Number(tr.dataset.rowIdx)];
       if (row) openRowModal(row, allColumns, maps);
@@ -112,7 +117,7 @@ async function main() {
   syncSidebar(sidebarRefs, store.get().ui);
   bindIntro(store, introRefs);
 
-  // Manuscript details modal: load segments lazily, then open on row/shelfmark click.
+  // Manuscript details modal: load segments lazily, then open on a shelfmark click.
   const [segments, depositoryMap, maps] = await Promise.all([
     loadSegments(),
     loadDepositoryMap(),
@@ -138,11 +143,10 @@ async function main() {
   if (refs.mergedView) {
     refs.mergedView.addEventListener("click", (e) => {
       const link = e.target.closest && e.target.closest("a.ms-open-details");
-      if (link) e.preventDefault();
-      const el = e.target.closest && e.target.closest("[data-ms-key]");
-      if (!el) return;
-      const msKey = el.getAttribute("data-ms-key");
-      const sourceId = el.getAttribute("data-source-id");
+      if (!link) return;
+      e.preventDefault();
+      const msKey = link.getAttribute("data-ms-key");
+      const sourceId = link.getAttribute("data-source-id");
       if (!msKey || msKey === "||" || !sourceId) return;
       openManuscriptModal(
         { sourceId, msKey },
