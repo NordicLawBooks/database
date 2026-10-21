@@ -21,9 +21,13 @@
     #intro-body p { margin-bottom: 0.5rem; }
     .abbr-table th { width: 9em; white-space: nowrap; font-weight: 600; }
     .abbr-table tr.abbr-section th { padding-left: 1.5rem; font-weight: 400; }
+    /* --sticky-h (toolbar + result-count row) is measured by js/render/sticky.js; the
+       results fill the window below it, so the page can scroll far enough to stick. */
+    :root { --sticky-h: 101px; }
     #controls { position: sticky; top: 0; z-index: 1000; background: #fff; padding-bottom: 8px; }
+    @media (max-width: 767.98px) { #controls { position: static; } }
     #layout { display: flex; align-items: flex-start; }
-    #facet-sidebar { flex: 0 0 340px; max-height: calc(100vh - 140px); overflow-y: auto; }
+    #facet-sidebar { flex: 0 0 340px; max-height: calc(100vh - var(--sticky-h) - 16px); overflow-y: auto; }
     #facet-resizer {
       flex: 0 0 8px; align-self: stretch; margin: 0 4px; cursor: ew-resize; border-radius: 4px;
       background: linear-gradient(to right, transparent 3px, #ced4da 3px, #ced4da 5px, transparent 5px);
@@ -33,7 +37,7 @@
     body.facets-hidden #facet-sidebar, body.facets-hidden #facet-resizer { display: none; }
     .range-label { font-size: 0.75rem; text-transform: uppercase; }
     #results { flex: 1 1 auto; min-width: 0; }
-    .table-responsive { max-height: calc(100vh - 180px); overflow: auto; }
+    .table-responsive { max-height: calc(100vh - var(--sticky-h) - 16px); overflow: auto; }
     .facet-count { font-size: 0.85em; }
     .facet-zero { opacity: 0.45; }
     .accordion-button { padding: 0.5rem 0.75rem; }
