@@ -53,9 +53,10 @@ export function applyMergeAwareFillDown(rows, mergesJson) {
  * Build a rowspan/colspan lookup for one manuscript's rows, mapped onto the
  * visible-column grid. Only merges fully contained within these rows are kept.
  *
- * @returns {{topLeft: Map<string,{rowSpan,colSpan}>, covered: Set<string>, columns: string[]}|null}
+ * @returns {{topLeft: Map<string,{rowSpan,colSpan,row}>, covered: Set<string>, columns: string[]}|null}
  *   Keyed by "localRow,visibleCol". `topLeft` marks the cell to render with a
- *   span; `covered` marks cells to skip. null when there is no merge data.
+ *   span (`row` is the local row holding its value); `covered` marks cells to
+ *   skip. null when there is no merge data.
  */
 export function buildLocalMergeLookup(rawRows, mergesJson, columnsFull, columnsVisible) {
   if (!mergesJson || !Array.isArray(mergesJson.merges)) return null;
@@ -107,7 +108,7 @@ export function buildLocalMergeLookup(rawRows, mergesJson, columnsFull, columnsV
     if (rowSpan <= 1 && colSpan <= 1) continue;
 
     const tlKey = `${minRow},${minCol}`;
-    topLeft.set(tlKey, { rowSpan, colSpan });
+    topLeft.set(tlKey, { rowSpan, colSpan, row: minRow });
     for (let r = minRow; r <= maxRow; r++) {
       for (let c = minCol; c <= maxCol; c++) {
         const k = `${r},${c}`;
@@ -117,4 +118,30 @@ export function buildLocalMergeLookup(rawRows, mergesJson, columnsFull, columnsV
   }
 
   return { topLeft, covered, columns: visible };
+}
+
+/**
+ * Restrict a lookup from buildLocalMergeLookup to rows start..end (inclusive),
+ * re-keyed to rows local to that range. A merge that crosses the range edge is
+ * cut at it; the piece below the edge keeps `row` pointing at the merge's
+ * original top row (outside the range), since that is where the value lives.
+ */
+export function clipMergeLookup(lookup, start, end) {
+  const topLeft = new Map();
+  const covered = new Set();
+  for (const [key, span] of lookup.topLeft) {
+    const [r, c] = key.split(",").map(Number);
+    const top = Math.max(r, start);
+    const bottom = Math.min(r + span.rowSpan - 1, end);
+    if (top > bottom) continue;
+    const tlKey = `${top - start},${c}`;
+    topLeft.set(tlKey, { rowSpan: bottom - top + 1, colSpan: span.colSpan, row: span.row });
+    for (let rr = top; rr <= bottom; rr++) {
+      for (let cc = c; cc < c + span.colSpan; cc++) {
+        const k = `${rr - start},${cc}`;
+        if (k !== tlKey) covered.add(k);
+      }
+    }
+  }
+  return { topLeft, covered, columns: lookup.columns };
 }

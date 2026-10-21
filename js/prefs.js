@@ -5,7 +5,7 @@
 import { DEFAULT_SORT, defaultSortFor } from "./config.js";
 
 const KEY = "nordiclaw.prefs";
-const VIEWS = new Set(["merged", "table"]);
+const VIEWS = new Set(["merged", "units", "table"]);
 const SORTS = new Set(["shelfmark", "dating"]); // "relevance" only makes sense with a query
 
 // Keys written by the legacy app (table.js), read once if no new prefs exist yet.

@@ -3,7 +3,7 @@
 
 import { SOURCES } from "./manifest.js";
 import { loadDepositoryMap } from "./lookups.js";
-import { buildModel, enrichRow } from "../model/manuscript.js";
+import { buildModel, enrichRow, productionUnitsWithDating } from "../model/manuscript.js";
 import { normalizeLeavesPages, normalizeGatherings, normalizeScribe } from "../model/fields.js";
 import { normalizeForCompare } from "../util/text.js";
 import { applyMergeAwareFillDown } from "../render/merge-geometry.js";
@@ -202,7 +202,8 @@ function mergeLinksPerManuscript(rows) {
 export function assembleModel(raw) {
   const headers = raw.headers;
   const filled = [];
-  for (const [, block] of raw.rawByKey) {
+  const unitsByKey = new Map();
+  for (const [key, block] of raw.rawByKey) {
     // Clone (drop internal keys but keep __sourceRowIndex for fill-down).
     const clone = block.rows.map((r) => {
       const o = {};
@@ -211,6 +212,8 @@ export function assembleModel(raw) {
       return o;
     });
     applyMergeAwareFillDown(clone, raw.mergesBySource.get(block.sourceId));
+    // Clone indices match block.rows, so these runs index the raw rows too.
+    unitsByKey.set(key, productionUnitsWithDating(clone));
     for (const r of clone) {
       delete r.__sourceRowIndex;
       for (const k of Object.keys(r)) if (r[k] === "Unavailable") r[k] = "";
@@ -230,6 +233,7 @@ export function assembleModel(raw) {
   model.headers = headers;
   model.rawByKey = raw.rawByKey;
   model.mergesBySource = raw.mergesBySource;
+  model.unitsByKey = unitsByKey;
   return model;
 }
 

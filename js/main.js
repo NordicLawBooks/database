@@ -15,6 +15,7 @@ import { selectResults } from "./filter/pipeline.js";
 import { buildFacetSidebar, syncFacetSidebar, bindFacetEvents } from "./facets/render.js";
 import { renderTextTable, displayColumns } from "./render/text-table.js";
 import { renderManuscriptView } from "./render/manuscript-view.js";
+import { renderUnitView } from "./render/unit-view.js";
 import { refreezeOnResize } from "./render/frozen-columns.js";
 import { bindSidebar, syncSidebar } from "./render/sidebar.js";
 import { buildColumnsMenu, syncColumnsMenu, bindColumnsMenu, visibleColumns } from "./render/columns.js";
@@ -162,7 +163,10 @@ async function main() {
       currentTextRows = result.rows;
       pageInfo = renderTextTable(refs.tableView, result.rows, state, cols, maps);
     } else if (refs.mergedView) {
-      pageInfo = renderManuscriptView(refs.mergedView, result.manuscripts, state, {
+      // Both grouped views render into the same container (and share its click handler).
+      const render = state.view === "units" ? renderUnitView : renderManuscriptView;
+      const items = state.view === "units" ? result.units : result.manuscripts;
+      pageInfo = render(refs.mergedView, items, state, {
         columns: cols,
         columnsFull: allColumns,
         rawByKey: model.rawByKey,

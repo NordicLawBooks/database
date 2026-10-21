@@ -99,7 +99,8 @@ export function renderControls(refs, state, result, pageInfo) {
   }
 
   if (refs.pager) {
-    const label = pagerLabel(pageInfo, state.view === "table" ? "texts" : "manuscripts");
+    const unit = { table: "texts", units: "production units" }[state.view] || "manuscripts";
+    const label = pagerLabel(pageInfo, unit);
     if (pageInfo && pageInfo.totalPages > 1) {
       refs.pager.dataset.totalPages = String(pageInfo.totalPages);
       const { page, totalPages } = pageInfo;

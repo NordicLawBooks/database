@@ -15,8 +15,8 @@ import {
   DEFAULT_PAGE_SIZE,
 } from "./config.js";
 
-const VIEW_TO_CODE = { merged: "m", table: "t" };
-const CODE_TO_VIEW = { m: "merged", t: "table" };
+const VIEW_TO_CODE = { merged: "m", units: "u", table: "t" };
+const CODE_TO_VIEW = { m: "merged", u: "units", t: "table" };
 
 const facetUrlKey = (field) => "f." + (URL_ALIASES[field] || field);
 const rangeUrlKey = (field) => field.toLowerCase(); // "Dating" -> "dating", "Lines" -> "lines"

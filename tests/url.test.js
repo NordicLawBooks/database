@@ -74,6 +74,13 @@ test("decoding is tolerant of unknown keys and junk", () => {
   assert.equal(d.view, "merged"); // unknown code -> default
 });
 
+test("Production Unit View encodes as v=u and round-trips", () => {
+  const s = makeInitialState();
+  s.view = "units";
+  assert.equal(encodeState(s), "?v=u");
+  assert.equal(decodeState("?v=u").view, "units");
+});
+
 test("accepts a location-like object with .search", () => {
   assert.equal(decodeState({ search: "?q=loc" }).query, "loc");
 });

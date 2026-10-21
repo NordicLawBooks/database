@@ -6,15 +6,15 @@
 
 import { escapeHtml, normalizeForCompare } from "../util/text.js";
 import { normalizeLeavesPages } from "../model/fields.js";
-import { aggregateFieldValues, allFieldValuesEmpty, getConstantFields, getEffectiveValue } from "../model/manuscript.js";
+import { aggregateFieldValues, allFieldValuesEmpty, getConstantFields, getEffectiveValue, productionUnitRuns } from "../model/manuscript.js";
 import { expandMainText, expandMinorText, mainCandidatesFrom } from "../model/expand.js";
 import { buildLocalMergeLookup } from "./merge-geometry.js";
 import { freezeColumns } from "./frozen-columns.js";
 import { renderLinksHtml } from "./links.js";
 import { columnTitle as colTitle } from "../config.js";
 
-
-function renderCell(field, value, ctx) {
+/** Cell HTML for the grouped views (Manuscript + Production Unit). */
+export function renderCell(field, value, ctx) {
   const v = normalizeForCompare(value);
   if (!v) return "&nbsp;";
   if (field === "Shelf mark") {
@@ -34,18 +34,24 @@ function renderCell(field, value, ctx) {
   return escapeHtml(v);
 }
 
+/** The current page of `items` per state.page/pageSize, with the clamped page number. */
+export function paginate(items, state) {
+  const total = items.length;
+  const pageSize = state.pageSize === "all" ? Infinity : state.pageSize;
+  const totalPages = Number.isFinite(pageSize) ? Math.max(1, Math.ceil(total / pageSize)) : 1;
+  const page = Math.min(Math.max(1, state.page || 1), totalPages);
+  const start = Number.isFinite(pageSize) ? (page - 1) * pageSize : 0;
+  const pageItems = Number.isFinite(pageSize) ? items.slice(start, start + pageSize) : items;
+  return { total, totalPages, page, pageItems };
+}
+
 /**
  * Render the paginated Manuscript View into `host`.
  * @returns {{page:number, totalPages:number, total:number, shown:number}}
  */
 export function renderManuscriptView(host, manuscripts, state, opts) {
   const { columns, columnsFull, rawByKey, mergesBySource, maps = null } = opts;
-  const total = manuscripts.length;
-  const pageSize = state.pageSize === "all" ? Infinity : state.pageSize;
-  const totalPages = Number.isFinite(pageSize) ? Math.max(1, Math.ceil(total / pageSize)) : 1;
-  const page = Math.min(Math.max(1, state.page || 1), totalPages);
-  const start = Number.isFinite(pageSize) ? (page - 1) * pageSize : 0;
-  const pageItems = Number.isFinite(pageSize) ? manuscripts.slice(start, start + pageSize) : manuscripts;
+  const { total, totalPages, page, pageItems } = paginate(manuscripts, state);
 
   if (total === 0) {
     host.innerHTML = `<div class="text-secondary p-3">No matching manuscripts.</div>`;
@@ -72,24 +78,9 @@ export function renderManuscriptView(host, manuscripts, state, opts) {
     const msConst = mergeLookup ? null : getConstantFields(msRows, columns, ["Production Unit"]);
 
     // Contiguous Production Unit runs (for striping + rowspan).
-    const runs = [];
+    const runs = productionUnitRuns(msRows);
     const rowToRun = new Array(msRowCount);
-    let lastPU = "";
-    let runStart = 0;
-    let runIndex = 0;
-    for (let i = 0; i < msRowCount; i++) {
-      const pu = normalizeForCompare(msRows[i]["Production Unit"]) || lastPU;
-      if (i === 0) {
-        lastPU = pu;
-      } else if (pu !== lastPU) {
-        runs.push({ start: runStart, end: i - 1, index: runIndex });
-        runIndex += 1;
-        runStart = i;
-        lastPU = pu;
-      }
-      rowToRun[i] = runIndex;
-    }
-    runs.push({ start: runStart, end: msRowCount - 1, index: runIndex });
+    runs.forEach((r, i) => rowToRun.fill(i, r.start, r.end + 1));
 
     const runConstByStart = new Map();
     if (!mergeLookup) {
