@@ -31,6 +31,7 @@ export const columnTitle = (field) => COLUMN_TITLE_OVERRIDES[field] || field;
 export const FACET_DEFS = [
   { field: "Language", type: "term" },
   { field: "Depository", type: "term", emptyOption: true },
+  { field: "Shelf mark", type: "term", label: "Shelfmark", searchable: true },
   { field: "Object", type: "term", emptyOption: true },
   { field: "Material", type: "term", emptyOption: true },
   { field: "Size", type: "term", emptyOption: true },
@@ -153,4 +154,5 @@ export const URL_ALIASES = {
   "Main text group": "mtg",
   "Main text group-variant": "mtgv",
   "Production units": "pu",
+  "Shelf mark": "sm",
 };
