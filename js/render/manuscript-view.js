@@ -12,6 +12,14 @@ import { buildLocalMergeLookup } from "./merge-geometry.js";
 import { freezeColumns } from "./frozen-columns.js";
 import { renderLinksHtml } from "./links.js";
 import { columnTitle as colTitle } from "../config.js";
+import { parseCollation } from "../model/collation.js";
+
+// Gatherings formula → can it be drawn? Memoized: cells re-render on every state change.
+const drawable = new Map();
+function hasCollation(formula) {
+  if (!drawable.has(formula)) drawable.set(formula, parseCollation(formula) !== null);
+  return drawable.get(formula);
+}
 
 /** Cell HTML for the grouped views (Manuscript + Production Unit). */
 export function renderCell(field, value, ctx) {
@@ -26,6 +34,11 @@ export function renderCell(field, value, ctx) {
   }
   if (field === "Links to Database") return renderLinksHtml(v) || "&nbsp;";
   if (field === "Leaves/Pages") return escapeHtml(normalizeLeavesPages(v));
+  if (field === "Gatherings" && hasCollation(v)) {
+    // main.js opens the diagram from the formula in .cd-formula
+    return `<span class="cd-formula">${escapeHtml(v)}</span>` +
+      '<button type="button" class="btn btn-link btn-sm p-0 d-block text-start text-nowrap collation-open">Collation diagram</button>';
+  }
   if (field === "Main text" && ctx.maps) return escapeHtml(expandMainText(v, ctx.maps));
   if (field === "Minor text" && ctx.maps) {
     const mainCtx = getEffectiveValue(ctx.msRows, ctx.rowIndex, "Main text");

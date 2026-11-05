@@ -9,6 +9,8 @@ import { loadSegments } from "./data/segments.js";
 import { loadDepositoryMap, loadExpansionMaps } from "./data/lookups.js";
 import { openManuscriptModal } from "./render/ms-modal.js";
 import { openRowModal } from "./render/row-modal.js";
+import { openCollationModal } from "./render/collation-modal.js";
+import { parseCollation } from "./model/collation.js";
 import { exportManuscriptPdf, exportRowDetailsPdf } from "./pdf/export.js";
 import { computeCounts, rangeExtent } from "./facets/engine.js";
 import { selectResults } from "./filter/pipeline.js";
@@ -142,6 +144,11 @@ async function main() {
   refreezeOnResize(document);
   if (refs.mergedView) {
     refs.mergedView.addEventListener("click", (e) => {
+      const diagramBtn = e.target.closest && e.target.closest("button.collation-open");
+      if (diagramBtn) {
+        openDiagramFor(diagramBtn);
+        return;
+      }
       const link = e.target.closest && e.target.closest("a.ms-open-details");
       if (!link) return;
       e.preventDefault();
@@ -153,6 +160,20 @@ async function main() {
         { indexBySource: segments.indexBySource, depositoryMap, rawByKey: model.rawByKey, maps }
       );
     });
+  }
+
+  // Collation diagram for the Gatherings cell the button sits in.
+  function openDiagramFor(btn) {
+    const formula = btn.parentElement && btn.parentElement.querySelector(".cd-formula");
+    const collation = formula ? parseCollation(formula.textContent) : null;
+    if (!collation) return;
+    const tr = btn.closest("tr[data-ms-key]");
+    const block = tr ? model.rawByKey.get(tr.getAttribute("data-ms-key")) : null;
+    const first = block && block.rows && block.rows[0] ? block.rows[0] : {};
+    const depRaw = String(first["Depository"] || "").trim();
+    const dep = (depositoryMap && depositoryMap[depRaw]) || depRaw;
+    const shelfmark = String(first["Shelf mark"] || "").trim();
+    openCollationModal(collation, [dep, shelfmark].filter(Boolean).join(" — "));
   }
 
   const pdfBtn = document.getElementById("download-ms-pdf-btn");
