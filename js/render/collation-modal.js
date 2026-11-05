@@ -38,13 +38,31 @@ export function buildCollationHtml(collation) {
   );
 }
 
-/** Fill and show the collation modal. */
-export function openCollationModal(collation, title) {
+/**
+ * Fill and show the collation modal. With `returnTo` (an open modal), that
+ * modal is hidden first and shown again, at the same scroll position, when the
+ * diagram closes. Bootstrap does not support stacked modals: the lower modal's
+ * focus trap pulls focus back, so Escape would close the wrong one.
+ */
+export function openCollationModal(collation, title, returnTo = null) {
   const modalEl = document.getElementById("collationModal");
   const bs = typeof window !== "undefined" ? window.bootstrap : null;
   if (!modalEl || !collation || !bs || !bs.Modal) return;
   const titleEl = document.getElementById("collationModalLabel");
   if (titleEl) titleEl.textContent = title ? `Collation diagram — ${title}` : "Collation diagram";
   modalEl.querySelector(".modal-body").innerHTML = buildCollationHtml(collation);
-  bs.Modal.getOrCreateInstance(modalEl).show();
+  const show = () => bs.Modal.getOrCreateInstance(modalEl).show();
+
+  if (!returnTo || !returnTo.classList.contains("show")) {
+    show();
+    return;
+  }
+  const body = returnTo.querySelector(".modal-body");
+  const scrollTop = body ? body.scrollTop : 0;
+  returnTo.addEventListener("hidden.bs.modal", show, { once: true });
+  modalEl.addEventListener("hidden.bs.modal", () => {
+    returnTo.addEventListener("shown.bs.modal", () => { if (body) body.scrollTop = scrollTop; }, { once: true });
+    bs.Modal.getOrCreateInstance(returnTo).show();
+  }, { once: true });
+  bs.Modal.getOrCreateInstance(returnTo).hide();
 }
