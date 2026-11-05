@@ -10,6 +10,8 @@ import { renderLinksHtml } from "./links.js";
 import { LANGUAGE_MAP } from "../model/fields.js";
 import { sourceById } from "../data/manifest.js";
 import { columnTitle as colTitle } from "../config.js";
+import { collationForManuscript } from "../model/collation.js";
+import { openCollationModal } from "./collation-modal.js";
 
 
 const CONTENT_COLS = ["Main text", "Minor text"];
@@ -115,7 +117,11 @@ function renderColumnBlock(ms, col, ctx) {
     })
     .join("");
 
-  return `<div class="mb-3"><div class="fw-bold">${escapeHtml(colTitle(col))}</div>${items}</div>`;
+  // Outside the .d-flex/.mb-1 rows, so the PDF export (pdf/export.js) skips it.
+  const diagram = col === "Gatherings" && ctx && ctx.collation
+    ? '<div class="mt-1"><button type="button" class="btn btn-outline-secondary btn-sm collation-open">Collation diagram</button></div>'
+    : "";
+  return `<div class="mb-3"><div class="fw-bold">${escapeHtml(colTitle(col))}</div>${items}${diagram}</div>`;
 }
 
 function renderColumns(ms, cols, ctx) {
@@ -129,6 +135,7 @@ function section(title, bodyHtml) {
 
 /** Build the modal body HTML for a segments-manuscript object. */
 export function buildManuscriptModalHtml(ms, ctx) {
+  if (ctx.collation === undefined) ctx = { ...ctx, collation: collationForManuscript(ms) };
   const shelfmark = ms && ms.Shelfmark ? String(ms.Shelfmark) : "";
   const depository = expandDepositoryLabel(ms && ms.Depository ? String(ms.Depository) : "", ctx.depositoryMap);
 
@@ -190,7 +197,14 @@ export function openManuscriptModal(target, deps) {
   const dep = expandDepositoryLabel(ms.Depository ? String(ms.Depository) : "", depositoryMap);
   if (titleEl) titleEl.textContent = dep && shelfmark ? `${dep} — ${shelfmark}` : "Manuscript";
 
-  contentDiv.innerHTML = buildManuscriptModalHtml(ms, { msKey, sourceId, rawByKey, depositoryMap, maps });
+  // The whole manuscript: all its Gatherings segments, in order.
+  const collation = collationForManuscript(ms);
+  contentDiv.innerHTML = buildManuscriptModalHtml(ms, { msKey, sourceId, rawByKey, depositoryMap, maps, collation });
+  const diagramBtn = contentDiv.querySelector("button.collation-open");
+  if (diagramBtn) {
+    diagramBtn.addEventListener("click", () =>
+      openCollationModal(collation, titleEl ? titleEl.textContent : shelfmark, modalEl));
+  }
   // Filename for the PDF export: {Depository}_{Shelfmark}.pdf, filesystem-safe.
   const safe = (s) => String(s || "").replace(/[\\/:*?"<>|]+/g, "-").replace(/\s+/g, " ").trim();
   modalEl.dataset.filename = `${safe(dep)}_${safe(shelfmark)}.pdf`;

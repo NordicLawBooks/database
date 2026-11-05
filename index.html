@@ -92,6 +92,23 @@
       content: ""; position: absolute; top: 0; bottom: 0; right: -1px; width: 2px;
       background: rgba(0,0,0,0.12); pointer-events: none;
     }
+    /* Collation diagram modal (js/render/collation-modal.js) */
+    #collationModal {
+      --cd-band: var(--bs-tertiary-bg, #f8f9fa); --cd-border: var(--bs-border-color, #dee2e6);
+      --cd-leaf: #526c91; --cd-single: #b0652f; --cd-text: var(--bs-secondary-color, #6c757d);
+    }
+    .cd-grid { display: flex; flex-wrap: wrap; gap: 1rem; align-items: flex-start; }
+    .cd-fig { margin: 0; width: min-content; }
+    .cd-fig figcaption { font-size: 0.75rem; line-height: 1.3; color: var(--cd-text); min-width: 9rem; margin-top: 0.2rem; }
+    .cd-quire, .cd-legend { display: block; overflow: visible; }
+    .cd-legend { display: inline-block; vertical-align: middle; margin-right: 0.25rem; }
+    .cd-band { fill: var(--cd-band); stroke: var(--cd-border); }
+    .cd-leaf, .cd-single { fill: none; stroke-width: 2; stroke-linecap: round; }
+    .cd-leaf { stroke: var(--cd-leaf); }
+    .cd-single { stroke: var(--cd-single); }
+    .cd-quire text { font-family: var(--bs-body-font-family); }
+    .cd-label { font-weight: 600; font-size: 15px; fill: var(--bs-body-color, #212529); }
+    .cd-count, .cd-folio { font-size: 12px; fill: var(--cd-text); }
   </style>
 </head>
 <body>
@@ -210,6 +227,22 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">Loading…</div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Collation diagram modal (js/render/collation-modal.js), opened from Gatherings cells and the details modal -->
+  <div class="modal fade" id="collationModal" tabindex="-1" aria-labelledby="collationModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="collationModalLabel">Collation diagram</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body"></div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         </div>
