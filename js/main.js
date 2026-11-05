@@ -173,7 +173,9 @@ async function main() {
     const depRaw = String(first["Depository"] || "").trim();
     const dep = (depositoryMap && depositoryMap[depRaw]) || depRaw;
     const shelfmark = String(first["Shelf mark"] || "").trim();
-    openCollationModal(collation, [dep, shelfmark].filter(Boolean).join(" — "));
+    const units = btn.getAttribute("data-unit") || "";
+    const unitLabel = units ? `${units.includes(",") ? "Units" : "Unit"} ${units}` : "";
+    openCollationModal(collation, [dep, shelfmark, unitLabel].filter(Boolean).join(" — "));
   }
 
   const pdfBtn = document.getElementById("download-ms-pdf-btn");

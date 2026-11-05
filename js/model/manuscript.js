@@ -6,6 +6,7 @@
 // resolve them consistently.
 
 import { normalizeForCompare } from "../util/text.js";
+import { romanToInt } from "./collation.js";
 import {
   parseDatingRange,
   parseCentury,
@@ -224,6 +225,23 @@ export function getEffectiveValue(rows, rowIndex, field) {
     if (v) return v;
   }
   return "";
+}
+
+/**
+ * Production Units of the rows whose (merged) `field` holds `value`, in numeric order:
+ * the units a merged cell covers. ["II"], ["I", "II"], or [] when unknown.
+ */
+export function unitsWithValue(rows, field, value) {
+  const want = normalizeForCompare(value);
+  const units = [];
+  if (!want || !Array.isArray(rows)) return units;
+  rows.forEach((_r, i) => {
+    if (getEffectiveValue(rows, i, field) !== want) return;
+    for (const u of parseProductionUnitsCell(getEffectiveValue(rows, i, "Production Unit"))) {
+      if (!units.includes(u)) units.push(u);
+    }
+  });
+  return units.sort((a, b) => (romanToInt(a) || 0) - (romanToInt(b) || 0));
 }
 
 /** True when `field` is empty for every row. */

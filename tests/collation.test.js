@@ -4,6 +4,7 @@ import { parseCollation, collationForManuscript, romanToInt } from "../js/model/
 import { quireSvg, quireSummary } from "../js/render/collation-svg.js";
 import { buildCollationHtml } from "../js/render/collation-modal.js";
 import { renderCell } from "../js/render/manuscript-view.js";
+import { buildManuscriptModalHtml } from "../js/render/ms-modal.js";
 
 const folios = (q) => q.leaves.map((l) => l.folio);
 const conjoins = (q) => q.leaves.map((l) => l.conjoin);
@@ -117,5 +118,25 @@ test("Gatherings cells get a diagram button only for a readable formula", () => 
   assert.match(yes, /class="cd-formula">I:8 \(4b, ff\. 1-8\)<\/span>/);
   assert.match(yes, /collation-open/);
   assert.doesNotMatch(renderCell("Gatherings", "Unknown", ctx), /collation-open/);
+  // data-unit: the units whose rows carry this formula (merged cells are blank below)
+  const msRows = [
+    { "Production Unit": "I", Gatherings: "I:8 (4b, ff. 1-8)" },
+    { "Production Unit": "", Gatherings: "" },
+    { "Production Unit": "II", Gatherings: "II:8 (4b, ff. 9-16)" },
+    { "Production Unit": "III", Gatherings: "" },
+  ];
+  assert.match(renderCell("Gatherings", "I:8 (4b, ff. 1-8)", { ...ctx, msRows }), /data-unit="I"/);
+  assert.match(renderCell("Gatherings", "II:8 (4b, ff. 9-16)", { ...ctx, msRows }), /data-unit="II, III"/);
+  assert.match(yes, /data-unit=""/);
+  const reversed = [{ "Production Unit": "II", Gatherings: "I:8 (4b)" }, { "Production Unit": "I", Gatherings: "" }];
+  assert.match(renderCell("Gatherings", "I:8 (4b)", { ...ctx, msRows: reversed }), /data-unit="I, II"/);
   assert.doesNotMatch(renderCell("Script", "I:8 (4b, ff. 1-8)", ctx), /collation-open/);
+});
+
+test("the details modal shows the button only for a readable formula", () => {
+  const ctx = { msKey: "A||1", rawByKey: new Map(), depositoryMap: {} };
+  const withF = buildManuscriptModalHtml({ segmentsByColumn: { Gatherings: [{ label: "I:8 (4b, ff. 1-8)" }] } }, ctx);
+  assert.match(withF, /collation-open/);
+  const without = buildManuscriptModalHtml({ segmentsByColumn: { Gatherings: [{ label: "Unknown" }] } }, ctx);
+  assert.doesNotMatch(without, /collation-open/);
 });
