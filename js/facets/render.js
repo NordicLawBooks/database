@@ -47,6 +47,36 @@ export function groupSearchVisibility(group, variants, query) {
   return { group: groupHit || vars.some(Boolean), variants: vars };
 }
 
+/** Facet option orders, in the order the sort menu lists them. The first is the default. */
+export const FACET_SORTS = [
+  { id: "alpha-asc", label: "A–Z" },
+  { id: "alpha-desc", label: "Z–A" },
+  { id: "count-desc", label: "Most hits" },
+  { id: "count-asc", label: "Fewest hits" },
+];
+export const DEFAULT_FACET_SORT = FACET_SORTS[0].id;
+const SORT_IDS = new Set(FACET_SORTS.map((s) => s.id));
+
+/** A facet's sort mode from state.ui.facetSort, falling back to the default. */
+export function facetSortMode(ui, field) {
+  const mode = ui && ui.facetSort && ui.facetSort[field];
+  return SORT_IDS.has(mode) ? mode : DEFAULT_FACET_SORT;
+}
+
+/**
+ * Comparator for options `{label, count}` under a sort mode. Hit sorts break ties
+ * A–Z, so equal counts keep a stable, readable order.
+ */
+export function facetOptionComparator(mode) {
+  const alpha = (a, b) => compareValues(a.label, b.label);
+  switch (mode) {
+    case "alpha-desc": return (a, b) => alpha(b, a);
+    case "count-desc": return (a, b) => b.count - a.count || alpha(a, b);
+    case "count-asc": return (a, b) => a.count - b.count || alpha(a, b);
+    default: return alpha;
+  }
+}
+
 /** Derive the stable option universe for each facet from unfiltered counts. */
 function optionUniverse(counts) {
   const u = {};
@@ -117,6 +147,18 @@ function mainTextLabel(code, maps) {
   return maps && maps.main && maps.main[code] ? formatAbbrExpansion(maps, code) : code;
 }
 
+function sortSelect(field) {
+  const f = escapeHtml(field);
+  const opts = FACET_SORTS.map((o) => `<option value="${o.id}">${escapeHtml(o.label)}</option>`).join("");
+  return (
+    `<div class="d-flex align-items-center gap-2 mb-1">` +
+    `<label class="small text-secondary mb-0" for="facetSort_${toDomIdToken(field)}">Sort</label>` +
+    `<select class="form-select form-select-sm w-auto" id="facetSort_${toDomIdToken(field)}" ` +
+    `data-facet-sort="${f}" aria-label="Sort ${f} options">${opts}</select>` +
+    `</div>`
+  );
+}
+
 function optionSearch(field, label) {
   const f = escapeHtml(field);
   return (
@@ -157,11 +199,43 @@ function bodyHtml(def, universe, { maps, extents }) {
     html += `<div class="small text-secondary mb-1">Text values</div>`;
   }
   if (def.searchable) html += optionSearch(def.field, def.label || def.field);
+  html += sortSelect(def.field);
   html += allCheckbox(def.field);
-  html += def.searchable
-    ? `<div data-option-list="${escapeHtml(def.field)}" style="max-height: 320px; overflow: auto;">${options}</div>`
-    : options;
+  const scroll = def.searchable ? ` style="max-height: 320px; overflow: auto;"` : "";
+  html += `<div data-option-list="${escapeHtml(def.field)}"${scroll}>${options}</div>`;
   return html;
+}
+
+/** Reorder `parent`'s children to `order` (element list), touching the DOM only if it differs. */
+function reorderChildren(parent, order) {
+  const cur = parent.children;
+  if (order.length === cur.length && order.every((el, i) => cur[i] === el)) return;
+  for (const el of order) parent.appendChild(el);
+}
+
+/** Order a facet's options (and a hierarchical facet's variants within each group) by `mode`. */
+function applyOptionSort(host, field, counts, mode) {
+  const list = host.querySelector(`[data-option-list="${CSS.escape(field)}"]`);
+  if (!list) return;
+  const cmp = facetOptionComparator(mode);
+  // Each element's first .form-check carries the label and the checkbox to count.
+  const ordered = (els) =>
+    els
+      .map((el) => {
+        const row = el.matches(".form-check") ? el : el.querySelector(".form-check");
+        const cb = row.querySelector("input[data-facet-field]");
+        const c = counts[cb.dataset.facetField];
+        return { el, label: row.dataset.optionLabel, count: (c && c.counts.get(cb.dataset.facetValue)) || 0 };
+      })
+      .sort(cmp)
+      .map((i) => i.el);
+  const groups = [...list.querySelectorAll(":scope > [data-option-group]")];
+  for (const g of groups) {
+    // A group's own row stays first; its variants follow in sorted order.
+    const vars = [...g.querySelectorAll(":scope > [data-option-variant]")];
+    reorderChildren(g, [g.firstElementChild, ...ordered(vars)]);
+  }
+  reorderChildren(list, ordered(groups.length ? groups : [...list.children]));
 }
 
 /** Show options matching the facet's search box (checked ones always stay visible). */
@@ -245,6 +319,12 @@ export function syncFacetSidebar(host, state, counts) {
     const v = state.ranges[rangeField] ? state.ranges[rangeField][rangeBound] : null;
     input.value = v == null ? "" : String(v);
   }
+  for (const sel of host.querySelectorAll("select[data-facet-sort]")) {
+    const field = sel.dataset.facetSort;
+    const mode = facetSortMode(state.ui, field);
+    if (sel.value !== mode) sel.value = mode;
+    applyOptionSort(host, field, counts, mode);
+  }
   for (const def of FACET_DEFS) if (def.searchable) applyOptionSearch(host, def.field);
 }
 
@@ -264,6 +344,13 @@ export function bindFacetEvents(host, store) {
 
   host.addEventListener("change", (e) => {
     const t = e.target;
+    if (t.matches("select[data-facet-sort]")) {
+      // Device pref (state.ui), like the sidebar width: no URL or history entry.
+      const ui = store.get().ui;
+      const facetSort = { ...(ui.facetSort || {}), [t.dataset.facetSort]: t.value };
+      store.set({ ui: { ...ui, facetSort } }, { history: "silent" });
+      return;
+    }
     if (t.matches("input[type=checkbox][data-facet-all]")) {
       const field = t.dataset.facetAll;
       const state = store.get();
