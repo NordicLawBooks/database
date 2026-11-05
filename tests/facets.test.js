@@ -9,7 +9,15 @@ import {
 } from "../js/facets/engine.js";
 import { FACET_DEFS } from "../js/config.js";
 import { makeInitialState } from "../js/store.js";
-import { isFacetUnfiltered, clearFacetSelection, matchesOptionSearch, groupSearchVisibility } from "../js/facets/render.js";
+import {
+  isFacetUnfiltered,
+  clearFacetSelection,
+  matchesOptionSearch,
+  groupSearchVisibility,
+  facetSortMode,
+  facetOptionComparator,
+  DEFAULT_FACET_SORT,
+} from "../js/facets/render.js";
 
 // MS "AM||1": r1 Gothic/Code(E)/Prayer;Charm/1300/20, r2 Caroline/Code(W)/Note/1350/variable
 // MS "AM||2": r3 Gothic/Other/-/1450/25
@@ -187,4 +195,25 @@ test("groupSearchVisibility: group hit shows all variants; variant hit shows its
   const checkedVar = [{ label: "Other", checked: true }];
   assert.deepEqual(groupSearchVisibility(g, checkedVar, "zzz"), { group: true, variants: [true] });
   assert.deepEqual(groupSearchVisibility(g, vars, ""), { group: true, variants: [true, true] });
+});
+
+test("facetSortMode falls back to A–Z for unknown or missing modes", () => {
+  assert.equal(facetSortMode({}, "Script"), DEFAULT_FACET_SORT);
+  assert.equal(facetSortMode({ facetSort: { Script: "bogus" } }, "Script"), "alpha-asc");
+  assert.equal(facetSortMode({ facetSort: { Script: "count-desc" } }, "Script"), "count-desc");
+  assert.equal(facetSortMode(undefined, "Script"), "alpha-asc");
+});
+
+test("facetOptionComparator orders by label or by hits, ties A–Z", () => {
+  const opts = [
+    { label: "b", count: 2 },
+    { label: "A10", count: 5 },
+    { label: "a2", count: 2 },
+    { label: "c", count: 0 },
+  ];
+  const order = (mode) => [...opts].sort(facetOptionComparator(mode)).map((o) => o.label);
+  assert.deepEqual(order("alpha-asc"), ["a2", "A10", "b", "c"]);
+  assert.deepEqual(order("alpha-desc"), ["c", "b", "A10", "a2"]);
+  assert.deepEqual(order("count-desc"), ["A10", "a2", "b", "c"]);
+  assert.deepEqual(order("count-asc"), ["c", "a2", "b", "A10"]);
 });
