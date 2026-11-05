@@ -133542,7 +133542,7 @@
         "Style": [
           {
             "column": "Style",
-            "label": "Romanesque, Hight Gothic",
+            "label": "Romanesque, High Gothic",
             "startRow": 0,
             "endRow": 6,
             "startRowAbs": 1085,
@@ -137323,7 +137323,7 @@
       }
     },
     {
-      "Shelfmark": "AM 456 12vo",
+      "Shelfmark": "AM 456 12mo",
       "Depository": "SÁM",
       "rowRangeAbs": {
         "start": 1120,
@@ -138108,7 +138108,7 @@
         "Size": [
           {
             "column": "Size",
-            "label": "12vo",
+            "label": "12mo",
             "startRow": 0,
             "endRow": 4,
             "startRowAbs": 1120,
@@ -146119,7 +146119,7 @@
           },
           {
             "column": "Style",
-            "label": "Romanesque, Hight Gothic",
+            "label": "Romanesque, High Gothic",
             "startRow": 1,
             "endRow": 42,
             "startRowAbs": 1156,

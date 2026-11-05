@@ -28710,7 +28710,7 @@
       "maxColIndex": 24,
       "minCol": "Style",
       "maxCol": "Style",
-      "value": "Romanesque, Hight Gothic"
+      "value": "Romanesque, High Gothic"
     },
     {
       "minRow": 1085,
@@ -29988,7 +29988,7 @@
       "maxColIndex": 0,
       "minCol": "Shelf mark",
       "maxCol": "Shelf mark",
-      "value": "AM 456 12vo"
+      "value": "AM 456 12mo"
     },
     {
       "minRow": 1120,
@@ -30033,7 +30033,7 @@
       "maxColIndex": 5,
       "minCol": "Size",
       "maxCol": "Size",
-      "value": "12vo"
+      "value": "12mo"
     },
     {
       "minRow": 1120,
@@ -32004,7 +32004,7 @@
       "maxColIndex": 24,
       "minCol": "Style",
       "maxCol": "Style",
-      "value": "Romanesque, Hight Gothic"
+      "value": "Romanesque, High Gothic"
     },
     {
       "minRow": 1156,
