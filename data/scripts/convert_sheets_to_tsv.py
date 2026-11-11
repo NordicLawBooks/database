@@ -243,7 +243,6 @@ def merges_to_json(merges: list[dict], df: pd.DataFrame, sheet_id: str, sheet_na
     out.sort(key=lambda m: (m["minRow"], m["minColIndex"], m["maxRow"], m["maxColIndex"]))
 
     return {
-        "source": f"https://docs.google.com/spreadsheets/d/{sheet_id}",
         "sheet": sheet_name,
         "headerRowsSkipped": HEADER_ROWS_IN_SHEET,
         "columns": list(map(str, df.columns)),
