@@ -514,8 +514,6 @@ def main() -> int:
             # Repo-relative, so the output doesn't depend on whose machine ran it.
             "rawTsv": _repo_relative(raw_tsv),
             "mergesJson": _repo_relative(merges_json_path),
-            # Historical key name: holds the source Google Sheets URL.
-            "excel": merges_json.get("source"),
             "sheet": merges_json.get("sheet"),
         },
         "segmentColumns": seg_cols,
