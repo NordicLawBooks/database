@@ -27,15 +27,25 @@ export function quireSummary(quire) {
   return `Quire ${quire.label}: ${parts.join(", ")}`;
 }
 
-/** @param {{label:string, count:number, bifolia:number, leaves:{folio:string, conjoin:number|null}[]}} quire */
-export function quireSvg(quire) {
-  const n = quire.leaves.length;
-  const b = quire.bifolia;
-  const xRight = X0 + Math.max(b, 1) * STEP + LEAF;
-  const y = (i) => TOP + i * PITCH + PITCH / 2;
+/** Pixel size of a quire's SVG. */
+export function quireSize(quire) {
+  const xRight = X0 + Math.max(quire.bifolia, 1) * STEP + LEAF;
   const longest = quire.leaves.reduce((m, l) => Math.max(m, String(l.folio || "").length), 0);
-  const width = Math.ceil(Math.max(xRight + 6 + longest * 7.5 + 8, 120));
-  const height = TOP + n * PITCH + BOTTOM;
+  return {
+    xRight,
+    width: Math.ceil(Math.max(xRight + 6 + longest * 7.5 + 8, 120)),
+    height: TOP + quire.leaves.length * PITCH + BOTTOM,
+  };
+}
+
+/**
+ * @param {{label:string, count:number, bifolia:number, leaves:{folio:string, conjoin:number|null}[]}} quire
+ * @param {{x:number, y:number}} [at] position when nested in a larger SVG (export)
+ */
+export function quireSvg(quire, at = null) {
+  const b = quire.bifolia;
+  const { xRight, width, height } = quireSize(quire);
+  const y = (i) => TOP + i * PITCH + PITCH / 2;
 
   const paths = [];
   for (let i = 0; i < b; i++) {
@@ -61,7 +71,8 @@ export function quireSvg(quire) {
     .join("");
 
   const title = escapeHtml(quireSummary(quire));
-  return `<svg class="cd-quire" xmlns="http://www.w3.org/2000/svg" role="img" width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">` +
+  const pos = at ? ` x="${r1(at.x)}" y="${r1(at.y)}"` : "";
+  return `<svg class="cd-quire" xmlns="http://www.w3.org/2000/svg" role="img"${pos} width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">` +
     `<title>${title}</title>` +
     `<rect class="cd-band" x="0.5" y="0.5" width="${width - 1}" height="${height - 1}" rx="4"/>` +
     `<text class="cd-label" x="8" y="19">${escapeHtml(quire.label)}</text>` +
