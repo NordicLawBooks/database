@@ -3,6 +3,22 @@
 
 import { escapeHtml } from "../util/text.js";
 import { quireSvg } from "./collation-svg.js";
+import { downloadCollationPdf, downloadCollationPng, downloadCollationSvg } from "./collation-export.js";
+
+// The diagram currently shown, for the download buttons.
+let current = null;
+let downloadsBound = false;
+
+function bindDownloads() {
+  if (downloadsBound) return;
+  downloadsBound = true;
+  const svgBtn = document.getElementById("download-collation-svg-btn");
+  const pngBtn = document.getElementById("download-collation-png-btn");
+  if (svgBtn) svgBtn.addEventListener("click", () => current && downloadCollationSvg(current.collation, current.title));
+  const pdfBtn = document.getElementById("download-collation-pdf-btn");
+  if (pngBtn) pngBtn.addEventListener("click", () => current && downloadCollationPng(current.collation, current.title));
+  if (pdfBtn) pdfBtn.addEventListener("click", () => current && downloadCollationPdf(current.collation, current.title));
+}
 
 const LEGEND =
   `<svg class="cd-legend" xmlns="http://www.w3.org/2000/svg" width="40" height="18" viewBox="0 0 40 18" aria-hidden="true">` +
@@ -51,6 +67,8 @@ export function openCollationModal(collation, title, returnTo = null) {
   const titleEl = document.getElementById("collationModalLabel");
   if (titleEl) titleEl.textContent = title ? `Collation diagram — ${title}` : "Collation diagram";
   modalEl.querySelector(".modal-body").innerHTML = buildCollationHtml(collation);
+  current = { collation, title: title || "" };
+  bindDownloads();
   const show = () => bs.Modal.getOrCreateInstance(modalEl).show();
 
   if (!returnTo || !returnTo.classList.contains("show")) {

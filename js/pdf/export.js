@@ -6,7 +6,7 @@ import { normalizeForCompare } from "../util/text.js";
 import { layoutPdf, isoTimestamp } from "./layout.js";
 
 let jsPDFPromise = null;
-function getJsPDF() {
+export function getJsPDF() {
   if (!jsPDFPromise) {
     jsPDFPromise = import("https://cdn.jsdelivr.net/npm/jspdf@2.5.1/+esm").then(
       (m) => m.jsPDF || (m.default && m.default.jsPDF) || m.default

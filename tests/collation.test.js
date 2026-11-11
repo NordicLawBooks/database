@@ -140,3 +140,56 @@ test("the details modal shows the button only for a readable formula", () => {
   const without = buildManuscriptModalHtml({ segmentsByColumn: { Gatherings: [{ label: "Unknown" }] } }, ctx);
   assert.doesNotMatch(without, /collation-open/);
 });
+
+test("collationSvgDocument: standalone SVG with title, quires, notes and formula", async () => {
+  const { collationSvgDocument } = await import("../js/render/collation-export.js");
+  const c = parseCollation("(0:1 (1f; mirror); I:5 (2b; 1f; ff. 0:1-0:5); II:12 (6b; ff. 1-12))");
+  const svg = collationSvgDocument(c, "AM 334 fol. <x>");
+  assert.match(svg, /^<\?xml/);
+  assert.match(svg, /<svg xmlns="http:\/\/www.w3.org\/2000\/svg" width="\d+" height="\d+"/);
+  assert.match(svg, /<style>/);
+  assert.match(svg, /Collation diagram — AM 334 fol. &lt;x&gt;/);
+  assert.equal((svg.match(/class="cd-quire"/g) || []).length, 3);
+  assert.match(svg, /class="cd-quire"[^>]* x="\d+(\.\d)?" y="\d+(\.\d)?"/);
+  assert.match(svg, />mirror</);
+  assert.match(svg, /Formula: \(0:1/);
+});
+
+test("collationSvgDocument wraps many quires into rows within the max width", async () => {
+  const { collationSvgDocument } = await import("../js/render/collation-export.js");
+  const formula = Array.from({ length: 12 }, (_, i) => `${"I".repeat((i % 3) + 1)}:8 (4b)`).join("; ");
+  const svg = collationSvgDocument(parseCollation(formula), "");
+  const width = Number(/width="(\d+)"/.exec(svg)[1]);
+  assert.ok(width <= 960 + 48, `width ${width}`);
+  const ys = new Set([...svg.matchAll(/class="cd-quire"[^>]* y="([\d.]+)"/g)].map((m) => m[1]));
+  assert.ok(ys.size > 1);
+});
+
+test("collationFilename and wrapText", async () => {
+  const { collationFilename, wrapText } = await import("../js/render/collation-export.js");
+  assert.equal(collationFilename("Den Arnamagnæanske Samling — AM 334 fol. — Unit 2", "svg"),
+    "collation-den-arnamagnaeanske-samling-am-334-fol-unit-2.svg");
+  assert.equal(collationFilename("", "png"), "collation.png");
+  assert.deepEqual(wrapText("aa bb cc dd", 5), ["aa bb", "cc dd"]);
+  assert.deepEqual(wrapText("", 5), []);
+});
+
+test("collationPages breaks between quires; notes first, formula last", async () => {
+  const { collationPages, svgSize } = await import("../js/render/collation-export.js");
+  const formula = Array.from({ length: 20 }, (_, i) => `${"I".repeat((i % 3) + 1)}:8 (4b)`).join("; ");
+  const c = parseCollation(formula);
+  const all = c.quires.length;
+  const fits = ({ height }) => height <= 700;
+  const pages = collationPages(c, "X", fits);
+  assert.ok(pages.length > 1);
+  const count = (svg) => (svg.match(/class="cd-quire"/g) || []).length;
+  assert.equal(pages.reduce((n, p) => n + count(p), 0), all);
+  pages.forEach((p) => assert.ok(fits(svgSize(p)) || count(p) === 1));
+  assert.doesNotMatch(pages[0], /\(continued\)/);
+  assert.match(pages[1], /Collation diagram — X \(continued\)/);
+  assert.match(pages.at(-1), /Formula:/);
+  pages.slice(0, -1).forEach((p) => assert.doesNotMatch(p, /Formula:/));
+  assert.equal(new Set(pages.map((p) => svgSize(p).width)).size, 1);
+  // One page when everything fits
+  assert.equal(collationPages(c, "X", () => true).length, 1);
+});
