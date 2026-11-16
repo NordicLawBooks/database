@@ -72,6 +72,16 @@ export function folioOf(label) {
   return m ? `${Number(m[1])}${m[2]}` : null;
 }
 
+/**
+ * Start folio of a Leaves/Pages value: "f.76r", "ff. 1r–123v", "Ff. 116v14-117r12"
+ * -> "76r", "1r", "116v"; "ff. 12-20" -> "12" (its recto, see canvasIdForLocus).
+ * Null for anything else (page references, starred folios, bare numbers).
+ */
+export function startFolio(value) {
+  const m = String(value || "").match(/^\s*(?:ff?|fol)\.?\s*(\d+)\s*([rv])?/i);
+  return m ? `${Number(m[1])}${(m[2] || "").toLowerCase()}` : null;
+}
+
 function canvasesOf(manifest) {
   if (!manifest || typeof manifest !== "object") return [];
   if (Array.isArray(manifest.items)) return manifest.items.filter((c) => c && c.type === "Canvas");

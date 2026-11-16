@@ -1,10 +1,11 @@
 // Shared renderer for "Links to Database" cells: a list separated by ";" or
 // newlines where each part may be a Markdown link [label](url), a bare URL, or
 // plain text. Short database labels (HR, MS, …) are expanded; de-duplicates, escapes.
-// iiifIconsHtml: the IIIF icon links shown after the Shelfmark (js/model/iiif.js).
+// iiifIconsHtml: the IIIF icon links shown after the Shelfmark (js/model/iiif.js);
+// leavesLinkHtml: a Leaves/Pages value as a link to its start folio in the viewer.
 
 import { escapeHtml, normalizeForCompare } from "../util/text.js";
-import { manifestsForLinks } from "../model/iiif.js";
+import { manifestsForLinks, startFolio } from "../model/iiif.js";
 
 const MD_LINK_RE = /^\[([^\]]+)\]\(([^)]+)\)$/;
 const HTTP_RE = /^https?:\/\//i;
@@ -92,4 +93,18 @@ export function renderLinksHtml(value) {
       return escapeHtml(formatLinkLabel(p));
     })
     .join("; ");
+}
+
+/**
+ * A Leaves/Pages text (already normalised for display) as a link opening the
+ * first manifest of `linksValue` at its start folio; plain escaped text when
+ * there is no manifest or no folio to start from.
+ */
+export function leavesLinkHtml(text, linksValue) {
+  const label = escapeHtml(text == null ? "" : String(text));
+  const from = startFolio(text);
+  const first = from ? manifestsForLinks(linksValue)[0] : null;
+  if (!first) return label;
+  return `<a href="#" class="iiif-locus link-secondary" data-iiif-manifest="${escapeHtml(first.manifest)}" ` +
+    `data-locus-from="${escapeHtml(from)}" title="View f. ${escapeHtml(from)} in the image viewer">${label}</a>`;
 }

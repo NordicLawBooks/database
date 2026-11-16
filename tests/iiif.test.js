@@ -2,9 +2,10 @@ import { test, afterEach } from "node:test";
 import assert from "node:assert/strict";
 import {
   setIiifIndex, iiifKeyForUrl, iiifEntryForUrl, manifestsForLinks,
-  canvasLabel, folioOf, canvasIdForLocus,
+  canvasLabel, folioOf, canvasIdForLocus, startFolio,
 } from "../js/model/iiif.js";
-import { renderLinksHtml, iiifIconsHtml } from "../js/render/links.js";
+import { renderLinksHtml, iiifIconsHtml, leavesLinkHtml } from "../js/render/links.js";
+import { renderTextTable } from "../js/render/text-table.js";
 import { renderCell } from "../js/render/manuscript-view.js";
 import { buildManuscriptModalHtml } from "../js/render/ms-modal.js";
 import { buildRowDetailsHtml } from "../js/render/row-modal.js";
@@ -148,4 +149,43 @@ test("row modal: IIIF icon after the shelfmark, Links stay plain", () => {
   const html = buildRowDetailsHtml(row, ["Shelf mark", "Links to Database"]);
   assert.match(html, />B 3<a href="[^"]+" class="iiif-open" data-iiif-manifest="https:\/\/www\.manuscripta\.se\/iiif\/100255\/manifest\.json"/);
   assert.equal((html.match(/iiif-open/g) || []).length, 1);
+});
+
+test("startFolio: the first folio of a Leaves/Pages value", () => {
+  assert.equal(startFolio("f.76r"), "76r");
+  assert.equal(startFolio("ff. 1r–123v"), "1r");
+  assert.equal(startFolio("Ff. 116v14-117r12"), "116v");
+  assert.equal(startFolio("f. 124r20-v23"), "124r");
+  assert.equal(startFolio("ff. 012-20"), "12");
+  assert.equal(startFolio("fol. 3V"), "3v");
+  assert.equal(startFolio("F. *3r"), null);
+  assert.equal(startFolio("ff. s. 21–84"), null);
+  assert.equal(startFolio("12"), null);
+  assert.equal(startFolio("Fragment (between ff.175 and 176)"), null);
+  assert.equal(startFolio(""), null);
+});
+
+test("leavesLinkHtml: links to the start folio only with a manifest", () => {
+  setIiifIndex(INDEX);
+  const links = "[MS](https://manuscripta.se/ms/100255)";
+  const html = leavesLinkHtml("ff. 5r–9v", links);
+  assert.match(html, /^<a href="#" class="iiif-locus[^"]*" data-iiif-manifest="https:\/\/www\.manuscripta\.se\/iiif\/100255\/manifest\.json" data-locus-from="5r"[^>]*>ff\. 5r–9v<\/a>$/);
+  assert.equal(leavesLinkHtml("p. 3 <x>", links), "p. 3 &lt;x&gt;");
+  assert.equal(leavesLinkHtml("ff. 5r–9v", "[HR](https://handrit.is/x)"), "ff. 5r–9v");
+});
+
+test("Leaves/Pages cells link into the viewer in the grouped and text views", () => {
+  setIiifIndex(INDEX);
+  const msRows = [
+    { "Shelf mark": "B 3", "Leaves/Pages": "ff.5r-9v", "Links to Database": "" },
+    { "Shelf mark": "", "Leaves/Pages": "ff.10r-12v", "Links to Database": "[MS](https://manuscripta.se/ms/100255)" },
+  ];
+  const ctx = { msKey: "KB||B 3", sourceId: "swe", msRows };
+  assert.match(renderCell("Leaves/Pages", "ff.5r-9v", ctx), /data-locus-from="5r"[^>]*>ff\. 5r-9v</);
+  assert.equal(renderCell("Leaves/Pages", "ff.5r-9v", { ...ctx, msRows: [msRows[0]] }), "ff. 5r-9v");
+
+  const host = { innerHTML: "", querySelector: () => null };
+  renderTextTable(host, msRows, { page: 1, pageSize: 50 }, ["Shelf mark", "Leaves/Pages"]);
+  assert.equal((host.innerHTML.match(/data-locus-from=/g) || []).length, 1);
+  assert.match(host.innerHTML, /data-locus-from="10r"/);
 });

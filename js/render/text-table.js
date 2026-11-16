@@ -4,7 +4,7 @@
 
 import { escapeHtml } from "../util/text.js";
 import { expandMainText, expandMinorText, mainCandidatesFrom } from "../model/expand.js";
-import { renderLinksHtml, iiifIconsHtml } from "./links.js";
+import { renderLinksHtml, iiifIconsHtml, leavesLinkHtml } from "./links.js";
 import { COLUMN_ORDER, HIDDEN_FIELDS, columnTitle } from "../config.js";
 import { freezeColumns } from "./frozen-columns.js";
 
@@ -41,6 +41,7 @@ export function renderTextTable(host, rows, state, columns, maps = null) {
     if (c === "Shelf mark" && row[c]) {
       return `<a href="#" class="row-open-details">${escapeHtml(row[c])}</a>` + iiifIconsHtml(row["Links to Database"]);
     }
+    if (c === "Leaves/Pages" && row[c]) return leavesLinkHtml(row[c], row["Links to Database"]);
     return escapeHtml(row[c] == null ? "" : row[c]);
   };
   const body = slice
