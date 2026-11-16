@@ -54,7 +54,8 @@ This run rewrites every file the site needs:
 
 - the three lookup tables;
 - the grid and merged-cells files for each language;
-- the segments file for each language.
+- the segments file for each language;
+- the IIIF manifest index, `iiif_manifests.json`.
 
 Run `git diff --stat data/` to see what changed. Check the site locally
 (`python3 -m http.server 8000`), then commit.
@@ -67,8 +68,9 @@ Add `--dry-run` to print the commands without running them.
 
 | Command | What it does |
 | --- | --- |
-| `sheets` | Exports everything from Google Sheets. It runs these stages in order: lookups → filled → raw → segments → combine. |
+| `sheets` | Exports everything from Google Sheets. It runs these stages in order: lookups → filled → raw → segments → iiif → combine. |
 | `segments` | Rebuilds `*_segments.json` from the `*_raw.tsv` and `*_raw_merges.json` already in `data/`. It doesn't need a network connection or credentials. |
+| `iiif` | Rebuilds `data/iiif_manifests.json` from the links in the `*_raw.tsv` files. It fetches the manifests, unless `--dump <dir>` points it at a local copy of manuscripta's IIIF data. |
 | `combine` | Joins the four filled TSVs into `data/NordicLaw_data.tsv`. |
 
 Options for `sheets`:
@@ -80,6 +82,7 @@ Options for `sheets`:
 | `--skip-lookups` | Keep the current `abbreviations.tsv`, `texts.tsv` and `depositories.tsv` |
 | `--skip-raw` | Don't regenerate `*_raw.tsv` and `*_raw_merges.json` |
 | `--skip-segments` | Don't regenerate `*_segments.json` |
+| `--skip-iiif` | Don't rebuild `iiif_manifests.json` |
 | `--skip-filled` | Don't write the filled `Metadata_<Lang>.tsv` files. The site doesn't use them, so always pass this. |
 | `--skip-combine` | Don't write `NordicLaw_data.tsv`. The site doesn't use it, so always pass this. |
 | `--dry-run` | Print the commands without running them |
@@ -164,6 +167,32 @@ The output has this shape:
   ]
 }
 ```
+
+### `build_iiif_index.py`
+
+Finds the links in the "Links to Database" column that point to a IIIF source
+and keeps the ones whose manifest exists and has images. The site offers its
+image viewer only for those links, whatever the link label says
+("not digitised" labels aren't always right). Two sources are recognised:
+
+- `manuscripta.se/ms/<id>`: manuscripta's manifest. It also covers Alvin and
+  KB images, which manuscripta's manifests point to.
+- `nb.no/items/<id>`: the National Library of Norway's manifest.
+
+```bash
+python data/scripts/build_iiif_index.py                    # fetch the manifests
+python data/scripts/build_iiif_index.py --dump <manuscripta>/data/iiif
+```
+
+`--dump` reads manuscripta's manifests from `<dir>/<id>/manifest.json`; nb.no
+is always fetched. The output looks like this:
+
+```json
+{ "ms:100255": { "manifest": "https://www.manuscripta.se/iiif/100255/manifest.json", "canvases": 210 } }
+```
+
+If you add a source, add its pattern to `PROVIDERS` here and to `IIIF_SOURCES`
+in `js/model/iiif.js`.
 
 ### `combine_tsv_files.py`
 

@@ -6,7 +6,8 @@
 import { escapeHtml, normalizeForCompare } from "../util/text.js";
 import { aggregateFieldValues } from "../model/manuscript.js";
 import { expandMainText, expandMinorText, mainCandidatesFrom } from "../model/expand.js";
-import { renderLinksHtml } from "./links.js";
+import { renderLinksHtml, iiifIconsHtml } from "./links.js";
+import { manifestsForLinks } from "../model/iiif.js";
 import { LANGUAGE_MAP } from "../model/fields.js";
 import { sourceById } from "../data/manifest.js";
 import { columnTitle as colTitle } from "../config.js";
@@ -67,6 +68,35 @@ function expandDepositoryLabel(raw, depositoryMap) {
   return d;
 }
 
+/** The manuscript's Links to Database value: the merged raw rows, else its segments. */
+function linksValue(ms, ctx) {
+  const rawBlock = ctx.msKey && ctx.rawByKey ? ctx.rawByKey.get(ctx.msKey) : null;
+  const rows = rawBlock && Array.isArray(rawBlock.rows) ? rawBlock.rows : null;
+  if (rows && rows.length) return aggregateFieldValues(rows, "Links to Database", "; ");
+  const segs = ms && ms.segmentsByColumn ? ms.segmentsByColumn["Links to Database"] || [] : [];
+  return segs.map((s) => (s && s.label != null ? String(s.label) : "")).join("; ");
+}
+
+// "View images" buttons, one per manifest. Outside the .d-flex/.mb-1 rows, so the
+// PDF export (pdf/export.js) skips them. Clicks are handled in main.js.
+function imagesButtonsHtml(ctx) {
+  const list = (ctx && ctx.iiif) || [];
+  if (!list.length) return "";
+  const buttons = list.map((e, i) =>
+    `<button type="button" class="btn btn-outline-secondary btn-sm iiif-open-btn" data-iiif-manifest="${escapeHtml(e.manifest)}">` +
+    `View images${list.length > 1 ? ` (${i + 1})` : ""}</button>`
+  );
+  return `<div class="mt-1 d-flex flex-wrap gap-2">${buttons.join("")}</div>`;
+}
+
+/** A folio locus as a link into the viewer (first manifest), when there is one. */
+function locusHtml(locusText, locus, ctx) {
+  const first = ctx && ctx.iiif && ctx.iiif[0];
+  if (!first || !locus || locus.kind !== "f" || !locus.from || !locusText) return escapeHtml(locusText);
+  return `<a href="#" class="iiif-locus link-secondary" data-iiif-manifest="${escapeHtml(first.manifest)}" ` +
+    `data-locus-from="${escapeHtml(String(locus.from))}" title="View in the image viewer">${escapeHtml(locusText)}</a>`;
+}
+
 function renderColumnBlock(ms, col, ctx) {
   const byCol = ms && ms.segmentsByColumn ? ms.segmentsByColumn : null;
   const segs = (byCol && Array.isArray(byCol[col]) ? byCol[col] : []).filter((s) =>
@@ -81,7 +111,7 @@ function renderColumnBlock(ms, col, ctx) {
     if (rows && rows.length) {
       const html = renderLinksHtml(aggregateFieldValues(rows, "Links to Database", "; "));
       if (normalizeForCompare(html)) {
-        return `<div class="mb-3"><div class="fw-bold">${escapeHtml(colTitle(col))}</div><div class="mb-1"><div class="text-break">${html}</div></div></div>`;
+        return `<div class="mb-3"><div class="fw-bold">${escapeHtml(colTitle(col))}</div><div class="mb-1"><div class="text-break">${html}</div></div>${imagesButtonsHtml(ctx)}</div>`;
       }
     }
   }
@@ -113,14 +143,14 @@ function renderColumnBlock(ms, col, ctx) {
       const locusText = normalizeRenderedLocus(s.locus && s.locus.rendered ? String(s.locus.rendered) : "");
       const valueHtml = col === "Links to Database" ? renderLinksHtml(s.label) : escapeHtml(expandLabel(s.label));
       if (!showLocus) return `<div class="mb-1"><div class="text-break">${valueHtml}</div></div>`;
-      return `<div class="d-flex gap-2 mb-1"><div class="text-secondary small" style="min-width:110px;">${escapeHtml(locusText)}</div><div class="text-break flex-grow-1">${valueHtml}</div></div>`;
+      return `<div class="d-flex gap-2 mb-1"><div class="text-secondary small" style="min-width:110px;">${locusHtml(locusText, s.locus, ctx)}</div><div class="text-break flex-grow-1">${valueHtml}</div></div>`;
     })
     .join("");
 
   // Outside the .d-flex/.mb-1 rows, so the PDF export (pdf/export.js) skips it.
   const diagram = col === "Gatherings" && ctx && ctx.collation
     ? '<div class="mt-1"><button type="button" class="btn btn-outline-secondary btn-sm collation-open">Collation diagram</button></div>'
-    : "";
+    : col === "Links to Database" ? imagesButtonsHtml(ctx) : "";
   return `<div class="mb-3"><div class="fw-bold">${escapeHtml(colTitle(col))}</div>${items}${diagram}</div>`;
 }
 
@@ -136,12 +166,14 @@ function section(title, bodyHtml) {
 /** Build the modal body HTML for a segments-manuscript object. */
 export function buildManuscriptModalHtml(ms, ctx) {
   if (ctx.collation === undefined) ctx = { ...ctx, collation: collationForManuscript(ms) };
+  if (ctx.iiif === undefined) ctx = { ...ctx, iiif: manifestsForLinks(linksValue(ms, ctx)) };
   const shelfmark = ms && ms.Shelfmark ? String(ms.Shelfmark) : "";
   const depository = expandDepositoryLabel(ms && ms.Depository ? String(ms.Depository) : "", ctx.depositoryMap);
 
   const headerRows = [
     ["Depository", escapeHtml(depository || "—")],
-    ["Shelfmark", escapeHtml(shelfmark || "—")],
+    // IIIF icons (no text, so the PDF export skips them).
+    ["Shelfmark", escapeHtml(shelfmark || "—") + iiifIconsHtml(linksValue(ms, ctx))],
   ];
   for (const [label, col] of [["Language", "Language"], ["Name", "Name"], ["Object", "Object"], ["Size", "Size"]]) {
     let v = pickFirstNonEmptySegmentLabel(ms, col);

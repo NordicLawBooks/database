@@ -82,9 +82,9 @@ export function freezeColumns(tableEl) {
   if (typeof requestAnimationFrame === "function") requestAnimationFrame(apply);
 }
 
-export function refreezeOnResize(root, delayMs = 80) {
+export function refreezeOnResize(root, delayMs = 80, observeEl = null) {
   let timer = null;
-  window.addEventListener("resize", () => {
+  const schedule = () => {
     clearTimeout(timer);
     timer = setTimeout(() => {
       for (const t of root.querySelectorAll("table.merged-table")) {
@@ -92,7 +92,20 @@ export function refreezeOnResize(root, delayMs = 80) {
         freezeColumns(t);
       }
     }, delayMs);
-  });
+  };
+  window.addEventListener("resize", schedule);
+  // The results also change width without a window resize (the image viewer
+  // pane opening or being dragged).
+  if (observeEl && typeof ResizeObserver !== "undefined") {
+    let lastWidth = null;
+    new ResizeObserver((entries) => {
+      const w = Math.round(entries[0].contentRect.width);
+      if (w !== lastWidth) {
+        lastWidth = w;
+        schedule();
+      }
+    }).observe(observeEl);
+  }
 }
 
 /** Apply sticky-left positioning + opaque backgrounds to the frozen columns. */

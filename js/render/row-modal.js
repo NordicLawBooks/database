@@ -3,7 +3,7 @@
 // (.col-md-6 > .mb-2.border-bottom.pb-1 with .fw-bold + .text-break).
 
 import { escapeHtml } from "../util/text.js";
-import { renderLinksHtml } from "./links.js";
+import { renderLinksHtml, iiifIconsHtml } from "./links.js";
 import { expandMainText, expandMinorText, mainCandidatesFrom } from "../model/expand.js";
 import { HIDDEN_FIELDS } from "../config.js";
 import { columnTitle as colTitle } from "../config.js";
@@ -20,6 +20,8 @@ export function buildRowDetailsHtml(row, columns, maps = null) {
     if (key === "Links to Database") value = renderLinksHtml(raw);
     else if (key === "Main text" && maps) value = escapeHtml(expandMainText(raw, maps));
     else if (key === "Minor text" && maps) value = escapeHtml(expandMinorText(raw, mainCandidatesFrom(row["Main text"]), maps));
+    // IIIF icons after the shelfmark (no text, so the PDF export skips them).
+    else if (key === "Shelf mark") value = escapeHtml(String(raw)) + iiifIconsHtml(row["Links to Database"]);
     else value = escapeHtml(String(raw));
     entries.push({ key, value });
   }

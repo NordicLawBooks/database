@@ -10,7 +10,7 @@ import { aggregateFieldValues, allFieldValuesEmpty, getConstantFields, getEffect
 import { expandMainText, expandMinorText, mainCandidatesFrom } from "../model/expand.js";
 import { buildLocalMergeLookup } from "./merge-geometry.js";
 import { freezeColumns } from "./frozen-columns.js";
-import { renderLinksHtml } from "./links.js";
+import { renderLinksHtml, iiifIconsHtml } from "./links.js";
 import { columnTitle as colTitle } from "../config.js";
 import { parseCollation } from "../model/collation.js";
 
@@ -21,6 +21,11 @@ function hasCollation(formula) {
   return drawable.get(formula);
 }
 
+/** IIIF icons for the manuscript's links (all its rows), after the shelfmark. */
+function shelfIcons(ctx) {
+  return ctx && ctx.msRows ? iiifIconsHtml(aggregateFieldValues(ctx.msRows, "Links to Database", "; ")) : "";
+}
+
 /** Cell HTML for the grouped views (Manuscript + Production Unit). */
 export function renderCell(field, value, ctx) {
   const v = normalizeForCompare(value);
@@ -28,9 +33,9 @@ export function renderCell(field, value, ctx) {
   if (field === "Shelf mark") {
     const label = escapeHtml(String(value));
     if (ctx.msKey && ctx.sourceId) {
-      return `<a href="#" class="ms-open-details" data-ms-key="${escapeHtml(ctx.msKey)}" data-source-id="${escapeHtml(ctx.sourceId)}">${label}</a>`;
+      return `<a href="#" class="ms-open-details" data-ms-key="${escapeHtml(ctx.msKey)}" data-source-id="${escapeHtml(ctx.sourceId)}">${label}</a>` + shelfIcons(ctx);
     }
-    return label;
+    return label + shelfIcons(ctx);
   }
   if (field === "Links to Database") return renderLinksHtml(v) || "&nbsp;";
   if (field === "Leaves/Pages") return escapeHtml(normalizeLeavesPages(v));

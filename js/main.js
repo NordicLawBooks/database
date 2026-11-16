@@ -6,10 +6,13 @@ import { decodeState, startHistorySync } from "./url.js";
 import { FACET_DEFS, DEFAULT_COLUMN_PRESET, getPreset } from "./config.js";
 import { loadModel } from "./data/load.js";
 import { loadSegments } from "./data/segments.js";
-import { loadDepositoryMap, loadExpansionMaps } from "./data/lookups.js";
+import { loadDepositoryMap, loadExpansionMaps, loadIiifIndex } from "./data/lookups.js";
 import { openManuscriptModal } from "./render/ms-modal.js";
 import { openRowModal } from "./render/row-modal.js";
 import { openCollationModal } from "./render/collation-modal.js";
+import { openIiifModal } from "./render/iiif-modal.js";
+import { bindIiifPane, syncIiifPane, openInIiifPane, paneUnavailable } from "./render/iiif-pane.js";
+import { setIiifIndex } from "./model/iiif.js";
 import { parseCollation } from "./model/collation.js";
 import { exportManuscriptPdf, exportRowDetailsPdf } from "./pdf/export.js";
 import { computeCounts, rangeExtent } from "./facets/engine.js";
@@ -122,13 +125,25 @@ async function main() {
   bindSidebar(store, sidebarRefs);
   syncSidebar(sidebarRefs, store.get().ui);
   bindIntro(store, introRefs);
+  const paneRefs = {
+    pane: document.getElementById("viewer-pane"),
+    host: document.getElementById("viewer-host"),
+    resizer: document.getElementById("viewer-resizer"),
+    closeButton: document.getElementById("viewer-close-btn"),
+    hideButton: document.getElementById("viewer-hide-btn"),
+  };
+  bindIiifPane(store, paneRefs);
+  syncIiifPane(paneRefs, store.get().ui);
 
   // Manuscript details modal: load segments lazily, then open on a shelfmark click.
-  const [segments, depositoryMap, maps] = await Promise.all([
+  const [segments, depositoryMap, maps, iiifIndex] = await Promise.all([
     loadSegments(),
     loadDepositoryMap(),
     loadExpansionMaps(),
+    loadIiifIndex(),
   ]);
+  // Before the first render: the link renderer marks links that have a manifest.
+  setIiifIndex(iiifIndex);
 
   // Row-level search index (built after maps so expansions are searchable too).
   const searchIndex = buildSearchIndex(model.rows, maps);
@@ -145,7 +160,7 @@ async function main() {
   }
   buildFacetSidebar(refs.facets, universe, { maps, extents });
   bindFacetEvents(refs.facets, store);
-  refreezeOnResize(document);
+  refreezeOnResize(document, 80, document.getElementById("results"));
   if (refs.mergedView) {
     refs.mergedView.addEventListener("click", (e) => {
       const diagramBtn = e.target.closest && e.target.closest("button.collation-open");
@@ -166,6 +181,14 @@ async function main() {
     });
   }
 
+  /** "Depository — Shelf mark" for a raw row (depository spelled out). */
+  function rowTitle(row) {
+    const depRaw = String((row && row["Depository"]) || "").trim();
+    const dep = (depositoryMap && depositoryMap[depRaw]) || depRaw;
+    const shelfmark = String((row && row["Shelf mark"]) || "").trim();
+    return [dep, shelfmark].filter(Boolean).join(" — ");
+  }
+
   // Collation diagram for the Gatherings cell the button sits in.
   function openDiagramFor(btn) {
     const formula = btn.parentElement && btn.parentElement.querySelector(".cd-formula");
@@ -174,13 +197,43 @@ async function main() {
     const tr = btn.closest("tr[data-ms-key]");
     const block = tr ? model.rawByKey.get(tr.getAttribute("data-ms-key")) : null;
     const first = block && block.rows && block.rows[0] ? block.rows[0] : {};
-    const depRaw = String(first["Depository"] || "").trim();
-    const dep = (depositoryMap && depositoryMap[depRaw]) || depRaw;
-    const shelfmark = String(first["Shelf mark"] || "").trim();
     const units = btn.getAttribute("data-unit") || "";
     const unitLabel = units ? `${units.includes(",") ? "Units" : "Unit"} ${units}` : "";
-    openCollationModal(collation, [dep, shelfmark, unitLabel].filter(Boolean).join(" — "));
+    openCollationModal(collation, [rowTitle(first), unitLabel].filter(Boolean).join(" — "));
   }
+
+  // Image viewer: link icons in the views and modals, "View images" buttons and
+  // folio loci in the manuscript details modal (all carry data-iiif-manifest).
+  // Opens in the pane beside the results (closing a details modal, which would
+  // cover it); on narrow screens in the full-screen modal instead.
+  document.addEventListener("click", (e) => {
+    const el = e.target.closest && e.target.closest("[data-iiif-manifest]");
+    if (!el) return;
+    e.preventDefault();
+    const modal = el.closest(".modal");
+    const from = el.getAttribute("data-locus-from");
+    const locus = from ? { kind: "f", from } : null;
+    const manifest = el.getAttribute("data-iiif-manifest");
+    if (!paneUnavailable()) {
+      if (modal && window.bootstrap) window.bootstrap.Modal.getOrCreateInstance(modal).hide();
+      openInIiifPane({ manifest, locus });
+      return;
+    }
+    let title = "";
+    if (modal && modal.id === "msDetailsModal") {
+      title = (document.getElementById("msDetailsModalLabel") || {}).textContent || "";
+    } else {
+      const msTr = el.closest("tr[data-ms-key]");
+      const textTr = el.closest("tr[data-row-idx]");
+      const block = msTr ? model.rawByKey.get(msTr.getAttribute("data-ms-key")) : null;
+      const row = block && block.rows ? block.rows[0] : textTr ? currentTextRows[Number(textTr.dataset.rowIdx)] : null;
+      if (row) title = rowTitle(row);
+    }
+    openIiifModal(
+      { manifest, title, locus },
+      modal && modal.id !== "iiifModal" ? modal : null
+    );
+  });
 
   const pdfBtn = document.getElementById("download-ms-pdf-btn");
   if (pdfBtn) {
@@ -189,6 +242,7 @@ async function main() {
 
   function renderAll(state) {
     syncSidebar(sidebarRefs, state.ui);
+    syncIiifPane(paneRefs, state.ui);
     syncIntro(introRefs, state.ui);
     const q = makeIndexQuery(searchIndex, state.query);
     const result = selectResults(model, state, { matchesQuery: q && q.matches, scoreOf: q && q.score });

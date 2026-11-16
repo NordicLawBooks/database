@@ -1,8 +1,10 @@
 // Shared renderer for "Links to Database" cells: a list separated by ";" or
 // newlines where each part may be a Markdown link [label](url), a bare URL, or
 // plain text. Short database labels (HR, MS, …) are expanded; de-duplicates, escapes.
+// iiifIconsHtml: the IIIF icon links shown after the Shelfmark (js/model/iiif.js).
 
 import { escapeHtml, normalizeForCompare } from "../util/text.js";
+import { manifestsForLinks } from "../model/iiif.js";
 
 const MD_LINK_RE = /^\[([^\]]+)\]\(([^)]+)\)$/;
 const HTTP_RE = /^https?:\/\//i;
@@ -57,6 +59,22 @@ export function splitLinks(value) {
     out.push(p);
   }
   return out;
+}
+
+/**
+ * IIIF logo links, one per indexed manifest among `linksValue`'s links. A click
+ * opens the image viewer (main.js); the href (manifest?manifest=manifest, the
+ * IIIF drag-and-drop convention) lets the icon be dragged into another viewer.
+ */
+export function iiifIconsHtml(linksValue) {
+  return manifestsForLinks(linksValue)
+    .map((e) => {
+      const href = `${e.manifest}?manifest=${encodeURIComponent(e.manifest)}`;
+      return `<a href="${escapeHtml(href)}" class="iiif-open" data-iiif-manifest="${escapeHtml(e.manifest)}" ` +
+        `title="View images (IIIF; drag the icon into another IIIF viewer)">` +
+        `<img src="img/iiif.svg" alt="IIIF images" width="23" height="12"></a>`;
+    })
+    .join("");
 }
 
 function toLink(url, label) {

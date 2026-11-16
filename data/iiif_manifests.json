@@ -1,0 +1,466 @@
+{
+ "ms:100248": {
+  "manifest": "https://www.manuscripta.se/iiif/100248/manifest.json",
+  "canvases": 25
+ },
+ "ms:100255": {
+  "manifest": "https://www.manuscripta.se/iiif/100255/manifest.json",
+  "canvases": 210
+ },
+ "ms:100258": {
+  "manifest": "https://www.manuscripta.se/iiif/100258/manifest.json",
+  "canvases": 462
+ },
+ "ms:100259": {
+  "manifest": "https://www.manuscripta.se/iiif/100259/manifest.json",
+  "canvases": 254
+ },
+ "ms:100266": {
+  "manifest": "https://www.manuscripta.se/iiif/100266/manifest.json",
+  "canvases": 254
+ },
+ "ms:100269": {
+  "manifest": "https://www.manuscripta.se/iiif/100269/manifest.json",
+  "canvases": 156
+ },
+ "ms:100270": {
+  "manifest": "https://www.manuscripta.se/iiif/100270/manifest.json",
+  "canvases": 348
+ },
+ "ms:100277": {
+  "manifest": "https://www.manuscripta.se/iiif/100277/manifest.json",
+  "canvases": 294
+ },
+ "ms:100279": {
+  "manifest": "https://www.manuscripta.se/iiif/100279/manifest.json",
+  "canvases": 228
+ },
+ "ms:100280": {
+  "manifest": "https://www.manuscripta.se/iiif/100280/manifest.json",
+  "canvases": 264
+ },
+ "ms:100281": {
+  "manifest": "https://www.manuscripta.se/iiif/100281/manifest.json",
+  "canvases": 260
+ },
+ "ms:100282": {
+  "manifest": "https://www.manuscripta.se/iiif/100282/manifest.json",
+  "canvases": 308
+ },
+ "ms:100283": {
+  "manifest": "https://www.manuscripta.se/iiif/100283/manifest.json",
+  "canvases": 410
+ },
+ "ms:100287": {
+  "manifest": "https://www.manuscripta.se/iiif/100287/manifest.json",
+  "canvases": 238
+ },
+ "ms:100288": {
+  "manifest": "https://www.manuscripta.se/iiif/100288/manifest.json",
+  "canvases": 150
+ },
+ "ms:100297": {
+  "manifest": "https://www.manuscripta.se/iiif/100297/manifest.json",
+  "canvases": 274
+ },
+ "ms:100298": {
+  "manifest": "https://www.manuscripta.se/iiif/100298/manifest.json",
+  "canvases": 170
+ },
+ "ms:100300": {
+  "manifest": "https://www.manuscripta.se/iiif/100300/manifest.json",
+  "canvases": 186
+ },
+ "ms:100303": {
+  "manifest": "https://www.manuscripta.se/iiif/100303/manifest.json",
+  "canvases": 162
+ },
+ "ms:100305": {
+  "manifest": "https://www.manuscripta.se/iiif/100305/manifest.json",
+  "canvases": 320
+ },
+ "ms:100308": {
+  "manifest": "https://www.manuscripta.se/iiif/100308/manifest.json",
+  "canvases": 168
+ },
+ "ms:100310": {
+  "manifest": "https://www.manuscripta.se/iiif/100310/manifest.json",
+  "canvases": 174
+ },
+ "ms:100311": {
+  "manifest": "https://www.manuscripta.se/iiif/100311/manifest.json",
+  "canvases": 411
+ },
+ "ms:100312": {
+  "manifest": "https://www.manuscripta.se/iiif/100312/manifest.json",
+  "canvases": 211
+ },
+ "ms:100313": {
+  "manifest": "https://www.manuscripta.se/iiif/100313/manifest.json",
+  "canvases": 211
+ },
+ "ms:100314": {
+  "manifest": "https://www.manuscripta.se/iiif/100314/manifest.json",
+  "canvases": 260
+ },
+ "ms:100315": {
+  "manifest": "https://www.manuscripta.se/iiif/100315/manifest.json",
+  "canvases": 308
+ },
+ "ms:100317": {
+  "manifest": "https://www.manuscripta.se/iiif/100317/manifest.json",
+  "canvases": 362
+ },
+ "ms:100318": {
+  "manifest": "https://www.manuscripta.se/iiif/100318/manifest.json",
+  "canvases": 364
+ },
+ "ms:100319": {
+  "manifest": "https://www.manuscripta.se/iiif/100319/manifest.json",
+  "canvases": 150
+ },
+ "ms:100320": {
+  "manifest": "https://www.manuscripta.se/iiif/100320/manifest.json",
+  "canvases": 146
+ },
+ "ms:100321": {
+  "manifest": "https://www.manuscripta.se/iiif/100321/manifest.json",
+  "canvases": 377
+ },
+ "ms:100332": {
+  "manifest": "https://www.manuscripta.se/iiif/100332/manifest.json",
+  "canvases": 18
+ },
+ "ms:100342": {
+  "manifest": "https://www.manuscripta.se/iiif/100342/manifest.json",
+  "canvases": 94
+ },
+ "ms:100344": {
+  "manifest": "https://www.manuscripta.se/iiif/100344/manifest.json",
+  "canvases": 70
+ },
+ "ms:100345": {
+  "manifest": "https://www.manuscripta.se/iiif/100345/manifest.json",
+  "canvases": 94
+ },
+ "ms:100359": {
+  "manifest": "https://www.manuscripta.se/iiif/100359/manifest.json",
+  "canvases": 304
+ },
+ "ms:100360": {
+  "manifest": "https://www.manuscripta.se/iiif/100360/manifest.json",
+  "canvases": 344
+ },
+ "ms:100361": {
+  "manifest": "https://www.manuscripta.se/iiif/100361/manifest.json",
+  "canvases": 290
+ },
+ "ms:100362": {
+  "manifest": "https://www.manuscripta.se/iiif/100362/manifest.json",
+  "canvases": 274
+ },
+ "ms:100363": {
+  "manifest": "https://www.manuscripta.se/iiif/100363/manifest.json",
+  "canvases": 438
+ },
+ "ms:100364": {
+  "manifest": "https://www.manuscripta.se/iiif/100364/manifest.json",
+  "canvases": 268
+ },
+ "ms:100365": {
+  "manifest": "https://www.manuscripta.se/iiif/100365/manifest.json",
+  "canvases": 252
+ },
+ "ms:100366": {
+  "manifest": "https://www.manuscripta.se/iiif/100366/manifest.json",
+  "canvases": 380
+ },
+ "ms:100367": {
+  "manifest": "https://www.manuscripta.se/iiif/100367/manifest.json",
+  "canvases": 162
+ },
+ "ms:100368": {
+  "manifest": "https://www.manuscripta.se/iiif/100368/manifest.json",
+  "canvases": 284
+ },
+ "ms:100369": {
+  "manifest": "https://www.manuscripta.se/iiif/100369/manifest.json",
+  "canvases": 222
+ },
+ "ms:100371": {
+  "manifest": "https://www.manuscripta.se/iiif/100371/manifest.json",
+  "canvases": 10
+ },
+ "ms:100372": {
+  "manifest": "https://www.manuscripta.se/iiif/100372/manifest.json",
+  "canvases": 9
+ },
+ "ms:100373": {
+  "manifest": "https://www.manuscripta.se/iiif/100373/manifest.json",
+  "canvases": 9
+ },
+ "ms:100374": {
+  "manifest": "https://www.manuscripta.se/iiif/100374/manifest.json",
+  "canvases": 18
+ },
+ "ms:100376": {
+  "manifest": "https://www.manuscripta.se/iiif/100376/manifest.json",
+  "canvases": 17
+ },
+ "ms:100377": {
+  "manifest": "https://www.manuscripta.se/iiif/100377/manifest.json",
+  "canvases": 17
+ },
+ "ms:100378": {
+  "manifest": "https://www.manuscripta.se/iiif/100378/manifest.json",
+  "canvases": 17
+ },
+ "ms:100379": {
+  "manifest": "https://www.manuscripta.se/iiif/100379/manifest.json",
+  "canvases": 245
+ },
+ "ms:100380": {
+  "manifest": "https://www.manuscripta.se/iiif/100380/manifest.json",
+  "canvases": 180
+ },
+ "ms:100382": {
+  "manifest": "https://www.manuscripta.se/iiif/100382/manifest.json",
+  "canvases": 249
+ },
+ "ms:100383": {
+  "manifest": "https://www.manuscripta.se/iiif/100383/manifest.json",
+  "canvases": 362
+ },
+ "ms:100384": {
+  "manifest": "https://www.manuscripta.se/iiif/100384/manifest.json",
+  "canvases": 180
+ },
+ "ms:100385": {
+  "manifest": "https://www.manuscripta.se/iiif/100385/manifest.json",
+  "canvases": 140
+ },
+ "ms:100386": {
+  "manifest": "https://www.manuscripta.se/iiif/100386/manifest.json",
+  "canvases": 132
+ },
+ "ms:100387": {
+  "manifest": "https://www.manuscripta.se/iiif/100387/manifest.json",
+  "canvases": 226
+ },
+ "ms:100388": {
+  "manifest": "https://www.manuscripta.se/iiif/100388/manifest.json",
+  "canvases": 242
+ },
+ "ms:100389": {
+  "manifest": "https://www.manuscripta.se/iiif/100389/manifest.json",
+  "canvases": 376
+ },
+ "ms:100390": {
+  "manifest": "https://www.manuscripta.se/iiif/100390/manifest.json",
+  "canvases": 166
+ },
+ "ms:100391": {
+  "manifest": "https://www.manuscripta.se/iiif/100391/manifest.json",
+  "canvases": 344
+ },
+ "ms:100392": {
+  "manifest": "https://www.manuscripta.se/iiif/100392/manifest.json",
+  "canvases": 165
+ },
+ "ms:100393": {
+  "manifest": "https://www.manuscripta.se/iiif/100393/manifest.json",
+  "canvases": 218
+ },
+ "ms:100394": {
+  "manifest": "https://www.manuscripta.se/iiif/100394/manifest.json",
+  "canvases": 737
+ },
+ "ms:100395": {
+  "manifest": "https://www.manuscripta.se/iiif/100395/manifest.json",
+  "canvases": 174
+ },
+ "ms:100396": {
+  "manifest": "https://www.manuscripta.se/iiif/100396/manifest.json",
+  "canvases": 144
+ },
+ "ms:100397": {
+  "manifest": "https://www.manuscripta.se/iiif/100397/manifest.json",
+  "canvases": 340
+ },
+ "ms:100398": {
+  "manifest": "https://www.manuscripta.se/iiif/100398/manifest.json",
+  "canvases": 196
+ },
+ "ms:100399": {
+  "manifest": "https://www.manuscripta.se/iiif/100399/manifest.json",
+  "canvases": 344
+ },
+ "ms:100400": {
+  "manifest": "https://www.manuscripta.se/iiif/100400/manifest.json",
+  "canvases": 164
+ },
+ "ms:100401": {
+  "manifest": "https://www.manuscripta.se/iiif/100401/manifest.json",
+  "canvases": 202
+ },
+ "ms:100402": {
+  "manifest": "https://www.manuscripta.se/iiif/100402/manifest.json",
+  "canvases": 164
+ },
+ "ms:100403": {
+  "manifest": "https://www.manuscripta.se/iiif/100403/manifest.json",
+  "canvases": 248
+ },
+ "ms:100404": {
+  "manifest": "https://www.manuscripta.se/iiif/100404/manifest.json",
+  "canvases": 715
+ },
+ "ms:100405": {
+  "manifest": "https://www.manuscripta.se/iiif/100405/manifest.json",
+  "canvases": 688
+ },
+ "ms:100406": {
+  "manifest": "https://www.manuscripta.se/iiif/100406/manifest.json",
+  "canvases": 394
+ },
+ "ms:100408": {
+  "manifest": "https://www.manuscripta.se/iiif/100408/manifest.json",
+  "canvases": 1079
+ },
+ "ms:100410": {
+  "manifest": "https://www.manuscripta.se/iiif/100410/manifest.json",
+  "canvases": 328
+ },
+ "ms:100411": {
+  "manifest": "https://www.manuscripta.se/iiif/100411/manifest.json",
+  "canvases": 413
+ },
+ "ms:100420": {
+  "manifest": "https://www.manuscripta.se/iiif/100420/manifest.json",
+  "canvases": 472
+ },
+ "ms:100425": {
+  "manifest": "https://www.manuscripta.se/iiif/100425/manifest.json",
+  "canvases": 742
+ },
+ "ms:100455": {
+  "manifest": "https://www.manuscripta.se/iiif/100455/manifest.json",
+  "canvases": 177
+ },
+ "ms:100522": {
+  "manifest": "https://www.manuscripta.se/iiif/100522/manifest.json",
+  "canvases": 136
+ },
+ "ms:100566": {
+  "manifest": "https://www.manuscripta.se/iiif/100566/manifest.json",
+  "canvases": 38
+ },
+ "ms:100569": {
+  "manifest": "https://www.manuscripta.se/iiif/100569/manifest.json",
+  "canvases": 22
+ },
+ "ms:100959": {
+  "manifest": "https://www.manuscripta.se/iiif/100959/manifest.json",
+  "canvases": 550
+ },
+ "ms:100981": {
+  "manifest": "https://www.manuscripta.se/iiif/100981/manifest.json",
+  "canvases": 48
+ },
+ "ms:101020": {
+  "manifest": "https://www.manuscripta.se/iiif/101020/manifest.json",
+  "canvases": 312
+ },
+ "ms:101029": {
+  "manifest": "https://www.manuscripta.se/iiif/101029/manifest.json",
+  "canvases": 233
+ },
+ "ms:101030": {
+  "manifest": "https://www.manuscripta.se/iiif/101030/manifest.json",
+  "canvases": 372
+ },
+ "ms:101055": {
+  "manifest": "https://www.manuscripta.se/iiif/101055/manifest.json",
+  "canvases": 86
+ },
+ "ms:101259": {
+  "manifest": "https://www.manuscripta.se/iiif/101259/manifest.json",
+  "canvases": 306
+ },
+ "ms:101270": {
+  "manifest": "https://www.manuscripta.se/iiif/101270/manifest.json",
+  "canvases": 136
+ },
+ "ms:101285": {
+  "manifest": "https://www.manuscripta.se/iiif/101285/manifest.json",
+  "canvases": 272
+ },
+ "ms:101286": {
+  "manifest": "https://www.manuscripta.se/iiif/101286/manifest.json",
+  "canvases": 62
+ },
+ "ms:101287": {
+  "manifest": "https://www.manuscripta.se/iiif/101287/manifest.json",
+  "canvases": 260
+ },
+ "ms:101288": {
+  "manifest": "https://www.manuscripta.se/iiif/101288/manifest.json",
+  "canvases": 272
+ },
+ "ms:101289": {
+  "manifest": "https://www.manuscripta.se/iiif/101289/manifest.json",
+  "canvases": 330
+ },
+ "ms:101290": {
+  "manifest": "https://www.manuscripta.se/iiif/101290/manifest.json",
+  "canvases": 274
+ },
+ "ms:101292": {
+  "manifest": "https://www.manuscripta.se/iiif/101292/manifest.json",
+  "canvases": 276
+ },
+ "ms:101293": {
+  "manifest": "https://www.manuscripta.se/iiif/101293/manifest.json",
+  "canvases": 162
+ },
+ "ms:101294": {
+  "manifest": "https://www.manuscripta.se/iiif/101294/manifest.json",
+  "canvases": 420
+ },
+ "ms:101297": {
+  "manifest": "https://www.manuscripta.se/iiif/101297/manifest.json",
+  "canvases": 9
+ },
+ "ms:101298": {
+  "manifest": "https://www.manuscripta.se/iiif/101298/manifest.json",
+  "canvases": 3
+ },
+ "ms:101305": {
+  "manifest": "https://www.manuscripta.se/iiif/101305/manifest.json",
+  "canvases": 225
+ },
+ "ms:101306": {
+  "manifest": "https://www.manuscripta.se/iiif/101306/manifest.json",
+  "canvases": 358
+ },
+ "ms:101307": {
+  "manifest": "https://www.manuscripta.se/iiif/101307/manifest.json",
+  "canvases": 142
+ },
+ "ms:101510": {
+  "manifest": "https://www.manuscripta.se/iiif/101510/manifest.json",
+  "canvases": 508
+ },
+ "ms:101568": {
+  "manifest": "https://www.manuscripta.se/iiif/101568/manifest.json",
+  "canvases": 322
+ },
+ "nb:9dbcdd9e0b591d6d3e54a7a08796cc5e": {
+  "manifest": "https://api.nb.no/catalog/v1/iiif/9dbcdd9e0b591d6d3e54a7a08796cc5e/manifest",
+  "canvases": 263
+ },
+ "nb:ce91d1f43e6a0d23b0907a31b7fb4a39": {
+  "manifest": "https://api.nb.no/catalog/v1/iiif/ce91d1f43e6a0d23b0907a31b7fb4a39/manifest",
+  "canvases": 182
+ }
+}
