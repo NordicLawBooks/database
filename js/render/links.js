@@ -2,10 +2,10 @@
 // newlines where each part may be a Markdown link [label](url), a bare URL, or
 // plain text. Short database labels (HR, MS, …) are expanded; de-duplicates, escapes.
 // iiifIconsHtml: the IIIF icon links shown after the Shelfmark (js/model/iiif.js);
-// leavesLinkHtml: a Leaves/Pages value as a link to its start folio in the viewer.
+// leavesLinkHtml: each folio in a Leaves/Pages value as a link into the viewer.
 
 import { escapeHtml, normalizeForCompare } from "../util/text.js";
-import { manifestsForLinks, startFolio } from "../model/iiif.js";
+import { manifestsForLinks, leavesTokens } from "../model/iiif.js";
 
 const MD_LINK_RE = /^\[([^\]]+)\]\(([^)]+)\)$/;
 const HTTP_RE = /^https?:\/\//i;
@@ -96,15 +96,25 @@ export function renderLinksHtml(value) {
 }
 
 /**
- * A Leaves/Pages text (already normalised for display) as a link opening the
- * first manifest of `linksValue` at its start folio; plain escaped text when
- * there is no manifest or no folio to start from.
+ * `text` with each folio in it (leavesTokens) as a link opening `manifest`
+ * there; plain escaped text when there is no manifest or no folio.
  */
+export function folioLinksHtml(text, manifest) {
+  const tokens = leavesTokens(text);
+  if (!manifest || !tokens.some((t) => t.folio)) return escapeHtml(text == null ? "" : String(text));
+  const m = escapeHtml(manifest);
+  return tokens
+    .map(({ text: t, folio }) =>
+      folio
+        ? `<a href="#" class="iiif-locus link-secondary" data-iiif-manifest="${m}" ` +
+          `data-locus-from="${escapeHtml(folio)}" title="View f. ${escapeHtml(folio)} in the image viewer">${escapeHtml(t)}</a>`
+        : escapeHtml(t)
+    )
+    .join("");
+}
+
+/** A Leaves/Pages text (normalised for display), linked to the first manifest of `linksValue`. */
 export function leavesLinkHtml(text, linksValue) {
-  const label = escapeHtml(text == null ? "" : String(text));
-  const from = startFolio(text);
-  const first = from ? manifestsForLinks(linksValue)[0] : null;
-  if (!first) return label;
-  return `<a href="#" class="iiif-locus link-secondary" data-iiif-manifest="${escapeHtml(first.manifest)}" ` +
-    `data-locus-from="${escapeHtml(from)}" title="View f. ${escapeHtml(from)} in the image viewer">${label}</a>`;
+  const first = leavesTokens(text).some((t) => t.folio) ? manifestsForLinks(linksValue)[0] : null;
+  return folioLinksHtml(text, first && first.manifest);
 }

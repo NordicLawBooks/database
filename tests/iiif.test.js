@@ -2,7 +2,7 @@ import { test, afterEach } from "node:test";
 import assert from "node:assert/strict";
 import {
   setIiifIndex, iiifKeyForUrl, iiifEntryForUrl, manifestsForLinks,
-  canvasLabel, folioOf, canvasIdForLocus, startFolio,
+  canvasLabel, folioOf, canvasIdForLocus, leavesTokens,
 } from "../js/model/iiif.js";
 import { renderLinksHtml, iiifIconsHtml, leavesLinkHtml } from "../js/render/links.js";
 import { renderTextTable } from "../js/render/text-table.js";
@@ -126,7 +126,7 @@ test("ms modal: View images button and folio loci link into the viewer", () => {
   };
   const html = buildManuscriptModalHtml(ms, { msKey: "KB||B 3", rawByKey: new Map(), depositoryMap: {} });
   assert.match(html, /class="btn btn-outline-secondary btn-sm iiif-open-btn"[^>]*>View images</);
-  assert.match(html, /class="iiif-locus[^"]*"[^>]*data-locus-from="5r"[^>]*>ff\. 5r-9v</);
+  assert.match(html, />ff\. <a [^>]*class="iiif-locus[^"]*"[^>]*data-locus-from="5r"[^>]*>5r<\/a>-<a [^>]*data-locus-from="9v"[^>]*>9v<\/a></);
   assert.match(html, /<td class="text-break">B 3<a href="[^"]+" class="iiif-open"/);
 
   setIiifIndex({});
@@ -151,25 +151,29 @@ test("row modal: IIIF icon after the shelfmark, Links stay plain", () => {
   assert.equal((html.match(/iiif-open/g) || []).length, 1);
 });
 
-test("startFolio: the first folio of a Leaves/Pages value", () => {
-  assert.equal(startFolio("f.76r"), "76r");
-  assert.equal(startFolio("ff. 1r–123v"), "1r");
-  assert.equal(startFolio("Ff. 116v14-117r12"), "116v");
-  assert.equal(startFolio("f. 124r20-v23"), "124r");
-  assert.equal(startFolio("ff. 012-20"), "12");
-  assert.equal(startFolio("fol. 3V"), "3v");
-  assert.equal(startFolio("F. *3r"), null);
-  assert.equal(startFolio("ff. s. 21–84"), null);
-  assert.equal(startFolio("12"), null);
-  assert.equal(startFolio("Fragment (between ff.175 and 176)"), null);
-  assert.equal(startFolio(""), null);
+const tok = (v) => leavesTokens(v).map((t) => (t.folio ? `[${t.text}=${t.folio}]` : t.text)).join("");
+
+test("leavesTokens: every folio in a Leaves/Pages value", () => {
+  assert.equal(tok("ff. 1r–17r"), "ff. [1r=1r]–[17r=17r]");
+  assert.equal(tok("f.76r"), "f.[76r=76r]");
+  assert.equal(tok("Ff. 116v14-117r12"), "Ff. [116v14=116v]-[117r12=117r]");
+  assert.equal(tok("f. 151r29-v16"), "f. [151r29=151r]-[v16=151v]"); // a side alone takes the leaf
+  assert.equal(tok("F. 89ra–vb"), "F. [89ra=89r]–[vb=89v]");
+  assert.equal(tok("f. 151r1-28"), "f. [151r1=151r]-28"); // 28 is a line
+  assert.equal(tok("ff. 012-153"), "ff. [012=12]-[153=153]"); // bare leaves (rectos)
+  assert.equal(tok("ff.3v:12-5v:3"), "ff.[3v:12=3v]-[5v:3=5v]");
+  assert.equal(tok("f.0:7r-v"), "f.0:[7r=7r]-[v=7v]"); // 0: is not a leaf
+  assert.equal(tok("Ff. 1v–7v (marg.)"), "Ff. [1v=1v]–[7v=7v] (marg.)");
+  assert.equal(tok("f. 1r, f. 9"), "f. [1r=1r], f. [9=9]");
+  for (const plain of ["F. *3r", "ff. s. 21–84", "63", "Fragment (between ff.175 and 176)"]) assert.equal(tok(plain), plain);
+  assert.deepEqual(leavesTokens(""), []);
 });
 
 test("leavesLinkHtml: links to the start folio only with a manifest", () => {
   setIiifIndex(INDEX);
   const links = "[MS](https://manuscripta.se/ms/100255)";
   const html = leavesLinkHtml("ff. 5r–9v", links);
-  assert.match(html, /^<a href="#" class="iiif-locus[^"]*" data-iiif-manifest="https:\/\/www\.manuscripta\.se\/iiif\/100255\/manifest\.json" data-locus-from="5r"[^>]*>ff\. 5r–9v<\/a>$/);
+  assert.match(html, /^ff\. <a href="#" class="iiif-locus[^"]*" data-iiif-manifest="https:\/\/www\.manuscripta\.se\/iiif\/100255\/manifest\.json" data-locus-from="5r"[^>]*>5r<\/a>–<a [^>]*data-locus-from="9v"[^>]*>9v<\/a>$/);
   assert.equal(leavesLinkHtml("p. 3 <x>", links), "p. 3 &lt;x&gt;");
   assert.equal(leavesLinkHtml("ff. 5r–9v", "[HR](https://handrit.is/x)"), "ff. 5r–9v");
 });
@@ -181,11 +185,11 @@ test("Leaves/Pages cells link into the viewer in the grouped and text views", ()
     { "Shelf mark": "", "Leaves/Pages": "ff.10r-12v", "Links to Database": "[MS](https://manuscripta.se/ms/100255)" },
   ];
   const ctx = { msKey: "KB||B 3", sourceId: "swe", msRows };
-  assert.match(renderCell("Leaves/Pages", "ff.5r-9v", ctx), /data-locus-from="5r"[^>]*>ff\. 5r-9v</);
+  assert.match(renderCell("Leaves/Pages", "ff.5r-9v", ctx), /^ff\. <a [^>]*data-locus-from="5r"[^>]*>5r<\/a>-<a [^>]*data-locus-from="9v"[^>]*>9v<\/a>$/);
   assert.equal(renderCell("Leaves/Pages", "ff.5r-9v", { ...ctx, msRows: [msRows[0]] }), "ff. 5r-9v");
 
   const host = { innerHTML: "", querySelector: () => null };
   renderTextTable(host, msRows, { page: 1, pageSize: 50 }, ["Shelf mark", "Leaves/Pages"]);
-  assert.equal((host.innerHTML.match(/data-locus-from=/g) || []).length, 1);
-  assert.match(host.innerHTML, /data-locus-from="10r"/);
+  assert.equal((host.innerHTML.match(/data-locus-from=/g) || []).length, 2);
+  assert.match(host.innerHTML, /data-locus-from="10r"[^>]*>10r<\/a>-<a [^>]*data-locus-from="12v"/);
 });

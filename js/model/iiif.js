@@ -72,14 +72,56 @@ export function folioOf(label) {
   return m ? `${Number(m[1])}${m[2]}` : null;
 }
 
+// A folio reference: leaf number with optional side, column and line ("151r29",
+// "1ra", "12"), or a side alone, which takes the previous leaf ("r-v", "ra–rb").
+// Not inside a word (so "marg." or "lower" don't count), not starred ("*3r").
+const FOLIO_TOKEN_RE = /(?<![\p{L}\d*])(?:(\d+)\s*([rv])?([ab])?(?:(\d+)|:(\d+))?|([rv])([ab])?(\d+)?)(?![\p{L}\d])/giu;
+
 /**
- * Start folio of a Leaves/Pages value: "f.76r", "ff. 1r–123v", "Ff. 116v14-117r12"
- * -> "76r", "1r", "116v"; "ff. 12-20" -> "12" (its recto, see canvasIdForLocus).
- * Null for anything else (page references, starred folios, bare numbers).
+ * Split a Leaves/Pages value into text and folio pieces:
+ * "ff. 1r–17r" -> ["ff. ", {1r}, "–", {17r}]; "f. 151r29-v16" -> 151r and 151v.
+ * Each piece is { text, folio } with folio "151v" / "12" (a bare leaf: its recto)
+ * or null. Only values starting with f./ff./fol. are tokenised; a bare number
+ * after a reference with a line number is that line's end ("f. 151r1-28"); page
+ * references ("ff. s. 21–84") and "0:7r" quire numbers stay text.
  */
-export function startFolio(value) {
-  const m = String(value || "").match(/^\s*(?:ff?|fol)\.?\s*(\d+)\s*([rv])?/i);
-  return m ? `${Number(m[1])}${(m[2] || "").toLowerCase()}` : null;
+export function leavesTokens(value) {
+  const text = String(value == null ? "" : value);
+  const prefix = text.match(/^\s*(?:ff?|fol)(?!\p{L})\.?\s*/iu);
+  if (!prefix || /^s\./i.test(text.slice(prefix[0].length))) return text ? [{ text, folio: null }] : [];
+  const out = [];
+  const push = (t, folio) => {
+    if (!t) return;
+    const last = out[out.length - 1];
+    if (!folio && last && !last.folio) last.text += t;
+    else out.push({ text: t, folio });
+  };
+  let pos = 0;
+  let leaf = null; // the previous reference's leaf, for a side alone
+  let hadLine = false;
+  FOLIO_TOKEN_RE.lastIndex = prefix[0].length;
+  for (let m; (m = FOLIO_TOKEN_RE.exec(text)); ) {
+    const [tok, num, side, , line, colonLine, sideOnly, , sideLine] = m;
+    push(text.slice(pos, m.index), null);
+    pos = m.index + tok.length;
+    let folio = null;
+    if (num != null) {
+      const between = text.slice(m.index - 3 < 0 ? 0 : m.index - 3, m.index);
+      const isLineEnd = !side && !line && !colonLine && hadLine && /[-–]\s*$/.test(between);
+      const isQuire = !side && text[pos] === ":";
+      if (!isLineEnd && !isQuire) {
+        leaf = Number(num);
+        folio = `${leaf}${(side || "").toLowerCase()}`;
+        hadLine = line != null || colonLine != null;
+      }
+    } else if (leaf != null) {
+      folio = `${leaf}${sideOnly.toLowerCase()}`;
+      hadLine = sideLine != null;
+    }
+    push(tok, folio);
+  }
+  push(text.slice(pos), null);
+  return out;
 }
 
 function canvasesOf(manifest) {

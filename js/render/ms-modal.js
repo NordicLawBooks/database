@@ -6,7 +6,7 @@
 import { escapeHtml, normalizeForCompare } from "../util/text.js";
 import { aggregateFieldValues } from "../model/manuscript.js";
 import { expandMainText, expandMinorText, mainCandidatesFrom } from "../model/expand.js";
-import { renderLinksHtml, iiifIconsHtml } from "./links.js";
+import { renderLinksHtml, iiifIconsHtml, folioLinksHtml } from "./links.js";
 import { manifestsForLinks } from "../model/iiif.js";
 import { LANGUAGE_MAP } from "../model/fields.js";
 import { sourceById } from "../data/manifest.js";
@@ -89,12 +89,11 @@ function imagesButtonsHtml(ctx) {
   return `<div class="mt-1 d-flex flex-wrap gap-2">${buttons.join("")}</div>`;
 }
 
-/** A folio locus as a link into the viewer (first manifest), when there is one. */
+/** A folio locus with each folio in it (start, end) as a link into the viewer (first manifest). */
 function locusHtml(locusText, locus, ctx) {
   const first = ctx && ctx.iiif && ctx.iiif[0];
-  if (!first || !locus || locus.kind !== "f" || !locus.from || !locusText) return escapeHtml(locusText);
-  return `<a href="#" class="iiif-locus link-secondary" data-iiif-manifest="${escapeHtml(first.manifest)}" ` +
-    `data-locus-from="${escapeHtml(String(locus.from))}" title="View in the image viewer">${escapeHtml(locusText)}</a>`;
+  if (!first || !locus || locus.kind !== "f" || !locusText) return escapeHtml(locusText);
+  return folioLinksHtml(locusText, first.manifest);
 }
 
 function renderColumnBlock(ms, col, ctx) {
