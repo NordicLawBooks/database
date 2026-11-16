@@ -25,6 +25,7 @@ import { bindAbbreviationsModal } from "./render/abbr-modal.js";
 import { trackStickyHeight } from "./render/sticky.js";
 import { buildColumnsMenu, syncColumnsMenu, bindColumnsMenu, visibleColumns } from "./render/columns.js";
 import { bindControls, renderControls } from "./render/controls.js";
+import { bindDownloadMenu } from "./render/download-menu.js";
 import { buildSearchIndex, makeIndexQuery } from "./search/index.js";
 import { loadPrefs, savePrefs, withRememberedViewSort } from "./prefs.js";
 
@@ -114,6 +115,9 @@ async function main() {
   }
 
   bindControls(store, refs);
+  // Download menu: exports the latest rendered result (set in renderAll).
+  let currentExport = { rows: [], items: [], visibleColumns: allColumns, allColumns, view: store.get().view, model };
+  bindDownloadMenu(document.getElementById("download-menu"), () => currentExport);
   const sidebarRefs = { toggle: refs.sidebarToggle, sidebar: refs.sidebar, resizer: refs.sidebarResizer };
   bindSidebar(store, sidebarRefs);
   syncSidebar(sidebarRefs, store.get().ui);
@@ -193,6 +197,14 @@ async function main() {
     if (refs.columnsMenu) syncColumnsMenu(refs.columnsMenu, allColumns, state);
 
     const cols = visibleColumns(allColumns, state);
+    currentExport = {
+      rows: result.rows,
+      items: state.view === "units" ? result.units : result.manuscripts,
+      visibleColumns: cols,
+      allColumns,
+      view: state.view,
+      model,
+    };
     const isTable = state.view === "table";
     if (refs.tableView) refs.tableView.style.display = isTable ? "" : "none";
     if (refs.mergedView) refs.mergedView.style.display = isTable ? "none" : "";

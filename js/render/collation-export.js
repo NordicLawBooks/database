@@ -11,6 +11,7 @@ import { escapeHtml, fold } from "../util/text.js";
 import { foldPath, hookPath, quireSize, quireShapes, shapesSvg } from "./collation-svg.js";
 import { getJsPDF } from "../pdf/export.js";
 import { isoTimestamp } from "../pdf/layout.js";
+import { saveBlob } from "../util/download.js";
 
 const MARGIN = 24;
 const MAX_WIDTH = 960; // content width before quires wrap to a new row
@@ -192,17 +193,6 @@ export function collationFilename(title, ext) {
     .replace(/\.+(?=-|$)/g, "")
     .replace(/^-+|-+$/g, "");
   return `collation${slug ? `-${slug}` : ""}.${ext}`;
-}
-
-function saveBlob(blob, filename) {
-  const url = URL.createObjectURL(blob);
-  const a = document.createElement("a");
-  a.href = url;
-  a.download = filename;
-  document.body.appendChild(a);
-  a.click();
-  a.remove();
-  setTimeout(() => URL.revokeObjectURL(url), 1000);
 }
 
 /** Download the diagram as SVG. */
