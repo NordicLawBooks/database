@@ -175,21 +175,63 @@ test("collationFilename and wrapText", async () => {
 });
 
 test("collationPages breaks between quires; notes first, formula last", async () => {
-  const { collationPages, svgSize } = await import("../js/render/collation-export.js");
+  const { collationPages, sceneSvg } = await import("../js/render/collation-export.js");
   const formula = Array.from({ length: 20 }, (_, i) => `${"I".repeat((i % 3) + 1)}:8 (4b)`).join("; ");
   const c = parseCollation(formula);
   const all = c.quires.length;
   const fits = ({ height }) => height <= 700;
-  const pages = collationPages(c, "X", fits);
+  const scenes = collationPages(c, "X", fits);
+  const pages = scenes.map(sceneSvg);
   assert.ok(pages.length > 1);
   const count = (svg) => (svg.match(/class="cd-quire"/g) || []).length;
   assert.equal(pages.reduce((n, p) => n + count(p), 0), all);
-  pages.forEach((p) => assert.ok(fits(svgSize(p)) || count(p) === 1));
+  scenes.forEach((sc, i) => assert.ok(fits(sc) || count(pages[i]) === 1));
   assert.doesNotMatch(pages[0], /\(continued\)/);
   assert.match(pages[1], /Collation diagram — X \(continued\)/);
   assert.match(pages.at(-1), /Formula:/);
   pages.slice(0, -1).forEach((p) => assert.doesNotMatch(p, /Formula:/));
-  assert.equal(new Set(pages.map((p) => svgSize(p).width)).size, 1);
+  assert.equal(new Set(scenes.map((sc) => sc.width)).size, 1);
   // One page when everything fits
   assert.equal(collationPages(c, "X", () => true).length, 1);
+});
+
+/** Records jsPDF calls; enough of the API for collationPdf. */
+class FakePdf {
+  constructor() { this.calls = []; this.pages = 1; }
+  getTextWidth(t) { return t.length * 4; }
+  addPage() { this.pages++; this.calls.push(["addPage"]); }
+}
+for (const m of ["setProperties", "setFont", "setFontSize", "setTextColor", "setDrawColor", "setFillColor",
+  "setLineWidth", "setLineCap", "roundedRect", "moveTo", "lineTo", "curveTo", "stroke", "text"]) {
+  FakePdf.prototype[m] = function (...args) { this.calls.push([m, ...args]); };
+}
+
+test("collationPdf draws vectors and real text, not images", async () => {
+  const { collationPdf } = await import("../js/render/collation-export.js");
+  const c = parseCollation("I:5 (2b; 1f; ff. 1-5); II:8 (4b; ff. 6-13)");
+  const doc = collationPdf(FakePdf, c, "AM 334 fol.", new Date(2026, 0, 2));
+  const names = doc.calls.map((x) => x[0]);
+  assert.ok(!names.includes("addImage"));
+  const texts = doc.calls.filter((x) => x[0] === "text").map((x) => x[1]);
+  assert.ok(texts.includes("Collation diagram — AM 334 fol."));
+  assert.ok(texts.includes("13"), "folio label");
+  assert.ok(texts.some((t) => t.startsWith("Formula: I:5")));
+  assert.ok(texts.some((t) => t.startsWith("Accessed: 2026-01-02")));
+  // 2 quire bands; 2 + 4 + 1 legend folds, 1 + 1 legend hooks
+  assert.equal(names.filter((n) => n === "roundedRect").length, 2);
+  assert.equal(names.filter((n) => n === "stroke").length, 9);
+  // Everything lands on the page
+  for (const [n, x, y] of doc.calls.filter((k) => ["moveTo", "lineTo", "roundedRect"].includes(k[0]))) {
+    assert.ok(x >= 0 && x <= 842 && y >= 0 && y <= 596, `${n} ${x},${y}`);
+  }
+  // Right-aligned quire count and vertically centred folio labels
+  assert.ok(doc.calls.some((k) => k[0] === "text" && k[1] === "5" && k[4].align === "right"));
+  assert.ok(doc.calls.some((k) => k[0] === "text" && k[1] === "13" && k[4].baseline === "middle"));
+});
+
+test("pdfText keeps WinAnsi, strips diacritics it can't draw, else '?'", async () => {
+  const { pdfText } = await import("../js/render/collation-export.js");
+  assert.equal(pdfText("Þórðr – „x“ æ é"), "Þórðr – „x“ æ é");
+  assert.equal(pdfText("Landslǫg Rǿða"), "Landslog Røða");
+  assert.equal(pdfText("frg 4 α"), "frg 4 ?");
 });

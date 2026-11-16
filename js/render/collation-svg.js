@@ -38,45 +38,94 @@ export function quireSize(quire) {
   };
 }
 
+const K = 0.5523; // cubic Bézier approximation of a quarter ellipse
+
 /**
- * @param {{label:string, count:number, bifolia:number, leaves:{folio:string, conjoin:number|null}[]}} quire
- * @param {{x:number, y:number}} [at] position when nested in a larger SVG (export)
+ * Path segments of a fold: from `xRight` left to the fold at `xk`, a half
+ * ellipse (radii rx, ry) down from yi to yj, and back right. Segments are
+ * absolute ["M"|"L", x, y] / ["C", x1, y1, x2, y2, x, y], so the same shape
+ * can be written to SVG and drawn into a PDF.
  */
-export function quireSvg(quire, at = null) {
+export function foldPath(xRight, xk, yi, yj, rx) {
+  const ry = (yj - yi) / 2;
+  const cy = yi + ry;
+  return [
+    ["M", xRight, yi], ["L", xk, yi],
+    ["C", xk - K * rx, yi, xk - rx, cy - K * ry, xk - rx, cy],
+    ["C", xk - rx, cy + K * ry, xk - K * rx, yj, xk, yj],
+    ["L", xRight, yj],
+  ];
+}
+
+/** Path of a single leaf: from `xRight` left to `xs`, then a small hook down. */
+export function hookPath(xRight, xs, y, r = 5) {
+  return [["M", xRight, y], ["L", xs, y], ["C", xs - (2 * r) / 3, y, xs - r, y + r / 3, xs - r, y + r]];
+}
+
+const pathD = (segs) => segs.map(([c, ...n]) => c + n.map(r1).join(" ")).join("");
+
+/**
+ * A drawing as plain shapes: {t:"rect", cls, x, y, w, h, rx},
+ * {t:"path", cls, segs}, {t:"text", cls, x, y, text, anchor?:"end", middle?},
+ * {t:"group", cls, x?, y?, w, h, title, items} (nested coordinates).
+ * `shapesSvg` writes them as SVG; the collation PDF export draws them with jsPDF.
+ */
+export function shapesSvg(items) {
+  return items.map((it) => {
+    switch (it.t) {
+      case "rect":
+        return `<rect class="${it.cls}" x="${r1(it.x)}" y="${r1(it.y)}" width="${r1(it.w)}" height="${r1(it.h)}" rx="${it.rx || 0}"/>`;
+      case "path":
+        return `<path class="${it.cls}" d="${pathD(it.segs)}"/>`;
+      case "text":
+        return `<text class="${it.cls}" x="${r1(it.x)}" y="${r1(it.y)}"` +
+          (it.anchor === "end" ? ` text-anchor="end"` : "") +
+          (it.middle ? ` dominant-baseline="central"` : "") +
+          `>${escapeHtml(it.text)}</text>`;
+      case "group": {
+        const pos = it.x != null ? ` x="${r1(it.x)}" y="${r1(it.y)}"` : "";
+        return `<svg class="${it.cls}" xmlns="http://www.w3.org/2000/svg" role="img"${pos} width="${it.w}" height="${it.h}" viewBox="0 0 ${it.w} ${it.h}">` +
+          `<title>${escapeHtml(it.title)}</title>${shapesSvg(it.items)}</svg>`;
+      }
+      default:
+        return "";
+    }
+  }).join("");
+}
+
+/**
+ * One quire as a shape group (see `shapesSvg`).
+ * @param {{label:string, count:number, bifolia:number, leaves:{folio:string, conjoin:number|null}[]}} quire
+ * @param {{x:number, y:number}} [at] position when nested in a larger drawing (export)
+ */
+export function quireShapes(quire, at = null) {
   const b = quire.bifolia;
   const { xRight, width, height } = quireSize(quire);
   const y = (i) => TOP + i * PITCH + PITCH / 2;
 
-  const paths = [];
+  const items = [
+    { t: "rect", cls: "cd-band", x: 0.5, y: 0.5, w: width - 1, h: height - 1, rx: 4 },
+    { t: "text", cls: "cd-label", x: 8, y: 19, text: quire.label },
+    { t: "text", cls: "cd-count", x: width - 8, y: 19, text: String(quire.count), anchor: "end" },
+  ];
   for (let i = 0; i < b; i++) {
-    const j = quire.leaves[i].conjoin;
     const yi = y(i);
-    const yj = y(j);
-    const ry = (yj - yi) / 2;
-    const rx = Math.min(ry, MAX_RX);
-    const xk = X0 + i * STEP + rx;
-    paths.push(`<path class="cd-leaf" d="M${xRight} ${r1(yi)}H${r1(xk)}A${r1(rx)} ${r1(ry)} 0 0 0 ${r1(xk)} ${r1(yj)}H${xRight}"/>`);
+    const yj = y(quire.leaves[i].conjoin);
+    const rx = Math.min((yj - yi) / 2, MAX_RX);
+    items.push({ t: "path", cls: "cd-leaf", segs: foldPath(xRight, X0 + i * STEP + rx, yi, yj, rx) });
   }
   const xSingle = X0 + b * STEP + 4;
   quire.leaves.forEach((leaf, i) => {
-    if (leaf.conjoin !== null) return;
-    const yi = y(i);
-    paths.push(`<path class="cd-single" d="M${xRight} ${r1(yi)}H${r1(xSingle)}q-5 0 -5 5"/>`);
+    if (leaf.conjoin === null) items.push({ t: "path", cls: "cd-single", segs: hookPath(xRight, xSingle, y(i)) });
+  });
+  quire.leaves.forEach((leaf, i) => {
+    if (leaf.folio) items.push({ t: "text", cls: "cd-folio", x: xRight + 6, y: y(i), text: leaf.folio, middle: true });
   });
 
-  const labels = quire.leaves
-    .map((leaf, i) => leaf.folio
-      ? `<text class="cd-folio" x="${xRight + 6}" y="${r1(y(i))}" dominant-baseline="central">${escapeHtml(leaf.folio)}</text>`
-      : "")
-    .join("");
+  return { t: "group", cls: "cd-quire", ...(at || {}), w: width, h: height, title: quireSummary(quire), items };
+}
 
-  const title = escapeHtml(quireSummary(quire));
-  const pos = at ? ` x="${r1(at.x)}" y="${r1(at.y)}"` : "";
-  return `<svg class="cd-quire" xmlns="http://www.w3.org/2000/svg" role="img"${pos} width="${width}" height="${height}" viewBox="0 0 ${width} ${height}">` +
-    `<title>${title}</title>` +
-    `<rect class="cd-band" x="0.5" y="0.5" width="${width - 1}" height="${height - 1}" rx="4"/>` +
-    `<text class="cd-label" x="8" y="19">${escapeHtml(quire.label)}</text>` +
-    `<text class="cd-count" x="${width - 8}" y="19" text-anchor="end">${quire.count}</text>` +
-    paths.join("") + labels +
-    `</svg>`;
+/** One quire as an SVG string (`at` as in `quireShapes`). */
+export function quireSvg(quire, at = null) {
+  return shapesSvg([quireShapes(quire, at)]);
 }

@@ -1,13 +1,14 @@
-// Download of the collation diagram as a standalone SVG, PNG or PDF. The SVG is
-// built from the parsed collation (not scraped from the modal): title, summary,
-// legend, the quires laid out in rows, each quire's note under it, the general
-// notes and the formula. Styles are embedded with fixed light-theme colours so
-// the file looks the same outside the app. `collationSvgDocument` and
-// `collationPages`/`collationFilename` are DOM-free (tested); the download functions need a
-// browser.
+// Download of the collation diagram as a standalone SVG, PNG or PDF. The
+// drawing is built from the parsed collation (not scraped from the modal) as a
+// list of plain shapes (`collationScene`): title, summary, legend, the quires
+// laid out in rows, each quire's note under it, the general notes and the
+// formula. The SVG writes those shapes with embedded, fixed light-theme styles
+// so the file looks the same outside the app; the PNG is that SVG on a canvas;
+// the PDF draws the same shapes with jsPDF as vectors and real (selectable)
+// text. Everything but the download functions is DOM-free (tested).
 
 import { escapeHtml, fold } from "../util/text.js";
-import { quireSize, quireSvg } from "./collation-svg.js";
+import { foldPath, hookPath, quireSize, quireShapes, shapesSvg } from "./collation-svg.js";
 import { getJsPDF } from "../pdf/export.js";
 import { isoTimestamp } from "../pdf/layout.js";
 
@@ -18,15 +19,26 @@ const FONT = "Helvetica, Arial, sans-serif";
 const CHAR_W = 6.1; // average glyph width at 12px (Helvetica/Arial), for wrapping
 const LINE = 16;
 
-const STYLE =
-  `text{font-family:${FONT}}` +
-  `.cd-band{fill:#f8f9fa;stroke:#dee2e6}` +
-  `.cd-leaf,.cd-single{fill:none;stroke-width:2;stroke-linecap:round}` +
-  `.cd-leaf{stroke:#526c91}.cd-single{stroke:#b0652f}` +
-  `.cd-label{font-weight:600;font-size:15px;fill:#212529}` +
-  `.cd-count,.cd-folio,.cd-small{font-size:12px;fill:#6c757d}` +
-  `.cd-title{font-weight:600;font-size:18px;fill:#212529}` +
-  `.cd-body{font-size:12px;fill:#212529}`;
+// Light-theme look of each class, shared by the SVG stylesheet and the PDF.
+// Lengths are in px; text weight 600 is bold in the PDF.
+export const CLASS_STYLE = {
+  "cd-band": { fill: "#f8f9fa", stroke: "#dee2e6", width: 1 },
+  "cd-leaf": { stroke: "#526c91", width: 2, round: true },
+  "cd-single": { stroke: "#b0652f", width: 2, round: true },
+  "cd-label": { size: 15, bold: true, color: "#212529" },
+  "cd-count": { size: 12, color: "#6c757d" },
+  "cd-folio": { size: 12, color: "#6c757d" },
+  "cd-small": { size: 12, color: "#6c757d" },
+  "cd-title": { size: 18, bold: true, color: "#212529" },
+  "cd-body": { size: 12, color: "#212529" },
+};
+
+const STYLE = `text{font-family:${FONT}}` + Object.entries(CLASS_STYLE).map(([cls, st]) => {
+  const rules = st.size
+    ? [`font-size:${st.size}px`, `fill:${st.color}`, st.bold && "font-weight:600"]
+    : [`fill:${st.fill || "none"}`, `stroke:${st.stroke}`, `stroke-width:${st.width}`, st.round && "stroke-linecap:round"];
+  return `.${cls}{${rules.filter(Boolean).join(";")}}`;
+}).join("");
 
 /** Greedy word wrap to at most `maxChars` per line (long words are kept whole). */
 export function wrapText(text, maxChars) {
@@ -45,15 +57,16 @@ export function wrapText(text, maxChars) {
 }
 
 const textLines = (lines, x, y, cls) =>
-  lines.map((l, i) => `<text class="${cls}" x="${x}" y="${y + i * LINE}">${escapeHtml(l)}</text>`).join("");
+  lines.map((text, i) => ({ t: "text", cls, x, y: y + i * LINE, text }));
 
 /**
- * Standalone SVG document for a parsed collation (model/collation.js).
+ * The diagram of a parsed collation (model/collation.js) as
+ * {width, height, title, items}, items being shapes as in `shapesSvg`.
  * `opts` draws one page of a paginated export: `quires` a subset of the quires,
  * `notes`/`formula` whether to include those, `continued` marks pages 2+,
  * `minWidth` keeps all pages as wide. The summary counts the whole collation.
  */
-export function collationSvgDocument(collation, title = "", opts = {}) {
+export function collationScene(collation, title = "", opts = {}) {
   const { quires = collation.quires, notes = true, formula: withFormula = true, continued = false, minWidth = 0 } = opts;
   const heading = (title ? `Collation diagram — ${title}` : "Collation diagram") + (continued ? " (continued)" : "");
   const leaves = collation.quires.reduce((sum, q) => sum + q.count, 0);
@@ -89,49 +102,57 @@ export function collationSvgDocument(collation, title = "", opts = {}) {
   const chars = Math.floor(width / CHAR_W);
   const out = [];
   let y = MARGIN + 18;
-  out.push(`<text class="cd-title" x="${MARGIN}" y="${y}">${escapeHtml(heading)}</text>`);
+  out.push({ t: "text", cls: "cd-title", x: MARGIN, y, text: heading });
   y += 22;
   const summaryLines = wrapText(summary, chars);
-  out.push(textLines(summaryLines, MARGIN, y, "cd-small"));
+  out.push(...textLines(summaryLines, MARGIN, y, "cd-small"));
   y += summaryLines.length * LINE + 4;
 
   // Legend
   out.push(
-    `<g transform="translate(${MARGIN} ${y})">` +
-    `<path class="cd-leaf" d="M38 3H10A6 6 0 0 0 10 15H38"/>` +
-    `<text class="cd-small" x="44" y="13">bifolium</text>` +
-    `<path class="cd-single" d="M138 7H108q-4 0 -4 4"/>` +
-    `<text class="cd-small" x="144" y="13">single leaf</text></g>`
+    { t: "path", cls: "cd-leaf", segs: foldPath(MARGIN + 38, MARGIN + 10, y + 3, y + 15, 6) },
+    { t: "text", cls: "cd-small", x: MARGIN + 44, y: y + 13, text: "bifolium" },
+    { t: "path", cls: "cd-single", segs: hookPath(MARGIN + 138, MARGIN + 108, y + 7, 4) },
+    { t: "text", cls: "cd-small", x: MARGIN + 144, y: y + 13, text: "single leaf" },
   );
   y += 18 + 12;
 
   const noteList = notes ? collation.notes : [];
   for (const n of noteList) {
     const lines = wrapText(`• ${n}`, chars);
-    out.push(textLines(lines, MARGIN, y + 12, "cd-body"));
+    out.push(...textLines(lines, MARGIN, y + 12, "cd-body"));
     y += lines.length * LINE;
   }
   if (noteList.length) y += 8;
 
   for (const c of cells) {
-    out.push(quireSvg(c.q, { x: MARGIN + c.x, y: y + c.y }));
-    if (c.caption.length) out.push(textLines(c.caption, MARGIN + c.x, y + c.y + c.height + 4 + 12, "cd-small"));
+    out.push(quireShapes(c.q, { x: MARGIN + c.x, y: y + c.y }));
+    if (c.caption.length) out.push(...textLines(c.caption, MARGIN + c.x, y + c.y + c.height + 4 + 12, "cd-small"));
   }
   y += gridH;
 
   if (withFormula) {
     const formula = wrapText(`Formula: ${collation.source}`, chars);
-    out.push(textLines(formula, MARGIN, y + 20 + 12, "cd-small"));
+    out.push(...textLines(formula, MARGIN, y + 20 + 12, "cd-small"));
     y += 20 + formula.length * LINE;
   }
 
-  const W = Math.ceil(width + 2 * MARGIN);
-  const H = Math.ceil(y + MARGIN);
+  return { width: Math.ceil(width + 2 * MARGIN), height: Math.ceil(y + MARGIN), title: heading, items: out };
+}
+
+/** Standalone SVG document for a scene from `collationScene`. */
+export function sceneSvg(scene) {
+  const { width: W, height: H, title, items } = scene;
   return `<?xml version="1.0" encoding="UTF-8"?>\n` +
     `<svg xmlns="http://www.w3.org/2000/svg" width="${W}" height="${H}" viewBox="0 0 ${W} ${H}">` +
-    `<title>${escapeHtml(heading)}</title><style>${STYLE}</style>` +
+    `<title>${escapeHtml(title)}</title><style>${STYLE}</style>` +
     `<rect width="100%" height="100%" fill="#ffffff"/>` +
-    out.join("") + `</svg>`;
+    shapesSvg(items) + `</svg>`;
+}
+
+/** Standalone SVG document for a parsed collation (`opts` as in `collationScene`). */
+export function collationSvgDocument(collation, title = "", opts = {}) {
+  return sceneSvg(collationScene(collation, title, opts));
 }
 
 /** Pixel size of an SVG document string from `collationSvgDocument`. */
@@ -141,14 +162,15 @@ export function svgSize(svg) {
 }
 
 /**
- * Split the diagram into page-sized SVG documents, breaking only between
- * quires. `fits({width, height})` says whether a page's SVG fits; a page always
- * gets at least one quire. Notes go on the first page, the formula on the last.
+ * Split the diagram into page-sized scenes (`collationScene`), breaking only
+ * between quires. `fits({width, height})` says whether a page's scene fits; a
+ * page always gets at least one quire. Notes go on the first page, the formula
+ * on the last; all pages are as wide as the whole diagram.
  */
 export function collationPages(collation, title, fits) {
   const n = collation.quires.length;
-  const minWidth = svgSize(collationSvgDocument(collation, title)).width - 2 * MARGIN;
-  const make = (i, j, first) => collationSvgDocument(collation, title, {
+  const minWidth = collationScene(collation, title).width - 2 * MARGIN;
+  const make = (i, j, first) => collationScene(collation, title, {
     quires: collation.quires.slice(i, j), notes: first, formula: j === n, continued: !first, minWidth,
   });
   if (!n) return [make(0, 0, true)];
@@ -156,7 +178,7 @@ export function collationPages(collation, title, fits) {
   for (let i = 0; i < n;) {
     const first = pages.length === 0;
     let j = i + 1;
-    while (j < n && fits(svgSize(make(i, j + 1, first)))) j++;
+    while (j < n && fits(make(i, j + 1, first))) j++;
     pages.push(make(i, j, first));
     i = j;
   }
@@ -225,19 +247,101 @@ export async function downloadCollationPng(collation, title, scale = 2) {
   }
 }
 
+// Characters jsPDF's built-in Helvetica can draw (WinAnsi): printable ASCII,
+// Latin-1 and these extras.
+const WINANSI_EXTRA = "€‚ƒ„…†‡ˆ‰Š‹ŒŽ‘’“”•–—˜™š›œžŸ";
+const winAnsi = (ch) => {
+  const c = ch.codePointAt(0);
+  return (c >= 0x20 && c < 0x7f) || (c >= 0xa0 && c <= 0xff) || WINANSI_EXTRA.includes(ch);
+};
+
+/**
+ * Text as Helvetica in the PDF can draw it: a character outside WinAnsi loses
+ * its diacritics when that leaves a drawable letter (ǫ → o, ǿ → ø), otherwise
+ * it becomes "?".
+ */
+export function pdfText(text) {
+  return [...String(text)].map((ch) => {
+    if (winAnsi(ch)) return ch;
+    const base = ch.normalize("NFD").replace(/\p{M}/gu, "").normalize("NFC");
+    return base && [...base].every(winAnsi) ? base : "?";
+  }).join("");
+}
+
+/**
+ * Draw a scene (`collationScene`) into a jsPDF document: 1 px becomes `scale`
+ * pt and the scene's origin lands at (x0, y0) pt. Shapes are vector paths,
+ * text is real text in Helvetica (bold for weight 600).
+ */
+export function drawScene(doc, scene, { scale, x0 = 0, y0 = 0 }) {
+  const X = (x) => x0 + x * scale;
+  const Y = (y) => y0 + y * scale;
+  for (const it of scene.items) {
+    const st = CLASS_STYLE[it.cls] || {};
+    if (it.t === "group") {
+      drawScene(doc, it, { scale, x0: X(it.x || 0), y0: Y(it.y || 0) });
+    } else if (it.t === "rect") {
+      doc.setLineWidth(st.width * scale);
+      doc.setDrawColor(st.stroke);
+      if (st.fill) doc.setFillColor(st.fill);
+      const r = (it.rx || 0) * scale;
+      doc.roundedRect(X(it.x), Y(it.y), it.w * scale, it.h * scale, r, r, st.fill ? "FD" : "S");
+    } else if (it.t === "path") {
+      doc.setLineWidth(st.width * scale);
+      doc.setDrawColor(st.stroke);
+      doc.setLineCap(st.round ? "round" : "butt");
+      for (const [c, ...n] of it.segs) {
+        if (c === "M") doc.moveTo(X(n[0]), Y(n[1]));
+        else if (c === "L") doc.lineTo(X(n[0]), Y(n[1]));
+        else if (c === "C") doc.curveTo(X(n[0]), Y(n[1]), X(n[2]), Y(n[3]), X(n[4]), Y(n[5]));
+      }
+      doc.stroke();
+    } else if (it.t === "text") {
+      doc.setFont("helvetica", st.bold ? "bold" : "normal");
+      doc.setFontSize(st.size * scale);
+      doc.setTextColor(st.color);
+      doc.text(pdfText(it.text), X(it.x), Y(it.y), {
+        align: it.anchor === "end" ? "right" : "left",
+        baseline: it.middle ? "middle" : "alphabetic",
+      });
+    }
+  }
+}
+
 // PDF page: landscape A4 in pt. The diagram is drawn at most at its natural
-// size (1 px = 0.75 pt), smaller when wider than the page. The SVG's own white
+// size (1 px = 0.75 pt), smaller when wider than the page. The scene's own
 // MARGIN replaces the page margin rather than adding to it.
-const PDF = { w: 841.89, h: 595.28, margin: 28, footer: 22, natural: 0.75, dpiScale: 3 };
+const PDF = { w: 841.89, h: 595.28, margin: 28, footer: 22, natural: 0.75 };
 const pdfScale = (width) => Math.min(PDF.natural, (PDF.w - 2 * PDF.margin) / (width - 2 * MARGIN));
 const pdfFits = ({ width, height }) =>
   (height - 2 * MARGIN) * pdfScale(width) <= PDF.h - 2 * PDF.margin - PDF.footer;
 
 /**
- * Download the diagram as PDF: landscape A4 pages, each a rendered image of a
- * page-sized part of the diagram (broken between quires), with an "Accessed"
- * footer and page numbers like the details-modal PDFs.
+ * Write the diagram into a new jsPDF document: landscape A4 pages, each a
+ * page-sized part of the diagram (broken between quires) drawn as vectors and
+ * text, with an "Accessed" footer and page numbers like the details-modal PDFs.
  */
+export function collationPdf(jsPDF, collation, title, date = new Date()) {
+  const pages = collationPages(collation, title, pdfFits);
+  const doc = new jsPDF("l", "pt", "a4");
+  doc.setProperties({ title: pdfText(title ? `Collation diagram — ${title}` : "Collation diagram") });
+  const accessed = isoTimestamp(date);
+  pages.forEach((scene, i) => {
+    if (i > 0) doc.addPage("a4", "l");
+    const s = pdfScale(scene.width);
+    const at = PDF.margin - MARGIN * s;
+    drawScene(doc, scene, { scale: s, x0: at, y0: at });
+    doc.setFont("helvetica", "normal");
+    doc.setFontSize(8);
+    doc.setTextColor(108, 117, 125);
+    doc.text(`Accessed: ${accessed}`, PDF.margin, PDF.h - 20);
+    const label = `Page ${i + 1} of ${pages.length}`;
+    doc.text(label, PDF.w - PDF.margin - doc.getTextWidth(label), PDF.h - 20);
+  });
+  return doc;
+}
+
+/** Download the diagram as PDF (see `collationPdf`). */
 export async function downloadCollationPdf(collation, title) {
   let jsPDF;
   try {
@@ -248,25 +352,7 @@ export async function downloadCollationPdf(collation, title) {
     return;
   }
   try {
-    const pages = collationPages(collation, title, pdfFits);
-    const doc = new jsPDF("l", "pt", "a4");
-    doc.setProperties({ title: title ? `Collation diagram — ${title}` : "Collation diagram" });
-    const accessed = isoTimestamp(new Date());
-    for (let i = 0; i < pages.length; i++) {
-      if (i > 0) doc.addPage("a4", "l");
-      const { width, height } = svgSize(pages[i]);
-      const canvas = await svgToCanvas(pages[i], PDF.dpiScale);
-      const s = pdfScale(width);
-      const at = PDF.margin - MARGIN * s;
-      doc.addImage(canvas, "PNG", at, at, width * s, height * s, undefined, "FAST");
-      doc.setFont("helvetica", "normal");
-      doc.setFontSize(8);
-      doc.setTextColor(108, 117, 125);
-      doc.text(`Accessed: ${accessed}`, PDF.margin, PDF.h - 20);
-      const label = `Page ${i + 1} of ${pages.length}`;
-      doc.text(label, PDF.w - PDF.margin - doc.getTextWidth(label), PDF.h - 20);
-    }
-    doc.save(collationFilename(title, "pdf"));
+    collationPdf(jsPDF, collation, title).save(collationFilename(title, "pdf"));
   } catch (e) {
     console.error(e);
     alert("Could not create the PDF.");
