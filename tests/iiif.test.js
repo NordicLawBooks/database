@@ -20,11 +20,11 @@ const INDEX = {
 
 afterEach(() => setIiifIndex({}));
 
-test("iiifKeyForUrl: manuscripta (with/without www) and nb.no; others null", () => {
+test("iiifKeyForUrl: manuscripta (with/without www) and nb.no; non-IIIF sites null", () => {
   assert.equal(iiifKeyForUrl("https://manuscripta.se/ms/100255"), "ms:100255");
   assert.equal(iiifKeyForUrl("https://www.manuscripta.se/ms/100255/"), "ms:100255");
   assert.equal(iiifKeyForUrl(`https://www.nb.no/items/${NB_ID}?page=0`), `nb:${NB_ID}`);
-  assert.equal(iiifKeyForUrl("https://handrit.is/manuscript/view/da/AM02-0286/0"), null);
+  assert.equal(iiifKeyForUrl("https://sprogsamlinger.ku.dk/q.php?p=ds&s=1"), null);
   assert.equal(iiifKeyForUrl(""), null);
   assert.equal(iiifKeyForUrl(null), null);
 });
@@ -192,4 +192,23 @@ test("Leaves/Pages cells link into the viewer in the grouped and text views", ()
   renderTextTable(host, msRows, { page: 1, pageSize: 50 }, ["Shelf mark", "Leaves/Pages"]);
   assert.equal((host.innerHTML.match(/data-locus-from=/g) || []).length, 2);
   assert.match(host.innerHTML, /data-locus-from="10r"[^>]*>10r<\/a>-<a [^>]*data-locus-from="12v"/);
+});
+
+test("handrit.is links: keyed by manuscript id; relative manifests resolve against the page", () => {
+  for (const url of [
+    "https://handrit.is/manuscript/view/is/AM02-0286/0#mode/2up",
+    "https://handrit.is/manuscript/view/da/AM02-0286",
+    "https://handrit.is/manuscript/view/is/AM02-0286/5#page/1v/mode/2up",
+  ]) assert.equal(iiifKeyForUrl(url), "hr:am02-0286");
+  assert.equal(iiifKeyForUrl("https://handrit.is/manuscript/view/en/AM08-0056?lang=en"), "hr:am08-0056");
+
+  setIiifIndex({ "hr:am02-0286": { manifest: "data/iiif/handrit/AM02-0286.json", canvases: 56 } });
+  const link = "[HR](https://handrit.is/manuscript/view/is/AM02-0286/0#mode/2up)";
+  assert.equal(manifestsForLinks(link)[0].manifest, "data/iiif/handrit/AM02-0286.json"); // no document (Node)
+  globalThis.document = { baseURI: "https://nordiclawbooks.github.io/database/?q=x" };
+  try {
+    assert.equal(manifestsForLinks(link)[0].manifest, "https://nordiclawbooks.github.io/database/data/iiif/handrit/AM02-0286.json");
+  } finally {
+    delete globalThis.document;
+  }
 });

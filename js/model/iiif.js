@@ -1,4 +1,5 @@
-// IIIF manifests behind "Links to Database" links, for the image viewer
+// IIIF manifests behind "Links to Database" links (manuscripta.se, nb.no, and
+// static manifests we build for handrit.is), for the image viewer
 // (js/render/iiif-modal.js). data/iiif_manifests.json (built by
 // data/scripts/build_iiif_index.py) lists the links whose manifest exists; it
 // decides where the viewer is offered, not the "(not digitised)" link labels.
@@ -9,6 +10,8 @@
 const IIIF_SOURCES = [
   { prefix: "ms", re: /^https?:\/\/(?:www\.)?manuscripta\.se\/ms\/(\d+)/i },
   { prefix: "nb", re: /^https?:\/\/(?:www\.)?nb\.no\/items\/([0-9a-f]{32})/i },
+  // handrit.is has no IIIF: the index points at our own static manifests (data/iiif/handrit/).
+  { prefix: "hr", re: /^https?:\/\/(?:www\.)?handrit\.is\/manuscript\/view\/[a-z]{2}\/([^/#?\s]+)/i },
 ];
 const URL_RE = /https?:\/\/[^\s;()[\]]+/g;
 
@@ -29,11 +32,22 @@ export function iiifKeyForUrl(url) {
   return null;
 }
 
+/** A manifest URL as an absolute URL: the handrit manifests are listed relative to the site. */
+function absoluteUrl(url) {
+  const base = typeof document !== "undefined" && document.baseURI;
+  if (!base) return url;
+  try {
+    return new URL(url, base).href;
+  } catch {
+    return url;
+  }
+}
+
 /** { key, manifest, canvases } for a link URL with an indexed manifest, else null. */
 export function iiifEntryForUrl(url) {
   const key = iiifKeyForUrl(url);
   const hit = key && Object.prototype.hasOwnProperty.call(index, key) ? index[key] : null;
-  return hit && hit.manifest ? { key, manifest: hit.manifest, canvases: hit.canvases || 0 } : null;
+  return hit && hit.manifest ? { key, manifest: absoluteUrl(hit.manifest), canvases: hit.canvases || 0 } : null;
 }
 
 /** Indexed manifests for every link in a Links to Database value, de-duplicated, in order. */

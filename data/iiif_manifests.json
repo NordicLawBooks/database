@@ -1,4 +1,460 @@
 {
+ "hr:am02-0286": {
+  "manifest": "data/iiif/handrit/AM02-0286.json",
+  "canvases": 56
+ },
+ "hr:am02-0302": {
+  "manifest": "data/iiif/handrit/AM02-0302.json",
+  "canvases": 182
+ },
+ "hr:am02-0304": {
+  "manifest": "data/iiif/handrit/AM02-0304.json",
+  "canvases": 186
+ },
+ "hr:am02-0305": {
+  "manifest": "data/iiif/handrit/AM02-0305.json",
+  "canvases": 214
+ },
+ "hr:am02-0315-f": {
+  "manifest": "data/iiif/handrit/AM02-0315-f.json",
+  "canvases": 13
+ },
+ "hr:am02-0315-h": {
+  "manifest": "data/iiif/handrit/AM02-0315-h.json",
+  "canvases": 8
+ },
+ "hr:am02-0315-i": {
+  "manifest": "data/iiif/handrit/AM02-0315-i.json",
+  "canvases": 4
+ },
+ "hr:am02-0315-k": {
+  "manifest": "data/iiif/handrit/AM02-0315-k.json",
+  "canvases": 3
+ },
+ "hr:am02-0315a": {
+  "manifest": "data/iiif/handrit/AM02-0315a.json",
+  "canvases": 7
+ },
+ "hr:am02-0315b": {
+  "manifest": "data/iiif/handrit/AM02-0315b.json",
+  "canvases": 2
+ },
+ "hr:am02-0315c": {
+  "manifest": "data/iiif/handrit/AM02-0315c.json",
+  "canvases": 12
+ },
+ "hr:am02-0315d": {
+  "manifest": "data/iiif/handrit/AM02-0315d.json",
+  "canvases": 37
+ },
+ "hr:am02-0315l": {
+  "manifest": "data/iiif/handrit/AM02-0315l.json",
+  "canvases": 13
+ },
+ "hr:am02-0334": {
+  "manifest": "data/iiif/handrit/AM02-0334.json",
+  "canvases": 226
+ },
+ "hr:am02-0343": {
+  "manifest": "data/iiif/handrit/AM02-0343.json",
+  "canvases": 194
+ },
+ "hr:am02-0344": {
+  "manifest": "data/iiif/handrit/AM02-0344.json",
+  "canvases": 182
+ },
+ "hr:am02-0345": {
+  "manifest": "data/iiif/handrit/AM02-0345.json",
+  "canvases": 192
+ },
+ "hr:am02-0346": {
+  "manifest": "data/iiif/handrit/AM02-0346.json",
+  "canvases": 190
+ },
+ "hr:am02-0347": {
+  "manifest": "data/iiif/handrit/AM02-0347.json",
+  "canvases": 219
+ },
+ "hr:am02-0350": {
+  "manifest": "data/iiif/handrit/AM02-0350.json",
+  "canvases": 350
+ },
+ "hr:am02-0351": {
+  "manifest": "data/iiif/handrit/AM02-0351.json",
+  "canvases": 291
+ },
+ "hr:am04-0003": {
+  "manifest": "data/iiif/handrit/AM04-0003.json",
+  "canvases": 140
+ },
+ "hr:am04-0004": {
+  "manifest": "data/iiif/handrit/AM04-0004.json",
+  "canvases": 144
+ },
+ "hr:am04-0005": {
+  "manifest": "data/iiif/handrit/AM04-0005.json",
+  "canvases": 494
+ },
+ "hr:am04-0006": {
+  "manifest": "data/iiif/handrit/AM04-0006.json",
+  "canvases": 750
+ },
+ "hr:am04-0007": {
+  "manifest": "data/iiif/handrit/AM04-0007.json",
+  "canvases": 402
+ },
+ "hr:am04-0008": {
+  "manifest": "data/iiif/handrit/AM04-0008.json",
+  "canvases": 92
+ },
+ "hr:am04-0009": {
+  "manifest": "data/iiif/handrit/AM04-0009.json",
+  "canvases": 465
+ },
+ "hr:am04-0011": {
+  "manifest": "data/iiif/handrit/AM04-0011.json",
+  "canvases": 304
+ },
+ "hr:am04-0012": {
+  "manifest": "data/iiif/handrit/AM04-0012.json",
+  "canvases": 146
+ },
+ "hr:am04-0021": {
+  "manifest": "data/iiif/handrit/AM04-0021.json",
+  "canvases": 378
+ },
+ "hr:am04-0022": {
+  "manifest": "data/iiif/handrit/AM04-0022.json",
+  "canvases": 490
+ },
+ "hr:am04-0023": {
+  "manifest": "data/iiif/handrit/AM04-0023.json",
+  "canvases": 288
+ },
+ "hr:am04-0024": {
+  "manifest": "data/iiif/handrit/AM04-0024.json",
+  "canvases": 16
+ },
+ "hr:am04-0025": {
+  "manifest": "data/iiif/handrit/AM04-0025.json",
+  "canvases": 278
+ },
+ "hr:am04-0026": {
+  "manifest": "data/iiif/handrit/AM04-0026.json",
+  "canvases": 456
+ },
+ "hr:am04-0028": {
+  "manifest": "data/iiif/handrit/AM04-0028.json",
+  "canvases": 430
+ },
+ "hr:am04-0035": {
+  "manifest": "data/iiif/handrit/AM04-0035.json",
+  "canvases": 358
+ },
+ "hr:am04-0036": {
+  "manifest": "data/iiif/handrit/AM04-0036.json",
+  "canvases": 336
+ },
+ "hr:am04-0039": {
+  "manifest": "data/iiif/handrit/AM04-0039.json",
+  "canvases": 314
+ },
+ "hr:am04-0040": {
+  "manifest": "data/iiif/handrit/AM04-0040.json",
+  "canvases": 270
+ },
+ "hr:am04-0041": {
+  "manifest": "data/iiif/handrit/AM04-0041.json",
+  "canvases": 93
+ },
+ "hr:am04-0042": {
+  "manifest": "data/iiif/handrit/AM04-0042.json",
+  "canvases": 576
+ },
+ "hr:am04-0056": {
+  "manifest": "data/iiif/handrit/AM04-0056.json",
+  "canvases": 162
+ },
+ "hr:am04-0060": {
+  "manifest": "data/iiif/handrit/AM04-0060.json",
+  "canvases": 214
+ },
+ "hr:am04-0065": {
+  "manifest": "data/iiif/handrit/AM04-0065.json",
+  "canvases": 205
+ },
+ "hr:am04-0069": {
+  "manifest": "data/iiif/handrit/AM04-0069.json",
+  "canvases": 182
+ },
+ "hr:am04-0078": {
+  "manifest": "data/iiif/handrit/AM04-0078.json",
+  "canvases": 145
+ },
+ "hr:am04-0114-a": {
+  "manifest": "data/iiif/handrit/AM04-0114-a.json",
+  "canvases": 26
+ },
+ "hr:am04-0127": {
+  "manifest": "data/iiif/handrit/AM04-0127.json",
+  "canvases": 209
+ },
+ "hr:am04-0128": {
+  "manifest": "data/iiif/handrit/AM04-0128.json",
+  "canvases": 266
+ },
+ "hr:am04-0132": {
+  "manifest": "data/iiif/handrit/AM04-0132.json",
+  "canvases": 158
+ },
+ "hr:am04-0134": {
+  "manifest": "data/iiif/handrit/AM04-0134.json",
+  "canvases": 106
+ },
+ "hr:am04-0135": {
+  "manifest": "data/iiif/handrit/AM04-0135.json",
+  "canvases": 257
+ },
+ "hr:am04-0137": {
+  "manifest": "data/iiif/handrit/AM04-0137.json",
+  "canvases": 235
+ },
+ "hr:am04-0139": {
+  "manifest": "data/iiif/handrit/AM04-0139.json",
+  "canvases": 159
+ },
+ "hr:am04-0140": {
+  "manifest": "data/iiif/handrit/AM04-0140.json",
+  "canvases": 309
+ },
+ "hr:am04-0147": {
+  "manifest": "data/iiif/handrit/AM04-0147.json",
+  "canvases": 291
+ },
+ "hr:am04-0154": {
+  "manifest": "data/iiif/handrit/AM04-0154.json",
+  "canvases": 171
+ },
+ "hr:am04-0156": {
+  "manifest": "data/iiif/handrit/AM04-0156.json",
+  "canvases": 171
+ },
+ "hr:am04-0157a": {
+  "manifest": "data/iiif/handrit/AM04-0157a.json",
+  "canvases": 191
+ },
+ "hr:am04-0158b": {
+  "manifest": "data/iiif/handrit/AM04-0158b.json",
+  "canvases": 73
+ },
+ "hr:am04-0160": {
+  "manifest": "data/iiif/handrit/AM04-0160.json",
+  "canvases": 298
+ },
+ "hr:am04-0161": {
+  "manifest": "data/iiif/handrit/AM04-0161.json",
+  "canvases": 350
+ },
+ "hr:am04-0169": {
+  "manifest": "data/iiif/handrit/AM04-0169.json",
+  "canvases": 185
+ },
+ "hr:am04-0173d-a01": {
+  "manifest": "data/iiif/handrit/AM04-0173d-A01.json",
+  "canvases": 14
+ },
+ "hr:am04-0173d-a02": {
+  "manifest": "data/iiif/handrit/AM04-0173d-A02.json",
+  "canvases": 6
+ },
+ "hr:am04-0173d-a03": {
+  "manifest": "data/iiif/handrit/AM04-0173d-A03.json",
+  "canvases": 6
+ },
+ "hr:am04-0173d-a04": {
+  "manifest": "data/iiif/handrit/AM04-0173d-A04.json",
+  "canvases": 6
+ },
+ "hr:am04-0173d-a06": {
+  "manifest": "data/iiif/handrit/AM04-0173d-A06.json",
+  "canvases": 6
+ },
+ "hr:am04-0173d-a07": {
+  "manifest": "data/iiif/handrit/AM04-0173d-A07.json",
+  "canvases": 6
+ },
+ "hr:am04-0173d-a08": {
+  "manifest": "data/iiif/handrit/AM04-0173d-A08.json",
+  "canvases": 14
+ },
+ "hr:am04-0173d-a09": {
+  "manifest": "data/iiif/handrit/AM04-0173d-A09.json",
+  "canvases": 4
+ },
+ "hr:am04-0173d-a12-16": {
+  "manifest": "data/iiif/handrit/AM04-0173d-A12-16.json",
+  "canvases": 10
+ },
+ "hr:am04-0173d-a14": {
+  "manifest": "data/iiif/handrit/AM04-0173d-A14.json",
+  "canvases": 4
+ },
+ "hr:am04-0173d-a15": {
+  "manifest": "data/iiif/handrit/AM04-0173d-A15.json",
+  "canvases": 6
+ },
+ "hr:am04-0173d-a17-24": {
+  "manifest": "data/iiif/handrit/AM04-0173d-A17-24.json",
+  "canvases": 12
+ },
+ "hr:am04-0173d-a18-31": {
+  "manifest": "data/iiif/handrit/AM04-0173d-A18-31.json",
+  "canvases": 10
+ },
+ "hr:am04-0173d-a21-26-35-36": {
+  "manifest": "data/iiif/handrit/AM04-0173d-A21-26-35-36.json",
+  "canvases": 12
+ },
+ "hr:am04-0173d-b01": {
+  "manifest": "data/iiif/handrit/AM04-0173d-B01.json",
+  "canvases": 4
+ },
+ "hr:am04-0173d-b03": {
+  "manifest": "data/iiif/handrit/AM04-0173d-B03.json",
+  "canvases": 6
+ },
+ "hr:am04-0173d-b04": {
+  "manifest": "data/iiif/handrit/AM04-0173d-B04.json",
+  "canvases": 4
+ },
+ "hr:am04-0173d-b09": {
+  "manifest": "data/iiif/handrit/AM04-0173d-B09.json",
+  "canvases": 8
+ },
+ "hr:am04-0173d-c02": {
+  "manifest": "data/iiif/handrit/AM04-0173d-C02.json",
+  "canvases": 4
+ },
+ "hr:am04-0173d-c04": {
+  "manifest": "data/iiif/handrit/AM04-0173d-C04.json",
+  "canvases": 12
+ },
+ "hr:am04-0174-i-a-d": {
+  "manifest": "data/iiif/handrit/AM04-0174-I-A-D.json",
+  "canvases": 63
+ },
+ "hr:am04-0175a": {
+  "manifest": "data/iiif/handrit/AM04-0175a.json",
+  "canvases": 97
+ },
+ "hr:am04-0175c": {
+  "manifest": "data/iiif/handrit/AM04-0175c.json",
+  "canvases": 63
+ },
+ "hr:am04-0186": {
+  "manifest": "data/iiif/handrit/AM04-0186.json",
+  "canvases": 164
+ },
+ "hr:am04-0187a": {
+  "manifest": "data/iiif/handrit/AM04-0187a.json",
+  "canvases": 12
+ },
+ "hr:am04-0279a": {
+  "manifest": "data/iiif/handrit/AM04-0279a.json",
+  "canvases": 34
+ },
+ "hr:am04-0687a": {
+  "manifest": "data/iiif/handrit/AM04-0687a.json",
+  "canvases": 24
+ },
+ "hr:am08-0011": {
+  "manifest": "data/iiif/handrit/AM08-0011.json",
+  "canvases": 172
+ },
+ "hr:am08-0016": {
+  "manifest": "data/iiif/handrit/AM08-0016.json",
+  "canvases": 484
+ },
+ "hr:am08-0017": {
+  "manifest": "data/iiif/handrit/AM08-0017.json",
+  "canvases": 244
+ },
+ "hr:am08-0028": {
+  "manifest": "data/iiif/handrit/AM08-0028.json",
+  "canvases": 210
+ },
+ "hr:am08-0048": {
+  "manifest": "data/iiif/handrit/AM08-0048.json",
+  "canvases": 135
+ },
+ "hr:am08-0049": {
+  "manifest": "data/iiif/handrit/AM08-0049.json",
+  "canvases": 81
+ },
+ "hr:am08-0050": {
+  "manifest": "data/iiif/handrit/AM08-0050.json",
+  "canvases": 115
+ },
+ "hr:am08-0079-i-alpha": {
+  "manifest": "data/iiif/handrit/AM08-0079-I-alpha.json",
+  "canvases": 4
+ },
+ "hr:am08-0079-i-beta": {
+  "manifest": "data/iiif/handrit/AM08-0079-I-beta.json",
+  "canvases": 1
+ },
+ "hr:am12-0442": {
+  "manifest": "data/iiif/handrit/AM12-0442.json",
+  "canvases": 224
+ },
+ "hr:am12-0451": {
+  "manifest": "data/iiif/handrit/AM12-0451.json",
+  "canvases": 268
+ },
+ "hr:am12-0455": {
+  "manifest": "data/iiif/handrit/AM12-0455.json",
+  "canvases": 542
+ },
+ "hr:gks02-1157": {
+  "manifest": "data/iiif/handrit/GKS02-1157.json",
+  "canvases": 202
+ },
+ "hr:gks04-3268": {
+  "manifest": "data/iiif/handrit/GKS04-3268.json",
+  "canvases": 221
+ },
+ "hr:gks04-3269b": {
+  "manifest": "data/iiif/handrit/GKS04-3269b.json",
+  "canvases": 155
+ },
+ "hr:gks04-3270": {
+  "manifest": "data/iiif/handrit/GKS04-3270.json",
+  "canvases": 273
+ },
+ "hr:gks04-3271": {
+  "manifest": "data/iiif/handrit/GKS04-3271.json",
+  "canvases": 125
+ },
+ "hr:jsfragm-0012": {
+  "manifest": "data/iiif/handrit/JSFragm-0012.json",
+  "canvases": 10
+ },
+ "hr:jsfragm-0020": {
+  "manifest": "data/iiif/handrit/JSFragm-0020.json",
+  "canvases": 8
+ },
+ "hr:kbadd04-0035-i": {
+  "manifest": "data/iiif/handrit/KBAdd04-0035-I.json",
+  "canvases": 8
+ },
+ "hr:rask072-a": {
+  "manifest": "data/iiif/handrit/Rask072-a.json",
+  "canvases": 212
+ },
+ "hr:rask074": {
+  "manifest": "data/iiif/handrit/Rask074.json",
+  "canvases": 186
+ },
  "ms:100248": {
   "manifest": "https://www.manuscripta.se/iiif/100248/manifest.json",
   "canvases": 25
