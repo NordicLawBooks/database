@@ -102888,21 +102888,32 @@
           },
           {
             "column": "Links to Database",
-            "label": "[NorS](https://sprogsamlinger.ku.dk/q.php?p=ds/hjem/mapper/9777)",
+            "label": "[NorS](https://sprogsamlinger.ku.dk/q.php?p=ds/hjem/mapper/9905)",
             "startRow": 1,
-            "endRow": 1,
+            "endRow": 13,
             "startRowAbs": 616,
-            "endRowAbs": 616,
-            "source": "cell",
+            "endRowAbs": 628,
+            "source": "merge",
             "locus": {
               "kind": "f",
               "from": "2",
-              "to": "2",
+              "to": "86v",
               "prefix": "f.",
-              "rendered": "f. 2-2",
+              "rendered": "f. 2-86v",
               "evidence": {
                 "leavesPages": [
-                  "f. 2"
+                  "f. 2",
+                  "Ff. 3ra–11vb",
+                  "F. 11vb",
+                  "Ff. 12ra–81vb",
+                  "F. 82",
+                  "Ff. 83r–84r",
+                  "F. 84r",
+                  "F. 84v",
+                  "F. 85r",
+                  "Ff. 85r–v",
+                  "F. 85v",
+                  "F. 86r–v"
                 ]
               }
             }
@@ -104502,19 +104513,21 @@
             "column": "Links to Database",
             "label": "[NRA](https://media.digitalarkivet.no/view/58516/171)",
             "startRow": 0,
-            "endRow": 0,
+            "endRow": 2,
             "startRowAbs": 629,
-            "endRowAbs": 629,
-            "source": "cell",
+            "endRowAbs": 631,
+            "source": "merge",
             "locus": {
               "kind": "f",
               "from": "1",
-              "to": "10r",
+              "to": "10v",
               "prefix": "ff.",
-              "rendered": "ff. 1-10r",
+              "rendered": "ff. 1-10v",
               "evidence": {
                 "leavesPages": [
-                  "Ff. 1–8; f. 9r; f. 10r"
+                  "Ff. 1–8; f. 9r; f. 10r",
+                  "F. 9v",
+                  "F. 10v"
                 ]
               }
             }
