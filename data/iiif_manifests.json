@@ -55,6 +55,10 @@
   "manifest": "data/iiif/handrit/AM02-0334.json",
   "canvases": 226
  },
+ "hr:am02-0342": {
+  "manifest": "data/iiif/handrit/AM02-0342.json",
+  "canvases": 184
+ },
  "hr:am02-0343": {
   "manifest": "data/iiif/handrit/AM02-0343.json",
   "canvases": 194
@@ -203,6 +207,10 @@
   "manifest": "data/iiif/handrit/AM04-0128.json",
   "canvases": 266
  },
+ "hr:am04-0129": {
+  "manifest": "data/iiif/handrit/AM04-0129.json",
+  "canvases": 325
+ },
  "hr:am04-0132": {
   "manifest": "data/iiif/handrit/AM04-0132.json",
   "canvases": 158
@@ -275,6 +283,10 @@
   "manifest": "data/iiif/handrit/AM04-0173d-A04.json",
   "canvases": 6
  },
+ "hr:am04-0173d-a05-20-34": {
+  "manifest": "data/iiif/handrit/AM04-0173d-A05-20-34.json",
+  "canvases": 32
+ },
  "hr:am04-0173d-a06": {
   "manifest": "data/iiif/handrit/AM04-0173d-A06.json",
   "canvases": 6
@@ -290,6 +302,14 @@
  "hr:am04-0173d-a09": {
   "manifest": "data/iiif/handrit/AM04-0173d-A09.json",
   "canvases": 4
+ },
+ "hr:am04-0173d-a10-13": {
+  "manifest": "data/iiif/handrit/AM04-0173d-A10-13.json",
+  "canvases": 6
+ },
+ "hr:am04-0173d-a11-19": {
+  "manifest": "data/iiif/handrit/AM04-0173d-A11-19.json",
+  "canvases": 10
  },
  "hr:am04-0173d-a12-16": {
   "manifest": "data/iiif/handrit/AM04-0173d-A12-16.json",
@@ -315,6 +335,38 @@
   "manifest": "data/iiif/handrit/AM04-0173d-A21-26-35-36.json",
   "canvases": 12
  },
+ "hr:am04-0173d-a22": {
+  "manifest": "data/iiif/handrit/AM04-0173d-A22.json",
+  "canvases": 4
+ },
+ "hr:am04-0173d-a23": {
+  "manifest": "data/iiif/handrit/AM04-0173d-A23.json",
+  "canvases": 4
+ },
+ "hr:am04-0173d-a25-27": {
+  "manifest": "data/iiif/handrit/AM04-0173d-A25-27.json",
+  "canvases": 6
+ },
+ "hr:am04-0173d-a28": {
+  "manifest": "data/iiif/handrit/AM04-0173d-A28.json",
+  "canvases": 6
+ },
+ "hr:am04-0173d-a29": {
+  "manifest": "data/iiif/handrit/AM04-0173d-A29.json",
+  "canvases": 6
+ },
+ "hr:am04-0173d-a30": {
+  "manifest": "data/iiif/handrit/AM04-0173d-A30.json",
+  "canvases": 8
+ },
+ "hr:am04-0173d-a32": {
+  "manifest": "data/iiif/handrit/AM04-0173d-A32.json",
+  "canvases": 10
+ },
+ "hr:am04-0173d-a33": {
+  "manifest": "data/iiif/handrit/AM04-0173d-A33.json",
+  "canvases": 8
+ },
  "hr:am04-0173d-b01": {
   "manifest": "data/iiif/handrit/AM04-0173d-B01.json",
   "canvases": 4
@@ -327,6 +379,18 @@
   "manifest": "data/iiif/handrit/AM04-0173d-B04.json",
   "canvases": 4
  },
+ "hr:am04-0173d-b06": {
+  "manifest": "data/iiif/handrit/AM04-0173d-B06.json",
+  "canvases": 6
+ },
+ "hr:am04-0173d-b07": {
+  "manifest": "data/iiif/handrit/AM04-0173d-B07.json",
+  "canvases": 6
+ },
+ "hr:am04-0173d-b08": {
+  "manifest": "data/iiif/handrit/AM04-0173d-B08.json",
+  "canvases": 6
+ },
  "hr:am04-0173d-b09": {
   "manifest": "data/iiif/handrit/AM04-0173d-B09.json",
   "canvases": 8
@@ -338,6 +402,10 @@
  "hr:am04-0173d-c04": {
   "manifest": "data/iiif/handrit/AM04-0173d-C04.json",
   "canvases": 12
+ },
+ "hr:am04-0173d-c07": {
+  "manifest": "data/iiif/handrit/AM04-0173d-C07.json",
+  "canvases": 15
  },
  "hr:am04-0174-i-a-d": {
   "manifest": "data/iiif/handrit/AM04-0174-I-A-D.json",
@@ -383,6 +451,18 @@
   "manifest": "data/iiif/handrit/AM08-0028.json",
   "canvases": 210
  },
+ "hr:am08-0038": {
+  "manifest": "data/iiif/handrit/AM08-0038.json",
+  "canvases": 271
+ },
+ "hr:am08-0044": {
+  "manifest": "data/iiif/handrit/AM08-0044.json",
+  "canvases": 146
+ },
+ "hr:am08-0045": {
+  "manifest": "data/iiif/handrit/AM08-0045.json",
+  "canvases": 108
+ },
  "hr:am08-0048": {
   "manifest": "data/iiif/handrit/AM08-0048.json",
   "canvases": 135
@@ -415,6 +495,10 @@
   "manifest": "data/iiif/handrit/AM12-0455.json",
   "canvases": 542
  },
+ "hr:am12-0458": {
+  "manifest": "data/iiif/handrit/AM12-0458.json",
+  "canvases": 210
+ },
  "hr:gks02-1157": {
   "manifest": "data/iiif/handrit/GKS02-1157.json",
   "canvases": 202
@@ -435,6 +519,14 @@
   "manifest": "data/iiif/handrit/GKS04-3271.json",
   "canvases": 125
  },
+ "hr:gks04-3273": {
+  "manifest": "data/iiif/handrit/GKS04-3273.json",
+  "canvases": 295
+ },
+ "hr:jsfragm-0003": {
+  "manifest": "data/iiif/handrit/JSFragm-0003.json",
+  "canvases": 8
+ },
  "hr:jsfragm-0012": {
   "manifest": "data/iiif/handrit/JSFragm-0012.json",
   "canvases": 10
@@ -445,6 +537,10 @@
  },
  "hr:kbadd04-0035-i": {
   "manifest": "data/iiif/handrit/KBAdd04-0035-I.json",
+  "canvases": 8
+ },
+ "hr:lbsfragm-0009": {
+  "manifest": "data/iiif/handrit/LbsFragm-0009.json",
   "canvases": 8
  },
  "hr:rask072-a": {
@@ -767,41 +863,9 @@
   "manifest": "https://www.manuscripta.se/iiif/100403/manifest.json",
   "canvases": 248
  },
- "ms:100404": {
-  "manifest": "https://www.manuscripta.se/iiif/100404/manifest.json",
-  "canvases": 715
- },
- "ms:100405": {
-  "manifest": "https://www.manuscripta.se/iiif/100405/manifest.json",
-  "canvases": 688
- },
- "ms:100406": {
-  "manifest": "https://www.manuscripta.se/iiif/100406/manifest.json",
-  "canvases": 394
- },
- "ms:100408": {
-  "manifest": "https://www.manuscripta.se/iiif/100408/manifest.json",
-  "canvases": 1079
- },
- "ms:100410": {
-  "manifest": "https://www.manuscripta.se/iiif/100410/manifest.json",
-  "canvases": 328
- },
- "ms:100411": {
-  "manifest": "https://www.manuscripta.se/iiif/100411/manifest.json",
-  "canvases": 413
- },
- "ms:100420": {
-  "manifest": "https://www.manuscripta.se/iiif/100420/manifest.json",
-  "canvases": 472
- },
  "ms:100425": {
   "manifest": "https://www.manuscripta.se/iiif/100425/manifest.json",
   "canvases": 742
- },
- "ms:100455": {
-  "manifest": "https://www.manuscripta.se/iiif/100455/manifest.json",
-  "canvases": 177
  },
  "ms:100522": {
   "manifest": "https://www.manuscripta.se/iiif/100522/manifest.json",
@@ -834,10 +898,6 @@
  "ms:101030": {
   "manifest": "https://www.manuscripta.se/iiif/101030/manifest.json",
   "canvases": 372
- },
- "ms:101055": {
-  "manifest": "https://www.manuscripta.se/iiif/101055/manifest.json",
-  "canvases": 86
  },
  "ms:101259": {
   "manifest": "https://www.manuscripta.se/iiif/101259/manifest.json",
