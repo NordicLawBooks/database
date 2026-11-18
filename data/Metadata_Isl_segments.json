@@ -103017,7 +103017,7 @@
         "Links to Database": [
           {
             "column": "Links to Database",
-            "label": "[NorS](https://sprogsamlinger.ku.dk/q.php?p=ds/hjem/mapper/36998)",
+            "label": "[NorS (partly digitised)](https://sprogsamlinger.ku.dk/q.php?p=ds/hjem/mapper/36998)",
             "startRow": 0,
             "endRow": 6,
             "startRowAbs": 826,
@@ -136117,7 +136117,7 @@
           },
           {
             "column": "Links to Database",
-            "label": "[NorS](https://sprogsamlinger.ku.dk/q.php?p=ds/hjem/mapper/33950)",
+            "label": "[NorS (only binding digitised) ](https://sprogsamlinger.ku.dk/q.php?p=ds/hjem/mapper/33950)",
             "startRow": 2,
             "endRow": 5,
             "startRowAbs": 1095,
@@ -136970,7 +136970,7 @@
           },
           {
             "column": "Links to Database",
-            "label": "[NorS](https://sprogsamlinger.ku.dk/q.php?p=ds/hjem/mapper/33950)",
+            "label": "[NorS (only binding digitised)](https://sprogsamlinger.ku.dk/q.php?p=ds/hjem/mapper/33950)",
             "startRow": 1,
             "endRow": 1,
             "startRowAbs": 1100,
@@ -137643,7 +137643,7 @@
           },
           {
             "column": "Links to Database",
-            "label": "[NorS](https://sprogsamlinger.ku.dk/q.php?p=ds/hjem/mapper/33952)",
+            "label": "[NorS (only binding digitised)](https://sprogsamlinger.ku.dk/q.php?p=ds/hjem/mapper/33952)",
             "startRow": 1,
             "endRow": 1,
             "startRowAbs": 1102,
