@@ -89,16 +89,21 @@ ByL	Tjb	Tjuvbolk
 ByL	Fmb	Farmannsbolk
 ByL	Epi	Epilog
 Jó		Jónsbók
+Jó	Pro	Prologue
 Jó	Þfb	Þingfararbálkr
+Jó	Kr	Kristindómsbálkr
+Jó	Koþ	Konungs þegnskylda
 Jó	Mah	Mannhelgi
 Jó	Kge	Kvenna giptingar með erðum
+Jó	Erf	Erfðatal
+Jó	Fra	Framfærslubálkr
+Jó	Lan	Landabrigðabálkr
+Jó	Bún	Búnaðarbálkr
+Jó	Rek	Rekaþáttr
 Jó	Llb	Landsleigubálkr (with Rekabálkr)
 Jó	Kab	Kaupabálkr
 Jó	Fml	Farmannalög
-Jó	þjb	Þjófabálkr
-Jó	HT	Um helga trú
-Jó	Lbb	Landsbrigðabálkr
-Jó	Olb	Odelsbolk
+Jó	Þjb	Þjófabálkr
 MagBref		Bréf Magnúss konungs
 Sg		Um skatt greizlu
 KF		Kristinréttr hinn forni
@@ -114,6 +119,7 @@ RBHM		Réttarbót Hákon Magnússon
 RBEM		Réttarbót Eiríkr Magnússon
 RBME		Réttarbót Magnús Eiríksson
 RBMV		Réttarbót Margrét Valdemarsdóttir
+RBKK		Réttarbót Kristján Freðriksson
 NgL		Norges gamle Love
 MEL		Magnus Erikssons Landslag
 MEL	Kgb	Konungabalken
@@ -250,16 +256,16 @@ Grg		Grágás
 Grg	Arþ	Arfa þáttr
 Grg	Bat	Baugatal
 Grg	Feþ	Festa þáttr
-Grg	Fjl	Fjárleigur
+Grg	Fjl	Fjárleigr
 Grg	Hrs	Hreppaskil
 Grg	Klb	Kristinna laga þáttr
 Grg	Lbþ	Landbrigða þáttr
-Grg	Lrþ	Lögréttuþáttar
-Grg	Lsþ	Lögsögumannsþáttar
+Grg	Lrþ	Lögréttu þáttr
+Grg	Lsþ	Lögsögumannsþáttr
 Grg	Misc	Miscellaneous articles
 Grg	Ómb	Ómaga bálkr
 Grg	Rsþ	Rannsókna þáttr
-Grg	Þsþ	Þingskapaþáttar
+Grg	Þsþ	Þingskapa þáttr
 Grg	Vl	Vígslóða
 JyL		Jyske lov
 JyL	För	Praefatio

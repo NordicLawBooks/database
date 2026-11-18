@@ -92369,6 +92369,26 @@
             }
           }
         ],
+        "Links to Database": [
+          {
+            "column": "Links to Database",
+            "label": "[MS](https://www.manuscripta.se/ms/100338)",
+            "startRow": 0,
+            "endRow": 0,
+            "startRowAbs": 610,
+            "endRowAbs": 610,
+            "source": "cell",
+            "locus": {
+              "kind": null,
+              "from": null,
+              "to": null,
+              "rendered": null,
+              "evidence": {
+                "leavesPages": []
+              }
+            }
+          }
+        ],
         "Main text": [
           {
             "column": "Main text",
@@ -136043,9 +136063,9 @@
       "Depository": "UUB",
       "rowRangeAbs": {
         "start": 925,
-        "end": 946
+        "end": 944
       },
-      "rowCount": 22,
+      "rowCount": 20,
       "segmentsByColumn": {
         "Catch Words and Gatherings": [
           {
@@ -137994,8 +138014,8 @@
       "Shelfmark": "B 55",
       "Depository": "UUB",
       "rowRangeAbs": {
-        "start": 947,
-        "end": 958
+        "start": 945,
+        "end": 956
       },
       "rowCount": 12,
       "segmentsByColumn": {
@@ -138005,8 +138025,8 @@
             "label": "1400-1450",
             "startRow": 0,
             "endRow": 11,
-            "startRowAbs": 947,
-            "endRowAbs": 958,
+            "startRowAbs": 945,
+            "endRowAbs": 956,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -138025,8 +138045,8 @@
             "label": "I:3 (1b,1f; ff.1-3); II:6 (2b,2f; ff.4-9); III:9 (4b,1f; ff.10-18); IV:8 (4b; ff.19-26); V:9 (4b,1f; ff.27-35); VI:8 (4b; ff.36-43); VII:7 (3b,1f; ff.44-50); VIII:8 (4b; ff.51-58); IX:8 (4b; ff.59-66); X:9 (4b,1f; ff.67-75); XI:6 (1b,4f; ff.76-81); XII:3 (3f; ff.82-84)",
             "startRow": 0,
             "endRow": 11,
-            "startRowAbs": 947,
-            "endRowAbs": 958,
+            "startRowAbs": 945,
+            "endRowAbs": 956,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -138045,8 +138065,8 @@
             "label": "[MS](https://manuscripta.se/ms/100395)",
             "startRow": 7,
             "endRow": 7,
-            "startRowAbs": 954,
-            "endRowAbs": 954,
+            "startRowAbs": 952,
+            "endRowAbs": 952,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -138063,6 +138083,157 @@
             "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-458230)",
             "startRow": 11,
             "endRow": 11,
+            "startRowAbs": 956,
+            "endRowAbs": 956,
+            "source": "cell",
+            "locus": {
+              "kind": null,
+              "from": null,
+              "to": null,
+              "rendered": null,
+              "evidence": {
+                "leavesPages": []
+              }
+            }
+          }
+        ],
+        "Name": [
+          {
+            "column": "Name",
+            "label": "",
+            "startRow": 0,
+            "endRow": 11,
+            "startRowAbs": 945,
+            "endRowAbs": 956,
+            "source": "merge",
+            "locus": {
+              "kind": null,
+              "from": null,
+              "to": null,
+              "rendered": null,
+              "evidence": {
+                "leavesPages": []
+              }
+            }
+          }
+        ],
+        "Object": [
+          {
+            "column": "Object",
+            "label": "Codex",
+            "startRow": 0,
+            "endRow": 11,
+            "startRowAbs": 945,
+            "endRowAbs": 956,
+            "source": "merge",
+            "locus": {
+              "kind": null,
+              "from": null,
+              "to": null,
+              "rendered": null,
+              "evidence": {
+                "leavesPages": []
+              }
+            }
+          }
+        ],
+        "Related Shelfmarks": [
+          {
+            "column": "Related Shelfmarks",
+            "label": "",
+            "startRow": 0,
+            "endRow": 11,
+            "startRowAbs": 945,
+            "endRowAbs": 956,
+            "source": "merge",
+            "locus": {
+              "kind": null,
+              "from": null,
+              "to": null,
+              "rendered": null,
+              "evidence": {
+                "leavesPages": []
+              }
+            }
+          }
+        ],
+        "Size": [
+          {
+            "column": "Size",
+            "label": "",
+            "startRow": 0,
+            "endRow": 11,
+            "startRowAbs": 945,
+            "endRowAbs": 956,
+            "source": "merge",
+            "locus": {
+              "kind": null,
+              "from": null,
+              "to": null,
+              "rendered": null,
+              "evidence": {
+                "leavesPages": []
+              }
+            }
+          }
+        ]
+      }
+    },
+    {
+      "Shelfmark": "B 61",
+      "Depository": "UUB",
+      "rowRangeAbs": {
+        "start": 957,
+        "end": 961
+      },
+      "rowCount": 5,
+      "segmentsByColumn": {
+        "Dating": [
+          {
+            "column": "Dating",
+            "label": "1420-1480",
+            "startRow": 0,
+            "endRow": 4,
+            "startRowAbs": 957,
+            "endRowAbs": 961,
+            "source": "merge",
+            "locus": {
+              "kind": null,
+              "from": null,
+              "to": null,
+              "rendered": null,
+              "evidence": {
+                "leavesPages": []
+              }
+            }
+          }
+        ],
+        "Gatherings": [
+          {
+            "column": "Gatherings",
+            "label": "I:15 (7b,1f; ff.1-15); II:18 (9b; ff.16-33); III:14 (7b; ff.34-47); IV:18 (9b; ff.48-65); V:4 (1b,2f; ff.66-69)",
+            "startRow": 0,
+            "endRow": 4,
+            "startRowAbs": 957,
+            "endRowAbs": 961,
+            "source": "merge",
+            "locus": {
+              "kind": null,
+              "from": null,
+              "to": null,
+              "rendered": null,
+              "evidence": {
+                "leavesPages": []
+              }
+            }
+          }
+        ],
+        "Links to Database": [
+          {
+            "column": "Links to Database",
+            "label": "[MS](https://manuscripta.se/ms/100396)",
+            "startRow": 1,
+            "endRow": 1,
             "startRowAbs": 958,
             "endRowAbs": 958,
             "source": "cell",
@@ -138082,160 +138253,9 @@
             "column": "Name",
             "label": "",
             "startRow": 0,
-            "endRow": 11,
-            "startRowAbs": 947,
-            "endRowAbs": 958,
-            "source": "merge",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ],
-        "Object": [
-          {
-            "column": "Object",
-            "label": "Codex",
-            "startRow": 0,
-            "endRow": 11,
-            "startRowAbs": 947,
-            "endRowAbs": 958,
-            "source": "merge",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ],
-        "Related Shelfmarks": [
-          {
-            "column": "Related Shelfmarks",
-            "label": "",
-            "startRow": 0,
-            "endRow": 11,
-            "startRowAbs": 947,
-            "endRowAbs": 958,
-            "source": "merge",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ],
-        "Size": [
-          {
-            "column": "Size",
-            "label": "",
-            "startRow": 0,
-            "endRow": 11,
-            "startRowAbs": 947,
-            "endRowAbs": 958,
-            "source": "merge",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ]
-      }
-    },
-    {
-      "Shelfmark": "B 61",
-      "Depository": "UUB",
-      "rowRangeAbs": {
-        "start": 959,
-        "end": 963
-      },
-      "rowCount": 5,
-      "segmentsByColumn": {
-        "Dating": [
-          {
-            "column": "Dating",
-            "label": "1420-1480",
-            "startRow": 0,
             "endRow": 4,
-            "startRowAbs": 959,
-            "endRowAbs": 963,
-            "source": "merge",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ],
-        "Gatherings": [
-          {
-            "column": "Gatherings",
-            "label": "I:15 (7b,1f; ff.1-15); II:18 (9b; ff.16-33); III:14 (7b; ff.34-47); IV:18 (9b; ff.48-65); V:4 (1b,2f; ff.66-69)",
-            "startRow": 0,
-            "endRow": 4,
-            "startRowAbs": 959,
-            "endRowAbs": 963,
-            "source": "merge",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ],
-        "Links to Database": [
-          {
-            "column": "Links to Database",
-            "label": "[MS](https://manuscripta.se/ms/100396)",
-            "startRow": 1,
-            "endRow": 1,
-            "startRowAbs": 960,
-            "endRowAbs": 960,
-            "source": "cell",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ],
-        "Name": [
-          {
-            "column": "Name",
-            "label": "",
-            "startRow": 0,
-            "endRow": 4,
-            "startRowAbs": 959,
-            "endRowAbs": 963,
+            "startRowAbs": 957,
+            "endRowAbs": 961,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -138254,8 +138274,8 @@
             "label": "Codex",
             "startRow": 0,
             "endRow": 4,
-            "startRowAbs": 959,
-            "endRowAbs": 963,
+            "startRowAbs": 957,
+            "endRowAbs": 961,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -138274,8 +138294,8 @@
             "label": "",
             "startRow": 0,
             "endRow": 4,
-            "startRowAbs": 959,
-            "endRowAbs": 963,
+            "startRowAbs": 957,
+            "endRowAbs": 961,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -138294,8 +138314,8 @@
             "label": "",
             "startRow": 0,
             "endRow": 4,
-            "startRowAbs": 959,
-            "endRowAbs": 963,
+            "startRowAbs": 957,
+            "endRowAbs": 961,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -138314,8 +138334,8 @@
       "Shelfmark": "B 62",
       "Depository": "UUB",
       "rowRangeAbs": {
-        "start": 964,
-        "end": 984
+        "start": 962,
+        "end": 982
       },
       "rowCount": 21,
       "segmentsByColumn": {
@@ -138325,8 +138345,8 @@
             "label": "1450-1500",
             "startRow": 0,
             "endRow": 20,
-            "startRowAbs": 964,
-            "endRowAbs": 984,
+            "startRowAbs": 962,
+            "endRowAbs": 982,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -138345,8 +138365,8 @@
             "label": "I:4 (2b; ff.mirror-2); II:6 (3b; ff.3-8); III:8 (4b; ff.9-16); IV:12(6b;ff.17-28); V:11(4b+3f;ff.29-36); VI:10 (5b; ff.37-46); VII:9 (4b,1f; ff.47-55); VIII:9 (3b,3f; ff.56-64); IX:8 (3b,2f; ff.65-72); X:12 (6b; ff.73-82); XI:4 (2b; ff.83-86); XII:14 (7b; ff.87-100); XIII:12 (6b; ff.101-112); XIV:11 (5b,1f; ff.113-123); XV:4 (2b; ff.124-127); XVI:6 (1b,4f; ff.128-132:1); XVII:12 (6b; ff.133-142:2); XVIII:2 (1b; ff.143-144); XIX:9 (4b,1f; ff.144:1-144:9); XX:10 (2b,6f; ff.144:10-149); XXI:7 (3b,1f; ff.150-154)",
             "startRow": 0,
             "endRow": 20,
-            "startRowAbs": 964,
-            "endRowAbs": 984,
+            "startRowAbs": 962,
+            "endRowAbs": 982,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -138365,8 +138385,8 @@
             "label": "[MS](https://manuscripta.se/ms/100397)",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 964,
-            "endRowAbs": 964,
+            "startRowAbs": 962,
+            "endRowAbs": 962,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -138383,8 +138403,8 @@
             "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-430383)",
             "startRow": 20,
             "endRow": 20,
-            "startRowAbs": 984,
-            "endRowAbs": 984,
+            "startRowAbs": 982,
+            "endRowAbs": 982,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -138403,8 +138423,8 @@
             "label": "",
             "startRow": 0,
             "endRow": 20,
-            "startRowAbs": 964,
-            "endRowAbs": 984,
+            "startRowAbs": 962,
+            "endRowAbs": 982,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -138423,8 +138443,8 @@
             "label": "Codex",
             "startRow": 0,
             "endRow": 20,
-            "startRowAbs": 964,
-            "endRowAbs": 984,
+            "startRowAbs": 962,
+            "endRowAbs": 982,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -138443,8 +138463,8 @@
             "label": "",
             "startRow": 0,
             "endRow": 20,
-            "startRowAbs": 964,
-            "endRowAbs": 984,
+            "startRowAbs": 962,
+            "endRowAbs": 982,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -138463,8 +138483,8 @@
             "label": "",
             "startRow": 0,
             "endRow": 20,
-            "startRowAbs": 964,
-            "endRowAbs": 984,
+            "startRowAbs": 962,
+            "endRowAbs": 982,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -138483,8 +138503,8 @@
       "Shelfmark": "B 67",
       "Depository": "UUB",
       "rowRangeAbs": {
-        "start": 985,
-        "end": 992
+        "start": 983,
+        "end": 990
       },
       "rowCount": 8,
       "segmentsByColumn": {
@@ -138494,8 +138514,8 @@
             "label": "1475-1500",
             "startRow": 0,
             "endRow": 7,
-            "startRowAbs": 985,
-            "endRowAbs": 992,
+            "startRowAbs": 983,
+            "endRowAbs": 990,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -138514,8 +138534,8 @@
             "label": "I:14 (6b,2f; ff.mirror-13); II:12 (6b; ff.14-25); III:12 (5b,2f; ff.26-37); IV:11 (5b,1f; ff.38-48); V:11 (5b,1f; ff.49-59); VI:12 (6b; ff.60-71); VII:12 (6b; ff.72-83); VIII:11 (5b,1f; ff.84-mirror)",
             "startRow": 0,
             "endRow": 7,
-            "startRowAbs": 985,
-            "endRowAbs": 992,
+            "startRowAbs": 983,
+            "endRowAbs": 990,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -138534,8 +138554,8 @@
             "label": "[MS](https://manuscripta.se/ms/100398)",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 985,
-            "endRowAbs": 985,
+            "startRowAbs": 983,
+            "endRowAbs": 983,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -138552,8 +138572,8 @@
             "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-461050)",
             "startRow": 7,
             "endRow": 7,
-            "startRowAbs": 992,
-            "endRowAbs": 992,
+            "startRowAbs": 990,
+            "endRowAbs": 990,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -138572,8 +138592,8 @@
             "label": "",
             "startRow": 0,
             "endRow": 7,
-            "startRowAbs": 985,
-            "endRowAbs": 992,
+            "startRowAbs": 983,
+            "endRowAbs": 990,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -138592,8 +138612,8 @@
             "label": "Codex",
             "startRow": 0,
             "endRow": 7,
-            "startRowAbs": 985,
-            "endRowAbs": 992,
+            "startRowAbs": 983,
+            "endRowAbs": 990,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -138612,8 +138632,8 @@
             "label": "",
             "startRow": 0,
             "endRow": 7,
-            "startRowAbs": 985,
-            "endRowAbs": 992,
+            "startRowAbs": 983,
+            "endRowAbs": 990,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -138632,8 +138652,8 @@
             "label": "",
             "startRow": 0,
             "endRow": 7,
-            "startRowAbs": 985,
-            "endRowAbs": 992,
+            "startRowAbs": 983,
+            "endRowAbs": 990,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -138652,8 +138672,8 @@
       "Shelfmark": "B 68",
       "Depository": "UUB",
       "rowRangeAbs": {
-        "start": 993,
-        "end": 1012
+        "start": 991,
+        "end": 1010
       },
       "rowCount": 20,
       "segmentsByColumn": {
@@ -138663,8 +138683,8 @@
             "label": "1430",
             "startRow": 0,
             "endRow": 19,
-            "startRowAbs": 993,
-            "endRowAbs": 1012,
+            "startRowAbs": 991,
+            "endRowAbs": 1010,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -138683,8 +138703,8 @@
             "label": "I:9 (4b,1f; ff.0:1-0:9); II:8 (4b; ff.1-8); III:8 (4b; ff.9-16); IV:8 (4b; ff.17-24); V:8 (4b; ff.25-32); VI:7 (3b,1f; ff.33-39); VII:7 (3b,1f; ff.40-46); VIII:9 (4b,1f; ff.47-55); IX:7 (3b,1f; ff.56-62); X:8 (4b; ff.63-70); XI:8 (4b; ff.71-78); XII:8 (4b; ff.79-86); XIII:8 (3b,2f; ff.87-94); XIV:9 (4b,1f; ff.95-103); XV:7 (3b,1f; ff.104-110); XVI:12 (6b; ff.111-122); XVII:10 (4b,2f; ff.123-132); XVIII:10 (4b,2f; ff.133-142); XIX:8 (4b; ff.143-150); XX:9 (4b,1f; ff.151-159)",
             "startRow": 0,
             "endRow": 19,
-            "startRowAbs": 993,
-            "endRowAbs": 1012,
+            "startRowAbs": 991,
+            "endRowAbs": 1010,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -138703,8 +138723,8 @@
             "label": "[MS](https://www.manuscripta.se/ms/100399)",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 993,
-            "endRowAbs": 993,
+            "startRowAbs": 991,
+            "endRowAbs": 991,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -138721,8 +138741,8 @@
             "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-73176)",
             "startRow": 19,
             "endRow": 19,
-            "startRowAbs": 1012,
-            "endRowAbs": 1012,
+            "startRowAbs": 1010,
+            "endRowAbs": 1010,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -138741,8 +138761,8 @@
             "label": "",
             "startRow": 0,
             "endRow": 19,
-            "startRowAbs": 993,
-            "endRowAbs": 1012,
+            "startRowAbs": 991,
+            "endRowAbs": 1010,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -138761,8 +138781,8 @@
             "label": "Codex",
             "startRow": 0,
             "endRow": 19,
-            "startRowAbs": 993,
-            "endRowAbs": 1012,
+            "startRowAbs": 991,
+            "endRowAbs": 1010,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -138781,8 +138801,8 @@
             "label": "",
             "startRow": 0,
             "endRow": 19,
-            "startRowAbs": 993,
-            "endRowAbs": 1012,
+            "startRowAbs": 991,
+            "endRowAbs": 1010,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -138801,8 +138821,8 @@
             "label": "",
             "startRow": 0,
             "endRow": 19,
-            "startRowAbs": 993,
-            "endRowAbs": 1012,
+            "startRowAbs": 991,
+            "endRowAbs": 1010,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -138821,8 +138841,8 @@
       "Shelfmark": "B 69",
       "Depository": "UUB",
       "rowRangeAbs": {
-        "start": 1013,
-        "end": 1024
+        "start": 1011,
+        "end": 1022
       },
       "rowCount": 12,
       "segmentsByColumn": {
@@ -138832,8 +138852,8 @@
             "label": "1375-1400",
             "startRow": 0,
             "endRow": 11,
-            "startRowAbs": 1013,
-            "endRowAbs": 1024,
+            "startRowAbs": 1011,
+            "endRowAbs": 1022,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -138852,8 +138872,8 @@
             "label": "I:4 (2b; ff.mirror-0:3); II:6 (3b; ff.1-6); III:11 (5b,1f; ff.7-17); IV:9 (4b,1f; ff.18-26); V:10 (4b,2f; ff.27-36); VI:10 (5b; ff.37-46); VII:10 (4b,2f; ff.47-56); VIII:4 (1b,2f; ff.57-60); IX:6 (1b,4f; ff.61-66); X:4 (1b,2f; ff.67-70); XI:2 (1b; ff.71-72); XII:2 (1b; ff.72:1-mirror)",
             "startRow": 0,
             "endRow": 11,
-            "startRowAbs": 1013,
-            "endRowAbs": 1024,
+            "startRowAbs": 1011,
+            "endRowAbs": 1022,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -138872,8 +138892,8 @@
             "label": "[MS](https://manuscripta.se/ms/100400)",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1013,
-            "endRowAbs": 1013,
+            "startRowAbs": 1011,
+            "endRowAbs": 1011,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -138890,8 +138910,8 @@
             "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-460928)",
             "startRow": 11,
             "endRow": 11,
-            "startRowAbs": 1024,
-            "endRowAbs": 1024,
+            "startRowAbs": 1022,
+            "endRowAbs": 1022,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -138910,8 +138930,8 @@
             "label": "",
             "startRow": 0,
             "endRow": 11,
-            "startRowAbs": 1013,
-            "endRowAbs": 1024,
+            "startRowAbs": 1011,
+            "endRowAbs": 1022,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -138930,8 +138950,8 @@
             "label": "Codex",
             "startRow": 0,
             "endRow": 11,
-            "startRowAbs": 1013,
-            "endRowAbs": 1024,
+            "startRowAbs": 1011,
+            "endRowAbs": 1022,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -138950,8 +138970,8 @@
             "label": "",
             "startRow": 0,
             "endRow": 11,
-            "startRowAbs": 1013,
-            "endRowAbs": 1024,
+            "startRowAbs": 1011,
+            "endRowAbs": 1022,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -138970,8 +138990,8 @@
             "label": "",
             "startRow": 0,
             "endRow": 11,
-            "startRowAbs": 1013,
-            "endRowAbs": 1024,
+            "startRowAbs": 1011,
+            "endRowAbs": 1022,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -138990,8 +139010,8 @@
       "Shelfmark": "B 70",
       "Depository": "UUB",
       "rowRangeAbs": {
-        "start": 1025,
-        "end": 1036
+        "start": 1023,
+        "end": 1034
       },
       "rowCount": 12,
       "segmentsByColumn": {
@@ -139001,8 +139021,8 @@
             "label": "1475-1500",
             "startRow": 0,
             "endRow": 11,
-            "startRowAbs": 1025,
-            "endRowAbs": 1036,
+            "startRowAbs": 1023,
+            "endRowAbs": 1034,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -139021,8 +139041,8 @@
             "label": "",
             "startRow": 0,
             "endRow": 11,
-            "startRowAbs": 1025,
-            "endRowAbs": 1036,
+            "startRowAbs": 1023,
+            "endRowAbs": 1034,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -139041,8 +139061,8 @@
             "label": "I:8 (4b; ff.1-8); II:9 (4b,1f; ff.9-17); III:8 (4b; ff.18-25); IV:8 (4b; ff.26-33); V:8 (4b; ff.34-41); VI:8 (3b,2f; ff.42-49); VII:8 (3b,2f; ff.50-57); VIII:8 (3b,2f; ff.58-65); IX:8 (3b,2f; ff.66-73); X:8 (3b,2f; ff.74-81); XI:8 (1b,6f; ff.82-89); XII:9 (3b,3f; ff.90-98)",
             "startRow": 0,
             "endRow": 11,
-            "startRowAbs": 1025,
-            "endRowAbs": 1036,
+            "startRowAbs": 1023,
+            "endRowAbs": 1034,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -139061,8 +139081,8 @@
             "label": "",
             "startRow": 0,
             "endRow": 11,
-            "startRowAbs": 1025,
-            "endRowAbs": 1036,
+            "startRowAbs": 1023,
+            "endRowAbs": 1034,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -139081,8 +139101,8 @@
             "label": "[MS](https://manuscripta.se/ms/100401)",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1025,
-            "endRowAbs": 1025,
+            "startRowAbs": 1023,
+            "endRowAbs": 1023,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -139099,8 +139119,8 @@
             "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-461085)",
             "startRow": 11,
             "endRow": 11,
-            "startRowAbs": 1036,
-            "endRowAbs": 1036,
+            "startRowAbs": 1034,
+            "endRowAbs": 1034,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -139119,8 +139139,8 @@
             "label": "",
             "startRow": 0,
             "endRow": 11,
-            "startRowAbs": 1025,
-            "endRowAbs": 1036,
+            "startRowAbs": 1023,
+            "endRowAbs": 1034,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -139139,8 +139159,8 @@
             "label": "Codex",
             "startRow": 0,
             "endRow": 11,
-            "startRowAbs": 1025,
-            "endRowAbs": 1036,
+            "startRowAbs": 1023,
+            "endRowAbs": 1034,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -139159,8 +139179,8 @@
             "label": "",
             "startRow": 0,
             "endRow": 11,
-            "startRowAbs": 1025,
-            "endRowAbs": 1036,
+            "startRowAbs": 1023,
+            "endRowAbs": 1034,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -139179,8 +139199,8 @@
             "label": "",
             "startRow": 0,
             "endRow": 11,
-            "startRowAbs": 1025,
-            "endRowAbs": 1036,
+            "startRowAbs": 1023,
+            "endRowAbs": 1034,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -139199,8 +139219,8 @@
       "Shelfmark": "B 71",
       "Depository": "UUB",
       "rowRangeAbs": {
-        "start": 1037,
-        "end": 1045
+        "start": 1035,
+        "end": 1043
       },
       "rowCount": 9,
       "segmentsByColumn": {
@@ -139210,8 +139230,8 @@
             "label": "1425-1475",
             "startRow": 0,
             "endRow": 8,
-            "startRowAbs": 1037,
-            "endRowAbs": 1045,
+            "startRowAbs": 1035,
+            "endRowAbs": 1043,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -139230,8 +139250,8 @@
             "label": "",
             "startRow": 0,
             "endRow": 8,
-            "startRowAbs": 1037,
-            "endRowAbs": 1045,
+            "startRowAbs": 1035,
+            "endRowAbs": 1043,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -139250,8 +139270,8 @@
             "label": "I:8 (3b,2f; ff.1-8); II:8 (4b; ff.9-16); III:9 (4b,1f; ff.17-25); IV:8 (4b; ff.26-33); V:8 (4b; ff.34-41); VI:8 (4b; ff.42-49); VII:8 (4b; ff.50-58); VIII:11 (5b,1f; ff.59-69); IX:9 (3b,3f; ff.69:1-69:9)",
             "startRow": 0,
             "endRow": 8,
-            "startRowAbs": 1037,
-            "endRowAbs": 1045,
+            "startRowAbs": 1035,
+            "endRowAbs": 1043,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -139270,8 +139290,8 @@
             "label": "",
             "startRow": 0,
             "endRow": 8,
-            "startRowAbs": 1037,
-            "endRowAbs": 1045,
+            "startRowAbs": 1035,
+            "endRowAbs": 1043,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -139290,8 +139310,8 @@
             "label": "[MS](https://manuscripta.se/ms/100402)",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1037,
-            "endRowAbs": 1037,
+            "startRowAbs": 1035,
+            "endRowAbs": 1035,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -139308,8 +139328,8 @@
             "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-461086)",
             "startRow": 8,
             "endRow": 8,
-            "startRowAbs": 1045,
-            "endRowAbs": 1045,
+            "startRowAbs": 1043,
+            "endRowAbs": 1043,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -139328,8 +139348,8 @@
             "label": "",
             "startRow": 0,
             "endRow": 8,
-            "startRowAbs": 1037,
-            "endRowAbs": 1045,
+            "startRowAbs": 1035,
+            "endRowAbs": 1043,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -139348,8 +139368,8 @@
             "label": "Codex",
             "startRow": 0,
             "endRow": 8,
-            "startRowAbs": 1037,
-            "endRowAbs": 1045,
+            "startRowAbs": 1035,
+            "endRowAbs": 1043,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -139368,8 +139388,8 @@
             "label": "",
             "startRow": 0,
             "endRow": 8,
-            "startRowAbs": 1037,
-            "endRowAbs": 1045,
+            "startRowAbs": 1035,
+            "endRowAbs": 1043,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -139388,8 +139408,8 @@
             "label": "",
             "startRow": 0,
             "endRow": 8,
-            "startRowAbs": 1037,
-            "endRowAbs": 1045,
+            "startRowAbs": 1035,
+            "endRowAbs": 1043,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -139408,8 +139428,8 @@
       "Shelfmark": "B 82",
       "Depository": "UUB",
       "rowRangeAbs": {
-        "start": 1046,
-        "end": 1059
+        "start": 1044,
+        "end": 1057
       },
       "rowCount": 14,
       "segmentsByColumn": {
@@ -139419,8 +139439,8 @@
             "label": "1385",
             "startRow": 0,
             "endRow": 13,
-            "startRowAbs": 1046,
-            "endRowAbs": 1059,
+            "startRowAbs": 1044,
+            "endRowAbs": 1057,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -139439,8 +139459,8 @@
             "label": "",
             "startRow": 0,
             "endRow": 13,
-            "startRowAbs": 1046,
-            "endRowAbs": 1059,
+            "startRowAbs": 1044,
+            "endRowAbs": 1057,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -139459,8 +139479,8 @@
             "label": "I:8 (4b; ff.mirror-7); II:8 (4b; ff.8-15); III:12 (6b; ff.16-27); IV:8 (4b; ff.28-35); V:12 (6b; ff.36-47); VI:8 (4b; ff.48-55); VII:12 (6b; ff.56-67); VIII:8 (4b; ff.68-75); IX:11 (4b,3f; ff.76-86); X:14 (7b; ff.87-100); XI:6 (3b; ff.101-106); XII:10 (5b; ff.107-116); XIII:10 (5b; ff.115-126); XIV:13 (6b,1f; ff.127-mirror)",
             "startRow": 0,
             "endRow": 13,
-            "startRowAbs": 1046,
-            "endRowAbs": 1059,
+            "startRowAbs": 1044,
+            "endRowAbs": 1057,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -139479,8 +139499,8 @@
             "label": "",
             "startRow": 0,
             "endRow": 13,
-            "startRowAbs": 1046,
-            "endRowAbs": 1059,
+            "startRowAbs": 1044,
+            "endRowAbs": 1057,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -139499,8 +139519,8 @@
             "label": "[MS](https://manuscripta.se/ms/100403)",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1046,
-            "endRowAbs": 1046,
+            "startRowAbs": 1044,
+            "endRowAbs": 1044,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -139517,8 +139537,8 @@
             "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-399227)",
             "startRow": 13,
             "endRow": 13,
-            "startRowAbs": 1059,
-            "endRowAbs": 1059,
+            "startRowAbs": 1057,
+            "endRowAbs": 1057,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -139537,8 +139557,8 @@
             "label": "",
             "startRow": 0,
             "endRow": 13,
-            "startRowAbs": 1046,
-            "endRowAbs": 1059,
+            "startRowAbs": 1044,
+            "endRowAbs": 1057,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -139557,8 +139577,8 @@
             "label": "Codex",
             "startRow": 0,
             "endRow": 13,
-            "startRowAbs": 1046,
-            "endRowAbs": 1059,
+            "startRowAbs": 1044,
+            "endRowAbs": 1057,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -139577,8 +139597,8 @@
             "label": "",
             "startRow": 0,
             "endRow": 13,
-            "startRowAbs": 1046,
-            "endRowAbs": 1059,
+            "startRowAbs": 1044,
+            "endRowAbs": 1057,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -139597,8 +139617,8 @@
             "label": "",
             "startRow": 0,
             "endRow": 13,
-            "startRowAbs": 1046,
-            "endRowAbs": 1059,
+            "startRowAbs": 1044,
+            "endRowAbs": 1057,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -139617,8 +139637,8 @@
       "Shelfmark": "C 2",
       "Depository": "UUB",
       "rowRangeAbs": {
-        "start": 1060,
-        "end": 1060
+        "start": 1058,
+        "end": 1058
       },
       "rowCount": 1,
       "segmentsByColumn": {
@@ -139628,8 +139648,8 @@
             "label": "1300-1500",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1060,
-            "endRowAbs": 1060,
+            "startRowAbs": 1058,
+            "endRowAbs": 1058,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -139648,8 +139668,8 @@
             "label": "Unknown",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1060,
-            "endRowAbs": 1060,
+            "startRowAbs": 1058,
+            "endRowAbs": 1058,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -139668,8 +139688,8 @@
             "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-167083)",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1060,
-            "endRowAbs": 1060,
+            "startRowAbs": 1058,
+            "endRowAbs": 1058,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -139688,1106 +139708,9 @@
             "label": "Codex",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1060,
-            "endRowAbs": 1060,
+            "startRowAbs": 1058,
+            "endRowAbs": 1058,
             "source": "cell",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ]
-      }
-    },
-    {
-      "Shelfmark": "C 4",
-      "Depository": "UUB",
-      "rowRangeAbs": {
-        "start": 1061,
-        "end": 1061
-      },
-      "rowCount": 1,
-      "segmentsByColumn": {
-        "Dating": [
-          {
-            "column": "Dating",
-            "label": "1300-1500",
-            "startRow": 0,
-            "endRow": 0,
-            "startRowAbs": 1061,
-            "endRowAbs": 1061,
-            "source": "cell",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ],
-        "Gatherings": [
-          {
-            "column": "Gatherings",
-            "label": "Unknown",
-            "startRow": 0,
-            "endRow": 0,
-            "startRowAbs": 1061,
-            "endRowAbs": 1061,
-            "source": "cell",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ],
-        "Links to Database": [
-          {
-            "column": "Links to Database",
-            "label": "[MS](https://manuscripta.se/ms/100404)",
-            "startRow": 0,
-            "endRow": 0,
-            "startRowAbs": 1061,
-            "endRowAbs": 1061,
-            "source": "cell",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ]
-      }
-    },
-    {
-      "Shelfmark": "C 9",
-      "Depository": "UUB",
-      "rowRangeAbs": {
-        "start": 1062,
-        "end": 1062
-      },
-      "rowCount": 1,
-      "segmentsByColumn": {
-        "Dating": [
-          {
-            "column": "Dating",
-            "label": "1442-1464",
-            "startRow": 0,
-            "endRow": 0,
-            "startRowAbs": 1062,
-            "endRowAbs": 1062,
-            "source": "cell",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ],
-        "Gatherings": [
-          {
-            "column": "Gatherings",
-            "label": "Unknown",
-            "startRow": 0,
-            "endRow": 0,
-            "startRowAbs": 1062,
-            "endRowAbs": 1062,
-            "source": "cell",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ],
-        "Links to Database": [
-          {
-            "column": "Links to Database",
-            "label": "[MS](https://manuscripta.se/ms/100405)",
-            "startRow": 0,
-            "endRow": 0,
-            "startRowAbs": 1062,
-            "endRowAbs": 1062,
-            "source": "cell",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ]
-      }
-    },
-    {
-      "Shelfmark": "C 12",
-      "Depository": "UUB",
-      "rowRangeAbs": {
-        "start": 1063,
-        "end": 1083
-      },
-      "rowCount": 21,
-      "segmentsByColumn": {
-        "Dating": [
-          {
-            "column": "Dating",
-            "label": "1450-1520",
-            "startRow": 0,
-            "endRow": 20,
-            "startRowAbs": 1063,
-            "endRowAbs": 1083,
-            "source": "merge",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ],
-        "Full size": [
-          {
-            "column": "Full size",
-            "label": "",
-            "startRow": 0,
-            "endRow": 20,
-            "startRowAbs": 1063,
-            "endRowAbs": 1083,
-            "source": "merge",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ],
-        "Gatherings": [
-          {
-            "column": "Gatherings",
-            "label": "I:2 (1b; ff.mirror-0:1); II:10 (5b; ff.1-10); III:10 (5b; ff.11-20); IV:10 (5b; ff.21-30); V:10 (5b; ff.31-40); VI:10 (5b; ff.41-50); VII:10 (5b; ff.51-60); VIII:10 (5b; ff.61-70); IX:10 (5b; ff.71-80); X:10 (5b; ff.81-90); XI:10 (5b; ff.91-100); XII:10 (5b; ff.101-110); XIII:10 (5b; ff.111-120); XIV:10 (5b; ff.121-130); XV:11 (5b+,f; ff.131-141); XVI:10 (5b ;ff.142-151); XVII:10 (5b; ff.152-161); XVIII:10 (5b; ff.162-171); XIX:10 (5b; ff.172-181); XX:11 (5b,1f; ff.182-192); XXI:2 (1b; ff.192:1-mirror)",
-            "startRow": 0,
-            "endRow": 20,
-            "startRowAbs": 1063,
-            "endRowAbs": 1083,
-            "source": "merge",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ],
-        "Leaf size": [
-          {
-            "column": "Leaf size",
-            "label": "",
-            "startRow": 0,
-            "endRow": 20,
-            "startRowAbs": 1063,
-            "endRowAbs": 1083,
-            "source": "merge",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ],
-        "Links to Database": [
-          {
-            "column": "Links to Database",
-            "label": "[MS](https://www.manuscripta.se/ms/100406)",
-            "startRow": 0,
-            "endRow": 0,
-            "startRowAbs": 1063,
-            "endRowAbs": 1063,
-            "source": "cell",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ],
-        "Name": [
-          {
-            "column": "Name",
-            "label": "",
-            "startRow": 0,
-            "endRow": 20,
-            "startRowAbs": 1063,
-            "endRowAbs": 1083,
-            "source": "merge",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ],
-        "Object": [
-          {
-            "column": "Object",
-            "label": "Codex",
-            "startRow": 0,
-            "endRow": 20,
-            "startRowAbs": 1063,
-            "endRowAbs": 1083,
-            "source": "merge",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ],
-        "Related Shelfmarks": [
-          {
-            "column": "Related Shelfmarks",
-            "label": "",
-            "startRow": 0,
-            "endRow": 20,
-            "startRowAbs": 1063,
-            "endRowAbs": 1083,
-            "source": "merge",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ],
-        "Size": [
-          {
-            "column": "Size",
-            "label": "",
-            "startRow": 0,
-            "endRow": 20,
-            "startRowAbs": 1063,
-            "endRowAbs": 1083,
-            "source": "merge",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ]
-      }
-    },
-    {
-      "Shelfmark": "C 19",
-      "Depository": "UUB",
-      "rowRangeAbs": {
-        "start": 1084,
-        "end": 1123
-      },
-      "rowCount": 40,
-      "segmentsByColumn": {
-        "Dating": [
-          {
-            "column": "Dating",
-            "label": "1300-1500",
-            "startRow": 0,
-            "endRow": 39,
-            "startRowAbs": 1084,
-            "endRowAbs": 1123,
-            "source": "merge",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ],
-        "Full size": [
-          {
-            "column": "Full size",
-            "label": "",
-            "startRow": 0,
-            "endRow": 39,
-            "startRowAbs": 1084,
-            "endRowAbs": 1123,
-            "source": "merge",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ],
-        "Gatherings": [
-          {
-            "column": "Gatherings",
-            "label": "I:4 (2b; ff.mirror-0:3); II:15 (7b,1f; ff.1-12); III:12 (6b; ff.13-24); IV:4 (2b; ff.25-28); V:9 (4b,1f; ff.29-37); VI:16 (8b; ff.38-53); VII:18 (9b; ff.54-71); VIII:13 (6b,1f; ff.72-84); IX:12 (6b; ff.85-96); X:14 (7b; ff.97-110); XI:20 (10b; ff.111-130); XII:16 (8b; ff.131-146); XIII:10 (4b,2f; ff.147-158); XIV:14 (7b; ff.159-172); XV:10 (5b; ff.173-182); XVI:10 (5b; ff.183-192); XVII:16 (8b; ff.193-208); XVIII:18 (9b; ff.209-226); XIX:23 (11b,1f; ff.227-249); XX:15 (7b,1f; ff.250-264); XXI:12 (6b; ff.265-276); XXII:12 (6b; ff.277-288); XXIII:9 (4b,1f; ff.289-297); XXIV:15 (7b,1f; ff.298-312); XXV:10 (4b,2f; ff.313-323); XXVI:16 (8b; ff.324-339); XXVII:12 (6b; ff.340-351); XXVIII:16 (8b; ff.352-347); XXIX:16 (8b; ff.348-363); XXX:16 (8b; ff.364-379); XXXI:16 (8b; ff.380-395); XXXII:16 (8b; ff.396-411); XXXIII:16 (8b; ff.412-427); XXXIV:16 (8b; ff.428-443); XXXV:16 (8b; ff.444-459); XXXVI:16 (8b; ff.460-475); XXXVII:1 2(b6; ff.-); XXXVIII:12 (6b; ff.-521; XXXIX:12 (6b; ff.-531); XL:9 (4b,1f; ff.-538)",
-            "startRow": 0,
-            "endRow": 39,
-            "startRowAbs": 1084,
-            "endRowAbs": 1123,
-            "source": "merge",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ],
-        "Leaf size": [
-          {
-            "column": "Leaf size",
-            "label": "",
-            "startRow": 0,
-            "endRow": 39,
-            "startRowAbs": 1084,
-            "endRowAbs": 1123,
-            "source": "merge",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ],
-        "Links to Database": [
-          {
-            "column": "Links to Database",
-            "label": "[MS](https://www.manuscripta.se/ms/100408)",
-            "startRow": 0,
-            "endRow": 0,
-            "startRowAbs": 1084,
-            "endRowAbs": 1084,
-            "source": "cell",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ],
-        "Name": [
-          {
-            "column": "Name",
-            "label": "",
-            "startRow": 0,
-            "endRow": 39,
-            "startRowAbs": 1084,
-            "endRowAbs": 1123,
-            "source": "merge",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ],
-        "Object": [
-          {
-            "column": "Object",
-            "label": "Codex",
-            "startRow": 0,
-            "endRow": 39,
-            "startRowAbs": 1084,
-            "endRowAbs": 1123,
-            "source": "merge",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ],
-        "Related Shelfmarks": [
-          {
-            "column": "Related Shelfmarks",
-            "label": "",
-            "startRow": 0,
-            "endRow": 39,
-            "startRowAbs": 1084,
-            "endRowAbs": 1123,
-            "source": "merge",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ],
-        "Size": [
-          {
-            "column": "Size",
-            "label": "",
-            "startRow": 0,
-            "endRow": 39,
-            "startRowAbs": 1084,
-            "endRowAbs": 1123,
-            "source": "merge",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ]
-      }
-    },
-    {
-      "Shelfmark": "C 22",
-      "Depository": "UUB",
-      "rowRangeAbs": {
-        "start": 1124,
-        "end": 1139
-      },
-      "rowCount": 16,
-      "segmentsByColumn": {
-        "Dating": [
-          {
-            "column": "Dating",
-            "label": "1300-1500",
-            "startRow": 0,
-            "endRow": 15,
-            "startRowAbs": 1124,
-            "endRowAbs": 1139,
-            "source": "merge",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ],
-        "Full size": [
-          {
-            "column": "Full size",
-            "label": "",
-            "startRow": 0,
-            "endRow": 15,
-            "startRowAbs": 1124,
-            "endRowAbs": 1139,
-            "source": "merge",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ],
-        "Gatherings": [
-          {
-            "column": "Gatherings",
-            "label": "I:2 (1b; ff.-); II:8(4b;ff.1-8); III:8 (4b; ff.9-16); IV:8 (4b; ff.17-24); V:6 (2b,2f; ff.25-30); VI:7 (3b,1f; ff.31-37); VII:16 (8b; ff.38-52); VIII:8 (4b; ff.53-60); IX:8 (4b; ff.61-68); X:18 (9b; ff.69-86); XI:12 (6b; ff.87-98); XII:14 (7b; ff.99-112); XIII:13 (6b,1f; ff.113-125); XIV:4 (2b; ff.126-129); XV:28 (14b; ff.130-157); XVI:2 (1b; ff.-)",
-            "startRow": 0,
-            "endRow": 15,
-            "startRowAbs": 1124,
-            "endRowAbs": 1139,
-            "source": "merge",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ],
-        "Leaf size": [
-          {
-            "column": "Leaf size",
-            "label": "",
-            "startRow": 0,
-            "endRow": 15,
-            "startRowAbs": 1124,
-            "endRowAbs": 1139,
-            "source": "merge",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ],
-        "Links to Database": [
-          {
-            "column": "Links to Database",
-            "label": "[MS](https://www.manuscripta.se/ms/100410)",
-            "startRow": 1,
-            "endRow": 1,
-            "startRowAbs": 1125,
-            "endRowAbs": 1125,
-            "source": "cell",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ],
-        "Name": [
-          {
-            "column": "Name",
-            "label": "",
-            "startRow": 0,
-            "endRow": 15,
-            "startRowAbs": 1124,
-            "endRowAbs": 1139,
-            "source": "merge",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ],
-        "Object": [
-          {
-            "column": "Object",
-            "label": "Codex",
-            "startRow": 0,
-            "endRow": 15,
-            "startRowAbs": 1124,
-            "endRowAbs": 1139,
-            "source": "merge",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ],
-        "Related Shelfmarks": [
-          {
-            "column": "Related Shelfmarks",
-            "label": "",
-            "startRow": 0,
-            "endRow": 15,
-            "startRowAbs": 1124,
-            "endRowAbs": 1139,
-            "source": "merge",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ],
-        "Size": [
-          {
-            "column": "Size",
-            "label": "",
-            "startRow": 0,
-            "endRow": 15,
-            "startRowAbs": 1124,
-            "endRowAbs": 1139,
-            "source": "merge",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ]
-      }
-    },
-    {
-      "Shelfmark": "C 23",
-      "Depository": "UUB",
-      "rowRangeAbs": {
-        "start": 1140,
-        "end": 1164
-      },
-      "rowCount": 25,
-      "segmentsByColumn": {
-        "Dating": [
-          {
-            "column": "Dating",
-            "label": "1400-1500",
-            "startRow": 0,
-            "endRow": 24,
-            "startRowAbs": 1140,
-            "endRowAbs": 1164,
-            "source": "merge",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ],
-        "Full size": [
-          {
-            "column": "Full size",
-            "label": "",
-            "startRow": 0,
-            "endRow": 24,
-            "startRowAbs": 1140,
-            "endRowAbs": 1164,
-            "source": "merge",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ],
-        "Gatherings": [
-          {
-            "column": "Gatherings",
-            "label": "I:2 (1b; ff.mirror-1); II:10 (5b; ff.2-11); III:12 (6b; ff.12-23); IV:12 (6b; ff.24-35); V:12 (6b; ff.36-47); VI:8 (4b; ff.48-55); VII:11 (10b,1f; ff.56-66); VIII:14 (7b; ff.67-80); IX:10 (5b; ff.81-90); X:4 (2b; ff.91-93:1); XI:4 (2b; ff.94-97); XII:8 (4b; ff.98-105); XIII:8 (4b; ff.106-113); XIV:2 (1b; ff.114-115); XV:4 (4f; ff.116-119); XVI:9 (4b,1f; ff.120-128); XVII:10 (5b; ff.129-138); XVIII:6 (2b,2f; ff.139-144); XIX:6 (2b,2f; ff.145-150); XX:8 (4b; ff.151-158); XXI:12 (6b; ff.159-170); XXII:12 (6b; ff.171-182); XXIII:7 (3b,1f; ff.183-189); XXIV:12 (6b; ff.190-201); XXV:2 (1b; ff.201:1-201:2)",
-            "startRow": 0,
-            "endRow": 24,
-            "startRowAbs": 1140,
-            "endRowAbs": 1164,
-            "source": "merge",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ],
-        "Leaf size": [
-          {
-            "column": "Leaf size",
-            "label": "",
-            "startRow": 0,
-            "endRow": 24,
-            "startRowAbs": 1140,
-            "endRowAbs": 1164,
-            "source": "merge",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ],
-        "Links to Database": [
-          {
-            "column": "Links to Database",
-            "label": "[Ms](https://www.manuscripta.se/ms/100411)",
-            "startRow": 0,
-            "endRow": 0,
-            "startRowAbs": 1140,
-            "endRowAbs": 1140,
-            "source": "cell",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ],
-        "Name": [
-          {
-            "column": "Name",
-            "label": "",
-            "startRow": 0,
-            "endRow": 24,
-            "startRowAbs": 1140,
-            "endRowAbs": 1164,
-            "source": "merge",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ],
-        "Object": [
-          {
-            "column": "Object",
-            "label": "Codex",
-            "startRow": 0,
-            "endRow": 24,
-            "startRowAbs": 1140,
-            "endRowAbs": 1164,
-            "source": "merge",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ],
-        "Related Shelfmarks": [
-          {
-            "column": "Related Shelfmarks",
-            "label": "",
-            "startRow": 0,
-            "endRow": 24,
-            "startRowAbs": 1140,
-            "endRowAbs": 1164,
-            "source": "merge",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ],
-        "Size": [
-          {
-            "column": "Size",
-            "label": "",
-            "startRow": 0,
-            "endRow": 24,
-            "startRowAbs": 1140,
-            "endRowAbs": 1164,
-            "source": "merge",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ]
-      }
-    },
-    {
-      "Shelfmark": "C 50",
-      "Depository": "UUB",
-      "rowRangeAbs": {
-        "start": 1165,
-        "end": 1183
-      },
-      "rowCount": 19,
-      "segmentsByColumn": {
-        "Dating": [
-          {
-            "column": "Dating",
-            "label": "1450-1500",
-            "startRow": 0,
-            "endRow": 18,
-            "startRowAbs": 1165,
-            "endRowAbs": 1183,
-            "source": "merge",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ],
-        "Full size": [
-          {
-            "column": "Full size",
-            "label": "",
-            "startRow": 0,
-            "endRow": 18,
-            "startRowAbs": 1165,
-            "endRowAbs": 1183,
-            "source": "merge",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ],
-        "Gatherings": [
-          {
-            "column": "Gatherings",
-            "label": "I:1 (1f; f.1); II:12 (6b; ff.2-13); III:12 (6b; ff.14-25); IV:10 (5b; ff.26-35); V:6 (3b; ff.26-40); VI:14 (6b,2f; ff.41-54); VII:18 (9b; ff.55-72); VIII:12 (6b; ff.73-84); IX:8 (4b; ff.85-92); X:20 (10b; ff.93-112); XI:16 (8b; ff.113-128); XII:14 (7b; ff.129-142); XIII:23 (11b,1f; ff.143-165); XIV:6 (3b; ff.166-171); XV:16 (8b; ff.172-187); XVI:8 (4b; ff.188-195); XVII:8 (4b; ff.196-203); XVIII:8 (4b; ff.204-211); XIX:14 (6b,2f; ff.212-225)",
-            "startRow": 0,
-            "endRow": 18,
-            "startRowAbs": 1165,
-            "endRowAbs": 1183,
-            "source": "merge",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ],
-        "Leaf size": [
-          {
-            "column": "Leaf size",
-            "label": "",
-            "startRow": 0,
-            "endRow": 18,
-            "startRowAbs": 1165,
-            "endRowAbs": 1183,
-            "source": "merge",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ],
-        "Links to Database": [
-          {
-            "column": "Links to Database",
-            "label": "[MS](https://www.manuscripta.se/ms/100420)",
-            "startRow": 0,
-            "endRow": 0,
-            "startRowAbs": 1165,
-            "endRowAbs": 1165,
-            "source": "cell",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ],
-        "Name": [
-          {
-            "column": "Name",
-            "label": "",
-            "startRow": 0,
-            "endRow": 18,
-            "startRowAbs": 1165,
-            "endRowAbs": 1183,
-            "source": "merge",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ],
-        "Object": [
-          {
-            "column": "Object",
-            "label": "Codex",
-            "startRow": 0,
-            "endRow": 18,
-            "startRowAbs": 1165,
-            "endRowAbs": 1183,
-            "source": "merge",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ],
-        "Related Shelfmarks": [
-          {
-            "column": "Related Shelfmarks",
-            "label": "",
-            "startRow": 0,
-            "endRow": 18,
-            "startRowAbs": 1165,
-            "endRowAbs": 1183,
-            "source": "merge",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ],
-        "Size": [
-          {
-            "column": "Size",
-            "label": "",
-            "startRow": 0,
-            "endRow": 18,
-            "startRowAbs": 1165,
-            "endRowAbs": 1183,
-            "source": "merge",
             "locus": {
               "kind": null,
               "from": null,
@@ -140805,8 +139728,8 @@
       "Shelfmark": "C 74",
       "Depository": "UUB",
       "rowRangeAbs": {
-        "start": 1184,
-        "end": 1184
+        "start": 1059,
+        "end": 1059
       },
       "rowCount": 1,
       "segmentsByColumn": {
@@ -140816,8 +139739,8 @@
             "label": "1400-1500",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1184,
-            "endRowAbs": 1184,
+            "startRowAbs": 1059,
+            "endRowAbs": 1059,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -140836,8 +139759,8 @@
             "label": "Unknown",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1184,
-            "endRowAbs": 1184,
+            "startRowAbs": 1059,
+            "endRowAbs": 1059,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -140856,8 +139779,8 @@
             "label": "[MS](https://manuscripta.se/ms/100425)",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1184,
-            "endRowAbs": 1184,
+            "startRowAbs": 1059,
+            "endRowAbs": 1059,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -140876,8 +139799,8 @@
       "Shelfmark": "C 475",
       "Depository": "UUB",
       "rowRangeAbs": {
-        "start": 1185,
-        "end": 1202
+        "start": 1060,
+        "end": 1077
       },
       "rowCount": 18,
       "segmentsByColumn": {
@@ -140887,8 +139810,8 @@
             "label": "Unknown",
             "startRow": 0,
             "endRow": 17,
-            "startRowAbs": 1185,
-            "endRowAbs": 1202,
+            "startRowAbs": 1060,
+            "endRowAbs": 1077,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -140907,8 +139830,8 @@
             "label": "",
             "startRow": 0,
             "endRow": 17,
-            "startRowAbs": 1185,
-            "endRowAbs": 1202,
+            "startRowAbs": 1060,
+            "endRowAbs": 1077,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -140927,8 +139850,8 @@
             "label": "I:1 (1f ;f.0:1); II:6 (3b; ff.1-6); III:7 (3b,1f; ff.7-13); IV:10 (5b; ff.14-23); V:10 (5b; ff.24-33); VI:10 (5b; ff.34-44); VII:10 (5b; ff.46-55); VIII:9 (4b,1f; ff.56-64); IX:9 (4b,1f; ff.65-73); X:12 (5b,2f; ff.75-86); XI:10 (4b,1f; ff.87-96); XII:10 (5b; 97-105); XIII:10 (4b,2f; ff.106-115); XIV:5 (1b,3f; ff.116-120); XV:12 (5b,2f; ff.121-132); XVI:12 (5b,2f; ff.133-144); XVII:9 (4b,1f; ff.145-153); XVIII:1 (1f; f.154)",
             "startRow": 0,
             "endRow": 17,
-            "startRowAbs": 1185,
-            "endRowAbs": 1202,
+            "startRowAbs": 1060,
+            "endRowAbs": 1077,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -140947,8 +139870,8 @@
             "label": "",
             "startRow": 0,
             "endRow": 17,
-            "startRowAbs": 1185,
-            "endRowAbs": 1202,
+            "startRowAbs": 1060,
+            "endRowAbs": 1077,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -140967,8 +139890,8 @@
             "label": "",
             "startRow": 0,
             "endRow": 17,
-            "startRowAbs": 1185,
-            "endRowAbs": 1202,
+            "startRowAbs": 1060,
+            "endRowAbs": 1077,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -140987,8 +139910,8 @@
             "label": "Codex",
             "startRow": 0,
             "endRow": 17,
-            "startRowAbs": 1185,
-            "endRowAbs": 1202,
+            "startRowAbs": 1060,
+            "endRowAbs": 1077,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -141007,8 +139930,8 @@
             "label": "",
             "startRow": 0,
             "endRow": 17,
-            "startRowAbs": 1185,
-            "endRowAbs": 1202,
+            "startRowAbs": 1060,
+            "endRowAbs": 1077,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -141027,390 +139950,8 @@
             "label": "",
             "startRow": 0,
             "endRow": 17,
-            "startRowAbs": 1185,
-            "endRowAbs": 1202,
-            "source": "merge",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ]
-      }
-    },
-    {
-      "Shelfmark": "C 528",
-      "Depository": "UUB",
-      "rowRangeAbs": {
-        "start": 1203,
-        "end": 1223
-      },
-      "rowCount": 21,
-      "segmentsByColumn": {
-        "Dating": [
-          {
-            "column": "Dating",
-            "label": "1440-1450",
-            "startRow": 0,
-            "endRow": 20,
-            "startRowAbs": 1203,
-            "endRowAbs": 1223,
-            "source": "merge",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ],
-        "Full size": [
-          {
-            "column": "Full size",
-            "label": "",
-            "startRow": 0,
-            "endRow": 20,
-            "startRowAbs": 1203,
-            "endRowAbs": 1223,
-            "source": "merge",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ],
-        "Gatherings": [
-          {
-            "column": "Gatherings",
-            "label": "I:2 (2f; ff.-); II:2 (1b; ff.1-2); III:10 (5b; ff.3-13); IV:10 (5b; ff.13-22); V:10 (5b; ff.23-32); VI:10 (5b; ff.33-42); VII:4 (1b,2f; ff.43-46); VIII:10 (5b; ff.47-56); IX:10 (5b; ff.57-66); X:10 (5b; ff.67-76); XI:10 (5b; ff.77-86); XII:10 (5b; ff.87-96); XIII:10 (5b; ff.97-106); XIV:10 (5b; ff.107-116); XV:10 (5b; ff.117-126); XVI:10 (5b; ff.127-136); XVII:10 (5b; ff.137-146); XVIII:10 (5b; ff.147-156); XIX:6 (1b,4f; ff.157-162); XX:8 (3b,2f; ff.163-170); XXI:3 (3f; ff.-)",
-            "startRow": 0,
-            "endRow": 20,
-            "startRowAbs": 1203,
-            "endRowAbs": 1223,
-            "source": "merge",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ],
-        "Leaf size": [
-          {
-            "column": "Leaf size",
-            "label": "",
-            "startRow": 0,
-            "endRow": 20,
-            "startRowAbs": 1203,
-            "endRowAbs": 1223,
-            "source": "merge",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ],
-        "Links to Database": [
-          {
-            "column": "Links to Database",
-            "label": "[MS](https://www.manuscripta.se/ms/100455)",
-            "startRow": 3,
-            "endRow": 3,
-            "startRowAbs": 1206,
-            "endRowAbs": 1206,
-            "source": "cell",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ],
-        "Name": [
-          {
-            "column": "Name",
-            "label": "",
-            "startRow": 0,
-            "endRow": 20,
-            "startRowAbs": 1203,
-            "endRowAbs": 1223,
-            "source": "merge",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ],
-        "Object": [
-          {
-            "column": "Object",
-            "label": "Codex",
-            "startRow": 0,
-            "endRow": 20,
-            "startRowAbs": 1203,
-            "endRowAbs": 1223,
-            "source": "merge",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ],
-        "Related Shelfmarks": [
-          {
-            "column": "Related Shelfmarks",
-            "label": "",
-            "startRow": 0,
-            "endRow": 20,
-            "startRowAbs": 1203,
-            "endRowAbs": 1223,
-            "source": "merge",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ],
-        "Size": [
-          {
-            "column": "Size",
-            "label": "",
-            "startRow": 0,
-            "endRow": 20,
-            "startRowAbs": 1203,
-            "endRowAbs": 1223,
-            "source": "merge",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ]
-      }
-    },
-    {
-      "Shelfmark": "Palmskiöld 405",
-      "Depository": "UUB",
-      "rowRangeAbs": {
-        "start": 1224,
-        "end": 1227
-      },
-      "rowCount": 4,
-      "segmentsByColumn": {
-        "Dating": [
-          {
-            "column": "Dating",
-            "label": "1450-1700",
-            "startRow": 0,
-            "endRow": 3,
-            "startRowAbs": 1224,
-            "endRowAbs": 1227,
-            "source": "merge",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ],
-        "Full size": [
-          {
-            "column": "Full size",
-            "label": "",
-            "startRow": 0,
-            "endRow": 3,
-            "startRowAbs": 1224,
-            "endRowAbs": 1227,
-            "source": "merge",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ],
-        "Gatherings": [
-          {
-            "column": "Gatherings",
-            "label": "I:16 (8b; ff.1-16); II:16 (8b; ff.17-32); III:10 (4b,2f; ff.33-42); IV:6 (3b; ff.-)",
-            "startRow": 0,
-            "endRow": 3,
-            "startRowAbs": 1224,
-            "endRowAbs": 1227,
-            "source": "merge",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ],
-        "Leaf size": [
-          {
-            "column": "Leaf size",
-            "label": "",
-            "startRow": 0,
-            "endRow": 3,
-            "startRowAbs": 1224,
-            "endRowAbs": 1227,
-            "source": "merge",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ],
-        "Links to Database": [
-          {
-            "column": "Links to Database",
-            "label": "[MS](https://www.manuscripta.se/ms/101055)",
-            "startRow": 0,
-            "endRow": 0,
-            "startRowAbs": 1224,
-            "endRowAbs": 1224,
-            "source": "cell",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ],
-        "Name": [
-          {
-            "column": "Name",
-            "label": "",
-            "startRow": 0,
-            "endRow": 3,
-            "startRowAbs": 1224,
-            "endRowAbs": 1227,
-            "source": "merge",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ],
-        "Object": [
-          {
-            "column": "Object",
-            "label": "Codex",
-            "startRow": 0,
-            "endRow": 3,
-            "startRowAbs": 1224,
-            "endRowAbs": 1227,
-            "source": "merge",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ],
-        "Related Shelfmarks": [
-          {
-            "column": "Related Shelfmarks",
-            "label": "",
-            "startRow": 0,
-            "endRow": 3,
-            "startRowAbs": 1224,
-            "endRowAbs": 1227,
-            "source": "merge",
-            "locus": {
-              "kind": null,
-              "from": null,
-              "to": null,
-              "rendered": null,
-              "evidence": {
-                "leavesPages": []
-              }
-            }
-          }
-        ],
-        "Size": [
-          {
-            "column": "Size",
-            "label": "",
-            "startRow": 0,
-            "endRow": 3,
-            "startRowAbs": 1224,
-            "endRowAbs": 1227,
+            "startRowAbs": 1060,
+            "endRowAbs": 1077,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -141429,8 +139970,8 @@
       "Shelfmark": "Westin 425",
       "Depository": "UUB",
       "rowRangeAbs": {
-        "start": 1228,
-        "end": 1228
+        "start": 1078,
+        "end": 1078
       },
       "rowCount": 1,
       "segmentsByColumn": {
@@ -141440,8 +139981,8 @@
             "label": "1556",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1228,
-            "endRowAbs": 1228,
+            "startRowAbs": 1078,
+            "endRowAbs": 1078,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -141460,8 +140001,8 @@
             "label": "I:5 (5f; ff.1-4)",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1228,
-            "endRowAbs": 1228,
+            "startRowAbs": 1078,
+            "endRowAbs": 1078,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -141480,8 +140021,8 @@
             "label": "[MS](https://manuscripta.se/ms/100959)",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1228,
-            "endRowAbs": 1228,
+            "startRowAbs": 1078,
+            "endRowAbs": 1078,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -141500,8 +140041,8 @@
             "label": "Codex",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1228,
-            "endRowAbs": 1228,
+            "startRowAbs": 1078,
+            "endRowAbs": 1078,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -141518,10 +140059,10 @@
     },
     {
       "Shelfmark": "Rogge Wrangel",
-      "Depository": "Roggebiblioteket",
+      "Depository": "Rogge Wrangel",
       "rowRangeAbs": {
-        "start": 1229,
-        "end": 1229
+        "start": 1079,
+        "end": 1079
       },
       "rowCount": 1,
       "segmentsByColumn": {
@@ -141531,8 +140072,8 @@
             "label": "1475-1500",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1229,
-            "endRowAbs": 1229,
+            "startRowAbs": 1079,
+            "endRowAbs": 1079,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -141551,8 +140092,8 @@
             "label": "Unknown",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1229,
-            "endRowAbs": 1229,
+            "startRowAbs": 1079,
+            "endRowAbs": 1079,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -141571,8 +140112,8 @@
             "label": "[MS](https://manuscripta.se/ms/100566)",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1229,
-            "endRowAbs": 1229,
+            "startRowAbs": 1079,
+            "endRowAbs": 1079,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -141591,8 +140132,8 @@
             "label": "Codex",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1229,
-            "endRowAbs": 1229,
+            "startRowAbs": 1079,
+            "endRowAbs": 1079,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -141611,8 +140152,8 @@
       "Shelfmark": "B 22 a",
       "Depository": "UUB",
       "rowRangeAbs": {
-        "start": 1230,
-        "end": 1230
+        "start": 1080,
+        "end": 1080
       },
       "rowCount": 1,
       "segmentsByColumn": {
@@ -141622,8 +140163,8 @@
             "label": "1500-1600",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1230,
-            "endRowAbs": 1230,
+            "startRowAbs": 1080,
+            "endRowAbs": 1080,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -141642,8 +140183,8 @@
             "label": "Unknown",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1230,
-            "endRowAbs": 1230,
+            "startRowAbs": 1080,
+            "endRowAbs": 1080,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -141662,8 +140203,8 @@
             "label": "[MS](https://manuscripta.se/ms/100569)",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1230,
-            "endRowAbs": 1230,
+            "startRowAbs": 1080,
+            "endRowAbs": 1080,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -141679,11 +140220,11 @@
         "Object": [
           {
             "column": "Object",
-            "label": "Codex",
+            "label": "Fragment",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1230,
-            "endRowAbs": 1230,
+            "startRowAbs": 1080,
+            "endRowAbs": 1080,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -141702,8 +140243,8 @@
             "label": "Utl. Vok. Mus. tr. 494-498 add.",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1230,
-            "endRowAbs": 1230,
+            "startRowAbs": 1080,
+            "endRowAbs": 1080,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -141722,8 +140263,8 @@
       "Shelfmark": "C 81",
       "Depository": "UUB",
       "rowRangeAbs": {
-        "start": 1231,
-        "end": 1232
+        "start": 1081,
+        "end": 1082
       },
       "rowCount": 2,
       "segmentsByColumn": {
@@ -141733,8 +140274,8 @@
             "label": "Unknown",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1231,
-            "endRowAbs": 1232,
+            "startRowAbs": 1081,
+            "endRowAbs": 1082,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -141753,8 +140294,8 @@
             "label": "Unknown",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1231,
-            "endRowAbs": 1232,
+            "startRowAbs": 1081,
+            "endRowAbs": 1082,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -141773,8 +140314,8 @@
             "label": "[MS](https://manuscripta.se/ms/100981)",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1231,
-            "endRowAbs": 1231,
+            "startRowAbs": 1081,
+            "endRowAbs": 1081,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -141793,8 +140334,8 @@
             "label": "",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1231,
-            "endRowAbs": 1232,
+            "startRowAbs": 1081,
+            "endRowAbs": 1082,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -141813,8 +140354,8 @@
             "label": "Codex",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1231,
-            "endRowAbs": 1232,
+            "startRowAbs": 1081,
+            "endRowAbs": 1082,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -141833,8 +140374,8 @@
             "label": "",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1231,
-            "endRowAbs": 1232,
+            "startRowAbs": 1081,
+            "endRowAbs": 1082,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -141853,8 +140394,8 @@
             "label": "",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1231,
-            "endRowAbs": 1232,
+            "startRowAbs": 1081,
+            "endRowAbs": 1082,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -141873,8 +140414,8 @@
       "Shelfmark": "m.m.6",
       "Depository": "LUB",
       "rowRangeAbs": {
-        "start": 1233,
-        "end": 1237
+        "start": 1083,
+        "end": 1087
       },
       "rowCount": 5,
       "segmentsByColumn": {
@@ -141884,8 +140425,8 @@
             "label": "1575-1600",
             "startRow": 0,
             "endRow": 4,
-            "startRowAbs": 1233,
-            "endRowAbs": 1237,
+            "startRowAbs": 1083,
+            "endRowAbs": 1087,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -141911,8 +140452,8 @@
             "label": "",
             "startRow": 0,
             "endRow": 4,
-            "startRowAbs": 1233,
-            "endRowAbs": 1237,
+            "startRowAbs": 1083,
+            "endRowAbs": 1087,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -141938,8 +140479,8 @@
             "label": "Unknown",
             "startRow": 0,
             "endRow": 4,
-            "startRowAbs": 1233,
-            "endRowAbs": 1237,
+            "startRowAbs": 1083,
+            "endRowAbs": 1087,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -141965,8 +140506,8 @@
             "label": "",
             "startRow": 0,
             "endRow": 4,
-            "startRowAbs": 1233,
-            "endRowAbs": 1237,
+            "startRowAbs": 1083,
+            "endRowAbs": 1087,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -141992,8 +140533,8 @@
             "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-403011)",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1233,
-            "endRowAbs": 1233,
+            "startRowAbs": 1083,
+            "endRowAbs": 1083,
             "source": "cell",
             "locus": {
               "kind": "f",
@@ -142015,8 +140556,8 @@
             "label": "UL",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1233,
-            "endRowAbs": 1233,
+            "startRowAbs": 1083,
+            "endRowAbs": 1083,
             "source": "cell",
             "locus": {
               "kind": "f",
@@ -142036,8 +140577,8 @@
             "label": "KrL",
             "startRow": 1,
             "endRow": 1,
-            "startRowAbs": 1234,
-            "endRowAbs": 1234,
+            "startRowAbs": 1084,
+            "endRowAbs": 1084,
             "source": "cell",
             "locus": {
               "kind": "f",
@@ -142057,8 +140598,8 @@
             "label": "ÖgL",
             "startRow": 2,
             "endRow": 2,
-            "startRowAbs": 1235,
-            "endRowAbs": 1235,
+            "startRowAbs": 1085,
+            "endRowAbs": 1085,
             "source": "cell",
             "locus": {
               "kind": "f",
@@ -142078,8 +140619,8 @@
             "label": "Hampnaskrog",
             "startRow": 3,
             "endRow": 3,
-            "startRowAbs": 1236,
-            "endRowAbs": 1236,
+            "startRowAbs": 1086,
+            "endRowAbs": 1086,
             "source": "cell",
             "locus": {
               "kind": "f",
@@ -142099,8 +140640,8 @@
             "label": "1544 års gårdsrätt",
             "startRow": 4,
             "endRow": 4,
-            "startRowAbs": 1237,
-            "endRowAbs": 1237,
+            "startRowAbs": 1087,
+            "endRowAbs": 1087,
             "source": "cell",
             "locus": {
               "kind": "f",
@@ -142122,8 +140663,8 @@
             "label": "Kkb",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1233,
-            "endRowAbs": 1233,
+            "startRowAbs": 1083,
+            "endRowAbs": 1083,
             "source": "cell",
             "locus": {
               "kind": "f",
@@ -142143,8 +140684,8 @@
             "label": "Useful rules for rettagangr.",
             "startRow": 2,
             "endRow": 2,
-            "startRowAbs": 1235,
-            "endRowAbs": 1235,
+            "startRowAbs": 1085,
+            "endRowAbs": 1085,
             "source": "cell",
             "locus": {
               "kind": "f",
@@ -142166,8 +140707,8 @@
             "label": "",
             "startRow": 0,
             "endRow": 4,
-            "startRowAbs": 1233,
-            "endRowAbs": 1237,
+            "startRowAbs": 1083,
+            "endRowAbs": 1087,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -142193,8 +140734,8 @@
             "label": "Codex",
             "startRow": 0,
             "endRow": 4,
-            "startRowAbs": 1233,
-            "endRowAbs": 1237,
+            "startRowAbs": 1083,
+            "endRowAbs": 1087,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -142220,8 +140761,8 @@
             "label": "B.N.Mscrpt. Fol. N.J.-J.fol. N:r 10a",
             "startRow": 0,
             "endRow": 4,
-            "startRowAbs": 1233,
-            "endRowAbs": 1237,
+            "startRowAbs": 1083,
+            "endRowAbs": 1087,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -142247,8 +140788,8 @@
             "label": "",
             "startRow": 0,
             "endRow": 4,
-            "startRowAbs": 1233,
-            "endRowAbs": 1237,
+            "startRowAbs": 1083,
+            "endRowAbs": 1087,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -142274,8 +140815,8 @@
       "Shelfmark": "m.m.7",
       "Depository": "LUB",
       "rowRangeAbs": {
-        "start": 1238,
-        "end": 1238
+        "start": 1088,
+        "end": 1088
       },
       "rowCount": 1,
       "segmentsByColumn": {
@@ -142285,8 +140826,8 @@
             "label": "1598",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1238,
-            "endRowAbs": 1238,
+            "startRowAbs": 1088,
+            "endRowAbs": 1088,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -142305,8 +140846,8 @@
             "label": "Unknown",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1238,
-            "endRowAbs": 1238,
+            "startRowAbs": 1088,
+            "endRowAbs": 1088,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -142325,8 +140866,8 @@
             "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-403015)",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1238,
-            "endRowAbs": 1238,
+            "startRowAbs": 1088,
+            "endRowAbs": 1088,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -142345,8 +140886,8 @@
             "label": "Codex",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1238,
-            "endRowAbs": 1238,
+            "startRowAbs": 1088,
+            "endRowAbs": 1088,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -142365,8 +140906,8 @@
       "Shelfmark": "m.m.2",
       "Depository": "LUB",
       "rowRangeAbs": {
-        "start": 1239,
-        "end": 1239
+        "start": 1089,
+        "end": 1089
       },
       "rowCount": 1,
       "segmentsByColumn": {
@@ -142376,8 +140917,8 @@
             "label": "1556",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1239,
-            "endRowAbs": 1239,
+            "startRowAbs": 1089,
+            "endRowAbs": 1089,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -142396,8 +140937,8 @@
             "label": "Unknown",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1239,
-            "endRowAbs": 1239,
+            "startRowAbs": 1089,
+            "endRowAbs": 1089,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -142416,8 +140957,8 @@
             "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-402998)",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1239,
-            "endRowAbs": 1239,
+            "startRowAbs": 1089,
+            "endRowAbs": 1089,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -142436,8 +140977,8 @@
             "label": "Codex",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1239,
-            "endRowAbs": 1239,
+            "startRowAbs": 1089,
+            "endRowAbs": 1089,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -142456,8 +140997,8 @@
       "Shelfmark": "m.m.1",
       "Depository": "LUB",
       "rowRangeAbs": {
-        "start": 1240,
-        "end": 1240
+        "start": 1090,
+        "end": 1090
       },
       "rowCount": 1,
       "segmentsByColumn": {
@@ -142467,8 +141008,8 @@
             "label": "1500-1550",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1240,
-            "endRowAbs": 1240,
+            "startRowAbs": 1090,
+            "endRowAbs": 1090,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -142487,8 +141028,8 @@
             "label": "Unknown",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1240,
-            "endRowAbs": 1240,
+            "startRowAbs": 1090,
+            "endRowAbs": 1090,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -142507,8 +141048,8 @@
             "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-402996)",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1240,
-            "endRowAbs": 1240,
+            "startRowAbs": 1090,
+            "endRowAbs": 1090,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -142527,8 +141068,8 @@
             "label": "Codex",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1240,
-            "endRowAbs": 1240,
+            "startRowAbs": 1090,
+            "endRowAbs": 1090,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -142547,8 +141088,8 @@
       "Shelfmark": "m.m.5",
       "Depository": "LUB",
       "rowRangeAbs": {
-        "start": 1241,
-        "end": 1243
+        "start": 1091,
+        "end": 1093
       },
       "rowCount": 3,
       "segmentsByColumn": {
@@ -142558,8 +141099,8 @@
             "label": "1587",
             "startRow": 0,
             "endRow": 2,
-            "startRowAbs": 1241,
-            "endRowAbs": 1243,
+            "startRowAbs": 1091,
+            "endRowAbs": 1093,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -142583,8 +141124,8 @@
             "label": "Unknown",
             "startRow": 0,
             "endRow": 2,
-            "startRowAbs": 1241,
-            "endRowAbs": 1243,
+            "startRowAbs": 1091,
+            "endRowAbs": 1093,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -142608,8 +141149,8 @@
             "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-403009)",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1241,
-            "endRowAbs": 1241,
+            "startRowAbs": 1091,
+            "endRowAbs": 1091,
             "source": "cell",
             "locus": {
               "kind": "f",
@@ -142631,8 +141172,8 @@
             "label": "Title",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1241,
-            "endRowAbs": 1241,
+            "startRowAbs": 1091,
+            "endRowAbs": 1091,
             "source": "cell",
             "locus": {
               "kind": "f",
@@ -142652,8 +141193,8 @@
             "label": "KrL",
             "startRow": 2,
             "endRow": 2,
-            "startRowAbs": 1243,
-            "endRowAbs": 1243,
+            "startRowAbs": 1093,
+            "endRowAbs": 1093,
             "source": "cell",
             "locus": {
               "kind": "f",
@@ -142675,8 +141216,8 @@
             "label": "Upplandz och Sudermanna lagen gifwen aff Konung Magnus hertug Erickz sohn",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1241,
-            "endRowAbs": 1241,
+            "startRowAbs": 1091,
+            "endRowAbs": 1091,
             "source": "cell",
             "locus": {
               "kind": "f",
@@ -142696,8 +141237,8 @@
             "label": "Domarereglerna",
             "startRow": 1,
             "endRow": 1,
-            "startRowAbs": 1242,
-            "endRowAbs": 1242,
+            "startRowAbs": 1092,
+            "endRowAbs": 1092,
             "source": "cell",
             "locus": {
               "kind": "f",
@@ -142719,8 +141260,8 @@
             "label": "",
             "startRow": 0,
             "endRow": 2,
-            "startRowAbs": 1241,
-            "endRowAbs": 1243,
+            "startRowAbs": 1091,
+            "endRowAbs": 1093,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -142744,8 +141285,8 @@
             "label": "Codex",
             "startRow": 0,
             "endRow": 2,
-            "startRowAbs": 1241,
-            "endRowAbs": 1243,
+            "startRowAbs": 1091,
+            "endRowAbs": 1093,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -142769,8 +141310,8 @@
             "label": "4:o. Fol. 1-249",
             "startRow": 0,
             "endRow": 2,
-            "startRowAbs": 1241,
-            "endRowAbs": 1243,
+            "startRowAbs": 1091,
+            "endRowAbs": 1093,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -142794,8 +141335,8 @@
             "label": "4to",
             "startRow": 0,
             "endRow": 2,
-            "startRowAbs": 1241,
-            "endRowAbs": 1243,
+            "startRowAbs": 1091,
+            "endRowAbs": 1093,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -142819,8 +141360,8 @@
       "Shelfmark": "m.m.4",
       "Depository": "LUB",
       "rowRangeAbs": {
-        "start": 1244,
-        "end": 1244
+        "start": 1094,
+        "end": 1094
       },
       "rowCount": 1,
       "segmentsByColumn": {
@@ -142830,8 +141371,8 @@
             "label": "1586",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1244,
-            "endRowAbs": 1244,
+            "startRowAbs": 1094,
+            "endRowAbs": 1094,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -142850,8 +141391,8 @@
             "label": "Unknown",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1244,
-            "endRowAbs": 1244,
+            "startRowAbs": 1094,
+            "endRowAbs": 1094,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -142870,8 +141411,8 @@
             "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-403003)",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1244,
-            "endRowAbs": 1244,
+            "startRowAbs": 1094,
+            "endRowAbs": 1094,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -142890,8 +141431,8 @@
             "label": "Codex",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1244,
-            "endRowAbs": 1244,
+            "startRowAbs": 1094,
+            "endRowAbs": 1094,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -142910,8 +141451,8 @@
       "Shelfmark": "m.m.3",
       "Depository": "LUB",
       "rowRangeAbs": {
-        "start": 1245,
-        "end": 1245
+        "start": 1095,
+        "end": 1095
       },
       "rowCount": 1,
       "segmentsByColumn": {
@@ -142921,8 +141462,8 @@
             "label": "1550",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1245,
-            "endRowAbs": 1245,
+            "startRowAbs": 1095,
+            "endRowAbs": 1095,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -142941,8 +141482,8 @@
             "label": "Unknown",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1245,
-            "endRowAbs": 1245,
+            "startRowAbs": 1095,
+            "endRowAbs": 1095,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -142961,8 +141502,8 @@
             "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-403000)",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1245,
-            "endRowAbs": 1245,
+            "startRowAbs": 1095,
+            "endRowAbs": 1095,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -142981,8 +141522,8 @@
             "label": "Codex",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1245,
-            "endRowAbs": 1245,
+            "startRowAbs": 1095,
+            "endRowAbs": 1095,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -143001,8 +141542,8 @@
       "Shelfmark": "m.m.8",
       "Depository": "LUB",
       "rowRangeAbs": {
-        "start": 1246,
-        "end": 1246
+        "start": 1096,
+        "end": 1096
       },
       "rowCount": 1,
       "segmentsByColumn": {
@@ -143012,8 +141553,8 @@
             "label": "1563",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1246,
-            "endRowAbs": 1246,
+            "startRowAbs": 1096,
+            "endRowAbs": 1096,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -143032,8 +141573,8 @@
             "label": "Unknown",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1246,
-            "endRowAbs": 1246,
+            "startRowAbs": 1096,
+            "endRowAbs": 1096,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -143052,8 +141593,8 @@
             "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-403045)",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1246,
-            "endRowAbs": 1246,
+            "startRowAbs": 1096,
+            "endRowAbs": 1096,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -143072,8 +141613,8 @@
             "label": "Codex",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1246,
-            "endRowAbs": 1246,
+            "startRowAbs": 1096,
+            "endRowAbs": 1096,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -143092,8 +141633,8 @@
       "Shelfmark": "B 1",
       "Depository": "UUB",
       "rowRangeAbs": {
-        "start": 1247,
-        "end": 1247
+        "start": 1097,
+        "end": 1097
       },
       "rowCount": 1,
       "segmentsByColumn": {
@@ -143103,8 +141644,8 @@
             "label": "1575-1600",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1247,
-            "endRowAbs": 1247,
+            "startRowAbs": 1097,
+            "endRowAbs": 1097,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -143123,8 +141664,8 @@
             "label": "Unknown",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1247,
-            "endRowAbs": 1247,
+            "startRowAbs": 1097,
+            "endRowAbs": 1097,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -143143,8 +141684,8 @@
             "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-83859)",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1247,
-            "endRowAbs": 1247,
+            "startRowAbs": 1097,
+            "endRowAbs": 1097,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -143163,8 +141704,8 @@
             "label": "Codex",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1247,
-            "endRowAbs": 1247,
+            "startRowAbs": 1097,
+            "endRowAbs": 1097,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -143183,8 +141724,8 @@
       "Shelfmark": "B 73",
       "Depository": "UUB",
       "rowRangeAbs": {
-        "start": 1248,
-        "end": 1248
+        "start": 1098,
+        "end": 1098
       },
       "rowCount": 1,
       "segmentsByColumn": {
@@ -143194,8 +141735,8 @@
             "label": "1500-1602 (and after)",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1248,
-            "endRowAbs": 1248,
+            "startRowAbs": 1098,
+            "endRowAbs": 1098,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -143214,8 +141755,8 @@
             "label": "Unknown",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1248,
-            "endRowAbs": 1248,
+            "startRowAbs": 1098,
+            "endRowAbs": 1098,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -143234,8 +141775,8 @@
             "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-461088)",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1248,
-            "endRowAbs": 1248,
+            "startRowAbs": 1098,
+            "endRowAbs": 1098,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -143254,8 +141795,8 @@
             "label": "Codex",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1248,
-            "endRowAbs": 1248,
+            "startRowAbs": 1098,
+            "endRowAbs": 1098,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -143274,8 +141815,8 @@
       "Shelfmark": "B 2",
       "Depository": "UUB",
       "rowRangeAbs": {
-        "start": 1249,
-        "end": 1249
+        "start": 1099,
+        "end": 1099
       },
       "rowCount": 1,
       "segmentsByColumn": {
@@ -143285,8 +141826,8 @@
             "label": "1575-1600",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1249,
-            "endRowAbs": 1249,
+            "startRowAbs": 1099,
+            "endRowAbs": 1099,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -143305,8 +141846,8 @@
             "label": "Unknown",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1249,
-            "endRowAbs": 1249,
+            "startRowAbs": 1099,
+            "endRowAbs": 1099,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -143325,8 +141866,8 @@
             "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-83861)",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1249,
-            "endRowAbs": 1249,
+            "startRowAbs": 1099,
+            "endRowAbs": 1099,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -143345,8 +141886,8 @@
             "label": "Codex",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1249,
-            "endRowAbs": 1249,
+            "startRowAbs": 1099,
+            "endRowAbs": 1099,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -143365,8 +141906,8 @@
       "Shelfmark": "B 24 (29?)",
       "Depository": "UUB",
       "rowRangeAbs": {
-        "start": 1250,
-        "end": 1250
+        "start": 1100,
+        "end": 1100
       },
       "rowCount": 1,
       "segmentsByColumn": {
@@ -143376,8 +141917,8 @@
             "label": "1300-1400; 1550",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1250,
-            "endRowAbs": 1250,
+            "startRowAbs": 1100,
+            "endRowAbs": 1100,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -143396,8 +141937,8 @@
             "label": "Unknown",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1250,
-            "endRowAbs": 1250,
+            "startRowAbs": 1100,
+            "endRowAbs": 1100,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -143416,8 +141957,8 @@
             "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-471423)",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1250,
-            "endRowAbs": 1250,
+            "startRowAbs": 1100,
+            "endRowAbs": 1100,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -143436,8 +141977,8 @@
             "label": "Codex",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1250,
-            "endRowAbs": 1250,
+            "startRowAbs": 1100,
+            "endRowAbs": 1100,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -143456,8 +141997,8 @@
       "Shelfmark": "B 29 (24?)",
       "Depository": "UUB",
       "rowRangeAbs": {
-        "start": 1251,
-        "end": 1251
+        "start": 1101,
+        "end": 1101
       },
       "rowCount": 1,
       "segmentsByColumn": {
@@ -143467,8 +142008,8 @@
             "label": "1550-1600",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1251,
-            "endRowAbs": 1251,
+            "startRowAbs": 1101,
+            "endRowAbs": 1101,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -143487,8 +142028,8 @@
             "label": "Unknown",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1251,
-            "endRowAbs": 1251,
+            "startRowAbs": 1101,
+            "endRowAbs": 1101,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -143507,8 +142048,8 @@
             "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-471424)",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1251,
-            "endRowAbs": 1251,
+            "startRowAbs": 1101,
+            "endRowAbs": 1101,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -143527,8 +142068,8 @@
             "label": "Codex",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1251,
-            "endRowAbs": 1251,
+            "startRowAbs": 1101,
+            "endRowAbs": 1101,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -143547,8 +142088,8 @@
       "Shelfmark": "B 55",
       "Depository": "UUB",
       "rowRangeAbs": {
-        "start": 1252,
-        "end": 1252
+        "start": 1102,
+        "end": 1102
       },
       "rowCount": 1,
       "segmentsByColumn": {
@@ -143558,8 +142099,8 @@
             "label": "1500-1600",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1252,
-            "endRowAbs": 1252,
+            "startRowAbs": 1102,
+            "endRowAbs": 1102,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -143578,8 +142119,8 @@
             "label": "Unknown",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1252,
-            "endRowAbs": 1252,
+            "startRowAbs": 1102,
+            "endRowAbs": 1102,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -143598,8 +142139,8 @@
             "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-458228)",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1252,
-            "endRowAbs": 1252,
+            "startRowAbs": 1102,
+            "endRowAbs": 1102,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -143618,8 +142159,8 @@
             "label": "Codex",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1252,
-            "endRowAbs": 1252,
+            "startRowAbs": 1102,
+            "endRowAbs": 1102,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -143638,8 +142179,8 @@
       "Shelfmark": "B 22 a",
       "Depository": "UUB",
       "rowRangeAbs": {
-        "start": 1253,
-        "end": 1253
+        "start": 1103,
+        "end": 1103
       },
       "rowCount": 1,
       "segmentsByColumn": {
@@ -143649,8 +142190,8 @@
             "label": "1300-1400",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1253,
-            "endRowAbs": 1253,
+            "startRowAbs": 1103,
+            "endRowAbs": 1103,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -143669,8 +142210,8 @@
             "label": "Unknown",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1253,
-            "endRowAbs": 1253,
+            "startRowAbs": 1103,
+            "endRowAbs": 1103,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -143689,8 +142230,8 @@
             "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-445134)",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1253,
-            "endRowAbs": 1253,
+            "startRowAbs": 1103,
+            "endRowAbs": 1103,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -143709,8 +142250,8 @@
             "label": "Codex",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1253,
-            "endRowAbs": 1253,
+            "startRowAbs": 1103,
+            "endRowAbs": 1103,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -143729,8 +142270,8 @@
       "Shelfmark": "B 40",
       "Depository": "UUB",
       "rowRangeAbs": {
-        "start": 1254,
-        "end": 1254
+        "start": 1104,
+        "end": 1104
       },
       "rowCount": 1,
       "segmentsByColumn": {
@@ -143740,8 +142281,8 @@
             "label": "1577",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1254,
-            "endRowAbs": 1254,
+            "startRowAbs": 1104,
+            "endRowAbs": 1104,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -143760,8 +142301,8 @@
             "label": "Unknown",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1254,
-            "endRowAbs": 1254,
+            "startRowAbs": 1104,
+            "endRowAbs": 1104,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -143780,8 +142321,8 @@
             "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-382954)",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1254,
-            "endRowAbs": 1254,
+            "startRowAbs": 1104,
+            "endRowAbs": 1104,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -143800,8 +142341,8 @@
             "label": "Codex",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1254,
-            "endRowAbs": 1254,
+            "startRowAbs": 1104,
+            "endRowAbs": 1104,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -143820,8 +142361,8 @@
       "Shelfmark": "B 44",
       "Depository": "UUB",
       "rowRangeAbs": {
-        "start": 1255,
-        "end": 1256
+        "start": 1105,
+        "end": 1106
       },
       "rowCount": 2,
       "segmentsByColumn": {
@@ -143831,8 +142372,8 @@
             "label": "1",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1255,
-            "endRowAbs": 1256,
+            "startRowAbs": 1105,
+            "endRowAbs": 1106,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -143851,8 +142392,8 @@
             "label": "1547",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1255,
-            "endRowAbs": 1256,
+            "startRowAbs": 1105,
+            "endRowAbs": 1106,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -143871,8 +142412,8 @@
             "label": "Unknown",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1255,
-            "endRowAbs": 1256,
+            "startRowAbs": 1105,
+            "endRowAbs": 1106,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -143891,8 +142432,8 @@
             "label": "25-31",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1255,
-            "endRowAbs": 1256,
+            "startRowAbs": 1105,
+            "endRowAbs": 1106,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -143911,8 +142452,8 @@
             "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-382955)",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1255,
-            "endRowAbs": 1255,
+            "startRowAbs": 1105,
+            "endRowAbs": 1105,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -143931,8 +142472,8 @@
             "label": "KrL",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1255,
-            "endRowAbs": 1256,
+            "startRowAbs": 1105,
+            "endRowAbs": 1106,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -143951,8 +142492,8 @@
             "label": "Paper",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1255,
-            "endRowAbs": 1256,
+            "startRowAbs": 1105,
+            "endRowAbs": 1106,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -143971,8 +142512,8 @@
             "label": "",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1255,
-            "endRowAbs": 1256,
+            "startRowAbs": 1105,
+            "endRowAbs": 1106,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -143991,8 +142532,8 @@
             "label": "Codex",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1255,
-            "endRowAbs": 1256,
+            "startRowAbs": 1105,
+            "endRowAbs": 1106,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -144011,8 +142552,8 @@
             "label": "No",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1255,
-            "endRowAbs": 1256,
+            "startRowAbs": 1105,
+            "endRowAbs": 1106,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -144031,8 +142572,8 @@
             "label": "I",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1255,
-            "endRowAbs": 1256,
+            "startRowAbs": 1105,
+            "endRowAbs": 1106,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -144051,8 +142592,8 @@
             "label": "",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1255,
-            "endRowAbs": 1256,
+            "startRowAbs": 1105,
+            "endRowAbs": 1106,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -144071,8 +142612,8 @@
             "label": "Yes",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1255,
-            "endRowAbs": 1256,
+            "startRowAbs": 1105,
+            "endRowAbs": 1106,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -144091,8 +142632,8 @@
             "label": "Dry",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1255,
-            "endRowAbs": 1256,
+            "startRowAbs": 1105,
+            "endRowAbs": 1106,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -144111,8 +142652,8 @@
             "label": "Cursiva R",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1255,
-            "endRowAbs": 1256,
+            "startRowAbs": 1105,
+            "endRowAbs": 1106,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -144131,8 +142672,8 @@
             "label": "Fol.",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1255,
-            "endRowAbs": 1256,
+            "startRowAbs": 1105,
+            "endRowAbs": 1106,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -144151,8 +142692,8 @@
       "Shelfmark": "Mh 17",
       "Depository": "LUB",
       "rowRangeAbs": {
-        "start": 1257,
-        "end": 1259
+        "start": 1107,
+        "end": 1109
       },
       "rowCount": 3,
       "segmentsByColumn": {
@@ -144162,8 +142703,8 @@
             "label": "Catchwords in lower right margin of last leaf of every quire.",
             "startRow": 0,
             "endRow": 2,
-            "startRowAbs": 1257,
-            "endRowAbs": 1259,
+            "startRowAbs": 1107,
+            "endRowAbs": 1109,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -144187,8 +142728,8 @@
             "label": "1",
             "startRow": 0,
             "endRow": 2,
-            "startRowAbs": 1257,
-            "endRowAbs": 1259,
+            "startRowAbs": 1107,
+            "endRowAbs": 1109,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -144212,8 +142753,8 @@
             "label": "after 1347",
             "startRow": 0,
             "endRow": 2,
-            "startRowAbs": 1257,
-            "endRowAbs": 1259,
+            "startRowAbs": 1107,
+            "endRowAbs": 1109,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -144237,8 +142778,8 @@
             "label": "225x170x45",
             "startRow": 0,
             "endRow": 2,
-            "startRowAbs": 1257,
-            "endRowAbs": 1259,
+            "startRowAbs": 1107,
+            "endRowAbs": 1109,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -144262,8 +142803,8 @@
             "label": "I: 6 (4b;ff. 1-6); II: 8 (4b;ff. 7-14); III: 8 (4b;ff. 15-22); IV: 8 (4b;ff. 23-30); V: 6 (4b;ff. 31-36); VI: 8 (4b;ff. 37-44); VII: 8 (4b;ff. 45-52); VIII: 8 (4b;ff. 53-60); IX: 8 (4b;ff. 61-68); X: 8 (4b;ff. 69-76); XI: 8 (4b;ff. 77-84); XII: 8 (4b;ff. 85-92); XIII: 8 (4b;ff. 93-100); XIV: 8 (4b;ff. 101-108); XV: 8 (4b;ff. 109-116); XVI: 8 (4b;ff. 117-124); XVII: 9 (4b+1f;ff. 125-133; XVIII: 6(3b;ff. 134-139)",
             "startRow": 0,
             "endRow": 2,
-            "startRowAbs": 1257,
-            "endRowAbs": 1259,
+            "startRowAbs": 1107,
+            "endRowAbs": 1109,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -144287,8 +142828,8 @@
             "label": "200x145",
             "startRow": 0,
             "endRow": 2,
-            "startRowAbs": 1257,
-            "endRowAbs": 1259,
+            "startRowAbs": 1107,
+            "endRowAbs": 1109,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -144312,8 +142853,8 @@
             "label": "21",
             "startRow": 0,
             "endRow": 2,
-            "startRowAbs": 1257,
-            "endRowAbs": 1259,
+            "startRowAbs": 1107,
+            "endRowAbs": 1109,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -144337,8 +142878,8 @@
             "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-14704)",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1257,
-            "endRowAbs": 1257,
+            "startRowAbs": 1107,
+            "endRowAbs": 1107,
             "source": "cell",
             "locus": {
               "kind": "f",
@@ -144360,8 +142901,8 @@
             "label": "Sclyther (1862:xiv-xv)",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1257,
-            "endRowAbs": 1257,
+            "startRowAbs": 1107,
+            "endRowAbs": 1107,
             "source": "cell",
             "locus": {
               "kind": "f",
@@ -144381,8 +142922,8 @@
             "label": "Geete (1903)",
             "startRow": 2,
             "endRow": 2,
-            "startRowAbs": 1259,
-            "endRowAbs": 1259,
+            "startRowAbs": 1109,
+            "endRowAbs": 1109,
             "source": "cell",
             "locus": {
               "kind": "f",
@@ -144404,8 +142945,8 @@
             "label": "MEL",
             "startRow": 0,
             "endRow": 2,
-            "startRowAbs": 1257,
-            "endRowAbs": 1259,
+            "startRowAbs": 1107,
+            "endRowAbs": 1109,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -144429,8 +142970,8 @@
             "label": "Parchment",
             "startRow": 0,
             "endRow": 2,
-            "startRowAbs": 1257,
-            "endRowAbs": 1259,
+            "startRowAbs": 1107,
+            "endRowAbs": 1109,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -144454,8 +142995,8 @@
             "label": "on sewring an oath",
             "startRow": 1,
             "endRow": 1,
-            "startRowAbs": 1258,
-            "endRowAbs": 1258,
+            "startRowAbs": 1108,
+            "endRowAbs": 1108,
             "source": "cell",
             "locus": {
               "kind": "f",
@@ -144475,8 +143016,8 @@
             "label": "on comitting perjury",
             "startRow": 2,
             "endRow": 2,
-            "startRowAbs": 1259,
-            "endRowAbs": 1259,
+            "startRowAbs": 1109,
+            "endRowAbs": 1109,
             "source": "cell",
             "locus": {
               "kind": "f",
@@ -144498,8 +143039,8 @@
             "label": "",
             "startRow": 0,
             "endRow": 2,
-            "startRowAbs": 1257,
-            "endRowAbs": 1259,
+            "startRowAbs": 1107,
+            "endRowAbs": 1109,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -144523,8 +143064,8 @@
             "label": "Codex",
             "startRow": 0,
             "endRow": 2,
-            "startRowAbs": 1257,
-            "endRowAbs": 1259,
+            "startRowAbs": 1107,
+            "endRowAbs": 1109,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -144548,8 +143089,8 @@
             "label": "Yes",
             "startRow": 0,
             "endRow": 2,
-            "startRowAbs": 1257,
-            "endRowAbs": 1259,
+            "startRowAbs": 1107,
+            "endRowAbs": 1109,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -144573,8 +143114,8 @@
             "label": "swe",
             "startRow": 0,
             "endRow": 2,
-            "startRowAbs": 1257,
-            "endRowAbs": 1259,
+            "startRowAbs": 1107,
+            "endRowAbs": 1109,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -144598,8 +143139,8 @@
             "label": "N (Schlyter; 1862)",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1257,
-            "endRowAbs": 1257,
+            "startRowAbs": 1107,
+            "endRowAbs": 1107,
             "source": "cell",
             "locus": {
               "kind": "f",
@@ -144619,8 +143160,8 @@
             "label": "J 4:o 22",
             "startRow": 1,
             "endRow": 1,
-            "startRowAbs": 1258,
-            "endRowAbs": 1258,
+            "startRowAbs": 1108,
+            "endRowAbs": 1108,
             "source": "cell",
             "locus": {
               "kind": "f",
@@ -144640,8 +143181,8 @@
             "label": "B. N. Mscr. 4:to N:o 38",
             "startRow": 2,
             "endRow": 2,
-            "startRowAbs": 1259,
-            "endRowAbs": 1259,
+            "startRowAbs": 1109,
+            "endRowAbs": 1109,
             "source": "cell",
             "locus": {
               "kind": "f",
@@ -144663,8 +143204,8 @@
             "label": "Yes",
             "startRow": 0,
             "endRow": 2,
-            "startRowAbs": 1257,
-            "endRowAbs": 1259,
+            "startRowAbs": 1107,
+            "endRowAbs": 1109,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -144688,8 +143229,8 @@
             "label": "Ink",
             "startRow": 0,
             "endRow": 2,
-            "startRowAbs": 1257,
-            "endRowAbs": 1259,
+            "startRowAbs": 1107,
+            "endRowAbs": 1109,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -144713,8 +143254,8 @@
             "label": "Textualis",
             "startRow": 0,
             "endRow": 2,
-            "startRowAbs": 1257,
-            "endRowAbs": 1259,
+            "startRowAbs": 1107,
+            "endRowAbs": 1109,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -144738,8 +143279,8 @@
             "label": "",
             "startRow": 0,
             "endRow": 2,
-            "startRowAbs": 1257,
-            "endRowAbs": 1259,
+            "startRowAbs": 1107,
+            "endRowAbs": 1109,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -144763,8 +143304,8 @@
       "Shelfmark": "B 74",
       "Depository": "UUB",
       "rowRangeAbs": {
-        "start": 1260,
-        "end": 1262
+        "start": 1110,
+        "end": 1112
       },
       "rowCount": 3,
       "segmentsByColumn": {
@@ -144774,8 +143315,8 @@
             "label": "1",
             "startRow": 0,
             "endRow": 2,
-            "startRowAbs": 1260,
-            "endRowAbs": 1262,
+            "startRowAbs": 1110,
+            "endRowAbs": 1112,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -144794,8 +143335,8 @@
             "label": "1570-1571",
             "startRow": 0,
             "endRow": 2,
-            "startRowAbs": 1260,
-            "endRowAbs": 1262,
+            "startRowAbs": 1110,
+            "endRowAbs": 1112,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -144814,8 +143355,8 @@
             "label": "Unknown",
             "startRow": 0,
             "endRow": 2,
-            "startRowAbs": 1260,
-            "endRowAbs": 1262,
+            "startRowAbs": 1110,
+            "endRowAbs": 1112,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -144834,8 +143375,8 @@
             "label": "23",
             "startRow": 0,
             "endRow": 2,
-            "startRowAbs": 1260,
-            "endRowAbs": 1262,
+            "startRowAbs": 1110,
+            "endRowAbs": 1112,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -144854,8 +143395,8 @@
             "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-382956)",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1260,
-            "endRowAbs": 1260,
+            "startRowAbs": 1110,
+            "endRowAbs": 1110,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -144874,8 +143415,8 @@
             "label": "Paper",
             "startRow": 0,
             "endRow": 2,
-            "startRowAbs": 1260,
-            "endRowAbs": 1262,
+            "startRowAbs": 1110,
+            "endRowAbs": 1112,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -144894,8 +143435,8 @@
             "label": "",
             "startRow": 0,
             "endRow": 2,
-            "startRowAbs": 1260,
-            "endRowAbs": 1262,
+            "startRowAbs": 1110,
+            "endRowAbs": 1112,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -144914,8 +143455,8 @@
             "label": "Codex",
             "startRow": 0,
             "endRow": 2,
-            "startRowAbs": 1260,
-            "endRowAbs": 1262,
+            "startRowAbs": 1110,
+            "endRowAbs": 1112,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -144934,8 +143475,8 @@
             "label": "",
             "startRow": 0,
             "endRow": 2,
-            "startRowAbs": 1260,
-            "endRowAbs": 1262,
+            "startRowAbs": 1110,
+            "endRowAbs": 1112,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -144954,8 +143495,8 @@
             "label": "Younger Cursive",
             "startRow": 0,
             "endRow": 2,
-            "startRowAbs": 1260,
-            "endRowAbs": 1262,
+            "startRowAbs": 1110,
+            "endRowAbs": 1112,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -144974,8 +143515,8 @@
             "label": "",
             "startRow": 0,
             "endRow": 2,
-            "startRowAbs": 1260,
-            "endRowAbs": 1262,
+            "startRowAbs": 1110,
+            "endRowAbs": 1112,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -144994,8 +143535,8 @@
       "Shelfmark": "J 79",
       "Depository": "LSB",
       "rowRangeAbs": {
-        "start": 1263,
-        "end": 1266
+        "start": 1113,
+        "end": 1116
       },
       "rowCount": 4,
       "segmentsByColumn": {
@@ -145005,8 +143546,8 @@
             "label": "1",
             "startRow": 0,
             "endRow": 3,
-            "startRowAbs": 1263,
-            "endRowAbs": 1266,
+            "startRowAbs": 1113,
+            "endRowAbs": 1116,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -145031,8 +143572,8 @@
             "label": "1469",
             "startRow": 0,
             "endRow": 2,
-            "startRowAbs": 1263,
-            "endRowAbs": 1265,
+            "startRowAbs": 1113,
+            "endRowAbs": 1115,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -145054,8 +143595,8 @@
             "label": "1500-1599",
             "startRow": 3,
             "endRow": 3,
-            "startRowAbs": 1266,
-            "endRowAbs": 1266,
+            "startRowAbs": 1116,
+            "endRowAbs": 1116,
             "source": "cell",
             "locus": {
               "kind": "f",
@@ -145077,8 +143618,8 @@
             "label": "Unknown",
             "startRow": 0,
             "endRow": 3,
-            "startRowAbs": 1263,
-            "endRowAbs": 1266,
+            "startRowAbs": 1113,
+            "endRowAbs": 1116,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -145103,8 +143644,8 @@
             "label": "Unknown",
             "startRow": 0,
             "endRow": 3,
-            "startRowAbs": 1263,
-            "endRowAbs": 1266,
+            "startRowAbs": 1113,
+            "endRowAbs": 1116,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -145129,8 +143670,8 @@
             "label": "233x175",
             "startRow": 0,
             "endRow": 3,
-            "startRowAbs": 1263,
-            "endRowAbs": 1266,
+            "startRowAbs": 1113,
+            "endRowAbs": 1116,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -145155,8 +143696,8 @@
             "label": "28",
             "startRow": 0,
             "endRow": 2,
-            "startRowAbs": 1263,
-            "endRowAbs": 1265,
+            "startRowAbs": 1113,
+            "endRowAbs": 1115,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -145178,8 +143719,8 @@
             "label": "25",
             "startRow": 3,
             "endRow": 3,
-            "startRowAbs": 1266,
-            "endRowAbs": 1266,
+            "startRowAbs": 1116,
+            "endRowAbs": 1116,
             "source": "cell",
             "locus": {
               "kind": "f",
@@ -145201,8 +143742,8 @@
             "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-458157)",
             "startRow": 0,
             "endRow": 3,
-            "startRowAbs": 1263,
-            "endRowAbs": 1266,
+            "startRowAbs": 1113,
+            "endRowAbs": 1116,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -145227,8 +143768,8 @@
             "label": "MESt",
             "startRow": 1,
             "endRow": 1,
-            "startRowAbs": 1264,
-            "endRowAbs": 1264,
+            "startRowAbs": 1114,
+            "endRowAbs": 1114,
             "source": "cell",
             "locus": {
               "kind": "f",
@@ -145248,8 +143789,8 @@
             "label": "MEL",
             "startRow": 2,
             "endRow": 3,
-            "startRowAbs": 1265,
-            "endRowAbs": 1266,
+            "startRowAbs": 1115,
+            "endRowAbs": 1116,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -145272,8 +143813,8 @@
             "label": "Parchment",
             "startRow": 0,
             "endRow": 3,
-            "startRowAbs": 1263,
-            "endRowAbs": 1266,
+            "startRowAbs": 1113,
+            "endRowAbs": 1116,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -145298,8 +143839,8 @@
             "label": "Calendrarium",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1263,
-            "endRowAbs": 1263,
+            "startRowAbs": 1113,
+            "endRowAbs": 1113,
             "source": "cell",
             "locus": {
               "kind": "f",
@@ -145321,8 +143862,8 @@
             "label": "",
             "startRow": 0,
             "endRow": 3,
-            "startRowAbs": 1263,
-            "endRowAbs": 1266,
+            "startRowAbs": 1113,
+            "endRowAbs": 1116,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -145347,8 +143888,8 @@
             "label": "Codex",
             "startRow": 0,
             "endRow": 3,
-            "startRowAbs": 1263,
-            "endRowAbs": 1266,
+            "startRowAbs": 1113,
+            "endRowAbs": 1116,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -145373,8 +143914,8 @@
             "label": "Yes",
             "startRow": 0,
             "endRow": 3,
-            "startRowAbs": 1263,
-            "endRowAbs": 1266,
+            "startRowAbs": 1113,
+            "endRowAbs": 1116,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -145399,8 +143940,8 @@
             "label": "Swe",
             "startRow": 0,
             "endRow": 3,
-            "startRowAbs": 1263,
-            "endRowAbs": 1266,
+            "startRowAbs": 1113,
+            "endRowAbs": 1116,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -145425,8 +143966,8 @@
             "label": "I",
             "startRow": 0,
             "endRow": 2,
-            "startRowAbs": 1263,
-            "endRowAbs": 1265,
+            "startRowAbs": 1113,
+            "endRowAbs": 1115,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -145448,8 +143989,8 @@
             "label": "II",
             "startRow": 3,
             "endRow": 3,
-            "startRowAbs": 1266,
-            "endRowAbs": 1266,
+            "startRowAbs": 1116,
+            "endRowAbs": 1116,
             "source": "cell",
             "locus": {
               "kind": "f",
@@ -145471,8 +144012,8 @@
             "label": "",
             "startRow": 0,
             "endRow": 3,
-            "startRowAbs": 1263,
-            "endRowAbs": 1266,
+            "startRowAbs": 1113,
+            "endRowAbs": 1116,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -145497,8 +144038,8 @@
             "label": "Yes",
             "startRow": 0,
             "endRow": 3,
-            "startRowAbs": 1263,
-            "endRowAbs": 1266,
+            "startRowAbs": 1113,
+            "endRowAbs": 1116,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -145523,8 +144064,8 @@
             "label": "Ink",
             "startRow": 0,
             "endRow": 3,
-            "startRowAbs": 1263,
-            "endRowAbs": 1266,
+            "startRowAbs": 1113,
+            "endRowAbs": 1116,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -145549,8 +144090,8 @@
             "label": "Hand a",
             "startRow": 0,
             "endRow": 2,
-            "startRowAbs": 1263,
-            "endRowAbs": 1265,
+            "startRowAbs": 1113,
+            "endRowAbs": 1115,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -145572,8 +144113,8 @@
             "label": "Hand b",
             "startRow": 3,
             "endRow": 3,
-            "startRowAbs": 1266,
-            "endRowAbs": 1266,
+            "startRowAbs": 1116,
+            "endRowAbs": 1116,
             "source": "cell",
             "locus": {
               "kind": "f",
@@ -145595,8 +144136,8 @@
             "label": "Cursiva R",
             "startRow": 0,
             "endRow": 2,
-            "startRowAbs": 1263,
-            "endRowAbs": 1265,
+            "startRowAbs": 1113,
+            "endRowAbs": 1115,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -145618,8 +144159,8 @@
             "label": "Younger Cursive",
             "startRow": 3,
             "endRow": 3,
-            "startRowAbs": 1266,
-            "endRowAbs": 1266,
+            "startRowAbs": 1116,
+            "endRowAbs": 1116,
             "source": "cell",
             "locus": {
               "kind": "f",
@@ -145641,8 +144182,8 @@
             "label": "",
             "startRow": 0,
             "endRow": 3,
-            "startRowAbs": 1263,
-            "endRowAbs": 1266,
+            "startRowAbs": 1113,
+            "endRowAbs": 1116,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -145667,8 +144208,8 @@
       "Shelfmark": "Mh 37",
       "Depository": "LUB",
       "rowRangeAbs": {
-        "start": 1267,
-        "end": 1268
+        "start": 1117,
+        "end": 1118
       },
       "rowCount": 2,
       "segmentsByColumn": {
@@ -145678,8 +144219,8 @@
             "label": "2",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1267,
-            "endRowAbs": 1268,
+            "startRowAbs": 1117,
+            "endRowAbs": 1118,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -145702,8 +144243,8 @@
             "label": "1500-1546",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1267,
-            "endRowAbs": 1267,
+            "startRowAbs": 1117,
+            "endRowAbs": 1117,
             "source": "cell",
             "locus": {
               "kind": "f",
@@ -145725,8 +144266,8 @@
             "label": "Unknown",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1267,
-            "endRowAbs": 1268,
+            "startRowAbs": 1117,
+            "endRowAbs": 1118,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -145749,8 +144290,8 @@
             "label": "I:5(ff. ii-5); II:10(ff. 3-12); III:8(ff.13-20); IV:8(ff. 21-28); V:8(ff. 29-36); VI:14(ff. 37-50); VII:8(ff. 51-58); VIII:10(ff. 59-68); IX:8(ff. 69-76); X:8(ff. 77-84); XI:10(ff. 85-94); XII:12(ff. 95-106); XIII:12(ff. 107-118); XIV:10(ff. 119-128); XV:10(ff. 129-138); XVI:10(ff. 139-148); XVII:6(ff. 149-154); XVIII:8(ff. 155-162); XIX:10(ff. 163-172); XX:6(ff. 173-178); XXI:8(ff. 179-186); XXII:10(ff. 187-196); XXIII:10(ff. 197-206); XXIV:8(ff. 207-214); XXV:12(ff. 215-226); XXVI:8(ff. 227-234); XXVII:9(ff. 235-243); XXVIII:6(ff. 244-249); XXIX:8(ff. 250-257); XXX:8(ff. 258-265); XXXI:8(ff. 266-273); XXXII:9(ff. 274-282)",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1267,
-            "endRowAbs": 1268,
+            "startRowAbs": 1117,
+            "endRowAbs": 1118,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -145773,8 +144314,8 @@
             "label": "Unknown",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1267,
-            "endRowAbs": 1268,
+            "startRowAbs": 1117,
+            "endRowAbs": 1118,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -145797,8 +144338,8 @@
             "label": "15",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1267,
-            "endRowAbs": 1268,
+            "startRowAbs": 1117,
+            "endRowAbs": 1118,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -145821,8 +144362,8 @@
             "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-14454)",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1267,
-            "endRowAbs": 1267,
+            "startRowAbs": 1117,
+            "endRowAbs": 1117,
             "source": "cell",
             "locus": {
               "kind": "f",
@@ -145844,8 +144385,8 @@
             "label": "Schlyter (1869:xxiii-xxiv)",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1267,
-            "endRowAbs": 1267,
+            "startRowAbs": 1117,
+            "endRowAbs": 1117,
             "source": "cell",
             "locus": {
               "kind": "f",
@@ -145867,8 +144408,8 @@
             "label": "KrSt",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1267,
-            "endRowAbs": 1268,
+            "startRowAbs": 1117,
+            "endRowAbs": 1118,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -145891,8 +144432,8 @@
             "label": "Parchment",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1267,
-            "endRowAbs": 1267,
+            "startRowAbs": 1117,
+            "endRowAbs": 1117,
             "source": "cell",
             "locus": {
               "kind": "f",
@@ -145912,8 +144453,8 @@
             "label": "Paper",
             "startRow": 1,
             "endRow": 1,
-            "startRowAbs": 1268,
-            "endRowAbs": 1268,
+            "startRowAbs": 1118,
+            "endRowAbs": 1118,
             "source": "cell",
             "locus": {
               "kind": "f",
@@ -145935,8 +144476,8 @@
             "label": "Addititons",
             "startRow": 1,
             "endRow": 1,
-            "startRowAbs": 1268,
-            "endRowAbs": 1268,
+            "startRowAbs": 1118,
+            "endRowAbs": 1118,
             "source": "cell",
             "locus": {
               "kind": "f",
@@ -145958,8 +144499,8 @@
             "label": "",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1267,
-            "endRowAbs": 1268,
+            "startRowAbs": 1117,
+            "endRowAbs": 1118,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -145982,8 +144523,8 @@
             "label": "Codex",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1267,
-            "endRowAbs": 1268,
+            "startRowAbs": 1117,
+            "endRowAbs": 1118,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -146006,8 +144547,8 @@
             "label": "Swe",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1267,
-            "endRowAbs": 1268,
+            "startRowAbs": 1117,
+            "endRowAbs": 1118,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -146030,8 +144571,8 @@
             "label": "N. (or II?) 42 / J. 8:o No. 29a",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1267,
-            "endRowAbs": 1267,
+            "startRowAbs": 1117,
+            "endRowAbs": 1117,
             "source": "cell",
             "locus": {
               "kind": "f",
@@ -146051,8 +144592,8 @@
             "label": "B. N. Mscr. 12:mo No. 2",
             "startRow": 1,
             "endRow": 1,
-            "startRowAbs": 1268,
-            "endRowAbs": 1268,
+            "startRowAbs": 1118,
+            "endRowAbs": 1118,
             "source": "cell",
             "locus": {
               "kind": "f",
@@ -146074,8 +144615,8 @@
       "Shelfmark": "MS E.II.7",
       "Depository": "Finnish National Library",
       "rowRangeAbs": {
-        "start": 1269,
-        "end": 1269
+        "start": 1119,
+        "end": 1119
       },
       "rowCount": 1,
       "segmentsByColumn": {
@@ -146085,8 +144626,8 @@
             "label": "Unknown",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1269,
-            "endRowAbs": 1269,
+            "startRowAbs": 1119,
+            "endRowAbs": 1119,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -146105,8 +144646,8 @@
             "label": "[LINK](https://kansalliskirjasto.finna.fi/Record/fikka.1078262?sid=4044340409)",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1269,
-            "endRowAbs": 1269,
+            "startRowAbs": 1119,
+            "endRowAbs": 1119,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -146125,8 +144666,8 @@
             "label": "KrL",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1269,
-            "endRowAbs": 1269,
+            "startRowAbs": 1119,
+            "endRowAbs": 1119,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -146145,8 +144686,8 @@
             "label": "Codex",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1269,
-            "endRowAbs": 1269,
+            "startRowAbs": 1119,
+            "endRowAbs": 1119,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -146165,8 +144706,8 @@
       "Shelfmark": "B 167",
       "Depository": "KB",
       "rowRangeAbs": {
-        "start": 1270,
-        "end": 1271
+        "start": 1120,
+        "end": 1121
       },
       "rowCount": 2,
       "segmentsByColumn": {
@@ -146176,8 +144717,8 @@
             "label": "1",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1270,
-            "endRowAbs": 1271,
+            "startRowAbs": 1120,
+            "endRowAbs": 1121,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -146196,8 +144737,8 @@
             "label": "1550",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1270,
-            "endRowAbs": 1271,
+            "startRowAbs": 1120,
+            "endRowAbs": 1121,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -146216,8 +144757,8 @@
             "label": "19",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1270,
-            "endRowAbs": 1271,
+            "startRowAbs": 1120,
+            "endRowAbs": 1121,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -146236,8 +144777,8 @@
             "label": "[LB](https://litteraturbanken.se/f%C3%B6rfattare/Anonym/titlar/KristoffersLandslagMS/sida/2/faksimil)",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1270,
-            "endRowAbs": 1270,
+            "startRowAbs": 1120,
+            "endRowAbs": 1120,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -146256,8 +144797,8 @@
             "label": "KrL",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1270,
-            "endRowAbs": 1271,
+            "startRowAbs": 1120,
+            "endRowAbs": 1121,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -146276,8 +144817,8 @@
             "label": "Paper",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1270,
-            "endRowAbs": 1271,
+            "startRowAbs": 1120,
+            "endRowAbs": 1121,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -146296,8 +144837,8 @@
             "label": "",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1270,
-            "endRowAbs": 1271,
+            "startRowAbs": 1120,
+            "endRowAbs": 1121,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -146316,8 +144857,8 @@
             "label": "Codex",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1270,
-            "endRowAbs": 1271,
+            "startRowAbs": 1120,
+            "endRowAbs": 1121,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -146336,8 +144877,8 @@
             "label": "No",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1270,
-            "endRowAbs": 1271,
+            "startRowAbs": 1120,
+            "endRowAbs": 1121,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -146356,8 +144897,8 @@
             "label": "",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1270,
-            "endRowAbs": 1271,
+            "startRowAbs": 1120,
+            "endRowAbs": 1121,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -146376,8 +144917,8 @@
             "label": "Dry/Ink",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1270,
-            "endRowAbs": 1271,
+            "startRowAbs": 1120,
+            "endRowAbs": 1121,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -146396,8 +144937,8 @@
             "label": "Younger Cursive",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1270,
-            "endRowAbs": 1271,
+            "startRowAbs": 1120,
+            "endRowAbs": 1121,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -146416,8 +144957,8 @@
             "label": "",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1270,
-            "endRowAbs": 1271,
+            "startRowAbs": 1120,
+            "endRowAbs": 1121,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -146436,8 +144977,8 @@
       "Shelfmark": "NKS 2237 4to",
       "Depository": "KB",
       "rowRangeAbs": {
-        "start": 1272,
-        "end": 1273
+        "start": 1122,
+        "end": 1123
       },
       "rowCount": 2,
       "segmentsByColumn": {
@@ -146447,8 +144988,8 @@
             "label": "",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1272,
-            "endRowAbs": 1273,
+            "startRowAbs": 1122,
+            "endRowAbs": 1123,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -146470,8 +145011,8 @@
             "label": "R, B",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1272,
-            "endRowAbs": 1273,
+            "startRowAbs": 1122,
+            "endRowAbs": 1123,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -146493,8 +145034,8 @@
             "label": "1",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1272,
-            "endRowAbs": 1273,
+            "startRowAbs": 1122,
+            "endRowAbs": 1123,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -146516,8 +145057,8 @@
             "label": "1350",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1272,
-            "endRowAbs": 1273,
+            "startRowAbs": 1122,
+            "endRowAbs": 1123,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -146539,8 +145080,8 @@
             "label": "Ornamented large initials (5-8 lines); middle initials (2 lines) and small initials (1 lines). All sizes are generally painted with two-coloured fleuronné ornamentation.",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1272,
-            "endRowAbs": 1273,
+            "startRowAbs": 1122,
+            "endRowAbs": 1123,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -146562,8 +145103,8 @@
             "label": "258x203x50",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1272,
-            "endRowAbs": 1273,
+            "startRowAbs": 1122,
+            "endRowAbs": 1123,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -146585,8 +145126,8 @@
             "label": "Unknown",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1272,
-            "endRowAbs": 1273,
+            "startRowAbs": 1122,
+            "endRowAbs": 1123,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -146608,8 +145149,8 @@
             "label": "None. Eleven large ornamented large initials on f. 1r1-8, f. 3r1-8, f. 4r6-13, f. 20r915, f. 23v14-18, f. 28r1-6, f. 35v19-25, f. 54r20-26, f. 59v13-20, f. 71v19-25, f. 77v15-22.",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1272,
-            "endRowAbs": 1273,
+            "startRowAbs": 1122,
+            "endRowAbs": 1123,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -146631,8 +145172,8 @@
             "label": "Unknown",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1272,
-            "endRowAbs": 1273,
+            "startRowAbs": 1122,
+            "endRowAbs": 1123,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -146654,8 +145195,8 @@
             "label": "27",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1272,
-            "endRowAbs": 1273,
+            "startRowAbs": 1122,
+            "endRowAbs": 1123,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -146677,8 +145218,8 @@
             "label": "[DKB](http://www5.kb.dk/manus/vmanus/2011/dec/ha/object106158/da/)",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1272,
-            "endRowAbs": 1272,
+            "startRowAbs": 1122,
+            "endRowAbs": 1122,
             "source": "cell",
             "locus": {
               "kind": "f",
@@ -146700,8 +145241,8 @@
             "label": "SdmL",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1272,
-            "endRowAbs": 1273,
+            "startRowAbs": 1122,
+            "endRowAbs": 1123,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -146723,8 +145264,8 @@
             "label": "Parchment",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1272,
-            "endRowAbs": 1273,
+            "startRowAbs": 1122,
+            "endRowAbs": 1123,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -146746,8 +145287,8 @@
             "label": "",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1272,
-            "endRowAbs": 1273,
+            "startRowAbs": 1122,
+            "endRowAbs": 1123,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -146769,8 +145310,8 @@
             "label": "",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1272,
-            "endRowAbs": 1273,
+            "startRowAbs": 1122,
+            "endRowAbs": 1123,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -146792,8 +145333,8 @@
             "label": "Codex",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1272,
-            "endRowAbs": 1273,
+            "startRowAbs": 1122,
+            "endRowAbs": 1123,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -146815,8 +145356,8 @@
             "label": "Throughout",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1272,
-            "endRowAbs": 1273,
+            "startRowAbs": 1122,
+            "endRowAbs": 1123,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -146838,8 +145379,8 @@
             "label": "Yes",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1272,
-            "endRowAbs": 1273,
+            "startRowAbs": 1122,
+            "endRowAbs": 1123,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -146861,8 +145402,8 @@
             "label": "",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1272,
-            "endRowAbs": 1273,
+            "startRowAbs": 1122,
+            "endRowAbs": 1123,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -146884,8 +145425,8 @@
             "label": "I",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1272,
-            "endRowAbs": 1273,
+            "startRowAbs": 1122,
+            "endRowAbs": 1123,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -146907,8 +145448,8 @@
             "label": "",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1272,
-            "endRowAbs": 1273,
+            "startRowAbs": 1122,
+            "endRowAbs": 1123,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -146930,8 +145471,8 @@
             "label": "Yes",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1272,
-            "endRowAbs": 1273,
+            "startRowAbs": 1122,
+            "endRowAbs": 1123,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -146953,8 +145494,8 @@
             "label": "Ink",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1272,
-            "endRowAbs": 1273,
+            "startRowAbs": 1122,
+            "endRowAbs": 1123,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -146976,8 +145517,8 @@
             "label": "Scribe a",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1272,
-            "endRowAbs": 1273,
+            "startRowAbs": 1122,
+            "endRowAbs": 1123,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -146999,8 +145540,8 @@
             "label": "Textualis",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1272,
-            "endRowAbs": 1273,
+            "startRowAbs": 1122,
+            "endRowAbs": 1123,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -147022,8 +145563,8 @@
             "label": "4to",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1272,
-            "endRowAbs": 1273,
+            "startRowAbs": 1122,
+            "endRowAbs": 1123,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -147045,8 +145586,8 @@
             "label": "Large; Medium and Small",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1272,
-            "endRowAbs": 1273,
+            "startRowAbs": 1122,
+            "endRowAbs": 1123,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -147068,8 +145609,8 @@
             "label": "Romanesque",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1272,
-            "endRowAbs": 1273,
+            "startRowAbs": 1122,
+            "endRowAbs": 1123,
             "source": "merge",
             "locus": {
               "kind": "f",
@@ -147091,8 +145632,8 @@
       "Shelfmark": "Sved. Q II. 3",
       "Depository": "Kejserliga biblioteket; St Petersburg",
       "rowRangeAbs": {
-        "start": 1274,
-        "end": 1274
+        "start": 1124,
+        "end": 1124
       },
       "rowCount": 1,
       "segmentsByColumn": {
@@ -147102,8 +145643,8 @@
             "label": "1450",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1274,
-            "endRowAbs": 1274,
+            "startRowAbs": 1124,
+            "endRowAbs": 1124,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -147122,8 +145663,8 @@
             "label": "Unknown",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1274,
-            "endRowAbs": 1274,
+            "startRowAbs": 1124,
+            "endRowAbs": 1124,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -147142,8 +145683,8 @@
             "label": "Codex",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1274,
-            "endRowAbs": 1274,
+            "startRowAbs": 1124,
+            "endRowAbs": 1124,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -147162,8 +145703,8 @@
             "label": "4to",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1274,
-            "endRowAbs": 1274,
+            "startRowAbs": 1124,
+            "endRowAbs": 1124,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -147182,8 +145723,8 @@
       "Shelfmark": "RA E 9046",
       "Depository": "SRA",
       "rowRangeAbs": {
-        "start": 1275,
-        "end": 1276
+        "start": 1125,
+        "end": 1126
       },
       "rowCount": 2,
       "segmentsByColumn": {
@@ -147193,8 +145734,8 @@
             "label": "1",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1275,
-            "endRowAbs": 1276,
+            "startRowAbs": 1125,
+            "endRowAbs": 1126,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -147213,8 +145754,8 @@
             "label": "1450-1500",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1275,
-            "endRowAbs": 1276,
+            "startRowAbs": 1125,
+            "endRowAbs": 1126,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -147233,8 +145774,8 @@
             "label": "Unknown",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1275,
-            "endRowAbs": 1276,
+            "startRowAbs": 1125,
+            "endRowAbs": 1126,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -147253,8 +145794,8 @@
             "label": "Unknown",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1275,
-            "endRowAbs": 1276,
+            "startRowAbs": 1125,
+            "endRowAbs": 1126,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -147273,8 +145814,8 @@
             "label": "190x140",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1275,
-            "endRowAbs": 1276,
+            "startRowAbs": 1125,
+            "endRowAbs": 1126,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -147293,8 +145834,8 @@
             "label": "30",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1275,
-            "endRowAbs": 1276,
+            "startRowAbs": 1125,
+            "endRowAbs": 1126,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -147313,8 +145854,8 @@
             "label": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-473676)",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1275,
-            "endRowAbs": 1276,
+            "startRowAbs": 1125,
+            "endRowAbs": 1126,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -147333,8 +145874,8 @@
             "label": "Paper",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1275,
-            "endRowAbs": 1276,
+            "startRowAbs": 1125,
+            "endRowAbs": 1126,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -147353,8 +145894,8 @@
             "label": "",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1275,
-            "endRowAbs": 1276,
+            "startRowAbs": 1125,
+            "endRowAbs": 1126,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -147373,8 +145914,8 @@
             "label": "Codex",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1275,
-            "endRowAbs": 1276,
+            "startRowAbs": 1125,
+            "endRowAbs": 1126,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -147393,8 +145934,8 @@
             "label": "Skokloster nr 13",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1275,
-            "endRowAbs": 1276,
+            "startRowAbs": 1125,
+            "endRowAbs": 1126,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -147413,8 +145954,8 @@
             "label": "Yes",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1275,
-            "endRowAbs": 1276,
+            "startRowAbs": 1125,
+            "endRowAbs": 1126,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -147433,8 +145974,8 @@
             "label": "Cursiva R",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1275,
-            "endRowAbs": 1276,
+            "startRowAbs": 1125,
+            "endRowAbs": 1126,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -147453,8 +145994,8 @@
             "label": "4to",
             "startRow": 0,
             "endRow": 1,
-            "startRowAbs": 1275,
-            "endRowAbs": 1276,
+            "startRowAbs": 1125,
+            "endRowAbs": 1126,
             "source": "merge",
             "locus": {
               "kind": null,
@@ -147473,8 +146014,8 @@
       "Shelfmark": "GKADA 181 nr 1456",
       "Depository": "GKADA; Moskva",
       "rowRangeAbs": {
-        "start": 1277,
-        "end": 1277
+        "start": 1127,
+        "end": 1127
       },
       "rowCount": 1,
       "segmentsByColumn": {
@@ -147484,8 +146025,8 @@
             "label": "1450",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1277,
-            "endRowAbs": 1277,
+            "startRowAbs": 1127,
+            "endRowAbs": 1127,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -147504,8 +146045,8 @@
             "label": "Unknown",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1277,
-            "endRowAbs": 1277,
+            "startRowAbs": 1127,
+            "endRowAbs": 1127,
             "source": "cell",
             "locus": {
               "kind": null,
@@ -147524,8 +146065,8 @@
             "label": "Codex",
             "startRow": 0,
             "endRow": 0,
-            "startRowAbs": 1277,
-            "endRowAbs": 1277,
+            "startRowAbs": 1127,
+            "endRowAbs": 1127,
             "source": "cell",
             "locus": {
               "kind": null,
