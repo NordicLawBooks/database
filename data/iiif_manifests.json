@@ -978,5 +978,289 @@
  "nb:ce91d1f43e6a0d23b0907a31b7fb4a39": {
   "manifest": "https://api.nb.no/catalog/v1/iiif/ce91d1f43e6a0d23b0907a31b7fb4a39/manifest",
   "canvases": 182
+ },
+ "ns:10551": {
+  "manifest": "data/iiif/nors/10551.json",
+  "canvases": 252
+ },
+ "ns:10942": {
+  "manifest": "data/iiif/nors/10942.json",
+  "canvases": 128
+ },
+ "ns:11619": {
+  "manifest": "data/iiif/nors/11619.json",
+  "canvases": 112
+ },
+ "ns:11707": {
+  "manifest": "data/iiif/nors/11707.json",
+  "canvases": 40
+ },
+ "ns:11959": {
+  "manifest": "data/iiif/nors/11959.json",
+  "canvases": 90
+ },
+ "ns:12345": {
+  "manifest": "data/iiif/nors/12345.json",
+  "canvases": 45
+ },
+ "ns:15311": {
+  "manifest": "data/iiif/nors/15311.json",
+  "canvases": 226
+ },
+ "ns:15684": {
+  "manifest": "data/iiif/nors/15684.json",
+  "canvases": 217
+ },
+ "ns:15866": {
+  "manifest": "data/iiif/nors/15866.json",
+  "canvases": 139
+ },
+ "ns:15924": {
+  "manifest": "data/iiif/nors/15924.json",
+  "canvases": 165
+ },
+ "ns:15952": {
+  "manifest": "data/iiif/nors/15952.json",
+  "canvases": 283
+ },
+ "ns:16007": {
+  "manifest": "data/iiif/nors/16007.json",
+  "canvases": 381
+ },
+ "ns:16030": {
+  "manifest": "data/iiif/nors/16030.json",
+  "canvases": 191
+ },
+ "ns:16039": {
+  "manifest": "data/iiif/nors/16039.json",
+  "canvases": 28
+ },
+ "ns:16127": {
+  "manifest": "data/iiif/nors/16127.json",
+  "canvases": 169
+ },
+ "ns:16145": {
+  "manifest": "data/iiif/nors/16145.json",
+  "canvases": 149
+ },
+ "ns:27855": {
+  "manifest": "data/iiif/nors/27855.json",
+  "canvases": 11
+ },
+ "ns:27866": {
+  "manifest": "data/iiif/nors/27866.json",
+  "canvases": 440
+ },
+ "ns:28125": {
+  "manifest": "data/iiif/nors/28125.json",
+  "canvases": 229
+ },
+ "ns:28137": {
+  "manifest": "data/iiif/nors/28137.json",
+  "canvases": 146
+ },
+ "ns:28545": {
+  "manifest": "data/iiif/nors/28545.json",
+  "canvases": 334
+ },
+ "ns:35838": {
+  "manifest": "data/iiif/nors/35838.json",
+  "canvases": 153
+ },
+ "ns:35845": {
+  "manifest": "data/iiif/nors/35845.json",
+  "canvases": 278
+ },
+ "ns:35894": {
+  "manifest": "data/iiif/nors/35894.json",
+  "canvases": 245
+ },
+ "ns:36543": {
+  "manifest": "data/iiif/nors/36543.json",
+  "canvases": 91
+ },
+ "ns:36807": {
+  "manifest": "data/iiif/nors/36807.json",
+  "canvases": 506
+ },
+ "ns:36833": {
+  "manifest": "data/iiif/nors/36833.json",
+  "canvases": 229
+ },
+ "ns:36998": {
+  "manifest": "data/iiif/nors/36998.json",
+  "canvases": 13
+ },
+ "ns:37597": {
+  "manifest": "data/iiif/nors/37597.json",
+  "canvases": 228
+ },
+ "ns:4801": {
+  "manifest": "data/iiif/nors/4801.json",
+  "canvases": 149
+ },
+ "ns:4809": {
+  "manifest": "data/iiif/nors/4809.json",
+  "canvases": 160
+ },
+ "ns:4818": {
+  "manifest": "data/iiif/nors/4818.json",
+  "canvases": 236
+ },
+ "ns:4830": {
+  "manifest": "data/iiif/nors/4830.json",
+  "canvases": 173
+ },
+ "ns:4840": {
+  "manifest": "data/iiif/nors/4840.json",
+  "canvases": 157
+ },
+ "ns:4849": {
+  "manifest": "data/iiif/nors/4849.json",
+  "canvases": 165
+ },
+ "ns:4858": {
+  "manifest": "data/iiif/nors/4858.json",
+  "canvases": 263
+ },
+ "ns:4872": {
+  "manifest": "data/iiif/nors/4872.json",
+  "canvases": 211
+ },
+ "ns:4884": {
+  "manifest": "data/iiif/nors/4884.json",
+  "canvases": 78
+ },
+ "ns:4888": {
+  "manifest": "data/iiif/nors/4888.json",
+  "canvases": 162
+ },
+ "ns:4893": {
+  "manifest": "data/iiif/nors/4893.json",
+  "canvases": 220
+ },
+ "ns:4918": {
+  "manifest": "data/iiif/nors/4918.json",
+  "canvases": 204
+ },
+ "ns:5646": {
+  "manifest": "data/iiif/nors/5646.json",
+  "canvases": 24
+ },
+ "ns:5650": {
+  "manifest": "data/iiif/nors/5650.json",
+  "canvases": 303
+ },
+ "ns:5728": {
+  "manifest": "data/iiif/nors/5728.json",
+  "canvases": 203
+ },
+ "ns:5775": {
+  "manifest": "data/iiif/nors/5775.json",
+  "canvases": 142
+ },
+ "ns:5798": {
+  "manifest": "data/iiif/nors/5798.json",
+  "canvases": 249
+ },
+ "ns:5818": {
+  "manifest": "data/iiif/nors/5818.json",
+  "canvases": 198
+ },
+ "ns:5888": {
+  "manifest": "data/iiif/nors/5888.json",
+  "canvases": 192
+ },
+ "ns:5898": {
+  "manifest": "data/iiif/nors/5898.json",
+  "canvases": 93
+ },
+ "ns:5906": {
+  "manifest": "data/iiif/nors/5906.json",
+  "canvases": 128
+ },
+ "ns:5914": {
+  "manifest": "data/iiif/nors/5914.json",
+  "canvases": 192
+ },
+ "ns:5922": {
+  "manifest": "data/iiif/nors/5922.json",
+  "canvases": 213
+ },
+ "ns:5933": {
+  "manifest": "data/iiif/nors/5933.json",
+  "canvases": 196
+ },
+ "ns:5951": {
+  "manifest": "data/iiif/nors/5951.json",
+  "canvases": 114
+ },
+ "ns:5955": {
+  "manifest": "data/iiif/nors/5955.json",
+  "canvases": 22
+ },
+ "ns:5963": {
+  "manifest": "data/iiif/nors/5963.json",
+  "canvases": 152
+ },
+ "ns:5976": {
+  "manifest": "data/iiif/nors/5976.json",
+  "canvases": 171
+ },
+ "ns:5986": {
+  "manifest": "data/iiif/nors/5986.json",
+  "canvases": 164
+ },
+ "ns:6041": {
+  "manifest": "data/iiif/nors/6041.json",
+  "canvases": 105
+ },
+ "ns:6045": {
+  "manifest": "data/iiif/nors/6045.json",
+  "canvases": 25
+ },
+ "ns:6068": {
+  "manifest": "data/iiif/nors/6068.json",
+  "canvases": 70
+ },
+ "ns:6074": {
+  "manifest": "data/iiif/nors/6074.json",
+  "canvases": 75
+ },
+ "ns:6079": {
+  "manifest": "data/iiif/nors/6079.json",
+  "canvases": 25
+ },
+ "ns:6081": {
+  "manifest": "data/iiif/nors/6081.json",
+  "canvases": 56
+ },
+ "ns:6083": {
+  "manifest": "data/iiif/nors/6083.json",
+  "canvases": 36
+ },
+ "ns:6085": {
+  "manifest": "data/iiif/nors/6085.json",
+  "canvases": 68
+ },
+ "ns:6096": {
+  "manifest": "data/iiif/nors/6096.json",
+  "canvases": 31
+ },
+ "ns:6113": {
+  "manifest": "data/iiif/nors/6113.json",
+  "canvases": 84
+ },
+ "ns:7647": {
+  "manifest": "data/iiif/nors/7647.json",
+  "canvases": 147
+ },
+ "ns:9777": {
+  "manifest": "data/iiif/nors/9777.json",
+  "canvases": 107
+ },
+ "ns:9905": {
+  "manifest": "data/iiif/nors/9905.json",
+  "canvases": 213
  }
 }
