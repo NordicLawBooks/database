@@ -3,7 +3,7 @@
 // room. A fresh viewer is mounted per open and unmounted on close.
 
 import { escapeHtml } from "../util/text.js";
-import { getMirador, canvasForLocus, windowConfig, MIRADOR_THEME } from "./mirador.js";
+import { getMirador, canvasForLocus, windowConfig, MIRADOR_THEME, MIRADOR_OSD_CONFIG } from "./mirador.js";
 import { showModalOver } from "./modal-stack.js";
 
 const VIEWER_ID = "iiif-viewer";
@@ -70,6 +70,7 @@ export async function openIiifModal({ manifest, title = "", locus = null }, retu
   host.innerHTML = `<div id="${VIEWER_ID}"></div>`;
   viewer = Mirador.viewer({
     theme: MIRADOR_THEME,
+    osdConfig: MIRADOR_OSD_CONFIG,
     id: VIEWER_ID,
     windows: [windowConfig(manifest, canvasId)],
     window: {

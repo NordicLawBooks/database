@@ -63,6 +63,40 @@ export function windowConfig(manifest, canvasId = null) {
   return win;
 }
 
+// NorS (sprogsamlinger.ku.dk) serves plain JPEGs without a IIIF image service:
+// the full image (2-3.5 MB) and, with a "thumb" parameter, a copy at 1/8 of its
+// size (rounded up). Offered to OpenSeadragon as a two-level pyramid, the small
+// copy is shown at fit and the full image is only fetched when zooming needs it.
+const NORS_IMAGE_RE = /^https:\/\/sprogsamlinger\.ku\.dk\/projects\/sprogsamlinger\/ds-img\.php\?path=/;
+
+/** A legacy-image-pyramid tile source for a NorS full-size image of `width` x `height`, else null. */
+export function norsPyramid(url, width, height) {
+  if (!NORS_IMAGE_RE.test(String(url || "")) || !(width > 0) || !(height > 0)) return null;
+  const w = Math.round(width);
+  const h = Math.round(height);
+  return {
+    type: "legacy-image-pyramid",
+    levels: [
+      { url: url.replace("ds-img.php?", "ds-img.php?thumb=200x200&"), width: Math.ceil(w / 8), height: Math.ceil(h / 8) },
+      { url, width: w, height: h },
+    ],
+  };
+}
+
+// Mirador hands each image to OpenSeadragon as addTiledImage({ tileSource: { type:
+// "image", url }, fitBounds }) and copies osdConfig onto the OpenSeadragon viewer,
+// so this replaces the method on that instance only. fitBounds is the canvas,
+// whose size is the image's in our NorS manifests.
+function addTiledImage(options) {
+  const ts = options && options.tileSource;
+  const fb = options && options.fitBounds;
+  const pyramid = ts && ts.type === "image" && fb ? norsPyramid(ts.url, fb.width, fb.height) : null;
+  return Object.getPrototypeOf(this).addTiledImage.call(this, pyramid ? { ...options, tileSource: pyramid } : options);
+}
+
+/** OpenSeadragon options shared by the pane and the modal. */
+export const MIRADOR_OSD_CONFIG = { addTiledImage };
+
 // Mirador 4's default theme font sizes (rem), scaled down so its text is about
 // the size of the results tables (0.88rem). Only fontSize is overridden; Mirador
 // merges the rest of each variant from its defaults.

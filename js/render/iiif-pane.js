@@ -9,7 +9,7 @@
 // The divider (#viewer-resizer) drags to resize; double-click / Enter / Space
 // collapses and restores the pane; ←/→ resize by keyboard.
 
-import { getMirador, canvasForLocus, windowConfig, MIRADOR_THEME } from "./mirador.js";
+import { getMirador, canvasForLocus, windowConfig, MIRADOR_THEME, MIRADOR_OSD_CONFIG } from "./mirador.js";
 import { setUi } from "./sidebar.js";
 
 export const VIEWER_MIN = 320;
@@ -94,6 +94,7 @@ async function doOpen(manifest, locus) {
     refs.host.innerHTML = `<div id="${VIEWER_ID}"></div>`;
     viewer = Mirador.viewer({
       theme: MIRADOR_THEME,
+      osdConfig: MIRADOR_OSD_CONFIG,
       id: VIEWER_ID,
       windows: [windowConfig(manifest, canvasId)],
       window: { allowClose: true, allowMaximize: true, allowFullscreen: true, sideBarOpen: false, defaultView: "single" },
