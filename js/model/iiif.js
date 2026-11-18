@@ -1,17 +1,19 @@
 // IIIF manifests behind "Links to Database" links (manuscripta.se, nb.no, and
-// static manifests we build for handrit.is), for the image viewer
+// static manifests we build for handrit.is and NorS), for the image viewer
 // (js/render/iiif-modal.js). data/iiif_manifests.json (built by
 // data/scripts/build_iiif_index.py) lists the links whose manifest exists; it
 // decides where the viewer is offered, not the "(not digitised)" link labels.
 // The index is registered once at startup (setIiifIndex) so the shared link
 // renderer can look links up without threading it through every view.
 
-/** Link pattern -> index key. Keep in sync with PROVIDERS in build_iiif_index.py. */
+/** Link pattern -> index key. Keep in sync with build_iiif_index.py (PROVIDERS, HANDRIT_LINK_RE, NORS_LINK_RE). */
 const IIIF_SOURCES = [
   { prefix: "ms", re: /^https?:\/\/(?:www\.)?manuscripta\.se\/ms\/(\d+)/i },
   { prefix: "nb", re: /^https?:\/\/(?:www\.)?nb\.no\/items\/([0-9a-f]{32})/i },
   // handrit.is has no IIIF: the index points at our own static manifests (data/iiif/handrit/).
   { prefix: "hr", re: /^https?:\/\/(?:www\.)?handrit\.is\/manuscript\/view\/[a-z]{2}\/([^/#?\s]+)/i },
+  // NorS (sprogsamlinger.ku.dk) has no IIIF either: static manifests in data/iiif/nors/.
+  { prefix: "ns", re: /^https?:\/\/sprogsamlinger\.ku\.dk\/q\.php\?p=ds\/hjem\/mapper\/(\d+)/i },
 ];
 const URL_RE = /https?:\/\/[^\s;()[\]]+/g;
 

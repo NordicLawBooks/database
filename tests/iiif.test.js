@@ -29,6 +29,12 @@ test("iiifKeyForUrl: manuscripta (with/without www) and nb.no; non-IIIF sites nu
   assert.equal(iiifKeyForUrl(null), null);
 });
 
+test("iiifKeyForUrl: NorS folder links", () => {
+  assert.equal(iiifKeyForUrl("https://sprogsamlinger.ku.dk/q.php?p=ds/hjem/mapper/7647"), "ns:7647");
+  assert.equal(iiifKeyForUrl("http://sprogsamlinger.ku.dk/q.php?p=ds/hjem/mapper/7647"), "ns:7647");
+  assert.equal(iiifKeyForUrl("https://sprogsamlinger.ku.dk/q.php?p=ds/hjem/billed/154252"), null); // one image, not a folder
+});
+
 test("iiifEntryForUrl: only links in the index", () => {
   setIiifIndex(INDEX);
   assert.deepEqual(iiifEntryForUrl("https://manuscripta.se/ms/100255"), { key: "ms:100255", manifest: MS_MANIFEST, canvases: 210 });
