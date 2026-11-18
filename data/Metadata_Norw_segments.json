@@ -51694,6 +51694,27 @@
                 ]
               }
             }
+          },
+          {
+            "column": "Script",
+            "label": "Cursive",
+            "startRow": 3,
+            "endRow": 3,
+            "startRowAbs": 311,
+            "endRowAbs": 311,
+            "source": "cell",
+            "locus": {
+              "kind": "f",
+              "from": "100v",
+              "to": "103v",
+              "prefix": "ff.",
+              "rendered": "ff. 100v-103v",
+              "evidence": {
+                "leavesPages": [
+                  "ff. 100v-103v"
+                ]
+              }
+            }
           }
         ],
         "Size": [
@@ -57568,6 +57589,29 @@
           {
             "column": "Scribe",
             "label": "Hand a",
+            "startRow": 0,
+            "endRow": 0,
+            "startRowAbs": 325,
+            "endRowAbs": 325,
+            "source": "cell",
+            "locus": {
+              "kind": "f",
+              "from": "1",
+              "to": "1",
+              "prefix": "f.",
+              "rendered": "f. 1-1",
+              "evidence": {
+                "leavesPages": [
+                  "F. 1"
+                ]
+              }
+            }
+          }
+        ],
+        "Script": [
+          {
+            "column": "Script",
+            "label": "Textualis",
             "startRow": 0,
             "endRow": 0,
             "startRowAbs": 325,

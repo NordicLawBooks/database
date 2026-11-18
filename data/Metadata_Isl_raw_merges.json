@@ -35,7 +35,7 @@
     "Literature",
     "Links to Database"
   ],
-  "rowCount": 1349,
+  "rowCount": 1387,
   "merges": [
     {
       "minRow": 0,
@@ -1649,6 +1649,15 @@
       "value": "Throughout"
     },
     {
+      "minRow": 11,
+      "maxRow": 25,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
+    },
+    {
       "minRow": 12,
       "maxRow": 22,
       "minColIndex": 6,
@@ -2306,6 +2315,15 @@
       "value": "Throughout"
     },
     {
+      "minRow": 29,
+      "maxRow": 42,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
+    },
+    {
       "minRow": 30,
       "maxRow": 42,
       "minColIndex": 31,
@@ -2585,6 +2603,15 @@
       "value": "[NorS](https://sprogsamlinger.ku.dk/q.php?p=ds/hjem/mapper/28415)"
     },
     {
+      "minRow": 46,
+      "maxRow": 50,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
+    },
+    {
       "minRow": 47,
       "maxRow": 49,
       "minColIndex": 8,
@@ -2835,6 +2862,15 @@
       "minCol": "Place",
       "maxCol": "Place",
       "value": "Throughout"
+    },
+    {
+      "minRow": 52,
+      "maxRow": 64,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
     },
     {
       "minRow": 53,
@@ -3186,6 +3222,15 @@
       "minCol": "Place",
       "maxCol": "Place",
       "value": "Throughout"
+    },
+    {
+      "minRow": 65,
+      "maxRow": 128,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
     },
     {
       "minRow": 66,
@@ -4592,7 +4637,7 @@
       "value": "Kålund (1900:325); Seip (1954:134)"
     },
     {
-      "minRow": 221,
+      "minRow": 220,
       "maxRow": 227,
       "minColIndex": 31,
       "maxColIndex": 31,
@@ -4943,6 +4988,15 @@
       "value": "No book painting"
     },
     {
+      "minRow": 228,
+      "maxRow": 231,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
+    },
+    {
       "minRow": 229,
       "maxRow": 231,
       "minColIndex": 31,
@@ -5193,6 +5247,15 @@
       "minCol": "Place",
       "maxCol": "Place",
       "value": "Throughout"
+    },
+    {
+      "minRow": 232,
+      "maxRow": 241,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
     },
     {
       "minRow": 233,
@@ -5465,6 +5528,15 @@
       "value": "Throughout"
     },
     {
+      "minRow": 242,
+      "maxRow": 246,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
+    },
+    {
       "minRow": 243,
       "maxRow": 246,
       "minColIndex": 8,
@@ -5699,12 +5771,30 @@
       "value": "Throughout"
     },
     {
+      "minRow": 247,
+      "maxRow": 287,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
+    },
+    {
       "minRow": 248,
       "maxRow": 270,
       "minColIndex": 8,
       "maxColIndex": 8,
       "minCol": "Main text",
       "maxCol": "Main text",
+      "value": ""
+    },
+    {
+      "minRow": 248,
+      "maxRow": 287,
+      "minColIndex": 15,
+      "maxColIndex": 15,
+      "minCol": "Pricking",
+      "maxCol": "Pricking",
       "value": ""
     },
     {
@@ -6120,6 +6210,15 @@
       "minCol": "Place",
       "maxCol": "Place",
       "value": "Throughout"
+    },
+    {
+      "minRow": 288,
+      "maxRow": 301,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
     },
     {
       "minRow": 288,
@@ -6743,6 +6842,15 @@
       "value": "Throughout"
     },
     {
+      "minRow": 307,
+      "maxRow": 308,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
+    },
+    {
       "minRow": 309,
       "maxRow": 359,
       "minColIndex": 0,
@@ -6952,6 +7060,15 @@
     {
       "minRow": 309,
       "maxRow": 359,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": "Schnall (2005: 77-79)"
+    },
+    {
+      "minRow": 309,
+      "maxRow": 359,
       "minColIndex": 31,
       "maxColIndex": 31,
       "minCol": "Links to Database",
@@ -7154,7 +7271,7 @@
       "maxColIndex": 20,
       "minCol": "Script",
       "maxCol": "Script",
-      "value": ""
+      "value": "Younger Cursive"
     },
     {
       "minRow": 349,
@@ -7807,6 +7924,15 @@
     {
       "minRow": 400,
       "maxRow": 420,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
+    },
+    {
+      "minRow": 400,
+      "maxRow": 420,
       "minColIndex": 31,
       "maxColIndex": 31,
       "minCol": "Links to Database",
@@ -8090,7 +8216,7 @@
       "maxColIndex": 20,
       "minCol": "Script",
       "maxCol": "Script",
-      "value": ""
+      "value": "Septentrionalis"
     },
     {
       "minRow": 421,
@@ -8216,7 +8342,7 @@
       "maxColIndex": 20,
       "minCol": "Script",
       "maxCol": "Script",
-      "value": ""
+      "value": "Septentrionalis"
     },
     {
       "minRow": 465,
@@ -8491,6 +8617,15 @@
     {
       "minRow": 469,
       "maxRow": 470,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
+    },
+    {
+      "minRow": 469,
+      "maxRow": 470,
       "minColIndex": 31,
       "maxColIndex": 31,
       "minCol": "Links to Database",
@@ -8649,6 +8784,15 @@
       "minCol": "Production",
       "maxCol": "Production",
       "value": "Unknown"
+    },
+    {
+      "minRow": 471,
+      "maxRow": 480,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
     },
     {
       "minRow": 471,
@@ -8904,15 +9048,6 @@
     },
     {
       "minRow": 481,
-      "maxRow": 482,
-      "minColIndex": 20,
-      "maxColIndex": 20,
-      "minCol": "Script",
-      "maxCol": "Script",
-      "value": "Cursiva A"
-    },
-    {
-      "minRow": 481,
       "maxRow": 525,
       "minColIndex": 21,
       "maxColIndex": 21,
@@ -8984,6 +9119,15 @@
       "value": "Throughout, but mainly in the oldest production unit"
     },
     {
+      "minRow": 481,
+      "maxRow": 525,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
+    },
+    {
       "minRow": 482,
       "maxRow": 525,
       "minColIndex": 31,
@@ -9047,6 +9191,15 @@
       "value": "Dry"
     },
     {
+      "minRow": 484,
+      "maxRow": 491,
+      "minColIndex": 20,
+      "maxColIndex": 20,
+      "minCol": "Script",
+      "maxCol": "Script",
+      "value": "Cursiva A"
+    },
+    {
       "minRow": 493,
       "maxRow": 495,
       "minColIndex": 6,
@@ -9098,7 +9251,7 @@
       "maxColIndex": 20,
       "minCol": "Script",
       "maxCol": "Script",
-      "value": ""
+      "value": "Cursiva A"
     },
     {
       "minRow": 493,
@@ -9153,6 +9306,15 @@
       "minCol": "Ruling",
       "maxCol": "Ruling",
       "value": "No"
+    },
+    {
+      "minRow": 496,
+      "maxRow": 522,
+      "minColIndex": 20,
+      "maxColIndex": 20,
+      "minCol": "Script",
+      "maxCol": "Script",
+      "value": "Gothic"
     },
     {
       "minRow": 496,
@@ -9278,7 +9440,7 @@
       "maxColIndex": 20,
       "minCol": "Script",
       "maxCol": "Script",
-      "value": ""
+      "value": "Cursiva A"
     },
     {
       "minRow": 523,
@@ -9715,11 +9877,29 @@
     {
       "minRow": 549,
       "maxRow": 558,
+      "minColIndex": 20,
+      "maxColIndex": 20,
+      "minCol": "Script",
+      "maxCol": "Script",
+      "value": "Gothic"
+    },
+    {
+      "minRow": 549,
+      "maxRow": 558,
       "minColIndex": 23,
       "maxColIndex": 23,
       "minCol": "Production",
       "maxCol": "Production",
       "value": "Unknown"
+    },
+    {
+      "minRow": 549,
+      "maxRow": 558,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
     },
     {
       "minRow": 550,
@@ -9765,15 +9945,6 @@
       "minCol": "Lines",
       "maxCol": "Lines",
       "value": "21"
-    },
-    {
-      "minRow": 550,
-      "maxRow": 551,
-      "minColIndex": 20,
-      "maxColIndex": 20,
-      "minCol": "Script",
-      "maxCol": "Script",
-      "value": ""
     },
     {
       "minRow": 550,
@@ -10262,6 +10433,15 @@
       "value": "Nowhere apart from where the miniatures and the single historiated initial is placed"
     },
     {
+      "minRow": 559,
+      "maxRow": 562,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
+    },
+    {
       "minRow": 560,
       "maxRow": 562,
       "minColIndex": 31,
@@ -10586,6 +10766,15 @@
       "value": ""
     },
     {
+      "minRow": 567,
+      "maxRow": 582,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
+    },
+    {
       "minRow": 568,
       "maxRow": 569,
       "minColIndex": 20,
@@ -10872,6 +11061,15 @@
       "minCol": "Place",
       "maxCol": "Place",
       "value": "Throughout"
+    },
+    {
+      "minRow": 583,
+      "maxRow": 592,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
     },
     {
       "minRow": 584,
@@ -11162,6 +11360,15 @@
       "value": "Throughout"
     },
     {
+      "minRow": 593,
+      "maxRow": 594,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
+    },
+    {
       "minRow": 595,
       "maxRow": 601,
       "minColIndex": 0,
@@ -11340,6 +11547,15 @@
       "minCol": "Place",
       "maxCol": "Place",
       "value": "Throughout"
+    },
+    {
+      "minRow": 595,
+      "maxRow": 601,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
     },
     {
       "minRow": 596,
@@ -12044,6 +12260,15 @@
       "value": "Throughout"
     },
     {
+      "minRow": 623,
+      "maxRow": 624,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
+    },
+    {
       "minRow": 625,
       "maxRow": 632,
       "minColIndex": 0,
@@ -12285,6 +12510,15 @@
       "minCol": "Place",
       "maxCol": "Place",
       "value": "Throughout"
+    },
+    {
+      "minRow": 625,
+      "maxRow": 632,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
     },
     {
       "minRow": 626,
@@ -12557,6 +12791,15 @@
       "value": "Throughout"
     },
     {
+      "minRow": 633,
+      "maxRow": 644,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
+    },
+    {
       "minRow": 634,
       "maxRow": 644,
       "minColIndex": 31,
@@ -12816,6 +13059,15 @@
       "minCol": "Place",
       "maxCol": "Place",
       "value": "Throughout"
+    },
+    {
+      "minRow": 645,
+      "maxRow": 647,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
     },
     {
       "minRow": 646,
@@ -13340,6 +13592,15 @@
       "value": "None"
     },
     {
+      "minRow": 654,
+      "maxRow": 658,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
+    },
+    {
       "minRow": 655,
       "maxRow": 658,
       "minColIndex": 31,
@@ -13698,6 +13959,15 @@
       "minCol": "Place",
       "maxCol": "Place",
       "value": "Throughout"
+    },
+    {
+      "minRow": 659,
+      "maxRow": 694,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
     },
     {
       "minRow": 660,
@@ -14240,6 +14510,15 @@
       "value": "Nowhere"
     },
     {
+      "minRow": 706,
+      "maxRow": 707,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
+    },
+    {
       "minRow": 708,
       "maxRow": 709,
       "minColIndex": 0,
@@ -14499,6 +14778,15 @@
       "minCol": "Place",
       "maxCol": "Place",
       "value": "Throughout"
+    },
+    {
+      "minRow": 708,
+      "maxRow": 709,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
     },
     {
       "minRow": 708,
@@ -15177,7 +15465,7 @@
     },
     {
       "minRow": 714,
-      "maxRow": 715,
+      "maxRow": 716,
       "minColIndex": 14,
       "maxColIndex": 14,
       "minCol": "Production Unit",
@@ -15326,7 +15614,7 @@
       "maxColIndex": 31,
       "minCol": "Links to Database",
       "maxCol": "Links to Database",
-      "value": "HR"
+      "value": "[HR](https://handrit.is/manuscript/view/is/AM04-0173d-A05-20-34)"
     },
     {
       "minRow": 715,
@@ -16739,7 +17027,7 @@
       "maxColIndex": 31,
       "minCol": "Links to Database",
       "maxCol": "Links to Database",
-      "value": "HR"
+      "value": "[HR](https://handrit.is/manuscript/view/is/AM04-0173d-A10-13)"
     },
     {
       "minRow": 727,
@@ -17018,7 +17306,7 @@
       "maxColIndex": 31,
       "minCol": "Links to Database",
       "maxCol": "Links to Database",
-      "value": "HR"
+      "value": "[HR](https://handrit.is/manuscript/view/is/AM04-0173d-A11-19)"
     },
     {
       "minRow": 729,
@@ -18953,7 +19241,7 @@
       "maxColIndex": 31,
       "minCol": "Links to Database",
       "maxCol": "Links to Database",
-      "value": "HR"
+      "value": "[HR](https://handrit.is/manuscript/view/is/AM04-0173d-A22)"
     },
     {
       "minRow": 744,
@@ -19232,7 +19520,7 @@
       "maxColIndex": 31,
       "minCol": "Links to Database",
       "maxCol": "Links to Database",
-      "value": "HR"
+      "value": "[HR](https://handrit.is/manuscript/view/is/AM04-0173d-A23)"
     },
     {
       "minRow": 746,
@@ -19511,7 +19799,7 @@
       "maxColIndex": 31,
       "minCol": "Links to Database",
       "maxCol": "Links to Database",
-      "value": "HR"
+      "value": "[HR](https://handrit.is/manuscript/view/is/AM04-0173d-A25-27)"
     },
     {
       "minRow": 748,
@@ -19790,7 +20078,7 @@
       "maxColIndex": 31,
       "minCol": "Links to Database",
       "maxCol": "Links to Database",
-      "value": "HR"
+      "value": "[HR](https://handrit.is/manuscript/view/is/AM04-0173d-A28)"
     },
     {
       "minRow": 750,
@@ -20069,7 +20357,7 @@
       "maxColIndex": 31,
       "minCol": "Links to Database",
       "maxCol": "Links to Database",
-      "value": "HR"
+      "value": "[HR](https://handrit.is/manuscript/view/is/AM04-0173d-A29)"
     },
     {
       "minRow": 752,
@@ -20348,7 +20636,7 @@
       "maxColIndex": 31,
       "minCol": "Links to Database",
       "maxCol": "Links to Database",
-      "value": "HR"
+      "value": "[HR](https://handrit.is/manuscript/view/is/AM04-0173d-A30)"
     },
     {
       "minRow": 754,
@@ -20627,7 +20915,7 @@
       "maxColIndex": 31,
       "minCol": "Links to Database",
       "maxCol": "Links to Database",
-      "value": "HR"
+      "value": "[HR](https://handrit.is/manuscript/view/is/AM04-0173d-A32)"
     },
     {
       "minRow": 756,
@@ -20902,11 +21190,20 @@
     {
       "minRow": 756,
       "maxRow": 757,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
+    },
+    {
+      "minRow": 756,
+      "maxRow": 757,
       "minColIndex": 31,
       "maxColIndex": 31,
       "minCol": "Links to Database",
       "maxCol": "Links to Database",
-      "value": "HR"
+      "value": "[HR](https://handrit.is/manuscript/view/is/AM04-0173d-A33)"
     },
     {
       "minRow": 758,
@@ -21159,6 +21456,15 @@
       "minCol": "Place",
       "maxCol": "Place",
       "value": "Nowhere"
+    },
+    {
+      "minRow": 758,
+      "maxRow": 765,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
     },
     {
       "minRow": 758,
@@ -21424,6 +21730,15 @@
     {
       "minRow": 768,
       "maxRow": 771,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
+    },
+    {
+      "minRow": 768,
+      "maxRow": 771,
       "minColIndex": 31,
       "maxColIndex": 31,
       "minCol": "Links to Database",
@@ -21654,6 +21969,15 @@
       "minCol": "Place",
       "maxCol": "Place",
       "value": "Throughout"
+    },
+    {
+      "minRow": 772,
+      "maxRow": 800,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
     },
     {
       "minRow": 773,
@@ -21971,6 +22295,15 @@
       "value": "Throughout"
     },
     {
+      "minRow": 801,
+      "maxRow": 812,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
+    },
+    {
       "minRow": 803,
       "maxRow": 812,
       "minColIndex": 8,
@@ -22257,6 +22590,15 @@
       "minCol": "Place",
       "maxCol": "Place",
       "value": "Nowhere"
+    },
+    {
+      "minRow": 813,
+      "maxRow": 814,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
     },
     {
       "minRow": 815,
@@ -22781,6 +23123,24 @@
       "value": "Unknown"
     },
     {
+      "minRow": 823,
+      "maxRow": 825,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
+    },
+    {
+      "minRow": 823,
+      "maxRow": 825,
+      "minColIndex": 31,
+      "maxColIndex": 31,
+      "minCol": "Links to Database",
+      "maxCol": "Links to Database",
+      "value": ""
+    },
+    {
       "minRow": 826,
       "maxRow": 832,
       "minColIndex": 0,
@@ -23022,6 +23382,24 @@
       "minCol": "Place",
       "maxCol": "Place",
       "value": "Unknown"
+    },
+    {
+      "minRow": 826,
+      "maxRow": 832,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
+    },
+    {
+      "minRow": 826,
+      "maxRow": 832,
+      "minColIndex": 31,
+      "maxColIndex": 31,
+      "minCol": "Links to Database",
+      "maxCol": "Links to Database",
+      "value": "[NorS](https://sprogsamlinger.ku.dk/q.php?p=ds/hjem/mapper/36998)"
     },
     {
       "minRow": 827,
@@ -23303,6 +23681,15 @@
       "value": "Throughout"
     },
     {
+      "minRow": 833,
+      "maxRow": 836,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
+    },
+    {
       "minRow": 834,
       "maxRow": 836,
       "minColIndex": 31,
@@ -23562,6 +23949,15 @@
       "minCol": "Place",
       "maxCol": "Place",
       "value": "Throughout"
+    },
+    {
+      "minRow": 837,
+      "maxRow": 847,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
     },
     {
       "minRow": 838,
@@ -23978,6 +24374,15 @@
       "value": "Througout"
     },
     {
+      "minRow": 848,
+      "maxRow": 864,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
+    },
+    {
       "minRow": 849,
       "maxRow": 854,
       "minColIndex": 8,
@@ -24356,6 +24761,15 @@
       "value": "Throughout"
     },
     {
+      "minRow": 865,
+      "maxRow": 874,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
+    },
+    {
       "minRow": 866,
       "maxRow": 874,
       "minColIndex": 31,
@@ -24606,6 +25020,15 @@
       "minCol": "Place",
       "maxCol": "Place",
       "value": "Throughout"
+    },
+    {
+      "minRow": 875,
+      "maxRow": 877,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
     },
     {
       "minRow": 876,
@@ -24876,6 +25299,15 @@
       "minCol": "Place",
       "maxCol": "Place",
       "value": "Throughout"
+    },
+    {
+      "minRow": 878,
+      "maxRow": 881,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
     },
     {
       "minRow": 878,
@@ -25168,6 +25600,15 @@
     {
       "minRow": 882,
       "maxRow": 884,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
+    },
+    {
+      "minRow": 882,
+      "maxRow": 884,
       "minColIndex": 31,
       "maxColIndex": 31,
       "minCol": "Links to Database",
@@ -25416,6 +25857,15 @@
       "minCol": "Place",
       "maxCol": "Place",
       "value": "Throughout"
+    },
+    {
+      "minRow": 885,
+      "maxRow": 896,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
     },
     {
       "minRow": 885,
@@ -25695,6 +26145,15 @@
       "minCol": "Place",
       "maxCol": "Place",
       "value": "Throughout"
+    },
+    {
+      "minRow": 899,
+      "maxRow": 957,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
     },
     {
       "minRow": 900,
@@ -26166,6 +26625,15 @@
     },
     {
       "minRow": 966,
+      "maxRow": 992,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
+    },
+    {
+      "minRow": 966,
       "maxRow": 968,
       "minColIndex": 31,
       "maxColIndex": 31,
@@ -26444,6 +26912,15 @@
       "value": "Throughout"
     },
     {
+      "minRow": 993,
+      "maxRow": 1005,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
+    },
+    {
       "minRow": 994,
       "maxRow": 1003,
       "minColIndex": 8,
@@ -26694,6 +27171,15 @@
       "minCol": "Place",
       "maxCol": "Place",
       "value": "Nowhere"
+    },
+    {
+      "minRow": 1006,
+      "maxRow": 1008,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
     },
     {
       "minRow": 1007,
@@ -27247,6 +27733,15 @@
     {
       "minRow": 1046,
       "maxRow": 1064,
+      "minColIndex": 29,
+      "maxColIndex": 29,
+      "minCol": "Place",
+      "maxCol": "Place",
+      "value": ""
+    },
+    {
+      "minRow": 1046,
+      "maxRow": 1064,
       "minColIndex": 30,
       "maxColIndex": 30,
       "minCol": "Literature",
@@ -27558,6 +28053,24 @@
       "minCol": "Iconography",
       "maxCol": "Iconography",
       "value": "None"
+    },
+    {
+      "minRow": 1065,
+      "maxRow": 1069,
+      "minColIndex": 29,
+      "maxColIndex": 29,
+      "minCol": "Place",
+      "maxCol": "Place",
+      "value": ""
+    },
+    {
+      "minRow": 1065,
+      "maxRow": 1069,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
     },
     {
       "minRow": 1066,
@@ -28071,6 +28584,15 @@
       "minCol": "Iconography",
       "maxCol": "Iconography",
       "value": "None, but space left for 2-lined minor initials. On some leaves, marginal drawings were added and include ornamentation added to the last word of the last line, on f. 9r, f. 10v, f. 11r, f. 14r, f. 15v, f. 16r, f. 18r, f. 19r, f. 20v, f. 21r, f. 23r, f. 24r, f. 25r, f. 26r, f. 27r, f. 28r, f. 28v, f. 32r, f. 32v, f. 33r, f. 34r, f. 35r, f. 36r, f. 36v,  f. 36v, f. 37r and f. 39r. In some cases, also grylli figures are added at the same placement, such as on f. 12r and f. 20r."
+    },
+    {
+      "minRow": 1072,
+      "maxRow": 1074,
+      "minColIndex": 29,
+      "maxColIndex": 29,
+      "minCol": "Place",
+      "maxCol": "Place",
+      "value": ""
     },
     {
       "minRow": 1072,
@@ -29965,6 +30487,15 @@
     {
       "minRow": 1103,
       "maxRow": 1119,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
+    },
+    {
+      "minRow": 1103,
+      "maxRow": 1119,
       "minColIndex": 31,
       "maxColIndex": 31,
       "minCol": "Links to Database",
@@ -30222,6 +30753,15 @@
       "minCol": "Place",
       "maxCol": "Place",
       "value": "Throughout"
+    },
+    {
+      "minRow": 1120,
+      "maxRow": 1124,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
     },
     {
       "minRow": 1121,
@@ -30512,6 +31052,15 @@
       "value": "Throughout"
     },
     {
+      "minRow": 1125,
+      "maxRow": 1126,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
+    },
+    {
       "minRow": 1127,
       "maxRow": 1128,
       "minColIndex": 0,
@@ -30782,6 +31331,15 @@
       "value": "Nowhere"
     },
     {
+      "minRow": 1127,
+      "maxRow": 1128,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
+    },
+    {
       "minRow": 1129,
       "maxRow": 1130,
       "minColIndex": 0,
@@ -31034,6 +31592,15 @@
       "value": "Nowhere"
     },
     {
+      "minRow": 1129,
+      "maxRow": 1130,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
+    },
+    {
       "minRow": 1131,
       "maxRow": 1132,
       "minColIndex": 0,
@@ -31275,6 +31842,15 @@
       "minCol": "Place",
       "maxCol": "Place",
       "value": "Throughout"
+    },
+    {
+      "minRow": 1131,
+      "maxRow": 1132,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
     },
     {
       "minRow": 1133,
@@ -31547,6 +32123,15 @@
       "value": "Throughout"
     },
     {
+      "minRow": 1133,
+      "maxRow": 1134,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
+    },
+    {
       "minRow": 1135,
       "maxRow": 1154,
       "minColIndex": 0,
@@ -31772,6 +32357,15 @@
       "value": "Throughout"
     },
     {
+      "minRow": 1135,
+      "maxRow": 1154,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
+    },
+    {
       "minRow": 1136,
       "maxRow": 1152,
       "minColIndex": 8,
@@ -31980,6 +32574,15 @@
     },
     {
       "minRow": 1156,
+      "maxRow": 1157,
+      "minColIndex": 8,
+      "maxColIndex": 8,
+      "minCol": "Main text",
+      "maxCol": "Main text",
+      "value": ""
+    },
+    {
+      "minRow": 1156,
       "maxRow": 1197,
       "minColIndex": 18,
       "maxColIndex": 18,
@@ -31994,7 +32597,7 @@
       "maxColIndex": 22,
       "minCol": "Scribe",
       "maxCol": "Scribe",
-      "value": "Scribe b (with further minor hands, among others scribe a)"
+      "value": "Scribe b (Grímur Skúlason?) (with further minor hands, among others scribe a)"
     },
     {
       "minRow": 1156,
@@ -32049,6 +32652,15 @@
       "minCol": "Place",
       "maxCol": "Place",
       "value": "Throughout"
+    },
+    {
+      "minRow": 1156,
+      "maxRow": 1197,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
     },
     {
       "minRow": 1156,
@@ -32348,6 +32960,15 @@
       "value": "Nowhere"
     },
     {
+      "minRow": 1198,
+      "maxRow": 1199,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
+    },
+    {
       "minRow": 1200,
       "maxRow": 1217,
       "minColIndex": 0,
@@ -32589,6 +33210,15 @@
       "minCol": "Place",
       "maxCol": "Place",
       "value": "Throughout"
+    },
+    {
+      "minRow": 1200,
+      "maxRow": 1217,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
     },
     {
       "minRow": 1201,
@@ -32854,6 +33484,15 @@
     {
       "minRow": 1218,
       "maxRow": 1219,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
+    },
+    {
+      "minRow": 1218,
+      "maxRow": 1219,
       "minColIndex": 31,
       "maxColIndex": 31,
       "minCol": "Links to Database",
@@ -32925,7 +33564,7 @@
     },
     {
       "minRow": 1220,
-      "maxRow": 1231,
+      "maxRow": 1233,
       "minColIndex": 8,
       "maxColIndex": 8,
       "minCol": "Main text",
@@ -32970,12 +33609,12 @@
     },
     {
       "minRow": 1220,
-      "maxRow": 1227,
+      "maxRow": 1233,
       "minColIndex": 14,
       "maxColIndex": 14,
       "minCol": "Production Unit",
       "maxCol": "Production Unit",
-      "value": "III"
+      "value": "I"
     },
     {
       "minRow": 1220,
@@ -33015,7 +33654,7 @@
     },
     {
       "minRow": 1220,
-      "maxRow": 1227,
+      "maxRow": 1228,
       "minColIndex": 19,
       "maxColIndex": 19,
       "minCol": "Lines",
@@ -33115,20 +33754,20 @@
     {
       "minRow": 1220,
       "maxRow": 1234,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": "Gödel 1897-1900, 73-75"
+    },
+    {
+      "minRow": 1220,
+      "maxRow": 1234,
       "minColIndex": 31,
       "maxColIndex": 31,
       "minCol": "Links to Database",
       "maxCol": "Links to Database",
       "value": "[MS](https://manuscripta.se/ms/101286)"
-    },
-    {
-      "minRow": 1228,
-      "maxRow": 1231,
-      "minColIndex": 14,
-      "maxColIndex": 14,
-      "minCol": "Production Unit",
-      "maxCol": "Production Unit",
-      "value": "I"
     },
     {
       "minRow": 1229,
@@ -33446,6 +34085,15 @@
       "value": "Nowhere (apart from f. 1r)"
     },
     {
+      "minRow": 1235,
+      "maxRow": 1236,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
+    },
+    {
       "minRow": 1237,
       "maxRow": 1238,
       "minColIndex": 0,
@@ -33689,6 +34337,15 @@
       "value": "Nowhere"
     },
     {
+      "minRow": 1237,
+      "maxRow": 1238,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
+    },
+    {
       "minRow": 1240,
       "maxRow": 1243,
       "minColIndex": 0,
@@ -33817,6 +34474,33 @@
     {
       "minRow": 1240,
       "maxRow": 1243,
+      "minColIndex": 17,
+      "maxColIndex": 17,
+      "minCol": "Ruling",
+      "maxCol": "Ruling",
+      "value": ""
+    },
+    {
+      "minRow": 1240,
+      "maxRow": 1243,
+      "minColIndex": 18,
+      "maxColIndex": 18,
+      "minCol": "Columns",
+      "maxCol": "Columns",
+      "value": ""
+    },
+    {
+      "minRow": 1240,
+      "maxRow": 1243,
+      "minColIndex": 19,
+      "maxColIndex": 19,
+      "minCol": "Lines",
+      "maxCol": "Lines",
+      "value": ""
+    },
+    {
+      "minRow": 1240,
+      "maxRow": 1243,
       "minColIndex": 20,
       "maxColIndex": 20,
       "minCol": "Script",
@@ -33826,11 +34510,101 @@
     {
       "minRow": 1240,
       "maxRow": 1243,
+      "minColIndex": 21,
+      "maxColIndex": 21,
+      "minCol": "Rubric",
+      "maxCol": "Rubric",
+      "value": ""
+    },
+    {
+      "minRow": 1240,
+      "maxRow": 1243,
       "minColIndex": 22,
       "maxColIndex": 22,
       "minCol": "Scribe",
       "maxCol": "Scribe",
-      "value": "unknown"
+      "value": ""
+    },
+    {
+      "minRow": 1240,
+      "maxRow": 1243,
+      "minColIndex": 23,
+      "maxColIndex": 23,
+      "minCol": "Production",
+      "maxCol": "Production",
+      "value": ""
+    },
+    {
+      "minRow": 1240,
+      "maxRow": 1243,
+      "minColIndex": 24,
+      "maxColIndex": 24,
+      "minCol": "Style",
+      "maxCol": "Style",
+      "value": ""
+    },
+    {
+      "minRow": 1240,
+      "maxRow": 1243,
+      "minColIndex": 25,
+      "maxColIndex": 25,
+      "minCol": "Colours",
+      "maxCol": "Colours",
+      "value": ""
+    },
+    {
+      "minRow": 1240,
+      "maxRow": 1243,
+      "minColIndex": 26,
+      "maxColIndex": 26,
+      "minCol": "Form of Initials",
+      "maxCol": "Form of Initials",
+      "value": ""
+    },
+    {
+      "minRow": 1240,
+      "maxRow": 1243,
+      "minColIndex": 27,
+      "maxColIndex": 27,
+      "minCol": "Size of Initials",
+      "maxCol": "Size of Initials",
+      "value": ""
+    },
+    {
+      "minRow": 1240,
+      "maxRow": 1243,
+      "minColIndex": 28,
+      "maxColIndex": 28,
+      "minCol": "Iconography",
+      "maxCol": "Iconography",
+      "value": ""
+    },
+    {
+      "minRow": 1240,
+      "maxRow": 1243,
+      "minColIndex": 29,
+      "maxColIndex": 29,
+      "minCol": "Place",
+      "maxCol": "Place",
+      "value": ""
+    },
+    {
+      "minRow": 1240,
+      "maxRow": 1243,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
+    },
+    {
+      "minRow": 1240,
+      "maxRow": 1243,
+      "minColIndex": 31,
+      "maxColIndex": 31,
+      "minCol": "Links to Database",
+      "maxCol": "Links to Database",
+      "value": ""
     },
     {
       "minRow": 1244,
@@ -34103,6 +34877,15 @@
       "value": "Nowhere"
     },
     {
+      "minRow": 1244,
+      "maxRow": 1245,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
+    },
+    {
       "minRow": 1246,
       "maxRow": 1254,
       "minColIndex": 0,
@@ -34353,6 +35136,15 @@
       "minCol": "Place",
       "maxCol": "Place",
       "value": "Throughout"
+    },
+    {
+      "minRow": 1246,
+      "maxRow": 1254,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
     },
     {
       "minRow": 1246,
@@ -34616,6 +35408,15 @@
       "value": "Nowhere"
     },
     {
+      "minRow": 1258,
+      "maxRow": 1276,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
+    },
+    {
       "minRow": 1259,
       "maxRow": 1276,
       "minColIndex": 31,
@@ -34726,11 +35527,164 @@
     {
       "minRow": 1278,
       "maxRow": 1280,
+      "minColIndex": 13,
+      "maxColIndex": 13,
+      "minCol": "Catch Words and Gatherings",
+      "maxCol": "Catch Words and Gatherings",
+      "value": ""
+    },
+    {
+      "minRow": 1278,
+      "maxRow": 1280,
+      "minColIndex": 14,
+      "maxColIndex": 14,
+      "minCol": "Production Unit",
+      "maxCol": "Production Unit",
+      "value": ""
+    },
+    {
+      "minRow": 1278,
+      "maxRow": 1280,
+      "minColIndex": 15,
+      "maxColIndex": 15,
+      "minCol": "Pricking",
+      "maxCol": "Pricking",
+      "value": ""
+    },
+    {
+      "minRow": 1278,
+      "maxRow": 1280,
+      "minColIndex": 16,
+      "maxColIndex": 16,
+      "minCol": "Material",
+      "maxCol": "Material",
+      "value": ""
+    },
+    {
+      "minRow": 1278,
+      "maxRow": 1280,
+      "minColIndex": 17,
+      "maxColIndex": 17,
+      "minCol": "Ruling",
+      "maxCol": "Ruling",
+      "value": ""
+    },
+    {
+      "minRow": 1278,
+      "maxRow": 1280,
+      "minColIndex": 18,
+      "maxColIndex": 18,
+      "minCol": "Columns",
+      "maxCol": "Columns",
+      "value": ""
+    },
+    {
+      "minRow": 1278,
+      "maxRow": 1280,
+      "minColIndex": 19,
+      "maxColIndex": 19,
+      "minCol": "Lines",
+      "maxCol": "Lines",
+      "value": ""
+    },
+    {
+      "minRow": 1278,
+      "maxRow": 1280,
       "minColIndex": 20,
       "maxColIndex": 20,
       "minCol": "Script",
       "maxCol": "Script",
       "value": "Unknown"
+    },
+    {
+      "minRow": 1278,
+      "maxRow": 1280,
+      "minColIndex": 21,
+      "maxColIndex": 21,
+      "minCol": "Rubric",
+      "maxCol": "Rubric",
+      "value": ""
+    },
+    {
+      "minRow": 1278,
+      "maxRow": 1280,
+      "minColIndex": 22,
+      "maxColIndex": 22,
+      "minCol": "Scribe",
+      "maxCol": "Scribe",
+      "value": ""
+    },
+    {
+      "minRow": 1278,
+      "maxRow": 1280,
+      "minColIndex": 23,
+      "maxColIndex": 23,
+      "minCol": "Production",
+      "maxCol": "Production",
+      "value": ""
+    },
+    {
+      "minRow": 1278,
+      "maxRow": 1280,
+      "minColIndex": 24,
+      "maxColIndex": 24,
+      "minCol": "Style",
+      "maxCol": "Style",
+      "value": ""
+    },
+    {
+      "minRow": 1278,
+      "maxRow": 1280,
+      "minColIndex": 25,
+      "maxColIndex": 25,
+      "minCol": "Colours",
+      "maxCol": "Colours",
+      "value": ""
+    },
+    {
+      "minRow": 1278,
+      "maxRow": 1280,
+      "minColIndex": 26,
+      "maxColIndex": 26,
+      "minCol": "Form of Initials",
+      "maxCol": "Form of Initials",
+      "value": ""
+    },
+    {
+      "minRow": 1278,
+      "maxRow": 1280,
+      "minColIndex": 27,
+      "maxColIndex": 27,
+      "minCol": "Size of Initials",
+      "maxCol": "Size of Initials",
+      "value": ""
+    },
+    {
+      "minRow": 1278,
+      "maxRow": 1280,
+      "minColIndex": 28,
+      "maxColIndex": 28,
+      "minCol": "Iconography",
+      "maxCol": "Iconography",
+      "value": ""
+    },
+    {
+      "minRow": 1278,
+      "maxRow": 1280,
+      "minColIndex": 29,
+      "maxColIndex": 29,
+      "minCol": "Place",
+      "maxCol": "Place",
+      "value": ""
+    },
+    {
+      "minRow": 1278,
+      "maxRow": 1280,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
     },
     {
       "minRow": 1278,
@@ -35041,6 +35995,15 @@
     {
       "minRow": 1283,
       "maxRow": 1285,
+      "minColIndex": 19,
+      "maxColIndex": 19,
+      "minCol": "Lines",
+      "maxCol": "Lines",
+      "value": ""
+    },
+    {
+      "minRow": 1283,
+      "maxRow": 1285,
       "minColIndex": 20,
       "maxColIndex": 20,
       "minCol": "Script",
@@ -35073,6 +36036,78 @@
       "minCol": "Production",
       "maxCol": "Production",
       "value": "Unknown"
+    },
+    {
+      "minRow": 1283,
+      "maxRow": 1285,
+      "minColIndex": 24,
+      "maxColIndex": 24,
+      "minCol": "Style",
+      "maxCol": "Style",
+      "value": ""
+    },
+    {
+      "minRow": 1283,
+      "maxRow": 1285,
+      "minColIndex": 25,
+      "maxColIndex": 25,
+      "minCol": "Colours",
+      "maxCol": "Colours",
+      "value": ""
+    },
+    {
+      "minRow": 1283,
+      "maxRow": 1285,
+      "minColIndex": 26,
+      "maxColIndex": 26,
+      "minCol": "Form of Initials",
+      "maxCol": "Form of Initials",
+      "value": ""
+    },
+    {
+      "minRow": 1283,
+      "maxRow": 1285,
+      "minColIndex": 27,
+      "maxColIndex": 27,
+      "minCol": "Size of Initials",
+      "maxCol": "Size of Initials",
+      "value": ""
+    },
+    {
+      "minRow": 1283,
+      "maxRow": 1285,
+      "minColIndex": 28,
+      "maxColIndex": 28,
+      "minCol": "Iconography",
+      "maxCol": "Iconography",
+      "value": ""
+    },
+    {
+      "minRow": 1283,
+      "maxRow": 1285,
+      "minColIndex": 29,
+      "maxColIndex": 29,
+      "minCol": "Place",
+      "maxCol": "Place",
+      "value": ""
+    },
+    {
+      "minRow": 1283,
+      "maxRow": 1285,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
+    },
+    {
+      "minRow": 1283,
+      "maxRow": 1285,
+      "minColIndex": 31,
+      "maxColIndex": 31,
+      "minCol": "Links to Database",
+      "maxCol": "Links to Database",
+      "value": ""
     },
     {
       "minRow": 1287,
@@ -35176,11 +36211,47 @@
     {
       "minRow": 1287,
       "maxRow": 1290,
+      "minColIndex": 13,
+      "maxColIndex": 13,
+      "minCol": "Catch Words and Gatherings",
+      "maxCol": "Catch Words and Gatherings",
+      "value": "Unknown"
+    },
+    {
+      "minRow": 1287,
+      "maxRow": 1290,
+      "minColIndex": 14,
+      "maxColIndex": 14,
+      "minCol": "Production Unit",
+      "maxCol": "Production Unit",
+      "value": ""
+    },
+    {
+      "minRow": 1287,
+      "maxRow": 1290,
+      "minColIndex": 15,
+      "maxColIndex": 15,
+      "minCol": "Pricking",
+      "maxCol": "Pricking",
+      "value": ""
+    },
+    {
+      "minRow": 1287,
+      "maxRow": 1290,
       "minColIndex": 16,
       "maxColIndex": 16,
       "minCol": "Material",
       "maxCol": "Material",
       "value": "Parchment"
+    },
+    {
+      "minRow": 1287,
+      "maxRow": 1290,
+      "minColIndex": 17,
+      "maxColIndex": 17,
+      "minCol": "Ruling",
+      "maxCol": "Ruling",
+      "value": ""
     },
     {
       "minRow": 1287,
@@ -35194,11 +36265,110 @@
     {
       "minRow": 1287,
       "maxRow": 1290,
+      "minColIndex": 19,
+      "maxColIndex": 19,
+      "minCol": "Lines",
+      "maxCol": "Lines",
+      "value": ""
+    },
+    {
+      "minRow": 1287,
+      "maxRow": 1290,
       "minColIndex": 20,
       "maxColIndex": 20,
       "minCol": "Script",
       "maxCol": "Script",
       "value": "Cursiva R"
+    },
+    {
+      "minRow": 1287,
+      "maxRow": 1290,
+      "minColIndex": 21,
+      "maxColIndex": 21,
+      "minCol": "Rubric",
+      "maxCol": "Rubric",
+      "value": ""
+    },
+    {
+      "minRow": 1287,
+      "maxRow": 1290,
+      "minColIndex": 22,
+      "maxColIndex": 22,
+      "minCol": "Scribe",
+      "maxCol": "Scribe",
+      "value": ""
+    },
+    {
+      "minRow": 1287,
+      "maxRow": 1290,
+      "minColIndex": 23,
+      "maxColIndex": 23,
+      "minCol": "Production",
+      "maxCol": "Production",
+      "value": ""
+    },
+    {
+      "minRow": 1287,
+      "maxRow": 1290,
+      "minColIndex": 24,
+      "maxColIndex": 24,
+      "minCol": "Style",
+      "maxCol": "Style",
+      "value": ""
+    },
+    {
+      "minRow": 1287,
+      "maxRow": 1290,
+      "minColIndex": 25,
+      "maxColIndex": 25,
+      "minCol": "Colours",
+      "maxCol": "Colours",
+      "value": ""
+    },
+    {
+      "minRow": 1287,
+      "maxRow": 1290,
+      "minColIndex": 26,
+      "maxColIndex": 26,
+      "minCol": "Form of Initials",
+      "maxCol": "Form of Initials",
+      "value": ""
+    },
+    {
+      "minRow": 1287,
+      "maxRow": 1290,
+      "minColIndex": 27,
+      "maxColIndex": 27,
+      "minCol": "Size of Initials",
+      "maxCol": "Size of Initials",
+      "value": ""
+    },
+    {
+      "minRow": 1287,
+      "maxRow": 1290,
+      "minColIndex": 28,
+      "maxColIndex": 28,
+      "minCol": "Iconography",
+      "maxCol": "Iconography",
+      "value": ""
+    },
+    {
+      "minRow": 1287,
+      "maxRow": 1290,
+      "minColIndex": 29,
+      "maxColIndex": 29,
+      "minCol": "Place",
+      "maxCol": "Place",
+      "value": ""
+    },
+    {
+      "minRow": 1287,
+      "maxRow": 1290,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
     },
     {
       "minRow": 1288,
@@ -35234,7 +36404,7 @@
       "maxColIndex": 1,
       "minCol": "Name",
       "maxCol": "Name",
-      "value": "Depository: Herzog August Bibliothek Wolfenbüttel"
+      "value": ""
     },
     {
       "minRow": 1292,
@@ -35252,7 +36422,7 @@
       "maxColIndex": 3,
       "minCol": "Depository",
       "maxCol": "Depository",
-      "value": ""
+      "value": "Cod. Guelf."
     },
     {
       "minRow": 1292,
@@ -35374,11 +36544,29 @@
     {
       "minRow": 1292,
       "maxRow": 1293,
+      "minColIndex": 20,
+      "maxColIndex": 20,
+      "minCol": "Script",
+      "maxCol": "Script",
+      "value": "Septentrionalis"
+    },
+    {
+      "minRow": 1292,
+      "maxRow": 1293,
       "minColIndex": 21,
       "maxColIndex": 21,
       "minCol": "Rubric",
       "maxCol": "Rubric",
       "value": "Yes"
+    },
+    {
+      "minRow": 1292,
+      "maxRow": 1293,
+      "minColIndex": 22,
+      "maxColIndex": 22,
+      "minCol": "Scribe",
+      "maxCol": "Scribe",
+      "value": "Scribe a"
     },
     {
       "minRow": 1292,
@@ -35481,6 +36669,15 @@
     },
     {
       "minRow": 1294,
+      "maxRow": 1299,
+      "minColIndex": 20,
+      "maxColIndex": 20,
+      "minCol": "Script",
+      "maxCol": "Script",
+      "value": "Younger Cursive"
+    },
+    {
+      "minRow": 1294,
       "maxRow": 1301,
       "minColIndex": 21,
       "maxColIndex": 21,
@@ -35490,12 +36687,12 @@
     },
     {
       "minRow": 1294,
-      "maxRow": 1298,
+      "maxRow": 1299,
       "minColIndex": 22,
       "maxColIndex": 22,
       "minCol": "Scribe",
       "maxCol": "Scribe",
-      "value": "Scribe b"
+      "value": "Scribe c"
     },
     {
       "minRow": 1294,
@@ -35543,13 +36740,769 @@
       "value": "None"
     },
     {
-      "minRow": 1299,
+      "minRow": 1300,
+      "maxRow": 1301,
+      "minColIndex": 20,
+      "maxColIndex": 20,
+      "minCol": "Script",
+      "maxCol": "Script",
+      "value": "Younger Cursive"
+    },
+    {
+      "minRow": 1300,
       "maxRow": 1301,
       "minColIndex": 22,
       "maxColIndex": 22,
       "minCol": "Scribe",
       "maxCol": "Scribe",
+      "value": "Scribe d"
+    },
+    {
+      "minRow": 1302,
+      "maxRow": 1308,
+      "minColIndex": 0,
+      "maxColIndex": 0,
+      "minCol": "Shelf mark",
+      "maxCol": "Shelf mark",
+      "value": "Isl. Perg. 4to 5"
+    },
+    {
+      "minRow": 1302,
+      "maxRow": 1308,
+      "minColIndex": 1,
+      "maxColIndex": 1,
+      "minCol": "Name",
+      "maxCol": "Name",
+      "value": ""
+    },
+    {
+      "minRow": 1302,
+      "maxRow": 1308,
+      "minColIndex": 2,
+      "maxColIndex": 2,
+      "minCol": "Related Shelfmarks",
+      "maxCol": "Related Shelfmarks",
+      "value": "The whole manuscript is a palimsest"
+    },
+    {
+      "minRow": 1302,
+      "maxRow": 1308,
+      "minColIndex": 3,
+      "maxColIndex": 3,
+      "minCol": "Depository",
+      "maxCol": "Depository",
+      "value": "KB"
+    },
+    {
+      "minRow": 1302,
+      "maxRow": 1308,
+      "minColIndex": 4,
+      "maxColIndex": 4,
+      "minCol": "Object",
+      "maxCol": "Object",
+      "value": "Codex"
+    },
+    {
+      "minRow": 1302,
+      "maxRow": 1308,
+      "minColIndex": 5,
+      "maxColIndex": 5,
+      "minCol": "Size",
+      "maxCol": "Size",
+      "value": "4to"
+    },
+    {
+      "minRow": 1302,
+      "maxRow": 1303,
+      "minColIndex": 6,
+      "maxColIndex": 6,
+      "minCol": "Dating",
+      "maxCol": "Dating",
+      "value": "Unknown"
+    },
+    {
+      "minRow": 1302,
+      "maxRow": 1308,
+      "minColIndex": 10,
+      "maxColIndex": 10,
+      "minCol": "Gatherings",
+      "maxCol": "Gatherings",
+      "value": "Unknown"
+    },
+    {
+      "minRow": 1302,
+      "maxRow": 1308,
+      "minColIndex": 11,
+      "maxColIndex": 11,
+      "minCol": "Full size",
+      "maxCol": "Full size",
+      "value": "Unknown"
+    },
+    {
+      "minRow": 1302,
+      "maxRow": 1308,
+      "minColIndex": 12,
+      "maxColIndex": 12,
+      "minCol": "Leaf size",
+      "maxCol": "Leaf size",
+      "value": "253x135"
+    },
+    {
+      "minRow": 1302,
+      "maxRow": 1308,
+      "minColIndex": 13,
+      "maxColIndex": 13,
+      "minCol": "Catch Words and Gatherings",
+      "maxCol": "Catch Words and Gatherings",
+      "value": "None"
+    },
+    {
+      "minRow": 1302,
+      "maxRow": 1303,
+      "minColIndex": 14,
+      "maxColIndex": 14,
+      "minCol": "Production Unit",
+      "maxCol": "Production Unit",
+      "value": "I"
+    },
+    {
+      "minRow": 1302,
+      "maxRow": 1308,
+      "minColIndex": 16,
+      "maxColIndex": 16,
+      "minCol": "Material",
+      "maxCol": "Material",
+      "value": "Parchment"
+    },
+    {
+      "minRow": 1302,
+      "maxRow": 1308,
+      "minColIndex": 17,
+      "maxColIndex": 17,
+      "minCol": "Ruling",
+      "maxCol": "Ruling",
+      "value": "Dry"
+    },
+    {
+      "minRow": 1302,
+      "maxRow": 1308,
+      "minColIndex": 18,
+      "maxColIndex": 18,
+      "minCol": "Columns",
+      "maxCol": "Columns",
+      "value": "1"
+    },
+    {
+      "minRow": 1302,
+      "maxRow": 1303,
+      "minColIndex": 19,
+      "maxColIndex": 19,
+      "minCol": "Lines",
+      "maxCol": "Lines",
+      "value": "Unknown"
+    },
+    {
+      "minRow": 1302,
+      "maxRow": 1308,
+      "minColIndex": 23,
+      "maxColIndex": 23,
+      "minCol": "Production",
+      "maxCol": "Production",
+      "value": "Unknown"
+    },
+    {
+      "minRow": 1302,
+      "maxRow": 1303,
+      "minColIndex": 24,
+      "maxColIndex": 24,
+      "minCol": "Style",
+      "maxCol": "Style",
+      "value": "None"
+    },
+    {
+      "minRow": 1302,
+      "maxRow": 1303,
+      "minColIndex": 25,
+      "maxColIndex": 25,
+      "minCol": "Colours",
+      "maxCol": "Colours",
+      "value": "None"
+    },
+    {
+      "minRow": 1302,
+      "maxRow": 1303,
+      "minColIndex": 26,
+      "maxColIndex": 26,
+      "minCol": "Form of Initials",
+      "maxCol": "Form of Initials",
+      "value": "None"
+    },
+    {
+      "minRow": 1302,
+      "maxRow": 1303,
+      "minColIndex": 27,
+      "maxColIndex": 27,
+      "minCol": "Size of Initials",
+      "maxCol": "Size of Initials",
+      "value": "None"
+    },
+    {
+      "minRow": 1302,
+      "maxRow": 1303,
+      "minColIndex": 28,
+      "maxColIndex": 28,
+      "minCol": "Iconography",
+      "maxCol": "Iconography",
+      "value": "None"
+    },
+    {
+      "minRow": 1302,
+      "maxRow": 1303,
+      "minColIndex": 29,
+      "maxColIndex": 29,
+      "minCol": "Place",
+      "maxCol": "Place",
+      "value": "None"
+    },
+    {
+      "minRow": 1302,
+      "maxRow": 1308,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": "Gödel 1897-1900, 39-40"
+    },
+    {
+      "minRow": 1302,
+      "maxRow": 1308,
+      "minColIndex": 31,
+      "maxColIndex": 31,
+      "minCol": "Links to Database",
+      "maxCol": "Links to Database",
+      "value": "[MS](https://www.manuscripta.se/ms/101270)"
+    },
+    {
+      "minRow": 1304,
+      "maxRow": 1308,
+      "minColIndex": 6,
+      "maxColIndex": 6,
+      "minCol": "Dating",
+      "maxCol": "Dating",
+      "value": "1550-1600"
+    },
+    {
+      "minRow": 1304,
+      "maxRow": 1308,
+      "minColIndex": 14,
+      "maxColIndex": 14,
+      "minCol": "Production Unit",
+      "maxCol": "Production Unit",
+      "value": "II"
+    },
+    {
+      "minRow": 1304,
+      "maxRow": 1308,
+      "minColIndex": 15,
+      "maxColIndex": 15,
+      "minCol": "Pricking",
+      "maxCol": "Pricking",
+      "value": "Yes"
+    },
+    {
+      "minRow": 1304,
+      "maxRow": 1308,
+      "minColIndex": 19,
+      "maxColIndex": 19,
+      "minCol": "Lines",
+      "maxCol": "Lines",
+      "value": "42"
+    },
+    {
+      "minRow": 1304,
+      "maxRow": 1308,
+      "minColIndex": 20,
+      "maxColIndex": 20,
+      "minCol": "Script",
+      "maxCol": "Script",
+      "value": "Semihybrida"
+    },
+    {
+      "minRow": 1304,
+      "maxRow": 1308,
+      "minColIndex": 21,
+      "maxColIndex": 21,
+      "minCol": "Rubric",
+      "maxCol": "Rubric",
+      "value": "No"
+    },
+    {
+      "minRow": 1304,
+      "maxRow": 1308,
+      "minColIndex": 22,
+      "maxColIndex": 22,
+      "minCol": "Scribe",
+      "maxCol": "Scribe",
       "value": "Scribe c"
+    },
+    {
+      "minRow": 1304,
+      "maxRow": 1308,
+      "minColIndex": 24,
+      "maxColIndex": 24,
+      "minCol": "Style",
+      "maxCol": "Style",
+      "value": "Romanesque"
+    },
+    {
+      "minRow": 1304,
+      "maxRow": 1308,
+      "minColIndex": 25,
+      "maxColIndex": 25,
+      "minCol": "Colours",
+      "maxCol": "Colours",
+      "value": "Black"
+    },
+    {
+      "minRow": 1304,
+      "maxRow": 1308,
+      "minColIndex": 26,
+      "maxColIndex": 26,
+      "minCol": "Form of Initials",
+      "maxCol": "Form of Initials",
+      "value": "Large Penwork initials (3 lines)"
+    },
+    {
+      "minRow": 1304,
+      "maxRow": 1308,
+      "minColIndex": 27,
+      "maxColIndex": 27,
+      "minCol": "Size of Initials",
+      "maxCol": "Size of Initials",
+      "value": "Large"
+    },
+    {
+      "minRow": 1304,
+      "maxRow": 1308,
+      "minColIndex": 28,
+      "maxColIndex": 28,
+      "minCol": "Iconography",
+      "maxCol": "Iconography",
+      "value": "None"
+    },
+    {
+      "minRow": 1304,
+      "maxRow": 1308,
+      "minColIndex": 29,
+      "maxColIndex": 29,
+      "minCol": "Place",
+      "maxCol": "Place",
+      "value": "Throughout"
+    },
+    {
+      "minRow": 1305,
+      "maxRow": 1306,
+      "minColIndex": 8,
+      "maxColIndex": 8,
+      "minCol": "Main text",
+      "maxCol": "Main text",
+      "value": ""
+    },
+    {
+      "minRow": 1317,
+      "maxRow": 1348,
+      "minColIndex": 0,
+      "maxColIndex": 0,
+      "minCol": "Shelf mark",
+      "maxCol": "Shelf mark",
+      "value": "AM 345 fol."
+    },
+    {
+      "minRow": 1317,
+      "maxRow": 1348,
+      "minColIndex": 1,
+      "maxColIndex": 1,
+      "minCol": "Name",
+      "maxCol": "Name",
+      "value": "Reykjabók"
+    },
+    {
+      "minRow": 1317,
+      "maxRow": 1348,
+      "minColIndex": 2,
+      "maxColIndex": 2,
+      "minCol": "Related Shelfmarks",
+      "maxCol": "Related Shelfmarks",
+      "value": ""
+    },
+    {
+      "minRow": 1317,
+      "maxRow": 1348,
+      "minColIndex": 3,
+      "maxColIndex": 3,
+      "minCol": "Depository",
+      "maxCol": "Depository",
+      "value": "SÁM"
+    },
+    {
+      "minRow": 1317,
+      "maxRow": 1348,
+      "minColIndex": 4,
+      "maxColIndex": 4,
+      "minCol": "Object",
+      "maxCol": "Object",
+      "value": "Codex"
+    },
+    {
+      "minRow": 1317,
+      "maxRow": 1348,
+      "minColIndex": 5,
+      "maxColIndex": 5,
+      "minCol": "Size",
+      "maxCol": "Size",
+      "value": "Fol."
+    },
+    {
+      "minRow": 1317,
+      "maxRow": 1348,
+      "minColIndex": 6,
+      "maxColIndex": 6,
+      "minCol": "Dating",
+      "maxCol": "Dating",
+      "value": "1550-1600"
+    },
+    {
+      "minRow": 1317,
+      "maxRow": 1348,
+      "minColIndex": 10,
+      "maxColIndex": 10,
+      "minCol": "Gatherings",
+      "maxCol": "Gatherings",
+      "value": "Unknown"
+    },
+    {
+      "minRow": 1317,
+      "maxRow": 1348,
+      "minColIndex": 11,
+      "maxColIndex": 11,
+      "minCol": "Full size",
+      "maxCol": "Full size",
+      "value": "Unknown"
+    },
+    {
+      "minRow": 1317,
+      "maxRow": 1348,
+      "minColIndex": 12,
+      "maxColIndex": 12,
+      "minCol": "Leaf size",
+      "maxCol": "Leaf size",
+      "value": "266x182"
+    },
+    {
+      "minRow": 1317,
+      "maxRow": 1331,
+      "minColIndex": 13,
+      "maxColIndex": 13,
+      "minCol": "Catch Words and Gatherings",
+      "maxCol": "Catch Words and Gatherings",
+      "value": "On f. 63v: catchword in the lower margin?"
+    },
+    {
+      "minRow": 1317,
+      "maxRow": 1331,
+      "minColIndex": 14,
+      "maxColIndex": 14,
+      "minCol": "Production Unit",
+      "maxCol": "Production Unit",
+      "value": "I"
+    },
+    {
+      "minRow": 1317,
+      "maxRow": 1331,
+      "minColIndex": 15,
+      "maxColIndex": 15,
+      "minCol": "Pricking",
+      "maxCol": "Pricking",
+      "value": "Yes"
+    },
+    {
+      "minRow": 1317,
+      "maxRow": 1348,
+      "minColIndex": 16,
+      "maxColIndex": 16,
+      "minCol": "Material",
+      "maxCol": "Material",
+      "value": "Parchment"
+    },
+    {
+      "minRow": 1317,
+      "maxRow": 1347,
+      "minColIndex": 17,
+      "maxColIndex": 17,
+      "minCol": "Ruling",
+      "maxCol": "Ruling",
+      "value": "Dry"
+    },
+    {
+      "minRow": 1317,
+      "maxRow": 1347,
+      "minColIndex": 18,
+      "maxColIndex": 18,
+      "minCol": "Columns",
+      "maxCol": "Columns",
+      "value": "1"
+    },
+    {
+      "minRow": 1317,
+      "maxRow": 1331,
+      "minColIndex": 19,
+      "maxColIndex": 19,
+      "minCol": "Lines",
+      "maxCol": "Lines",
+      "value": "32"
+    },
+    {
+      "minRow": 1317,
+      "maxRow": 1331,
+      "minColIndex": 20,
+      "maxColIndex": 20,
+      "minCol": "Script",
+      "maxCol": "Script",
+      "value": "Gothic"
+    },
+    {
+      "minRow": 1317,
+      "maxRow": 1331,
+      "minColIndex": 21,
+      "maxColIndex": 21,
+      "minCol": "Rubric",
+      "maxCol": "Rubric",
+      "value": "Yes"
+    },
+    {
+      "minRow": 1317,
+      "maxRow": 1331,
+      "minColIndex": 22,
+      "maxColIndex": 22,
+      "minCol": "Scribe",
+      "maxCol": "Scribe",
+      "value": "Scribe a"
+    },
+    {
+      "minRow": 1317,
+      "maxRow": 1348,
+      "minColIndex": 23,
+      "maxColIndex": 23,
+      "minCol": "Production",
+      "maxCol": "Production",
+      "value": "Unknown"
+    },
+    {
+      "minRow": 1317,
+      "maxRow": 1331,
+      "minColIndex": 24,
+      "maxColIndex": 24,
+      "minCol": "Style",
+      "maxCol": "Style",
+      "value": "Romanesque & Gothic"
+    },
+    {
+      "minRow": 1317,
+      "maxRow": 1331,
+      "minColIndex": 25,
+      "maxColIndex": 25,
+      "minCol": "Colours",
+      "maxCol": "Colours",
+      "value": "R (and dark R), G, Y, B"
+    },
+    {
+      "minRow": 1317,
+      "maxRow": 1331,
+      "minColIndex": 26,
+      "maxColIndex": 26,
+      "minCol": "Form of Initials",
+      "maxCol": "Form of Initials",
+      "value": "Multi-coloured Large initials (6-9 lines) pen-flourished and embellished with palmette ornamentation. These are mainly found in the Jónsbók text on f. 2r1-12 (Bréf Magnúss konungs, ch. 1), f. 3r1-14 (Þingfararbálkr, ch. 1), f. 6v1-11 (Kristindómsbálkr, ch. 1), f. 7r25-32 (Kristindómsbálkr, ch. 4 (1)), f. 7v2-7 (Kristindómsbálkr, ch. 4 (2)), f. 7v14-22 (Kristindómsbálkr, ch. 4 (3)), f. 7v24-29 (Kristindómsbálkr, ch. 4 (4)), f. 7v (In the margin) (Konungs þegnskylda, ch. 1), f. 10r21-29 (Mannhelgisbálkr, ch. 1), f. 19r13-24 (Kvennagiftingar, ch. 1), f. 21r27-32 (Erfðatal, ch. 1), f. 27r14-25 (Framfærslubálkr, ch. 1), f. 31r20-28 (Landabrigðabálkr, ch. 1), f. 34r11-21 (Búnaðarbálkr, ch. 1), f. 51r20-29 (Rekabálkr, ch. 1), f. 55r19-27 (Kaupabálkr, ch. 1), f. 61v23-32 (Farmannalög, ch. 1), f. 67v22-30 (Þjófabálkr, ch. 1), and at the beginning of the first Réttarbót on f. 72v11-19. Small initials are 3 lines high and embellished with multi-coloured pen-flourishing, which at times features faces."
+    },
+    {
+      "minRow": 1317,
+      "maxRow": 1331,
+      "minColIndex": 27,
+      "maxColIndex": 27,
+      "minCol": "Size of Initials",
+      "maxCol": "Size of Initials",
+      "value": "Large and Small"
+    },
+    {
+      "minRow": 1317,
+      "maxRow": 1331,
+      "minColIndex": 28,
+      "maxColIndex": 28,
+      "minCol": "Iconography",
+      "maxCol": "Iconography",
+      "value": "On the recto side of the first leaf, two historiated scenes are depicted, divided into two single-grid windows. Above, two crowned figures are shown holding a sword each over their shoulder. Below them, the names \"sverrer kongur\" and \"hakon kongur\" is written. In the scene below, two further crowned figures are shown but one one of them holds a sword of its shoulder, the other a staf with (likely) lily ornamentation on the top. Above these figures the names \"magnus kongur\" ad \"eirikur kongur\" are inscribed. On the verso side of the first folio, a miniature is shown, depicting a seated and crowned figure (Óláfr helgi). The figure holds in its heraldic right hand a closed book and in the other an axe. The throne bench is shown in a wooden fashion and architectonally encircling the figure. On the left and the right side, the scene is framed with palmette motifs. Below the feet of the figure, a crowned beast figure is shown (Underliggare). Below the beast, the text \"olafur karaldz son noreks kongur\" is inscribed. The manuscript is particularly illuminated in the margins: f. 6r (a deer in the lower margin), f. 10v (two figures fighting with swords), f. 11r (one figure decapitated and another holding a sword with the hilt over one shoulder), f. 11v (a horse running with a long nose [rhinoceros?] and with the inscription \"rinocero\"), f. 12r (a beast figure with the inscription \"leo\"), f. 14v (a bear, with the inscription \"biaurndyr\"), f. 15r (a griffin, with the inscription \"flugdreki er  kallazt Grifef\"), f. 19v (in the lower margin three figures riding horses with the inscription \"mm iud\", in the lower left margin three figures, the one in the middle holding both arms crosswise, in the upper left margin three female figures dressed in contemporary late medieval Icelandic dresses), f. 20r (a figure falling from a horse), f. 21v (four figures caring a plank bed [funeral march]), f. 22r (three figure waling towards the left with one holding open a book, in the middle a female figure before a large chest and closing a lock, the chest with the inscription \"klætrs pack ar\"; on the right three figures walking, the one on the left pointing towards the chest), f. 27r (One figure with a stick walking towards the right, in the lwer right margin six figures are depicted with various books helt open and two diplomas with sigils), f. 33v (Four figures, one sitting in the middle [and the only one painted in another colour than black] pointin towards the text above and shaking the hand with one further figure that is kneing before the first and holding in the other hand a hat. Two further figures are standing behind the first), f. 43v (Deer), f. 44r (Unicorn), f. 44v (Horse), f. 45r (Elephant), f. 51v (a number of wooden bars and painted sea water), f. 52r (four figures, a horse and a mounted, large fish. The scene depicts the cutting and transport of a large fish), f. 84v (two later added Romanesque- and/or Arabesque-ornamented minor initials (B) added to the left margin)."
+    },
+    {
+      "minRow": 1317,
+      "maxRow": 1331,
+      "minColIndex": 29,
+      "maxColIndex": 29,
+      "minCol": "Place",
+      "maxCol": "Place",
+      "value": "Throughout"
+    },
+    {
+      "minRow": 1317,
+      "maxRow": 1348,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
+    },
+    {
+      "minRow": 1317,
+      "maxRow": 1348,
+      "minColIndex": 31,
+      "maxColIndex": 31,
+      "minCol": "Links to Database",
+      "maxCol": "Links to Database",
+      "value": "[HR](https://handrit.is/manuscript/view/is/AM02-0345)"
+    },
+    {
+      "minRow": 1318,
+      "maxRow": 1330,
+      "minColIndex": 8,
+      "maxColIndex": 8,
+      "minCol": "Main text",
+      "maxCol": "Main text",
+      "value": ""
+    },
+    {
+      "minRow": 1332,
+      "maxRow": 1348,
+      "minColIndex": 8,
+      "maxColIndex": 8,
+      "minCol": "Main text",
+      "maxCol": "Main text",
+      "value": ""
+    },
+    {
+      "minRow": 1332,
+      "maxRow": 1348,
+      "minColIndex": 13,
+      "maxColIndex": 13,
+      "minCol": "Catch Words and Gatherings",
+      "maxCol": "Catch Words and Gatherings",
+      "value": "No"
+    },
+    {
+      "minRow": 1332,
+      "maxRow": 1348,
+      "minColIndex": 14,
+      "maxColIndex": 14,
+      "minCol": "Production Unit",
+      "maxCol": "Production Unit",
+      "value": "II"
+    },
+    {
+      "minRow": 1332,
+      "maxRow": 1348,
+      "minColIndex": 15,
+      "maxColIndex": 15,
+      "minCol": "Pricking",
+      "maxCol": "Pricking",
+      "value": "No"
+    },
+    {
+      "minRow": 1332,
+      "maxRow": 1347,
+      "minColIndex": 19,
+      "maxColIndex": 19,
+      "minCol": "Lines",
+      "maxCol": "Lines",
+      "value": "28"
+    },
+    {
+      "minRow": 1332,
+      "maxRow": 1347,
+      "minColIndex": 20,
+      "maxColIndex": 20,
+      "minCol": "Script",
+      "maxCol": "Script",
+      "value": "Gothic"
+    },
+    {
+      "minRow": 1332,
+      "maxRow": 1347,
+      "minColIndex": 21,
+      "maxColIndex": 21,
+      "minCol": "Rubric",
+      "maxCol": "Rubric",
+      "value": "No"
+    },
+    {
+      "minRow": 1332,
+      "maxRow": 1347,
+      "minColIndex": 22,
+      "maxColIndex": 22,
+      "minCol": "Scribe",
+      "maxCol": "Scribe",
+      "value": "Hand b"
+    },
+    {
+      "minRow": 1332,
+      "maxRow": 1347,
+      "minColIndex": 24,
+      "maxColIndex": 24,
+      "minCol": "Style",
+      "maxCol": "Style",
+      "value": "Romanesque"
+    },
+    {
+      "minRow": 1332,
+      "maxRow": 1347,
+      "minColIndex": 25,
+      "maxColIndex": 25,
+      "minCol": "Colours",
+      "maxCol": "Colours",
+      "value": "Black"
+    },
+    {
+      "minRow": 1332,
+      "maxRow": 1347,
+      "minColIndex": 26,
+      "maxColIndex": 26,
+      "minCol": "Form of Initials",
+      "maxCol": "Form of Initials",
+      "value": "Penwork small initials (1-3 lines)"
+    },
+    {
+      "minRow": 1332,
+      "maxRow": 1347,
+      "minColIndex": 27,
+      "maxColIndex": 27,
+      "minCol": "Size of Initials",
+      "maxCol": "Size of Initials",
+      "value": "Small"
+    },
+    {
+      "minRow": 1332,
+      "maxRow": 1348,
+      "minColIndex": 28,
+      "maxColIndex": 28,
+      "minCol": "Iconography",
+      "maxCol": "Iconography",
+      "value": "None"
+    },
+    {
+      "minRow": 1332,
+      "maxRow": 1347,
+      "minColIndex": 29,
+      "maxColIndex": 29,
+      "minCol": "Place",
+      "maxCol": "Place",
+      "value": "Throughout"
     }
   ]
 }
