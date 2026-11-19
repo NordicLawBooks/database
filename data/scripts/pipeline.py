@@ -13,6 +13,15 @@ Regenerate only the segments JSON from the existing raw TSVs + merge JSON:
 
     python data/scripts/pipeline.py segments
 
+Regenerate only the IIIF manifest index (live, or from a local manuscripta dump),
+and the handrit.is manifests from a local clone of github.com/Handrit/Manuscripts:
+
+    python data/scripts/pipeline.py iiif [--dump <manuscripta>/data/iiif] [--handrit <clone>] [--nors]
+
+--nors also writes manifests for NorS (sprogsamlinger.ku.dk) links of manuscripts
+with no other images. It reads the image sizes from NorS, one request at a time,
+so it only fetches folders that have no manifest yet (--nors-refresh: all).
+
 DRY RUN
 -------
 Add --dry-run to any subcommand to print what would be run without executing:
@@ -22,8 +31,9 @@ Add --dry-run to any subcommand to print what would be run without executing:
 SUBCOMMANDS
 -----------
   sheets    Fetch from Google Sheets: lookup tables, filled TSVs, raw TSVs +
-            merge JSON, segments JSON, combined TSV (--skip-* per stage)
+            merge JSON, segments JSON, IIIF index, combined TSV (--skip-* per stage)
   segments  Per-manuscript segments JSON from the raw TSVs + merge JSON
+  iiif      IIIF manifest index for the image viewer, from the raw TSVs' links
   combine   Merge the four filled TSVs into data/NordicLaw_data.tsv
 
 OUTPUT FILES
@@ -31,6 +41,9 @@ OUTPUT FILES
   data/Metadata_Dan_raw.tsv          Raw rows, blanks preserved (merge-aligned)
   data/Metadata_Dan_raw_merges.json  Merge geometry for the Manuscript View renderer
   data/Metadata_Dan_segments.json    Per-manuscript modal data (from extract_segments.py)
+  data/iiif_manifests.json           IIIF manifests behind the links (from build_iiif_index.py)
+  data/iiif/handrit/<id>.json        Static manifests for handrit.is images (iiif --handrit)
+  data/iiif/nors/<folder>.json       Static manifests for NorS images (iiif --nors)
   data/Metadata_Dan.tsv              Filled/deduplicated rows (not used by the site)
   data/NordicLaw_data.tsv            All four languages combined (not used by the site)
   data/abbreviations.tsv, depositories.tsv, texts.tsv
@@ -153,6 +166,24 @@ def run_extract_segments(*, repo_root: Path, dry_run: bool) -> None:
         )
 
 
+def run_build_iiif_index(*, repo_root: Path, dump: str | None, handrit: str | None = None,
+                         nors: bool = False, nors_refresh: bool = False, dry_run: bool) -> None:
+    script = (repo_root / "data/scripts/build_iiif_index.py").resolve()
+    if not script.exists():
+        raise FileNotFoundError(f"Missing script: {script}")
+
+    cmd = [sys.executable, str(script)]
+    if dump:
+        cmd += ["--dump", dump]
+    if handrit:
+        cmd += ["--handrit", handrit]
+    if nors:
+        cmd += ["--nors"]
+    if nors_refresh:
+        cmd += ["--nors-refresh"]
+    run_cmd(cmd, cwd=repo_root, dry_run=dry_run)
+
+
 def main(argv: list[str]) -> int:
     parser = argparse.ArgumentParser(
         description="NordicLaw conversion pipeline — orchestrates the per-language conversion scripts.",
@@ -186,6 +217,9 @@ def main(argv: list[str]) -> int:
     p_sheets.add_argument("--skip-filled", action="store_true", help="Skip generating filled TSVs.")
     p_sheets.add_argument("--skip-raw", action="store_true", help="Skip generating *_raw.tsv + *_raw_merges.json.")
     p_sheets.add_argument("--skip-segments", action="store_true", help="Skip generating *_segments.json files.")
+    p_sheets.add_argument("--skip-iiif", action="store_true", help="Skip rebuilding data/iiif_manifests.json.")
+    p_sheets.add_argument("--handrit", default=None, help="Local clone of github.com/Handrit/Manuscripts: rebuild data/iiif/handrit/ (otherwise kept).")
+    p_sheets.add_argument("--nors", action="store_true", help="Write NorS manifests (data/iiif/nors/) for new NorS links; existing ones are kept.")
     p_sheets.add_argument("--skip-combine", action="store_true", help="Skip combining into NordicLaw_data.tsv.")
     p_sheets.add_argument("--dry-run", action="store_true", help="Print commands without executing them.")
 
@@ -199,6 +233,16 @@ def main(argv: list[str]) -> int:
         help="Print commands without executing them.",
     )
 
+    p_iiif = sub.add_parser(
+        "iiif",
+        help="Build data/iiif_manifests.json (IIIF manifests behind the Links to Database links).",
+    )
+    p_iiif.add_argument("--dump", default=None, help="Local manuscripta IIIF dump (<dir>/<id>/manifest.json) instead of fetching live.")
+    p_iiif.add_argument("--handrit", default=None, help="Local clone of github.com/Handrit/Manuscripts: rebuild data/iiif/handrit/ (otherwise kept).")
+    p_iiif.add_argument("--nors", action="store_true", help="Write NorS manifests (data/iiif/nors/) for NorS links of manuscripts without other images; existing ones are kept.")
+    p_iiif.add_argument("--nors-refresh", action="store_true", help="With --nors: rebuild every NorS manifest.")
+    p_iiif.add_argument("--dry-run", action="store_true", help="Print commands without executing them.")
+
     args = parser.parse_args(argv)
 
     repo_root = repo_root_from_this_file()
@@ -210,6 +254,11 @@ def main(argv: list[str]) -> int:
 
     if args.command == "segments":
         run_extract_segments(repo_root=repo_root, dry_run=bool(args.dry_run))
+        return 0
+
+    if args.command == "iiif":
+        run_build_iiif_index(repo_root=repo_root, dump=args.dump, handrit=args.handrit, nors=args.nors,
+                             nors_refresh=args.nors_refresh, dry_run=bool(args.dry_run))
         return 0
 
     if args.command == "sheets":
@@ -243,6 +292,9 @@ def main(argv: list[str]) -> int:
             )
         if not args.skip_segments:
             run_extract_segments(repo_root=repo_root, dry_run=bool(args.dry_run))
+        if not args.skip_iiif:
+            run_build_iiif_index(repo_root=repo_root, dump=None, handrit=args.handrit, nors=args.nors,
+                                 dry_run=bool(args.dry_run))
         if not args.skip_combine:
             run_combine_tsv_files(repo_root=repo_root, dry_run=bool(args.dry_run))
         return 0

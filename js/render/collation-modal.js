@@ -3,6 +3,7 @@
 
 import { escapeHtml } from "../util/text.js";
 import { quireSvg } from "./collation-svg.js";
+import { showModalOver } from "./modal-stack.js";
 import { downloadCollationPdf, downloadCollationPng, downloadCollationSvg } from "./collation-export.js";
 
 // The diagram currently shown, for the download buttons.
@@ -56,31 +57,15 @@ export function buildCollationHtml(collation) {
 
 /**
  * Fill and show the collation modal. With `returnTo` (an open modal), that
- * modal is hidden first and shown again, at the same scroll position, when the
- * diagram closes. Bootstrap does not support stacked modals: the lower modal's
- * focus trap pulls focus back, so Escape would close the wrong one.
+ * modal is hidden while the diagram is open (see modal-stack.js).
  */
 export function openCollationModal(collation, title, returnTo = null) {
   const modalEl = document.getElementById("collationModal");
-  const bs = typeof window !== "undefined" ? window.bootstrap : null;
-  if (!modalEl || !collation || !bs || !bs.Modal) return;
+  if (!modalEl || !collation) return;
   const titleEl = document.getElementById("collationModalLabel");
   if (titleEl) titleEl.textContent = title ? `Collation diagram — ${title}` : "Collation diagram";
   modalEl.querySelector(".modal-body").innerHTML = buildCollationHtml(collation);
   current = { collation, title: title || "" };
   bindDownloads();
-  const show = () => bs.Modal.getOrCreateInstance(modalEl).show();
-
-  if (!returnTo || !returnTo.classList.contains("show")) {
-    show();
-    return;
-  }
-  const body = returnTo.querySelector(".modal-body");
-  const scrollTop = body ? body.scrollTop : 0;
-  returnTo.addEventListener("hidden.bs.modal", show, { once: true });
-  modalEl.addEventListener("hidden.bs.modal", () => {
-    returnTo.addEventListener("shown.bs.modal", () => { if (body) body.scrollTop = scrollTop; }, { once: true });
-    bs.Modal.getOrCreateInstance(returnTo).show();
-  }, { once: true });
-  bs.Modal.getOrCreateInstance(returnTo).hide();
+  showModalOver(modalEl, returnTo);
 }

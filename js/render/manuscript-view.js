@@ -10,7 +10,7 @@ import { aggregateFieldValues, allFieldValuesEmpty, getConstantFields, getEffect
 import { expandMainText, expandMinorText, mainCandidatesFrom } from "../model/expand.js";
 import { buildLocalMergeLookup } from "./merge-geometry.js";
 import { freezeColumns } from "./frozen-columns.js";
-import { renderLinksHtml } from "./links.js";
+import { renderLinksHtml, iiifIconsHtml, leavesLinkHtml } from "./links.js";
 import { columnTitle as colTitle } from "../config.js";
 import { parseCollation } from "../model/collation.js";
 
@@ -21,6 +21,20 @@ function hasCollation(formula) {
   return drawable.get(formula);
 }
 
+// The manuscript's links (all its rows), aggregated once per msRows array.
+const msLinksCache = new WeakMap();
+function msLinks(ctx) {
+  const rows = ctx && ctx.msRows;
+  if (!rows) return "";
+  if (!msLinksCache.has(rows)) msLinksCache.set(rows, aggregateFieldValues(rows, "Links to Database", "; "));
+  return msLinksCache.get(rows);
+}
+
+/** IIIF icons for the manuscript's links, after the shelfmark. */
+function shelfIcons(ctx) {
+  return iiifIconsHtml(msLinks(ctx));
+}
+
 /** Cell HTML for the grouped views (Manuscript + Production Unit). */
 export function renderCell(field, value, ctx) {
   const v = normalizeForCompare(value);
@@ -28,12 +42,13 @@ export function renderCell(field, value, ctx) {
   if (field === "Shelf mark") {
     const label = escapeHtml(String(value));
     if (ctx.msKey && ctx.sourceId) {
-      return `<a href="#" class="ms-open-details" data-ms-key="${escapeHtml(ctx.msKey)}" data-source-id="${escapeHtml(ctx.sourceId)}">${label}</a>`;
+      return `<a href="#" class="ms-open-details" data-ms-key="${escapeHtml(ctx.msKey)}" data-source-id="${escapeHtml(ctx.sourceId)}">${label}</a>` + shelfIcons(ctx);
     }
-    return label;
+    return label + shelfIcons(ctx);
   }
   if (field === "Links to Database") return renderLinksHtml(v) || "&nbsp;";
-  if (field === "Leaves/Pages") return escapeHtml(normalizeLeavesPages(v));
+  // A link to the start folio in the image viewer when the manuscript has images.
+  if (field === "Leaves/Pages") return leavesLinkHtml(normalizeLeavesPages(v), msLinks(ctx));
   if (field === "Gatherings" && hasCollation(v)) {
     // main.js opens the diagram from the formula in .cd-formula; data-unit
     // names the production unit(s) the cell covers, for the modal title.

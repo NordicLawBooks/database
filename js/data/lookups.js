@@ -106,3 +106,21 @@ export async function loadExpansionMaps() {
   const [abbr, t] = await Promise.all([loadAbbreviationsMap(), loadTextsMaps()]);
   return { abbr, main: t.main, minor: t.minor };
 }
+
+let iiifIndex = null;
+
+/**
+ * data/iiif_manifests.json: { "ms:<id>": { manifest, canvases }, … } (see
+ * js/model/iiif.js). Missing or broken -> {} (the image viewer is not offered).
+ */
+export async function loadIiifIndex() {
+  if (iiifIndex) return iiifIndex;
+  try {
+    const resp = await fetch(`${DATA_DIR}/iiif_manifests.json`);
+    iiifIndex = resp.ok ? await resp.json() : {};
+  } catch (e) {
+    console.error("Failed to load iiif_manifests.json:", e);
+    iiifIndex = {};
+  }
+  return iiifIndex;
+}

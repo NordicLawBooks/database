@@ -48,7 +48,8 @@ export function renderUnitView(host, units, state, opts) {
     const mergesJson = sourceId ? mergesBySource.get(sourceId) : null;
     const depository = escapeHtml(firstValue(msRows, "Depository"));
     const shelfmark = firstValue(msRows, "Shelf mark");
-    const shelfHtml = shelfmark ? renderCell("Shelf mark", shelfmark, cellCtx) : "";
+    // Without msRows: the IIIF icons belong to the Shelfmark column, not the block header.
+    const shelfHtml = shelfmark ? renderCell("Shelf mark", shelfmark, { ...cellCtx, msRows: null }) : "";
     const info = {
       msRows,
       cellCtx,

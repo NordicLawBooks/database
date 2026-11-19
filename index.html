@@ -117,6 +117,30 @@
     .cd-quire text { font-family: var(--bs-body-font-family); }
     .cd-label { font-weight: 600; font-size: 15px; fill: var(--bs-body-color, #212529); }
     .cd-count, .cd-folio { font-size: 12px; fill: var(--cd-text); }
+    /* Image viewer pane (js/render/iiif-pane.js): a third column, beside the results. */
+    #viewer-pane {
+      flex: 0 0 40vw; height: calc(100vh - var(--sticky-h) - 16px);
+      display: flex; flex-direction: column; overflow: hidden;
+    }
+    .viewer-pane-head { display: flex; align-items: center; gap: 0.5rem; padding: 2px 8px; border-bottom: 1px solid #dee2e6; }
+    .viewer-pane-head .btn-close { font-size: 0.7rem; }
+    #viewer-host { position: relative; flex: 1 1 auto; min-height: 0; }
+    #iiif-pane-viewer { position: absolute; inset: 0; }
+    #viewer-resizer {
+      flex: 0 0 8px; align-self: stretch; margin: 0 4px; cursor: ew-resize; border-radius: 4px;
+      background: linear-gradient(to right, transparent 3px, #ced4da 3px, #ced4da 5px, transparent 5px);
+    }
+    #viewer-resizer:hover, #viewer-resizer:focus-visible, body.viewer-resizing #viewer-resizer { background-color: #e9ecef; }
+    body.viewer-resizing { cursor: ew-resize; user-select: none; }
+    body.viewer-resizing #viewer-host { pointer-events: none; } /* keep the drag when the pointer is over the viewer */
+    body:not(.viewer-open) #viewer-pane, body:not(.viewer-open) #viewer-resizer, body.viewer-collapsed #viewer-pane { display: none; }
+    body.viewer-collapsed #viewer-resizer { cursor: pointer; flex-basis: 12px; background: #dee2e6; }
+    @media (max-width: 767.98px) { #viewer-pane, #viewer-resizer { display: none !important; } }
+    /* Image viewer modal (js/render/iiif-modal.js): the narrow-screen fallback; Mirador fills the body. */
+    #iiifModal .modal-body { padding: 0; position: relative; overflow: hidden; }
+    #iiifModal .iiif-host, #iiif-viewer { position: absolute; inset: 0; }
+    .iiif-open { display: inline-block; margin-left: 0.35em; line-height: 1; }
+    .iiif-open img { vertical-align: -0.05em; }
   </style>
 </head>
 <body>
@@ -216,6 +240,17 @@
       <div id="table-view"></div>
       <div id="merged-view" style="display:none;"></div>
     </section>
+    <!-- Image viewer pane (js/render/iiif-pane.js); shown when a manuscript's images are opened. -->
+    <div id="viewer-resizer" role="separator" aria-orientation="vertical" aria-controls="viewer-pane" aria-expanded="true" tabindex="0"
+         title="Drag to resize the image viewer; double-click to hide it"></div>
+    <aside id="viewer-pane" class="border rounded" aria-label="Image viewer">
+      <div class="viewer-pane-head">
+        <span class="small fw-semibold">Images</span>
+        <button type="button" class="btn btn-sm btn-link text-secondary ms-auto" id="viewer-hide-btn" title="Hide the image viewer (the divider brings it back)">Hide</button>
+        <button type="button" class="btn-close" id="viewer-close-btn" aria-label="Close the image viewer" title="Close the image viewer"></button>
+      </div>
+      <div id="viewer-host"></div>
+    </aside>
   </div>
 
   <!-- Manuscript details modal -->
@@ -269,6 +304,20 @@
   </div>
 
   <!-- Collation diagram modal (js/render/collation-modal.js), opened from Gatherings cells and the details modal -->
+  <!-- Image viewer modal (js/render/iiif-modal.js) -->
+  <div class="modal fade" id="iiifModal" tabindex="-1" aria-labelledby="iiifModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-fullscreen">
+      <div class="modal-content">
+        <div class="modal-header py-2">
+          <h5 class="modal-title text-truncate" id="iiifModalLabel">Images</h5>
+          <a class="small ms-auto me-3 text-nowrap" id="iiif-manifest-link" href="#" target="_blank" rel="noopener noreferrer" title="The IIIF manifest, for use in other viewers">IIIF manifest</a>
+          <button type="button" class="btn-close ms-0" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body"><div class="iiif-host"></div></div>
+      </div>
+    </div>
+  </div>
+
   <div class="modal fade" id="collationModal" tabindex="-1" aria-labelledby="collationModalLabel" aria-hidden="true">
     <div class="modal-dialog modal-xl modal-dialog-scrollable">
       <div class="modal-content">

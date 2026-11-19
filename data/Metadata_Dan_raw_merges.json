@@ -3482,7 +3482,7 @@
       "maxColIndex": 31,
       "minCol": "Links to Database",
       "maxCol": "Links to Database",
-      "value": "[NorS](https://sprogsamlinger.ku.dk/q.php?p=ds/hjem/mapper/7833)"
+      "value": "[NorS](https://sprogsamlinger.ku.dk/q.php?p=ds/hjem/mapper/5818)"
     },
     {
       "minRow": 98,
@@ -23390,7 +23390,7 @@
       "maxColIndex": 31,
       "minCol": "Links to Database",
       "maxCol": "Links to Database",
-      "value": "[MS](https://haandskrift.ku.dk/motm/se-fynsk-traesko/)"
+      "value": "[haandskrift.ku.dk](https://haandskrift.ku.dk/motm/se-fynsk-traesko/)"
     },
     {
       "minRow": 660,
