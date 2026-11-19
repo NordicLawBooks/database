@@ -11,6 +11,7 @@ import { expandMainText, expandMinorText, mainCandidatesFrom } from "../model/ex
 import { buildLocalMergeLookup } from "./merge-geometry.js";
 import { freezeColumns } from "./frozen-columns.js";
 import { renderLinksHtml, iiifIconsHtml, leavesLinkHtml } from "./links.js";
+import { literatureHtml } from "../model/bibliography.js";
 import { columnTitle as colTitle } from "../config.js";
 import { parseCollation } from "../model/collation.js";
 
@@ -47,6 +48,7 @@ export function renderCell(field, value, ctx) {
     return label + shelfIcons(ctx);
   }
   if (field === "Links to Database") return renderLinksHtml(v) || "&nbsp;";
+  if (field === "Literature") return literatureHtml(v);
   // A link to the start folio in the image viewer when the manuscript has images.
   if (field === "Leaves/Pages") return leavesLinkHtml(normalizeLeavesPages(v), msLinks(ctx));
   if (field === "Gatherings" && hasCollation(v)) {

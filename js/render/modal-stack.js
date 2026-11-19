@@ -1,9 +1,10 @@
 // Show a modal "on top of" another one. Bootstrap does not support stacked
 // modals (the lower modal's focus trap pulls focus back, so Escape would close
 // the wrong one), so `returnTo` (an open modal) is hidden first and shown
-// again, at the same scroll position, when `modalEl` closes.
+// again, at the same scroll position, when `modalEl` closes, unless
+// `shouldReturn()` says no (e.g. the image pane was opened from `modalEl`).
 
-export function showModalOver(modalEl, returnTo = null) {
+export function showModalOver(modalEl, returnTo = null, { shouldReturn = () => true } = {}) {
   const bs = typeof window !== "undefined" ? window.bootstrap : null;
   if (!modalEl || !bs || !bs.Modal) return;
   const show = () => bs.Modal.getOrCreateInstance(modalEl).show();
@@ -16,6 +17,7 @@ export function showModalOver(modalEl, returnTo = null) {
   const scrollTop = body ? body.scrollTop : 0;
   returnTo.addEventListener("hidden.bs.modal", show, { once: true });
   modalEl.addEventListener("hidden.bs.modal", () => {
+    if (!shouldReturn()) return;
     returnTo.addEventListener("shown.bs.modal", () => { if (body) body.scrollTop = scrollTop; }, { once: true });
     bs.Modal.getOrCreateInstance(returnTo).show();
   }, { once: true });

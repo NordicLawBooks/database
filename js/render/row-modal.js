@@ -4,6 +4,7 @@
 
 import { escapeHtml } from "../util/text.js";
 import { renderLinksHtml, iiifIconsHtml } from "./links.js";
+import { literatureHtml } from "../model/bibliography.js";
 import { expandMainText, expandMinorText, mainCandidatesFrom } from "../model/expand.js";
 import { HIDDEN_FIELDS } from "../config.js";
 import { columnTitle as colTitle } from "../config.js";
@@ -18,6 +19,7 @@ export function buildRowDetailsHtml(row, columns, maps = null) {
     const raw = row[key] != null ? row[key] : "";
     let value;
     if (key === "Links to Database") value = renderLinksHtml(raw);
+    else if (key === "Literature") value = literatureHtml(raw);
     else if (key === "Main text" && maps) value = escapeHtml(expandMainText(raw, maps));
     else if (key === "Minor text" && maps) value = escapeHtml(expandMinorText(raw, mainCandidatesFrom(row["Main text"]), maps));
     // IIIF icons after the shelfmark (no text, so the PDF export skips them).

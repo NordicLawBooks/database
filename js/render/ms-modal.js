@@ -7,6 +7,7 @@ import { escapeHtml, normalizeForCompare } from "../util/text.js";
 import { aggregateFieldValues } from "../model/manuscript.js";
 import { expandMainText, expandMinorText, mainCandidatesFrom } from "../model/expand.js";
 import { renderLinksHtml, iiifIconsHtml, folioLinksHtml } from "./links.js";
+import { literatureHtml } from "../model/bibliography.js";
 import { manifestsForLinks } from "../model/iiif.js";
 import { LANGUAGE_MAP } from "../model/fields.js";
 import { sourceById } from "../data/manifest.js";
@@ -140,7 +141,9 @@ function renderColumnBlock(ms, col, ctx) {
   const items = segs
     .map((s) => {
       const locusText = normalizeRenderedLocus(s.locus && s.locus.rendered ? String(s.locus.rendered) : "");
-      const valueHtml = col === "Links to Database" ? renderLinksHtml(s.label) : escapeHtml(expandLabel(s.label));
+      const valueHtml = col === "Links to Database" ? renderLinksHtml(s.label)
+        : col === "Literature" ? literatureHtml(s.label)
+        : escapeHtml(expandLabel(s.label));
       if (!showLocus) return `<div class="mb-1"><div class="text-break">${valueHtml}</div></div>`;
       return `<div class="d-flex gap-2 mb-1"><div class="text-secondary small" style="min-width:110px;">${locusHtml(locusText, s.locus, ctx)}</div><div class="text-break flex-grow-1">${valueHtml}</div></div>`;
     })
