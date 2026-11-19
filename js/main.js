@@ -6,13 +6,14 @@ import { decodeState, startHistorySync } from "./url.js";
 import { FACET_DEFS, DEFAULT_COLUMN_PRESET, getPreset } from "./config.js";
 import { loadModel } from "./data/load.js";
 import { loadSegments } from "./data/segments.js";
-import { loadDepositoryMap, loadExpansionMaps, loadIiifIndex } from "./data/lookups.js";
+import { loadDepositoryMap, loadExpansionMaps, loadIiifIndex, loadBibliography } from "./data/lookups.js";
 import { openManuscriptModal } from "./render/ms-modal.js";
 import { openRowModal } from "./render/row-modal.js";
 import { openCollationModal } from "./render/collation-modal.js";
 import { openIiifModal } from "./render/iiif-modal.js";
 import { bindIiifPane, syncIiifPane, openInIiifPane, paneUnavailable } from "./render/iiif-pane.js";
 import { setIiifIndex } from "./model/iiif.js";
+import { setBibliography } from "./model/bibliography.js";
 import { parseCollation } from "./model/collation.js";
 import { exportManuscriptPdf, exportRowDetailsPdf } from "./pdf/export.js";
 import { computeCounts, rangeExtent } from "./facets/engine.js";
@@ -25,6 +26,7 @@ import { refreezeOnResize } from "./render/frozen-columns.js";
 import { bindSidebar, syncSidebar } from "./render/sidebar.js";
 import { bindIntro, syncIntro } from "./render/intro.js";
 import { bindAbbreviationsModal } from "./render/abbr-modal.js";
+import { bindBibliographyModal, openBibliography } from "./render/bib-modal.js";
 import { trackStickyHeight } from "./render/sticky.js";
 import { buildColumnsMenu, syncColumnsMenu, bindColumnsMenu, visibleColumns } from "./render/columns.js";
 import { bindControls, renderControls } from "./render/controls.js";
@@ -58,6 +60,8 @@ async function main() {
   const introRefs = { toggle: document.getElementById("intro-toggle"), body: document.getElementById("intro-body") };
   syncIntro(introRefs, { ...makeInitialState().ui, ...prefs.ui });
   bindAbbreviationsModal(document.getElementById("abbrModal"));
+  bindBibliographyModal(document.getElementById("bibModal"));
+  loadBibliography().then(setBibliography);
   trackStickyHeight(document.getElementById("controls"), document.getElementById("layout"));
 
   if (refs.status) refs.status.textContent = "Loading data…";
@@ -136,14 +140,17 @@ async function main() {
   syncIiifPane(paneRefs, store.get().ui);
 
   // Manuscript details modal: load segments lazily, then open on a shelfmark click.
-  const [segments, depositoryMap, maps, iiifIndex] = await Promise.all([
+  const [segments, depositoryMap, maps, iiifIndex, bibliography] = await Promise.all([
     loadSegments(),
     loadDepositoryMap(),
     loadExpansionMaps(),
     loadIiifIndex(),
+    loadBibliography(),
   ]);
-  // Before the first render: the link renderer marks links that have a manifest.
+  // Before the first render: the link renderer marks links that have a manifest,
+  // and Literature citations link to the bibliography.
   setIiifIndex(iiifIndex);
+  setBibliography(bibliography);
 
   // Row-level search index (built after maps so expansions are searchable too).
   const searchIndex = buildSearchIndex(model.rows, maps);
@@ -201,6 +208,16 @@ async function main() {
     const unitLabel = units ? `${units.includes(",") ? "Units" : "Unit"} ${units}` : "";
     openCollationModal(collation, [rowTitle(first), unitLabel].filter(Boolean).join(" — "));
   }
+
+  // Literature citations: open the bibliography at the cited work(s), over the
+  // details modal the citation is in (which comes back when it closes).
+  document.addEventListener("click", (e) => {
+    const el = e.target.closest && e.target.closest("a.bib-cite");
+    if (!el) return;
+    e.preventDefault();
+    const keys = (el.getAttribute("data-bib-keys") || "").split(" ").filter(Boolean);
+    openBibliography(keys, el.closest(".modal"));
+  });
 
   // Image viewer: link icons in the views and modals, "View images" buttons and
   // folio loci in the manuscript details modal (all carry data-iiif-manifest).

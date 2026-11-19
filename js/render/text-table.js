@@ -5,6 +5,7 @@
 import { escapeHtml } from "../util/text.js";
 import { expandMainText, expandMinorText, mainCandidatesFrom } from "../model/expand.js";
 import { renderLinksHtml, iiifIconsHtml, leavesLinkHtml } from "./links.js";
+import { literatureHtml } from "../model/bibliography.js";
 import { COLUMN_ORDER, HIDDEN_FIELDS, columnTitle } from "../config.js";
 import { freezeColumns } from "./frozen-columns.js";
 
@@ -38,6 +39,7 @@ export function renderTextTable(host, rows, state, columns, maps = null) {
     if (maps && c === "Main text") return escapeHtml(expandMainText(row[c], maps));
     if (maps && c === "Minor text") return escapeHtml(expandMinorText(row[c], mainCandidatesFrom(row["Main text"]), maps));
     if (c === "Links to Database") return renderLinksHtml(row[c]) || "";
+    if (c === "Literature") return literatureHtml(row[c]);
     if (c === "Shelf mark" && row[c]) {
       return `<a href="#" class="row-open-details">${escapeHtml(row[c])}</a>` + iiifIconsHtml(row["Links to Database"]);
     }

@@ -19,7 +19,8 @@ const text = (el) => String((el && el.textContent) || "").replace(/ /g, " ").tr
 
 /**
  * Split a value element into lines: text runs break at <br>, and each link is a
- * line of its own (the "; " separators between links are dropped).
+ * line of its own (the "; " separators between links are dropped), except
+ * Literature citations (.bib-cite), which stay in their line as plain text.
  */
 function valueLines(el) {
   const lines = [];
@@ -36,7 +37,8 @@ function valueLines(el) {
     if (node.nodeType !== 1) return;
     const tag = node.tagName.toUpperCase();
     if (tag === "BR") return flush();
-    if (tag === "A") {
+    // Citation links (bibliography) are part of the running text.
+    if (tag === "A" && !node.classList.contains("bib-cite")) {
       flush();
       if (text(node)) lines.push({ text: text(node), href: node.getAttribute("href") || "" });
       return;

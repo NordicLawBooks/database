@@ -29,6 +29,9 @@
     #intro-body p { margin-bottom: 0.5rem; }
     .abbr-table th { width: 9em; white-space: nowrap; font-weight: 600; }
     .abbr-table tr.abbr-section th { padding-left: 1.5rem; font-weight: 400; }
+    .bib-entry { padding: 0.4rem 0.5rem 0.4rem 1.5rem; text-indent: -1em; border-radius: 4px; }
+    .bib-entry .bib-links { text-indent: 0; margin-top: 0.15rem; }
+    .bib-entry.bib-highlight { background: var(--bs-warning-bg-subtle); }
     /* --sticky-h (toolbar + result-count row) is measured by js/render/sticky.js; the
        results fill the window below it, so the page can scroll far enough to stick. */
     :root { --sticky-h: 101px; }
@@ -156,7 +159,7 @@
     <button id="intro-toggle" class="btn btn-link px-0" type="button" aria-expanded="true" aria-controls="intro-body">About the database</button>
     <div id="intro-body" class="small">
       <p><strong>NordicLaw Database</strong> is a searchable catalogue of Icelandic, Norwegian, Danish, and Swedish vernacular law manuscripts and fragments from the Nordic Middle Ages (ca. 1100–1600).</p>
-      <p>The database was created by the <a href="https://www4.uib.no/en/research/research-projects/nordic-law-books-the-production-and-use-of-vernacular-law-manuscripts-in-the-north-from-1100-to-1600-nordiclaw" target="_blank">NordicLaw Project</a> at the University of Bergen and funded by <strong>NordForsk</strong> (<a href="https://www.nordforsk.org/projects/nordic-law-books-production-and-use-vernacular-law-manuscripts-north-1100-1600-nordiclaw" target="_blank">grant no. 152607</a>). For more information, see the NordicLaw Database User Guide, the <a href="#" data-bs-toggle="modal" data-bs-target="#abbrModal">List of Abbreviations</a>, and the Bibliography. The database was designed and developed by <strong>Patrik Granholm</strong> (The National Library of Sweden).</p>
+      <p>The database was created by the <a href="https://www4.uib.no/en/research/research-projects/nordic-law-books-the-production-and-use-of-vernacular-law-manuscripts-in-the-north-from-1100-to-1600-nordiclaw" target="_blank">NordicLaw Project</a> at the University of Bergen and funded by <strong>NordForsk</strong> (<a href="https://www.nordforsk.org/projects/nordic-law-books-production-and-use-vernacular-law-manuscripts-north-1100-1600-nordiclaw" target="_blank">grant no. 152607</a>). For more information, see the NordicLaw Database User Guide, the <a href="#" data-bs-toggle="modal" data-bs-target="#abbrModal">List of Abbreviations</a>, and the <a href="#" data-bs-toggle="modal" data-bs-target="#bibModal">Bibliography</a>. The database was designed and developed by <strong>Patrik Granholm</strong> (The National Library of Sweden).</p>
       <p>Main Editor: <strong>Stefan Drechsler</strong> (University of Bergen). Editors: <strong>Tonje Waldersnes</strong>, <strong>Már Jónsson</strong> (University of Iceland), <strong>Anne Mette Hansen</strong> (University of Copenhagen), <strong>Seán Vrieland</strong> (University of Copenhagen), <strong>Anna Catharina Horn</strong> (University of Oslo).</p>
     </div>
   </section>
@@ -293,6 +296,22 @@
       <div class="modal-content">
         <div class="modal-header">
           <h5 class="modal-title" id="abbrModalLabel">List of Abbreviations</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body">Loading…</div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Bibliography modal (js/render/bib-modal.js, from data/bibliography.json) -->
+  <div class="modal fade" id="bibModal" tabindex="-1" aria-labelledby="bibModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="bibModalLabel">Bibliography</h5>
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">Loading…</div>
