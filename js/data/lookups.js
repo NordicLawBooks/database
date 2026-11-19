@@ -124,3 +124,23 @@ export async function loadIiifIndex() {
   }
   return iiifIndex;
 }
+
+let bibliography = null;
+
+/**
+ * data/bibliography.json: the Zotero group's entries (data/scripts/fetch_zotero.py,
+ * js/model/bibliography.js). Missing or broken -> [] (citations stay plain).
+ */
+export async function loadBibliography() {
+  if (bibliography) return bibliography;
+  bibliography = (async () => {
+    try {
+      const resp = await fetch(`${DATA_DIR}/bibliography.json`);
+      return resp.ok ? await resp.json() : [];
+    } catch (e) {
+      console.error("Failed to load bibliography.json:", e);
+      return [];
+    }
+  })();
+  return bibliography;
+}

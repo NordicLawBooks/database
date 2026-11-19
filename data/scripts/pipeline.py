@@ -182,6 +182,11 @@ def run_build_iiif_index(*, repo_root: Path, dump: str | None, handrit: str | No
     if nors_refresh:
         cmd += ["--nors-refresh"]
     run_cmd(cmd, cwd=repo_root, dry_run=dry_run)
+def run_fetch_zotero(*, repo_root: Path, dry_run: bool) -> None:
+    script = (repo_root / "data/scripts/fetch_zotero.py").resolve()
+    if not script.exists():
+        raise FileNotFoundError(f"Missing script: {script}")
+    run_cmd([sys.executable, str(script)], cwd=repo_root, dry_run=dry_run)
 
 
 def main(argv: list[str]) -> int:
@@ -220,6 +225,7 @@ def main(argv: list[str]) -> int:
     p_sheets.add_argument("--skip-iiif", action="store_true", help="Skip rebuilding data/iiif_manifests.json.")
     p_sheets.add_argument("--handrit", default=None, help="Local clone of github.com/Handrit/Manuscripts: rebuild data/iiif/handrit/ (otherwise kept).")
     p_sheets.add_argument("--nors", action="store_true", help="Write NorS manifests (data/iiif/nors/) for new NorS links; existing ones are kept.")
+    p_sheets.add_argument("--skip-zotero", action="store_true", help="Skip exporting the Zotero group to data/bibliography.json.")
     p_sheets.add_argument("--skip-combine", action="store_true", help="Skip combining into NordicLaw_data.tsv.")
     p_sheets.add_argument("--dry-run", action="store_true", help="Print commands without executing them.")
 
@@ -243,6 +249,12 @@ def main(argv: list[str]) -> int:
     p_iiif.add_argument("--nors-refresh", action="store_true", help="With --nors: rebuild every NorS manifest.")
     p_iiif.add_argument("--dry-run", action="store_true", help="Print commands without executing them.")
 
+    p_zotero = sub.add_parser(
+        "zotero",
+        help="Export the NordicLaw Zotero group library to data/bibliography.json.",
+    )
+    p_zotero.add_argument("--dry-run", action="store_true", help="Print commands without executing them.")
+
     args = parser.parse_args(argv)
 
     repo_root = repo_root_from_this_file()
@@ -259,6 +271,10 @@ def main(argv: list[str]) -> int:
     if args.command == "iiif":
         run_build_iiif_index(repo_root=repo_root, dump=args.dump, handrit=args.handrit, nors=args.nors,
                              nors_refresh=args.nors_refresh, dry_run=bool(args.dry_run))
+        return 0
+
+    if args.command == "zotero":
+        run_fetch_zotero(repo_root=repo_root, dry_run=bool(args.dry_run))
         return 0
 
     if args.command == "sheets":
@@ -295,6 +311,8 @@ def main(argv: list[str]) -> int:
         if not args.skip_iiif:
             run_build_iiif_index(repo_root=repo_root, dump=None, handrit=args.handrit, nors=args.nors,
                                  dry_run=bool(args.dry_run))
+        if not args.skip_zotero:
+            run_fetch_zotero(repo_root=repo_root, dry_run=bool(args.dry_run))
         if not args.skip_combine:
             run_combine_tsv_files(repo_root=repo_root, dry_run=bool(args.dry_run))
         return 0
