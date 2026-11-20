@@ -43,11 +43,13 @@
    "Beckman"
   ],
   "year": "1917",
-  "html": "Beckman, Natanael. 1917. <i>Studier i outgivna fornsvenska handskrifter</i>. Samlingar utgivna av Svenska Fornskrift-Sällskapet 44. Stockholm. https://archive.org/details/BeckmanStudierIOutgivna/page/n8/mode/2up.",
-  "text": "Beckman, Natanael. 1917. Studier i outgivna fornsvenska handskrifter. Samlingar utgivna av Svenska Fornskrift-Sällskapet 44. Stockholm. https://archive.org/details/BeckmanStudierIOutgivna/page/n8/mode/2up.",
+  "html": "Beckman, Natanael. 1917. <i>Studier i outgivna fornsvenska handskrifter</i>. Samlingar utgivna av Svenska Fornskrift-Sällskapet 44. Stockholm.",
+  "text": "Beckman, Natanael. 1917. Studier i outgivna fornsvenska handskrifter. Samlingar utgivna av Svenska Fornskrift-Sällskapet 44. Stockholm.",
   "zotero": "https://www.zotero.org/groups/nordiclaw/items/DQ58NLXF",
   "short": "Beckman (1917)",
-  "url": "https://archive.org/details/BeckmanStudierIOutgivna/page/n8/mode/2up"
+  "iiif": [
+   "https://iiif.archive.org/iiif/3/BeckmanStudierIOutgivna/manifest.json"
+  ]
  },
  {
   "key": "N9ZSCZ7Y",
@@ -87,11 +89,10 @@
   "key": "DVXYVYSY",
   "creators": [],
   "year": "1860",
-  "html": "Birgitta Birgersdotter (Finstaätten). 1860. <i>Heliga Birgittas uppenbarelser: Andra bandet</i>. Edited by G. E. (Gustav Edvard) Klemming. Samlingar utgivna av Svenska Fornskrift-Sällskapet 14. Stockholm. https://books.google.se/books?id=ioAAAAAAcAAJ.",
-  "text": "Birgitta Birgersdotter (Finstaätten). 1860. Heliga Birgittas uppenbarelser: Andra bandet. Edited by G. E. (Gustav Edvard) Klemming. Samlingar utgivna av Svenska Fornskrift-Sällskapet 14. Stockholm. https://books.google.se/books?id=ioAAAAAAcAAJ.",
+  "html": "Birgitta Birgersdotter (Finstaätten). 1860. <i>Heliga Birgittas uppenbarelser: Andra bandet</i>. Edited by G. E. (Gustav Edvard) Klemming. Samlingar utgivna av Svenska Fornskrift-Sällskapet 14. Stockholm.",
+  "text": "Birgitta Birgersdotter (Finstaätten). 1860. Heliga Birgittas uppenbarelser: Andra bandet. Edited by G. E. (Gustav Edvard) Klemming. Samlingar utgivna av Svenska Fornskrift-Sällskapet 14. Stockholm.",
   "zotero": "https://www.zotero.org/groups/nordiclaw/items/DVXYVYSY",
   "short": "Klemming (1860)",
-  "url": "https://books.google.se/books?id=ioAAAAAAcAAJ",
   "iiif": [
    "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10038859/manifest"
   ]
@@ -100,11 +101,13 @@
   "key": "8JPFD4AV",
   "creators": [],
   "year": "1883-1884",
-  "html": "Birgitta Birgersdotter (Finstaätten). 1883. <i>Heliga Birgittas uppenbarelser: Femte bandet: Bihang</i>. Edited by G. E. (Gustav Edvard) Klemming. Samlingar utgivna av Svenska Fornskrift-Sällskapet 14. Stockholm. https://archive.org/details/heligabirgittas06klemgoog.",
-  "text": "Birgitta Birgersdotter (Finstaätten). 1883. Heliga Birgittas uppenbarelser: Femte bandet: Bihang. Edited by G. E. (Gustav Edvard) Klemming. Samlingar utgivna av Svenska Fornskrift-Sällskapet 14. Stockholm. https://archive.org/details/heligabirgittas06klemgoog.",
+  "html": "Birgitta Birgersdotter (Finstaätten). 1883. <i>Heliga Birgittas uppenbarelser: Femte bandet: Bihang</i>. Edited by G. E. (Gustav Edvard) Klemming. Samlingar utgivna av Svenska Fornskrift-Sällskapet 14. Stockholm.",
+  "text": "Birgitta Birgersdotter (Finstaätten). 1883. Heliga Birgittas uppenbarelser: Femte bandet: Bihang. Edited by G. E. (Gustav Edvard) Klemming. Samlingar utgivna av Svenska Fornskrift-Sällskapet 14. Stockholm.",
   "zotero": "https://www.zotero.org/groups/nordiclaw/items/8JPFD4AV",
   "short": "Klemming (1883-1884)",
-  "url": "https://archive.org/details/heligabirgittas06klemgoog"
+  "iiif": [
+   "https://iiif.archive.org/iiif/3/heligabirgittas06klemgoog/manifest.json"
+  ]
  },
  {
   "key": "CPHV93NK",
@@ -236,11 +239,13 @@
    "Geete"
   ],
   "year": "1907-1909",
-  "html": "Geete, Robert, ed. 1907. <i>Svenska böner från medeltiden: efter gamla handskrifter</i>. Samlingar utgivna av Svenska Fornskrift-Sällskapet 38. Stockholm. https://archive.org/details/svenskaboenerfranmedegeete.",
-  "text": "Geete, Robert, ed. 1907. Svenska böner från medeltiden: efter gamla handskrifter. Samlingar utgivna av Svenska Fornskrift-Sällskapet 38. Stockholm. https://archive.org/details/svenskaboenerfranmedegeete.",
+  "html": "Geete, Robert, ed. 1907. <i>Svenska böner från medeltiden: efter gamla handskrifter</i>. Samlingar utgivna av Svenska Fornskrift-Sällskapet 38. Stockholm.",
+  "text": "Geete, Robert, ed. 1907. Svenska böner från medeltiden: efter gamla handskrifter. Samlingar utgivna av Svenska Fornskrift-Sällskapet 38. Stockholm.",
   "zotero": "https://www.zotero.org/groups/nordiclaw/items/WCT2TCSK",
   "short": "Geete (1907-1909)",
-  "url": "https://archive.org/details/svenskaboenerfranmedegeete"
+  "iiif": [
+   "https://iiif.archive.org/iiif/3/svenskaboenerfranmedegeete/manifest.json"
+  ]
  },
  {
   "key": "HZG5MUCF",
@@ -425,11 +430,13 @@
    "Klemming"
   ],
   "year": "1867-1868",
-  "html": "Klemming, G. E. (Gustav Edvard), ed. 1867. <i>Svenska medeltidens rim-krönikor: Tredje delen. Nya krönikans fortsättningar eller Sture-krönikorna. Fortgången af unions-striderna under Karl Knutsson och Sturarne. 1452-1520</i>. Samlingar utgivna av Svenska Fornskrift-Sällskapet 17. Stockholm. https://archive.org/details/SvenskaMedeltidensRim3.",
-  "text": "Klemming, G. E. (Gustav Edvard), ed. 1867. Svenska medeltidens rim-krönikor: Tredje delen. Nya krönikans fortsättningar eller Sture-krönikorna. Fortgången af unions-striderna under Karl Knutsson och Sturarne. 1452-1520. Samlingar utgivna av Svenska Fornskrift-Sällskapet 17. Stockholm. https://archive.org/details/SvenskaMedeltidensRim3.",
+  "html": "Klemming, G. E. (Gustav Edvard), ed. 1867. <i>Svenska medeltidens rim-krönikor: Tredje delen. Nya krönikans fortsättningar eller Sture-krönikorna. Fortgången af unions-striderna under Karl Knutsson och Sturarne. 1452-1520</i>. Samlingar utgivna av Svenska Fornskrift-Sällskapet 17. Stockholm.",
+  "text": "Klemming, G. E. (Gustav Edvard), ed. 1867. Svenska medeltidens rim-krönikor: Tredje delen. Nya krönikans fortsättningar eller Sture-krönikorna. Fortgången af unions-striderna under Karl Knutsson och Sturarne. 1452-1520. Samlingar utgivna av Svenska Fornskrift-Sällskapet 17. Stockholm.",
   "zotero": "https://www.zotero.org/groups/nordiclaw/items/2RUAMUCC",
   "short": "Klemming (1867-1868)",
-  "url": "https://archive.org/details/SvenskaMedeltidensRim3"
+  "iiif": [
+   "https://iiif.archive.org/iiif/3/SvenskaMedeltidensRim3/manifest.json"
+  ]
  },
  {
   "key": "VAXW22MJ",
@@ -437,11 +444,13 @@
    "Klemming"
   ],
   "year": "1868-1881",
-  "html": "Klemming, G. E. (Gustav Edvard), ed. 1868. <i>Småstycken på forn svenska</i>. Samlingar utgivna av Svenska Fornskrift-Sällskapet. Småstycken 19. Stockholm. https://archive.org/details/SmastyckenPaFornSvenska1/page/n8.",
-  "text": "Klemming, G. E. (Gustav Edvard), ed. 1868. Småstycken på forn svenska. Samlingar utgivna av Svenska Fornskrift-Sällskapet. Småstycken 19. Stockholm. https://archive.org/details/SmastyckenPaFornSvenska1/page/n8.",
+  "html": "Klemming, G. E. (Gustav Edvard), ed. 1868. <i>Småstycken på forn svenska</i>. Samlingar utgivna av Svenska Fornskrift-Sällskapet. Småstycken 19. Stockholm.",
+  "text": "Klemming, G. E. (Gustav Edvard), ed. 1868. Småstycken på forn svenska. Samlingar utgivna av Svenska Fornskrift-Sällskapet. Småstycken 19. Stockholm.",
   "zotero": "https://www.zotero.org/groups/nordiclaw/items/VAXW22MJ",
   "short": "Klemming (1868-1881)",
-  "url": "https://archive.org/details/SmastyckenPaFornSvenska1/page/n8"
+  "iiif": [
+   "https://iiif.archive.org/iiif/3/SmastyckenPaFornSvenska1/manifest.json"
+  ]
  },
  {
   "key": "MKBGCR7T",
@@ -449,11 +458,13 @@
    "Klemming"
   ],
   "year": "1881-1882",
-  "html": "Klemming, G. E. (Gustav Edvard), ed. 1881. <i>Svenska medeltids dikter och rim</i>. Samlingar utgivna av Svenska Fornskrift-Sällskapet 25. Stockholm. https://archive.org/details/SvenskaMededeltidsDikterOchRim/page/n8/mode/2up.",
-  "text": "Klemming, G. E. (Gustav Edvard), ed. 1881. Svenska medeltids dikter och rim. Samlingar utgivna av Svenska Fornskrift-Sällskapet 25. Stockholm. https://archive.org/details/SvenskaMededeltidsDikterOchRim/page/n8/mode/2up.",
+  "html": "Klemming, G. E. (Gustav Edvard), ed. 1881. <i>Svenska medeltids dikter och rim</i>. Samlingar utgivna av Svenska Fornskrift-Sällskapet 25. Stockholm.",
+  "text": "Klemming, G. E. (Gustav Edvard), ed. 1881. Svenska medeltids dikter och rim. Samlingar utgivna av Svenska Fornskrift-Sällskapet 25. Stockholm.",
   "zotero": "https://www.zotero.org/groups/nordiclaw/items/MKBGCR7T",
   "short": "Klemming (1881-1882)",
-  "url": "https://archive.org/details/SvenskaMededeltidsDikterOchRim/page/n8/mode/2up"
+  "iiif": [
+   "https://iiif.archive.org/iiif/3/SvenskaMededeltidsDikterOchRim/manifest.json"
+  ]
  },
  {
   "key": "MVSM3UXK",
@@ -461,11 +472,13 @@
    "Klemming"
   ],
   "year": "1883-1886",
-  "html": "Klemming, G. E. (Gustav Edvard), ed. 1883. <i>Läke- och örteböcker från Sveriges medeltid</i>. Samlingar utgivna av Svenska Fornskrift-Sällskapet 26. Stockholm. https://archive.org/stream/LakeochortebockerfranSveriges#page/n6/mode/2up.",
-  "text": "Klemming, G. E. (Gustav Edvard), ed. 1883. Läke- och örteböcker från Sveriges medeltid. Samlingar utgivna av Svenska Fornskrift-Sällskapet 26. Stockholm. https://archive.org/stream/LakeochortebockerfranSveriges#page/n6/mode/2up.",
+  "html": "Klemming, G. E. (Gustav Edvard), ed. 1883. <i>Läke- och örteböcker från Sveriges medeltid</i>. Samlingar utgivna av Svenska Fornskrift-Sällskapet 26. Stockholm.",
+  "text": "Klemming, G. E. (Gustav Edvard), ed. 1883. Läke- och örteböcker från Sveriges medeltid. Samlingar utgivna av Svenska Fornskrift-Sällskapet 26. Stockholm.",
   "zotero": "https://www.zotero.org/groups/nordiclaw/items/MVSM3UXK",
   "short": "Klemming (1883-1886)",
-  "url": "https://archive.org/stream/LakeochortebockerfranSveriges#page/n6/mode/2up"
+  "iiif": [
+   "https://iiif.archive.org/iiif/3/LakeochortebockerfranSveriges/manifest.json"
+  ]
  },
  {
   "key": "CIEH5KFG",
@@ -477,6 +490,20 @@
   "text": "Kungliga biblioteket. 1963. Illuminated manuscripts : and other remarkable documents from the collection of the Royal Library, Stockholm ; catalogue of an Exhibition June-September 1963. Edited by Kungliga biblioteket. Stockholm.",
   "zotero": "https://www.zotero.org/groups/nordiclaw/items/CIEH5KFG",
   "short": "Illuminated manuscripts (1963)"
+ },
+ {
+  "key": "D46SQDTC",
+  "creators": [
+   "Kålund"
+  ],
+  "year": "1889",
+  "html": "Kålund, Kristian. 1889. <i>Katalog over den Arnamagnæanske håndskriftsamling</i>. Vol. 1. Gyldendal.",
+  "text": "Kålund, Kristian. 1889. Katalog over den Arnamagnæanske håndskriftsamling. Vol. 1. Gyldendal.",
+  "zotero": "https://www.zotero.org/groups/nordiclaw/items/D46SQDTC",
+  "short": "Kålund (1889)",
+  "iiif": [
+   "https://api.onb.ac.at/iiif/presentation/v3/manifest/13222EFA"
+  ]
  },
  {
   "key": "8VUCQJN3",
@@ -495,11 +522,13 @@
    "Liljegren"
   ],
   "year": "1829",
-  "html": "Liljegren, Johan Gustaf, ed. 1829. <i>Diplomatarium Suecanum: Svenskt diplomatarium 1. Åren 817-1285</i>. Stockholm. https://archive.org/details/svensktdiplomat00swegoog/page/n15/mode/2up.",
-  "text": "Liljegren, Johan Gustaf, ed. 1829. Diplomatarium Suecanum: Svenskt diplomatarium 1. Åren 817-1285. Stockholm. https://archive.org/details/svensktdiplomat00swegoog/page/n15/mode/2up.",
+  "html": "Liljegren, Johan Gustaf, ed. 1829. <i>Diplomatarium Suecanum: Svenskt diplomatarium 1. Åren 817-1285</i>. Stockholm.",
+  "text": "Liljegren, Johan Gustaf, ed. 1829. Diplomatarium Suecanum: Svenskt diplomatarium 1. Åren 817-1285. Stockholm.",
   "zotero": "https://www.zotero.org/groups/nordiclaw/items/I4QEBG2K",
   "short": "Liljegren (1829)",
-  "url": "https://archive.org/details/svensktdiplomat00swegoog/page/n15/mode/2up"
+  "iiif": [
+   "https://iiif.archive.org/iiif/3/svensktdiplomat00swegoog/manifest.json"
+  ]
  },
  {
   "key": "TY6KT6GH",
@@ -581,11 +610,13 @@
    "Olson"
   ],
   "year": "1911",
-  "html": "Olson, Emil, ed. 1911. <i>Östgötalagens 1300-talsfragment</i>. Samlingar utgivna av Svenska Fornskrift-Sällskapet 41. Stockholm. https://archive.org/details/Ostgotalagens1300Talsfragment/page/n8/mode/2up.",
-  "text": "Olson, Emil, ed. 1911. Östgötalagens 1300-talsfragment. Samlingar utgivna av Svenska Fornskrift-Sällskapet 41. Stockholm. https://archive.org/details/Ostgotalagens1300Talsfragment/page/n8/mode/2up.",
+  "html": "Olson, Emil, ed. 1911. <i>Östgötalagens 1300-talsfragment</i>. Samlingar utgivna av Svenska Fornskrift-Sällskapet 41. Stockholm.",
+  "text": "Olson, Emil, ed. 1911. Östgötalagens 1300-talsfragment. Samlingar utgivna av Svenska Fornskrift-Sällskapet 41. Stockholm.",
   "zotero": "https://www.zotero.org/groups/nordiclaw/items/L2XL8H66",
   "short": "Olson (1911)",
-  "url": "https://archive.org/details/Ostgotalagens1300Talsfragment/page/n8/mode/2up"
+  "iiif": [
+   "https://iiif.archive.org/iiif/3/Ostgotalagens1300Talsfragment/manifest.json"
+  ]
  },
  {
   "key": "3FJ6RBBB",

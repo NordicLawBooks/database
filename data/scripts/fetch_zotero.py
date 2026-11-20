@@ -15,6 +15,11 @@ key is needed. Each top-level item becomes one entry:
       "url": the item's DOI or URL, if any,
       "iiif": [IIIF manifest URLs: linked-URL attachments, "IIIF: <url>" lines in Extra] }
 
+Links to manuscripta.se and Google Books are dropped (from url, iiif and the
+formatted entry). An archive.org URL becomes its IIIF manifest
+(https://iiif.archive.org/iiif/3/<id>/manifest.json) and is dropped from url and
+the formatted entry.
+
 js/model/bibliography.js matches Literature citations ("Schlyter (1877:12)")
 against the Short title and against creators + year. Entries are sorted by their formatted text.
 """
@@ -42,6 +47,9 @@ KEEP_TAGS = {"i", "b", "sup", "sub"}
 SERIES_ABBREVIATIONS = {
     "samling af sweriges gamla lagar": ["SSGL", "SGL"],
 }
+# URLs never exported, and archive.org item pages (whose id gives the IIIF manifest).
+DROP_URL_RE = re.compile(r"^https?://(?:[\w-]+\.)*(?:manuscripta\.se|books\.google\.[a-z.]+)/", re.I)
+ARCHIVE_RE = re.compile(r"^https?://(?:www\.)?archive\.org/(?:details|stream)/([^/?#]+)", re.I)
 YEAR_RE = re.compile(r"(\d{4})(?:\s*[-–]\s*(\d{2,4}))?")
 
 
@@ -120,11 +128,24 @@ def is_manifest(att: dict) -> bool:
     )
 
 
+def archive_manifest(url: str) -> str | None:
+    m = ARCHIVE_RE.match(url)
+    return f"https://iiif.archive.org/iiif/3/{m.group(1)}/manifest.json" if m else None
+
+
+def strip_url(s: str, url: str) -> str:
+    """Remove a URL (and its trailing full stop) from a formatted entry: "Stockholm. <url>." -> "Stockholm."."""
+    for u in dict.fromkeys((url, html.escape(url))):
+        s = re.sub(r"\s*" + re.escape(u) + r"\.?", "", s)
+    return s.strip()
+
+
 def build(items: list[dict], children: list[dict]) -> list[dict]:
     manifests: dict[str, list[str]] = {}
     for c in children:
         d = c["data"]
-        if d.get("itemType") == "attachment" and d.get("parentItem") and is_manifest(d):
+        if (d.get("itemType") == "attachment" and d.get("parentItem") and is_manifest(d)
+                and not DROP_URL_RE.match(d["url"])):
             manifests.setdefault(d["parentItem"], []).append(d["url"])
 
     out = []
@@ -134,6 +155,14 @@ def build(items: list[dict], children: list[dict]) -> list[dict]:
             continue
         html_, text = sanitize(it.get("bib", ""))
         doi = d.get("DOI", "")
+        url = f"https://doi.org/{doi}" if doi else d.get("url", "").strip()
+        iiif = manifests.get(d["key"], []) + re.findall(r"^IIIF:\s*(\S+)", d.get("extra", ""), re.M)
+        manifest = archive_manifest(url)
+        if manifest or DROP_URL_RE.match(url):
+            iiif += [manifest] if manifest else []
+            html_, text = strip_url(html_, url), strip_url(text, url)
+            url = ""
+        iiif = [m for m in iiif if not DROP_URL_RE.match(m)]
         entry = {
             "key": d["key"],
             "creators": creators_of(d),
@@ -146,11 +175,9 @@ def build(items: list[dict], children: list[dict]) -> list[dict]:
             entry["short"] = d["shortTitle"]
         if cites := series_cites(d):
             entry["cites"] = cites
-        url = f"https://doi.org/{doi}" if doi else d.get("url", "")
         if url:
             entry["url"] = url
-        # Manifests from linked-URL attachments and from "IIIF: <url>" lines in Extra.
-        iiif = manifests.get(d["key"], []) + re.findall(r"^IIIF:\s*(\S+)", d.get("extra", ""), re.M)
+        # Manifests from linked-URL attachments, "IIIF: <url>" lines in Extra and archive.org URLs.
         if iiif:
             entry["iiif"] = list(dict.fromkeys(iiif))
         out.append(entry)
@@ -165,7 +192,7 @@ def main(argv: list[str]) -> int:
     args = ap.parse_args(argv)
 
     items = fetch_all(args.group, "items/top", f"include=data,bib&style={STYLE}")
-    children = fetch_all(args.group, "items", "itemType=attachment")
+    children = fetch_all(args.group, "items", "itemType=attachment&sort=dateAdded&direction=asc")
     entries = build(items, children)
     Path(args.out).write_text(json.dumps(entries, ensure_ascii=False, indent=1) + "\n", encoding="utf-8")
     print(f"Wrote {len(entries)} entries to {args.out}")
