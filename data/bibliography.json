@@ -110,6 +110,18 @@
   ]
  },
  {
+  "key": "7PVGUWGG",
+  "creators": [
+   "Brøndum-Nielsen",
+   "Aakjær"
+  ],
+  "year": "1933",
+  "html": "Brøndum-Nielsen, Johs., and Svend Aakjær, eds. 1933. <i>Skånske Lov</i>. Danmarks gamle Landskabslove med Kirkelovene, I:1. København.",
+  "text": "Brøndum-Nielsen, Johs., and Svend Aakjær, eds. 1933. Skånske Lov. Danmarks gamle Landskabslove med Kirkelovene, I:1. København.",
+  "zotero": "https://www.zotero.org/groups/nordiclaw/items/7PVGUWGG",
+  "short": "Brøndum-Nielsen & Aakjær (1933)"
+ },
+ {
   "key": "CPHV93NK",
   "creators": [
    "Burman"
@@ -119,6 +131,18 @@
   "text": "Burman, Eric. 1727. Almanach för skått-åhret efter Christi födelse, 1728. Och til Stockholms horizont stäld. Hwarhos, utom de wanliga underrättelserna, bifoges månens vpp- och nedergång för hwar dag, uti timmar och fjärdedelar; Samt Kårtt uttåg af de Heliga Människiors Historier, hwilkas Namn i Calendario införde blifwit. (Norkiöping).",
   "zotero": "https://www.zotero.org/groups/nordiclaw/items/CPHV93NK",
   "short": "Burman (1727)"
+ },
+ {
+  "key": "3U888845",
+  "creators": [
+   "Buus",
+   "Jørgensen"
+  ],
+  "year": "1961",
+  "html": "Buus, Erik, and Peter Jørgensen, eds. 1961. <i>Knud Mikkelsens glosser (dansk text) og Thords artikler</i>. Danmarks gamle Landskabslove med Kirkelovene, IV:tillæg. København.",
+  "text": "Buus, Erik, and Peter Jørgensen, eds. 1961. Knud Mikkelsens glosser (dansk text) og Thords artikler. Danmarks gamle Landskabslove med Kirkelovene, IV:tillæg. København.",
+  "zotero": "https://www.zotero.org/groups/nordiclaw/items/3U888845",
+  "short": "Jørgensen (1961)"
  },
  {
   "key": "Y4FZ69YH",
@@ -163,6 +187,44 @@
   ]
  },
  {
+  "key": "DWREPITH",
+  "creators": [
+   "Collin",
+   "Schlyter"
+  ],
+  "year": "1827",
+  "html": "Collin, Hans Samuel, and Carl Johan Schlyter. 1827. <i>Westgötalagen</i>. Vol. 1. Corpus iuris sueo-gotorum antiqui. Samling af Sweriges gamla lagar. Stockholm.",
+  "text": "Collin, Hans Samuel, and Carl Johan Schlyter. 1827. Westgötalagen. Vol. 1. Corpus iuris sueo-gotorum antiqui. Samling af Sweriges gamla lagar. Stockholm.",
+  "zotero": "https://www.zotero.org/groups/nordiclaw/items/DWREPITH",
+  "short": "Collin and Schlyter (1827)",
+  "cites": [
+   "SSGL 1",
+   "SGL 1"
+  ],
+  "iiif": [
+   "https://api.onb.ac.at/iiif/presentation/v3/manifest/1083CEAD"
+  ]
+ },
+ {
+  "key": "47HILXGS",
+  "creators": [
+   "Collin",
+   "Schlyter"
+  ],
+  "year": "1830",
+  "html": "Collin, Hans Samuel, and Carl Johan Schlyter. 1830. <i>Östgötalagen</i>. Vol. 2. Corpus iuris sueo-gotorum antiqui. Samling af Sweriges gamla lagar. Stockholm.",
+  "text": "Collin, Hans Samuel, and Carl Johan Schlyter. 1830. Östgötalagen. Vol. 2. Corpus iuris sueo-gotorum antiqui. Samling af Sweriges gamla lagar. Stockholm.",
+  "zotero": "https://www.zotero.org/groups/nordiclaw/items/47HILXGS",
+  "short": "Collin and Schlyter (1830)",
+  "cites": [
+   "SSGL 2",
+   "SGL 2"
+  ],
+  "iiif": [
+   "https://api.onb.ac.at/iiif/presentation/v3/manifest/1083CE95"
+  ]
+ },
+ {
   "key": "4RS64QWT",
   "creators": [
    "Cornell"
@@ -196,6 +258,17 @@
   "short": "Ejder (1974)"
  },
  {
+  "key": "M5USH2BP",
+  "creators": [
+   "Eken"
+  ],
+  "year": "1963",
+  "html": "Eken, Thorsten, ed. 1963. <i>Gammalnorske membranfragment i Riksarkivet</i>. Corpus codicum Norvegicorum medii aevi. Quarto serie 3. Oslo.",
+  "text": "Eken, Thorsten, ed. 1963. Gammalnorske membranfragment i Riksarkivet. Corpus codicum Norvegicorum medii aevi. Quarto serie 3. Oslo.",
+  "zotero": "https://www.zotero.org/groups/nordiclaw/items/M5USH2BP",
+  "short": "Eken (1963)"
+ },
+ {
   "key": "MRJQCM4W",
   "creators": [
    "Fant"
@@ -221,6 +294,17 @@
    "https://api.onb.ac.at/iiif/presentation/v3/manifest/106883D0",
    "https://api.digitale-sammlungen.de/iiif/presentation/v2/bsb10328991/manifest"
   ]
+ },
+ {
+  "key": "ZDTENRZZ",
+  "creators": [
+   "Flom"
+  ],
+  "year": "1928",
+  "html": "Flom, George Tobias, ed. 1928. <i>Fragment AM 315 E of the Older Gulathing Law: From an Old Norwegian Codex of the XIIIth Century</i>. University of Illinois Studies in Language and Literature, 13:1. Urbana, Ill.",
+  "text": "Flom, George Tobias, ed. 1928. Fragment AM 315 E of the Older Gulathing Law: From an Old Norwegian Codex of the XIIIth Century. University of Illinois Studies in Language and Literature, 13:1. Urbana, Ill.",
+  "zotero": "https://www.zotero.org/groups/nordiclaw/items/ZDTENRZZ",
+  "short": "Flom (1928)"
  },
  {
   "key": "VKRGTPT4",
@@ -265,6 +349,28 @@
   ]
  },
  {
+  "key": "WQHAZ4A5",
+  "creators": [
+   "Gunnlaugsson"
+  ],
+  "year": "2007",
+  "html": "Gunnlaugsson, Guðvarður Már. 2007. <i>Sýnisbók íslenskrar skriftar</i>. 2. útgáfa. Stofnun Árna Magnússonar í íslenskum fræðum.",
+  "text": "Gunnlaugsson, Guðvarður Már. 2007. Sýnisbók íslenskrar skriftar. 2. útgáfa. Stofnun Árna Magnússonar í íslenskum fræðum.",
+  "zotero": "https://www.zotero.org/groups/nordiclaw/items/WQHAZ4A5",
+  "short": "Guðvarður Már Gunnlaugsson (2007)"
+ },
+ {
+  "key": "82B5QNPE",
+  "creators": [
+   "Gödel"
+  ],
+  "year": "1897-1900",
+  "html": "Gödel, Vilhelm. 1897. <i>Katalog öfver Kongl. bibliotekets fornisländska och fornnorska handskrifter</i>. Stockholm.",
+  "text": "Gödel, Vilhelm. 1897. Katalog öfver Kongl. bibliotekets fornisländska och fornnorska handskrifter. Stockholm.",
+  "zotero": "https://www.zotero.org/groups/nordiclaw/items/82B5QNPE",
+  "short": "Gödel (1897-1900)"
+ },
+ {
   "key": "I3SMR8UM",
   "creators": [
    "Gödel"
@@ -285,6 +391,29 @@
   "text": "Hadorph, Johan, ed. 1687. Några gambla stadgar, ifrån k. Magni Ladulåses tijdh åhr 1280 til k. Gustaffs den förstes, som mycket hafva brukelige varit vidh domstolarne, och en d. Stockholm.",
   "zotero": "https://www.zotero.org/groups/nordiclaw/items/A6LV4DBZ",
   "short": "Hadorph (1687)"
+ },
+ {
+  "key": "4ZSNBV5I",
+  "creators": [
+   "Halldórsson"
+  ],
+  "year": "1904",
+  "html": "Halldórsson, Ólafur, ed. 1904. <i>Jónsbók: Kong Magnus Hakonssons Lovbog for Island, vedtaget paa Altinget 1281, og Réttarbøtr, de for Island givne Retterbøder af 1294, 1305 og 1314</i>. København.",
+  "text": "Halldórsson, Ólafur, ed. 1904. Jónsbók: Kong Magnus Hakonssons Lovbog for Island, vedtaget paa Altinget 1281, og Réttarbøtr, de for Island givne Retterbøder af 1294, 1305 og 1314. København.",
+  "zotero": "https://www.zotero.org/groups/nordiclaw/items/4ZSNBV5I",
+  "short": "Ólafur Halldórsson (1904)"
+ },
+ {
+  "key": "6B56M2AQ",
+  "creators": [
+   "Halvorsen",
+   "Rindal"
+  ],
+  "year": "2008",
+  "html": "Halvorsen, Eyvind F., and Magnus Rindal. 2008. <i>De eldste østlandske kristenrettene: Tekster etter håndskrifterne, med oversettelser</i>. Norrøne tekster 7. Oslo.",
+  "text": "Halvorsen, Eyvind F., and Magnus Rindal. 2008. De eldste østlandske kristenrettene: Tekster etter håndskrifterne, med oversettelser. Norrøne tekster 7. Oslo.",
+  "zotero": "https://www.zotero.org/groups/nordiclaw/items/6B56M2AQ",
+  "short": "Halvorsen & Rindal (2008)"
  },
  {
   "key": "F2FEKT95",
@@ -377,6 +506,28 @@
   "short": "Hyltén-Cavallius (1853)"
  },
  {
+  "key": "2T966IGA",
+  "creators": [
+   "Hægstad"
+  ],
+  "year": "1906",
+  "html": "Hægstad, Marius. 1906. <i>Latinsk skrift i gamalnorsk maal - Vestnorske maalføre fyre 1350</i>. Videnskabs-Selskabets Skrifter. Kristiania.",
+  "text": "Hægstad, Marius. 1906. Latinsk skrift i gamalnorsk maal - Vestnorske maalføre fyre 1350. Videnskabs-Selskabets Skrifter. Kristiania.",
+  "zotero": "https://www.zotero.org/groups/nordiclaw/items/2T966IGA",
+  "short": "Hægstad (1906)"
+ },
+ {
+  "key": "7JFI4F9B",
+  "creators": [
+   "Hægstad"
+  ],
+  "year": "1907",
+  "html": "Hægstad, Marius. 1907. <i>Nordvestlandsk - Vestnorske maalføre fyre 1350</i>. Videnskabs-Selskabets Skrifter. Kristiania.",
+  "text": "Hægstad, Marius. 1907. Nordvestlandsk - Vestnorske maalføre fyre 1350. Videnskabs-Selskabets Skrifter. Kristiania.",
+  "zotero": "https://www.zotero.org/groups/nordiclaw/items/7JFI4F9B",
+  "short": "Hægstad (1907)"
+ },
+ {
   "key": "U4QZZ5ZF",
   "creators": [
    "Ihre"
@@ -388,6 +539,17 @@
   "short": "Ihre (1752-1755)"
  },
  {
+  "key": "94RB64IE",
+  "creators": [
+   "Jacobsen"
+  ],
+  "year": "1977",
+  "html": "Jacobsen, Bent Chr. 1977. “Om lovbøgernes kristendomsbalk og indledningskapitlerne i de yngre kristenretter.” In <i>Opuscula</i>, 2:2. Bibliotheca Arnamagnæana, 25:2. København.",
+  "text": "Jacobsen, Bent Chr. 1977. “Om lovbøgernes kristendomsbalk og indledningskapitlerne i de yngre kristenretter.” In Opuscula, 2:2. Bibliotheca Arnamagnæana, 25:2. København.",
+  "zotero": "https://www.zotero.org/groups/nordiclaw/items/94RB64IE",
+  "short": "Jacobsen (1977)"
+ },
+ {
   "key": "VE9CL3RD",
   "creators": [
    "Karlsson"
@@ -397,6 +559,50 @@
   "text": "Karlsson, Karl Henrik, ed. 1904. Södermannalagen efter Cod. Havn. Ny Kgl. Saml. 4:o n:o 2237. Samlingar utgivna av Svenska Fornskrift-Sällskapet 37. Stockholm.",
   "zotero": "https://www.zotero.org/groups/nordiclaw/items/VE9CL3RD",
   "short": "Karlsson (1904)"
+ },
+ {
+  "key": "NW2ZQHR8",
+  "creators": [
+   "Karlsson"
+  ],
+  "year": "1972",
+  "html": "Karlsson, Stefán. 1972. “[Ritd.] Skálholtsbók eldri. Jónsbók etc. AM 351 fol. Edited by Chr. Westergård-Nielsen.” <i>Skírnir</i> 146: 198–204.",
+  "text": "Karlsson, Stefán. 1972. “[Ritd.] Skálholtsbók eldri. Jónsbók etc. AM 351 fol. Edited by Chr. Westergård-Nielsen.” Skírnir 146: 198–204.",
+  "zotero": "https://www.zotero.org/groups/nordiclaw/items/NW2ZQHR8",
+  "short": "Stefán Karlsson (1972)"
+ },
+ {
+  "key": "I36N5ZQ8",
+  "creators": [
+   "Karlsson"
+  ],
+  "year": "1979",
+  "html": "Karlsson, Stefán. 1979. “Skinnræmur úr Skálholtsbók (AM 351 fol).” <i>Gripla</i> 3: 124–27.",
+  "text": "Karlsson, Stefán. 1979. “Skinnræmur úr Skálholtsbók (AM 351 fol).” Gripla 3: 124–27.",
+  "zotero": "https://www.zotero.org/groups/nordiclaw/items/I36N5ZQ8",
+  "short": "Stefán Karlsson (1979)"
+ },
+ {
+  "key": "W44925S6",
+  "creators": [
+   "Karlsson"
+  ],
+  "year": "1982",
+  "html": "Karlsson, Stefán. 1982. “Af Skálholtsvist Skálholtsbókar yngri.” <i>Gripla</i> 5: 197–200.",
+  "text": "Karlsson, Stefán. 1982. “Af Skálholtsvist Skálholtsbókar yngri.” Gripla 5: 197–200.",
+  "zotero": "https://www.zotero.org/groups/nordiclaw/items/W44925S6",
+  "short": "Stefán Karlsson (1982)"
+ },
+ {
+  "key": "XCQN7K6H",
+  "creators": [
+   "Kjeldsen"
+  ],
+  "year": "2010",
+  "html": "Kjeldsen, Alex Speed. 2010. “Bemærkninger til pronomenet sjá og dets middelalderlige historie.” In <i>Opuscula XIII</i>. Bibliotheca Arnamagnæana 47. København.",
+  "text": "Kjeldsen, Alex Speed. 2010. “Bemærkninger til pronomenet sjá og dets middelalderlige historie.” In Opuscula XIII. Bibliotheca Arnamagnæana 47. København.",
+  "zotero": "https://www.zotero.org/groups/nordiclaw/items/XCQN7K6H",
+  "short": "Kjeldsen (2010)"
  },
  {
   "key": "423U8KC8",
@@ -481,6 +687,29 @@
   ]
  },
  {
+  "key": "7FEJIK48",
+  "creators": [
+   "Kolderup-Rosenvinge"
+  ],
+  "year": "1837",
+  "html": "Kolderup-Rosenvinge, J. L. A., ed. 1837. <i>Kong Valdemar den Andens Jydske Lov og Thord Degns Artikler</i>. Samling af gamle danske Love, III. Kjøbenhavn.",
+  "text": "Kolderup-Rosenvinge, J. L. A., ed. 1837. Kong Valdemar den Andens Jydske Lov og Thord Degns Artikler. Samling af gamle danske Love, III. Kjøbenhavn.",
+  "zotero": "https://www.zotero.org/groups/nordiclaw/items/7FEJIK48",
+  "short": "Kolderup-Rosenvinge (1837)"
+ },
+ {
+  "key": "IXSMJZDJ",
+  "creators": [
+   "Kroman",
+   "Aakjær"
+  ],
+  "year": "1933",
+  "html": "Kroman, Erik, and Svend Aakjær, eds. 1933. <i>Skånske Lov</i>. Danmarks gamle Landskabslove med Kirkelovene, I:2. København.",
+  "text": "Kroman, Erik, and Svend Aakjær, eds. 1933. Skånske Lov. Danmarks gamle Landskabslove med Kirkelovene, I:2. København.",
+  "zotero": "https://www.zotero.org/groups/nordiclaw/items/IXSMJZDJ",
+  "short": "Kroman (1933)"
+ },
+ {
   "key": "CIEH5KFG",
   "creators": [
    "Kungliga biblioteket"
@@ -490,6 +719,29 @@
   "text": "Kungliga biblioteket. 1963. Illuminated manuscripts : and other remarkable documents from the collection of the Royal Library, Stockholm ; catalogue of an Exhibition June-September 1963. Edited by Kungliga biblioteket. Stockholm.",
   "zotero": "https://www.zotero.org/groups/nordiclaw/items/CIEH5KFG",
   "short": "Illuminated manuscripts (1963)"
+ },
+ {
+  "key": "F7M2EVT6",
+  "creators": [
+   "Kålund"
+  ],
+  "year": "1884-1891",
+  "html": "Kålund, Kristian, ed. 1884. <i>Småstykker 1-16</i>. Samfund til udgivelse af gammel nordisk litteratur, XIII. København.",
+  "text": "Kålund, Kristian, ed. 1884. Småstykker 1-16. Samfund til udgivelse af gammel nordisk litteratur, XIII. København.",
+  "zotero": "https://www.zotero.org/groups/nordiclaw/items/F7M2EVT6",
+  "short": "Småstykker (1884-1891)"
+ },
+ {
+  "key": "J2SH5SDM",
+  "creators": [
+   "Kålund"
+  ],
+  "year": "1900",
+  "html": "Kålund, Kristian, ed. 1900. <i>Katalog over de oldnorsk-islandske Håndskrifter i Det store kongelige Bibliotek og i Universitetsbiblioteket samt Den Arnamagnænske Samlings tilvækst 1894-1899</i>. København. http://baekur.is/bok/000224141/Katalog_over_de.",
+  "text": "Kålund, Kristian, ed. 1900. Katalog over de oldnorsk-islandske Håndskrifter i Det store kongelige Bibliotek og i Universitetsbiblioteket samt Den Arnamagnænske Samlings tilvækst 1894-1899. København. http://baekur.is/bok/000224141/Katalog_over_de.",
+  "zotero": "https://www.zotero.org/groups/nordiclaw/items/J2SH5SDM",
+  "short": "Kålund (1900)",
+  "url": "http://baekur.is/bok/000224141/Katalog_over_de"
  },
  {
   "key": "D46SQDTC",
@@ -504,6 +756,17 @@
   "iiif": [
    "https://api.onb.ac.at/iiif/presentation/v3/manifest/13222EFA"
   ]
+ },
+ {
+  "key": "T4AD2NXW",
+  "creators": [
+   "Kålund"
+  ],
+  "year": "1903",
+  "html": "Kålund, Kristian. 1903. <i>Palæografisk Atlas: Dansk Afdeling</i>. København.",
+  "text": "Kålund, Kristian. 1903. Palæografisk Atlas: Dansk Afdeling. København.",
+  "zotero": "https://www.zotero.org/groups/nordiclaw/items/T4AD2NXW",
+  "short": "Kålund (1903)"
  },
  {
   "key": "8VUCQJN3",
@@ -586,6 +849,17 @@
   "short": "Nelson (1948)"
  },
  {
+  "key": "626TX4F6",
+  "creators": [
+   "Nielsen"
+  ],
+  "year": "1865",
+  "html": "Nielsen, O. 1865. “Levninger af nordiske Håndskrifter fra Middelaldren.” <i>Tidskrift for Philologi og Pædagogik</i> 6: 258–62.",
+  "text": "Nielsen, O. 1865. “Levninger af nordiske Håndskrifter fra Middelaldren.” Tidskrift for Philologi og Pædagogik 6: 258–62.",
+  "zotero": "https://www.zotero.org/groups/nordiclaw/items/626TX4F6",
+  "short": "Nielsen (1865)"
+ },
+ {
   "key": "ZQ74KQTT",
   "creators": [],
   "year": "1914",
@@ -641,6 +915,17 @@
   "short": "Pipping (1905)"
  },
  {
+  "key": "FZ4WGRJV",
+  "creators": [
+   "Rindal"
+  ],
+  "year": "1987",
+  "html": "Rindal, Magnus. 1987. “Dei eldste fragmenta av dei norske landskapslovene.” In <i>Festskrift til Alfred Jakobsen</i>, edited by Jan Ragnar Hagland, Jan Terje Faarlund, and Jarle Ronhovd. Tapir.",
+  "text": "Rindal, Magnus. 1987. “Dei eldste fragmenta av dei norske landskapslovene.” In Festskrift til Alfred Jakobsen, edited by Jan Ragnar Hagland, Jan Terje Faarlund, and Jarle Ronhovd. Tapir.",
+  "zotero": "https://www.zotero.org/groups/nordiclaw/items/FZ4WGRJV",
+  "short": "Rindal (1987)"
+ },
+ {
   "key": "XPJT45G2",
   "creators": [
    "Rydberg"
@@ -651,44 +936,6 @@
   "zotero": "https://www.zotero.org/groups/nordiclaw/items/XPJT45G2",
   "short": "Rydberg (1877)",
   "url": "https://reader.digitale-sammlungen.de/en/fs1/object/display/bsb11352346_00684.html"
- },
- {
-  "key": "DWREPITH",
-  "creators": [
-   "Schlyter",
-   "Collin"
-  ],
-  "year": "1827",
-  "html": "Schlyter, Carl Johan, and Hans Samuel Collin. 1827. <i>Westgötalagen</i>. Vol. 1. Corpus iuris sueo-gotorum antiqui. Samling af Sweriges gamla lagar. Stockholm.",
-  "text": "Schlyter, Carl Johan, and Hans Samuel Collin. 1827. Westgötalagen. Vol. 1. Corpus iuris sueo-gotorum antiqui. Samling af Sweriges gamla lagar. Stockholm.",
-  "zotero": "https://www.zotero.org/groups/nordiclaw/items/DWREPITH",
-  "short": "Schlyter and Collin (1827)",
-  "cites": [
-   "SSGL 1",
-   "SGL 1"
-  ],
-  "iiif": [
-   "https://api.onb.ac.at/iiif/presentation/v3/manifest/1083CEAD"
-  ]
- },
- {
-  "key": "47HILXGS",
-  "creators": [
-   "Schlyter",
-   "Collin"
-  ],
-  "year": "1830",
-  "html": "Schlyter, Carl Johan, and Hans Samuel Collin. 1830. <i>Östgötalagen</i>. Vol. 2. Corpus iuris sueo-gotorum antiqui. Samling af Sweriges gamla lagar. Stockholm.",
-  "text": "Schlyter, Carl Johan, and Hans Samuel Collin. 1830. Östgötalagen. Vol. 2. Corpus iuris sueo-gotorum antiqui. Samling af Sweriges gamla lagar. Stockholm.",
-  "zotero": "https://www.zotero.org/groups/nordiclaw/items/47HILXGS",
-  "short": "Schlyter and Collin (1830)",
-  "cites": [
-   "SSGL 2",
-   "SGL 2"
-  ],
-  "iiif": [
-   "https://api.onb.ac.at/iiif/presentation/v3/manifest/1083CE95"
-  ]
  },
  {
   "key": "QYCCT7IH",
@@ -889,6 +1136,17 @@
   ]
  },
  {
+  "key": "P42DB9MD",
+  "creators": [
+   "Schulman"
+  ],
+  "year": "2010",
+  "html": "Schulman, Jana K. 2010. <i>Jónsbók: The Laws of Later Iceland: The Icelandic Text According to MS AM 351 Fol. Skálholtsbók Eldri</i>. Bibliotheca Germanica. AQ-Verlag.",
+  "text": "Schulman, Jana K. 2010. Jónsbók: The Laws of Later Iceland: The Icelandic Text According to MS AM 351 Fol. Skálholtsbók Eldri. Bibliotheca Germanica. AQ-Verlag.",
+  "zotero": "https://www.zotero.org/groups/nordiclaw/items/P42DB9MD",
+  "short": "Schulman (2010)"
+ },
+ {
   "key": "7JD4FNIA",
   "creators": [
    "Schwartz",
@@ -912,6 +1170,28 @@
   "short": "Schück (1946)"
  },
  {
+  "key": "AMJD6B7A",
+  "creators": [
+   "Seip"
+  ],
+  "year": "1954",
+  "html": "Seip, Didrik Arup. 1954. “Palæografi. B. Norge og Island.” In <i>Nordisk kultur</i>, vol. 28:B. København, Oslo, Stockholm.",
+  "text": "Seip, Didrik Arup. 1954. “Palæografi. B. Norge og Island.” In Nordisk kultur, vol. 28:B. København, Oslo, Stockholm.",
+  "zotero": "https://www.zotero.org/groups/nordiclaw/items/AMJD6B7A",
+  "short": "Seip (1954)"
+ },
+ {
+  "key": "4U53ECN2",
+  "creators": [
+   "Seip"
+  ],
+  "year": "1955",
+  "html": "Seip, Didrik Arup. 1955. <i>Norsk språkhistorie til omkring 1370</i>. 2nd ed. Oslo.",
+  "text": "Seip, Didrik Arup. 1955. Norsk språkhistorie til omkring 1370. 2nd ed. Oslo.",
+  "zotero": "https://www.zotero.org/groups/nordiclaw/items/4U53ECN2",
+  "short": "Seip (1955)"
+ },
+ {
   "key": "GP6NYZL8",
   "creators": [
    "Silfverstolpe"
@@ -921,6 +1201,39 @@
   "text": "Silfverstolpe, Carl, ed. 1879. Svenskt diplomatarium: från och med år 1401. Andra delen. Åren 1408-14. Stockholm.",
   "zotero": "https://www.zotero.org/groups/nordiclaw/items/GP6NYZL8",
   "short": "Silfverstolpe (1879-1887)"
+ },
+ {
+  "key": "FDCM9QX9",
+  "creators": [
+   "Skautrup"
+  ],
+  "year": "1933",
+  "html": "Skautrup, Peter, ed. 1933. <i>Jyske lov: Text 1: NkS 295 8°</i>. Danmarks gamle Landskabslove med Kirkelovene, II. København.",
+  "text": "Skautrup, Peter, ed. 1933. Jyske lov: Text 1: NkS 295 8°. Danmarks gamle Landskabslove med Kirkelovene, II. København.",
+  "zotero": "https://www.zotero.org/groups/nordiclaw/items/FDCM9QX9",
+  "short": "Skautrup (1933)"
+ },
+ {
+  "key": "39WJKSR6",
+  "creators": [
+   "Skautrup"
+  ],
+  "year": "1936",
+  "html": "Skautrup, Peter, ed. 1936. <i>Eriks sjællandske Lov: Text 1-2</i>. Danmarks gamle Landskabslove med Kirkelovene, V. København.",
+  "text": "Skautrup, Peter, ed. 1936. Eriks sjællandske Lov: Text 1-2. Danmarks gamle Landskabslove med Kirkelovene, V. København.",
+  "zotero": "https://www.zotero.org/groups/nordiclaw/items/39WJKSR6",
+  "short": "Skautrup (1936)"
+ },
+ {
+  "key": "48BM6S8W",
+  "creators": [
+   "Spørck"
+  ],
+  "year": "2006",
+  "html": "Spørck, Bjørg Dale. 2006. <i>Kong Magnus lagabøters kristenretter. Innhold språk og overlevering</i>. Universitetet i Oslo.",
+  "text": "Spørck, Bjørg Dale. 2006. Kong Magnus lagabøters kristenretter. Innhold språk og overlevering. Universitetet i Oslo.",
+  "zotero": "https://www.zotero.org/groups/nordiclaw/items/48BM6S8W",
+  "short": "Spørck (2006)"
  },
  {
   "key": "VTBTDUAI",
@@ -945,6 +1258,17 @@
   "short": "Storm (1880)"
  },
  {
+  "key": "2TCAUJ6P",
+  "creators": [
+   "Storm"
+  ],
+  "year": "1885",
+  "html": "Storm, Gustav, ed. 1885. <i>Norges gamle Love indtil 1387</i>. IV. Christiania.",
+  "text": "Storm, Gustav, ed. 1885. Norges gamle Love indtil 1387. IV. Christiania.",
+  "zotero": "https://www.zotero.org/groups/nordiclaw/items/2TCAUJ6P",
+  "short": "Storm (1885)"
+ },
+ {
   "key": "4X2IYQCL",
   "creators": [
    "Strömbäck"
@@ -954,18 +1278,6 @@
   "text": "Strömbäck, Dag. 1960. Lex Uplandiæ: (Upplandslagen) : e codice membr. Bibl. Univ. Upsal. B 12 : Suecice et Britannice præfatus. Corpus codicum Suecicorum medii aevi: auspiciis principis hereditarii regni Sueciae Gustavi Adolphi editum 15. Einar Munksgaard.",
   "zotero": "https://www.zotero.org/groups/nordiclaw/items/4X2IYQCL",
   "short": "Strömbäck (1960)"
- },
- {
-  "key": "9WYQKS8C",
-  "creators": [
-   "Ståhle",
-   "Ståhle"
-  ],
-  "year": "1980",
-  "html": "Ståhle, Carl Ivar, and Carl Ivar Ståhle. 1980. “De Liedgrenska fragmenten av Östgötalagens C-text.” In <i>Östgöta-lagen : facsimile edition with addendum by the main part of Emil Olson, Östgötalagens 1300-talsfragment and Carl Ivar Ståhle, De Liedgrenska fragmenten av Östgötalagens C-text</i>, edited by H. S. (Hans Samuel) Collin, C. J. (Carl Johan) Schlyter, Gösta Holm, and Carl Ivar Ståhle. Uppsala.",
-  "text": "Ståhle, Carl Ivar, and Carl Ivar Ståhle. 1980. “De Liedgrenska fragmenten av Östgötalagens C-text.” In Östgöta-lagen : facsimile edition with addendum by the main part of Emil Olson, Östgötalagens 1300-talsfragment and Carl Ivar Ståhle, De Liedgrenska fragmenten av Östgötalagens C-text, edited by H. S. (Hans Samuel) Collin, C. J. (Carl Johan) Schlyter, Gösta Holm, and Carl Ivar Ståhle. Uppsala.",
-  "zotero": "https://www.zotero.org/groups/nordiclaw/items/9WYQKS8C",
-  "short": "Ståhle (1980)"
  },
  {
   "key": "RC3CDIAY",
@@ -979,6 +1291,17 @@
   "short": "Ståhle (1949)"
  },
  {
+  "key": "9WYQKS8C",
+  "creators": [
+   "Ståhle"
+  ],
+  "year": "1980",
+  "html": "Ståhle, Carl Ivar. 1980. “De Liedgrenska fragmenten av Östgötalagens C-text.” In <i>Östgöta-lagen : facsimile edition with addendum by the main part of Emil Olson, Östgötalagens 1300-talsfragment and Carl Ivar Ståhle, De Liedgrenska fragmenten av Östgötalagens C-text</i>, edited by H. S. (Hans Samuel) Collin, C. J. (Carl Johan) Schlyter, Gösta Holm, and Carl Ivar Ståhle. Uppsala.",
+  "text": "Ståhle, Carl Ivar. 1980. “De Liedgrenska fragmenten av Östgötalagens C-text.” In Östgöta-lagen : facsimile edition with addendum by the main part of Emil Olson, Östgötalagens 1300-talsfragment and Carl Ivar Ståhle, De Liedgrenska fragmenten av Östgötalagens C-text, edited by H. S. (Hans Samuel) Collin, C. J. (Carl Johan) Schlyter, Gösta Holm, and Carl Ivar Ståhle. Uppsala.",
+  "zotero": "https://www.zotero.org/groups/nordiclaw/items/9WYQKS8C",
+  "short": "Ståhle (1980)"
+ },
+ {
   "key": "NGYFPB4J",
   "creators": [
    "Ståhle"
@@ -988,6 +1311,28 @@
   "text": "Ståhle, Carl Ivar. 1988. Studier över Östgötalagen: efter författarens efterlämnade manuskript. Edited by Gösta Holm. Samlingar utgivna av Svenska Fornskrift-Sällskapet 77.",
   "zotero": "https://www.zotero.org/groups/nordiclaw/items/NGYFPB4J",
   "short": "Holm (1988)"
+ },
+ {
+  "key": "BKT8DNQG",
+  "creators": [
+   "Thorsen"
+  ],
+  "year": "1852",
+  "html": "Thorsen, P. G., ed. 1852. <i>Valdemars sællandske Lov og Absalons sællandske Kirkelov</i>. Nordiske Oldskrifter, XIII. København.",
+  "text": "Thorsen, P. G., ed. 1852. Valdemars sællandske Lov og Absalons sællandske Kirkelov. Nordiske Oldskrifter, XIII. København.",
+  "zotero": "https://www.zotero.org/groups/nordiclaw/items/BKT8DNQG",
+  "short": "Thorsen (1852)"
+ },
+ {
+  "key": "H9C7GT9X",
+  "creators": [
+   "Thorsen"
+  ],
+  "year": "1853",
+  "html": "Thorsen, P. G., ed. 1853. <i>Skånske Lov og Eskils skånske Kirkelov, tilligemed Andreæ Sunonis lex Scaniæ prouincialis, Skånske Arvebog og det tilbageværende af Knud de 6.s og Valdemar den 2.s Lovgivning vedkommende Skånske Lov</i>. Nordiske Oldskrifter, XVIII. København.",
+  "text": "Thorsen, P. G., ed. 1853. Skånske Lov og Eskils skånske Kirkelov, tilligemed Andreæ Sunonis lex Scaniæ prouincialis, Skånske Arvebog og det tilbageværende af Knud de 6.s og Valdemar den 2.s Lovgivning vedkommende Skånske Lov. Nordiske Oldskrifter, XVIII. København.",
+  "zotero": "https://www.zotero.org/groups/nordiclaw/items/H9C7GT9X",
+  "short": "Thorsen (1853)"
  },
  {
   "key": "MKYHG8HT",
@@ -1045,6 +1390,17 @@
   "short": "Wessén (1971)"
  },
  {
+  "key": "CQAXFANQ",
+  "creators": [
+   "Westergård-Nielsen"
+  ],
+  "year": "1971",
+  "html": "Westergård-Nielsen, Christian. 1971. <i>Skálholtsbók Eldri Jónsbók Etc. AM 351 Fol</i>. Early Icelandic Manuscripts in Facsimile 9. Rosenkilde and Bagger.",
+  "text": "Westergård-Nielsen, Christian. 1971. Skálholtsbók Eldri Jónsbók Etc. AM 351 Fol. Early Icelandic Manuscripts in Facsimile 9. Rosenkilde and Bagger.",
+  "zotero": "https://www.zotero.org/groups/nordiclaw/items/CQAXFANQ",
+  "short": "Westergård-Nielsen (1971)"
+ },
+ {
   "key": "KTSFH23I",
   "creators": [
    "Wiklund"
@@ -1100,6 +1456,17 @@
   "short": "Wiktorsson (2004)"
  },
  {
+  "key": "92IJNB72",
+  "creators": [
+   "Winroth"
+  ],
+  "year": "2018",
+  "html": "Winroth, Anders. 2018. “The Canon Law of Emergency Baptism and of Marriage in Medieval Iceland and Europe.” <i>Gripla</i> 29: 203–29.",
+  "text": "Winroth, Anders. 2018. “The Canon Law of Emergency Baptism and of Marriage in Medieval Iceland and Europe.” Gripla 29: 203–29.",
+  "zotero": "https://www.zotero.org/groups/nordiclaw/items/92IJNB72",
+  "short": "Winroth (2018)"
+ },
+ {
   "key": "DFNJPEPG",
   "creators": [
    "Wollin"
@@ -1131,6 +1498,28 @@
   "text": "Åström, Patrik. 2013. Vattenmärken i svenska medeltida laghandskrifter och Uppsala universitetsbiblioteks medeltida pappersbrev = Wasserzeichen in schwedischen mittelalterlichen Rechtshandschriften und der mittelalterlichen Papierbriefsammlung der Universitätsbibliothek zu Uppsala. Samlingar utgivna av Svenska Fornskrift-Sällskapet 99. Uppsala.",
   "zotero": "https://www.zotero.org/groups/nordiclaw/items/DNEG3SKW",
   "short": "Åström (2013)"
+ },
+ {
+  "key": "CZAM9GVZ",
+  "creators": [
+   "Þorkelsson"
+  ],
+  "year": "1893",
+  "html": "Þorkelsson, Jón, ed. 1893. <i>Diplomatarium Islandicum: Íslenzkt fornbréfasafn</i>. Vol. 2. Hið íslenzka bókmentafélag.",
+  "text": "Þorkelsson, Jón, ed. 1893. Diplomatarium Islandicum: Íslenzkt fornbréfasafn. Vol. 2. Hið íslenzka bókmentafélag.",
+  "zotero": "https://www.zotero.org/groups/nordiclaw/items/CZAM9GVZ",
+  "short": "Jón Þorkelsson (1893)"
+ },
+ {
+  "key": "DTH3ZD9W",
+  "creators": [
+   "Þorkelsson"
+  ],
+  "year": "1899-1902",
+  "html": "Þorkelsson, Jón, ed. 1899. <i>Diplomatarium Islandicum: Íslenzkt fornbréfasafn</i>. Vol. 5. Hið íslenzka bókmentafélag.",
+  "text": "Þorkelsson, Jón, ed. 1899. Diplomatarium Islandicum: Íslenzkt fornbréfasafn. Vol. 5. Hið íslenzka bókmentafélag.",
+  "zotero": "https://www.zotero.org/groups/nordiclaw/items/DTH3ZD9W",
+  "short": "Jón Þorkelsson (1899-1902)"
  },
  {
   "key": "T5EVCWJY",
