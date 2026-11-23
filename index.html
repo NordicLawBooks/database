@@ -43,13 +43,15 @@
     .bib-entry { padding: 0.4rem 0.5rem 0.4rem 1.5rem; text-indent: -1em; border-radius: 4px; }
     .bib-entry .bib-links { text-indent: 0; margin-top: 0.15rem; }
     .bib-entry.bib-highlight { background: var(--bs-warning-bg-subtle); }
-    /* --sticky-h (toolbar + result-count row) is measured by js/render/sticky.js; the
-       results fill the window below it, so the page can scroll far enough to stick. */
-    :root { --sticky-h: 101px; }
+    /* --results-top (where the results start) is measured by js/render/sticky.js. On wide
+       screens the results fill the rest of the window, so the page itself doesn't scroll and
+       the results box has the only vertical scrollbar (it keeps the header row and frozen
+       columns in view). Below 768px the heights are dropped and the page scrolls instead. */
+    :root { --results-top: 300px; --results-h: max(16rem, calc(100vh - var(--results-top) - 16px)); }
     #controls { position: sticky; top: 0; z-index: 1000; background: #fff; padding-bottom: 8px; }
     @media (max-width: 767.98px) { #controls { position: static; } }
     #layout { display: flex; align-items: flex-start; }
-    #facet-sidebar { flex: 0 0 340px; max-height: calc(100vh - var(--sticky-h) - 16px); overflow-y: auto; }
+    #facet-sidebar { flex: 0 0 340px; max-height: var(--results-h); overflow-y: auto; }
     #facet-resizer {
       flex: 0 0 8px; align-self: stretch; margin: 0 4px; cursor: ew-resize; border-radius: 4px;
       background: linear-gradient(to right, transparent 3px, #ced4da 3px, #ced4da 5px, transparent 5px);
@@ -59,7 +61,14 @@
     body.facets-hidden #facet-sidebar, body.facets-hidden #facet-resizer { display: none; }
     .range-label { font-size: 0.75rem; text-transform: uppercase; }
     #results { flex: 1 1 auto; min-width: 0; }
-    .table-responsive { max-height: calc(100vh - var(--sticky-h) - 16px); overflow: auto; }
+    .table-responsive { max-height: var(--results-h); overflow: auto; }
+    @media (max-width: 767.98px) { #facet-sidebar, .table-responsive { max-height: none; } }
+    /* Banner + intro fold away while the results are scrolled down (js/render/sticky.js,
+       wide screens only); the 0fr/1fr grid row animates the height without measuring it. */
+    #page-header { display: grid; grid-template-rows: 1fr; transition: grid-template-rows 0.35s ease, opacity 0.35s ease; }
+    #page-header > .page-header-inner { min-height: 0; overflow: hidden; }
+    body.header-collapsed #page-header { grid-template-rows: 0fr; opacity: 0; }
+    @media (prefers-reduced-motion: reduce) { #page-header { transition: none; } }
     .facet-count { font-size: 0.85em; }
     .facet-zero { opacity: 0.45; }
     .accordion-button { padding: 0.5rem 0.75rem; }
@@ -133,7 +142,7 @@
     .cd-count, .cd-folio { font-size: 12px; fill: var(--cd-text); }
     /* Image viewer pane (js/render/iiif-pane.js): a third column, beside the results. */
     #viewer-pane {
-      flex: 0 0 40vw; height: calc(100vh - var(--sticky-h) - 16px);
+      flex: 0 0 40vw; height: var(--results-h);
       display: flex; flex-direction: column; overflow: hidden;
     }
     .viewer-pane-head { display: flex; align-items: center; gap: 0.5rem; padding: 2px 8px; border-bottom: 1px solid #dee2e6; }
@@ -158,6 +167,8 @@
   </style>
 </head>
 <body>
+  <!-- Banner and intro: collapse while the results are scrolled down (js/render/sticky.js) -->
+  <div id="page-header"><div class="page-header-inner">
   <header id="site-banner">
     <h1 class="h3"><a href="./" title="Go to the start page">NordicLaw Database</a></h1>
     <a id="repo-link" href="https://github.com/NordicLawBooks/database" target="_blank" rel="noopener" title="Source code on GitHub" aria-label="Source code on GitHub">
@@ -174,6 +185,7 @@
       <p>Main Editor: <strong>Stefan Drechsler</strong> (University of Bergen; <a href="mailto:stefan.drechsler@uib.no">contact</a>). Editors: <strong>Tonje Waldersnes</strong> (NTNU Trondheim), <strong>Már Jónsson</strong> (University of Iceland), <strong>Anne Mette Hansen</strong> (University of Copenhagen), <strong>Seán Vrieland</strong> (University of Copenhagen), <strong>Anna Catharina Horn</strong> (University of Oslo).</p>
     </div>
   </section>
+  </div></div>
   <div id="status" class="text-secondary small mb-2"></div>
 
   <div id="controls" class="row g-2 align-items-center mb-2">

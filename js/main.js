@@ -28,7 +28,7 @@ import { bindIntro, syncIntro } from "./render/intro.js";
 import { bindAbbreviationsModal } from "./render/abbr-modal.js";
 import { bindBibliographyModal, openBibliography } from "./render/bib-modal.js";
 import { bindReadersGuideModal } from "./render/guide-modal.js";
-import { trackStickyHeight } from "./render/sticky.js";
+import { trackResultsTop, collapseHeaderOnScroll } from "./render/sticky.js";
 import { buildColumnsMenu, syncColumnsMenu, bindColumnsMenu, visibleColumns } from "./render/columns.js";
 import { bindControls, renderControls } from "./render/controls.js";
 import { bindDownloadMenu } from "./render/download-menu.js";
@@ -64,7 +64,8 @@ async function main() {
   bindBibliographyModal(document.getElementById("bibModal"));
   bindReadersGuideModal(document.getElementById("guideModal"), document.getElementById("abbrModal"));
   loadBibliography().then(setBibliography);
-  trackStickyHeight(document.getElementById("controls"), document.getElementById("layout"));
+  trackResultsTop(document.getElementById("layout"));
+  collapseHeaderOnScroll(document.getElementById("results"), document.getElementById("page-header"));
 
   if (refs.status) refs.status.textContent = "Loading data…";
   let model;
