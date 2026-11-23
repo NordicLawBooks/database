@@ -1007,7 +1007,7 @@
       "maxColIndex": 26,
       "minCol": "Form of Initials",
       "maxCol": "Form of Initials",
-      "value": "Lombard-styled large (4 lines); medium (3 lines) and small (2 lines) initials. At times; extentions of these are found in the lower margin."
+      "value": "Lombard-styled large (4 lines); medium (3 lines) and small (2 lines) initials. At times; extensions of these are found in the lower margin."
     },
     {
       "minRow": 41,
@@ -4382,7 +4382,7 @@
       "maxColIndex": 22,
       "minCol": "Scribe",
       "maxCol": "Scribe",
-      "value": "Further scribes"
+      "value": "A further scribes"
     },
     {
       "minRow": 149,
@@ -7289,7 +7289,7 @@
       "maxColIndex": 26,
       "minCol": "Form of Initials",
       "maxCol": "Form of Initials",
-      "value": "Ornamented large (6 lines); miedum (3 lines) and small initials (1 line). Small initials are painted as Lombard letters."
+      "value": "Ornamented large (6 lines); medium (3 lines) and small initials (1 line). Small initials are painted as Lombard letters."
     },
     {
       "minRow": 232,
@@ -9841,6 +9841,15 @@
     {
       "minRow": 301,
       "maxRow": 305,
+      "minColIndex": 14,
+      "maxColIndex": 14,
+      "minCol": "Production Unit",
+      "maxCol": "Production Unit",
+      "value": "I"
+    },
+    {
+      "minRow": 301,
+      "maxRow": 305,
       "minColIndex": 15,
       "maxColIndex": 15,
       "minCol": "Pricking",
@@ -9900,15 +9909,6 @@
       "minCol": "Rubric",
       "maxCol": "Rubric",
       "value": ""
-    },
-    {
-      "minRow": 301,
-      "maxRow": 305,
-      "minColIndex": 22,
-      "maxColIndex": 22,
-      "minCol": "Scribe",
-      "maxCol": "Scribe",
-      "value": "Hand a"
     },
     {
       "minRow": 301,
@@ -10012,10 +10012,10 @@
     {
       "minRow": 303,
       "maxRow": 305,
-      "minColIndex": 14,
-      "maxColIndex": 14,
-      "minCol": "Production Unit",
-      "maxCol": "Production Unit",
+      "minColIndex": 22,
+      "maxColIndex": 22,
+      "minCol": "Scribe",
+      "maxCol": "Scribe",
       "value": "Hand a"
     },
     {
@@ -12734,7 +12734,7 @@
       "maxColIndex": 26,
       "minCol": "Form of Initials",
       "maxCol": "Form of Initials",
-      "value": "The manuscript was planned to feature various ornamented large initial (4 lines); but was only illumineted in two gatherings. It otherwise should have featured throughout ornamented small initials (2 lines)."
+      "value": "The manuscript was planned to feature various ornamented large initial (4 lines); but was only illuminated in two gatherings. It otherwise should have featured throughout ornamented small initials (2 lines)."
     },
     {
       "minRow": 348,
@@ -19218,12 +19218,12 @@
     },
     {
       "minRow": 515,
-      "maxRow": 523,
+      "maxRow": 516,
       "minColIndex": 22,
       "maxColIndex": 22,
       "minCol": "Scribe",
       "maxCol": "Scribe",
-      "value": "Skriven av en hand på ff. 1r–160v och ff. 166r–176v- med inskjutna ungefär samtidiga tillägg av hand 2 på ff. 161r–162r; och hand 3 på ff.162v–165v; Birger Magnusson (Säby 1513) f. 160v"
+      "value": "Hand a"
     },
     {
       "minRow": 515,
@@ -19316,6 +19316,24 @@
       "value": ""
     },
     {
+      "minRow": 519,
+      "maxRow": 521,
+      "minColIndex": 22,
+      "maxColIndex": 22,
+      "minCol": "Scribe",
+      "maxCol": "Scribe",
+      "value": "Hand d"
+    },
+    {
+      "minRow": 522,
+      "maxRow": 523,
+      "minColIndex": 22,
+      "maxColIndex": 22,
+      "minCol": "Scribe",
+      "maxCol": "Scribe",
+      "value": "Hand a"
+    },
+    {
       "minRow": 524,
       "maxRow": 534,
       "minColIndex": 0,
@@ -19371,12 +19389,12 @@
     },
     {
       "minRow": 524,
-      "maxRow": 534,
+      "maxRow": 528,
       "minColIndex": 6,
       "maxColIndex": 6,
       "minCol": "Dating",
       "maxCol": "Dating",
-      "value": ""
+      "value": "1446"
     },
     {
       "minRow": 524,
@@ -19416,12 +19434,12 @@
     },
     {
       "minRow": 524,
-      "maxRow": 534,
+      "maxRow": 528,
       "minColIndex": 14,
       "maxColIndex": 14,
       "minCol": "Production Unit",
       "maxCol": "Production Unit",
-      "value": ""
+      "value": "I"
     },
     {
       "minRow": 524,
@@ -19439,7 +19457,7 @@
       "maxColIndex": 16,
       "minCol": "Material",
       "maxCol": "Material",
-      "value": ""
+      "value": "Parchment & Paper"
     },
     {
       "minRow": 524,
@@ -19488,12 +19506,12 @@
     },
     {
       "minRow": 524,
-      "maxRow": 534,
+      "maxRow": 528,
       "minColIndex": 22,
       "maxColIndex": 22,
       "minCol": "Scribe",
       "maxCol": "Scribe",
-      "value": "Enhet 1 (ff. 1r–131r) skriven av hand 1 med tillägg av hand 2 KOLLAS; enhet 2 (ff. 134r–164v; daterad ca 1540-1560) av hand 3 med tillägg av hand 4 på ff. 165v–166r; f. 167r ; hand 5 ff. 170v–171r"
+      "value": "Scribe a (ff. 1r–131r; with additions by Hand b)"
     },
     {
       "minRow": 524,
@@ -19588,11 +19606,38 @@
     {
       "minRow": 529,
       "maxRow": 534,
+      "minColIndex": 6,
+      "maxColIndex": 6,
+      "minCol": "Dating",
+      "maxCol": "Dating",
+      "value": "1540-1560"
+    },
+    {
+      "minRow": 529,
+      "maxRow": 534,
       "minColIndex": 10,
       "maxColIndex": 10,
       "minCol": "Gatherings",
       "maxCol": "Gatherings",
       "value": "X:16 (8b; ff. 134-149); XI:16 (8b; ff. 150-165); XII:6 (3b; ff. 166-171)"
+    },
+    {
+      "minRow": 529,
+      "maxRow": 534,
+      "minColIndex": 14,
+      "maxColIndex": 14,
+      "minCol": "Production Unit",
+      "maxCol": "Production Unit",
+      "value": "II"
+    },
+    {
+      "minRow": 529,
+      "maxRow": 531,
+      "minColIndex": 22,
+      "maxColIndex": 22,
+      "minCol": "Scribe",
+      "maxCol": "Scribe",
+      "value": "Hand c"
     },
     {
       "minRow": 532,
@@ -19602,6 +19647,15 @@
       "minCol": "Main text",
       "maxCol": "Main text",
       "value": ""
+    },
+    {
+      "minRow": 532,
+      "maxRow": 534,
+      "minColIndex": 22,
+      "maxColIndex": 22,
+      "minCol": "Scribe",
+      "maxCol": "Scribe",
+      "value": "Hand d ff. 165v–166r; f. 167r; Hand e ff. 170v–171r"
     },
     {
       "minRow": 535,
@@ -32246,7 +32300,7 @@
       "maxColIndex": 22,
       "minCol": "Scribe",
       "maxCol": "Scribe",
-      "value": "Hand a (Jacobus?)\nHand b (f. 41v rad 3 - f. 42r rad 25; f. 78r)\nHand c (f. 78v)\nHand d (bakpärmens insida)\nMarginal: Hand e (Olaus Petri) and hand f (Hogenskild Bielke)"
+      "value": "Hand a (Jacobus?), with additions by Hand b (ff. 41v3-42r25, f. 78r), Hand c (f. 78v), and Hand d (inside of the backcover), as well as marginalia written by Hand e (Olaus Petri and Hand f (Hogenskild Bielke)"
     },
     {
       "minRow": 871,

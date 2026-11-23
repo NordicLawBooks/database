@@ -887,6 +887,10 @@
   "manifest": "https://www.manuscripta.se/iiif/100981/manifest.json",
   "canvases": 48
  },
+ "ms:101005": {
+  "manifest": "https://www.manuscripta.se/iiif/101005/manifest.json",
+  "canvases": 198
+ },
  "ms:101020": {
   "manifest": "https://www.manuscripta.se/iiif/101020/manifest.json",
   "canvases": 312

@@ -3481,7 +3481,7 @@
           },
           {
             "column": "Minor text",
-            "label": "RBKK 1537",
+            "label": "RBCH 1537",
             "startRow": 6,
             "endRow": 6,
             "startRowAbs": 23,
@@ -3502,7 +3502,7 @@
           },
           {
             "column": "Minor text",
-            "label": "RBKK 1539",
+            "label": "RBCH 1539",
             "startRow": 7,
             "endRow": 7,
             "startRowAbs": 24,
@@ -3523,7 +3523,7 @@
           },
           {
             "column": "Minor text",
-            "label": "RBKK 1540",
+            "label": "RBCH 1540",
             "startRow": 8,
             "endRow": 8,
             "startRowAbs": 25,
@@ -3544,7 +3544,7 @@
           },
           {
             "column": "Minor text",
-            "label": "RBKK 1547",
+            "label": "RBCH 1547",
             "startRow": 9,
             "endRow": 9,
             "startRowAbs": 26,
@@ -4783,7 +4783,7 @@
           },
           {
             "column": "Minor text",
-            "label": "RBKK 1548",
+            "label": "RBCH 1548",
             "startRow": 11,
             "endRow": 11,
             "startRowAbs": 38,
@@ -4804,7 +4804,7 @@
           },
           {
             "column": "Minor text",
-            "label": "RBKK 1551",
+            "label": "RBCH 1551",
             "startRow": 12,
             "endRow": 12,
             "startRowAbs": 39,
@@ -6000,7 +6000,7 @@
           },
           {
             "column": "Minor text",
-            "label": "RBKK 1466",
+            "label": "RBCH 1466",
             "startRow": 4,
             "endRow": 4,
             "startRowAbs": 44,
@@ -6126,7 +6126,7 @@
           },
           {
             "column": "Minor text",
-            "label": "RBKK 1551 & RBKK 1547 combined",
+            "label": "RBCH 1551 & RBCH 1547 combined",
             "startRow": 12,
             "endRow": 12,
             "startRowAbs": 52,
@@ -16900,7 +16900,7 @@
         "Form of Initials": [
           {
             "column": "Form of Initials",
-            "label": "Onrnamented large and (6-7 lines), and Lombard-styled medium (3 lines) and small initials (2 lines).",
+            "label": "Ornamented large and (6-7 lines), and Lombard-styled medium (3 lines) and small initials (2 lines).",
             "startRow": 0,
             "endRow": 3,
             "startRowAbs": 134,
@@ -17862,7 +17862,7 @@
           },
           {
             "column": "Minor text",
-            "label": "RBKK 1443",
+            "label": "RBCH 1443",
             "startRow": 12,
             "endRow": 12,
             "startRowAbs": 146,
@@ -23417,7 +23417,7 @@
           },
           {
             "column": "Minor text",
-            "label": "RBKK 1466 (Nørrejylland)",
+            "label": "RBCH 1466 (Nørrejylland)",
             "startRow": 16,
             "endRow": 16,
             "startRowAbs": 202,
@@ -23585,7 +23585,7 @@
           },
           {
             "column": "Minor text",
-            "label": "RBKK 1440",
+            "label": "RBCH 1440",
             "startRow": 25,
             "endRow": 25,
             "startRowAbs": 211,
@@ -23606,7 +23606,7 @@
           },
           {
             "column": "Minor text",
-            "label": "RBKK 1448",
+            "label": "RBCH 1448",
             "startRow": 26,
             "endRow": 26,
             "startRowAbs": 212,
@@ -28165,7 +28165,7 @@
           },
           {
             "column": "Minor text",
-            "label": "RBKK 1449",
+            "label": "RBCH 1449",
             "startRow": 10,
             "endRow": 10,
             "startRowAbs": 249,
@@ -32118,7 +32118,7 @@
         "Leaf size": [
           {
             "column": "Leaf size",
-            "label": "213 x 154",
+            "label": "213x154",
             "startRow": 0,
             "endRow": 2,
             "startRowAbs": 287,
@@ -34181,7 +34181,7 @@
         "Form of Initials": [
           {
             "column": "Form of Initials",
-            "label": "Ornamented large (3) and Lombard-styled small initials (2 lines). Three of the large iniitials are painted on a framed, blue background.",
+            "label": "Ornamented large (3) and Lombard-styled small initials (2 lines). Three of the large initials are painted on a framed, blue background.",
             "startRow": 0,
             "endRow": 2,
             "startRowAbs": 301,
@@ -52175,7 +52175,7 @@
         "Minor text": [
           {
             "column": "Minor text",
-            "label": "RBKK 1466 (Nørrejylland)",
+            "label": "RBCH 1466 (Nørrejylland)",
             "startRow": 1,
             "endRow": 1,
             "startRowAbs": 383,
@@ -54166,7 +54166,7 @@
         "Form of Initials": [
           {
             "column": "Form of Initials",
-            "label": "One ornamented middle initial (3 lines) in addition to numerous ornamented small initials (2 lines).",
+            "label": "One ornamented middle (3 lines) and numerous ornamented small initials (2 lines).",
             "startRow": 0,
             "endRow": 1,
             "startRowAbs": 388,
@@ -56058,7 +56058,7 @@
         "Scribe": [
           {
             "column": "Scribe",
-            "label": "Hand a (who also added a Latrin prayer to f. 71r)",
+            "label": "Hand a (who also added a Latin prayer to f. 71r)",
             "startRow": 0,
             "endRow": 0,
             "startRowAbs": 394,
@@ -62298,7 +62298,7 @@
           },
           {
             "column": "Minor text",
-            "label": "RBKK 1454",
+            "label": "RBCH 1454",
             "startRow": 5,
             "endRow": 5,
             "startRowAbs": 433,
@@ -75870,7 +75870,7 @@
           },
           {
             "column": "Minor text",
-            "label": "RBKK 1466",
+            "label": "RBCH 1466",
             "startRow": 3,
             "endRow": 3,
             "startRowAbs": 560,
@@ -81382,7 +81382,7 @@
           },
           {
             "column": "Minor text",
-            "label": "RBKK 1466",
+            "label": "RBCH 1466",
             "startRow": 3,
             "endRow": 3,
             "startRowAbs": 597,
@@ -83118,7 +83118,7 @@
           },
           {
             "column": "Minor text",
-            "label": "RBKK (on foreign merchants in Skagen should participate in taxes and burdens)",
+            "label": "RBCH (on foreign merchants in Skagen should participate in taxes and burdens)",
             "startRow": 4,
             "endRow": 4,
             "startRowAbs": 607,
@@ -84589,7 +84589,7 @@
           },
           {
             "column": "Minor text",
-            "label": "RBKK 1466 (Nørrejylland)",
+            "label": "RBCH 1466 (Nørrejylland)",
             "startRow": 14,
             "endRow": 14,
             "startRowAbs": 622,
@@ -85973,7 +85973,7 @@
           },
           {
             "column": "Minor text",
-            "label": "RBKK 1466 (Nørrejylland)",
+            "label": "RBCH 1466 (Nørrejylland)",
             "startRow": 4,
             "endRow": 4,
             "startRowAbs": 627,
@@ -106222,7 +106222,7 @@
         "Form of Initials": [
           {
             "column": "Form of Initials",
-            "label": "Large (5-10 lines) and medium initials (3-4 lines) embellished with Gotic floral ornamentation, as well as Lombard small initials (2 lines). Both large and medium initials are largely extended into the margins with floral ornamentation.",
+            "label": "Large (5-10 lines) and medium initials (3-4 lines) embellished with Gothic floral ornamentation, as well as Lombard small initials (2 lines). Both large and medium initials are largely extended into the margins with floral ornamentation.",
             "startRow": 0,
             "endRow": 4,
             "startRowAbs": 707,
@@ -106752,7 +106752,7 @@
           },
           {
             "column": "Minor text",
-            "label": "RBKK 1468",
+            "label": "RBCH 1468",
             "startRow": 2,
             "endRow": 2,
             "startRowAbs": 709,
@@ -108201,7 +108201,7 @@
           },
           {
             "column": "Minor text",
-            "label": "Tord Degns recess (1360)",
+            "label": "ToR 1360",
             "startRow": 2,
             "endRow": 2,
             "startRowAbs": 720,
@@ -108285,7 +108285,7 @@
           },
           {
             "column": "Minor text",
-            "label": "RBKK 1454",
+            "label": "RBCH 1454",
             "startRow": 6,
             "endRow": 6,
             "startRowAbs": 724,
@@ -109928,7 +109928,7 @@
           },
           {
             "column": "Minor text",
-            "label": "RBKK 1466",
+            "label": "RBCH 1466",
             "startRow": 4,
             "endRow": 4,
             "startRowAbs": 731,
@@ -110799,7 +110799,7 @@
           },
           {
             "column": "Minor text",
-            "label": "RBKK 1466",
+            "label": "RBCH 1466",
             "startRow": 2,
             "endRow": 2,
             "startRowAbs": 734,
@@ -110820,7 +110820,7 @@
           },
           {
             "column": "Minor text",
-            "label": "Tord Degns recess (1360) (in Latin)",
+            "label": "ToR 1360 (in Latin)",
             "startRow": 3,
             "endRow": 3,
             "startRowAbs": 735,
@@ -111809,7 +111809,7 @@
           },
           {
             "column": "Minor text",
-            "label": "RBKK 1466",
+            "label": "RBCH 1466",
             "startRow": 4,
             "endRow": 4,
             "startRowAbs": 741,
@@ -115879,6 +115879,27 @@
         "Minor text": [
           {
             "column": "Minor text",
+            "label": "þ",
+            "startRow": 0,
+            "endRow": 0,
+            "startRowAbs": 760,
+            "endRowAbs": 760,
+            "source": "cell",
+            "locus": {
+              "kind": "f",
+              "from": "2r",
+              "to": "107r",
+              "prefix": "ff.",
+              "rendered": "ff. 2r-107r",
+              "evidence": {
+                "leavesPages": [
+                  "ff.2r-107r"
+                ]
+              }
+            }
+          },
+          {
+            "column": "Minor text",
             "label": "RBEK 1284",
             "startRow": 1,
             "endRow": 1,
@@ -115900,7 +115921,7 @@
           },
           {
             "column": "Minor text",
-            "label": "ToR",
+            "label": "ToR 1360",
             "startRow": 2,
             "endRow": 2,
             "startRowAbs": 762,
@@ -115921,7 +115942,7 @@
           },
           {
             "column": "Minor text",
-            "label": "RBKK 1466",
+            "label": "RBCH 1466",
             "startRow": 3,
             "endRow": 3,
             "startRowAbs": 763,
@@ -125354,7 +125375,7 @@
         "Scribe": [
           {
             "column": "Scribe",
-            "label": "Hamd a (apart from f. 1 and at the end of the MS, which are younger additions)",
+            "label": "Hand a (apart from f. 1 and at the end of the MS, which are younger additions)",
             "startRow": 0,
             "endRow": 0,
             "startRowAbs": 802,
@@ -136717,7 +136738,7 @@
         "Form of Initials": [
           {
             "column": "Form of Initials",
-            "label": "Small (2 lines) Lombard initials throught (as far as is known)",
+            "label": "Small (2 lines) Lombard initials throughout (as far as is known)",
             "startRow": 0,
             "endRow": 0,
             "startRowAbs": 846,
@@ -137864,7 +137885,7 @@
         "Form of Initials": [
           {
             "column": "Form of Initials",
-            "label": "Small (2 lines) Lombard initials throught (as far as is known)",
+            "label": "Small (2 lines) Lombard initials throughout (as far as is known)",
             "startRow": 0,
             "endRow": 0,
             "startRowAbs": 850,
@@ -138806,7 +138827,7 @@
         "Form of Initials": [
           {
             "column": "Form of Initials",
-            "label": "Small (2 lines) Lombard initials throught",
+            "label": "Small (2 lines) Lombard initials throughout",
             "startRow": 0,
             "endRow": 0,
             "startRowAbs": 855,

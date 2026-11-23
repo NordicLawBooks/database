@@ -4045,7 +4045,7 @@
         "Form of Initials": [
           {
             "column": "Form of Initials",
-            "label": "Lombard-styled large (4 lines); medium (3 lines) and small (2 lines) initials. At times; extentions of these are found in the lower margin.",
+            "label": "Lombard-styled large (4 lines); medium (3 lines) and small (2 lines) initials. At times; extensions of these are found in the lower margin.",
             "startRow": 0,
             "endRow": 2,
             "startRowAbs": 41,
@@ -17708,7 +17708,7 @@
           },
           {
             "column": "Minor text",
-            "label": "RBKK 1458",
+            "label": "RBCH 1458",
             "startRow": 4,
             "endRow": 4,
             "startRowAbs": 137,
@@ -18405,7 +18405,7 @@
           },
           {
             "column": "Scribe",
-            "label": "Futher scribe",
+            "label": "A further scribe",
             "startRow": 1,
             "endRow": 1,
             "startRowAbs": 134,
@@ -18447,7 +18447,7 @@
           },
           {
             "column": "Scribe",
-            "label": "Further scribes",
+            "label": "A further scribes",
             "startRow": 3,
             "endRow": 3,
             "startRowAbs": 136,
@@ -18496,7 +18496,7 @@
           },
           {
             "column": "Scribe",
-            "label": "Further scribes",
+            "label": "A further scribes",
             "startRow": 12,
             "endRow": 15,
             "startRowAbs": 145,
@@ -24992,7 +24992,7 @@
           },
           {
             "column": "Minor text",
-            "label": "RBKK 1448",
+            "label": "RBCH 1448",
             "startRow": 28,
             "endRow": 28,
             "startRowAbs": 198,
@@ -29328,7 +29328,7 @@
         "Form of Initials": [
           {
             "column": "Form of Initials",
-            "label": "Ornamented large (6 lines); miedum (3 lines) and small initials (1 line). Small initials are painted as Lombard letters.",
+            "label": "Ornamented large (6 lines); medium (3 lines) and small initials (1 line). Small initials are painted as Lombard letters.",
             "startRow": 0,
             "endRow": 1,
             "startRowAbs": 232,
@@ -40470,62 +40470,22 @@
         "Production Unit": [
           {
             "column": "Production Unit",
-            "label": "Hand a",
+            "label": "I",
             "startRow": 0,
-            "endRow": 0,
-            "startRowAbs": 301,
-            "endRowAbs": 301,
-            "source": "cell",
-            "locus": {
-              "kind": "f",
-              "from": "1r",
-              "to": "12v",
-              "prefix": "ff.",
-              "rendered": "ff. 1r-12v",
-              "evidence": {
-                "leavesPages": [
-                  "ff. 1r-12v"
-                ]
-              }
-            }
-          },
-          {
-            "column": "Production Unit",
-            "label": "Hand b (f. 13)",
-            "startRow": 1,
-            "endRow": 1,
-            "startRowAbs": 302,
-            "endRowAbs": 302,
-            "source": "cell",
-            "locus": {
-              "kind": "f",
-              "from": "13",
-              "to": "13",
-              "prefix": "f.",
-              "rendered": "f. 13-13",
-              "evidence": {
-                "leavesPages": [
-                  "f. 13"
-                ]
-              }
-            }
-          },
-          {
-            "column": "Production Unit",
-            "label": "Hand a",
-            "startRow": 2,
             "endRow": 4,
-            "startRowAbs": 303,
+            "startRowAbs": 301,
             "endRowAbs": 305,
             "source": "merge",
             "locus": {
               "kind": "f",
-              "from": "14r",
+              "from": "1r",
               "to": "72r",
               "prefix": "ff.",
-              "rendered": "ff. 14r-72r",
+              "rendered": "ff. 1r-72r",
               "evidence": {
                 "leavesPages": [
+                  "ff. 1r-12v",
+                  "f. 13",
                   "ff.14r-63r",
                   "ff.49v-50r",
                   "ff.63v-72r"
@@ -40620,20 +40580,60 @@
             "column": "Scribe",
             "label": "Hand a",
             "startRow": 0,
-            "endRow": 4,
+            "endRow": 0,
             "startRowAbs": 301,
+            "endRowAbs": 301,
+            "source": "cell",
+            "locus": {
+              "kind": "f",
+              "from": "1r",
+              "to": "12v",
+              "prefix": "ff.",
+              "rendered": "ff. 1r-12v",
+              "evidence": {
+                "leavesPages": [
+                  "ff. 1r-12v"
+                ]
+              }
+            }
+          },
+          {
+            "column": "Scribe",
+            "label": "Hand b (f. 13)",
+            "startRow": 1,
+            "endRow": 1,
+            "startRowAbs": 302,
+            "endRowAbs": 302,
+            "source": "cell",
+            "locus": {
+              "kind": "f",
+              "from": "13",
+              "to": "13",
+              "prefix": "f.",
+              "rendered": "f. 13-13",
+              "evidence": {
+                "leavesPages": [
+                  "f. 13"
+                ]
+              }
+            }
+          },
+          {
+            "column": "Scribe",
+            "label": "Hand a",
+            "startRow": 2,
+            "endRow": 4,
+            "startRowAbs": 303,
             "endRowAbs": 305,
             "source": "merge",
             "locus": {
               "kind": "f",
-              "from": "1r",
+              "from": "14r",
               "to": "72r",
               "prefix": "ff.",
-              "rendered": "ff. 1r-72r",
+              "rendered": "ff. 14r-72r",
               "evidence": {
                 "leavesPages": [
-                  "ff. 1r-12v",
-                  "f. 13",
                   "ff.14r-63r",
                   "ff.49v-50r",
                   "ff.63v-72r"
@@ -49321,7 +49321,7 @@
         "Form of Initials": [
           {
             "column": "Form of Initials",
-            "label": "The manuscript was planned to feature various ornamented large initial (4 lines); but was only illumineted in two gatherings. It otherwise should have featured throughout ornamented small initials (2 lines).",
+            "label": "The manuscript was planned to feature various ornamented large initial (4 lines); but was only illuminated in two gatherings. It otherwise should have featured throughout ornamented small initials (2 lines).",
             "startRow": 0,
             "endRow": 1,
             "startRowAbs": 348,
@@ -75906,27 +75906,107 @@
         "Scribe": [
           {
             "column": "Scribe",
-            "label": "Skriven av en hand på ff. 1r–160v och ff. 166r–176v- med inskjutna ungefär samtidiga tillägg av hand 2 på ff. 161r–162r; och hand 3 på ff.162v–165v; Birger Magnusson (Säby 1513) f. 160v",
+            "label": "Hand a",
             "startRow": 0,
-            "endRow": 8,
+            "endRow": 1,
             "startRowAbs": 515,
-            "endRowAbs": 523,
+            "endRowAbs": 516,
             "source": "merge",
             "locus": {
               "kind": "f",
               "from": "1r",
-              "to": "176v",
+              "to": "160v",
               "prefix": "ff.",
-              "rendered": "ff. 1r-176v",
+              "rendered": "ff. 1r-160v",
               "evidence": {
                 "leavesPages": [
                   "ff.1r–8v",
-                  "ff.9r–160v",
-                  "f.160v",
-                  "ff.161r–162r",
+                  "ff.9r–160v"
+                ]
+              }
+            }
+          },
+          {
+            "column": "Scribe",
+            "label": "Hand b (Birger Magnusson, Säby 1513)",
+            "startRow": 2,
+            "endRow": 2,
+            "startRowAbs": 517,
+            "endRowAbs": 517,
+            "source": "cell",
+            "locus": {
+              "kind": "f",
+              "from": "160v",
+              "to": "160v",
+              "prefix": "f.",
+              "rendered": "f. 160v-160v",
+              "evidence": {
+                "leavesPages": [
+                  "f.160v"
+                ]
+              }
+            }
+          },
+          {
+            "column": "Scribe",
+            "label": "Hand c",
+            "startRow": 3,
+            "endRow": 3,
+            "startRowAbs": 518,
+            "endRowAbs": 518,
+            "source": "cell",
+            "locus": {
+              "kind": "f",
+              "from": "161r",
+              "to": "162r",
+              "prefix": "ff.",
+              "rendered": "ff. 161r-162r",
+              "evidence": {
+                "leavesPages": [
+                  "ff.161r–162r"
+                ]
+              }
+            }
+          },
+          {
+            "column": "Scribe",
+            "label": "Hand d",
+            "startRow": 4,
+            "endRow": 6,
+            "startRowAbs": 519,
+            "endRowAbs": 521,
+            "source": "merge",
+            "locus": {
+              "kind": "f",
+              "from": "162v",
+              "to": "165v",
+              "prefix": "f.",
+              "rendered": "f. 162v-165v",
+              "evidence": {
+                "leavesPages": [
                   "f.162v",
                   "ff.163r–163v",
-                  "ff.163v–165v",
+                  "ff.163v–165v"
+                ]
+              }
+            }
+          },
+          {
+            "column": "Scribe",
+            "label": "Hand a",
+            "startRow": 7,
+            "endRow": 8,
+            "startRowAbs": 522,
+            "endRowAbs": 523,
+            "source": "merge",
+            "locus": {
+              "kind": "f",
+              "from": "166r",
+              "to": "176v",
+              "prefix": "ff.",
+              "rendered": "ff. 166r-176v",
+              "evidence": {
+                "leavesPages": [
                   "ff.166r–174r",
                   "ff.174v–176v"
                 ]
@@ -76171,25 +76251,45 @@
         "Dating": [
           {
             "column": "Dating",
-            "label": "",
+            "label": "1446",
             "startRow": 0,
-            "endRow": 10,
+            "endRow": 4,
             "startRowAbs": 524,
-            "endRowAbs": 534,
+            "endRowAbs": 528,
             "source": "merge",
             "locus": {
               "kind": "f",
               "from": "1r",
-              "to": "171r",
+              "to": "132v",
               "prefix": "ff.",
-              "rendered": "ff. 1r-171r",
+              "rendered": "ff. 1r-132v",
               "evidence": {
                 "leavesPages": [
                   "ff.1r–131r",
                   "f.131r",
                   "f.132r",
                   "f.132r",
-                  "f. 132v",
+                  "f. 132v"
+                ]
+              }
+            }
+          },
+          {
+            "column": "Dating",
+            "label": "1540-1560",
+            "startRow": 5,
+            "endRow": 10,
+            "startRowAbs": 529,
+            "endRowAbs": 534,
+            "source": "merge",
+            "locus": {
+              "kind": "f",
+              "from": "134r",
+              "to": "171r",
+              "prefix": "ff.",
+              "rendered": "ff. 134r-171r",
+              "evidence": {
+                "leavesPages": [
                   "ff.134r–157r",
                   "ff.157r–158r",
                   "ff.158v–164v",
@@ -76600,7 +76700,7 @@
         "Material": [
           {
             "column": "Material",
-            "label": "",
+            "label": "Parchment & Paper",
             "startRow": 0,
             "endRow": 10,
             "startRowAbs": 524,
@@ -76989,25 +77089,45 @@
         "Production Unit": [
           {
             "column": "Production Unit",
-            "label": "",
+            "label": "I",
             "startRow": 0,
-            "endRow": 10,
+            "endRow": 4,
             "startRowAbs": 524,
-            "endRowAbs": 534,
+            "endRowAbs": 528,
             "source": "merge",
             "locus": {
               "kind": "f",
               "from": "1r",
-              "to": "171r",
+              "to": "132v",
               "prefix": "ff.",
-              "rendered": "ff. 1r-171r",
+              "rendered": "ff. 1r-132v",
               "evidence": {
                 "leavesPages": [
                   "ff.1r–131r",
                   "f.131r",
                   "f.132r",
                   "f.132r",
-                  "f. 132v",
+                  "f. 132v"
+                ]
+              }
+            }
+          },
+          {
+            "column": "Production Unit",
+            "label": "II",
+            "startRow": 5,
+            "endRow": 10,
+            "startRowAbs": 529,
+            "endRowAbs": 534,
+            "source": "merge",
+            "locus": {
+              "kind": "f",
+              "from": "134r",
+              "to": "171r",
+              "prefix": "ff.",
+              "rendered": "ff. 134r-171r",
+              "evidence": {
+                "leavesPages": [
                   "ff.134r–157r",
                   "ff.157r–158r",
                   "ff.158v–164v",
@@ -77121,28 +77241,68 @@
         "Scribe": [
           {
             "column": "Scribe",
-            "label": "Enhet 1 (ff. 1r–131r) skriven av hand 1 med tillägg av hand 2 KOLLAS; enhet 2 (ff. 134r–164v; daterad ca 1540-1560) av hand 3 med tillägg av hand 4 på ff. 165v–166r; f. 167r ; hand 5 ff. 170v–171r",
+            "label": "Scribe a (ff. 1r–131r; with additions by Hand b)",
             "startRow": 0,
-            "endRow": 10,
+            "endRow": 4,
             "startRowAbs": 524,
-            "endRowAbs": 534,
+            "endRowAbs": 528,
             "source": "merge",
             "locus": {
               "kind": "f",
               "from": "1r",
-              "to": "171r",
+              "to": "132v",
               "prefix": "ff.",
-              "rendered": "ff. 1r-171r",
+              "rendered": "ff. 1r-132v",
               "evidence": {
                 "leavesPages": [
                   "ff.1r–131r",
                   "f.131r",
                   "f.132r",
                   "f.132r",
-                  "f. 132v",
+                  "f. 132v"
+                ]
+              }
+            }
+          },
+          {
+            "column": "Scribe",
+            "label": "Hand c",
+            "startRow": 5,
+            "endRow": 7,
+            "startRowAbs": 529,
+            "endRowAbs": 531,
+            "source": "merge",
+            "locus": {
+              "kind": "f",
+              "from": "134r",
+              "to": "164v",
+              "prefix": "ff.",
+              "rendered": "ff. 134r-164v",
+              "evidence": {
+                "leavesPages": [
                   "ff.134r–157r",
                   "ff.157r–158r",
-                  "ff.158v–164v",
+                  "ff.158v–164v"
+                ]
+              }
+            }
+          },
+          {
+            "column": "Scribe",
+            "label": "Hand d ff. 165v–166r; f. 167r; Hand e ff. 170v–171r",
+            "startRow": 8,
+            "endRow": 10,
+            "startRowAbs": 532,
+            "endRowAbs": 534,
+            "source": "merge",
+            "locus": {
+              "kind": "f",
+              "from": "165v",
+              "to": "171r",
+              "prefix": "ff.",
+              "rendered": "ff. 165v-171r",
+              "evidence": {
+                "leavesPages": [
                   "ff.165v-167r",
                   "f.170v",
                   "f.171r"
@@ -99753,7 +99913,7 @@
           },
           {
             "column": "Minor text",
-            "label": "RBKK 1448",
+            "label": "RBCH 1448",
             "startRow": 4,
             "endRow": 4,
             "startRowAbs": 657,
@@ -130672,7 +130832,7 @@
         "Scribe": [
           {
             "column": "Scribe",
-            "label": "Hand a (Jacobus?) Hand b (f. 41v rad 3 - f. 42r rad 25; f. 78r) Hand c (f. 78v) Hand d (bakpärmens insida) Marginal: Hand e (Olaus Petri) and hand f (Hogenskild Bielke)",
+            "label": "Hand a (Jacobus?), with additions by Hand b (ff. 41v3-42r25, f. 78r), Hand c (f. 78v), and Hand d (inside of the backcover), as well as marginalia written by Hand e (Olaus Petri and Hand f (Hogenskild Bielke)",
             "startRow": 0,
             "endRow": 5,
             "startRowAbs": 871,
@@ -136499,7 +136659,7 @@
           },
           {
             "column": "Minor text",
-            "label": "RBKK 1457",
+            "label": "RBCH 1457",
             "startRow": 7,
             "endRow": 7,
             "startRowAbs": 932,

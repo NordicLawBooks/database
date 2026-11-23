@@ -368,7 +368,10 @@
   "html": "Gödel, Vilhelm. 1897. <i>Katalog öfver Kongl. bibliotekets fornisländska och fornnorska handskrifter</i>. Stockholm.",
   "text": "Gödel, Vilhelm. 1897. Katalog öfver Kongl. bibliotekets fornisländska och fornnorska handskrifter. Stockholm.",
   "zotero": "https://www.zotero.org/groups/nordiclaw/items/82B5QNPE",
-  "short": "Gödel (1897-1900)"
+  "short": "Gödel (1897-1900)",
+  "iiif": [
+   "https://digitalt.kb.se/dark-26623457/manifest"
+  ]
  },
  {
   "key": "I3SMR8UM",
@@ -379,7 +382,10 @@
   "html": "Gödel, Vilhelm. 1916. <i>Sveriges medeltidslitteratur: Proveniens. Tiden före Antikvitetskollegiet</i>. Stockholm.",
   "text": "Gödel, Vilhelm. 1916. Sveriges medeltidslitteratur: Proveniens. Tiden före Antikvitetskollegiet. Stockholm.",
   "zotero": "https://www.zotero.org/groups/nordiclaw/items/I3SMR8UM",
-  "short": "Gödel (1916)"
+  "short": "Gödel (1916)",
+  "iiif": [
+   "https://digitalt.kb.se/dark-28392843/manifest"
+  ]
  },
  {
   "key": "A6LV4DBZ",
