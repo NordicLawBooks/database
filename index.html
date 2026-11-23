@@ -29,6 +29,16 @@
     #intro-body p { margin-bottom: 0.5rem; }
     .abbr-table th { width: 9em; white-space: nowrap; font-weight: 600; }
     .abbr-table tr.abbr-section th { padding-left: 1.5rem; font-weight: 400; }
+    /* Readers Guide modal (static content below; links wired in js/render/guide-modal.js) */
+    .guide-toc { columns: 2 12em; padding-left: 1.2rem; }
+    #guideModal h3 { margin-top: 1.5rem; padding-bottom: 0.25rem; border-bottom: 1px solid var(--bs-border-color); scroll-margin-top: 0.5rem; }
+    #guideModal h4 { margin-top: 1rem; scroll-margin-top: 0.5rem; }
+    .guide-fields dt { font-weight: 600; }
+    .guide-fields dd { margin-bottom: 0.6rem; }
+    .guide-scripts { display: grid; grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr)); gap: 1rem; }
+    .guide-scripts figure { margin: 0; padding: 0.6rem; border: 1px solid var(--bs-border-color); border-radius: var(--bs-border-radius); }
+    .guide-scripts img { display: block; max-width: 100%; height: auto; max-height: 9rem; margin: 0.5rem 0; }
+    .guide-scripts figcaption { font-size: 0.8rem; color: var(--bs-secondary-color); }
     .bib-entry { padding: 0.4rem 0.5rem 0.4rem 1.5rem; text-indent: -1em; border-radius: 4px; }
     .bib-entry .bib-links { text-indent: 0; margin-top: 0.15rem; }
     .bib-entry.bib-highlight { background: var(--bs-warning-bg-subtle); }
@@ -159,8 +169,8 @@
     <button id="intro-toggle" class="btn btn-link px-0" type="button" aria-expanded="true" aria-controls="intro-body">About the database</button>
     <div id="intro-body" class="small">
       <p><strong>NordicLaw Database</strong> is a searchable catalogue of Icelandic, Norwegian, Danish, and Swedish vernacular law manuscripts and fragments from the Nordic Middle Ages (ca. 1100–1600).</p>
-      <p>The database was created by the <a href="https://www4.uib.no/en/research/research-projects/nordic-law-books-the-production-and-use-of-vernacular-law-manuscripts-in-the-north-from-1100-to-1600-nordiclaw" target="_blank">NordicLaw Project</a> at the University of Bergen and funded by <strong>NordForsk</strong> (<a href="https://www.nordforsk.org/projects/nordic-law-books-production-and-use-vernacular-law-manuscripts-north-1100-1600-nordiclaw" target="_blank">grant no. 152607</a>). For more information, see the NordicLaw Database User Guide, the <a href="#" data-bs-toggle="modal" data-bs-target="#abbrModal">List of Abbreviations</a>, and the <a href="#" data-bs-toggle="modal" data-bs-target="#bibModal">Bibliography</a>. The database was designed and developed by <strong>Patrik Granholm</strong> (The National Library of Sweden).</p>
-      <p>Main Editor: <strong>Stefan Drechsler</strong> (University of Bergen). Editors: <strong>Tonje Waldersnes</strong>, <strong>Már Jónsson</strong> (University of Iceland), <strong>Anne Mette Hansen</strong> (University of Copenhagen), <strong>Seán Vrieland</strong> (University of Copenhagen), <strong>Anna Catharina Horn</strong> (University of Oslo).</p>
+      <p>The database was created by the <a href="https://www4.uib.no/en/research/research-projects/nordic-law-books-the-production-and-use-of-vernacular-law-manuscripts-in-the-north-from-1100-to-1600-nordiclaw" target="_blank">NordicLaw Project</a> at the University of Bergen and funded by <strong>NordForsk</strong> (<a href="https://www.nordforsk.org/projects/nordic-law-books-production-and-use-vernacular-law-manuscripts-north-1100-1600-nordiclaw" target="_blank">grant no. 152607</a>). For more information, see the <a href="#" data-bs-toggle="modal" data-bs-target="#guideModal">Readers Guide</a>, the <a href="#" data-bs-toggle="modal" data-bs-target="#abbrModal">List of Abbreviations</a>, and the <a href="#" data-bs-toggle="modal" data-bs-target="#bibModal">Bibliography</a>. The database was designed and developed by <strong>Patrik Granholm</strong> (The National Library of Sweden).</p>
+      <p>Main Editor: <strong>Stefan Drechsler</strong> (University of Bergen; <a href="mailto:stefan.drechsler@uib.no">contact</a>). Editors: <strong>Tonje Waldersnes</strong> (NTNU Trondheim), <strong>Már Jónsson</strong> (University of Iceland), <strong>Anne Mette Hansen</strong> (University of Copenhagen), <strong>Seán Vrieland</strong> (University of Copenhagen), <strong>Anna Catharina Horn</strong> (University of Oslo).</p>
     </div>
   </section>
   <div id="status" class="text-secondary small mb-2"></div>
@@ -315,6 +325,197 @@
           <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
         </div>
         <div class="modal-body">Loading…</div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Readers Guide modal: what each field means (from the editors' guide, docs/readers_guide);
+       in-guide links are wired in js/render/guide-modal.js -->
+  <div class="modal fade" id="guideModal" tabindex="-1" aria-labelledby="guideModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-xl modal-dialog-scrollable">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="guideModalLabel">Readers Guide</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body small">
+          <p>This guide explains the fields of the database. Abbreviations used in the fields are expanded in the <a href="#" data-guide-abbr>List of Abbreviations</a>.</p>
+          <nav aria-label="Readers Guide contents">
+            <ul class="guide-toc mb-0">
+              <li><a href="#" data-guide-jump="guide-header">Header</a></li>
+              <li><a href="#" data-guide-jump="guide-content">Content</a></li>
+              <li><a href="#" data-guide-jump="guide-physical">Physical Description</a></li>
+              <li><a href="#" data-guide-jump="guide-script">Script</a></li>
+              <li><a href="#" data-guide-jump="guide-provenance">Provenance</a></li>
+              <li><a href="#" data-guide-jump="guide-painting">Book Painting</a></li>
+              <li><a href="#" data-guide-jump="guide-literature">Literature and Links</a></li>
+            </ul>
+          </nav>
+
+          <h3 class="h5" id="guide-header">Header</h3>
+          <dl class="guide-fields">
+            <dt>Depository</dt>
+            <dd>The current location of the manuscript (see the <a href="#" data-guide-abbr>List of Abbreviations</a>).</dd>
+            <dt>Shelfmark</dt>
+            <dd>As stated in the current depository's databases and/or catalogues. If the manuscript is available in digital form, an IIIF icon next to the shelfmark opens its images in a viewer, where further manuscripts can be added for comparison.</dd>
+            <dt>Related Shelfmarks</dt>
+            <dd>Older or alternative shelfmarks.</dd>
+            <dt>Language</dt>
+            <dd>The main language the manuscript is written in. This refers to the modern languages Icelandic, Norwegian, Swedish and Danish.</dd>
+            <dt>Name</dt>
+            <dd>The name of the manuscript, if it has one.</dd>
+            <dt>Object</dt>
+            <dd>The condition of the object: Codex or Fragment.</dd>
+            <dt>Size</dt>
+            <dd>Fol., 4to, 8vo, 12mo or Unknown.</dd>
+          </dl>
+
+          <h3 class="h5" id="guide-content">Content</h3>
+          <dl class="guide-fields">
+            <dt>Production Unit</dt>
+            <dd>Counted in Roman numerals and based on <a href="https://www.persee.fr/doc/galim_0753-5015_2002_num_41_1_1572" target="_blank" rel="noopener">Kwakkel 2002</a>: a set of quires that form a material unity, made together during a single planning phase.</dd>
+            <dt>Leaves/Pages</dt>
+            <dd>References to folia (f. = a single folium; ff. = several folia).</dd>
+            <dt>Main text</dt>
+            <dd>The main text, with subsections identified in the Minor text field if needed.</dd>
+            <dt>Minor text</dt>
+            <dd>With an extended title if no standardised title is available.</dd>
+            <dt>Dating</dt>
+            <dd>Primarily based on <a href="https://onp.ku.dk/onp/onp.php?m" target="_blank" rel="noopener">ONP</a> and/or related literature.</dd>
+          </dl>
+          <p>The shortened names of main and minor texts, and of related chapters, are initially taken from <a href="https://www.dhi.ac.uk/lmnl/introduction" target="_blank" rel="noopener">LMNL</a> and/or <a href="https://onp.ku.dk/onp/onp.php?v" target="_blank" rel="noopener">ONP</a>. Where these lists are not sufficient, further abbreviations have been added. Some names are specified further where needed, e.g. to separate <i>Kvennagiftingar</i>, <i>Erfðatal</i> and <i>Framfærslubálkr</i> in <i>Jónsbók</i>, and <i>Kvennagiftingar</i> and <i>Erfðatal</i> in <i>Landslǫg</i>. The shortened main and minor legal texts are part of the <a href="#" data-guide-abbr>List of Abbreviations</a>. Law amendments (<i>réttarbætr</i>) and statutes (<i>statutt</i>) are listed by the king or (arch)bishop who issued them, the date they were introduced and, if needed, the place of use.</p>
+
+          <h3 class="h5" id="guide-physical">Physical Description</h3>
+          <h4 class="h6">Codicology</h4>
+          <dl class="guide-fields">
+            <dt>Gatherings</dt>
+            <dd>
+              <p class="mb-1">The codicological structure of the manuscript. A Roman numeral gives the quire and is separated from the content information by a colon (<code>:</code>). It is followed by the total number of leaves in Arabic numerals (<code>#</code>). Inside the brackets follow the number of bifolia and (<code>+</code>) the number of single folios, and, after a semicolon (<code>;</code>), which folia the quire contains.</p>
+              <p class="mb-1">Example: quire three consists of eight leaves. Three of them are bifolia, while the remaining two are single leaves. These eight leaves are numbered as folia 23 to 30. This looks as follows: <code>III:8 (3b, 2f; ff. 23-30)</code>.</p>
+              <p class="mb-0">If information on the quire structure is available, a collation diagram made with the VisColl editor is added. It can be downloaded as PDF, SVG or PNG.</p>
+            </dd>
+            <dt>Full size</dt>
+            <dd>The size of the manuscript or fragment including the cover, in millimetres (mm).</dd>
+            <dt>Leaf size</dt>
+            <dd>The size of the individual leaves, in millimetres (mm).</dd>
+            <dt>Catch Words and Gatherings</dt>
+            <dd>Catchwords and/or custodes.</dd>
+            <dt>Pricking</dt>
+            <dd>Whether pricking is used and/or visible.</dd>
+            <dt>Material</dt>
+            <dd>Parchment, paper, parchment/paper, or other.</dd>
+          </dl>
+          <h4 class="h6">Mise-en-page</h4>
+          <dl class="guide-fields">
+            <dt>Ruling</dt>
+            <dd>Ink, Dry or Unknown.</dd>
+            <dt>Columns</dt>
+            <dd>1, 2, 3, Unknown, Other or Various.</dd>
+            <dt>Lines</dt>
+            <dd>The number of lines the text is written in.</dd>
+          </dl>
+
+          <h3 class="h5" id="guide-script">Script</h3>
+          <p>Based on its visual appearance (in facsimile), the script is categorised according to the expanded Lieftinck system, as described by <a href="https://www.cambridge.org/no/universitypress/subjects/literature/anglo-saxon-and-medieval-literature/palaeography-gothic-manuscript-books-twelfth-early-sixteenth-century?format=HB&amp;isbn=9780521803151" target="_blank" rel="noopener">Derolez 2003</a>. Note that the script is not divided into the subcategories Formalis, Libraria and Currens. For more visual samples of <a href="https://spotlight.vatlib.it/latin-paleography/feature/16-1-birth-and-characteristics-of-the-gothic-writing" target="_blank" rel="noopener">Gothic script</a>, see the project Medieval Manuscripts in Flemish Collections <a href="https://mmfc.be/page/about" target="_blank" rel="noopener">(MMFC; 2019–2023, 2024–2028)</a>, where facsimiles and descriptions are found: <a href="https://manual.mmfc.be/p/MMFC:Lists/Script_types#Gothica_Textualis_and_Semitextualis" target="_blank" rel="noopener">Gothic script in pictures</a>.</p>
+          <p>The script types of the NordicLaw Database are as follows:</p>
+          <div class="guide-scripts mb-3">
+            <figure>
+              <strong>Textualis</strong>: two-compartment <i>a</i>, long <i>f</i> and <i>s</i> on the baseline, no loops on ascenders.
+              <img src="img/readers-guide/textualis-am-455-12mo-4v.png" alt="Textualis script sample" loading="lazy">
+              <figcaption>AM 455 12mo, f. 4v, ca. 1300.</figcaption>
+            </figure>
+            <figure>
+              <strong>Septentrionalis</strong>: two-compartment <i>a</i>, long <i>s</i> on the baseline, no loops, and insular <i>f</i>.
+              <img src="img/readers-guide/septentrionalis-am-56-4to-4va.png" alt="Septentrionalis script sample" loading="lazy">
+              <figcaption>AM 56 4to, f. 4va, ca. 1300.</figcaption>
+            </figure>
+            <figure>
+              <strong>Semitextualis</strong>: like Textualis, but with single-compartment <i>a</i>.
+              <img src="img/readers-guide/semitextualis-am-26-8vo-17r.png" alt="Semitextualis script sample" loading="lazy">
+              <figcaption>AM 26 8vo, f. 17r, 1350–1400.</figcaption>
+            </figure>
+            <figure>
+              <strong>Cursiva Antiquior</strong>: two-compartment <i>a</i>, long <i>f</i> and <i>s</i> below the baseline, loops on ascenders.
+              <img src="img/readers-guide/cursiva-antiquior-uub-b45-78v.png" alt="Cursiva Antiquior script sample" loading="lazy">
+              <figcaption>UUB B 45, f. 78v, 1325–1375.</figcaption>
+            </figure>
+            <figure>
+              <strong>Cursiva Recentior</strong>: like Cursiva Antiquior, but with single-compartment <i>a</i>.
+              <img src="img/readers-guide/cursiva-recentior-uub-b25-2v.png" alt="Cursiva Recentior script sample" loading="lazy">
+              <figcaption>UUB B 25, f. 2v, 1450–1500.</figcaption>
+            </figure>
+            <figure>
+              <strong>Hybrida</strong>: single-compartment <i>a</i>, long <i>f</i> and <i>s</i> below the baseline, no loops.
+              <img src="img/readers-guide/hybrida-am-447-12mo-50r.png" alt="Hybrida script sample" loading="lazy">
+              <figcaption>AM 447 12mo, f. 50r, 1475–1500.</figcaption>
+            </figure>
+            <figure>
+              <strong>Semihybrida</strong>: like Hybrida, but with optional loops.
+              <img src="img/readers-guide/semihybrida-am-442-12mo-91v.png" alt="Semihybrida script sample" loading="lazy">
+              <figcaption>AM 442 12mo, f. 91v, 1485–1500.</figcaption>
+            </figure>
+            <figure>
+              <strong>Protogothic</strong>: script with tendencies towards biting and kissing, mainly <i>bb</i>, <i>pp</i> (and sometimes <i>oc</i>), but which does not fully follow Meyer's rules for Gothic script.
+              <img src="img/readers-guide/protogothic-gks-1157-fol-15vb.jpg" alt="Protogothic script sample" loading="lazy">
+              <figcaption>GKS 1157 fol., f. 15vb, ca. 1250.</figcaption>
+            </figure>
+          </div>
+          <dl class="guide-fields">
+            <dt>Gothic</dt>
+            <dd>Script following Meyer's rules for Gothic script.</dd>
+            <dt>Cursive</dt>
+            <dd>Quick and slanted script for speedy notation, often with connections between letters.</dd>
+            <dt>Younger Cursive</dt>
+            <dd>A Cursiva Recentior, but with full connection between letters, which makes them difficult to distinguish from one another.</dd>
+          </dl>
+          <dl class="guide-fields">
+            <dt>Rubric</dt>
+            <dd>Whether rubrics are present or not.</dd>
+          </dl>
+
+          <h3 class="h5" id="guide-provenance">Provenance</h3>
+          <dl class="guide-fields">
+            <dt>Scribe</dt>
+            <dd>a, b, c, etc., if the name of the scribe is unknown.</dd>
+            <dt>Production</dt>
+            <dd>The place or area of production, if known.</dd>
+          </dl>
+
+          <h3 class="h5" id="guide-painting">Book Painting</h3>
+          <dl class="guide-fields">
+            <dt>Style</dt>
+            <dd>Romanesque, Gothic, Romanesque &amp; Gothic, or None.</dd>
+            <dt>Colours</dt>
+            <dd>The main colours (see the <a href="#" data-guide-abbr>List of Abbreviations</a>).</dd>
+            <dt>Form of Initials</dt>
+            <dd>A short description of the style and size of the initials, using the vocabulary of the <a href="https://www.menota.org/HB3_ch7.xml" target="_blank" rel="noopener">Menota handbook 3.0, ch. 7</a>, written by Beeke Stegmann and Friederike Richter.</dd>
+            <dt>Size of Initials</dt>
+            <dd>Large, Medium or Small, or two or three of these.</dd>
+            <dt>Iconography</dt>
+            <dd>A description of iconographic and/or text-related book painting, and of its placement in the legal texts of the manuscript or fragment.</dd>
+            <dt>Place</dt>
+            <dd>The placement of the book painting in the manuscript: throughout, none, or in sections.</dd>
+          </dl>
+
+          <h3 class="h5" id="guide-literature">Literature and Links</h3>
+          <dl class="guide-fields mb-0">
+            <dt>Literature</dt>
+            <dd>Based on the entries in <a href="https://manuscripta.se/" target="_blank" rel="noopener">manuscripta.se</a>, <a href="https://www.alvin-portal.org/" target="_blank" rel="noopener">Alvin</a>, <a href="https://onp.ku.dk/onp/onp.php" target="_blank" rel="noopener">ONP</a>, <a href="https://handrit.is/" target="_blank" rel="noopener">handrit.is</a> and other manuscript databases. Citations link to the <a href="#" data-guide-bib>Bibliography</a>.</dd>
+            <dt>Links to Database</dt>
+            <dd>
+              <a href="https://handrit.is/" target="_blank" rel="noopener">HR</a> (handrit.is);
+              <a href="https://onp.ku.dk/onp/onp.php?m" target="_blank" rel="noopener">ONP</a> (Dictionary of Old Norse Prose);
+              <a href="https://sprogsamlinger.ku.dk/q.php?p=ds/hjem/mapper/35275" target="_blank" rel="noopener">DKB</a> (Det Kongelige Bibliotek, Copenhagen);
+              <a href="https://manuscripta.se/" target="_blank" rel="noopener">MS</a> (manuscripta.se);
+              <a href="https://www.alvin-portal.org/" target="_blank" rel="noopener">AV</a> (Alvin);
+              <a href="https://www.vestlandfylke.no/kultur/arkiv-og-dokumentasjon/" target="_blank" rel="noopener">FyV</a> (Fylkesarkivet i Vestland, Bergen);
+              <a href="https://sprogsamlinger.ku.dk/q.php?p=ds/hjem/mapper/4544" target="_blank" rel="noopener">NorS</a> (Sprogsamlinger, University of Copenhagen).
+            </dd>
+          </dl>
+        </div>
         <div class="modal-footer">
           <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
         </div>

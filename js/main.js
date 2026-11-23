@@ -27,6 +27,7 @@ import { bindSidebar, syncSidebar } from "./render/sidebar.js";
 import { bindIntro, syncIntro } from "./render/intro.js";
 import { bindAbbreviationsModal } from "./render/abbr-modal.js";
 import { bindBibliographyModal, openBibliography } from "./render/bib-modal.js";
+import { bindReadersGuideModal } from "./render/guide-modal.js";
 import { trackStickyHeight } from "./render/sticky.js";
 import { buildColumnsMenu, syncColumnsMenu, bindColumnsMenu, visibleColumns } from "./render/columns.js";
 import { bindControls, renderControls } from "./render/controls.js";
@@ -61,6 +62,7 @@ async function main() {
   syncIntro(introRefs, { ...makeInitialState().ui, ...prefs.ui });
   bindAbbreviationsModal(document.getElementById("abbrModal"));
   bindBibliographyModal(document.getElementById("bibModal"));
+  bindReadersGuideModal(document.getElementById("guideModal"), document.getElementById("abbrModal"));
   loadBibliography().then(setBibliography);
   trackStickyHeight(document.getElementById("controls"), document.getElementById("layout"));
 
