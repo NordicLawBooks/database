@@ -15599,7 +15599,7 @@
         "Material": [
           {
             "column": "Material",
-            "label": "Parchment and Paper",
+            "label": "Parchment & Paper",
             "startRow": 0,
             "endRow": 19,
             "startRowAbs": 114,
@@ -87775,7 +87775,7 @@
         "Material": [
           {
             "column": "Material",
-            "label": "Parchment and Paper",
+            "label": "Parchment & Paper",
             "startRow": 0,
             "endRow": 2,
             "startRowAbs": 632,
@@ -91074,7 +91074,7 @@
         "Material": [
           {
             "column": "Material",
-            "label": "Parchment and Paper",
+            "label": "Parchment & Paper",
             "startRow": 0,
             "endRow": 13,
             "startRowAbs": 641,
@@ -92547,7 +92547,7 @@
         "Material": [
           {
             "column": "Material",
-            "label": "Parchment and Paper",
+            "label": "Parchment & Paper",
             "startRow": 0,
             "endRow": 4,
             "startRowAbs": 655,
@@ -131814,7 +131814,7 @@
         "Literature": [
           {
             "column": "Literature",
-            "label": "Hedlund, Katalog der datieriten Handschriften; SSGL 9 nr 47. ff. 1-70 (The binding contains a Latin fragment. Later additions are generally made of paper and feature different line numbers)",
+            "label": "Hedlund (1980); SSGL 9 nr 47. ff. 1-70 (The binding contains a Latin fragment. Later additions are generally made of paper and feature different line numbers)",
             "startRow": 0,
             "endRow": 0,
             "startRowAbs": 829,
@@ -137324,7 +137324,7 @@
         "Literature": [
           {
             "column": "Literature",
-            "label": "Hedlund, Katalog der datieriten Handschriften",
+            "label": "Hedlund (1980)",
             "startRow": 0,
             "endRow": 0,
             "startRowAbs": 847,
@@ -138000,7 +138000,7 @@
         "Literature": [
           {
             "column": "Literature",
-            "label": "Hedlund, Katalog der datieriten Handschriften (The manuscript is bound in a Latin fragment)",
+            "label": "Hedlund (1980); (The manuscript is bound in a Latin fragment)",
             "startRow": 0,
             "endRow": 0,
             "startRowAbs": 850,

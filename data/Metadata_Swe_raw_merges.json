@@ -611,7 +611,7 @@
       "maxColIndex": 6,
       "minCol": "Dating",
       "maxCol": "Dating",
-      "value": "1623?"
+      "value": "1623 (?)"
     },
     {
       "minRow": 24,
@@ -3032,7 +3032,7 @@
       "maxColIndex": 6,
       "minCol": "Dating",
       "maxCol": "Dating",
-      "value": "1375-1400 (a paper sheet between f. 94 and f. 95 likely from the sixteenth century)"
+      "value": "1375-1400 (a paper sheet between f. 94 and f. 95 likely from 1500-1600)"
     },
     {
       "minRow": 111,
@@ -3141,6 +3141,15 @@
       "minCol": "Scribe",
       "maxCol": "Scribe",
       "value": "Hand b (f. 1v; f. 2r; f. 12r and most of ff. 13v-102r)"
+    },
+    {
+      "minRow": 119,
+      "maxRow": 120,
+      "minColIndex": 8,
+      "maxColIndex": 8,
+      "minCol": "Main text",
+      "maxCol": "Main text",
+      "value": ""
     },
     {
       "minRow": 119,
@@ -4382,7 +4391,7 @@
       "maxColIndex": 22,
       "minCol": "Scribe",
       "maxCol": "Scribe",
-      "value": "A further scribes"
+      "value": "A further scribe"
     },
     {
       "minRow": 149,
@@ -5831,7 +5840,7 @@
       "maxColIndex": 6,
       "minCol": "Dating",
       "maxCol": "Dating",
-      "value": "[1415-1418]"
+      "value": "1415-1418"
     },
     {
       "minRow": 170,
@@ -8687,7 +8696,7 @@
       "value": ""
     },
     {
-      "minRow": 265,
+      "minRow": 266,
       "maxRow": 267,
       "minColIndex": 9,
       "maxColIndex": 9,
@@ -12802,6 +12811,15 @@
     {
       "minRow": 351,
       "maxRow": 353,
+      "minColIndex": 2,
+      "maxColIndex": 2,
+      "minCol": "Related Shelfmarks",
+      "maxCol": "Related Shelfmarks",
+      "value": ""
+    },
+    {
+      "minRow": 351,
+      "maxRow": 353,
       "minColIndex": 3,
       "maxColIndex": 3,
       "minCol": "Depository",
@@ -14093,7 +14111,7 @@
       "maxColIndex": 6,
       "minCol": "Dating",
       "maxCol": "Dating",
-      "value": "1325-1374; c.1350"
+      "value": "1325-1374; c. 1350"
     },
     {
       "minRow": 400,
@@ -16019,7 +16037,7 @@
       "maxColIndex": 6,
       "minCol": "Dating",
       "maxCol": "Dating",
-      "value": "[1460-1530 (1460-1480)]"
+      "value": "1460-1530 (1460-1480)"
     },
     {
       "minRow": 435,
@@ -18422,7 +18440,7 @@
       "maxColIndex": 6,
       "minCol": "Dating",
       "maxCol": "Dating",
-      "value": "1425-1449; 1357-1400 (Manuscripta.se)"
+      "value": "1425-1449 (MS 1357-1400)"
     },
     {
       "minRow": 485,
@@ -20204,7 +20222,7 @@
       "maxColIndex": 6,
       "minCol": "Dating",
       "maxCol": "Dating",
-      "value": "1591-"
+      "value": "after 1591"
     },
     {
       "minRow": 540,
@@ -23376,12 +23394,12 @@
     },
     {
       "minRow": 616,
-      "maxRow": 617,
+      "maxRow": 618,
       "minColIndex": 9,
       "maxColIndex": 9,
       "minCol": "Minor text",
       "maxCol": "Minor text",
-      "value": "Stockholm (1502 or 1503)"
+      "value": ""
     },
     {
       "minRow": 616,
@@ -23907,16 +23925,16 @@
     },
     {
       "minRow": 622,
-      "maxRow": 625,
+      "maxRow": 623,
       "minColIndex": 6,
       "maxColIndex": 6,
       "minCol": "Dating",
       "maxCol": "Dating",
-      "value": "1500-1524; 1501"
+      "value": "1501, 1508, 1517"
     },
     {
       "minRow": 622,
-      "maxRow": 625,
+      "maxRow": 623,
       "minColIndex": 8,
       "maxColIndex": 8,
       "minCol": "Main text",
@@ -23930,7 +23948,7 @@
       "maxColIndex": 9,
       "minCol": "Minor text",
       "maxCol": "Minor text",
-      "value": "Stockholm (1501) with add. From 1508 & 1517"
+      "value": ""
     },
     {
       "minRow": 622,
@@ -24047,7 +24065,7 @@
       "maxColIndex": 22,
       "minCol": "Scribe",
       "maxCol": "Scribe",
-      "value": "Hand a (Stadsskrivaren Helmik van Nörden)"
+      "value": "Hand a (Stadsskrivar Helmik van Nörden)"
     },
     {
       "minRow": 622,
@@ -24497,7 +24515,7 @@
       "maxColIndex": 6,
       "minCol": "Dating",
       "maxCol": "Dating",
-      "value": "1448-"
+      "value": "after 1448"
     },
     {
       "minRow": 653,
@@ -25055,7 +25073,7 @@
       "maxColIndex": 6,
       "minCol": "Dating",
       "maxCol": "Dating",
-      "value": "1425-1475 (1396-)"
+      "value": "1425-1475 (after 1396)"
     },
     {
       "minRow": 680,
@@ -25370,7 +25388,7 @@
       "maxColIndex": 6,
       "minCol": "Dating",
       "maxCol": "Dating",
-      "value": "1425-1475 (1437-)"
+      "value": "1425-1475 (after 1437)"
     },
     {
       "minRow": 692,
@@ -26468,7 +26486,7 @@
       "maxColIndex": 6,
       "minCol": "Dating",
       "maxCol": "Dating",
-      "value": "1442-1443 (with additions from after 1538)"
+      "value": "1442-1443 (with add. from after 1538)"
     },
     {
       "minRow": 718,
@@ -33700,11 +33718,236 @@
     {
       "minRow": 945,
       "maxRow": 956,
+      "minColIndex": 7,
+      "maxColIndex": 7,
+      "minCol": "Leaves/Pages",
+      "maxCol": "Leaves/Pages",
+      "value": "ff. 1r-84v"
+    },
+    {
+      "minRow": 945,
+      "maxRow": 956,
+      "minColIndex": 8,
+      "maxColIndex": 8,
+      "minCol": "Main text",
+      "maxCol": "Main text",
+      "value": "MEL"
+    },
+    {
+      "minRow": 945,
+      "maxRow": 956,
+      "minColIndex": 9,
+      "maxColIndex": 9,
+      "minCol": "Minor text",
+      "maxCol": "Minor text",
+      "value": ""
+    },
+    {
+      "minRow": 945,
+      "maxRow": 956,
       "minColIndex": 10,
       "maxColIndex": 10,
       "minCol": "Gatherings",
       "maxCol": "Gatherings",
       "value": "I:3 (1b,1f; ff.1-3); II:6 (2b,2f; ff.4-9); III:9 (4b,1f; ff.10-18); IV:8 (4b; ff.19-26); V:9 (4b,1f; ff.27-35); VI:8 (4b; ff.36-43); VII:7 (3b,1f; ff.44-50); VIII:8 (4b; ff.51-58); IX:8 (4b; ff.59-66); X:9 (4b,1f; ff.67-75); XI:6 (1b,4f; ff.76-81); XII:3 (3f; ff.82-84)"
+    },
+    {
+      "minRow": 945,
+      "maxRow": 956,
+      "minColIndex": 11,
+      "maxColIndex": 11,
+      "minCol": "Full size",
+      "maxCol": "Full size",
+      "value": "220x165x40"
+    },
+    {
+      "minRow": 945,
+      "maxRow": 956,
+      "minColIndex": 12,
+      "maxColIndex": 12,
+      "minCol": "Leaf size",
+      "maxCol": "Leaf size",
+      "value": "Unknown"
+    },
+    {
+      "minRow": 945,
+      "maxRow": 956,
+      "minColIndex": 13,
+      "maxColIndex": 13,
+      "minCol": "Catch Words and Gatherings",
+      "maxCol": "Catch Words and Gatherings",
+      "value": "None"
+    },
+    {
+      "minRow": 945,
+      "maxRow": 956,
+      "minColIndex": 14,
+      "maxColIndex": 14,
+      "minCol": "Production Unit",
+      "maxCol": "Production Unit",
+      "value": "I"
+    },
+    {
+      "minRow": 945,
+      "maxRow": 956,
+      "minColIndex": 15,
+      "maxColIndex": 15,
+      "minCol": "Pricking",
+      "maxCol": "Pricking",
+      "value": "No"
+    },
+    {
+      "minRow": 945,
+      "maxRow": 956,
+      "minColIndex": 16,
+      "maxColIndex": 16,
+      "minCol": "Material",
+      "maxCol": "Material",
+      "value": "Parchment"
+    },
+    {
+      "minRow": 945,
+      "maxRow": 956,
+      "minColIndex": 17,
+      "maxColIndex": 17,
+      "minCol": "Ruling",
+      "maxCol": "Ruling",
+      "value": "Ink"
+    },
+    {
+      "minRow": 945,
+      "maxRow": 956,
+      "minColIndex": 18,
+      "maxColIndex": 18,
+      "minCol": "Columns",
+      "maxCol": "Columns",
+      "value": "1"
+    },
+    {
+      "minRow": 945,
+      "maxRow": 956,
+      "minColIndex": 19,
+      "maxColIndex": 19,
+      "minCol": "Lines",
+      "maxCol": "Lines",
+      "value": "23"
+    },
+    {
+      "minRow": 945,
+      "maxRow": 956,
+      "minColIndex": 20,
+      "maxColIndex": 20,
+      "minCol": "Script",
+      "maxCol": "Script",
+      "value": "Cursiva R"
+    },
+    {
+      "minRow": 945,
+      "maxRow": 956,
+      "minColIndex": 21,
+      "maxColIndex": 21,
+      "minCol": "Rubric",
+      "maxCol": "Rubric",
+      "value": "Yes"
+    },
+    {
+      "minRow": 945,
+      "maxRow": 956,
+      "minColIndex": 22,
+      "maxColIndex": 22,
+      "minCol": "Scribe",
+      "maxCol": "Scribe",
+      "value": "Hand a"
+    },
+    {
+      "minRow": 945,
+      "maxRow": 956,
+      "minColIndex": 23,
+      "maxColIndex": 23,
+      "minCol": "Production",
+      "maxCol": "Production",
+      "value": ""
+    },
+    {
+      "minRow": 945,
+      "maxRow": 956,
+      "minColIndex": 24,
+      "maxColIndex": 24,
+      "minCol": "Style",
+      "maxCol": "Style",
+      "value": "Romanesque"
+    },
+    {
+      "minRow": 945,
+      "maxRow": 956,
+      "minColIndex": 25,
+      "maxColIndex": 25,
+      "minCol": "Colours",
+      "maxCol": "Colours",
+      "value": "R"
+    },
+    {
+      "minRow": 945,
+      "maxRow": 956,
+      "minColIndex": 26,
+      "maxColIndex": 26,
+      "minCol": "Form of Initials",
+      "maxCol": "Form of Initials",
+      "value": "Small lombard initials (2 lines). In some of the ToC, large Lombard initials (up to 6 lines) are found"
+    },
+    {
+      "minRow": 945,
+      "maxRow": 956,
+      "minColIndex": 27,
+      "maxColIndex": 27,
+      "minCol": "Size of Initials",
+      "maxCol": "Size of Initials",
+      "value": "S"
+    },
+    {
+      "minRow": 945,
+      "maxRow": 956,
+      "minColIndex": 28,
+      "maxColIndex": 28,
+      "minCol": "Iconography",
+      "maxCol": "Iconography",
+      "value": "None"
+    },
+    {
+      "minRow": 945,
+      "maxRow": 956,
+      "minColIndex": 29,
+      "maxColIndex": 29,
+      "minCol": "Place",
+      "maxCol": "Place",
+      "value": "Throughout"
+    },
+    {
+      "minRow": 945,
+      "maxRow": 956,
+      "minColIndex": 30,
+      "maxColIndex": 30,
+      "minCol": "Literature",
+      "maxCol": "Literature",
+      "value": ""
+    },
+    {
+      "minRow": 945,
+      "maxRow": 952,
+      "minColIndex": 31,
+      "maxColIndex": 31,
+      "minCol": "Links to Database",
+      "maxCol": "Links to Database",
+      "value": "[MS](https://manuscripta.se/ms/100395)"
+    },
+    {
+      "minRow": 953,
+      "maxRow": 956,
+      "minColIndex": 31,
+      "maxColIndex": 31,
+      "minCol": "Links to Database",
+      "maxCol": "Links to Database",
+      "value": "[AV](http://urn.kb.se/resolve?urn=urn:nbn:se:alvin:portal:record-458230)"
     },
     {
       "minRow": 957,
@@ -33777,6 +34020,15 @@
       "minCol": "Gatherings",
       "maxCol": "Gatherings",
       "value": "I:15 (7b,1f; ff.1-15); II:18 (9b; ff.16-33); III:14 (7b; ff.34-47); IV:18 (9b; ff.48-65); V:4 (1b,2f; ff.66-69)"
+    },
+    {
+      "minRow": 957,
+      "maxRow": 961,
+      "minColIndex": 31,
+      "maxColIndex": 31,
+      "minCol": "Links to Database",
+      "maxCol": "Links to Database",
+      "value": "[MS](https://manuscripta.se/ms/100396)"
     },
     {
       "minRow": 962,
