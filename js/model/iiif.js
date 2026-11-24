@@ -66,6 +66,15 @@ export function manifestsForLinks(value) {
   return out;
 }
 
+/**
+ * Set each row's Digitised facet value: "Yes" when its Links to Database have an
+ * indexed manifest, else "No". The model merges links per manuscript, so every
+ * row of a manuscript gets the same value. Call after setIiifIndex.
+ */
+export function markDigitised(rows) {
+  for (const r of rows || []) r.Digitised = manifestsForLinks(r["Links to Database"]).length ? "Yes" : "No";
+}
+
 /** Plain-text label of a canvas: Presentation 2 (string / array / {@value}) or 3 (language map). */
 export function canvasLabel(canvas) {
   const pick = (v) => {

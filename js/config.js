@@ -49,6 +49,9 @@ export const FACET_DEFS = [
     help: "Filter by line count range (parses numbers/ranges; ignores parentheses and ca.)" },
   { field: "Rubric", type: "term", emptyOption: true },
   { field: "Style", type: "term", emptyOption: true, label: "Decoration style" },
+  // "Yes" when the manuscript's Links to Database include one with an indexed
+  // IIIF manifest (set by markDigitised in js/model/iiif.js).
+  { field: "Digitised", type: "term" },
 ];
 
 // Fields that carry array selections in state.facets (everything except a
@@ -145,6 +148,7 @@ export const HIDDEN_FIELDS = new Set([
   "DatingMaxYear",
   "Main text group",
   "Depository_abbr",
+  "Digitised",
 ]);
 
 // Short, stable URL keys for the longest field names. Fields not listed here use

@@ -13,7 +13,7 @@ const tokenize = (s) => String(s).split(/[^\p{L}\p{N}]+/u).filter(Boolean);
 
 // All of a row's own (non-internal, non-derived) string values, for a catch-all
 // "search everything" field — mirrors the legacy substring-over-all-fields scope.
-const DERIVED = new Set(["Century", "DatingYear", "DatingMinYear", "DatingMaxYear", "Main text group"]);
+const DERIVED = new Set(["Century", "DatingYear", "DatingMinYear", "DatingMaxYear", "Main text group", "Digitised"]);
 function allText(row) {
   const parts = [];
   for (const [k, v] of Object.entries(row)) {

@@ -12,7 +12,7 @@ import { openRowModal } from "./render/row-modal.js";
 import { openCollationModal } from "./render/collation-modal.js";
 import { openIiifModal } from "./render/iiif-modal.js";
 import { bindIiifPane, syncIiifPane, openInIiifPane, paneUnavailable } from "./render/iiif-pane.js";
-import { setIiifIndex } from "./model/iiif.js";
+import { setIiifIndex, markDigitised } from "./model/iiif.js";
 import { setBibliography } from "./model/bibliography.js";
 import { parseCollation } from "./model/collation.js";
 import { exportManuscriptPdf, exportRowDetailsPdf } from "./pdf/export.js";
@@ -153,6 +153,7 @@ async function main() {
   // Before the first render: the link renderer marks links that have a manifest,
   // and Literature citations link to the bibliography.
   setIiifIndex(iiifIndex);
+  markDigitised(model.rows);
   setBibliography(bibliography);
 
   // Row-level search index (built after maps so expansions are searchable too).

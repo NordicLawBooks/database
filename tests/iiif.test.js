@@ -2,7 +2,7 @@ import { test, afterEach } from "node:test";
 import assert from "node:assert/strict";
 import {
   setIiifIndex, iiifKeyForUrl, iiifEntryForUrl, manifestsForLinks,
-  canvasLabel, folioOf, canvasIdForLocus, leavesTokens,
+  canvasLabel, folioOf, canvasIdForLocus, leavesTokens, markDigitised,
 } from "../js/model/iiif.js";
 import { renderLinksHtml, iiifIconsHtml, leavesLinkHtml } from "../js/render/links.js";
 import { renderTextTable } from "../js/render/text-table.js";
@@ -217,4 +217,16 @@ test("handrit.is links: keyed by manuscript id; relative manifests resolve again
   } finally {
     delete globalThis.document;
   }
+});
+
+test("markDigitised: Yes when a link has an indexed manifest, else No", () => {
+  setIiifIndex(INDEX);
+  const rows = [
+    { "Links to Database": "[MS](https://manuscripta.se/ms/100255); [HR](https://handrit.is/x)" },
+    { "Links to Database": "[MS](https://manuscripta.se/ms/999999)" },
+    { "Links to Database": "" },
+    {},
+  ];
+  markDigitised(rows);
+  assert.deepEqual(rows.map((r) => r.Digitised), ["Yes", "No", "No", "No"]);
 });
