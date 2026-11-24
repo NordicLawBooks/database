@@ -36,6 +36,14 @@
     #guideModal h4 { margin-top: 1rem; scroll-margin-top: 0.5rem; }
     .guide-fields dt { font-weight: 600; }
     .guide-fields dd { margin-bottom: 0.6rem; }
+    /* Notation in the guide keeps the body colour (as in the editors' key document), not Bootstrap's pink. */
+    .guide-fields code { color: var(--bs-body-color); }
+    /* Gatherings example: each part of the formula in the colour of its words. */
+    .gx-quire { color: #b02a8f; }
+    .gx-leaves { color: #b35400; }
+    .gx-bifolia { color: #1864ab; }
+    .gx-single { color: #2b8a3e; }
+    .gx-folia { color: #6f42c1; }
     .guide-scripts { display: grid; grid-template-columns: repeat(auto-fill, minmax(20rem, 1fr)); gap: 1rem; }
     .guide-scripts figure { margin: 0; padding: 0.6rem; border: 1px solid var(--bs-border-color); border-radius: var(--bs-border-radius); }
     .guide-scripts img { display: block; max-width: 100%; height: auto; max-height: 9rem; margin: 0.5rem 0; }
@@ -407,7 +415,7 @@
             <dt>Gatherings</dt>
             <dd>
               <p class="mb-1">The codicological structure of the manuscript. A Roman numeral gives the quire and is separated from the content information by a colon (<code>:</code>). It is followed by the total number of leaves in Arabic numerals (<code>#</code>). Inside the brackets follow the number of bifolia and (<code>+</code>) the number of single folios, and, after a semicolon (<code>;</code>), which folia the quire contains.</p>
-              <p class="mb-1">Example: quire three consists of eight leaves. Three of them are bifolia, while the remaining two are single leaves. These eight leaves are numbered as folia 23 to 30. This looks as follows: <code>III:8 (3b, 2f; ff. 23-30)</code>.</p>
+              <p class="mb-1">Example: <span class="gx-quire">quire three</span> consists of <span class="gx-leaves">eight leaves</span>. <span class="gx-bifolia">Three</span> of them are <span class="gx-bifolia">bifolia</span>, while the remaining <span class="gx-single">two</span> are <span class="gx-single">single leaves</span>. These eight leaves are numbered as <span class="gx-folia">folia 23 to 30</span>. This looks as follows: <code><span class="gx-quire">III</span>:<span class="gx-leaves">8</span> (<span class="gx-bifolia">3b</span>, <span class="gx-single">2f</span>; <span class="gx-folia">ff. 23-30</span>)</code>.</p>
               <p class="mb-0">If information on the quire structure is available, a collation diagram made with the VisColl editor is added. It can be downloaded as PDF, SVG or PNG.</p>
             </dd>
             <dt>Full size</dt>
